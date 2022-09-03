@@ -11,6 +11,7 @@ builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.Re
 
 // Add DataBase
 string databasePath = $"{builder.Environment.WebRootPath}/data/WayfinderProject.db";
+Console.WriteLine(builder.Environment.WebRootPath);
 
 builder.Services.AddDbContext<WayfinderContext>(options => options.UseSqlite($"Data Source={databasePath}"));
 
