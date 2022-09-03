@@ -10,11 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); ;
 
 // Add DataBase
-string databasePath = $"{builder.Environment.WebRootPath}/data/WayfinderProject.db";
-Console.WriteLine(builder.Environment.WebRootPath);
-Console.WriteLine("DB Exists: " + File.Exists(databasePath));
-
-builder.Services.AddDbContext<WayfinderContext>(options => options.UseSqlite($"Data Source={databasePath}"));
+builder.Services.AddDbContext<WayfinderContext>(options => options.UseInMemoryDatabase("WayfinderProject.db"));
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -23,6 +19,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<WayfinderContext>();
+
+    DatabaseInitializer.Initialize(context);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

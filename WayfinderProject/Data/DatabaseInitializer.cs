@@ -1,61 +1,35 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
+﻿using System.Text.Json;
 using WayfinderProjectAPI.Data.Models;
 
 namespace WayfinderProjectAPI.Data
 {
-    public class WayfinderContext : DbContext
+    public static class DatabaseInitializer
     {
-        public WayfinderContext(DbContextOptions<WayfinderContext> options) : base(options)
-        {
-            //this.Create();
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Area>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Character>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Game>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Music>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Scene>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<World>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Script>().Property(p => p.Id).ValueGeneratedOnAdd();
-        }
-
-        public DbSet<Area> Areas { get; set; } = null!;
-        public DbSet<Character> Characters { get; set; } = null!;
-        public DbSet<Game> Games { get; set; } = null!;
-        public DbSet<Music> Music { get; set; } = null!;
-        public DbSet<Scene> Scenes { get; set; } = null!;
-        public DbSet<World> Worlds { get; set; } = null!;
-        public DbSet<Script> Script { get; set; } = null!;
-
-
-        public void Create()
+        public static void Initialize(WayfinderContext context)
         {
             // Load Areas Data into Database
-            this.CreateAreas();
+            CreateAreas(context);
 
             // Load Character Data into Database
-            this.CreateCharacters();
+            CreateCharacters(context);
 
             // Load Game Data into Database
-            this.CreateGames();
-            
+            CreateGames(context);
+
             // Load Music Data into Database
-            this.CreateMusic();
-            
+            CreateMusic(context);
+
             // Load World Data into Database
-            this.CreateWorlds();
+            CreateWorlds(context);
 
             // Load Script Data into Database
-            this.CreateKH1Script();
+            CreateKH1Script(context);
 
             // Load Scene Data into Database
-            this.CreateScenes();
+            CreateScenes(context);
         }
 
-        public void CreateAreas()
+        public static void CreateAreas(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_areas.json"));
             var areas = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -64,12 +38,12 @@ namespace WayfinderProjectAPI.Data
                 throw new Exception("No Areas List Found!");
 
             foreach (var area in areas["Areas"])
-                this.Areas.Add(new Area { Name = area });
+                context.Areas.Add(new Area { Name = area });
 
-            this.SaveChanges();
+            context.SaveChanges();
         }
 
-        public void CreateCharacters()
+        public static void CreateCharacters(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_characters.json"));
             var characters = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -78,12 +52,12 @@ namespace WayfinderProjectAPI.Data
                 throw new Exception("No Characters List Found!");
 
             foreach (var character in characters["Characters"])
-                this.Characters.Add(new Character { Name = character });
+                context.Characters.Add(new Character { Name = character });
 
-            this.SaveChanges();
+            context.SaveChanges();
         }
 
-        public void CreateGames()
+        public static void CreateGames(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_games.json"));
             var games = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -92,9 +66,9 @@ namespace WayfinderProjectAPI.Data
                 throw new Exception("No Games List Found!");
 
             foreach (var game in games["Games"])
-                this.Games.Add(new Game { Name = game });
+                context.Games.Add(new Game { Name = game });
 
-            this.SaveChanges();
+            context.SaveChanges();
         }
 
         class MusicObject
@@ -103,7 +77,7 @@ namespace WayfinderProjectAPI.Data
             public string Link { get; set; } = string.Empty;
         }
 
-        public void CreateMusic()
+        public static void CreateMusic(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_music.json"));
             var music = JsonSerializer.Deserialize<Dictionary<string, List<MusicObject>>>(streamReader.ReadToEnd());
@@ -112,12 +86,12 @@ namespace WayfinderProjectAPI.Data
                 throw new Exception("No Music List Found!");
 
             foreach (var song in music["Music"])
-                this.Music.Add(new Music { Name = song.Name, Link = song.Link });
+                context.Music.Add(new Music { Name = song.Name, Link = song.Link });
 
-            this.SaveChanges();
+            context.SaveChanges();
         }
 
-        public void CreateWorlds()
+        public static void CreateWorlds(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_worlds.json"));
             var worlds = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -126,9 +100,9 @@ namespace WayfinderProjectAPI.Data
                 throw new Exception("No Worlds List Found!");
 
             foreach (var world in worlds["Worlds"])
-                this.Worlds.Add(new World { Name = world });
+                context.Worlds.Add(new World { Name = world });
 
-            this.SaveChanges();
+            context.SaveChanges();
         }
 
         class LineScriptObject
@@ -138,7 +112,7 @@ namespace WayfinderProjectAPI.Data
             public string Line { get; set; } = string.Empty;
         }
 
-        public void CreateKH1Script()
+        public static void CreateKH1Script(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_kh1_lines.json"));
             var script = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<LineScriptObject>>>>(streamReader.ReadToEnd());
@@ -153,11 +127,11 @@ namespace WayfinderProjectAPI.Data
                 {
                     temp.Lines.Add(new ScriptLine { Order = line.Order, Character = line.Character, Line = line.Line });
                 }
-                
-                this.Script.Add(temp);
+
+                context.Script.Add(temp);
             }
 
-            this.SaveChanges();
+            context.SaveChanges();
         }
 
         class SceneObject
@@ -170,7 +144,7 @@ namespace WayfinderProjectAPI.Data
             public List<string> Music { get; set; }
         }
 
-        public void CreateScenes()
+        public static void CreateScenes(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_scenes.json"));
             var allScenes = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<SceneObject>>>>(streamReader.ReadToEnd());
@@ -182,15 +156,15 @@ namespace WayfinderProjectAPI.Data
             {
                 foreach (var scene in scenes)
                 {
-                    var game = this.Games.FirstOrDefault(x => x.Name == gameName);
-                    var worlds = this.Worlds.Where(x => scene.Worlds.Contains(x.Name)).ToList();
-                    var characters = this.Characters.Where(x => scene.Characters.Contains(x.Name)).ToList();
-                    var areas = this.Areas.Where(x => scene.Areas.Contains(x.Name)).ToList();
-                    var music = this.Music.Where(x => scene.Music.Contains(x.Name)).ToList();
-                    var script = this.Script.FirstOrDefault(x => x.SceneName == scene.Name && x.GameName == gameName) ??
-                        this.Script.FirstOrDefault(x => x.SceneName == "None");
+                    var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+                    var worlds = context.Worlds.Where(x => scene.Worlds.Contains(x.Name)).ToList();
+                    var characters = context.Characters.Where(x => scene.Characters.Contains(x.Name)).ToList();
+                    var areas = context.Areas.Where(x => scene.Areas.Contains(x.Name)).ToList();
+                    var music = context.Music.Where(x => scene.Music.Contains(x.Name)).ToList();
+                    var script = context.Script.FirstOrDefault(x => x.SceneName == scene.Name && x.GameName == gameName) ??
+                        context.Script.FirstOrDefault(x => x.SceneName == "None");
 
-                    this.Scenes.Add(new Scene
+                    context.Scenes.Add(new Scene
                     {
                         Game = game,
                         Name = scene.Name,
@@ -204,7 +178,7 @@ namespace WayfinderProjectAPI.Data
                 }
             }
 
-            this.SaveChanges();
+            context.SaveChanges();
         }
     }
 }

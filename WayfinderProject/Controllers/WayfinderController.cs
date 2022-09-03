@@ -83,7 +83,7 @@ namespace WayfinderProjectAPI.Controllers
             //var linesList = lines?.Split(",").Select(x => x.ToLower().Trim());
 
             return await _context.Scenes.Include(x => x.Script).Include(x => x.Script.Lines)
-                .Where(x => 
+                .Where(x =>
                     (gamesList != null ? gamesList.Contains(x.Game.Name) : true) &&
                     (scenesList != null ? scenesList.Contains(x.Name) : true) &&
                     (worldsList != null ? x.Worlds.Any(y => worldsList.Contains(y.Name)) : true) &&
@@ -91,6 +91,7 @@ namespace WayfinderProjectAPI.Controllers
                     (areasList != null ? x.Areas.Any(y => areasList.Contains(y.Name)) : true) &&
                     (musicList != null ? x.Music.Any(y => musicList.Contains(y.Name)) : true) &&
                     (line != null ? x.Script.Lines.ToList().Any(y => y.Line.Contains(line)) : true))
+                .OrderBy(x => x.Id)
                 .ToDto()
                 .ToListAsync();
         }
