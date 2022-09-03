@@ -1,0 +1,121 @@
+﻿<div class="search">
+    <div class="search-bar">
+        <div class="row" style="width: 100%; margin: 25px 0px;">
+            <div class="col-md-12" style="align-self: center;">
+                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input" oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" placeholder="@this.Placeholder" />
+            </div>
+        </div>
+    </div>
+
+    <div class="search-results">
+        @if (this.results.Count > 0)
+        {
+            @for (int i = 0; i < this.results.Count; ++i)
+            {
+                //@if (i <= this.Limit)
+                //{
+                var tempResult = this.results[i];
+                <span class="search-result" style="background-color: @(this.Color)"
+                    @onclick="@(() => this.Select(tempResult))">@tempResult</span>
+                //}
+            }
+        }
+        else if (!string.IsNullOrEmpty(this.search))
+        {
+            <em>No results were found for that string.</em>
+        }
+    </div>
+
+    <div class="search-selected">
+        @if (this.selected.Count > 0)
+        {
+            <hr />
+            @foreach (var value in this.selected)
+            {
+                <span class="search-result remove" @onclick="@(() => this.Remove(value))">@value</span>
+            }
+        }
+    </div>
+</div>
+
+
+<style>
+    .search-result {
+        background-color: transparent;
+        color: #2e2e2e;
+        padding: 5px 10px;
+        border: 1px solid black;
+        border-radius: 30px;
+        margin: 5px 7px;
+        display: inline-block;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+    }
+        .search-result:hover {
+            background-color: #9fd5ff !important;
+        }
+
+
+    .remove{
+        background-color: #7ecdff;
+    }
+        .remove:hover {
+            background-color: #ce5858 !important;
+        }
+</style>
+@code {
+    [Parameter] public string Id { get; set; } = "Search";
+    [Parameter] public string Placeholder { get; set; } = "Search for values...";
+    //[Parameter] public int Limit { get; set; } = 15;
+    [Parameter] public string Color { get; set; } = "#ffffff";
+    [Parameter] public List<string> Selections { get; set; } = new List<string>();
+
+    [Parameter] public Action UpdateSearch { get; set; }
+
+    private string search = "";
+    public List<string> selected { get; set; } = new List<string>();
+    private List<string> results = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    private void Search(string search)
+    {
+        this.search = search;
+        this.results = new List<string>();
+
+        if (string.IsNullOrEmpty(search))
+            return;
+
+        foreach (var selection in this.Selections)
+        {
+            if (this.selected.Contains(selection)) continue;
+
+            if (selection.ToLower().Contains(search.ToLower()))
+            {
+                this.results.Add(selection);
+            }
+        }
+
+        this.results.Sort();
+    }
+
+    private void Select(string value)
+    {
+        this.selected.Add(value);
+        this.UpdateSearch.Invoke();
+
+        this.Search(this.search);
+    }
+
+    private void Remove(string value)
+    {
+        this.selected.Remove(value);
+        this.UpdateSearch.Invoke();
+
+        this.Search(this.search);
+    }
+}

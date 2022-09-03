@@ -1,0 +1,2209 @@
+{
+  "Script": {
+    "None": [
+      {
+        "Order": -1,
+        "Character": "None",
+        "Line": "None"
+      }
+    ],
+    "Was It a Dream?": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Whoa! Gimme a break, Kairi. No! This huge, black THING swallowed me up! I couldn't breathe! I couldn't– Ow! It wasn't a dream! Or was it? I don't know. What was that place? So bizarre...Say, Kairi, what was your hometown like? You know, where you grew up. Nothing at all? You ever want to go back? Really...I'd like to see it too. Along with any other worlds out there. I wanna see 'em all! Huh?"
+      },
+      {
+        "Order": 1,
+        "Character": "Kairi",
+        "Line": "Sora, you lazy bum. I knew that I'd find you snoozing down here. Are you still dreaming? Yeah, sure. I've told you before, I don't remember. Nothing. Hmm. Well, I'm happy here. But you know... I wouldn't mind going to see it. So what're we waiting for? So you noticed. Okay, we'll finish it together. I'll race you! Ready? Go!"
+      },
+      {
+        "Order": 2,
+        "Character": "Riku",
+        "Line": "Hey! Aren't you guys forgetting about me? So, I guess I'm the only one working on the raft. And you're just as lazy as he is! What, are you kidding?"
+      }
+    ],
+    "The Outside World": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "So, Kairi's home is out there somewhere, right? But how far could a raft take us? I don't know. A paopu fruit...What are you talking--"
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "Could be. We'll never know by staying here. Who knows? If we have to, we'll think of something else. Well, I haven't really thought about it. It's just... I've always wondered why we're here on this island. If there are any other worlds out there, why did we end up on this one? And suppose there are other worlds... Then ours is just a little piece of something much greater. So we could've just as easily ended up somewhere else, right? Exactly. That's why we need to go out there and find out. Just sitting here won't change a thing. It's the same old stuff. So let's go. Thanks to you. If you hadn't come here, I probably would've never thought of any of this. Kairi, thanks. Sora. You wanted one, didn't you? If two people share one, their destinies become intertwined. They'll remain a part of each other's lives no matter what. C'mon, I know you want to try it."
+      },
+      {
+        "Order": 2,
+        "Character": "Kairi",
+        "Line": "So, suppose you get to another world. What would you do there? You've been thinking a lot lately, haven't you? You're welcome."
+      }
+    ],
+    "Disney Castle": [
+      {
+        "Order": 0,
+        "Character": "Donald",
+        "Line": "Good morning, Your Majesty. It's nice to see you this morn– What! Wake up, Goofy, wake up! This is serious!! We've got a problem, Goofy! But don't tell anyone...Not even the queen. No, it's top secret! What?"
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "Hey there, Donald. G'morning. Queen Minnie? Daisy? G'morning, ladies."
+      }
+    ],
+    "This World Has Been Connected": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Wh-who’s there? Huh? Wh-What are you talking about? Well, whoever you are, stop freaking me out like this. Huh? Wh-Where did you come from? So, you’re from another world! Oh, yeah? Well, you’ll see. I’m gonna get out and learn what’s out there!"
+      },
+      {
+        "Order": 1,
+        "Character": "Ansem, Seeker of Darkness",
+        "Line": "I’ve come to see the door to this world. This world has been connected. Tied to the darkness... Soon to be completely eclipsed. You do not yet know what lies beyond the door. There is so very much to learn. You understand so little. A meaningless effort. One who knows nothing can understand nothing."
+      }
+    ],
+    "Across the Ocean": [
+      {
+        "Order": 0,
+        "Character": "Kairi",
+        "Line": "You know, Riku has changed. Well...Sora, let’s take the raft and go—just the two of us! Just kidding. Maybe... You know, I was a little afraid at first, but now I’m ready. No matter where I go or what I see, I know I can always come back here. Right? That’s good. Sora, don’t ever change. I just can’t wait. Once we set sail, it’ll be great."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "What do you mean? You okay? Huh? What’s gotten into you? You’re the one that’s changed, Kairi. Yeah, of course! Huh?"
+      }
+    ],
+    "The Letter": [
+      {
+        "Order": 0,
+        "Character": "Daisy",
+        "Line": "Oh, dear! What could this mean? Of course. You be careful, now, both of you."
+      },
+      {
+        "Order": 1,
+        "Character": "Minnie",
+        "Line": "It means we’ll just have to trust the king. Thank you, both of you. Oh, and to chronicle your travels, he will accompany you. We hope for your safe return. Please help the king."
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "Gawrsh, I sure hope he’s all right. Gawrsh, Jiminy, your world disappeared, too? Oh, right... I gotcha. Ya mean, while we’re in other worlds, we can’t let on where we’re from. We’ve gotta protect the world border. Right. World order. I guess we’ll need new duds when we get there."
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "Your Highness. Don’t worry. We’ll find the king and this “key.” Daisy, can you take care of the— You’re coming, too! Goofy? “Order.” Hello up there? Donald Duck to launch crew! Anytime you’re ready. Blast off!!"
+      },
+      {
+        "Order": 4,
+        "Character": "Jiminy Cricket",
+        "Line": "Over here! Cricket’s the name. Jiminy Cricket, at your service. It was terrible. We were scattered. And as far as I can see, I’m the only one who made it to this castle."
+      }
+    ],
+    "Keyblade": [
+      {
+        "Order": 0,
+        "Character": "Kairi",
+        "Line": "I just can’t wait. Once we set sail, it’ll be great."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "A storm? Oh, no, the raft! What’s that? Riku’s boat. And Kairi’s! Where’s Kairi? I thought she was with you! What? What are you talking about? We’ve gotta find Kairi! Riku..."
+      },
+      {
+        "Order": 2,
+        "Character": "Sora’s Mom",
+        "Line": "Sora, dinner’s ready. Come on down. Sora?"
+      },
+      {
+        "Order": 3,
+        "Character": "Riku",
+        "Line": "The door has opened...The door has opened, Sora! Now we can go to the outside world! Kairi’s coming with us! Once we step through, we might not be able to come back. We may never see our parents again. There’s no turning back. But this may be our only chance. We can’t let fear stop us! I’m not afraid of the darkness!"
+      }
+    ],
+    "Swallowed by Darkness": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Kairi! Whoa!"
+      },
+      {
+        "Order": 1,
+        "Character": "Kairi",
+        "Line": "Sora…"
+      }
+    ],
+    "Where Am I?": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "Look, a star’s goin’ out! Hey, ya know, maybe we ought to go find Leon. Uh, Donald. Ya know, I betcha that…What do I know? Hmm...Come on, Pluto."
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Come on. Let’s hurry. Where’s that key…Aw, what do you know, you big palooka?"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "What a dream...This isn’t a dream! Where am I? Oh, boy. Do you know where we are? Hey..."
+      }
+    ],
+    "Leon": [
+      {
+        "Order": 0,
+        "Character": "Leon",
+        "Line": "They’ll come at you out of nowhere. And they’ll keep on coming at you, as long as you continue to wield the Keyblade. But why? Why would it choose a kid like you? Never mind. Now, let’s see that Keyblade. All right, then have it your way. Still... It looks like things are worse than we thought. A lot worse."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Who are you? What’s that supposed to mean? What? There’s no way you’re getting this! "
+      },
+      {
+        "Order": 2,
+        "Character": "Yuffie",
+        "Line": "Hey, you found it. Nice going, Leon."
+      }
+    ],
+    "Riku Awakens": [
+      {
+        "Order": 0,
+        "Character": "Riku",
+        "Line": "Where...am I? Sora! Kairi!"
+      }
+    ],
+    "The Chosen One": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "Gawrsh, there’s nobody here. Sure is spooky! But they’re supposed to be a secret. Ansem? Gawrsh, uh, can we see it? Oh, then maybe the king went to find ‘em. We’ve gotta find him quick!"
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Aw, phooey. I’m not scared. Yeah. Scattered? Wait! First, we need that “key”!"
+      },
+      {
+        "Order": 2,
+        "Character": "Aerith",
+        "Line": "Excuse me. Did the king send you? Okay, you know there are many other worlds out there besides your castle and this town, right? They’ve been secret because they’ve never been connected. Until now. When the Heartless came, everything changed. He was studying the Heartless. He recorded all of his findings in a very detailed report. Its pages are scattered everywhere. To many worlds. Yes, those were my thoughts exactly. That’s right. The Keyblade."
+      },
+      {
+        "Order": 3,
+        "Character": "Kairi",
+        "Line": "Come on, lazy bum. Wake up. You okay? Those creatures that attacked you are after the Keyblade. But it’s your heart they really want, because you wield the Keyblade. Kairi? Who are you talking about? "
+      },
+      {
+        "Order": 4,
+        "Character": "Sora",
+        "Line": "I guess...I’m so glad that you’re okay, Kairi. Huh? The Keyblade...Why don’t you start making sense! What’s going on here? The Heartless? So...this is the key? Well, I didn’t ask for this. How did all this happen? I remember being in my room...Wait a minute! What happened to my home? My island? Riku! Kairi!"
+      },
+      {
+        "Order": 5,
+        "Character": "Yuffie",
+        "Line": "I’m the great ninja Yuffie. I think you might’ve overdone it, Squall. Yeah, we had to get it away from you to shake off those creatures. It turns out that’s how they were tracking you. The ones who attacked you, you remember? The darkness in people’s hearts—that’s what attracts them. Hey, have you heard of someone named Ansem? Exactly! The Keyblade chooses its master. And it chose you."
+      },
+      {
+        "Order": 6,
+        "Character": "Leon",
+        "Line": "That’s Leon. It was the only way to conceal your heart from them. But it won’t work for long. Still hard to believe that you of all people are the chosen one. Well, I suppose beggars can’t be choosers. Those without hearts. And there is darkness within every heart. The Heartless have great fear of the Keyblade. That’s why they’ll keep coming after you no matter what. So tough luck. You know what? I really don’t know."
+      }
+    ],
+    "Sora, Donald, and Goofy": [
+      {
+        "Order": 0,
+        "Character": "Leon",
+        "Line": "Yuffie, go! Sora, let’s go!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aerith",
+        "Line": "Yuffie?"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "Gawrsh, are these the Heartless guys? The key!"
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "Let’s go get ‘em, Goofy! The key!"
+      }
+    ],
+    "The Start of an Adventure": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "So, you were looking for me? I wonder if I could find Riku and Kairi...Yeah, I guess. Happy? Okay, why not? I’ll go with you guys. I’m Sora."
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Uh-huh! Of course. Who knows? But we need him to come with us to help us find the king. But you can’t come along looking like that. Understand? No frowning. No sad face. Okay? This boat runs on happy faces. Donald Duck."
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "Uh-huh! Hey, why don’t you come with us? We can go to other worlds on our vessel. Are you sure? Yeah, ya gotta look funny, like us! That’s one funny face! Name’s Goofy. All for one, one for all."
+      },
+      {
+        "Order": 3,
+        "Character": "Leon",
+        "Line": "They, too, have been seeking the wielder of the Keyblade. Sora, go with them. Especially if you want to find your friends."
+      }
+    ],
+    "Assembly of Darkness": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "That little squirt took down that Heartless! Who’d have thought it?"
+      },
+      {
+        "Order": 1,
+        "Character": "Jafar",
+        "Line": "Such is the power of the Keyblade. The child’s strength is not his own."
+      },
+      {
+        "Order": 2,
+        "Character": "Ursula",
+        "Line": "Why don’t we turn him into a Heartless? That’ll settle things quick enough."
+      },
+      {
+        "Order": 3,
+        "Character": "Captain Hook",
+        "Line": "And the brat’s friends are the king’s lackeys. Swoggle me eyes, they’re all bilge rats by the look of them. Shut up!"
+      },
+      {
+        "Order": 4,
+        "Character": "Oogie Boogie",
+        "Line": "You’re no prize yourself."
+      },
+      {
+        "Order": 5,
+        "Character": "Maleficent",
+        "Line": "Enough. The Keyblade has chosen him. Will it be he who conquers the darkness? Or will the darkness swallow him? Either way, he could be quite useful."
+      }
+    ],
+    "The White Rabbit": [
+      {
+        "Order": 0,
+        "Character": "White Rabbit",
+        "Line": "Oh, my fur and whiskers! I’m late, I’m late, I’m late! Oh dear, oh dear, oh dear! I’m here, I should be there. I’m late, I’m late, I’m late! The queen, she’ll have my head for sure!"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "How did he get so small? Wait, what do we have to do to grow small?"
+      },
+      {
+        "Order": 2,
+        "Character": "Doorknob",
+        "Line": "No, you’re simply too big. Must you be so loud? You woke me up. Good night! I need a bit more sleep. Why don’t you try the bottle...over there?"
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "It talks!"
+      },
+      {
+        "Order": 4,
+        "Character": "Goofy",
+        "Line": "Good morning."
+      }
+    ],
+    "A Curious Trial": [
+      {
+        "Order": 0,
+        "Character": "White Rabbit",
+        "Line": "Court is now in session! Her Majesty, the Queen of Hearts, presiding!"
+      },
+      {
+        "Order": 1,
+        "Character": "Alice",
+        "Line": "I’m on trial? But why? That is so unfair! Of course! I’ve done absolutely nothing wrong! You may be queen, but I’m afraid that doesn’t give you the right to be so...so mean! No! No! Oh, please!"
+      },
+      {
+        "Order": 2,
+        "Character": "Queen of Hearts",
+        "Line": "This girl is the culprit. There’s no doubt about it. And the reason is...because, I say so, that’s why! Well, have you anything to say in your defense? Silence! You dare defy me? The court finds the defendant...Guilty as charged! For the crimes of assault and attempted theft of my heart…Off with her head! Who are you? How dare you interfere with my court? That’s nonsense. Have you any proof?"
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "Hey, guys, we should help her out. Hold it right there! Excuse me. But we know who the real culprit is! Anyway, she’s not the one you’re looking for."
+      },
+      {
+        "Order": 4,
+        "Character": "Donald",
+        "Line": "Yeah, but the– “Meddling”!"
+      },
+      {
+        "Order": 5,
+        "Character": "Goofy",
+        "Line": "We’re outsiders, so wouldn’t that be muddling? Oh, yeah. A-hyuck! And that’s against the rules. Uh-huh. It’s the Heartle—"
+      }
+    ],
+    "Sealing the Keyhole; Wonderland": [
+      {
+        "Order": 0,
+        "Character": "Doorknob",
+        "Line": "What a racket. How’s a doorknob to get any sleep?"
+      }
+    ],
+    "Olympus Coliseum": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Um...It’s way too heavy! What’s so funny? I’ve fought a bunch of monsters!"
+      },
+      {
+        "Order": 1,
+        "Character": "Phil",
+        "Line": "Good timing. Give me a hand, will ya? Move that pedestal over there for me. I gotta spruce this place up for the games. What? Too heavy? Since when have you been such a little—Oh. Wrong guy. What’re you doing here? This here’s the world-famous Coliseum—heroes only! And I got my hands full preparing for the games. So run along, pip-squeaks. Look, it’s like this. Heroes are coming from all over to fight ferocious monsters right here in the Coliseum. Hero? That runt? Hey, if you can’t even move this...You can’t call yourself...A hero! Okay, so it takes more than brawn."
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "You’ve got heroes standing right in front of you. And we’re heroes, too."
+      },
+      {
+        "Order": 3,
+        "Character": "Goofy",
+        "Line": "Yup. He’s a real hero chosen by the Keyblade!"
+      }
+    ],
+    "Entry Pass": [
+      {
+        "Order": 0,
+        "Character": "Phil",
+        "Line": "You know, you ain’t bad, kid. Afraid not. Two words"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Looks like I’m headed for the games. Why not? Come on! A pass?"
+      },
+      {
+        "Order": 2,
+        "Character": "Hades",
+        "Line": "Rather a stubborn old goat, wouldn’t you say? Whoa, hold on there, fuzz boy. Wait, let me guess. You want to enter the games, right? Well, then, hey, get a load of this. It’s all yours. Good luck, kid. I’m pulling for you, little shorty."
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "Who are you?"
+      }
+    ],
+    "The Contract": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "That little punk is your next opponent, okay? Now, don’t blow it. Just take him out. I know! You think I don’t know? I wrote the contract! I know it says you’re only required to kill Hercules in this tournament. But you’ve gotta fight that kid to get to him. Come on. Hey, it’s like that old goat says- Rule 11- It’s all just a game, so let loose and have fun with it! I mean, a casualty along the way is no big deal, right? Geez. Stiffer than the stiffs back home. Still, suckers like him are hard to come by..."
+      },
+      {
+        "Order": 1,
+        "Character": "Cloud",
+        "Line": "The great god of the Underworld is afraid of a kid? Sorry, but my contract says—"
+      }
+    ],
+    "Accidents Happen": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "Oh, right, there was one other rule I forgot- Accidents happen."
+      },
+      {
+        "Order": 1,
+        "Character": "Phil",
+        "Line": "Herc!"
+      },
+      {
+        "Order": 2,
+        "Character": "Hercules",
+        "Line": "Phil, get them out of here!"
+      }
+    ],
+    "Cerberus": [
+      {
+        "Order": 0,
+        "Character": "Phil",
+        "Line": "Kid, I got two words of advice for you- Attack!"
+      }
+    ],
+    "Jr. Heroes": [
+      {
+        "Order": 0,
+        "Character": "Phil",
+        "Line": "Thus, I do hereby dub thee junior heroes, and confer upon thee full rights and privileges to participate in the games. Further— You rookies still don’t understand what it takes to be a true hero. There ain’t gonna be any games for a while. Gotta clean up the mess from that last battle first. I still can’t believe that squirt actually beat Cerberus. My lips are sealed."
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Hey! What do you mean “junior heroes”?"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "So, what does it take?"
+      },
+      {
+        "Order": 3,
+        "Character": "Hercules",
+        "Line": "Well, that’s just something you’ll have to find out for yourselves. Just the way that I did. Just between us, I’d already worn Cerberus down by the time the little guy jumped in."
+      },
+      {
+        "Order": 4,
+        "Character": "Sora",
+        "Line": "No problem. We’ll start by proving ourselves in the games. Okay, we’ll be back."
+      }
+    ],
+    "Cloud's Darkness": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Hey, are you all right? So why did you go along with him, anyway? You’ll find it. I’m searching, too. How about a rematch sometime? Fair and square, no dark powers involved."
+      },
+      {
+        "Order": 1,
+        "Character": "Cloud",
+        "Line": "Yeah. I’m looking for someone. Hades promised to help. I tried to exploit the power of darkness, but it backfired. I fell into darkness, and I couldn’t find the light. For your light? Don’t lose sight of it. I think I’ll pass."
+      }
+    ],
+    "Hades' Plan": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "He’s strong, he’s kind. He’s always there for you, and he’s handsome to boot. He’s perfect. Perfect. Perfectly infuriating! He makes me crazy. Wait a minute. What are you worried about? All the pieces are in place. Relax. Here’s what you do. Let Hercules train the kid. In the next games, I’ll take care of them both. Who invited you to the party? Stay out of this. This is my show."
+      },
+      {
+        "Order": 1,
+        "Character": "Maleficent",
+        "Line": "As you wish. Fight to your heart’s content."
+      }
+    ],
+    "Tarzan": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Oww...my head...Donald? Goofy? Um...thank you. Huh? Uh, what is this place? Okaaay... Where did the others go? Look, I got separated from my friends. Have you seen them? Friends...Right, my friends! There’s two of ‘em. The loud one is Dona—You know what? Never mind. I’m looking for my friends, Riku and Kairi. Right! Uhh...right...Really!? Huh? Not sure I understand, but show me! Take me to Riku and Kairi! And I’m...Sora. Tarzan go, Sora go go!"
+      },
+      {
+        "Order": 1,
+        "Character": "Tarzan",
+        "Line": "Sabor, danger. Thank you. This place, this place. Friends! Look for Riku, friends? Kairi, friends? Friends here. Friends here. Tarzan. Tarzan go."
+      }
+    ],
+    "Lost": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "Gawrsh, where are we? I sure hope Sora’s okay."
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Aw, who needs him? We can find the king without him. Huh?"
+      }
+    ],
+    "Friends Reunited": [
+      {
+        "Order": 0,
+        "Character": "Tarzan",
+        "Line": "Jane!"
+      },
+      {
+        "Order": 1,
+        "Character": "Jane",
+        "Line": "Tarzan! Oh, and who is this?  Oh, you speak English! So, then, obviously, you’re not related to Tarzan…Are you here to study the gorillas? Mr. Clayton, we’re studying them, not hunting them. This is research. Well, the more the merrier. Do make yourselves at home."
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Uh, hi there. I’m— Goofy! Donald! Well, anyway...I’m staying. Huh?"
+      },
+      {
+        "Order": 3,
+        "Character": "Clayton",
+        "Line": "Highly doubtful. A circus of clowns. Not much use for hunting gorillas."
+      },
+      {
+        "Order": 4,
+        "Character": "Goofy",
+        "Line": "Sora! Sora, look what we found. Look at this."
+      },
+      {
+        "Order": 5,
+        "Character": "Donald",
+        "Line": "I’m staying."
+      }
+    ],
+    "Clayton's Scheme": [
+      {
+        "Order": 0,
+        "Character": "Jane",
+        "Line": "Well, Tarzan? Really, Mr. Clayton. Tarzan wouldn’t hide— Tarzan...are you sure? Kerchak?"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Where are my friends, Riku and Kairi? Hey, I thought—"
+      },
+      {
+        "Order": 2,
+        "Character": "Clayton",
+        "Line": "That leaves just one place.Young man, we’ve been in this jungle for some time now. But we have yet to encounter these friends of yours. I’d wager they’re with the gorillas. But Tarzan refuses to take us to them.Then take us there! Take us to the gorillas. Go-ril-las. He must be the leader. Perfect. I’ll go along as an escort. After all, the jungle is a dangerous place."
+      },
+      {
+        "Order": 3,
+        "Character": "Tarzan",
+        "Line": "Tarzan go see Kerchak."
+      }
+    ],
+    "Kerchak": [
+      {
+        "Order": 0,
+        "Character": "Tarzan",
+        "Line": "Kerchak, please listen to me. I know the nesting ground is secret, but I trust them. You see, I want to help them because...because... well, they need us. Kerchak. Kerchak..."
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "Uh... Did you get that?"
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "No."
+      }
+    ],
+    "Blasted Gorillas!": [
+      {
+        "Order": 0,
+        "Character": "Donald",
+        "Line": "What’s the big idea?"
+      },
+      {
+        "Order": 1,
+        "Character": "Tarzan",
+        "Line": "Wait, Kerchak. Please!"
+      },
+      {
+        "Order": 2,
+        "Character": "Clayton",
+        "Line": "You don’t understand. I was only trying to... Ah. A snake slithered by, you see. I saved that poor gorilla’s life. Now, Miss Porter, as I told you, I was not aiming at the gorilla. All because of one mishap? Come, now…What am I doing with these imbeciles? Blasted gorillas! I’ll hunt down every last one of them! I’ll track them down somehow.  I’ll stake my life on it."
+      },
+      {
+        "Order": 3,
+        "Character": "Jane",
+        "Line": "How could you do such a thing! You are not to go near the gorillas again!"
+      }
+    ],
+    "Clayton's Darkness": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "No! Clayton?"
+      },
+      {
+        "Order": 1,
+        "Character": "Tarzan",
+        "Line": "Not Clayton! *&&X%. Not Clayton! Tarzan, home."
+      }
+    ],
+    "Sealing the Keyhole; Deep Jungle": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "This is your home? But that means…Oh, so that’s what it meant. Sorry about what I said."
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "Huh? Yeah. All for one, huh? But it’s sure not the king’s."
+      },
+      {
+        "Order": 2,
+        "Character": "Jane",
+        "Line": "The waterfalls... They’re echoing all the way here. Oh, now I’ve got it. *&&X% means heart. Friends in our hearts...I think someone has a new admirer."
+      },
+      {
+        "Order": 3,
+        "Character": "Tarzan",
+        "Line": "*&&X%. Friends there. See friends. Heart… Friends, same heart. Clayton, lose heart. No heart, no see friends. No heart, no friends."
+      },
+      {
+        "Order": 4,
+        "Character": "Donald",
+        "Line": "I’m sorry too. A gummi! No, no, no, no! Daisy would kill me!"
+      }
+    ],
+    "Figures in the Darkness": [
+      {
+        "Order": 0,
+        "Character": "Jafar",
+        "Line": "What drew the Heartless to that world? A weak-hearted fool like him stood no chance against the Heartless. But the boy is a problem. He found one of the Keyholes."
+      },
+      {
+        "Order": 1,
+        "Character": "Maleficent",
+        "Line": "The hunter lured them there. It was his lust for power that was the bait. But it seems the bait was too tasty for his own good. Fear not. It will take him ages to find the rest. Besides, he remains blissfully unaware of our other plan. They are falling into our hands, one by one. Speaking of which..."
+      },
+      {
+        "Order": 2,
+        "Character": "Oogie Boogie",
+        "Line": "Yeah, he got chomped instead!"
+      },
+      {
+        "Order": 3,
+        "Character": "Ursula",
+        "Line": "Yes, the princesses…"
+      }
+    ],
+    "Kairi": [
+      {
+        "Order": 0,
+        "Character": "Kairi",
+        "Line": "There’s something about this musty place...It reminds me of the secret place back home, where we used to scribble on the walls. Remember?"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Kairi?"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "Sora?"
+      }
+    ],
+    "Reunited with Riku": [
+      {
+        "Order": 0,
+        "Character": "Riku",
+        "Line": "There you are. What’s going on? Hey, hey, cut it out. I hope not. Took forever to find you. Isn’t she with you? Well, don’t worry. I’m sure she made it off the island, too. We’re finally free. Hey, she might even be looking for us now. We’ll all be together again soon. Don’t worry. Just leave everything to me. I know this— Sora, what did you— Who are they? Really? Well, what do you know? I never would have guessed. So, this is called a Keyblade? Catch!"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Riku! I’m not dreaming this time, right? Riku! Wait a second, where’s Kairi? Leave it to who? I’ve been looking for you and Kairi, too, with their help. We’ve visited so many places and worlds, looking for you. What’s that mean? Huh? Hey, give it back. Whoa! Okay, so you’re coming with us, right? We’ve got this awesome rocket. Wait ‘til you see it! What? Oh, come on! He’s my friend! Riku? Nice going. Oh, well. At least, he’s okay. And who knows? Maybe we’ll run into Kairi soon, too."
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "Ahem. My name is— Who would’ve thought it? No, he can’t come! Forget it! I don’t care!"
+      },
+      {
+        "Order": 3,
+        "Character": "Goofy",
+        "Line": "Oh, and guess what? Sora’s the Keyblade master. Huh? He’s gone."
+      }
+    ],
+    "A Dark Proposal": [
+      {
+        "Order": 0,
+        "Character": "Maleficent",
+        "Line": "You see? It’s just as I told you. While you toiled away trying to find your dear friend, he quite simply replaced you with some new companions. Evidently, now he values them far more than he does you.You’re better off without that wretched boy. Now, think no more of him and come with me. I’ll help you find what you’re searching for..."
+      }
+    ],
+    "Pinocchio": [
+      {
+        "Order": 0,
+        "Character": "Jiminy Cricket",
+        "Line": "Well, well, as I live and breathe! If it isn’t Pinocchio! What in the world are you doing down here? I just don’t believe it. And here I was, up all night, just worried sick about you. Why of all the—Pinocchio!"
+      },
+      {
+        "Order": 1,
+        "Character": "Pinocchio",
+        "Line": "Oh. Hi, Jiminy. Um... Playing hide-and-seek."
+      }
+    ],
+    "Jafar's Plan": [
+      {
+        "Order": 0,
+        "Character": "Maleficent",
+        "Line": "And the Keyhole? You said you had things under control. We need all seven princesses of heart to open the final door. Any fewer is useless. Don’t steep yourself in darkness too long. The Heartless consume the careless."
+      },
+      {
+        "Order": 1,
+        "Character": "Jafar",
+        "Line": "The Heartless are searching for it now. I’m certain we’ll find it soon enough. So that just leaves…The girl is more trouble than she’s worth. Agrabah is full of holes for rats to hide in. But why worry about Princess Jasmine? With her or without her, surely this world will be ours when we find the Keyhole. Well, if the princess is that important, we’ll find her. Find Jasmine and bring her to me at once. Your concern is touching, but hardly necessary."
+      },
+      {
+        "Order": 2,
+        "Character": "Iago",
+        "Line": "Jafar! I’ve looked everywhere for Jasmine. She’s disappeared like magic!"
+      }
+    ],
+    "A Princess in Hiding": [
+      {
+        "Order": 0,
+        "Character": "Jasmine",
+        "Line": "Who’s there? Hello?"
+      }
+    ],
+    "Jasmine, Run!": [
+      {
+        "Order": 0,
+        "Character": "Jafar",
+        "Line": "Aladdin? Where might I find this street rat? Jasmine, allow me to find you more suitable company, my dear princess. These little rats won’t do, you see. Ah, the boy who holds the key."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Jasmine, run!"
+      }
+    ],
+    "Wish Number One": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Genie, get rid of these guys!"
+      },
+      {
+        "Order": 1,
+        "Character": "Genie",
+        "Line": "Wish Number One, coming right up!"
+      }
+    ],
+    "Genie of the Lamp": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "I see... Thanks, Sora. Same old stuff. Hunting legendary treasure. Just paid a visit to the Cave of Wonders. I found that magic carpet, and this lamp. Legend has it that whoever holds the lamp can summon the— Hmm, how about making me a fabulously wealthy prince? No, thanks! I think I’ll put that on hold until we reach Agrabah. You see, there’s this girl in Agrabah named Jasmine. But she’s a princess, and I’m... Aww, she could never fall for a guy like me. What? Well, c’mon, let’s get going! Say, Genie, what if I use my last wish to free you from the lamp? What do you think? Genie, it’s a promise. After we help Jasmine."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Aladdin, what’re you doing out here? Oh, that’s right! She’s in trouble, Aladdin! I guess you don’t get out much, huh?"
+      },
+      {
+        "Order": 2,
+        "Character": "Genie",
+        "Line": "Please, kid, leave the intros to a professional.The one and only GENIE OF THE LAMP! Rub-a-dub-dub the lamp and have your dearest wishes granted. Today’s winner is...Aladdin! Congratulations! Patience, my fine feathered friend. Any three wishes ! A one wish, a two wish, a three wish. Then I make like a banana and split! Our lucky winner made his first wish—  And let me tell you, what a doozy that wish was— So he has two left. So, master, what’ll you have for Wish Number Two? Oooh! Money! Royalty! Fame! Okay, you asked for it! A hundred servants and a hundred camels loaded with gold! Just say the word and I’ll deliver it in 30 minutes or less, or your meal’s free. Hey, I’ll even throw in a cappuccino! Okay. Ah, fresh air! The great outdoors! Comes with the job. Phenomenal cosmic powers. Itty-bitty living space. It’s always three wishes, then back to my portable prison. I’m lucky to see the light of day every century or two...You’d do that?"
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "Any wish? Oh. Princess?"
+      },
+      {
+        "Order": 4,
+        "Character": "Goofy",
+        "Line": "Uh, why a prince? Jasmine?"
+      }
+    ],
+    "Wish Number Two": [
+      {
+        "Order": 0,
+        "Character": "Jafar",
+        "Line": "Setting your sights a little high, aren’t you boy? Back to your hole, street rat. I will not allow you to trouble the princess any more. So sorry, boy. I’m afraid your second wish has been denied. And now, I bid you all farewell. Attack!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aladdin",
+        "Line": "Jasmine! Genie, help Jasmine, please! Jasmine! To the desert! Come on, let’s move!"
+      },
+      {
+        "Order": 2,
+        "Character": "Jasmine",
+        "Line": "I’m so sorry, Aladdin."
+      },
+      {
+        "Order": 3,
+        "Character": "Genie",
+        "Line": "One wish left! You’re making this really easy, you know. I’m sorry, Al."
+      }
+    ],
+    "The Keyhole Revealed": [
+      {
+        "Order": 0,
+        "Character": "Jafar",
+        "Line": "My first wish, Genie! Show me the Keyhole!"
+      }
+    ],
+    "The Royal Vizier": [
+      {
+        "Order": 0,
+        "Character": "Maleficent",
+        "Line": "That boy again?"
+      },
+      {
+        "Order": 1,
+        "Character": "Jafar",
+        "Line": "He’s more persistent than I expected. Why not explain the situation to that boy Riku? Doing so may actually prove useful to our– Not a chance. You see, she’s a princess—one of seven who somehow hold the key to opening the door. But you fools won’t live to see what lies beyond it. Genie! My second wish. Crush them! "
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Wait a second. Are you Maleficent?"
+      },
+      {
+        "Order": 3,
+        "Character": "Aladdin",
+        "Line": "Jafar, let Jasmine go! Genie, no!"
+      },
+      {
+        "Order": 4,
+        "Character": "Goofy",
+        "Line": "Open..."
+      },
+      {
+        "Order": 5,
+        "Character": "Donald",
+        "Line": "...the door?"
+      },
+      {
+        "Order": 6,
+        "Character": "Genie",
+        "Line": "Sorry, Al. The one with the lamp calls the shots. I don’t have a choice."
+      }
+    ],
+    "Genie Jafar": [
+      {
+        "Order": 0,
+        "Character": "Jafar",
+        "Line": "Genie! My final wish! I want you to make me an all-powerful genie!"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Okay, Jafar! Back to your lamp!"
+      }
+    ],
+    "Sealing the Keyhole; Agrabah": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Jasmine? Jasmine! Jasmine!"
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "Whoa, we’d better get out of here!"
+      }
+    ],
+    "Wish Number Three": [
+      {
+        "Order": 0,
+        "Character": "Genie",
+        "Line": "Uh, earth to Al. Hello? You still have one wish left. Look, just say the word. Ask me to find Jasmine for you. Al! Sorry, Al. I’m done taking orders from others. But... A favor, now that’s entirely different. I guess I could give that a try. After all, we’re pals, right, Al? Just leave it to me!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aladdin",
+        "Line": "I...I wish...For your freedom, Genie. A deal’s a deal, Genie. Now you can go anywhere you want. You’re your own master. But if you can, it’d be great if you could go along with them and help Sora find Jasmine. Genie..."
+      }
+    ],
+    "Riku's Wish": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "That smarmy vizier could’ve had ‘em—if someone had stuck around to give him a hand.  Whoa, whoa, whoa. Lighten up. I’m as cool as they come, okay? By the way, kid, have we got something special for you."
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "Hey, I did my part. I brought the princess, didn’t I? Huh? Kairi! Why are you doing all this for me? What’s the catch? I seriously doubt that."
+      },
+      {
+        "Order": 2,
+        "Character": "Maleficent",
+        "Line": "Jafar was beyond help, consumed by his own hatred. One should beware of letting it burn too fiercely. We had a deal, yes? You help us, and we grant you your wish...Go to her. Your vessel is waiting. Catch? What’s the catch? Silly, boy. You’re like a son to me. I only want you to be happy. Believe what you wish. But lest we forget, I kept my end of the bargain."
+      },
+      {
+        "Order": 3,
+        "Character": "Captain Hook",
+        "Line": "Just remember, this is no pleasure cruise. It won’t be a pleasant voyage."
+      }
+    ],
+    "Memories": [
+      {
+        "Order": 0,
+        "Character": "Young Sora",
+        "Line": "It’s true! I saw it with my own eyes! What difference does it make? There’s a huge monster in there, I tell you! No problem. Let’s do it! Listen! There! Can you hear it growling? Aw, man. I wish it was a monster! Hold on! What’s that over there? Geez, is that really all that’s in here? Hm? Sure. But isn’t there anything fun to do now? Hey, you know the new girl at the mayor’s house? Did you hear?"
+      },
+      {
+        "Order": 1,
+        "Character": "Young Riku",
+        "Line": "You sure you didn’t just hear it this time? All right. Suppose there really is a monster... Think we can beat it by ourselves, Sora? Shh, quiet. We’ve gotta be careful. See that? It was just the wind making that noise. A window, or maybe a door? It won’t open. What do you expect in a boring place like this? Hey, Sora. When we grow up, let’s get off this island. We’ll go on real adventures, not this kid stuff!"
+      }
+    ],
+    "Inside the Whale": [
+      {
+        "Order": 0,
+        "Character": "Donald",
+        "Line": "Knock it off! Hey! Who’s there? Oh, it’s just Pinocchio. ...Pinocchio!?"
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "Hey, Sora. Are you okay? Uh, ya know, I think that big ol’ whale Monstro just swallowed us. And for today’s weather"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "What are you guys doing? Where are we, anyway? Whoa!"
+      },
+      {
+        "Order": 3,
+        "Character": "Pinocchio",
+        "Line": "It’s me."
+      },
+      {
+        "Order": 4,
+        "Character": "Jiminy Cricket",
+        "Line": "Pinocchio? Pinocch, where are you going? Pinocch! Come on, everybody! After him! Quick!"
+      }
+    ],
+    "Geppetto": [
+      {
+        "Order": 0,
+        "Character": "Geppetto",
+        "Line": "What have you got there, Pinocchio?"
+      },
+      {
+        "Order": 1,
+        "Character": "Pinocchio",
+        "Line": "With this, we can get out of her, Father."
+      },
+      {
+        "Order": 2,
+        "Character": "Geppetto",
+        "Line": " Really? With this big block? You think so?"
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "It’s true. So, how did you end up here, Pinocchio?"
+      },
+      {
+        "Order": 4,
+        "Character": "Geppetto",
+        "Line": "Oh, my. So the whale swallowed all of you, too? My goodness."
+      },
+      {
+        "Order": 5,
+        "Character": "Sora",
+        "Line": "Yeah, looks like it."
+      },
+      {
+        "Order": 6,
+        "Character": "Geppetto",
+        "Line": "My name is Geppetto. I’m Pinocchio’s father. When we got separated, I traveled all over, looking for him. Thank goodness we’re together again.So, you seem to know Pinocchio quite well. I hope he was a good boy in my absence. Well, we’ve all had quite a journey. Right, Pinocchio? Pinocchio?"
+      }
+    ],
+    "Playing Games": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "What are you doing? Come on, let’s go back. Pinocchio, stop fooling around! This is no time for games! Riku! Wh-What are you doing here? You know what I mean! What about Kairi? Did you find her? Come on!"
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "You know, Geppetto’s awfully worried about you."
+      },
+      {
+        "Order": 2,
+        "Character": "Riku",
+        "Line": "But, Sora, I thought you liked games. Or are you too cool to play them now that you have the Keyblade? Just playing with Pinocchio. Maybe. Catch us and maybe I’ll tell you what I know."
+      }
+    ],
+    "A Heart's Darkness": [
+      {
+        "Order": 0,
+        "Character": "Maleficent",
+        "Line": "Why do you still care about that boy? He has all but deserted you for the Keyblade and his new companions, after all. Oh, really? Of course you were. Beware the darkness in your heart. The Heartless prey upon it."
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "I don’t care about him. I was just messing with him a little. Mind your own business."
+      }
+    ],
+    "Saving Pinocchio": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Riku! What’s the matter with you? What are you thinking? Don’t you realize what you’re doing? I do. No problem. Let’s do it!"
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "I was about to ask you the same thing, Sora. You only seem interested in running around and showing off that Keyblade these days. Do you even want to save Kairi?"
+      }
+    ],
+    "A Puppet": [
+      {
+        "Order": 0,
+        "Character": "Geppetto",
+        "Line": "Pinocchio! Pinocchio! Please! Give me back my son! He’s no puppet! Pinocchio is my little boy!"
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "Sorry, old man. I have some unfinished business with this puppet.He is unusual. Not many puppets have hearts. I’m not sure, but maybe he can help someone who’s lost theirs. What do you care about her?"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Wait a minute. Are you talking about Kairi?"
+      }
+    ],
+    "A Puppet's Conscience": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Hey, let Pinocchio go, Riku. Heart or no heart, at least he still has a conscience. You might not hear it, but right now it’s loud and clear. And it’s telling me you’re on the wrong side!"
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "A puppet that’s lost its heart to the Heartless... Maybe it holds the key to helping Kairi. How about it, Sora? Let’s join forces to save her. We can do it, together.What? You’d rather fight me? Over a puppet that has no heart? Conscience? Then you leave me no choice."
+      },
+      {
+        "Order": 2,
+        "Character": "Jiminy Cricket",
+        "Line": "Pinocchio! Pinocchio!"
+      },
+      {
+        "Order": 3,
+        "Character": "Pinocchio",
+        "Line": "Jiminy... I’m not gonna make it. Oh! I guess I’m okay!"
+      },
+      {
+        "Order": 4,
+        "Character": "Donald",
+        "Line": "Run!"
+      },
+      {
+        "Order": 5,
+        "Character": "Sora",
+        "Line": "Riku! Riku, where are you?"
+      }
+    ],
+    "Kairi's Heart": [
+      {
+        "Order": 0,
+        "Character": "Riku",
+        "Line": "So, Kairi’s like a lifeless puppet now? And her heart was...Tell me! What can I do? Soon, Kairi. Soon."
+      },
+      {
+        "Order": 1,
+        "Character": "Maleficent",
+        "Line": "Precisely. Taken by the Heartless, no doubt.There are seven maidens of the purest heart. We call them the princesses of heart. Gather them together, and a door will open to the heart of all worlds. Within lies untold wisdom. There, you will surely find a way to recover Kairi’s heart. Now, I’ll grant you a marvelous gift. The power to control the Heartless."
+      }
+    ],
+    "Under the Sea": [
+      {
+        "Order": 0,
+        "Character": "Ariel",
+        "Line": "Come on, Sebastian! Relax, Sebastian. They don’t look like one of them. Right, Flounder? They do seem... a little different. Where are you from? Oh, I see. In that case... Sebastian can show you how we swim around here. Oh, don’t worry. Sebastian!"
+      },
+      {
+        "Order": 1,
+        "Character": "Sebastian",
+        "Line": "Ariel, wait! Slow down! Don’t leave me behind! Ariel, King Triton will not like this! Good job. Now let’s move onto self-defense. Class is over. Good luck!"
+      },
+      {
+        "Order": 2,
+        "Character": "Flounder",
+        "Line": "I don’t know. There’s something weird about them."
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "What do you mean? We’re from kind of far away. And we’re not really used to these waters."
+      }
+    ],
+    "King Triton": [
+      {
+        "Order": 0,
+        "Character": "Triton",
+        "Line": "That was too close. As long as I have my trident, I will not tolerate those creatures inside this palace. Oh, Ariel! When will you listen? It’s dangerous out there! Strange creatures lurk outside. And who are they? They don’t look familiar. The what? There’s no such thing! Certainly not here! Ariel, not another word! You are not to leave the palace. Is that clear? Perhaps I’m being too strict... I’m just concerned for her safety. That need not concern you, Sebastian. Have you anything to report? I knew it. That sea witch is up to no good again. I see exile from the palace has taught her nothing. And I told you to keep Ariel away from such danger, did I not?"
+      },
+      {
+        "Order": 1,
+        "Character": "Ariel",
+        "Line": "Daddy! They helped us fight off those creatures. What’s that? But, Daddy..."
+      },
+      {
+        "Order": 2,
+        "Character": "Sebastian",
+        "Line": "Behold. You swim before the ruler of the seas"
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "We’re from an ocean very far away."
+      },
+      {
+        "Order": 4,
+        "Character": "Goofy",
+        "Line": "Yup. We came to find the Keyhole. A-hyuck! Well, it’s a—"
+      }
+    ],
+    "Ursula, the Sea Witch": [
+      {
+        "Order": 0,
+        "Character": "Ursula",
+        "Line": "Those impudent fools will never find the Keyhole. But the girl could prove useful. And I’ve got the Heartless on my side. Triton, my old friend...Your day is coming."
+      }
+    ],
+    "Clashing Heads": [
+      {
+        "Order": 0,
+        "Character": "Triton",
+        "Line": "Ariel, you’ve disobeyed me again!  I told you not to leave the palace! Young man, you’re not from another ocean. You’re from another world. Aren’t you? Then you must be the key bearer. You may fool Ariel, but you can’t fool me. You don’t know your dorsal fin from your tail. As the key bearer, you must already know... One must not meddle in the affairs of other worlds. You have violated this principle. The key bearer shatters peace and brings ruin. I thank you for saving my daughter. But there is no room in my ocean for you or your key."
+      },
+      {
+        "Order": 1,
+        "Character": "Ariel",
+        "Line": "Daddy, no! How could you..."
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Huh? How did you know? Aw...Of course I know that, but..."
+      },
+      {
+        "Order": 3,
+        "Character": "Goofy",
+        "Line": "Aw, Sora’s not like that."
+      }
+    ],
+    "Stolen Trident": [
+      {
+        "Order": 0,
+        "Character": "Flotsam",
+        "Line": "My, my, the poor child suffers such deep sorrow. Wait. Maybe she can be of some help. Oh, she would surely help you. Ursula can help...We cannot find the Keyhole."
+      },
+      {
+        "Order": 1,
+        "Character": "Jetsam",
+        "Line": "What a pity. If only there were something we could do...Yes. Maybe she can be of some help to you. She’d make all your dreams come true. Ursula can help...The Keyhole is not here."
+      },
+      {
+        "Order": 2,
+        "Character": "Ariel",
+        "Line": "Who’re you talking about? You’re Ursula? I was just wondering if—What? Ursula, no! I didn’t want this! Daddy! Wait, I’m going with you! My father is hurt and it’s all my fault. I have to stop Ursula!"
+      },
+      {
+        "Order": 3,
+        "Character": "Ursula",
+        "Line": "You called, my dear?It’s all right. Helping others is what I live for. Let me guess. You wish to see other worlds. That shouldn’t be too hard. After all, your new friends came from another world. But they had special help—that mysterious key. Now, now. Cheer up, sweetie. You have something special, too.Now listen carefully. I think the Keyhole they seek is somewhere in the palace. Now, my dear, if you can take me there without your daddy knowing...I can help you get to these other worlds you long for. The trident is mine at last! And I couldn’t have done it without your help, my dear. Why not? Aren’t you tired of following your dear daddy’s orders? Oh, yes. We had a deal, didn’t we? Time for a little journey—to the dark world of the Heartless! What? Why, we have company. I’m afraid you’re a little late, handsome!"
+      },
+      {
+        "Order": 4,
+        "Character": "Triton",
+        "Line": "The trident... We must get it back."
+      },
+      {
+        "Order": 5,
+        "Character": "Sora",
+        "Line": "Come on, let’s go!"
+      },
+      {
+        "Order": 6,
+        "Character": "Sebastian",
+        "Line": "That’s right. I’m right behind you, Ariel."
+      }
+    ],
+    "Ursula's Lair": [
+      {
+        "Order": 0,
+        "Character": "Donald",
+        "Line": "Come out! You can’t run!"
+      },
+      {
+        "Order": 1,
+        "Character": "Sebastian",
+        "Line": "Your time has come!"
+      },
+      {
+        "Order": 2,
+        "Character": "Ursula",
+        "Line": "You’ll pay for this!"
+      }
+    ],
+    "The New Ruler of the Seas": [
+      {
+        "Order": 0,
+        "Character": "Ursula",
+        "Line": "You pathetic fools! I rule the seas now! The sea and all its spoils bow to my power!"
+      }
+    ],
+    "Sealing the Keyhole; Atlantica": [
+      {
+        "Order": 0,
+        "Character": "Ariel",
+        "Line": "Tell me, Sora. Your world, what’s it like? It’s okay. Besides, if you can travel to other worlds, maybe I can, too. So many places I want to see... I know I’ll get there someday. I’ll find a way somehow. I’m sure of it."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Oh, about that... Sorry for lying to you."
+      },
+      {
+        "Order": 2,
+        "Character": "Sebastian",
+        "Line": "Well, if you find it, do me a favor and leave me out of it."
+      }
+    ],
+    "The King of Nightmares": [
+      {
+        "Order": 0,
+        "Character": "Mayor",
+        "Line": "And now, allow me to introduce...The master of terror... the king of nightmares—Jack Skellington! Bravo, Jack! Bravo! Those ghosts will be a big hit at this year’s Halloween! Then I’ll go attend to the decorations."
+      },
+      {
+        "Order": 1,
+        "Character": "Jack Skellington",
+        "Line": "Thank you, thank you! But their movement still needs work. It’s not scary enough. I want to strike bone-chilling terror. I’m going to consult the doctor."
+      }
+    ],
+    "To Make a Heart": [
+      {
+        "Order": 0,
+        "Character": "Jack Skellington",
+        "Line": "I don’t understand. Maybe the guidance system was damaged in the explosion. Oh, I’ve got it! Why, of course! The Heartless need a heart! Doctor, do you think we can add a heart to that device? To make a heart, first take a container with a lock...My! That was amazing! Uh, and you are...Well done, Sora! I’d like you to be a part of this year’s Halloween. Oh, the Heartless came to town just recently. What’s frustrating is I can’t get them to dance with me. So the doctor and I are trying to improve the guidance system. He’s quite a genius! Okay, Doctor, let’s continue. The ingredients for a heart- Pulse. Emotion. Fear. Hope and despair. Mix them all together, and we have a heart! It failed! No problem. Sora, would you like to come along?"
+      },
+      {
+        "Order": 1,
+        "Character": "Dr. Finkelstein",
+        "Line": "Nonsense. My devices are always perfect! Certainly. A heart’s not all that complicated. Let’s get to work. We need the key to this thing first! Terror. Maybe we’re missing some ingredients. Let’s try adding memory. Sally! Sally! Good-for-nothing girl! Don’t know why I bothered creating her! Sally’s got the memory we need. See if you can track her down."
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Sora. What’s this Heartless doing here? Sure."
+      }
+    ],
+    "Out of Control": [
+      {
+        "Order": 0,
+        "Character": "Mayor",
+        "Line": "Jack! Jack! We have a major crisis! The Heartless are completely out of control! We can’t stop them!"
+      },
+      {
+        "Order": 1,
+        "Character": "Jack Skellington",
+        "Line": "Hmm... Maybe our experiment triggered something. Everything will be fine, Mayor. You have nothing to worry about."
+      }
+    ],
+    "The Memory": [
+      {
+        "Order": 0,
+        "Character": "Jack Skellington",
+        "Line": "Zero! Have you seen Sally anywhere? No, everything’s going great. We’re going to have the best Halloween ever. All we need now is your memory. Nothing could beat what I’ve got planned! Once we give the Heartless a heart, they’ll dance just as I envision it. Trust me. You’re going to love it!"
+      },
+      {
+        "Order": 1,
+        "Character": "Sally",
+        "Line": "Is something wrong, Jack? “Memory”? You mean this? Jack, I have a bad feeling about this. Why don’t you try something else? There’s still time."
+      },
+      {
+        "Order": 2,
+        "Character": "Lock",
+        "Line": "Lock! Yeah, I sure did! A heart! What should we do?"
+      },
+      {
+        "Order": 3,
+        "Character": "Shock",
+        "Line": "Shock! Gosh, you really are stupid! Isn’t it obvious?"
+      },
+      {
+        "Order": 4,
+        "Character": "Barrel",
+        "Line": "Barrel! Did you hear that? Tell Oogie Boogie."
+      }
+    ],
+    "Oogie Boogie's Plan": [
+      {
+        "Order": 0,
+        "Character": "Oogie Boogie",
+        "Line": "A heart? That bonehead Jack is really making a heart? I’ll be jiggered! That works for me! Ohh, when I get my hands on that...Well, I’ve got no hands, but I’m still gonna nab that heart and control the Heartless."
+      }
+    ],
+    "The Stolen Heart": [
+      {
+        "Order": 0,
+        "Character": "Dr. Finkelstein",
+        "Line": "There you go. This time it’s sure to work."
+      },
+      {
+        "Order": 1,
+        "Character": "Barrel",
+        "Line": "Ya!"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "We lost them!"
+      },
+      {
+        "Order": 3,
+        "Character": "Jack Skellington",
+        "Line": "Zero, after them, quick! I knew Oogie Boogie was behind this!"
+      }
+    ],
+    "Come and Get It": [
+      {
+        "Order": 0,
+        "Character": "Oogie Boogie",
+        "Line": "You want it? Well, then come on over and get it! Now, let’s see if I can get their attention. Oh, Heartless! This is it? Nobody disrespects me! Nobody!"
+      }
+    ],
+    "Another Halloween Plan": [
+      {
+        "Order": 0,
+        "Character": "Jack Skellington",
+        "Line": "Sally, why didn’t I listen to you?"
+      },
+      {
+        "Order": 1,
+        "Character": "Sally",
+        "Line": "Don’t feel bad, Jack. We’ll come up with another plan for Halloween. Next time, we’ll do it together."
+      }
+    ],
+    "Winnie the Pooh": [
+      {
+        "Order": 0,
+        "Character": "Pooh",
+        "Line": "Think, think. Think, think. Nothing. Just thinking. I was thinking of how to say goodbye to Pooh. Yes? Yes, I’m Winnie the Pooh. Pooh for short. Who are you? Oh. Hello, Sora. Have you come to say goodbye to Pooh, too? Because everyone’s gone away. Well, we all lived here in the Hundred Acre Wood. And we’d take walks together, or play Pooh sticks... And every day, I’d eat some honey. Just one small smackerel would taste very good right now. But now everyone’s gone. All my friends, and my favorite Hunny Tree too. Everyone must’ve gone away while I was napping, I think... So, who knows? Maybe I shall end up going away somewhere as well. But I wonder, how do I say goodbye to myself? Think, think, think. Oh, my tumbly is getting rather rumbly."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Hi there. What’s wrong? Oh. Pooh? Wait a second. You’re Pooh? I’m Sora. Well, no. Why would I do that? We’ve only just met. What do you mean?"
+      }
+    ],
+    "Empty Hunny Pot": [
+      {
+        "Order": 0,
+        "Character": "Pooh",
+        "Line": "Oh, bother. There’s no more honey left. If only the Hunny Tree would visit... Then I could eat my fill."
+      }
+    ],
+    "Piglet": [
+      {
+        "Order": 0,
+        "Character": "Piglet",
+        "Line": "Hello, i-is anyone there? Wh-Wh-What am I to do? I’m all alone. Pooh? Pooh? Where are you? It’s me, Piglet. Oh dear! I was j-just... N-Never mind. I’m sorry! You know Pooh? Oh, y-you see, I-I have something for him. I have to take it to Pooh right away! Oh, Pooh! Pooh! Oh, I-I’m so glad to see you. I thought you’d gone away. I brought wh-what you asked for. Really? B-But how? But if you take their honey, won’t the bees be angry?"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Don’t be scared. You’re looking for Pooh, right?"
+      },
+      {
+        "Order": 2,
+        "Character": "Pooh",
+        "Line": "Oh, I believe I smell a delicious something—a something like honey! Hello, Piglet. How have you been? Thank you, Piglet. Now I can finally have some honey.I shall hold on to the balloon, and fly like a bee up the Hunny Tree, see. Hmm...Oh! It is rather funny what I will do for honey."
+      }
+    ],
+    "Tigger": [
+      {
+        "Order": 0,
+        "Character": "Tigger",
+        "Line": "Hey, there! Name’s Tigger! T-I-double-guh-RR. That spells Tigger! Well, now! I don’t think I’ve ever seen you before! Hey, Pooh! Say, you’re lookin’ mighty uncomfy today. Is that some new exercise? Why, bouncin’ around is a lot more fun. Why? ‘Cause bouncin’ is what Tiggers do best! Speaking of which, my bouncin’ spot has gone and disappeared! So for now, this’ll be my new bouncin’ ground."
+      },
+      {
+        "Order": 1,
+        "Character": "Pooh",
+        "Line": "Hello, Tigger. You’ve just bounced my new friend Sora."
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Wh-Why do you bounce around so much, Tigger?"
+      }
+    ],
+    "Bounceroonies": [
+      {
+        "Order": 0,
+        "Character": "Tigger",
+        "Line": "What’s goin’ on? Nobody keeps up with Tiggers! Maybe there’s somethin’ wrong with my tail…"
+      }
+    ],
+    "A Little Push": [
+      {
+        "Order": 0,
+        "Character": "Pooh",
+        "Line": "Oh, bother. Where am I? It’s ever so dark in here. Well, it isn’t so bad, I suppose. There is plenty of honey."
+      }
+    ],
+    "Sealing the Keyhole; 100 Acre Wood": [
+      {
+        "Order": 0,
+        "Character": "Piglet",
+        "Line": "I’m so glad we’re all together again. I didn’t know what to do when I was all alone. You weren’t lonely at all? Sora, where are you going? I hope you find your friends!"
+      },
+      {
+        "Order": 1,
+        "Character": "Tigger",
+        "Line": "Aw, Piglet, you gotta be brave. Lonely? Are you kiddin’? I’m a Tigger! The most wonderful thing about Tiggers is I’m the only one. But I do admit, friends are awfully fun, too! Bounce on back again!"
+      },
+      {
+        "Order": 2,
+        "Character": "Pooh",
+        "Line": "Think, think, think. Oh, well, I’m just thinking about what to think about. Sora, don’t forget... We shall always be here. If you’d like to visit again, that is."
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "Hey, Pooh, what are you thinking about now? Well, I’m off.  I’m gonna go look for my friends. They’re waiting for me."
+      }
+    ],
+    "Aboard the Pirate Ship": [
+      {
+        "Order": 0,
+        "Character": "Riku",
+        "Line": "I didn’t think you’d come, Sora. Good to see you again. Are they that important to you? More important than old friends? Instead of worrying about them, you should be asking......about her. That’s right. While you were off goofing around, I finally found her. The Heartless obey me now, Sora. Now I have nothing to fear. Not a chance. My heart’s too strong. I’ve picked up a few other tricks as well. Like this, for instance. You can go see your friends now. Let’s get under way, already. And keep Sora away from Kairi until we’re ready to land."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Where are Donald and Goofy? Kairi! Riku, why are you siding with the Heartless? You’re stupid. Sooner or later they’ll swallow your heart. Riku..."
+      },
+      {
+        "Order": 2,
+        "Character": "Captain Hook",
+        "Line": "Not so fast. No shenanigans aboard my vessel, boy. That scurvy brat thinks he can order me around! Nothing! The hold is crawling with Heartless. Let them keep an eye on the brats. Shh... Did you hear that, Smee? Oh, that dreadful sound! Are you quite sure? Did I imagine it? Oh, my poor nerves..."
+      },
+      {
+        "Order": 3,
+        "Character": "Mr. Smee",
+        "Line": "What shall we do, Captain Hook? But, Captain, you-know-who is also down—No, Captain."
+      }
+    ],
+    "Peter Pan": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "You don’t say? All right! A-hyuck! Then let’s go up and talk to her. Who are you?"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Yeah, it was definitely Kairi. I’ve finally found her. Yeah! Oh, sorry. But you’re stuck in here too, aren’t you? Who? Ahem! I’m Sora."
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "Sounds great. Okay, but first...how about getting off! Aha. She must be pretty jealous."
+      },
+      {
+        "Order": 3,
+        "Character": "Peter Pan",
+        "Line": "Ahem! How ya doin’ there? Looking for a way out? I’m the answer to your prayers. Okay, then. Fine. Have it your way.No. I’m just waiting for someone.Tinker Bell, what took you so long? Great job. So you found Wendy? Hold on. There was another girl there, too? Are you crazy? There’s no way I’m gonna leave Wendy there! Come on, Tink! Open up the door! I’m Peter Pan. Okay, we’re in this together, but only ‘til we find Wendy."
+      }
+    ],
+    "Anyone Can Fly": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "So, uh, how come you can fly?"
+      },
+      {
+        "Order": 1,
+        "Character": "Peter Pan",
+        "Line": "Anyone can fly. You wanna try? Aw, haven’t you cooled off yet, Tink? Just a little bit of pixie dust. There. Now you can fly."
+      }
+    ],
+    "The Seven Chosen Ones": [
+      {
+        "Order": 0,
+        "Character": "Captain Hook",
+        "Line": "What? So Wendy’s not one of the chosen ones? After the trouble of capturing her? And why those seven? What is Maleficent planning, anyway? You’re wasting your time! The Heartless has devoured that girl’s heart. I’ll stake me other hand it’s lost forever. What? Blast that Peter Pan! All right, then! Bring the hostage to me cabin, Smee! Hop to it!"
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "There are seven, supposedly, and Maleficent says she’s not one of them. Hoist anchor as soon as possible. Leave all the dead weight behind, including her. Who knows? As long as it means getting Kairi’s heart back, I couldn’t care less. I will find it no matter what."
+      },
+      {
+        "Order": 2,
+        "Character": "Mr. Smee",
+        "Line": "Uh, Captain...The prisoners have escaped. What’s more, Peter Pan is with them."
+      }
+    ],
+    "The Hostages": [
+      {
+        "Order": 0,
+        "Character": "Peter Pan",
+        "Line": "What is it, Tink? Wendy! What! I’ll be right up there! Just hold on! Wendy! Hey, let’s get up there!"
+      },
+      {
+        "Order": 1,
+        "Character": "Wendy",
+        "Line": "Peter? Peter Pan? Please hurry! The pirates are coming! Yes? Oh, why, yes. But she seems to be asleep. She hasn’t budged an inch"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Wendy? Is there another girl in there with you? Kairi? Kairi!"
+      }
+    ],
+    "Shadow Sora": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Riku, wait!"
+      }
+    ],
+    "Saving Wendy": [
+      {
+        "Order": 0,
+        "Character": "Peter Pan",
+        "Line": "Wendy! Come on, Tink! Not now! Well, this is as far as I can go. I’ve gotta help Wendy."
+      }
+    ],
+    "Fly, Sora": [
+      {
+        "Order": 0,
+        "Character": "Captain Hook",
+        "Line": "Quite a codfish, that Riku—running off with that girl without even saying goodbye. To the ruins of Hollow Bastion, where Maleficent resides. But you won’t be going there. Unless you intend to leave your little pixie friend behind? Hand over the Keyblade and I’ll spare your lives. Be glad I’m merciful, unlike the Heartless. So, which will it be? The Keyblade, or the plank? It’s him! The crocodile that took me hand! Oh, Smee! He’s after me other hand! I can’t stay here! Go away! Oh, I can’t stand the sight of him! Smee, you take care of them!"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Run off where? Tell me, where did he go? Thanks, Peter."
+      },
+      {
+        "Order": 2,
+        "Character": "Peter Pan",
+        "Line": "Fly, Sora! Just believe, and you can do it! Hey, don’t mention it. You didn’t think I’d leave you and Tink behind, did you?"
+      }
+    ],
+    "Battle VS Captain Hook": [
+      {
+        "Order": 0,
+        "Character": "Captain Hook",
+        "Line": "Is that you, Smee? Did you finish them off? P-Peter Pa—blast you!"
+      },
+      {
+        "Order": 1,
+        "Character": "Peter Pan",
+        "Line": "Aye, Captain. They walked the plank, every last one of them. Ready to make a splash, you codfish? Now it’s your turn to walk the plank!"
+      }
+    ],
+    "If You Believe": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "Uh, Kairi couldn’t wake up, so maybe she’s really lost her—"
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Shh!"
+      },
+      {
+        "Order": 2,
+        "Character": "Peter Pan",
+        "Line": "Sora. You can bring her to Never Land sometime. Then she can try it herself. What’s that, Tink? What about the clock tower? You say there’s something there?"
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "I still can’t believe it. I really flew. Wait ‘til I tell Kairi. I wonder if she’ll believe me. Probably not. If you believe, you can do anything, right? I’ll find Kairi. I know I will. There’s so much I want to tell her—about flying, the pirates, and everything else that’s happened."
+      }
+    ],
+    "Dark Powers": [
+      {
+        "Order": 0,
+        "Character": "Young Riku",
+        "Line": "When we grow up, let’s get off this island. We’ll go on real adventures, not this kid stuff!"
+      },
+      {
+        "Order": 1,
+        "Character": "Young Sora",
+        "Line": "Sure. But isn’t there anything fun to do now? Hey, you know the new girl at the mayor’s house? She arrived on the night of the meteor shower!"
+      },
+      {
+        "Order": 2,
+        "Character": "Maleficent",
+        "Line": "It was reckless to bring her here without at least using a vessel. Remember, relying too heavily on the dark powers could cost you your heart. A castaway. Though his world perished, his heart did not. When we took the princess from his castle, he apparently followed her here through sheer force of will. But fear not. No harm will come to you. He is no match for your power. Yes, the untapped power that lies within you. Now, child, it’s time you awakened that power and realized your true potential."
+      },
+      {
+        "Order": 3,
+        "Character": "Riku",
+        "Line": "My power?"
+      }
+    ],
+    "Remember Neverland": [
+      {
+        "Order": 0,
+        "Character": "Wendy",
+        "Line": "Peter, are you really going back to Neverland?"
+      },
+      {
+        "Order": 1,
+        "Character": "Peter Pan",
+        "Line": "Afraid so. But we can see each other any time. As long as you don’t forget about Neverland, that is. Oh, boy. She’s getting’ steamed again. Do me a favor. Look after her for me, will ya?"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "What?"
+      }
+    ],
+    "Strength of Heart": [
+      {
+        "Order": 0,
+        "Character": "Hercules",
+        "Line": "Wow! And I didn’t even hold back! Of course. Your friends give you strength. Isn’t that right, Phil? The three of you together make great heroes. And as a team, I’m sure you can overcome anything."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Now I finally know what you mean about strength of heart. Mine comes from Donald and Goofy. If we stick together, we’re unbeatable. Not even Hercules stands a chance. With these guys beside me, I’m ready for anything!"
+      },
+      {
+        "Order": 2,
+        "Character": "Phil",
+        "Line": "Come again? But that’s not exactly what I—"
+      }
+    ],
+    "A Fairytale": [
+      {
+        "Order": 0,
+        "Character": "Donald",
+        "Line": "Sora! Aw, phooey."
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "Now, just remember what Donald said to ya- no frowning, no sad faces. The king told us to go out and find the key bearer, and we found you. So as long as we stick together, it’ll all work out okay. Ya just gotta believe in yourself, that’s all. What’s the matter?"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "How can you be so cheerful? There’s still no sign of your king. Aren’t you worried? Just believe...Where am I? Kairi!? Huh? Um, nothing. Kairi... Did you call me?"
+      },
+      {
+        "Order": 3,
+        "Character": "Kairi",
+        "Line": "I believe in you."
+      },
+      {
+        "Order": 4,
+        "Character": "Kairi’s Grandma",
+        "Line": "Long ago, people lived in peace, bathed in the warmth of light. Everyone loved the light. Then people began to fight over it. They wanted to keep it for themselves. And darkness was born in their hearts. The darkness spread, swallowing the light and many people’s hearts. It covered everything, and the world disappeared. But small fragments of light survived...in the hearts of children. With these fragments of light, children rebuilt the lost world. It’s the world we live in now. But the true light sleeps, deep within the darkness. That’s why the worlds are still scattered, divided from each other. But someday, a door to the innermost darkness will open. And the true light will return. So, listen, child. Even in the deepest darkness, there will always be a light to guide you. Believe in the light, and the darkness will never defeat you. Your heart will shine with its power and push the darkness away. Do you understand, Kairi?"
+      }
+    ],
+    "The True Master": [
+      {
+        "Order": 0,
+        "Character": "Riku",
+        "Line": "No vessel, no help from the Heartless... So tell me, how’d you get here? Take her, if you can! So, you finally made it. About time. I’ve been waiting for you. We’ve always been rivals, haven’t we? You’ve always pushed me as I’ve always pushed you. But it all ends here. There can’t be two Keyblade masters. Let the Keyblade choose......its true master. Maleficent was right. You don’t have what it takes to save Kairi. It’s up to me. Only the Keyblade master can open the secret door......and change the world. You were just the delivery boy. Sorry, your part’s over now. Here, go play hero with this."
+      },
+      {
+        "Order": 1,
+        "Character": "Beast",
+        "Line": "I simply believed. Nothing more to it. When our world fell into darkness, Belle was taken from me. I vowed I would find her again no matter what the cost. I believed I would find her. So, here I am. She must be here. I will have her back! Why... Why did you...you come here? I came to fight for Belle. And though I am on my own, I will fight. I won’t leave without her. That’s why I’m here."
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Stop! Riku...What are you talking about? Huh? But that’s impossible. How did this happen? I’m the one who fought my way here with the Keyblade! Hey, don’t move. You’re hurt. Me too. I’m not gonna give up now. I came here to find someone very important to me."
+      },
+      {
+        "Order": 3,
+        "Character": "Goofy",
+        "Line": "Huh? Oh! Well, I know the king told us to follow the key and all... But.."
+      },
+      {
+        "Order": 4,
+        "Character": "Donald",
+        "Line": "What!? Goofy. Let’s go. We have to remember our mission. Sora, Sorry."
+      }
+    ],
+    "The Purest Hearts": [
+      {
+        "Order": 0,
+        "Character": "Maleficent",
+        "Line": "O purest of hearts! Reveal to me the Keyhole!"
+      }
+    ],
+    "My Friends Are My Power": [
+      {
+        "Order": 0,
+        "Character": "Beast",
+        "Line": "Be on your guard. They’re close, I can feel it. Are you ready for them? Belle? So, your heart won this battle."
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "Quit while you can. The darkness will destroy you. Really... Well, we’ll just see about that! You’d betray your king? How will you fight without a weapon? Your heart? What good will that weak little thing do for you?"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "No. Not without Kairi. You’re wrong, Riku. The darkness may destroy my body, but it can’t touch my heart. My heart will stay with my friends. It’ll never die! Thanks a lot... Donald, Goofy. I know now I don’t need the Keyblade. I’ve got a better weapon. My heart. Although my heart may be weak, it’s not alone. It’s grown with each new experience, and it’s found a home with all the friends I’ve made. I’ve become a part of their heart just as they’ve become a part of mine. And if they think of me now and then...if they don’t forget me...then our hearts will be one. I don’t need a weapon. My friends are my power!"
+      },
+      {
+        "Order": 3,
+        "Character": "Goofy",
+        "Line": "Sora ain’t gonna go anywhere! Not on your life! But I’m not gonna betray Sora, either, ‘cause he’s become one of my best buddies after all we’ve been through together! See ya later, Donald. Could ya tell the king I’m really sorry? I guess you’re stuck with us, Sora."
+      },
+      {
+        "Order": 4,
+        "Character": "Donald",
+        "Line": "Hold on, Goofy! We’ll tell him together. Well, you know... All for one and one for all."
+      }
+    ],
+    "Become Darkness": [
+      {
+        "Order": 0,
+        "Character": "Riku",
+        "Line": "Why? It was mine. What? You’re saying my heart’s weaker than his? What should I do?"
+      },
+      {
+        "Order": 1,
+        "Character": "Ansem, Seeker of Darkness",
+        "Line": "Know this. The heart that is strong and true shall win the Keyblade. For that instant, it was. However, you can become stronger. You showed no fear in stepping through the door to darkness. It held no terror for you. Plunge deeper into the darkness, and your heart will grow even stronger.It’s really quite simple. Open yourself to the darkness. That is all. Let your heart, your being become darkness itself."
+      }
+    ],
+    "The Dark Keyblade": [
+      {
+        "Order": 0,
+        "Character": "Riku-Ansem",
+        "Line": "So, I see the path has emerged at last. Unlock it and the Heartless will overrun this world. Such confidence. Without her heart, she will never be able to release her power."
+      },
+      {
+        "Order": 1,
+        "Character": "Maleficent",
+        "Line": "Yes. The Keyhole to the darkness. What do I care? The darkness holds no power over me. Rather, I will use its power to rule all worlds. Oh! Impossible! The princesses of heart are all here! It must be her. The king’s fools are here. I’ll deal with them myself. You stay here and guard the princesses."
+      }
+    ],
+    "Mistress of All Evil": [
+      {
+        "Order": 0,
+        "Character": "Maleficent",
+        "Line": "I’m afraid you’re too late. Any moment now, the final Keyhole will be unsealed. This world will be plunged into darkness. It is unstoppable. You poor, simple fools. You think you can defeat me? Me, the mistress of all evil?"
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "We’ll stop it! After coming this far, there’s no way we’re gonna let that happen!"
+      }
+    ],
+    "Maleficent’s Darkness": [
+      {
+        "Order": 0,
+        "Character": "Riku-Ansem",
+        "Line": "Do you need some help? Yes. A Keyblade. But unlike yours, this Keyblade holds the power to unlock people’s hearts. Allow me to demonstrate... Behold! Now, open your heart, surrender it to the darkness! Become darkness itself! How ironic. She was just another puppet after all. The Heartless were using Maleficent from the beginning. She failed to notice the darkness in her heart eating away at her. A fitting end for such a fool."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Riku!"
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "Is that—"
+      },
+      {
+        "Order": 3,
+        "Character": "Maleficent",
+        "Line": "Wha—This is it! This power! Darkness... The true darkness!"
+      },
+      {
+        "Order": 4,
+        "Character": "Donald",
+        "Line": "What?"
+      }
+    ],
+    "The Seeker of Darkness": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Kairi! Kairi! Kairi! Open your eyes! What? You... You’re not Riku. The princess...? Kairi’s a princess? Whoever you are, let Riku go! Give him back his heart! What’s— Kairi... Kairi’s inside me? Tell me. Who are you?"
+      },
+      {
+        "Order": 1,
+        "Character": "Riku-Ansem",
+        "Line": "It’s no use. That girl has lost her heart. She cannot wake up. The Keyhole cannot be completed so long as the last princess of heart still sleeps.Yes, and without her power, the Keyhole will remain incomplete. It is time she awakened. But first, you must give the princess back her heart. Don’t you see yet? The princess’s heart is responding. It has been there all along. Kairi’s heart rests within you! I know all that there is to know. It is I, Ansem, the seeker of darkness. So, I shall release you now, Princess. Complete the Keyhole with your power. Open the door, lead me into everlasting darkness! Forget it! There’s no way you’re taking Kairi’s heart!"
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "Sora!"
+      },
+      {
+        "Order": 3,
+        "Character": "Kairi",
+        "Line": "Sora!"
+      }
+    ],
+    "Kairi Awakens": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Riku! What can we do? I think you’re right. If we can free her heart... But... But how? A Keyblade that unlocks people’s hearts... I wonder. What’s... What’s happening to me? Falling...falling...into darkness."
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Sora! Sora, look! No, wait! Sora... Sora! Sora! Come back, Sora! Don’t make another move! I don’t know! Let’s just get out of here!"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "The... The Keyhole! It won’t work! The Keyhole’s not finished yet! Maybe we’ve gotta go wake Kairi up. Sora?  Sora, hold on! Do you think we can stop him all by ourselves? What about the Keyhole?"
+      },
+      {
+        "Order": 3,
+        "Character": "Kairi",
+        "Line": "Sora! Sora, are you really—No. He can’t be! I won’t let him go! Riku!"
+      },
+      {
+        "Order": 4,
+        "Character": "Ansem, Seeker of Darkness",
+        "Line": "So, you have awakened at last, Princess. The Keyhole is now complete. You have served your purpose. But now it’s over. Impossible..."
+      },
+      {
+        "Order": 5,
+        "Character": "Riku",
+        "Line": "No. You won’t use me for this! You’ve got to run! The Heartless are coming!"
+      }
+    ],
+    "Sora’s Back": [
+      {
+        "Order": 0,
+        "Character": "Donald",
+        "Line": "Confounded Heartless! Get lost, will ya? Sora!"
+      },
+      {
+        "Order": 1,
+        "Character": "Kairi",
+        "Line": "Sora? Is that you? This time, I’ll protect you. Sora! Sora..."
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "Uh-oh! Kairi! Sora!"
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "Kairi, thank you. Come with us! All right. Let’s get out of here."
+      },
+      {
+        "Order": 4,
+        "Character": "Beast",
+        "Line": "Go! Now! I told you before, I’m not leaving without Belle. Now, go! The Heartless are coming!"
+      }
+    ],
+    "Seal the Keyhole": [
+      {
+        "Order": 0,
+        "Character": "Leon",
+        "Line": "Tell me what happened. So the darkness is flowing out of that Keyhole...Maybe. But no one knows what will happen once it’s sealed. That’s right. You have one more friend to worry about. Riku’s Keyblade must have been born of the captive princesses’ hearts—just like that Keyhole you saw. Of course, without Kairi’s heart, it remained incomplete. Once that Keyblade was destroyed, the princesses’ hearts should have been freed. Don’t worry, Sora. If anyone can save your friend, you can."
+      },
+      {
+        "Order": 1,
+        "Character": "Aerith",
+        "Line": "No wonder there are more and more Heartless everywhere. The only way to stop them is—"
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Seal the Keyhole, right?Well, we can’t just stay here. We have to do something. I’ve got a friend back there."
+      }
+    ],
+    "The Promise": [
+      {
+        "Order": 0,
+        "Character": "Kairi",
+        "Line": "A light at the end of the tunnel...That’s right. We were together. You think it’ll ever be the same again between us? Riku’s lost his...I didn’t want to just forget about you, Sora. I couldn’t. Well, let’s go. Why not? Come on, Sora. We made it this far by sticking together. You can’t go alone. I can’t help? Okay. You win. Take this. It’s my lucky charm. Be sure to bring it back to me. Promise? Don’t ever forget. Wherever you go, I’m always with you."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Oh, your grandma’s story, right? You know what’s funny? I looked everywhere for you, but you were with me all along. Finally, we’re together, Kairi. Now, it’s time to get Riku back. When I turned into a Heartless, you saved me, remember? I was lost in the darkness. I couldn’t find my way. As I stumbled through the dark, I started forgetting things—my friends, who I was. The darkness almost swallowed me. But then I heard a voice—your voice. You brought me back. That’s it! Our hearts are connected.And the light from our hearts broke through the darkness. I saw that light. I think that’s what saved me. No matter how deep the darkness, a light shines within. I guess it’s more than just a fairy tale. You can’t go. Because it’s way too dangerous. Kairi, even if we’re apart, we’re not alone anymore. Right? You’d kind of be in my way. Don’t worry. I will. Promise."
+      }
+    ],
+    "Within the Darkness": [
+      {
+        "Order": 0,
+        "Character": "Riku",
+        "Line": "Sora... Kairi... I’m sorry... Is this the afterworld? I’m not ready. Not yet. Not until I see Sora and Kairi one last time...Who is that? Who are you? What’s happened to me? So what do I do? Fate, huh? You seem to know everything, don’t you? Then tell me"
+      },
+      {
+        "Order": 1,
+        "Character": "Mickey",
+        "Line": "Riku, can you hear me? I’ll be there soon. I have the other Keyblade—the one that belongs to this world. I’ve been trying to get through to you, but the darkness in your heart kept me away. Your heart won the battle against the darkness, but it was too late for your body. That’s why you’re here—in this place of darkness where hearts are gathered. The Door of Darkness will open soon, but it’s a door we can’t enter. It has to be closed from both sides. To do this, you need two keys and two hearts. Maybe you’re here for the same reason I am. Maybe it was fate. Don’t you feel the echoes of their hearts? You already know the answer. Look inside your own heart."
+      }
+    ],
+    "Belle and the Beast": [
+      {
+        "Order": 0,
+        "Character": "Beast",
+        "Line": "Belle!"
+      }
+    ],
+    "Behemoth": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "Now let’s go and seal that big Keyhole!"
+      },
+      {
+        "Order": 1,
+        "Character": "Leon",
+        "Line": "Sora. You did it."
+      }
+    ],
+    "Sealing the Keyhole; Hollow Bastion": [
+      {
+        "Order": 0,
+        "Character": "Leon",
+        "Line": "We may never meet again, but we’ll never forget each other. Sora, good luck."
+      },
+      {
+        "Order": 1,
+        "Character": "Aerith",
+        "Line": "No matter where we are, our hearts will bring us together again."
+      },
+      {
+        "Order": 2,
+        "Character": "Yuffie",
+        "Line": "Besides, I couldn’t forget you even if I wanted to."
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "What’s that supposed to mean?"
+      },
+      {
+        "Order": 4,
+        "Character": "Donald",
+        "Line": "Sora!"
+      },
+      {
+        "Order": 5,
+        "Character": "Goofy",
+        "Line": "Hurry! Come and close the Keyhole!"
+      }
+    ],
+    "Hades, Lord of the Dead": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "Yo, hey, how’re you doin’ everybody, yeah. Got a minute? Hades, Lord of the Dead. Nice to see you. Hey, guess what? I got a place for you down under! Oh! Hey, kid, wh-what are you doing? Stop! Hey, guys! G-Get away from me! Come on! Come on!"
+      }
+    ],
+    "The Unknown": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Who are you? What’s that supposed to mean? What are you talking about? Wait, what are you—"
+      },
+      {
+        "Order": 1,
+        "Character": "Xemnas",
+        "Line": "Ah, it seems you are special, too. That name rings familiar. You remind me of him. It means you are not whole. You are incomplete. Allow me—to test your strength. Impressive. This will be enjoyable. It is beyond your comprehension, for now. Until we meet again. I am— ...but a mere shell."
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "Ansem?"
+      }
+    ],
+    "All That's Left": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "Gawrsh, is that all that’s left of the worlds taken by the Heartless? This is a Heartless world, so maybe it’ll just disappear. But no worries. Even if this place goes poof, our hearts ain’t goin’ nowhere. I’m sure we’ll find our pals again. Yup, I just know that we will."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "Those worlds will be restored if we beat Ansem, right? But, if we do beat him and all these worlds become restored and disconnected, what’s gonna happen to this place? And to us? Huh?! Yeah, you’re right. I’ll return this. I promise."
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "You betcha. Well, uh...Huh?!"
+      }
+    ],
+    "The Light Within the Darkness": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Is this... Is this my island?"
+      },
+      {
+        "Order": 1,
+        "Character": "Ansem, Seeker of Darkness",
+        "Line": "This world has been connected. Tied to the darkness... Soon to be completely eclipsed. There is so very much to learn. You understand so little. A meaningless effort. One who knows nothing can understand nothing. Take a look at this tiny place. To the heart seeking freedom this island is a prison surrounded by water. And so this boy sought out to escape from his prison. He sought a way to cross over into other worlds. And he opened his heart to darkness. Don’t bother. Your voice can no longer reach him where he is. His heart belongs again to darkness. All worlds begin in darkness, and all so end. The heart is no different. Darkness sprouts within it, it grows, consumes it. Such is its nature. In the end, every heart returns to the darkness whence it came. You see, darkness is the heart’s true essence. So, you have come this far and still you understand nothing. Every light must fade, every heart return to darkness!"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "What was that?"
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "Riku! That’s not true! The heart may be weak. And sometimes it may even give in. But I’ve learned that deep down, there’s a light that never goes out!"
+      }
+    ],
+    "Kingdom Hearts": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Wha...? You’re wrong. I know now, without a doubt, Kingdom Hearts... is light!"
+      },
+      {
+        "Order": 1,
+        "Character": "Ansem",
+        "Line": "Behold the endless abyss! Within it lies the heart of all worlds"
+      },
+      {
+        "Order": 2,
+        "Character": "Riku",
+        "Line": "Giving up already? Come on, Sora. I thought you were stronger than that."
+      }
+    ],
+    "Closing the Door": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Come on! I can’t...Okay! But...Kairi! Kairi, remember what you said before? I’m always with you, too.I’ll come back to you. I promise! We’ve gotta find Riku and King Mickey. Huh? Hey, have you seen King Mickey? Guys, let’s go!"
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Stop staring and keep pushing! Huh?! The Heartless!? Hurry! It’s hopeless! Huh? Your Majesty! Close it, quick! Well, now what do we do? Pluto? Hey!"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "The Heartless!? Huh? Your Majesty! Sora, you can trust King Mickey. But, uh, where do we start lookin’ for that there door to the light? Hey, Pluto. Where have you been? Gawrsh, that’s the king’s seal!"
+      },
+      {
+        "Order": 3,
+        "Character": "Riku",
+        "Line": "Don’t give up! Come on, Sora! Together, we can do it! Now! They’re coming! Take care of her."
+      },
+      {
+        "Order": 4,
+        "Character": "Mickey",
+        "Line": "Now, Sora! Let’s close this door for good! Don’t worry. There will always be a door to the light. Donald, Goofy, thank you."
+      },
+      {
+        "Order": 5,
+        "Character": "Kairi",
+        "Line": "Sora! I know you will!"
+      }
+    ],
+    "Selphie Chat 1": [
+      {
+        "Order": 0,
+        "Character": "Selphie",
+        "Line": "Aah, the breeze feels great."
+      }
+    ],
+    "Tidus Chat 1": [
+      {
+        "Order": 0,
+        "Character": "Tidus",
+        "Line": "Hey, Sora, you feel lucky today?"
+      }
+    ],
+    "Wakka Chat 1": [
+      {
+        "Order": 0,
+        "Character": "Wakka",
+        "Line": "Hey, what’s happening, man?"
+      }
+    ],
+    "Selphie Chat 2": [
+      {
+        "Order": 0,
+        "Character": "Selphie",
+        "Line": "Hey, Sora. Have you heard about the legendary power of the paopu fruit? They say if you share it with someone you really care for, it binds you together forever and ever through eternity! It's so romantic. I gotta try it sometime."
+      }
+    ],
+    "Tidus Chat 2": [
+      {
+        "Order": 0,
+        "Character": "Tidus",
+        "Line": "I think you've gotten stronger, but odds are you're still no match for Riku. We took him on three-to-one last time, and he whipped us all. Well, I guess Kairi can always count on him."
+      }
+    ],
+    "Wakka Chat 2": [
+      {
+        "Order": 0,
+        "Character": "Wakka",
+        "Line": "Me and Tidus, we are gonna do a little explorin' today. You know, to the secret place at the base of that tree. There's gotta be something there, ya?"
+      }
+    ],
+    "Sora & Riku Talk Pre-Race": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "If I win, I'm captain! And if you win...Huh? Wha... Wait a minute..."
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "I get to share the paopu with Kairi. Deal? The winner gets to share a paopu with Kairi."
+      },
+      {
+        "Order": 2,
+        "Character": "Kairi",
+        "Line": "Okay! On my count~"
+      }
+    ],
+    "Leon (Leon Loses)": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Now…you’re…gonna…you’re gonna…"
+      },
+      {
+        "Order": 1,
+        "Character": "Yuffie",
+        "Line": "Aw, you’re slipping, Leon."
+      },
+      {
+        "Order": 2,
+        "Character": "Leon",
+        "Line": "I went easy on him. Looks like things are worse than we thought. A lot worse."
+      }
+    ],
+    "Playing Games (Alternate)": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Riku!? Is it really you!?"
+      }
+    ],
+    "Pinocchio's Conscience (Alternate)": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "Wait. What are you– Liar! You’re not Riku!"
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "What? You don’t remember your best friend?"
+      }
+    ]
+  }
+}

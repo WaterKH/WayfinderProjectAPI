@@ -1,0 +1,10 @@
+﻿<div class="tooltip-wrapper" style="@Style">
+    <span style="margin-top: 25px; margin-left: -90px;">@Text</span>
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public string Text { get; set; }
+    [Parameter] public string Style { get; set; }
+}

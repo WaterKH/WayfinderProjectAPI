@@ -1,0 +1,18 @@
+﻿.custom-input {
+    padding: 5px 15px;
+    border-radius: 50px;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+
+.search-results {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.search-selected {
+    max-height: 150px;
+    overflow-y: auto;
+}

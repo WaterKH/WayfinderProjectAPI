@@ -1,0 +1,1386 @@
+{
+  "Scenes": {
+    "Kingdom Hearts": [
+      {
+        "Name": "Opening",
+        "Link": "https://www.youtube.com/watch?v=kNMNHvj7-hY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Kairi", "Riku" ],
+        "Areas": [ "Seashore", "Station of Awakening" ],
+        "Music": [ "Simple and Clean -PLANITb Remix-" ]
+      },
+      {
+        "Name": "Station of Awakening",
+        "Link": "https://www.youtube.com/watch?v=fnDsI2ujYQM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora", "Darkside(s)" ],
+        "Areas": [ "Station of Awakening" ],
+        "Music": [ "Destati ~ Second Version" ]
+      },
+      {
+        "Name": "Was It a Dream?",
+        "Link": "https://www.youtube.com/watch?v=ouj5bv-OPxA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=3",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Kairi", "Riku" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "The Outside World",
+        "Link": "https://www.youtube.com/watch?v=ouj5bv-OPxA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=3",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Kairi", "Riku" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Disney Castle",
+        "Link": "https://www.youtube.com/watch?v=tGUevZOp9K8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=6",
+        "Worlds": [ "Disney Castle" ],
+        "Characters": [ "Donald", "Pluto", "Goofy", "Minnie", "Daisy" ],
+        "Areas": [ "Colonnade", "Audience Chamber", "Courtyard" ],
+        "Music": [ "Mickey Mouse Club March" ]
+      },
+      {
+        "Name": "This World Has Been Connected",
+        "Link": "https://www.youtube.com/watch?v=gJpUyIFyIUI&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=5",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Young Sora", "Young Kairi", "Sora", "Ansem (Brown Robe)" ],
+        "Areas": [ "Secret Place" ],
+        "Music": [ "Treasured Memories", "Strange Whispers" ]
+      },
+      {
+        "Name": "Across the Ocean",
+        "Link": "https://www.youtube.com/watch?v=I_FLeoZh3XA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=8",
+        "Worlds": [ "Seashore" ],
+        "Characters": [ "Kairi", "Sora" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Kairi I" ]
+      },
+      {
+        "Name": "The Letter",
+        "Link": "https://www.youtube.com/watch?v=jG68w9t-iK0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=9",
+        "Worlds": [ "Disney Castle" ],
+        "Characters": [ "Pluto", "Daisy", "Minnie", "Donald", "Goofy", "Jiminy", "Chip", "Dale" ],
+        "Areas": [ "Library", "Gummi Hangar" ],
+        "Music": [ "It Began With a Letter", "A Walk in Andante", "Blast Away! -Gummi Ship I-" ]
+      },
+      {
+        "Name": "Keyblade",
+        "Link": "https://www.youtube.com/watch?v=yeKTpgEJwxM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=11",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Sora's Mom", "Shadow(s)", "Riku" ],
+        "Areas": [ "Sora's Room", "Seashore" ],
+        "Music": [ "Night of Fate" ]
+      },
+      {
+        "Name": "Swallowed by Darkness",
+        "Link": "https://www.youtube.com/watch?v=YGfAmAigtII&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=12",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Kairi", "Darkside(s)" ],
+        "Areas": [ "Secret Place", "Storm-Tossed Island" ],
+        "Music": [ "Destiny's Force" ]
+      },
+      {
+        "Name": "Where Am I?",
+        "Link": "https://www.youtube.com/watch?v=5Q66E3WFFUA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=13",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Goofy", "Donald", "Pluto", "Sora" ],
+        "Areas": [ "First District" ],
+        "Music": [ "Where Is This?" ]
+      },
+      {
+        "Name": "Leon",
+        "Link": "https://www.youtube.com/watch?v=nRZMNvAlfeU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=14",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Travis the Blueshirt", "Soldier(s)", "Shadow(s)", "Leon", "Yuffie" ],
+        "Areas": [ "Second District", "First District" ],
+        "Music": [ "Night of Fate" ]
+      },
+      {
+        "Name": "Riku Awakens",
+        "Link": "https://www.youtube.com/watch?v=EzxVpw5yx2M&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=15",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Riku", "Maleficent" ],
+        "Areas": [ "Rising Falls" ],
+        "Music": []
+      },
+      {
+        "Name": "The Chosen One",
+        "Link": "https://www.youtube.com/watch?v=JCS-9mYeJJo&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=16",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Goofy", "Donald", "Aerith", "Kairi", "Sora", "Yuffie", "Leon" ],
+        "Areas": [ "Alleyway", "Green Room", "Red Room" ],
+        "Music": []
+      },
+      {
+        "Name": "Sora, Donald, and Goofy",
+        "Link": "https://www.youtube.com/watch?v=p0xCxLDK8pM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=17",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Yuffie", "Soldier(s)", "Leon", "Donald", "Aerith", "Sora", "Goofy", "Guard Armor" ],
+        "Areas": [ "Green Room", "Red Room", "Alleyway", "Third District" ],
+        "Music": [ "Night of Fate", "The Heartless Has Come", "Shrouding Dark Cloud" ]
+      },
+      {
+        "Name": "The Start of an Adventure",
+        "Link": "https://www.youtube.com/watch?v=dhZYnzH4PGg&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=18",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Leon", "Yuffie" ],
+        "Areas": [ "Third District" ],
+        "Music": []
+      },
+      {
+        "Name": "Assembly of Darkness",
+        "Link": "https://www.youtube.com/watch?v=B7I-esHErMU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=19",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hades", "Jafar", "Ursula", "Captain Hook", "Oogie Boogie", "Maleficent" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "The White Rabbit",
+        "Link": "https://www.youtube.com/watch?v=Ug2-fNEdgzk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=20",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "White Rabbit", "Doorknob" ],
+        "Areas": [ "Rabbit Hole", "Bizarre Room" ],
+        "Music": [ "Tricksy Clock", "Welcome to Wonderland" ]
+      },
+      {
+        "Name": "A Curious Trial",
+        "Link": "https://www.youtube.com/watch?v=xxu-VdvYzrk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=21",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Card Soldier(s)", "Queen of Hearts", "Alice", "White Rabbit", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Queen's Court" ],
+        "Music": []
+      },
+      {
+        "Name": "The Cheshire Cat",
+        "Link": "https://www.youtube.com/watch?v=oLRStgLSVtc&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=23",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Cheshire Cat" ],
+        "Areas": [ "Lotus Forest" ],
+        "Music": []
+      },
+      {
+        "Name": "Where's Alice?",
+        "Link": "https://www.youtube.com/watch?v=17cCioDln2s&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=24",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Queen of Hearts" ],
+        "Areas": [ "Queen's Court" ],
+        "Music": []
+      },
+      {
+        "Name": "Sealing the Keyhole; Wonderland",
+        "Link": "https://www.youtube.com/watch?v=MYynWKaBIFk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=26",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Cheshire Cat", "Doorknob", "Trickmaster", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Bizarre Room" ],
+        "Music": [ "The Heartless Has Come", "Shrouding Dark Cloud", "Turning the Key" ]
+      },
+      {
+        "Name": "Olympus Coliseum",
+        "Link": "https://www.youtube.com/watch?v=jAotadd0ZbY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=28",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Phil" ],
+        "Areas": [ "Coliseum Gates", "Lobby" ],
+        "Music": [ "Olympus Coliseum" ]
+      },
+      {
+        "Name": "Entry Pass",
+        "Link": "https://www.youtube.com/watch?v=yel8G-8HTV0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=29",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Phil", "Donald", "Goofy", "Hades" ],
+        "Areas": [ "Lobby", "Coliseum Gates" ],
+        "Music": []
+      },
+      {
+        "Name": "A Mysterious Contender",
+        "Link": "https://www.youtube.com/watch?v=Hf8MpIM5H4k&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=31",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Phil", "Cloud", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "Olympus Coliseum" ]
+      },
+      {
+        "Name": "The Contract",
+        "Link": "https://www.youtube.com/watch?v=65_DKxu2VXE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=33",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hades", "Cloud", "Phil" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "Strange Whispers" ]
+      },
+      {
+        "Name": "Accidents Happen",
+        "Link": "https://www.youtube.com/watch?v=oUxDoatUG8M&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=35",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Cloud", "Sora", "Donald", "Goofy", "Phil", "Cerberus", "Hades", "Hercules" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "No Time to Think" ]
+      },
+      {
+        "Name": "Cerberus",
+        "Link": "https://www.youtube.com/watch?v=p6BBfpWr_kI&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=36",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Cerberus", "Hercules", "Cloud", "Sora", "Donald", "Goofy", "Phil" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "Squirming Evil" ]
+      },
+      {
+        "Name": "Jr. Heroes",
+        "Link": "https://www.youtube.com/watch?v=OzW6nQBZodE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=37",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Phil", "Hercules" ],
+        "Areas": [ "Lobby" ],
+        "Music": [ "Olympus Coliseum" ]
+      },
+      {
+        "Name": "Cloud's Darkness",
+        "Link": "https://www.youtube.com/watch?v=GFWIQ0OZX-8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=38",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Cloud", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Coliseum Gates" ],
+        "Music": []
+      },
+      {
+        "Name": "Hades' Plan",
+        "Link": "https://www.youtube.com/watch?v=8RRs2Cqq6Jg&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=39",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Hercules", "Hades", "Maleficent" ],
+        "Areas": [ "Coliseum Gates" ],
+        "Music": []
+      },
+      {
+        "Name": "Tarzan",
+        "Link": "https://www.youtube.com/watch?v=nmtQ7hdmYe8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=43",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Sora", "Sabor", "Tarzan", "Kairi" ],
+        "Areas": [ "Tree House" ],
+        "Music": [ "Having a Wild Time, Deep Jungle" ]
+      },
+      {
+        "Name": "Lost",
+        "Link": "https://www.youtube.com/watch?v=XhPI6-m3Tck&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=44",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Goofy", "Donald", "Clayton", "Terk", "Clayton" ],
+        "Areas": [ "Bamboo Thicket" ],
+        "Music": [ "Deep Jungle" ]
+      },
+      {
+        "Name": "Friends Reunited",
+        "Link": "https://www.youtube.com/watch?v=o2lEVo1eWJU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=45",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Tarzan", "Sora", "Jane", "Clayton", "Donald", "Goofy" ],
+        "Areas": [ "Tent" ],
+        "Music": []
+      },
+      {
+        "Name": "Clayton's Scheme",
+        "Link": "https://www.youtube.com/watch?v=yNM-bWwMby8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=47",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Jane", "Tarzan", "Sora", "Clayton", "Goofy", "Donald" ],
+        "Areas": [ "Tent" ],
+        "Music": []
+      },
+      {
+        "Name": "Kerchak",
+        "Link": "https://www.youtube.com/watch?v=yNM-bWwMby8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=48",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Kerchak", "Kala", "Tarzan", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Vines 1" ],
+        "Music": []
+      },
+      {
+        "Name": "Blasted Gorillas!",
+        "Link": "https://www.youtube.com/watch?v=b90dsGJN4iI&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=49",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Terk", "Clayton", "Donald", "Kerchak", "Sora", "Goofy", "Tarzan", "Jane" ],
+        "Areas": [ "Tree House", "Tent", "Camp" ],
+        "Music": []
+      },
+      {
+        "Name": "Sabor Returns",
+        "Link": "https://www.youtube.com/watch?v=FJO0lCbLVik&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=51",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Sabor", "Tarzan" ],
+        "Areas": [ "Bamboo Thicket" ],
+        "Music": [ "Having a Wild Time", "Squirming Evil" ]
+      },
+      {
+        "Name": "Terrified Terk",
+        "Link": "https://www.youtube.com/watch?v=_BmxpupeSt0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=52",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Terk", "Power Wild(s)", "Jane" ],
+        "Areas": [ "Camp", "Tent" ],
+        "Music": []
+      },
+      {
+        "Name": "Clayton's Darkness",
+        "Link": "https://www.youtube.com/watch?v=XhU5GqHDHC4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=54",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Gorilla(s)", "Power Wild(s)", "Clayton", "Kala", "Kerchak", "Sora", "Tarzan", "Stealth Sneak", "Donald", "Goofy" ],
+        "Areas": [ "Cliff" ],
+        "Music": [ "Having a Wild Time" ]
+      },
+      {
+        "Name": "Sealing the Keyhole; Deep Jungle",
+        "Link": "https://www.youtube.com/watch?v=Q3ZEm6CNePg&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=55",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Sora", "Tarzan", "Jane", "Terk", "Goofy", "Donald" ],
+        "Areas": [ "Cavern of Hearts" ],
+        "Music": [ "Turning the Key" ]
+      },
+      {
+        "Name": "Figures in the Darkness",
+        "Link": "https://www.youtube.com/watch?v=2k-4Br8gv6o&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=56",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Jafar", "Maleficent", "Oogie Boogie", "Ursula", "Sora", "Donald", "Goofy", "Alice" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Kairi",
+        "Link": "https://www.youtube.com/watch?v=2H4VSae5-KQ&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=59",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Kairi" ],
+        "Areas": [ "Magician's Study" ],
+        "Music": [ "Kairi II" ]
+      },
+      {
+        "Name": "Reunited with Riku",
+        "Link": "https://www.youtube.com/watch?v=iDDP-kLkKww&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=60",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Soldiers", "Donald", "Goofy", "Riku", "Shadow(s)" ],
+        "Areas": [ "Third District" ],
+        "Music": []
+      },
+      {
+        "Name": "A Dark Proposal",
+        "Link": "https://www.youtube.com/watch?v=FCeBWDFXcsY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=62",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Maleficent", "Riku", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Third District", "Small House" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Guard Armor's Revenge",
+        "Link": "https://www.youtube.com/watch?v=e_5KSG9q_to&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=64",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Guard Armor", "Sora", "Donald", "Goofy", "Opposite Armor" ],
+        "Areas": [ "Second District" ],
+        "Music": [ "Shrouding Dark Cloud" ]
+      },
+      {
+        "Name": "Sealing the Keyhole; Traverse Town",
+        "Link": "https://www.youtube.com/watch?v=j0phk9UkJME&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=65",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Second District" ],
+        "Music": [ "Turning the Key" ]
+      },
+      {
+        "Name": "Pinocchio",
+        "Link": "https://www.youtube.com/watch?v=RxV2L5X39us&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=83",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Jiminy", "Pinocchio" ],
+        "Areas": [ "Accessory Shop" ],
+        "Music": [ "Traverse Town" ]
+      },
+      {
+        "Name": "Jafar's Plan",
+        "Link": "https://www.youtube.com/watch?v=Ku6CGfOSMgE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=66",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jafar", "Maleficent", "Iago", "Bandit(s)", "Jasmine" ],
+        "Areas": [ "Main Street" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "A Princess in Hiding",
+        "Link": "https://www.youtube.com/watch?v=Qd6MDxPBxmQ&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=67",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jasmine" ],
+        "Areas": [ "Alley" ],
+        "Music": []
+      },
+      {
+        "Name": "Jasmine, Run!",
+        "Link": "https://www.youtube.com/watch?v=S35bNmwu5D4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=69",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jasmine", "Jafar", "Bandit(s)" ],
+        "Areas": [ "Alley" ],
+        "Music": []
+      },
+      {
+        "Name": "Wish Number One",
+        "Link": "https://www.youtube.com/watch?v=pWd8orci8YE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=71",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Aladdin", "Sora", "Donald", "Goofy", "Bandit(s)", "Genie" ],
+        "Areas": [ "Desert: Cave" ],
+        "Music": []
+      },
+      {
+        "Name": "Genie of the Lamp",
+        "Link": "https://www.youtube.com/watch?v=EoGozVYDCDA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=72",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Carpet", "Sora", "Donald", "Goofy", "Aladdin", "Genie" ],
+        "Areas": [ "Desert" ],
+        "Music": []
+      },
+      {
+        "Name": "Wish Number Two",
+        "Link": "https://www.youtube.com/watch?v=d7FdSQ3M0nk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=73",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Aladdin", "Jafar", "Jasmine", "Genie", "Iago", "Pot Spider(s)", "Pot Centipede", "Donald", "Goofy" ],
+        "Areas": [ "Palace Gates", "Main Street" ],
+        "Music": [ "Shrouding Dark Cloud", "Strange Whispers" ]
+      },
+      {
+        "Name": "The Desert Cave",
+        "Link": "https://www.youtube.com/watch?v=ok2NQ1UO4A4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=74",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Goofy", "Cave of Wonders Guardian", "Donald", "Aladdin" ],
+        "Areas": [ "Desert: Cave" ],
+        "Music": []
+      },
+      {
+        "Name": "The Keyhole Revealed",
+        "Link": "https://www.youtube.com/watch?v=EqlBB7CwEIo&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=75",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jafar", "Genie", "Jasmine" ],
+        "Areas": [ "Lamp Chamber" ],
+        "Music": []
+      },
+      {
+        "Name": "The Royal Vizier",
+        "Link": "https://www.youtube.com/watch?v=cCf82P8CSvQ&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=76",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Maleficent", "Jafar", "Jasmine", "Sora", "Donald", "Aladdin", "Goofy", "Genie" ],
+        "Areas": [ "Lamp Chamber" ],
+        "Music": [ "Squirming Evil" ]
+      },
+      {
+        "Name": "Genie Jafar",
+        "Link": "https://www.youtube.com/watch?v=GEtR5MTifco&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=77",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Aladdin", "Jasmine", "Jafar", "Genie", "Genie Jafar", "Donald" ],
+        "Areas": [ "Lamp Chamber", "Core" ],
+        "Music": [ "Destiny's Force" ]
+      },
+      {
+        "Name": "Sealing the Keyhole; Agrabah",
+        "Link": "https://www.youtube.com/watch?v=AbnZGZ2U7JE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=79",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jasmine", "Carpet", "Aladdin", "Sora", "Donald", "Goofy", "Cave of Wonders Guardian" ],
+        "Areas": [ "Lamp Chamber", "Desert: Cave" ],
+        "Music": [ "Arabian Dream" ]
+      },
+      {
+        "Name": "Wish Number Three",
+        "Link": "https://www.youtube.com/watch?v=tBPE-anfDZw&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=80",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Aladdin", "Genie", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Aladdin's House" ],
+        "Music": []
+      },
+      {
+        "Name": "Riku's Wish",
+        "Link": "https://www.youtube.com/watch?v=NNUZYbifM3w&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=81",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Hades", "Riku", "Maleficent", "Kairi", "Captain Hook" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Memories",
+        "Link": "https://www.youtube.com/watch?v=rPLtkQStGMs&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=84",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Young Sora", "Young Riku" ],
+        "Areas": [ "Seashore", "Secret Place" ],
+        "Music": [ "Friends in My Heart" ]
+      },
+      {
+        "Name": "Inside the Whale",
+        "Link": "https://www.youtube.com/watch?v=B8kHC5TNIjI&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=86",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Sora", "Goofy", "Donald", "Pinocchio", "Jiminy" ],
+        "Areas": [ "Mouth" ],
+        "Music": [ "A Very Small Wish" ]
+      },
+      {
+        "Name": "Geppetto",
+        "Link": "https://www.youtube.com/watch?v=PnkWlz-TNy4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=86",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Geppetto", "Cleo", "Pinocchio", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Mouth" ],
+        "Music": [ "A Very Small Wish" ]
+      },
+      {
+        "Name": "Playing Games",
+        "Link": "https://www.youtube.com/watch?v=XKC5MR3AkvE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=87",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Pinocchio", "Sora", "Donald", "Goofy", "Riku" ],
+        "Areas": [ "Chamber 1" ],
+        "Music": [ "A Very Small Wish" ]
+      },
+      {
+        "Name": "A Heart's Darkness",
+        "Link": "https://www.youtube.com/watch?v=qWmFcZQV2ew&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=89",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Riku", "Maleficent", "Pinocchio", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Chamber 4" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Saving Pinocchio",
+        "Link": "https://www.youtube.com/watch?v=kVlLGZAtsUo&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=89",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Parasite Cage", "Sora", "Donald", "Goofy", "Riku", "Pinocchio" ],
+        "Areas": [ "Bowels" ],
+        "Music": [ "Shrouding Dark Cloud" ]
+      },
+      {
+        "Name": "A Puppet",
+        "Link": "https://www.youtube.com/watch?v=jQWgAwItpIo&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=90",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Geppetto", "Riku", "Pinocchio", "Cleo" ],
+        "Areas": [ "Mouth" ],
+        "Music": []
+      },
+      {
+        "Name": "Pinocchio's Conscience",
+        "Link": "https://www.youtube.com/watch?v=BW48uzN4ZrU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=91",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Riku", "Pinocchio", "Sora", "Donald", "Goofy", "Jiminy", "Parasite Cage" ],
+        "Areas": [ "Stomach" ],
+        "Music": [ "Destiny's Force" ]
+      },
+      {
+        "Name": "Kairi's Heart",
+        "Link": "https://www.youtube.com/watch?v=z0MJ18hUd0A&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=92",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Riku", "Kairi", "Maleficent" ],
+        "Areas": [ "Captain's Cabin" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Under the Sea",
+        "Link": "https://www.youtube.com/watch?v=xjkoxz86arc&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=95",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ariel", "Sebastian", "Flounder", "Sea Neon(s)" ],
+        "Areas": [ "Undersea Valley", "Tranquil Grotto" ],
+        "Music": [ "Under the Sea", "An Adventure in Atlantica" ]
+      },
+      {
+        "Name": "King Triton",
+        "Link": "https://www.youtube.com/watch?v=ntXSXu6LWC4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=96",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ariel", "Screwdiver(s)", "King Triton", "Sebastian" ],
+        "Areas": [ "Throne Room" ],
+        "Music": [ "Under the Sea" ]
+      },
+      {
+        "Name": "Ursula, the Sea Witch",
+        "Link": "https://www.youtube.com/watch?v=p7ZUEOBPJ3I&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=98",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Ariel", "Goofy", "Flotsam", "Jetsam", "Ursula" ],
+        "Areas": [ "Ariel's Grotto", "Ursula's Lair" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Clashing Heads",
+        "Link": "https://www.youtube.com/watch?v=YkTRJbgYLAM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=99",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Ariel", "Donald", "Goofy", "King Triton", "Sebastian" ],
+        "Areas": [ "Ariel's Grotto" ],
+        "Music": []
+      },
+      {
+        "Name": "Stolen Trident",
+        "Link": "https://www.youtube.com/watch?v=zWrMwImODeM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=100",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Ariel", "Flotsam", "Jetsam", "Ursula", "King Triton", "Sora", "Donald", "Goofy", "Sebastian" ],
+        "Areas": [ "Undersea Garden", "Throne Room" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Ursula's Lair",
+        "Link": "https://www.youtube.com/watch?v=tqI772a7Iio&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=101",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Ursula", "Donald", "Sebastian", "Flotsam", "Jetsam" ],
+        "Areas": [ "Ursula's Lair" ],
+        "Music": [ "Squirming Evil" ]
+      },
+      {
+        "Name": "The New Ruler of the Seas",
+        "Link": "https://www.youtube.com/watch?v=d2mXBgdNXqU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=102",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ursula" ],
+        "Areas": [ "Open Ocean" ],
+        "Music": [ "The Deep End" ]
+      },
+      {
+        "Name": "Sealing the Keyhole; Atlantica",
+        "Link": "https://www.youtube.com/watch?v=Htbw8h67Hco&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=105",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Ariel", "Donald", "Goofy", "Sebastian" ],
+        "Areas": [ "Ariel's Grotto" ],
+        "Music": [ "Turning the Key" ]
+      },
+      {
+        "Name": "The King of Nightmares",
+        "Link": "https://www.youtube.com/watch?v=Htbw8h67Hco&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=105",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Search Ghost(s)", "The Mayor", "Jack Skellington" ],
+        "Areas": [ "Guillotine Square", "Guillotine Gate" ],
+        "Music": [ "This is Halloween" ]
+      },
+      {
+        "Name": "To Make a Heart",
+        "Link": "https://www.youtube.com/watch?v=cpiLUlHBHIs&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=106",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Dr. Finkelstein", "Search Ghost(s)", "Jack Skellington", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Research Lab" ],
+        "Music": [ "This is Halloween" ]
+      },
+      {
+        "Name": "Out of Control",
+        "Link": "https://www.youtube.com/watch?v=T1Mm-A57ZlA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=107",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "The Mayor", "Jack Skellington", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Lab Entryway" ],
+        "Music": []
+      },
+      {
+        "Name": "The Memory",
+        "Link": "https://www.youtube.com/watch?v=JBSZdbp8dy0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=108",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Zero", "Jack Skellington", "Sally", "Sora", "Donald", "Goofy", "Lock", "Shock", "Barrel" ],
+        "Areas": [ "Graveyard" ],
+        "Music": [ "This is Halloween" ]
+      },
+      {
+        "Name": "Oogie Boogie's Plan",
+        "Link": "https://www.youtube.com/watch?v=RS8O06syEhE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=109",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Oogie Boogie", "Lock", "Shock", "Barrel" ],
+        "Areas": [ "Torture Chamber" ],
+        "Music": []
+      },
+      {
+        "Name": "The Stolen Heart",
+        "Link": "https://www.youtube.com/watch?v=zrAKbxPAtjY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=110",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Dr. Finkelstein", "Donald", "Sora", "Goofy", "Search Ghost(s)", "Barrel", "Lock", "Shock", "Jack Skellington", "Zero" ],
+        "Areas": [ "Research Lab", "Guillotine Square", "Moonlight Hill", "Oogie's Manor" ],
+        "Music": [ "This is Halloween" ]
+      },
+      {
+        "Name": "Come and Get It",
+        "Link": "https://www.youtube.com/watch?v=9OJHvLxCt54&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=111",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Oogie Boogie", "Jack Skellington", "Gargoyle(s)", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Torture Chamber" ],
+        "Music": [ "Squirming Evil" ]
+      },
+      {
+        "Name": "Sealing the Keyhole; Halloween Town",
+        "Link": "https://www.youtube.com/watch?v=ith3hUqCCYM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=112",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Oogie's Manor" ],
+        "Areas": [ "Oogie's Manor", "Manor Ruins" ],
+        "Music": [ "Destiny's Force", "Turning the Key" ]
+      },
+      {
+        "Name": "Another Halloween Plan",
+        "Link": "https://www.youtube.com/watch?v=ith3hUqCCYM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=112",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Jack Skellington", "Sally" ],
+        "Areas": [ "Research Lab" ],
+        "Music": []
+      },
+      {
+        "Name": "Winnie the Pooh",
+        "Link": "https://www.youtube.com/watch?v=9Ed_UOALxtE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=114",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [ "100 Acre Wood", "Meadow" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Empty Hunny Pot",
+        "Link": "https://www.youtube.com/watch?v=_ti5eVT3BoY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=115",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [ "Pooh's House", "Pooh's Room" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Piglet",
+        "Link": "https://www.youtube.com/watch?v=qRUIgu9CT2Q&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=116",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Piglet", "Sora", "Pooh" ],
+        "Areas": [ "Hunny Tree" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Tigger",
+        "Link": "https://www.youtube.com/watch?v=KX1mlgyx_rQ&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=118",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Tigger", "Rabbit", "Sora", "Pooh" ],
+        "Areas": [ "Rabbit's House" ],
+        "Music": []
+      },
+      {
+        "Name": "Bounceroonies",
+        "Link": "https://www.youtube.com/watch?v=BsEc5L-l1kY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=120",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Tigger" ],
+        "Areas": [ "Rabbit's House" ],
+        "Music": []
+      },
+      {
+        "Name": "A Little Push",
+        "Link": "https://www.youtube.com/watch?v=SiejOw-bqDc&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=122",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Piglet", "Rabbit" ],
+        "Areas": [ "Rabbit's Room", "Rabbit's House" ],
+        "Music": []
+      },
+      {
+        "Name": "Sealing the Keyhole; 100 Acre Wood",
+        "Link": "https://www.youtube.com/watch?v=JAXzPjBiC2c&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=126",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Piglet", "Sora", "Rabbit", "Roo", "Owl", "Eeyore", "Pooh", "Tigger" ],
+        "Areas": [ "Hill, Magician's Study" ],
+        "Music": [ "Winnie the Pooh", "Once Upon a Time" ]
+      },
+      {
+        "Name": "Aboard the Pirate Ship",
+        "Link": "https://www.youtube.com/watch?v=hDklkCBC148&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=127",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Riku", "Kairi", "Captain Hook", "Mr. Smee", "Pirate(s)", "Shadow Sora" ],
+        "Areas": [ "Deck" ],
+        "Music": []
+      },
+      {
+        "Name": "Peter Pan",
+        "Link": "https://www.youtube.com/watch?v=DqJdEpR8tyE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=128",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Goofy", "Sora", "Donald", "Peter Pan", "Tinker Bell" ],
+        "Areas": [ "Brig" ],
+        "Music": [ "Oopsy-Daisy" ]
+      },
+      {
+        "Name": "Anyone Can Fly",
+        "Link": "https://www.youtube.com/watch?v=nWUfEDUlPoY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=130",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Peter Pan", "Tinker Bell" ],
+        "Areas": [ "Galley" ],
+        "Music": [ "Captain Hook's Pirate Ship" ]
+      },
+      {
+        "Name": "The Seven Chosen Ones",
+        "Link": "https://www.youtube.com/watch?v=I3Ms_F4WbxM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=131",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Captain Hook", "Riku", "Mr. Smee" ],
+        "Areas": [ "Captain's Cabin" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "The Hostages",
+        "Link": "https://www.youtube.com/watch?v=DRE2fKXYJHM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=132",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Peter Pan", "Tinker Bell", "Wendy", "Kairi" ],
+        "Areas": [ "Galley", "Cabin" ],
+        "Music": []
+      },
+      {
+        "Name": "Shadow Sora",
+        "Link": "https://www.youtube.com/watch?v=mYOxcXVGt_8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=132",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Riku", "Kairi", "Shadow Sora" ],
+        "Areas": [ "Captain's Cabin" ],
+        "Music": [ "Shrouding Dark Cloud" ]
+      },
+      {
+        "Name": "Saving Wendy",
+        "Link": "https://www.youtube.com/watch?v=lmqcf57-YaM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=133",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Peter Pan", "Wendy", "Tinker Bell", "Sora" ],
+        "Areas": [ "Cabin" ],
+        "Music": [ "Captain Hook's Pirate Ship" ]
+      },
+      {
+        "Name": "Fly, Sora",
+        "Link": "https://www.youtube.com/watch?v=y5cEa7K1NZA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=134",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Captain Hook", "Mr. Smee", "Pirate(s)", "Tinker Bell", "Crocodile", "Peter Pan" ],
+        "Areas": [ "Deck" ],
+        "Music": [ "No Time to Think" ]
+      },
+      {
+        "Name": "Battle VS Captain Hook",
+        "Link": "https://www.youtube.com/watch?v=mgE224wAcgE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=136",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Peter Pan", "Captain Hook", "Crocodile" ],
+        "Areas": [ "Deck" ],
+        "Music": [ "Squirming Evil" ]
+      },
+      {
+        "Name": "If You Believe",
+        "Link": "https://www.youtube.com/watch?v=66CDOIQKyT0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=136",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Peter Pan", "Donald", "Goofy", "Sora", "Tinker Bell" ],
+        "Areas": [ "Deck" ],
+        "Music": [ "Friends in My Heart" ]
+      },
+      {
+        "Name": "Sealing the Keyhole; Neverland",
+        "Link": "https://www.youtube.com/watch?v=J-xG5GQWhAk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=138",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Peter Pan", "Wendy" ],
+        "Areas": [ "Clock Tower" ],
+        "Music": [ "Turning the Key" ]
+      },
+      {
+        "Name": "Dark Powers",
+        "Link": "https://www.youtube.com/watch?v=hE9iTHGxIJo&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=139",
+        "Worlds": [ "Destiny Islands", "Hollow Bastion" ],
+        "Characters": [ "Young Sora", "Young Riku", "Riku", "Maleficent" ],
+        "Areas": [ "Secret Place", "Castle Chapel" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Remember Neverland",
+        "Link": "https://www.youtube.com/watch?v=qjAM1dgoyCI&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=140",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Peter Pan", "Wendy", "Tinker Bell", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Clock Tower" ],
+        "Music": [ "A Piece of Peace" ]
+      },
+      {
+        "Name": "Strength of Heart",
+        "Link": "https://www.youtube.com/watch?v=k50203LkXm8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=41",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Hercules", "Sora", "Donald", "Goofy", "Phil" ],
+        "Areas": [ "Lobby" ],
+        "Music": [ "Friends in My Heart" ]
+      },
+      {
+        "Name": "Sealing the Keyhole; Olympus Coliseum",
+        "Link": "https://www.youtube.com/watch?v=VAaybrynxow&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=42",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Lobby" ],
+        "Music": [ "Turning the Key" ]
+      },
+      {
+        "Name": "A Fairytale",
+        "Link": "https://www.youtube.com/watch?v=tRv-bCIGSd8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=140",
+        "Worlds": [ "Traverse Town", "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Young Kairi", "Kairi's Grandma" ],
+        "Areas": [ "First District", "Library" ],
+        "Music": [ "Kairi III" ]
+      },
+      {
+        "Name": "The True Master",
+        "Link": "https://www.youtube.com/watch?v=r_dTwQ8tGfc&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=142",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Riku", "Beast" ],
+        "Areas": [ "Rising Falls" ],
+        "Music": [ "Hollow Bastion" ]
+      },
+      {
+        "Name": "The Purest Hearts",
+        "Link": "https://www.youtube.com/watch?v=cTxc9CH3ETI&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=142",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Jasmine", "Cinderella", "Aurora", "Snow White", "Alice", "Belle", "Kairi", "Maleficent" ],
+        "Areas": [ "Grand Hall" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "My Friends are My Power",
+        "Link": "https://www.youtube.com/watch?v=r-JGich9-po&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=143",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Beast", "Sora", "Belle", "Shadow(s)", "Riku", "Donald", "Goofy" ],
+        "Areas": [ "Entrance Hall" ],
+        "Music": [ "An Intense Situation" ]
+      },
+      {
+        "Name": "Become Darkness",
+        "Link": "https://www.youtube.com/watch?v=AUp7kHrnXXA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=144",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Riku", "Ansem, Seeker of Darkness" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "Strange Whispers" ]
+      },
+      {
+        "Name": "The Dark Keyblade",
+        "Link": "https://www.youtube.com/watch?v=bfIg6b66lwc",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Riku-Ansem", "Kairi", "Maleficent" ],
+        "Areas": [ "Grand Hall" ],
+        "Music": []
+      },
+      {
+        "Name": "Mistress of All Evil",
+        "Link": "https://www.youtube.com/watch?v=6Jj7IxIIhuk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=145",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Maleficent" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "Villains of a Sort", "Squirming Evil" ]
+      },
+      {
+        "Name": "Maleficent's Darkness",
+        "Link": "https://www.youtube.com/watch?v=Qpu3035LDRY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=147",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Maleficent", "Riku-Ansem", "Sora", "Donald", "Goofy", "Beast", "Dragon Maleficent" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "The Deep End" ]
+      },
+      {
+        "Name": "The Seeker of Darkness",
+        "Link": "https://www.youtube.com/watch?v=CzBEDdUNbaE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=147",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Riku-Ansem" ],
+        "Areas": [ "Grand Hall" ],
+        "Music": [ "An Intense Situation" ]
+      },
+      {
+        "Name": "Kairi Awakens",
+        "Link": "https://www.youtube.com/watch?v=uWRhK8NYTio&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=148",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Ansem", "Riku", "Sora's Heartless" ],
+        "Areas": [ "Grand Hall" ],
+        "Music": [ "HIKARI - Instrumental" ]
+      },
+      {
+        "Name": "Sora's Back",
+        "Link": "https://www.youtube.com/watch?v=-cyvDxUpamU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=149",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Donald", "Goofy", "Kairi", "Shadow(s)", "Sora's Heartless", "Sora" ],
+        "Areas": [ "Entrance Hall" ],
+        "Music": [ "Miracle" ]
+      },
+      {
+        "Name": "Seal the Keyhole",
+        "Link": "https://www.youtube.com/watch?v=wOjqRSG8AK0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=150",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Leon", "Sora", "Donald", "Goofy", "Yuffie", "Aerith", "Kairi" ],
+        "Areas": [ "Small House" ],
+        "Music": []
+      },
+      {
+        "Name": "The Promise",
+        "Link": "https://www.youtube.com/watch?v=RiQwsfVHyhU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=151",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Goofy", "Kairi", "Sora" ],
+        "Areas": [ "Secret Waterway" ],
+        "Music": [ "Kairi I" ]
+      },
+      {
+        "Name": "Within the Darkness",
+        "Link": "https://www.youtube.com/watch?v=thwKomyWCBg&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=153",
+        "Worlds": [ "End of the World" ],
+        "Characters": [ "Riku", "Sora" ],
+        "Areas": [ "Endless Abyss" ],
+        "Music": []
+      },
+      {
+        "Name": "Belle and Beast",
+        "Link": "https://www.youtube.com/watch?v=8LIIIvrA8mo&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=154",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Beast", "Belle" ],
+        "Areas": [ "Library" ],
+        "Music": []
+      },
+      {
+        "Name": "Behemoth",
+        "Link": "https://www.youtube.com/watch?v=WjTPjsGWuMk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=156",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Behemoth", "Leon" ],
+        "Areas": [ "Dark Depths" ],
+        "Music": []
+      },
+      {
+        "Name": "Sealing the Keyhole; Hollow Bastion",
+        "Link": "https://www.youtube.com/watch?v=xRlJ2lsUEOk&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=158",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Leon", "Aerith", "Yuffie", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Grand Hall", "Dark Depths" ],
+        "Music": [ "Turning the Key" ]
+      },
+      {
+        "Name": "Hades, Lord of the Dead",
+        "Link": "https://www.youtube.com/watch?v=M6aftnmTef4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=161",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Hades", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "Squirming Evil" ]
+      },
+      {
+        "Name": "Rock Titan",
+        "Link": "https://www.youtube.com/watch?v=HioyUxcesMU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=163",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Rock Titan", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "The Deep End" ]
+      },
+      {
+        "Name": "Ice Titan",
+        "Link": "https://www.youtube.com/watch?v=A7A2GtZZO3o&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=164",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Ice Titan", "Sora" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "The Deep End" ]
+      },
+      {
+        "Name": "One-Winged Angel",
+        "Link": "https://www.youtube.com/watch?v=JjseEX2eIEQ&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=166",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Sephiroth" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "One-Winged Angel" ]
+      },
+      {
+        "Name": "The Showdown",
+        "Link": "https://www.youtube.com/watch?v=_z9pLml3Dcs&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=167",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Cloud", "Sephiroth" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "One-Winged Angel" ]
+      },
+      {
+        "Name": "Kurt Zisa",
+        "Link": "https://www.youtube.com/watch?v=EFKWJdVlor4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=168",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Carpet", "Kurt Zisa" ],
+        "Areas": [ "Desert" ],
+        "Music": [ "The Deep End" ]
+      },
+      {
+        "Name": "Phantom",
+        "Link": "https://www.youtube.com/watch?v=wsOHfZPHNm4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=169",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Phantom", "Donald", "Goofy", "Peter Pan" ],
+        "Areas": [ "Clock Tower" ],
+        "Music": [ "Destiny's Force" ]
+      },
+      {
+        "Name": "The Unknown",
+        "Link": "https://www.youtube.com/watch?v=VJ2NN4JRCIE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=170",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Beast", "Xemnas" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "Disappeared" ]
+      },
+      {
+        "Name": "All That's Left",
+        "Link": "https://www.youtube.com/watch?v=cK-Mr99p1q0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=171",
+        "Worlds": [ "End of the World" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Gate to the Dark", "Final Dimension" ],
+        "Music": [ "End of the World" ]
+      },
+      {
+        "Name": "Chernabog",
+        "Link": "https://www.youtube.com/watch?v=lN8xJH7QYzQ&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=172",
+        "Worlds": [ "End of the World" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Chernabog" ],
+        "Areas": [ "Evil Grounds" ],
+        "Music": [ "A Night on the Bare Mountain" ]
+      },
+      {
+        "Name": "The Light Within the Darkness",
+        "Link": "https://www.youtube.com/watch?v=rS-oTPrBPOg&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=173",
+        "Worlds": [ "End of the World" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Riku-Ansem", "Ansem, Seeker of Darkness" ],
+        "Areas": [ "Final Rest", "Homecoming" ],
+        "Music": [ "End of the World", "The Deep End", "Destiny's Force" ]
+      },
+      {
+        "Name": "Kingdom Hearts",
+        "Link": "https://www.youtube.com/watch?v=R0yMyfs0VQw&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=174",
+        "Worlds": [ "End of the World" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ansem, Seeker of Darkness", "World of Chaos" ],
+        "Areas": [ "World of Chaos" ],
+        "Music": [ "Guardando nel buio", "Beyond the Door" ]
+      },
+      {
+        "Name": "Closing the Door",
+        "Link": "https://www.youtube.com/watch?v=mWp11HrxY-o&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=176",
+        "Worlds": [ "End of the World", "Destiny Islands" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Riku", "Darkside(s)", "Mickey", "Young Sora", "Young Riku", "Kairi", "Pluto" ],
+        "Areas": [ "Endless Abyss", "Seashore", "Secret Place", "Castle Oblivion Field" ],
+        "Music": [ "Always on My Mind", "Simple and Clean", "Hand in Hand -Reprise-" ]
+      },
+      {
+        "Name": "Another Side, Another Story",
+        "Link": "https://www.youtube.com/watch?v=O1CKbfRXo64&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=176",
+        "Worlds": [ "The World That Never Was" ],
+        "Characters": [ "Roxas", "Neoshadow(s)", "Riku" ],
+        "Areas": [ "Memory's Skyscraper" ],
+        "Music": []
+      },
+      {
+        "Name": "Another Side, Another Story [deep dive]",
+        "Link": "https://www.youtube.com/watch?v=2oOZokjvar0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=178",
+        "Worlds": [ "The World That Never Was" ],
+        "Characters": [ "Roxas", "Neoshadow(s)", "Riku", "Sora", "Kairi", "Xemnas", "Mickey" ],
+        "Areas": [ "Dark Margin", "Memory's Skyscraper" ],
+        "Music": [ "Another Side" ]
+      },
+      {
+        "Name": "Selphie Chat 1",
+        "Link": "https://www.youtube.com/watch?v=Xlp4i8AyCKw&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=3",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Selphie", "Tidus" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Tidus Chat 1",
+        "Link": "https://www.youtube.com/watch?v=B_34BHgen5U&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=2",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Tidus" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Wakka Chat 1",
+        "Link": "https://www.youtube.com/watch?v=omWe_YedOek&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=3",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Wakka", "Tidus" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Destiny Islands Day 2",
+        "Link": "https://www.youtube.com/watch?v=s5uPawpd7C8",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Wakka", "Sora", "Selphie" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Selphie Chat 2",
+        "Link": "https://www.youtube.com/watch?v=vMdZXPZnLNQ&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=4",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Selphie" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Tidus Chat 2",
+        "Link": "https://www.youtube.com/watch?v=jFbRFpVcfxY&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=5",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Tidus" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Wakka Chat 2",
+        "Link": "https://www.youtube.com/watch?v=d7Rq72zIKf8&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=6",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Wakka" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Sora & Riku Talk Pre-Race",
+        "Link": "https://www.youtube.com/watch?v=5BXuF_jesXk",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Riku", "Kairi" ],
+        "Areas": [ "Cove" ],
+        "Music": [ "Destiny Islands" ]
+      },
+      {
+        "Name": "Leon Loses",
+        "Link": "https://www.youtube.com/watch?v=7wLsGDKRjYQ",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Leon", "Yuffie" ],
+        "Areas": [ "First District" ],
+        "Music": []
+      },
+      {
+        "Name": "Cloud Wins",
+        "Link": "https://www.youtube.com/watch?v=hvmllFzIOAM",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Cloud", "Phil", "Hades", "Cerberus", "Hercules" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "No Time to Think" ]
+      },
+      {
+        "Name": "Figures in the Darkness (Alternate)",
+        "Link": "https://www.youtube.com/watch?v=UQ3tGb6Xac8",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Jafar", "Maleficent", "Oogie Boogie", "Ursula", "Sora", "Donald", "Goofy", "Snow White" ],
+        "Areas": [ "Castle Chapel" ],
+        "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Wish Number Two (Alley)",
+        "Link": "https://www.youtube.com/watch?v=M5dBiy-WvtE&list=PLYnY5NdwIhRBsRDAyctdiWGEPFJtUQ1cd&index=6",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Jafar" ],
+        "Areas": [ "Alley" ],
+        "Music": [ "Strange Whispers" ]
+      },
+      {
+        "Name": "Wish Number Two (Plaza)",
+        "Link": "https://www.youtube.com/watch?v=i-bGDvOqpaY&list=PLYnY5NdwIhRBsRDAyctdiWGEPFJtUQ1cd&index=7",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Jafar" ],
+        "Areas": [ "Plaza" ],
+        "Music": [ "Strange Whispers" ]
+      },
+      {
+        "Name": "Wish Number Two (Palace Gates)",
+        "Link": "https://www.youtube.com/watch?v=_nmwTy0h_5s&list=PLYnY5NdwIhRBsRDAyctdiWGEPFJtUQ1cd&index=8",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Jafar" ],
+        "Areas": [ "Palace Gates" ],
+        "Music": [ "Strange Whispers" ]
+      },
+      {
+        "Name": "Playing Games (Alternate)",
+        "Link": "https://www.youtube.com/watch?v=vMjepd0C4v8",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Pinocchio", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Chamber 1" ],
+        "Music": [ "A Very Small Wish" ]
+      },
+      {
+        "Name": "A Heart's Darkness (Alternate)",
+        "Link": "https://www.youtube.com/watch?v=Fkn33J9bPR8",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Pinocchio", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Chamber 4" ],
+        "Music": []
+      },
+      {
+        "Name": "Pinocchio's Conscience (Alternate)",
+        "Link": "",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Riku", "Pinocchio", "Sora", "Donald", "Goofy", "Jiminy", "Parasite Cage" ],
+        "Areas": [ "Stomach" ],
+        "Music": [ "Destiny's Force" ]
+      },
+      {
+        "Name": "Summoning Simba",
+        "Link": "https://www.youtube.com/watch?v=NGQYkre_E34&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=3",
+        "Worlds": [],
+        "Characters": [ "Sora", "Simba" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Summoning Genie",
+        "Link": "https://www.youtube.com/watch?v=IQIGzqON1I8&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=3",
+        "Worlds": [],
+        "Characters": [ "Sora", "Genie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Summoning Tinker Bell",
+        "Link": "https://www.youtube.com/watch?v=VfDmnYfiNdA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=8",
+        "Worlds": [],
+        "Characters": [ "Sora", "Tinker Bell" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Summoning Bambi",
+        "Link": "https://www.youtube.com/watch?v=Kg6Kml93DUM&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=7",
+        "Worlds": [],
+        "Characters": [ "Sora", "Bambi" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Summoning Dumbo",
+        "Link": "https://www.youtube.com/watch?v=jvwlW4ou9WQ&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=6",
+        "Worlds": [],
+        "Characters": [ "Sora", "Dumbo" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Summoning Mushu",
+        "Link": "https://www.youtube.com/watch?v=orVOkyndwEA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=3",
+        "Worlds": [],
+        "Characters": [ "Sora", "Mushu" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Summoning Simba (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=003mqDSqgDw&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=13",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Simba" ],
+        "Areas": [],
+        "Music": [ "Spooks of Halloween Town" ]
+      },
+      {
+        "Name": "Summoning Genie (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=VyNUbbkJ-7k&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=14",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Genie" ],
+        "Areas": [],
+        "Music": [ "Spooks of Halloween Town" ]
+      },
+      {
+        "Name": "Summoning Tinker Bell (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=OeARyWyNJUI&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=15",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Tinker Bell" ],
+        "Areas": [],
+        "Music": [ "Spooks of Halloween Town" ]
+      },
+      {
+        "Name": "Summoning Bambi (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=r8G8g-i3VuA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=16",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Bambi" ],
+        "Areas": [],
+        "Music": [ "Spooks of Halloween Town" ]
+      },
+      {
+        "Name": "Summoning Dumbo (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=Mf1LyVS1Lv4&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=17",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Dumbo" ],
+        "Areas": [],
+        "Music": [ "Spooks of Halloween Town" ]
+      },
+      {
+        "Name": "Summoning Mushu (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=03yWxIYCBYI&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=18",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Mushu" ],
+        "Areas": [],
+        "Music": [ "Spooks of Halloween Town" ]
+      }
+    ],
+    "Kingdom Hearts II": [
+      {
+        "Name": "Dreams Connected",
+        "Link": "https://www.youtube.com/watch?v=O8pKXD20McQ&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j",
+        "Worlds": [ "Destiny Islands", "Hollow Bastion", "End of the World", "Castle Oblivion", "Dive to the Heart", "Dark World" ],
+        "Characters": [ "Sora", "Kairi", "Riku", "Donald", "Goofy", "Shadows", "Ansem", "Naminé", "Marluxia", "Roxas", "Xemnas", "Darksides" ],
+        "Areas": [ "Seashore", "Rising Falls", "Grand Hall", "Station of Serenity", "Dark Margin", "Secret Place", "Storm-Tossed Island" ],
+        "Music": [ "Sanctuary" ]
+      }
+    ],
+    "Kingdom Hearts III": [
+      {
+        "Name": "Opening",
+        "Link": "https://www.youtube.com/watch?v=t9bsdJ3jtnE&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=2",
+        "Worlds": [ "The Final World", "Scala ad Caelum", "The Land of Departure", "Dive to the Heart", "Destiny Islands", "Castle Oblivion", "Twilight Town", "Keyblade Graveyard" ],
+        "Characters": [ "Sora", "Young Xehanort", "Terra", "Aqua", "Ventus", "Riku", "Kairi", "Ansem", "Naminé", "Roxas", "Axel", "Xion", "Xemnas", "Marluxia", "Xehanort", "Donald", "Goofy", "Mickey" ],
+        "Areas": [ "The Final World", "Scala ad Caelum", "The Land of Departure", "Dive to the Heart", "Destiny Islands", "Castle Oblivion", "Twilight Town", "Keyblade Graveyard" ],
+        "Music": [ "Face My Fears" ]
+      }
+    ]
+  }
+}

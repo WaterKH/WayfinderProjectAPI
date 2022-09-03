@@ -1,0 +1,323 @@
+﻿@page "/"
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+@using WayfinderProjectAPI.Data.DTOs
+
+<PageTitle>The Wayfinder Project</PageTitle>
+
+<div class="search-bar">
+    <div class="row" style="width: 100%; margin: 25px 0px;">
+        <div class="col-md-12" style="align-self: center;">
+            <input id="main-search" name="main-search" class="custom-input" oninput="@((ChangeEventArgs e) => this.SearchQuotes(e?.Value?.ToString()))" placeholder="Search for a Word, Phrase or Quote (Must be longer than 3 letters)..." />
+        </div>
+    </div>
+</div>
+
+
+<Collapsable Title="Advanced Search Parameters">
+    <div class="advanced-search-box">
+        <div class="row" >
+            <div class="col-md-4">
+                <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Search for Games..." Color="#cdd1ff" Selections="this.Games" UpdateSearch="@(() => Search())" />
+            </div>
+            <div class="col-md-4">
+                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Search for Worlds..." Color="#1bff9f" Selections="this.Worlds" UpdateSearch="@(() => Search())" />
+            </div>
+            <div class="col-md-4">
+                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Search for Areas..." Color="#94ffe1" Selections="this.Areas" UpdateSearch="@(() => Search())" />
+            </div>
+            <div class="col-md-4">
+                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Search for Scenes..." Color="#faa5f3" Selections="this.Scenes" UpdateSearch="@(() => Search())" />
+            </div>
+            <div class="col-md-4">
+                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Search for Characters..." Color="#beff6c" Selections="this.Characters" UpdateSearch="@(() => Search())" />
+            </div>
+            <div class="col-md-4">
+                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Search for Music..." Color="#fffd9c" Selections="this.Music" UpdateSearch="@(() => Search())" />
+            </div>
+        </div>
+    </div>
+</Collapsable>
+
+<br />
+<br />
+
+<Table @ref="MainTable" Items="this.SceneDtos" Context="Scene">
+    <TableHeader>
+        <th>Game</th>
+        <th>Scene</th>
+        <th>Worlds</th>
+        <th>Areas</th>
+        <th>Characters</th>
+        <th>Music</th>
+        <th style="text-align: right;"></th>
+    </TableHeader>
+    <RowTemplate>
+        <td>@Scene.Game.Name</td>
+        <td><a href="@Scene.Link" target="_blank">@Scene.Name</a></td>
+        <td>
+            <div style="display: inline-flex;">
+                @for (int i = 0; i < Scene.Worlds.Count; ++i)
+                {
+                    if (i >= 2)
+                    {
+                        <div>...</div>
+                        break;
+                    }
+                    
+                    @Scene.Worlds.ToList()[i].Name
+                    if (i < Scene.Worlds.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+
+            @if (Scene.Worlds.Count > 2)
+            {
+                <Tooltip Text="@(string.Join(", ", Scene.Worlds.Select(x => x.Name)))">
+                    <i class="oi oi-info icon"></i>
+                </Tooltip>
+            }
+        </td>
+        <td>
+            <div style="display: inline-flex;">
+                @for (int i = 0; i < Scene.Areas.Count; ++i)
+                {
+                    if (i >= 2)
+                    {
+                        <div>...</div>
+                        break;
+                    }
+                    
+                    @Scene.Areas.ToList()[i].Name
+                    if (i < Scene.Areas.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+
+            @if (Scene.Areas.Count > 2)
+            {
+                <Tooltip Text="@(string.Join(", ", Scene.Areas.Select(x => x.Name)))">
+                    <i class="oi oi-info icon"></i>
+                </Tooltip>
+            }
+        </td>
+        <td>
+            <div style="display: inline-flex;">
+                @for (int i = 0; i < Scene.Characters.Count; ++i)
+                {
+                    if (i >= 2)
+                    {
+                        <div>...</div>
+                        break;
+                    }
+                    
+                    @Scene.Characters.ToList()[i].Name
+                    if (i < Scene.Characters.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+
+            @if (Scene.Characters.Count > 2)
+            {
+                <Tooltip Text="@(string.Join(", ", Scene.Characters.Select(x => x.Name)))">
+                    <i class="oi oi-info icon"></i>
+                </Tooltip>
+            }
+        </td>
+        <td>
+            <div style="display: inline-flex;">
+                @for (int i = 0; i < Scene.Music.Count; ++i)
+                {
+                    if (i >= 2)
+                    {
+                        <div>...</div>
+                        break;
+                    }
+                    
+                    <a href="@Scene.Music.ToList()[i].Link" target="_blank">@Scene.Music.ToList()[i].Name</a>
+                    if (i < Scene.Music.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+
+            @if (Scene.Music.Count > 2)
+            {
+                <Tooltip Text="@(string.Join(", ", Scene.Music.Select(x => x.Name)))">
+                    <i class="oi oi-info icon"></i>
+                </Tooltip>
+            }
+        </td>
+        <td>
+            @if (MainTable.CurrentExpandedRow == Scene.Id)
+            {
+                <span class="oi oi-minus mr-1 clickable" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))"></span>
+            }
+            else
+            {
+                <span class="oi oi-plus mr-1 clickable" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))"></span>
+            }    
+        </td>
+    </RowTemplate>
+    <ExpandedRowTemplate>
+        <tr>
+            <td colspan="6" style="border: #545a60 2px solid;">
+                <strong>Lines & Extra Information:</strong>
+                <div style="text-align: center;">
+                    <strong stlye="font-size: larger;">Worlds in Scene:</strong>
+                    <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Worlds.Select(x => x.Name)))</label><br/>
+
+                    <strong stlye="font-size: larger;">Areas in Scene:</strong>
+                    <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Areas.Select(x => x.Name)))</label><br/>
+
+                    <strong stlye="font-size: larger;">Characters in Scene:</strong>
+                    <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Characters.Select(x => x.Name)))</label><br/>
+                    
+                    <strong stlye="font-size: larger;">Music in Scene:</strong>
+                    <label>
+                        <div style="display: inline-flex;">
+                            @for (int i = 0; i < this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Music.Count; ++i)
+                            {
+                                var currentScene = this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name);
+                                <a href="@currentScene.Music.ToList()[i].Link" target="_blank">@currentScene.Music.ToList()[i].Name</a>
+                                if (i < currentScene.Music.Count - 1)
+                                {
+                                    <div>,&nbsp;</div>
+                                }
+                            }
+                        </div>
+                    </label><br/>
+                </div>
+
+                <Table Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
+                    <TableHeader>
+                        <th>Character</th>
+                        <th>Line</th>
+                    </TableHeader>
+                    <RowTemplate>
+                        <td>@Line.Character</td>
+                        <td>@Line.Line</td>
+                    </RowTemplate>
+                </Table>
+            </td>
+        </tr>
+    </ExpandedRowTemplate>
+</Table>
+
+
+<style>
+.custom-input {
+    padding: 5px 15px;
+    border-radius: 50px;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    overflow-wrap: break-word;
+}
+
+.advanced-search-box {
+    padding: 5px 15px;
+    border-radius: 35px;
+    width: 100%;
+    border: 1px solid black;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.clickable {
+    float: right; 
+    font-size: 1rem; 
+    color: #3e79a7; 
+    margin-top: 3px; 
+    cursor: pointer;
+}
+
+.icon {
+    font-size: .8rem;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 4px 5px;
+    border-radius: 500px;
+    background-color: #bee2ff;
+}
+}
+</style>
+
+@code {
+    public List<string> Areas { get; set; } = new List<string>();
+    public List<string> Characters { get; set; } = new List<string>();
+    public List<string> Games { get; set; } = new List<string>();
+    public List<string> Music { get; set; } = new List<string>();
+    public List<string> Scenes { get; set; } = new List<string>();
+    public List<string> Worlds { get; set; } = new List<string>();
+
+    private SearchComponent? AreasSearch;
+    private SearchComponent? CharactersSearch;
+    private SearchComponent? GamesSearch;
+    private SearchComponent? MusicSearch;
+    private SearchComponent? ScenesSearch;
+    private SearchComponent? WorldsSearch;
+
+    private Table<SceneDto>? MainTable;
+
+    private string quoteSearch = "";
+    private List<SceneDto> SceneDtos = new List<SceneDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.Areas = context.Areas.Select(x => x.Name).ToList();
+        this.Characters = context.Characters.Select(x => x.Name).ToList();
+        this.Games = context.Games.Select(x => x.Name).ToList();
+        this.Music = context.Music.Select(x => x.Name).ToList();
+        this.Scenes = context.Scenes.Select(x => x.Name).ToList();
+        this.Worlds = context.Worlds.Select(x => x.Name).ToList();
+
+        await this.Search();
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task SearchQuotes(string search)
+    {
+        if (search.Length < 3)
+            this.quoteSearch = "";
+        else
+            this.quoteSearch = search;
+
+        await this.Search();
+    }
+
+    public async Task Search()
+    {
+        var api = new WayfinderProjectAPI.Controllers.WayfinderController(null, context);
+
+        var games = this.GamesSearch != null ? string.Join(", ", this.GamesSearch.selected) != "" ? string.Join(", ", this.GamesSearch.selected) : null : null;
+        var scenes = this.ScenesSearch != null ? string.Join(", ", this.ScenesSearch.selected) != "" ? string.Join(", ", this.ScenesSearch.selected) : null : null;
+        var worlds = this.WorldsSearch != null ? string.Join(", ", this.WorldsSearch.selected) != "" ? string.Join(", ", this.WorldsSearch.selected) : null : null;
+        var areas = this.AreasSearch != null ? string.Join(", ", this.AreasSearch.selected) != "" ? string.Join(", ", this.AreasSearch.selected) : null : null;
+        var characters = this.CharactersSearch != null ? string.Join(", ", this.CharactersSearch.selected) != "" ? string.Join(", ", this.CharactersSearch.selected) : null : null;
+        var music = this.MusicSearch != null ? string.Join(", ", this.MusicSearch.selected) != "" ? string.Join(", ", this.MusicSearch.selected) : null : null;
+        var line = this.quoteSearch != "" ? this.quoteSearch : null;
+
+        this.SceneDtos = (await api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList();
+
+        if (MainTable != null)
+        {
+            MainTable.CurrentPage = 1;
+            MainTable.CurrentExpandedRow = -1;
+        }
+
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+}
