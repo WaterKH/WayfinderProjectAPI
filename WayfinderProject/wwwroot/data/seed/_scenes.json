@@ -1362,6 +1362,1048 @@
         "Music": [ "Spooks of Halloween Town" ]
       }
     ],
+    "Kingdom Hearts Re:Chain of Memories": [
+      {
+        "Name": "Promise of a Reunion",
+        "Link": "https://www.youtube.com/watch?v=eZiSFzmlIo8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=1",
+        "Worlds": [ "Castle Oblivion Field" ],
+        "Characters": [ "Sora", "Pluto", "Donald", "Goofy", "Marluxia", "Naminé" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To Lose or Claim Anew",
+        "Link": "https://www.youtube.com/watch?v=QCGNXOTdzfg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=2",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Marluxia" ],
+        "Areas": [ "Floor 1 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Friends Disappearing",
+        "Link": "https://www.youtube.com/watch?v=w8vuXniQ9xA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=3",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Marluxia", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Rules by Cards",
+        "Link": "https://www.youtube.com/watch?v=tabWZZ6f4Ro&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=5",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Marluxia", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Leon and Yuffie",
+        "Link": "https://www.youtube.com/watch?v=WONnMRi8cxA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=5",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Pluto", "Jiminy", "Leon", "Yuffie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Gift from Leon",
+        "Link": "https://www.youtube.com/watch?v=P94v9Bez6Wo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=7",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Leon" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Town Made of Memories",
+        "Link": "https://www.youtube.com/watch?v=AaEzOhSVoj0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=7",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Pluto", "Leon", "Yuffie", "Aerith" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "When the Bell Tolls",
+        "Link": "https://www.youtube.com/watch?v=v-0yKOyUH8o&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=8",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Cid", "Guard Armor" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Beware Your Memories",
+        "Link": "https://www.youtube.com/watch?v=N1cMDk4P228&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=9",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Leon", "Yuffie", "Aerith", "Cid" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Got It Memorized",
+        "Link": "https://www.youtube.com/watch?v=GUsGvPjg0aA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=10",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Marluxia", "Axel" ],
+        "Areas": [ "Floor 1 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "When Sleeping Memories Awaken",
+        "Link": "https://www.youtube.com/watch?v=KDmEy9m7Qbs&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=12",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Axel" ],
+        "Areas": [ "Floor 1 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "An Adventure Forgotten",
+        "Link": "https://www.youtube.com/watch?v=m6_Ee0edkGM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=12",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 2 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Chasing the White Rabbit",
+        "Link": "https://www.youtube.com/watch?v=p2iqJyGl39Y&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=32",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "White Rabbit" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Alice on Trial",
+        "Link": "https://www.youtube.com/watch?v=uUebAPFW1S0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=33",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Card Soldiers", "Queen of Hearts", "Alice", "White Rabbit", "Sora", "Donald", "Goofy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Cards in Pursuit",
+        "Link": "https://www.youtube.com/watch?v=Q-nCF5md6Jg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=35",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Queen of Hearts", "Card Soldiers" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Cheshire Cat",
+        "Link": "https://www.youtube.com/watch?v=J-RW9yK8LI0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=35",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Alice", "Cheshire Cat", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Queen's Ambush",
+        "Link": "https://www.youtube.com/watch?v=5GR5XJYx7ZM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=36",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Alice", "Doorknob", "Queen of Hearts", "Card Soldiers", "Trickmaster" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "What's Really Real",
+        "Link": "https://www.youtube.com/watch?v=MhDKHbjdxOc&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=38",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Alice", "Queen of Hearts", "Card Soldiers", "Doorknob" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Journal Pages Vanished",
+        "Link": "https://www.youtube.com/watch?v=J9KGiNo9DsI&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=21",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 2 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Are We Losing Our Memories?",
+        "Link": "https://www.youtube.com/watch?v=h9MszQLwAdM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=22",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 3 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Survival Cup",
+        "Link": "https://www.youtube.com/watch?v=ADxuK-j8oq8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=23",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Hades", "Cloud" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Two Words",
+        "Link": "https://www.youtube.com/watch?v=frVsXEZAL_I&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=25",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Phil", "Hercules", "Cloud" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Cloud's Job",
+        "Link": "https://www.youtube.com/watch?v=ylY-4zXK430&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=25",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Cloud" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Stopping Cloud",
+        "Link": "https://www.youtube.com/watch?v=Vvvyr_isbWk&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=26",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Hades",
+        "Link": "https://www.youtube.com/watch?v=yAbNviEm0v8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=27",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hercules", "Cloud", "Hades" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Not Interested",
+        "Link": "https://www.youtube.com/watch?v=F6vonVnVp8Y&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=28",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hercules", "Phil", "Jiminy", "Cloud" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "What's Important",
+        "Link": "https://www.youtube.com/watch?v=TO1XVxucKAA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=30",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Donald", "Sora", "Goofy", "Mickey" ],
+        "Areas": [ "Floor 3 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "The Smiling Siren",
+        "Link": "https://www.youtube.com/watch?v=6QPQDv2-de8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=30",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Larxene", "Axel" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "The Good Luck Charm",
+        "Link": "https://www.youtube.com/watch?v=52ICDdNljAU&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=31",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Naminé" ],
+        "Areas": [ "Floor 4 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Saving Aladdin",
+        "Link": "https://www.youtube.com/watch?v=4Qb-y9p30z0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=14",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Shadow(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Genie and the Magic Lamp",
+        "Link": "https://www.youtube.com/watch?v=qV5CWWy0R5w&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=15",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Shadow(s)", "Genie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Aladdin's Wish",
+        "Link": "https://www.youtube.com/watch?v=cgOA2DEPjEM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=17",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Genie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Jasmine in Danger",
+        "Link": "https://www.youtube.com/watch?v=CaQVzi6ZIhQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=17",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Genie", "Jasmine", "Shadow(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Jafar's Ambition",
+        "Link": "https://www.youtube.com/watch?v=-UAfup9UHGM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=18",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Jafar", "Iago", "Jasmine", "Genie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Jafar Genie",
+        "Link": "https://www.youtube.com/watch?v=WErQujqL3qM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=20",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jafar", "Jasmine", "Aladdin", "Genie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Last Wish",
+        "Link": "https://www.youtube.com/watch?v=2suCoICjnPQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=20",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Aladdin", "Genie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Memories Come Awake",
+        "Link": "https://www.youtube.com/watch?v=Fe0pyeV3uVA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=38",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Floor 4 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Girl Drawing Memories",
+        "Link": "https://www.youtube.com/watch?v=53mVN-zopZQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=39",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Naminé" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "Memory of Another",
+        "Link": "https://www.youtube.com/watch?v=eVCU2QkpMyY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=40",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 5 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Pinocchio and Jiminy",
+        "Link": "https://www.youtube.com/watch?v=U1OtQGtZAAc&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=41",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Pinocchio", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Geppetto",
+        "Link": "https://www.youtube.com/watch?v=U1OtQGtZAAc&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=41",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Geppetto", "Jiminy", "Cleo" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Why He Lied",
+        "Link": "https://www.youtube.com/watch?v=fTIkkssDTpM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=43",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Pinocchio", "Sora", "Donald", "Goofy", "Jiminy", "Parasite Cage" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Pinocchio's Courage",
+        "Link": "https://www.youtube.com/watch?v=HzctbV-Lp4c&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=44",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Pinocchio", "Parasite Cage", "Sora", "Jiminy", "Donald", "Goofy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Belly Brawl",
+        "Link": "https://www.youtube.com/watch?v=giowMrP8isk&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=45",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Shadow(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Monstro's Sneeze",
+        "Link": "https://www.youtube.com/watch?v=XaeIe7BgKG0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=46",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Till We Meet Again",
+        "Link": "https://www.youtube.com/watch?v=LIYcz0x2bHw&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=47",
+        "Worlds": [ "Monstro" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Girl on the Island",
+        "Link": "https://www.youtube.com/watch?v=98ZR-DnAkqM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=48",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Naminé", "Young Sora", "Young Riku", "Jiminy" ],
+        "Areas": [ "Floor 5 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "The Key to the Plot",
+        "Link": "https://www.youtube.com/watch?v=GB5Xjo0MyU4&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=49",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Larxene, Axel" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "What Was Her Name?",
+        "Link": "https://www.youtube.com/watch?v=v7goq4QOXjo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=50",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Floor 6 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Jack, the King of Nightmares",
+        "Link": "https://www.youtube.com/watch?v=py63O9x8-DY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=51",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Shadow(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Pesky Heartless",
+        "Link": "https://www.youtube.com/watch?v=QqHPC-1-oa0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=52",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Dr. Finkelstein's Invention",
+        "Link": "https://www.youtube.com/watch?v=FjOuhyCVRoQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=53",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Dr. Finkelstein" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Sally's Worries",
+        "Link": "https://www.youtube.com/watch?v=WBbo5JPsiG0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=54",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sally", "Jack Skellington", "Sora", "Donald", "Goofy", "Oogie Boogie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Oogie's Nightmare",
+        "Link": "https://www.youtube.com/watch?v=IS1fk5y2kqo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=55",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "True Memories",
+        "Link": "https://www.youtube.com/watch?v=U2xahkPjPEQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=56",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Sally", "Dr. Finnkelstein" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Larxene the Ruthless",
+        "Link": "https://www.youtube.com/watch?v=7Pdlo6FeQM4&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=57",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Larxene" ],
+        "Areas": [ "Floor 6 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "A Card for the Baby",
+        "Link": "https://www.youtube.com/watch?v=NdixOM0ypH8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=58",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Larxene", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 6 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Vexen the Scientist",
+        "Link": "https://www.youtube.com/watch?v=mlHSR3BLHJQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=59",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Axel", "Larxene", "Vexen", "Riku Replica" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "To Save Naminé",
+        "Link": "https://www.youtube.com/watch?v=-CKvuPva60E&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=60",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Floor 7 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Ariel in a Rush",
+        "Link": "https://www.youtube.com/watch?v=x1B87indyEE&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=61",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ariel" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Stolen Trident",
+        "Link": "https://www.youtube.com/watch?v=vHLdGA5Jl94&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=62",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Sebastian", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Ursula's Evil",
+        "Link": "https://www.youtube.com/watch?v=wPcm_Eg1BTs&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=63",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ariel", "Ursula" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Something Fishy",
+        "Link": "https://www.youtube.com/watch?v=DPiTmKe-T6c&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=64",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ariel", "Ursula", "Flounder" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Telling the Truth",
+        "Link": "https://www.youtube.com/watch?v=Z0nYBhZ6-vI&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=65",
+        "Worlds": [ "Atlantica" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ariel", "Flounder", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion with Riku",
+        "Link": "https://www.youtube.com/watch?v=TgIPqe-AN6A&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=66",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Riku Replica" ],
+        "Areas": [ "Floor 7 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "The Wordless Friend",
+        "Link": "https://www.youtube.com/watch?v=rXcEA0nm3RM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=67",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Riku Replica" ],
+        "Areas": [ "Floor 7 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Always Smile",
+        "Link": "https://www.youtube.com/watch?v=BDR8MTPm4Gg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=68",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 8 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "On a Ship",
+        "Link": "https://www.youtube.com/watch?v=BDR8MTPm4Gg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=68",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Tinker Bell", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Peter Pan to the Rescue",
+        "Link": "https://www.youtube.com/watch?v=AgIh6CYj_k8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=70",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Tinker Bell", "Peter Pan" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Wendy's Heart",
+        "Link": "https://www.youtube.com/watch?v=uJS0her5T74&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=71",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Peter Pan", "Tinker Bell", "Wendy", "Sora", "Donald", "Goofy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Hook's Wrath",
+        "Link": "https://www.youtube.com/watch?v=HNt_TJWwUq0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=72",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Captain Hook", "Wendy", "Peter Pan", "Tinker Bell" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Even After We Grow Up",
+        "Link": "https://youtu.be/0SsUb46E0Xs?t=4185",
+        "Worlds": [ "Neverland" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Wendy", "Peter Pan", "Tinker Bell", "Moogle" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fighting Friends",
+        "Link": "https://youtu.be/0SsUb46E0Xs?t=4185",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Riku Replica", "Sora", "Young Sora", "Young Riku" ],
+        "Areas": [ "Floor 8 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Out of Reach",
+        "Link": "https://www.youtube.com/watch?v=1gu7sDeFFlI&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=75",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Riku Replica" ],
+        "Areas": [ "Floor 8 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "We Nobodies",
+        "Link": "https://www.youtube.com/watch?v=v8esWdDOS5Y&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=76",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Naminé", "Axel" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "Sora, Riku, and Naminé",
+        "Link": "https://www.youtube.com/watch?v=dqdJE9mGaso&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=77",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 9 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Belle Refuses the Beast",
+        "Link": "https://www.youtube.com/watch?v=G6uRDkLDrKQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=78",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Beast", "Belle" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Belle's Wavering Heart",
+        "Link": "https://www.youtube.com/watch?v=wc4JhF7fUhY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=79",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Belle", "Maleficent" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Heart Stolen",
+        "Link": "https://www.youtube.com/watch?v=eUQKkDXaPr8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=100",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Maleficent", "Belle", "Sora", "Donald", "Goofy", "Beast", "Jiminy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Maleficent",
+        "Link": "https://www.youtube.com/watch?v=dFYldRSd2Lw&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=80",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Beast", "Maleficent" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Together Again",
+        "Link": "https://www.youtube.com/watch?v=f4BPMpgmmyk&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=81",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Beast", "Belle" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Where is Riku?",
+        "Link": "https://www.youtube.com/watch?v=puMn0zxXuT8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=82",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Floor 9 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Marluxia's Graceful Blade",
+        "Link": "https://www.youtube.com/watch?v=UvVXuFfJOEg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=83",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Larxene", "Axel", "Vexen", "Marluxia", "Naminé" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "A Promise to Naminé",
+        "Link": "https://www.youtube.com/watch?v=tKl1NDMxgKs&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=84",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 10 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Looking for Nobody",
+        "Link": "https://www.youtube.com/watch?v=Ob7b1mqQ9T0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=85",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Who's There?",
+        "Link": "https://www.youtube.com/watch?v=2S-ZlEAasBo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=86",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Piglet" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Hello, Piglet",
+        "Link": "https://www.youtube.com/watch?v=st7r2XJJjGc&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=87",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Piglet", "Pooh" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Rabbit's Veggies",
+        "Link": "https://www.youtube.com/watch?v=1ro1-bBg8bU&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=88",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Rabbit" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Token of Appreciation",
+        "Link": "https://www.youtube.com/watch?v=kiOxHyGwjpo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=89",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Rabbit" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Balloons",
+        "Link": "https://www.youtube.com/watch?v=WpdbDrUQRaE&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=90",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Owl's Advice",
+        "Link": "https://www.youtube.com/watch?v=oLOSVDqg-38&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=91",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Owl" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I'm Tigger",
+        "Link": "https://www.youtube.com/watch?v=uK92XNkmXRM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=92",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Tigger" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Bouncing Away",
+        "Link": "https://www.youtube.com/watch?v=mXoIS6kiblY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=94",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Tigger", "Sora", "Pooh" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Well Winds",
+        "Link": "https://www.youtube.com/watch?v=qerhSjUHtXY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=94",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Roo's Game",
+        "Link": "https://www.youtube.com/watch?v=3GKe7G7-cRI&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=95",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Roo" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Eeyore's Tail",
+        "Link": "https://www.youtube.com/watch?v=U33TpCanYho&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=96",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Eeyore" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "An Accidental Thank You",
+        "Link": "https://www.youtube.com/watch?v=y-Ousk-eGlU&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=97",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Pooh", "Eeyore", "Sora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Friends Forever",
+        "Link": "https://www.youtube.com/watch?v=eW65A38FKfY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=98",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I Am Vexen",
+        "Link": "https://www.youtube.com/watch?v=9m2p8EqoqxM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=99",
+        "Worlds": [ "Castle  Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Vexen" ],
+        "Areas": [ "Floor 10 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "A Forbidden Memory",
+        "Link": "https://www.youtube.com/watch?v=xU8LxVXi-u8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=101",
+        "Worlds": [ "Castle  Oblivion" ],
+        "Characters": [ "Sora", "Vexen" ],
+        "Areas": [ "Floor 10 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Eliminate the Traitor",
+        "Link": "https://www.youtube.com/watch?v=VbWIaYR2whw&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=102",
+        "Worlds": [ "Castle  Oblivion" ],
+        "Characters": [ "Axel", "Marluxia", "Larxene" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "The Card of Mystery",
+        "Link": "https://www.youtube.com/watch?v=DPl0ppc2vks&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=103",
+        "Worlds": [ "Castle  Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
+        "Areas": [ "Floor 11 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "A Town Unremembered",
+        "Link": "https://www.youtube.com/watch?v=0crneWgeaGE&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=104",
+        "Worlds": [ "Twilight Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Naminé" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Memories That Bind",
+        "Link": "https://www.youtube.com/watch?v=U7rpXu5lptU&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=105",
+        "Worlds": [ "Twilight Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Vexen" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Vexen's End",
+        "Link": "https://www.youtube.com/watch?v=rjDnfHud-lk&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=106",
+        "Worlds": [ "Twilight Town" ],
+        "Characters": [ "Sora", "Vexen", "Axel" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Conspiracy of Rebellion",
+        "Link": "https://www.youtube.com/watch?v=TTDGXDq28VY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=107",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Larxene", "Marluxia", "Axel", "Naminé" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "Matching Memories",
+        "Link": "https://www.youtube.com/watch?v=MT-aNYHx_Qk&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=108",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Riku Replica", "Sora" ],
+        "Areas": [ "Floor 11 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "The Fake Charm",
+        "Link": "https://www.youtube.com/watch?v=gaDskGS7Ga8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=109",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Riku Replica", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Floor 11 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "The Falling Out",
+        "Link": "https://www.youtube.com/watch?v=v9wXLKv2bv8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=110",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Floor 11 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "The Only One Who Can Save Him",
+        "Link": "https://www.youtube.com/watch?v=RwZCxJ0VWeA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=111",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Naminé", "Axel" ],
+        "Areas": [ "Floor 13" ],
+        "Music": []
+      },
+      {
+        "Name": "Sora on His Own",
+        "Link": "https://www.youtube.com/watch?v=hw1uTRQnUbU&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=112",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Jiminy" ],
+        "Areas": [ "Floor 12 Entrance" ],
+        "Music": []
+      },
+      {
+        "Name": "Friends on the Islands",
+        "Link": "https://www.youtube.com/watch?v=JwTIe3TIYDE&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=113",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Tidus", "Wakka", "Selphie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Riku in My Memories",
+        "Link": "https://www.youtube.com/watch?v=kyuyCaTyBuw&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=114",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Riku" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Islands Falling Apart",
+        "Link": "https://www.youtube.com/watch?v=NWilKlxnxyQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=115",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Darkside(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Girl That Never Was",
+        "Link": "https://www.youtube.com/watch?v=dnvboOZ_6tU&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=116",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora", "Naminé", "Kairi" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Forgotten Remnant",
+        "Link": "https://www.youtube.com/watch?v=62IFVrXKYFs&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=117",
+        "Worlds": [ "Destiny Islands" ],
+        "Characters": [ "Sora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Person Most Special",
+        "Link": "https://www.youtube.com/watch?v=kB9Y6I2Fhl4&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=118",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Naminé", "Riku Replica" ],
+        "Areas": [ "Floor 12 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Larxene's Sneer",
+        "Link": "https://www.youtube.com/watch?v=rsGWgHrfco8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=119",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Riku Replica", "Naminé", "Larxene", "Goofy", "Donald" ],
+        "Areas": [ "Floor 12 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Fake Memories and Real Feelings",
+        "Link": "https://www.youtube.com/watch?v=9pQbBzvozzQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=120",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Larxene", "Sora", "Donald", "Goofy", "Naminé", "Riku Replica", "Jiminy" ],
+        "Areas": [ "Floor 12 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "A New Promise",
+        "Link": "https://www.youtube.com/watch?v=Gtzc5VTUVlI&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=121",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "The Sneaking Shadow",
+        "Link": "https://www.youtube.com/watch?v=bgXgzRmO-uo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=122",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Naminé", "Riku Replica", "Marluxia" ],
+        "Areas": [ "Floor 12 Exit" ],
+        "Music": []
+      },
+      {
+        "Name": "Axel vs. Marluxia",
+        "Link": "https://www.youtube.com/watch?v=JHuQBZ-Q-sg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=123",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Marluxia", "Axel" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "Axel's Dancing Flames",
+        "Link": "https://www.youtube.com/watch?v=k0HcGSztuk8&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=13",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Axel", "Marluxia", "Naminé", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "Axel Vanishes",
+        "Link": "https://www.youtube.com/watch?v=O7yGIo0DTuQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=124",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Axel", "Sora" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "Phantom Promise or Not",
+        "Link": "https://www.youtube.com/watch?v=gjp55kI-OzA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=125",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Marluxia", "Naminé", "Riku Replica" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "To the Last Battle",
+        "Link": "https://www.youtube.com/watch?v=BJoCGFXWdjM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=126",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Marluxia", "Sora", "Donald", "Goofy", "Naminé", "Riku Replica" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "The Heart-Lorn World",
+        "Link": "https://www.youtube.com/watch?v=eOCHPSCkIHg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=127",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Marluxia" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "Into Oblivion",
+        "Link": "https://www.youtube.com/watch?v=5nz45gMIaPg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=128",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Marluxia", "Sora" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "Your Own Heart",
+        "Link": "https://www.youtube.com/watch?v=NWnffD55ZRI&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=129",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Riku Replica", "Naminé", "Jiminy" ],
+        "Areas": [ "Castle Oblivion" ],
+        "Music": []
+      },
+      {
+        "Name": "Promise in the Light",
+        "Link": "https://www.youtube.com/watch?v=_ASKXskVz1c&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=130",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Naminé", "Jiminy", "Leon", "Tidus", "Yuffie", "Cid", "Aerith", "Selphie", "Wakka", "Riku", "Kairi" ],
+        "Areas": [],
+        "Music": []
+      }
+    ],
     "Kingdom Hearts II": [
       {
         "Name": "Dreams Connected",
@@ -1372,6 +2414,177 @@
         "Music": [ "Sanctuary" ]
       }
     ],
+    "Kingdom Hearts 358/2 Days": [
+
+    ],
+    "Kingdom Hearts Birth By Sleep": [],
+    "Kingdom Hearts Re:Coded": [],
+    "Kingdom Hearts Dream Drop Distance": [],
+    "Kingdom Hearts 0.2": [
+      {
+        "Name": "The World's End",
+        "Link": "https://www.youtube.com/watch?v=VW-lgiheLMc&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=1",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Luxu" ],
+        "Areas": [ "The Keyblade Graveyard" ],
+        "Music": []
+      },
+      {
+        "Name": "A Secret Unveiled",
+        "Link": "https://www.youtube.com/watch?v=6-32VuLHgnU&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=2",
+        "Worlds": [ "Mysterious Tower", "Destiny Islands", "Dive to the Heart", "The Keyblade Graveyard", "The Land of Departure", "Dark World" ],
+        "Characters": [ "Yen Sid", "Mickey", "Kairi", "Riku", "Young Sora", "Young Riku", "Young Kairi", "Aqua", "Terra", "Ventus", "Master Xehanort", "Terra-Xehanort", "Sora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Castle of Dreams",
+        "Link": "https://www.youtube.com/watch?v=swKTJb9EejA&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=3",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Shadow(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Stirring",
+        "Link": "https://www.youtube.com/watch?v=4noWLj7EpxY&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=4",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Shadow(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Days No More",
+        "Link": "https://www.youtube.com/watch?v=-W2vEHPixmw&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=5",
+        "Worlds": [ "Dark World", "The Land of Departure", "Castle of Dreams", "Dwarf Woodlands", "Enchanted Dominion", "Disney Town", "Olympus Coliseum", "Deep Space", "Neverland" ],
+        "Characters": [ "Aqua", "Terra", "Ventus", "Cinderella", "Jaq", "Grumpy", "Doc", "Happy", "Dopey", "Sleepy", "Minnie", "Daisy", "Stitch", "Peter Pan" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Time Stands Still",
+        "Link": "https://www.youtube.com/watch?v=W3-ftH3qGEo&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=6",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "No Going Back",
+        "Link": "https://www.youtube.com/watch?v=oFkaZTLlg9A&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=7",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Terra" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reflection",
+        "Link": "https://www.youtube.com/watch?v=Jz1x2qSQ9Rk&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=8",
+        "Worlds": [ "Dark World", "Castle Oblivion" ],
+        "Characters": [ "Aqua", "Ventus" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Phantoms",
+        "Link": "https://www.youtube.com/watch?v=QQj7HA9V7AM&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=9",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Phantom Aqua" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Questions",
+        "Link": "https://www.youtube.com/watch?v=70oYpMf84Ns&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=10",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Visions",
+        "Link": "https://www.youtube.com/watch?v=Bun_jHFQzaQ&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=11",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Terra", "Ventus", "Darkside(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Giant",
+        "Link": "https://www.youtube.com/watch?v=jghQmK-xenM&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=12",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Darkside(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion",
+        "Link": "https://www.youtube.com/watch?v=Svwj5ABTXGA&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=13",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Terra", "Ventus", "Terra-Xehanort", "Guardian" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Time Past",
+        "Link": "https://www.youtube.com/watch?v=yi8LXmmqYL0&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=14",
+        "Worlds": [ "Dark World", "Radiant Garden" ],
+        "Characters": [ "Aqua", "Mickey", "Shadow(s)", "Demon Tower", "Young Kairi" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Past and Present",
+        "Link": "https://www.youtube.com/watch?v=-ECGKcKpJQM&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=15",
+        "Worlds": [ "Dark World", "Destiny Islands" ],
+        "Characters": [ "Aqua", "Mickey", "Young Sora", "Young Riku", "Shadow(s)", "Demon Tide" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Keyblade of Darkness",
+        "Link": "https://www.youtube.com/watch?v=oC-KTIPsRXY&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=16",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Mickey", "Riku", "Shadow(s)", "Demon Tide" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I Will Stay",
+        "Link": "https://www.youtube.com/watch?v=eYEnqmoKjGI&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=17",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Shadow(s)", "Demon Tide", "Aqua" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Closing the Door",
+        "Link": "https://www.youtube.com/watch?v=bgdPa-_npY4&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=18",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Mickey", "Darkside(s)", "Riku" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A World Restored",
+        "Link": "https://www.youtube.com/watch?v=MbCdTr03KWk&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=19",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Aqua", "Ansem the Wise" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "2.9 - The First Volume",
+        "Link": "https://www.youtube.com/watch?v=xJbduFOD8Uw&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=20",
+        "Worlds": [ "Mysterious Tower", "Gummi Ship" ],
+        "Characters": [ "Mickey", "Kairi", "Riku", "Yen Sid", "Donald", "Goofy", "Sora" ],
+        "Areas": [],
+        "Music": []
+      }
+    ],
+    "Kingdom Hearts X": [],
+    "Kingdom Hearts X Back Cover": [],
+    "Kingdom Hearts Union X": [],
     "Kingdom Hearts III": [
       {
         "Name": "Opening",
@@ -1380,6 +2593,297 @@
         "Characters": [ "Sora", "Young Xehanort", "Terra", "Aqua", "Ventus", "Riku", "Kairi", "Ansem", "Naminé", "Roxas", "Axel", "Xion", "Xemnas", "Marluxia", "Xehanort", "Donald", "Goofy", "Mickey" ],
         "Areas": [ "The Final World", "Scala ad Caelum", "The Land of Departure", "Dive to the Heart", "Destiny Islands", "Castle Oblivion", "Twilight Town", "Keyblade Graveyard" ],
         "Music": [ "Face My Fears" ]
+      }
+    ],
+    "Kingdom Hearts Dark Road": [],
+    "Kingdom Hearts Melody of Memory": [
+      {
+        "Name": "KINGDOM HEARTS; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=JtYtS0CJBCo&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=1",
+        "Worlds": [ "Dive to the Heart", "Destiny Islands", "Disney Castle" ],
+        "Characters": [ "Kairi", "Sora", "Riku", "Ansem, Seeked of Darkness", "Pluto", "Donald", "Goofy", "Minnie", "Daisy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS; Chapter 2",
+        "Link": "https://www.youtube.com/watch?v=BfisDo3z5Fk&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=2",
+        "Worlds": [ "Destiny Islands", "Traverse Town" ],
+        "Characters": [ "Sora", "Riku", "Kairi", "Donald", "Goofy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS; Chapter 3",
+        "Link": "https://www.youtube.com/watch?v=TlTkjQXjql0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=3",
+        "Worlds": [ "Traverse Town", "Wonderland", "Atlantica", "Agrabah", "Olympus Coliseum", "Halloween Town", "Hollow Bastion" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Leon", "Yuffie", "Card Soldiers", "Alice", "Queen of Hearts", "Ariel", "Aladdin", "Genie", "Hercules", "Cloud", "Cerberus", "Riku", "Maleficent" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS; Chapter 4",
+        "Link": "https://www.youtube.com/watch?v=fN7Lx7RGQv0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=4",
+        "Worlds": [ "Neverland", "Hollow Bastion", "Traverse Town" ],
+        "Characters": [ "Riku", "Sora", "Kairi", "Maleficent", "Donald", "Goofy", "Beast", "Shadow(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS; Chapter 5",
+        "Link": "https://www.youtube.com/watch?v=_MRJ8JqTI94&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=5",
+        "Worlds": [ "End of the World" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Ansem, Seeker of Darkness", "Goofy", "Riku", "Mickey", "Pluto" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Re:Chain of Memories; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=GMTSOSsTUpw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=6",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Marluxia", "Jiminy", "Riku", "Mickey" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Re:Chain of Memories; Chapter 2",
+        "Link": "https://www.youtube.com/watch?v=szpGrTIG2uQ&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=7",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Sora", "Kairi", "Naminé", "Larxene", "Riku", "Ansem, Seeker of Darkness", "Riku Replica", "Lexaeus", "Vexen", "Zexion", "Axel", "Marluxia" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Re:Chain of Memories; Chapter 3",
+        "Link": "https://www.youtube.com/watch?v=VuI6R8w3JuU&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=8",
+        "Worlds": [ "Castle Oblivion", "Destiny Islands" ],
+        "Characters": [ "Kairi", "Naminé", "Marluxia", "Axel", "Sora", "Donald", "Goofy", "Riku Replica" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Re:Chain of Memories; Chapter 4",
+        "Link": "https://www.youtube.com/watch?v=rSPYcj_5Xio&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=9",
+        "Worlds": [ "Castle Oblivion", "Destiny Islands", "Twilight Town" ],
+        "Characters": [ "Sora", "Jiminy", "Naminé", "Donald", "Goofy", "Riku", "Zexion", "Kairi", "Riku Replica", "Ansem, Seeker of Darkness", "Mickey", "Ansem the Wise" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS 358/2 Days; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=cJNmtSnRgj8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=10",
+        "Worlds": [ "Twilight Town", "The World That Never Was", "Beast's Castle", "Destiny Islands" ],
+        "Characters": [ "Kairi", "Roxas", "Xemnas", "Xigbar", "Xaldin", "Vexen", "Lexaeus", "Zexion", "Saïx", "Axel", "Demyx", "Luxord", "Marluxia", "Xion", "Sora", "Naminé", "Riku" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS 358/2 Days; Chapter 2",
+        "Link": "https://www.youtube.com/watch?v=Uuoh0O1ZNZE&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=11",
+        "Worlds": [ "The World That Never Was", "Twilight Town" ],
+        "Characters": [ "Kairi", "Roxas", "Riku", "Ansem, Seeker of Darkness", "Guardian" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS II; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=AFbPpItkC44&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=12",
+        "Worlds": [ "Twilight Town", "Dive to the Heart", "The World That Never Was" ],
+        "Characters": [ "Kairi", "Roxas", "Hayner", "Pence", "Olette", "Dusk(s)", "Axel", "Naminé", "Ansem the Wise", "Sora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS II; Chapter 2",
+        "Link": "https://www.youtube.com/watch?v=4p5EP7TP1vw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=13",
+        "Worlds": [ "Twilight Town", "Mysterious Tower", "The World That Never Was", "The Land of Dragons", "Beast's Castle", "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Mickey", "Hayner", "Pence", "Olette", "Yen Sid", "Xemnas", "Xigbar", "Xaldin", "Saïx", "Luxord", "Mulan", "Storm Rider", "Beast", "Belle", "Auron", "Hercules", "Meg" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS II; Chapter 3",
+        "Link": "https://www.youtube.com/watch?v=IqIHCmNFrcc&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=14",
+        "Worlds": [ "Hollow Bastion", "End of the World" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Ansem the Wise", "Mickey", "Terra-Xehanort", "Ansem, Seeker of Darkness", "Xemnas", "Saïx", "Armored Knights", "Riku" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS II; Chapter 4",
+        "Link": "https://www.youtube.com/watch?v=5V7NUZ4brn8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=15",
+        "Worlds": [ "Twilight Town", "The World That Never Was", "Dive to the Heart" ],
+        "Characters": [ "Axel", "Dusk(s)", "Sora", "Donald", "Goofy", "Mickey", "Roxas", "Riku", "Kairi", "Xemnas", "Ansem the Wise" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS II; Chapter 5",
+        "Link": "https://www.youtube.com/watch?v=m0Oi_RazcPU&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=16",
+        "Worlds": [ "The World That Never Was", "Dark World" ],
+        "Characters": [ "Kairi", "Xemnas", "Sora", "Riku" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Re:coded; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=m0Oi_RazcPU&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=16",
+        "Worlds": [ "Disney Castle", "Dive to the Heart", "Destiny Islands", "Traverse Town", "Wonderland", "Olympus Coliseum", "Agrabah", "Hollow Bastion", "Datascape", "Castle Oblivion" ],
+        "Characters": [ "Jiminy", "Chip", "Dale", "Mickey", "Donald", "Goofy", "Data-Sora", "Wakka", "Alice", "Shadow(s)", "Data-Riku", "Pete", "Maleficent", "Sora's Heartless", "Pluto", "Data-Roxas", "Naminé", "Roxas", "Axel", "Xion", "Terra", "Aqua", "Ventus", "Kairi", "Sora", "Riku" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Birth by Sleep; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=XOL_2DNJ43o&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=18",
+        "Worlds": [ "The Land of Departure", "Enchanted Dominion", "Castle of Dreams", "The Keyblade Graveyard" ],
+        "Characters": [ "Kairi", "Terra", "Aqua", "Ventus", "Eraqus", "Master Xehanort", "Vanitas", "Maleficent", "Aurora", "Cinderella", "Prince Phillip", "Dragon" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Birth by Sleep; Chapter 2",
+        "Link": "https://www.youtube.com/watch?v=AeGhHd5Y_Xk&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=19",
+        "Worlds": [ "Radiant Garden", "Destiny Islands", "The Land of Departure", "The Keyblade Graveyard" ],
+        "Characters": [ "Kairi", "Young Kairi", "Aqua", "Terra", "Ventus", "Young Riku", "Eraqus", "Vanitas" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Birth by Sleep; Chapter 3",
+        "Link": "https://www.youtube.com/watch?v=36DL6MHI2wI&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=20",
+        "Worlds": [ "The Keyblade Graveyard", "Dive to the Heart" ],
+        "Characters": [ "Kairi", "Master Xehanort", "Vanitas", "Terra", "Aqua", "Ventus", "Terra-Xehanort", "Lingering Will" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS Birth by Sleep; Chapter 4",
+        "Link": "https://www.youtube.com/watch?v=1zXiYJUdVX0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=21",
+        "Worlds": [ "Castle Oblivion", "Radiant Garden", "Destiny Islands", "Dive to the Heart" ],
+        "Characters": [ "Kairi", "Ventus", "Aqua", "Terra-Xehanort", "Guardian", "Ansem the Wise", "Dilan", "Braig", "Darkside(s)", "Young Sora", "Young Riku" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS 0.2 Birth by Sleep -A fragmentary passage-; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=Sxp1HhJamTA&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=22",
+        "Worlds": [ "Dark World", "Mysterious Tower", "Gummi Ship" ],
+        "Characters": [ "Aqua", "Terra", "Ventus", "Phantom Aqua", "Darkside(s)", "Terra-Xehanort", "Mickey", "Young Sora", "Young Riku", "Shadow(s)", "Demon Tide", "Kairi", "Riku", "Yen Sid", "Sora", "Donald", "Goofy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS 3D [Dream Drop Distance]; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=LjKpLUVAAsA&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=23",
+        "Worlds": [ "Mysterious Tower", "Destiny Islands", "Traverse Town" ],
+        "Characters": [ "Kairi", "Sora", "Riku", "Yen Sid", "Mickey", "Donald", "Goofy", "Meow Wow(s)", "Necho Cat(s)", "Joshua", "Komory Bat(s)", "Shiki", "Beat", "Young Xehanort" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS 3D [Dream Drop Distance]; Chapter 2",
+        "Link": "https://www.youtube.com/watch?v=vXjeSRN-hqw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=24",
+        "Worlds": [ "La Cité des Cloches", "The Grid", "Prankster's Paradise", "Country of the Musketeers", "Disney Castle", "Mysterious Tower" ],
+        "Characters": [ "Kairi", "Sora", "Quasimodo", "Phoebus", "Riku", "Blue Fairy", "Donald", "Goofy", "Mickey", "Young Xehanort", "Vanitas", "Ansem, Seeker of Darkness", "Xemnas", "Maleficent", "Pete", "Minnie", "Lea", "Yen Sid" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS 3D [Dream Drop Distance]; Chapter 3",
+        "Link": "https://www.youtube.com/watch?v=JXmCK8CDky4&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=25",
+        "Worlds": [ "The World That Never Was", "Destiny Islands" ],
+        "Characters": [ "Kairi", "Sora", "Young Xehanort", "Riku", "Ansem, Seeker of Darkness", "Guardian", "Master Xehanort", "Xemnas", "Xigbar", "Mickey", "Lea", "Donald", "Goofy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS 3D [Dream Drop Distance]; Chapter 4",
+        "Link": "https://www.youtube.com/watch?v=hMEbBv9R1K8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=26",
+        "Worlds": [ "Mysterious Tower", "Dive to the Heart", "Destiny Islands" ],
+        "Characters": [ "Sora", "Riku", "Mickey", "Donald", "Goofy", "Lea", "Yen Sid", "Armored Ventus Nightmare", "Roxas", "Ventus", "Xion", "Ansem the Wise", "Kairi" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS III; Chapter 1",
+        "Link": "https://www.youtube.com/watch?v=GXLLS_hZMUw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=26",
+        "Worlds": [ "Mysterious Tower", "Olympus", "Gummi Ship", "Twilight Town", "Radiant Garden", "Kingdom of Corona", "Toy Box", "Secret Forest" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Yen Sid", "Hercules", "Xigbar", "Zeus", "Jiminy", "Hanyer", "Pence", "Olette", "Roxas", "Ienzo", "Ansem, Seeker of Darkness", "Xemnas", "Rapunzel", "Woody", "Buzz", "Rex", "Hamm", "Young Xehanort", "Kairi", "Lea" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS III; Chapter 2",
+        "Link": "https://www.youtube.com/watch?v=RMoXxcjfO2c&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=27",
+        "Worlds": [ "Arendelle", "Monstropolis", "San Fransokyo", "Dark World", "Destiny Islands", "Castle Oblivion", "The Land of Departure", "Dive to the Heart" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Larxene", "Anna", "Kristoff", "Olaf", "Sven", "Marshmallow", "Elsa", "Sulley", "Mike Wazowski", "Boo", "Vanitas", "Hiro", "Baymax", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Dark Riku", "Riku", "Mickey", "Anti-Aqua", "Aqua", "Ventus" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "KINGDOM HEARTS III; Chapter 3",
+        "Link": "https://www.youtube.com/watch?v=JpJfOf6zPsI&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=28",
+        "Worlds": [ "The Keyblade Graveyard", "The Final World", "Olympus", "San Fransokyo", "Scala ad Caelum" ],
+        "Characters": [ "Sora", "Riku", "Kairi", "Mickey", "Donald", "Goofy", "Aqua", "Ventus", "Lea", "Shadow(s)", "Demon Tide", "Dusk(s)", "Air Soldier(s)", "Reapers", "Flutterings", "Chirithy", "Lich", "Young Xehanort", "Ephemer", "Yen Sid", "Master Xehanort", "Replica Xehanort(s)", "Terra", "Guardian", "Roxas", "Xion", "Eraqus" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Arrival",
+        "Link": "https://www.youtube.com/watch?v=dISaayZUWGk&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=4",
+        "Worlds": [ "The Final World" ],
+        "Characters": [ "Kairi" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Lost Memories",
+        "Link": "https://www.youtube.com/watch?v=4lbG2ZLgrU8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=5",
+        "Worlds": [ "The Final World", "Radiant Garden" ],
+        "Characters": [ "Kairi", "Young Kairi", "Shadow(s)", "Terra-Xehanort" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fated Meeting",
+        "Link": "https://www.youtube.com/watch?v=xDElrFGfUQg&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=6",
+        "Worlds": [ "The Final World", "The Keyblade Graveyard" ],
+        "Characters": [ "Kairi", "Master Xehanort", "Sora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Answer",
+        "Link": "https://www.youtube.com/watch?v=oQEMOl9d79s&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=7",
+        "Worlds": [ "The Final World" ],
+        "Characters": [ "Sora", "Master Xehanort", "Kairi", "Xemnas", "Ansem, Seeker of Darkness", "Terra-Xehanort" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fictional World",
+        "Link": "https://www.youtube.com/watch?v=TEBys2FZcNA&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=8",
+        "Worlds": [ "Radiant Garden" ],
+        "Characters": [ "Kairi", "Ansem the Wise", "Ienzo", "Even", "Riku", "Aeleus", "Fairy Godmother" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Other Side",
+        "Link": "https://www.youtube.com/watch?v=JOiy7QfOhpU&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=9",
+        "Worlds": [ "The Final World" ],
+        "Characters": [ "Kairi", "Riku", "Fairy Godmother", "Nameless Star" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Another Key",
+        "Link": "https://www.youtube.com/watch?v=F1nJu5JYrV0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=10",
+        "Worlds": [ "Mysterious Tower" ],
+        "Characters": [ "Kairi", "Mickey", "Donald", "Goofy", "Yen Sid" ],
+        "Areas": [],
+        "Music": []
       }
     ]
   }

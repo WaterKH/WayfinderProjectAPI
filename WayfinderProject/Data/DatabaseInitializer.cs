@@ -23,7 +23,7 @@ namespace WayfinderProjectAPI.Data
             CreateWorlds(context);
 
             // Load Script Data into Database
-            CreateKH1Script(context);
+            CreateScripts(context);
 
             // Load Scene Data into Database
             CreateScenes(context);
@@ -105,6 +105,24 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
+        public static void CreateScripts(WayfinderContext context)
+        {
+            CreateScript(context, "_kh1_lines.json", "Kingdom Hearts");
+            CreateScript(context, "_khrecom_lines.json", "Kingdom Hearts Re:Chain of Memories");
+            //CreateScript(context, "_kh2_lines.json", "Kingdom Hearts II");
+            //CreateScript(context, "_khdays_lines.json", "Kingdom Hearts 358/2 Days");
+            //CreateScript(context, "_khbbs_lines.json", "Kingdom Hearts Birth By Sleep");
+            CreateScript(context, "_khrecoded_lines.json", "Kingdom Hearts Re:Coded");
+            //CreateScript(context, "_kh3d_lines.json", "Kingdom Hearts Dream Drop Distance");
+            CreateScript(context, "_kh0_2_lines.json", "Kingdom Hearts 0.2");
+            //CreateScript(context, "_khx_lines.json", "Kingdom Hearts X");
+            //CreateScript(context, "_khxbc_lines.json", "Kingdom Hearts X Back Cover");
+            //CreateScript(context, "_khux_lines.json", "Kingdom Hearts Union X");
+            //CreateScript(context, "_kh3_lines.json", "Kingdom Hearts III");
+            //CreateScript(context, "_khdr_lines.json", "Kingdom Hearts Dark Road");
+            CreateScript(context, "_khmom_lines.json", "Kingdom Hearts Melody of Memory");
+        }
+
         class LineScriptObject
         {
             public int Order { get; set; }
@@ -112,9 +130,9 @@ namespace WayfinderProjectAPI.Data
             public string Line { get; set; } = string.Empty;
         }
 
-        public static void CreateKH1Script(WayfinderContext context)
+        public static void CreateScript(WayfinderContext context, string fileName, string gameName)
         {
-            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_kh1_lines.json"));
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @$"wwwroot/data/seed/scripts/{fileName}"));
             var script = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<LineScriptObject>>>>(streamReader.ReadToEnd());
 
             if (!script!.ContainsKey("Script"))
@@ -122,7 +140,7 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (scene, lines) in script["Script"])
             {
-                var temp = new Script { SceneName = scene, GameName = "Kingdom Hearts", Lines = new List<ScriptLine>() };
+                var temp = new Script { SceneName = scene, GameName = gameName, Lines = new List<ScriptLine>() };
                 foreach (var line in lines)
                 {
                     temp.Lines.Add(new ScriptLine { Order = line.Order, Character = line.Character, Line = line.Line });

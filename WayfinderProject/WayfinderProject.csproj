@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\data\seed\scripts\_kh0_2_lines.json~RF26577320.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Data\DTOs\ScriptLineDto.cs~RF21264c9d.TMP" />
     <None Remove="Data\WayfinderProject.db" />
     <None Remove="Pages\Index.razor~RF1edb7af7.TMP" />

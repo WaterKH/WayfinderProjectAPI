@@ -90,7 +90,7 @@ namespace WayfinderProjectAPI.Controllers
                     (charactersList != null ? x.Characters.Any(y => charactersList.Contains(y.Name)) : true) &&
                     (areasList != null ? x.Areas.Any(y => areasList.Contains(y.Name)) : true) &&
                     (musicList != null ? x.Music.Any(y => musicList.Contains(y.Name)) : true) &&
-                    (line != null ? x.Script.Lines.ToList().Any(y => y.Line.Contains(line)) : true))
+                    (line != null ? x.Script.Lines.ToList().Any(y => y.Line.ToLower().Contains(line.ToLower())) : true))
                 .OrderBy(x => x.Id)
                 .ToDto()
                 .ToListAsync();
