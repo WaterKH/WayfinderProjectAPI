@@ -55,103 +55,95 @@
         <td>@Scene.Game.Name</td>
         <td><a href="@Scene.Link" target="_blank">@Scene.Name</a></td>
         <td>
-            <div style="display: inline-flex;">
-                @for (int i = 0; i < Scene.Worlds.Count; ++i)
-                {
-                    if (i >= 2)
-                    {
-                        <div>...</div>
-                        break;
-                    }
-                    
-                    @Scene.Worlds.ToList()[i].Name
-                    if (i < Scene.Worlds.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-
             @if (Scene.Worlds.Count > 2)
             {
-                <Tooltip Text="@(string.Join(", ", Scene.Worlds.Select(x => x.Name)))">
-                    <i class="oi oi-info icon"></i>
-                </Tooltip>
+                <div style="margin-left: -5px;">
+                    <Tooltip Text="@(string.Join(", ", Scene.Worlds.Select(x => x.Name)))">
+                        <em>Multiple</em> <i class="oi oi-info icon"></i>
+                    </Tooltip>
+                </div>
+            }
+            else
+            {
+                <div style="display: inline-flex">
+                    @for (int i = 0; i < Scene.Worlds.Count; ++i)
+                    {
+                        @Scene.Worlds.ToList()[i].Name
+                        if (i < Scene.Worlds.Count - 1)
+                        {
+                            <div>,&nbsp;</div>
+                        }
+                    }
+                </div>
             }
         </td>
         <td>
-            <div style="display: inline-flex;">
-                @for (int i = 0; i < Scene.Areas.Count; ++i)
-                {
-                    if (i >= 2)
-                    {
-                        <div>...</div>
-                        break;
-                    }
-                    
-                    @Scene.Areas.ToList()[i].Name
-                    if (i < Scene.Areas.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-
             @if (Scene.Areas.Count > 2)
             {
-                <Tooltip Text="@(string.Join(", ", Scene.Areas.Select(x => x.Name)))">
-                    <i class="oi oi-info icon"></i>
-                </Tooltip>
+                <div style="margin-left: -5px;">
+                    <Tooltip Text="@(string.Join(", ", Scene.Areas.Select(x => x.Name)))">
+                        <em>Multiple</em> <i class="oi oi-info icon"></i>
+                    </Tooltip>
+                </div>
+            }
+            else
+            {
+                <div style="display: inline-flex">
+                    @for (int i = 0; i < Scene.Areas.Count; ++i)
+                    {
+                        @Scene.Areas.ToList()[i].Name
+                        if (i < Scene.Areas.Count - 1)
+                        {
+                            <div>,&nbsp;</div>
+                        }
+                    }
+                </div>
             }
         </td>
         <td>
-            <div style="display: inline-flex;">
-                @for (int i = 0; i < Scene.Characters.Count; ++i)
-                {
-                    if (i >= 2)
-                    {
-                        <div>...</div>
-                        break;
-                    }
-                    
-                    @Scene.Characters.ToList()[i].Name
-                    if (i < Scene.Characters.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-
             @if (Scene.Characters.Count > 2)
             {
-                <Tooltip Text="@(string.Join(", ", Scene.Characters.Select(x => x.Name)))">
-                    <i class="oi oi-info icon"></i>
-                </Tooltip>
+                <div style="margin-left: -5px;">
+                    <Tooltip Text="@(string.Join(", ", Scene.Characters.Select(x => x.Name)))">
+                        <em>Multiple</em> <i class="oi oi-info icon"></i>
+                    </Tooltip>
+                </div>
+            }
+            else
+            {
+                <div style="display: inline-flex">
+                    @for (int i = 0; i < Scene.Characters.Count; ++i)
+                    {
+                        @Scene.Characters.ToList()[i].Name
+                        if (i < Scene.Characters.Count - 1)
+                        {
+                            <div>,&nbsp;</div>
+                        }
+                    }
+                </div>
             }
         </td>
         <td>
-            <div style="display: inline-flex;">
-                @for (int i = 0; i < Scene.Music.Count; ++i)
-                {
-                    if (i >= 2)
-                    {
-                        <div>...</div>
-                        break;
-                    }
-                    
-                    <a href="@Scene.Music.ToList()[i].Link" target="_blank">@Scene.Music.ToList()[i].Name</a>
-                    if (i < Scene.Music.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-
             @if (Scene.Music.Count > 2)
             {
-                <Tooltip Text="@(string.Join(", ", Scene.Music.Select(x => x.Name)))">
-                    <i class="oi oi-info icon"></i>
-                </Tooltip>
+                <div style="margin-left: -5px;">
+                    <Tooltip Text="@(string.Join(", ", Scene.Music.Select(x => x.Name)))">
+                        <em>Multiple</em> <i class="oi oi-info icon"></i>
+                    </Tooltip>
+                </div>
+            }
+            else
+            {
+                <div style="display: inline-flex">
+                    @for (int i = 0; i < Scene.Music.Count; ++i)
+                    {
+                        <a href="@Scene.Music.ToList()[i].Link" target="_blank">@Scene.Music.ToList()[i].Name</a>
+                        if (i < Scene.Music.Count - 1)
+                        {
+                            <div>,&nbsp;</div>
+                        }
+                    }
+                </div>
             }
         </td>
         <td>

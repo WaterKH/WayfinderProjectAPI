@@ -52,7 +52,7 @@
       {
         "Name": "Across the Ocean",
         "Link": "https://www.youtube.com/watch?v=I_FLeoZh3XA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=8",
-        "Worlds": [ "Seashore" ],
+        "Worlds": [ "Destiny Islands" ],
         "Characters": [ "Kairi", "Sora" ],
         "Areas": [ "Seashore" ],
         "Music": [ "Kairi I" ]
@@ -3305,7 +3305,7 @@
         "Link": "https://www.youtube.com/watch?v=6-32VuLHgnU&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=2",
         "Worlds": [ "Mysterious Tower", "Destiny Islands", "Dive to the Heart", "The Keyblade Graveyard", "The Land of Departure", "Dark World" ],
         "Characters": [ "Yen Sid", "Mickey", "Kairi", "Riku", "Young Sora", "Young Riku", "Young Kairi", "Aqua", "Terra", "Ventus", "Master Xehanort", "Terra-Xehanort", "Sora" ],
-        "Areas": ["Sorcerer's Loft", "Seashore", "Station of Awakening", "Keyblade Graveyard", "Summit"],
+        "Areas": [ "Sorcerer's Loft", "Seashore", "Station of Awakening", "Keyblade Graveyard", "Summit" ],
         "Music": [ "Magical Mystery", "Simple and Clean -Ray of Hope MIX-" ]
       },
       {
@@ -3329,7 +3329,7 @@
         "Link": "https://www.youtube.com/watch?v=-W2vEHPixmw&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=5",
         "Worlds": [ "Dark World", "The Land of Departure", "Castle of Dreams", "Dwarf Woodlands", "Enchanted Dominion", "Disney Town", "Olympus Coliseum", "Deep Space", "Neverland" ],
         "Characters": [ "Aqua", "Terra", "Ventus", "Cinderella", "Jaq", "Grumpy", "Doc", "Happy", "Dopey", "Sleepy", "Minnie", "Daisy", "Stitch", "Peter Pan" ],
-        "Areas": [ "Castle Town", "Summit", "Cinderella's Chateau", "Cottage Clearing", "Maleficent's Throne", "Main Plaza", "Coliseum Gates", "Launch Deck", "Indian Camp", "Forecourt"],
+        "Areas": [ "Castle Town", "Summit", "Cinderella's Chateau", "Cottage Clearing", "Maleficent's Throne", "Main Plaza", "Coliseum Gates", "Launch Deck", "Indian Camp", "Forecourt" ],
         "Music": []
       },
       {
@@ -3353,8 +3353,8 @@
         "Link": "https://www.youtube.com/watch?v=Jz1x2qSQ9Rk&list=PLYnY5NdwIhRBs-dqwwyBe6le5mv4tKBCR&index=8",
         "Worlds": [ "Dark World", "Castle Oblivion" ],
         "Characters": [ "Aqua", "Ventus" ],
-        "Areas": ["Castle Town", "Chamber of Waking", "The World Within"],
-        "Music": [ "Ventus" "The World Within" ]
+        "Areas": [ "Castle Town", "Chamber of Waking", "The World Within" ],
+        "Music": [ "Ventus", "The World Within" ]
       },
       {
         "Name": "Phantoms",
@@ -3473,7 +3473,7 @@
         "Link": "https://www.youtube.com/watch?v=JtYtS0CJBCo&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=1",
         "Worlds": [ "Dive to the Heart", "Destiny Islands", "Disney Castle" ],
         "Characters": [ "Kairi", "Sora", "Riku", "Ansem, Seeked of Darkness", "Pluto", "Donald", "Goofy", "Minnie", "Daisy" ],
-        "Areas": ["Awakening", "Seashore", "Secret Place", "Audience Chamber", "Library"],
+        "Areas": [ "Awakening", "Seashore", "Secret Place", "Audience Chamber", "Library" ],
         "Music": [ "Dive into the Heart -Destati-" ]
       },
       {
@@ -3481,7 +3481,7 @@
         "Link": "https://www.youtube.com/watch?v=BfisDo3z5Fk&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=2",
         "Worlds": [ "Destiny Islands", "Traverse Town" ],
         "Characters": [ "Sora", "Riku", "Kairi", "Donald", "Goofy" ],
-        "Areas": ["Seashore", "Secret Place", "Storm-tossed Island", "First District"],
+        "Areas": [ "Seashore", "Secret Place", "Storm-tossed Island", "First District" ],
         "Music": [ "Night of Fate" ]
       },
       {
@@ -3489,7 +3489,7 @@
         "Link": "https://www.youtube.com/watch?v=TlTkjQXjql0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=3",
         "Worlds": [ "Traverse Town", "Wonderland", "Atlantica", "Agrabah", "Olympus Coliseum", "Halloween Town", "Hollow Bastion" ],
         "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Leon", "Yuffie", "Card Soldiers", "Alice", "Queen of Hearts", "Ariel", "Aladdin", "Genie", "Hercules", "Cloud", "Cerberus", "Riku", "Maleficent" ],
-        "Areas": ["Third District", "Queen's Castle", "Tranquil Grotto", "Desert", "Arena", "Manor Ruins", "Rising Falls"],
+        "Areas": [ "Third District", "Queen's Castle", "Tranquil Grotto", "Desert", "Arena", "Manor Ruins", "Rising Falls" ],
         "Music": [ "A Walk in Andante" ]
       },
       {
@@ -3497,7 +3497,7 @@
         "Link": "https://www.youtube.com/watch?v=fN7Lx7RGQv0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=4",
         "Worlds": [ "Neverland", "Hollow Bastion", "Traverse Town" ],
         "Characters": [ "Riku", "Sora", "Kairi", "Maleficent", "Donald", "Goofy", "Beast", "Shadow(s)" ],
-        "Areas": ["Deck", "Castle Chapel", "Rising Falls", "Entrance Hall", "Grand Hall", "Secret Waterway"],
+        "Areas": [ "Deck", "Castle Chapel", "Rising Falls", "Entrance Hall", "Grand Hall", "Secret Waterway" ],
         "Music": [ "Kairi I" ]
       },
       {
@@ -3545,7 +3545,7 @@
         "Link": "https://www.youtube.com/watch?v=cJNmtSnRgj8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=10",
         "Worlds": [ "Twilight Town", "The World That Never Was", "Beast's Castle", "Destiny Islands" ],
         "Characters": [ "Kairi", "Roxas", "Xemnas", "Xigbar", "Xaldin", "Vexen", "Lexaeus", "Zexion", "Saïx", "Axel", "Demyx", "Luxord", "Marluxia", "Xion", "Sora", "Naminé", "Riku" ],
-        "Areas": [ "The Old Mansion", "Round Room", "Clock Tower", "Bridge", "Seashore", "Tram Common", "Fragment Crossing", "The White Room"],
+        "Areas": [ "The Old Mansion", "Round Room", "Clock Tower", "Bridge", "Seashore", "Tram Common", "Fragment Crossing", "The White Room" ],
         "Music": [ "Musique pour la tristesse de Xion", "Vector to the Heavens" ]
       },
       {
@@ -3553,7 +3553,7 @@
         "Link": "https://www.youtube.com/watch?v=Uuoh0O1ZNZE&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=11",
         "Worlds": [ "The World That Never Was", "Twilight Town" ],
         "Characters": [ "Kairi", "Roxas", "Riku", "Ansem, Seeker of Darkness", "Guardian" ],
-        "Areas": [ "Memory's Skyscraper", "Roxas's Room"],
+        "Areas": [ "Memory's Skyscraper", "Roxas's Room" ],
         "Music": [ "Another Side -Battle Ver.-", "Lazy Afternoons" ]
       },
       {
@@ -3561,7 +3561,7 @@
         "Link": "https://www.youtube.com/watch?v=AFbPpItkC44&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=12",
         "Worlds": [ "Twilight Town", "Dive to the Heart", "The World That Never Was" ],
         "Characters": [ "Kairi", "Roxas", "Hayner", "Pence", "Olette", "Dusk(s)", "Axel", "Naminé", "Ansem the Wise", "Sora" ],
-        "Areas": [ "Roxas's Room", "The Usual Spot", "The Old Mansion", "Clock Tower", "Station of Calling", "The Sandlot", "The White Room", "Computer Room", "Where Nothing Gathers", "Fragment Crossing", "Basement Hall", "Pod Room"],
+        "Areas": [ "Roxas's Room", "The Usual Spot", "The Old Mansion", "Clock Tower", "Station of Calling", "The Sandlot", "The White Room", "Computer Room", "Where Nothing Gathers", "Fragment Crossing", "Basement Hall", "Pod Room" ],
         "Music": [ "Roxas" ]
       },
       {
@@ -3569,7 +3569,7 @@
         "Link": "https://www.youtube.com/watch?v=4p5EP7TP1vw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=13",
         "Worlds": [ "Twilight Town", "Mysterious Tower", "The World That Never Was", "The Land of Dragons", "Beast's Castle", "Olympus Coliseum" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Jiminy", "Mickey", "Hayner", "Pence", "Olette", "Yen Sid", "Xemnas", "Xigbar", "Xaldin", "Saïx", "Luxord", "Mulan", "Storm Rider", "Beast", "Belle", "Auron", "Hercules", "Meg" ],
-        "Areas": [ "Pod Room", "Station Plaza", "Central Station", "Sorcerer's Loft", "Where Nothing Gathers", "Imperial Square", "Ballroom", "Inner Chamber", "Underdrome"],
+        "Areas": [ "Pod Room", "Station Plaza", "Central Station", "Sorcerer's Loft", "Where Nothing Gathers", "Imperial Square", "Ballroom", "Inner Chamber", "Underdrome" ],
         "Music": [ "Sora" ]
       },
       {
@@ -3577,7 +3577,7 @@
         "Link": "https://www.youtube.com/watch?v=IqIHCmNFrcc&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=14",
         "Worlds": [ "Hollow Bastion", "End of the World" ],
         "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Ansem the Wise", "Mickey", "Terra-Xehanort", "Ansem, Seeker of Darkness", "Xemnas", "Saïx", "Armored Knights", "Riku" ],
-        "Areas": [ "Ansem's Study", "Homecoming", "The Great Maw", "The Dark Depths"],
+        "Areas": [ "Ansem's Study", "Homecoming", "The Great Maw", "The Dark Depths" ],
         "Music": [ "Organization XIII" ]
       },
       {
@@ -3585,7 +3585,7 @@
         "Link": "https://www.youtube.com/watch?v=5V7NUZ4brn8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=15",
         "Worlds": [ "Twilight Town", "The World That Never Was", "Dive to the Heart" ],
         "Characters": [ "Axel", "Dusk(s)", "Sora", "Donald", "Goofy", "Mickey", "Roxas", "Riku", "Kairi", "Xemnas", "Ansem the Wise" ],
-        "Areas": [ "Betwixt and Between", "Alley to Between", "Station of Awakening", "Hall of Empty Melodies", "The Altar of Naught", "Naught's Skyway", "World of Nothingness"],
+        "Areas": [ "Betwixt and Between", "Alley to Between", "Station of Awakening", "Hall of Empty Melodies", "The Altar of Naught", "Naught's Skyway", "World of Nothingness" ],
         "Music": [ "Darkness of the Unknown" ]
       },
       {
@@ -3593,7 +3593,7 @@
         "Link": "https://www.youtube.com/watch?v=m0Oi_RazcPU&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=16",
         "Worlds": [ "The World That Never Was", "Dark World" ],
         "Characters": [ "Kairi", "Xemnas", "Sora", "Riku" ],
-        "Areas": [ "World of Nothingness", "Dark Margin"],
+        "Areas": [ "World of Nothingness", "Dark Margin" ],
         "Music": [ "Dearly Beloved -Reprise-" ]
       },
       {
@@ -3601,7 +3601,7 @@
         "Link": "https://www.youtube.com/watch?v=m0Oi_RazcPU&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=16",
         "Worlds": [ "Disney Castle", "Dive to the Heart", "Destiny Islands", "Traverse Town", "Wonderland", "Olympus Coliseum", "Agrabah", "Hollow Bastion", "Datascape", "Castle Oblivion" ],
         "Characters": [ "Jiminy", "Chip", "Dale", "Mickey", "Donald", "Goofy", "Data-Sora", "Wakka", "Alice", "Shadow(s)", "Data-Riku", "Pete", "Maleficent", "Sora's Heartless", "Pluto", "Data-Roxas", "Naminé", "Roxas", "Axel", "Xion", "Terra", "Aqua", "Ventus", "Kairi", "Sora", "Riku" ],
-        "Areas": [ "Library", "Awakening", "Seashore", "First District", "Clearing", "Colonnade", "Outside the Coliseum", "Desert: Cave", "Grand Hall", "Datascape", "First District", "Castle Oblivion Entrance", "Pod Room"],
+        "Areas": [ "Library", "Awakening", "Seashore", "First District", "Clearing", "Colonnade", "Outside the Coliseum", "Desert: Cave", "Grand Hall", "Datascape", "First District", "Castle Oblivion Entrance", "Pod Room" ],
         "Music": [ "Hand in Hand", "Destiny's Force", "The Other Promise", "Friends in My Heart" ]
       },
       {
@@ -3609,7 +3609,7 @@
         "Link": "https://www.youtube.com/watch?v=XOL_2DNJ43o&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=18",
         "Worlds": [ "The Land of Departure", "Enchanted Dominion", "Castle of Dreams", "The Keyblade Graveyard" ],
         "Characters": [ "Kairi", "Terra", "Aqua", "Ventus", "Eraqus", "Master Xehanort", "Vanitas", "Maleficent", "Aurora", "Cinderella", "Prince Phillip", "Dragon" ],
-        "Areas": [ "Summit", "Castle Throne Room", "Ventus's Room", "Aurora's Chamber", "Ballroom", "Forecourt", "Foyer", "Bridge", "The Badlands"],
+        "Areas": [ "Summit", "Castle Throne Room", "Ventus's Room", "Aurora's Chamber", "Ballroom", "Forecourt", "Foyer", "Bridge", "The Badlands" ],
         "Music": [ "The Promised Beginning" ]
       },
       {
@@ -3617,7 +3617,7 @@
         "Link": "https://www.youtube.com/watch?v=AeGhHd5Y_Xk&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=19",
         "Worlds": [ "Radiant Garden", "Destiny Islands", "The Land of Departure", "The Keyblade Graveyard" ],
         "Characters": [ "Kairi", "Young Kairi", "Aqua", "Terra", "Ventus", "Young Riku", "Eraqus", "Vanitas" ],
-        "Areas": [ "Front Doors", "Reactor", "Seashore", "The Badlands"],
+        "Areas": [ "Front Doors", "Reactor", "Seashore", "The Badlands" ],
         "Music": [ "Ventus" ]
       },
       {
@@ -3625,7 +3625,7 @@
         "Link": "https://www.youtube.com/watch?v=36DL6MHI2wI&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=20",
         "Worlds": [ "The Keyblade Graveyard", "Dive to the Heart" ],
         "Characters": [ "Kairi", "Master Xehanort", "Vanitas", "Terra", "Aqua", "Ventus", "Terra-Xehanort", "Lingering Will" ],
-        "Areas": ["Keyblade Graveyard", "Ventus's Mind"],
+        "Areas": [ "Keyblade Graveyard", "Ventus's Mind" ],
         "Music": [ "Rage Awakened" ]
       },
       {
@@ -3633,7 +3633,7 @@
         "Link": "https://www.youtube.com/watch?v=1zXiYJUdVX0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=21",
         "Worlds": [ "Castle Oblivion", "Radiant Garden", "Destiny Islands", "Dive to the Heart" ],
         "Characters": [ "Kairi", "Ventus", "Aqua", "Terra-Xehanort", "Guardian", "Ansem the Wise", "Dilan", "Braig", "Darkside(s)", "Young Sora", "Young Riku" ],
-        "Areas": [ "Chamber of Waking", "Central Square", "Realm of Darkness", "Main Island", "Station of Awakening"],
+        "Areas": [ "Chamber of Waking", "Central Square", "Realm of Darkness", "Main Island", "Station of Awakening" ],
         "Music": [ "The Key" ]
       },
       {
@@ -3641,7 +3641,7 @@
         "Link": "https://www.youtube.com/watch?v=Sxp1HhJamTA&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=22",
         "Worlds": [ "Dark World", "Mysterious Tower", "Gummi Ship" ],
         "Characters": [ "Aqua", "Terra", "Ventus", "Phantom Aqua", "Darkside(s)", "Terra-Xehanort", "Mickey", "Young Sora", "Young Riku", "Shadow(s)", "Demon Tide", "Kairi", "Riku", "Yen Sid", "Sora", "Donald", "Goofy" ],
-        "Areas": [ "Castle Town", "Ballroom", "The World Within", "Forest of Thorns", "Depths of Darkness", "Homecoming/Secret Place", "Sorcerer's Loft", "Cockpit"],
+        "Areas": [ "Castle Town", "Ballroom", "The World Within", "Forest of Thorns", "Depths of Darkness", "Homecoming/Secret Place", "Sorcerer's Loft", "Cockpit" ],
         "Music": [ "Aqua" ]
       },
       {
@@ -3649,7 +3649,7 @@
         "Link": "https://www.youtube.com/watch?v=LjKpLUVAAsA&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=23",
         "Worlds": [ "Mysterious Tower", "Destiny Islands", "Traverse Town" ],
         "Characters": [ "Kairi", "Sora", "Riku", "Yen Sid", "Mickey", "Donald", "Goofy", "Meow Wow(s)", "Necho Cat(s)", "Joshua", "Komory Bat(s)", "Shiki", "Beat", "Young Xehanort" ],
-        "Areas": [ "Sorcerer's Loft", "Open Ocean", "First District", "Third District", "Second District", "Fifth District"],
+        "Areas": [ "Sorcerer's Loft", "Open Ocean", "First District", "Third District", "Second District", "Fifth District" ],
         "Music": [ "Storm Diver" ]
       },
       {
@@ -3657,7 +3657,7 @@
         "Link": "https://www.youtube.com/watch?v=vXjeSRN-hqw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=24",
         "Worlds": [ "La Cité des Cloches", "The Grid", "Prankster's Paradise", "Country of the Musketeers", "Disney Castle", "Mysterious Tower" ],
         "Characters": [ "Kairi", "Sora", "Quasimodo", "Phoebus", "Riku", "Blue Fairy", "Donald", "Goofy", "Mickey", "Young Xehanort", "Vanitas", "Ansem, Seeker of Darkness", "Xemnas", "Maleficent", "Pete", "Minnie", "Lea", "Yen Sid" ],
-        "Areas": [ "Square", "Light Cycle Arena", "Promontory", "Training Yard", "Backstage", "Nave", "Throneship", "Library", "Sorcerer's Loft"],
+        "Areas": [ "Square", "Light Cycle Arena", "Promontory", "Training Yard", "Backstage", "Nave", "Throneship", "Library", "Sorcerer's Loft" ],
         "Music": [ "Majestic Wings" ]
       },
       {
@@ -3665,7 +3665,7 @@
         "Link": "https://www.youtube.com/watch?v=JXmCK8CDky4&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=25",
         "Worlds": [ "The World That Never Was", "Destiny Islands" ],
         "Characters": [ "Kairi", "Sora", "Young Xehanort", "Riku", "Ansem, Seeker of Darkness", "Guardian", "Master Xehanort", "Xemnas", "Xigbar", "Mickey", "Lea", "Donald", "Goofy" ],
-        "Areas": [ "Memory's Skyscraper", "Seashore", "Nightmarish Abyss", "Verge of Chaos", "Darkest End", "Where Nothing Gathers"],
+        "Areas": [ "Memory's Skyscraper", "Seashore", "Nightmarish Abyss", "Verge of Chaos", "Darkest End", "Where Nothing Gathers" ],
         "Music": [ "The Nightmare" ]
       },
       {
@@ -3673,7 +3673,7 @@
         "Link": "https://www.youtube.com/watch?v=hMEbBv9R1K8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=26",
         "Worlds": [ "Mysterious Tower", "Dive to the Heart", "Destiny Islands" ],
         "Characters": [ "Sora", "Riku", "Mickey", "Donald", "Goofy", "Lea", "Yen Sid", "Armored Ventus Nightmare", "Roxas", "Ventus", "Xion", "Ansem the Wise", "Kairi" ],
-        "Areas": [ "Sorcerer's Loft", "Station of Awakening", "Seashore"],
+        "Areas": [ "Sorcerer's Loft", "Station of Awakening", "Seashore" ],
         "Music": [ "Link to All" ]
       },
       {
@@ -3681,7 +3681,7 @@
         "Link": "https://www.youtube.com/watch?v=GXLLS_hZMUw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=26",
         "Worlds": [ "Mysterious Tower", "Olympus", "Gummi Ship", "Twilight Town", "Radiant Garden", "Kingdom of Corona", "Toy Box", "Secret Forest" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Yen Sid", "Hercules", "Xigbar", "Zeus", "Jiminy", "Hanyer", "Pence", "Olette", "Roxas", "Ienzo", "Ansem, Seeker of Darkness", "Xemnas", "Rapunzel", "Woody", "Buzz", "Rex", "Hamm", "Young Xehanort", "Kairi", "Lea" ],
-        "Areas": [ "Sorcerer's Loft", "Agora", "Alleyway", "Apex", "Summit", "Cockpit", "Tram Common", "Computer Room", "Ansem's Study", "The Old Mansion", "Hills", "Thoroughfare", "Wharf", "Andy's House", "Video Games", "Corridor of Darkness", "Secret Forest", "Central Square"],
+        "Areas": [ "Sorcerer's Loft", "Agora", "Alleyway", "Apex", "Summit", "Cockpit", "Tram Common", "Computer Room", "Ansem's Study", "The Old Mansion", "Hills", "Thoroughfare", "Wharf", "Andy's House", "Video Games", "Corridor of Darkness", "Secret Forest", "Central Square" ],
         "Music": [ "Treasured Memories" ]
       },
       {
@@ -3689,7 +3689,7 @@
         "Link": "https://www.youtube.com/watch?v=RMoXxcjfO2c&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=27",
         "Worlds": [ "Arendelle", "Monstropolis", "San Fransokyo", "Dark World", "Destiny Islands", "Castle Oblivion", "The Land of Departure", "Dive to the Heart" ],
         "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Larxene", "Anna", "Kristoff", "Olaf", "Sven", "Marshmallow", "Elsa", "Sulley", "Mike Wazowski", "Boo", "Vanitas", "Hiro", "Baymax", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Dark Riku", "Riku", "Mickey", "Anti-Aqua", "Aqua", "Ventus" ],
-        "Areas": [ "Treescape", "Mountain Ridge", "Valley of Ice", "Foothills", "The Laugh Floor", "Second Floor", "South District", "Central District", "Hiro's Garage", "Dark Margin", "Seashore", "Castle Throne Room", "Ventus's Mind"],
+        "Areas": [ "Treescape", "Mountain Ridge", "Valley of Ice", "Foothills", "The Laugh Floor", "Second Floor", "South District", "Central District", "Hiro's Garage", "Dark Margin", "Seashore", "Castle Throne Room", "Ventus's Mind" ],
         "Music": [ "Chains to Bonds" ]
       },
       {
@@ -3697,7 +3697,7 @@
         "Link": "https://www.youtube.com/watch?v=JpJfOf6zPsI&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=28",
         "Worlds": [ "The Keyblade Graveyard", "The Final World", "Olympus", "San Fransokyo", "Scala ad Caelum" ],
         "Characters": [ "Sora", "Riku", "Kairi", "Mickey", "Donald", "Goofy", "Aqua", "Ventus", "Lea", "Shadow(s)", "Demon Tide", "Dusk(s)", "Air Soldier(s)", "Reapers", "Flutterings", "Chirithy", "Lich", "Young Xehanort", "Ephemer", "Yen Sid", "Master Xehanort", "Replica Xehanort(s)", "Terra", "Guardian", "Roxas", "Xion", "Eraqus" ],
-        "Areas": [ "The Badlands", "The Final World", "Realm of the Gods", "Central District", "The Keyblade Graveyard", "Twist of Isolation", "Tower of Endings", "The Stairway to the Sky"],
+        "Areas": [ "The Badlands", "The Final World", "Realm of the Gods", "Central District", "The Keyblade Graveyard", "Twist of Isolation", "Tower of Endings", "The Stairway to the Sky" ],
         "Music": [ "Organization XIII (Mark of Fate)", "Guardians of Light" ]
       },
       {
@@ -3713,7 +3713,7 @@
         "Link": "https://www.youtube.com/watch?v=4lbG2ZLgrU8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=5",
         "Worlds": [ "The Final World", "Radiant Garden" ],
         "Characters": [ "Kairi", "Young Kairi", "Shadow(s)", "Terra-Xehanort" ],
-        "Areas": [ "The Final World", "Central Square", "Ansem's Laboratory"],
+        "Areas": [ "The Final World", "Central Square", "Ansem's Laboratory" ],
         "Music": [ "Night of Fate", "Kairi" ]
       },
       {
@@ -3722,7 +3722,7 @@
         "Worlds": [ "The Final World", "The Keyblade Graveyard" ],
         "Characters": [ "Kairi", "Master Xehanort", "Sora" ],
         "Areas": [ "The Final World", "Tower of Endings" ],
-        "Music": [ "Xehanort"]
+        "Music": [ "Xehanort" ]
       },
       {
         "Name": "The Answer",
