@@ -2,7 +2,7 @@
     <div class="search-bar">
         <div class="row" style="width: 100%; margin: 25px 0px;">
             <div class="col-md-12" style="align-self: center;">
-                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input" oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" placeholder="@this.Placeholder" />
+                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input" oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" />
             </div>
         </div>
     </div>
@@ -79,6 +79,9 @@
 
     protected override void OnInitialized()
     {
+        this.Selections.Sort();
+        this.results = this.Selections;
+
         base.OnInitialized();
     }
 
@@ -88,7 +91,10 @@
         this.results = new List<string>();
 
         if (string.IsNullOrEmpty(search))
+        {
+            this.results = this.Selections;
             return;
+        }
 
         foreach (var selection in this.Selections)
         {
@@ -108,7 +114,15 @@
         this.selected.Add(value);
         this.UpdateSearch.Invoke();
 
-        this.Search(this.search);
+        if (!string.IsNullOrEmpty(search))
+        {
+            this.Search(this.search);
+        }
+        else
+        {
+            this.results.Remove(value);
+            this.results.Sort();
+        }
     }
 
     private void Remove(string value)
@@ -116,6 +130,14 @@
         this.selected.Remove(value);
         this.UpdateSearch.Invoke();
 
-        this.Search(this.search);
+        if (!string.IsNullOrEmpty(search))
+        {
+            this.Search(this.search);
+        }
+        else
+        {
+            this.results.Add(value);
+            this.results.Sort();
+        }
     }
 }

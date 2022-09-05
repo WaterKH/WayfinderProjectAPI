@@ -41,6 +41,8 @@
 <br />
 <br />
 
+@if (this.SceneDtos.Count > 0)
+{
 <Table @ref="MainTable" Items="this.SceneDtos" Context="Scene">
     <TableHeader>
         <th>Game</th>
@@ -201,6 +203,7 @@
         </tr>
     </ExpandedRowTemplate>
 </Table>
+}
 
 
 <style>
@@ -240,7 +243,6 @@
     border-radius: 500px;
     background-color: #bee2ff;
 }
-}
 </style>
 
 @code {
@@ -272,7 +274,12 @@
         this.Scenes = context.Scenes.Select(x => x.Name).ToList();
         this.Worlds = context.Worlds.Select(x => x.Name).ToList();
 
-        await this.Search();
+        if (this.GamesSearch != null)
+        {
+            var rand = new Random();
+            this.GamesSearch.selected = new List<string> { this.Games[rand.Next() % this.Games.Count] };
+            await this.Search();
+        }
 
         await base.OnInitializedAsync();
     }
@@ -299,7 +306,15 @@
         var music = this.MusicSearch != null ? string.Join(", ", this.MusicSearch.selected) != "" ? string.Join(", ", this.MusicSearch.selected) : null : null;
         var line = this.quoteSearch != "" ? this.quoteSearch : null;
 
-        this.SceneDtos = (await api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList();
+        // TODO Remove this after we add in the pagination limiter?
+        if (games == null && scenes == null && worlds == null && areas == null && characters == null && music == null && line == null)
+        {
+            this.SceneDtos = new List<SceneDto>();
+        }
+        else
+        {
+            this.SceneDtos = (await api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList();
+        }
 
         if (MainTable != null)
         {
