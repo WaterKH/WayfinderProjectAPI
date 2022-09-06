@@ -1798,7 +1798,7 @@
         "Line": "We’ll stop it! After coming this far, there’s no way we’re gonna let that happen!"
       }
     ],
-    "Maleficent’s Darkness": [
+    "Maleficent's Darkness": [
       {
         "Order": 0,
         "Character": "Riku-Ansem",
@@ -1879,7 +1879,7 @@
         "Line": "No. You won’t use me for this! You’ve got to run! The Heartless are coming!"
       }
     ],
-    "Sora’s Back": [
+    "Sora's Back": [
       {
         "Order": 0,
         "Character": "Donald",
@@ -2169,7 +2169,7 @@
         "Line": "Okay! On my count~"
       }
     ],
-    "Leon (Leon Loses)": [
+    "Leon Loses": [
       {
         "Order": 0,
         "Character": "Sora",
