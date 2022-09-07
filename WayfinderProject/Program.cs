@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using WayfinderProjectAPI.Data;
@@ -7,10 +8,13 @@ using WayfinderProjectAPI.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); ;
+builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 // Add DataBase
-builder.Services.AddDbContext<WayfinderContext>(options => options.UseInMemoryDatabase("WayfinderProject.db"));
+var inMemorySqlite = new SqliteConnection("Data Source=:memory:");
+inMemorySqlite.Open();
+
+builder.Services.AddDbContext<WayfinderContext>(options => options.UseSqlite(inMemorySqlite));
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();

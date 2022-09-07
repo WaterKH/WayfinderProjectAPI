@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using WayfinderProjectAPI.Data.Models;
 
 namespace WayfinderProjectAPI.Data
@@ -7,6 +8,8 @@ namespace WayfinderProjectAPI.Data
     {
         public static void Initialize(WayfinderContext context)
         {
+            context.Database.Migrate();
+
             // Load Areas Data into Database
             CreateAreas(context);
 

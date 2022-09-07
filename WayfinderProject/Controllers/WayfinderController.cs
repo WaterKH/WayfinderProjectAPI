@@ -84,12 +84,12 @@ namespace WayfinderProjectAPI.Controllers
 
             return await _context.Scenes.Include(x => x.Script).Include(x => x.Script.Lines)
                 .Where(x =>
-                    (gamesList != null ? gamesList.Contains(x.Game.Name) : true) &&
-                    (scenesList != null ? scenesList.Contains(x.Name) : true) &&
-                    (worldsList != null ? x.Worlds.Any(y => worldsList.Contains(y.Name)) : true) &&
-                    (charactersList != null ? x.Characters.Any(y => charactersList.Contains(y.Name)) : true) &&
-                    (areasList != null ? x.Areas.Any(y => areasList.Contains(y.Name)) : true) &&
-                    (musicList != null ? x.Music.Any(y => musicList.Contains(y.Name)) : true) &&
+                    (gamesList != null ? gamesList.Any(y => y == x.Game.Name) : true) &&
+                    (scenesList != null ? scenesList.Any(y => y == x.Name) : true) &&
+                    (worldsList != null ? x.Worlds.Any(y => worldsList.Any(z => z == y.Name)) : true) &&
+                    (charactersList != null ? x.Characters.Any(y => charactersList.Any(z => z == y.Name)) : true) &&
+                    (areasList != null ? x.Areas.Any(y => areasList.Any(z => z == y.Name)) : true) &&
+                    (musicList != null ? x.Music.Any(y => musicList.Any(z => z == y.Name)) : true) &&
                     (line != null ? x.Script.Lines.ToList().Any(y => y.Line.ToLower().Contains(line.ToLower())) : true))
                 .OrderBy(x => x.Id)
                 .ToDto()
