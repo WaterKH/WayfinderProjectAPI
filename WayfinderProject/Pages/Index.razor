@@ -313,6 +313,7 @@
         }
         else
         {
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
             this.SceneDtos = (await api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList();
         }
 
