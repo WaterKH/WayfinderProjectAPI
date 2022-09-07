@@ -10636,6 +10636,1742 @@
         "Characters": [ "Ephemer", "Ava" ],
         "Areas": [],
         "Music": []
+      },
+      {
+        "Name": "Union Leaders",
+        "Link": "https://www.youtube.com/watch?v=hkCInPH5_VU&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=39",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ava", "Master of Masters" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Third to Arrive",
+        "Link": "https://www.youtube.com/watch?v=J-oMgW_pcL4&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=40",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Ephemer", "Skuld", "Ventus" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Union Cross",
+        "Link": "https://www.youtube.com/watch?v=GHn_-yLtA7Y&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=41",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Skuld", "Chirithy", "Ephemer" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Number Four",
+        "Link": "https://www.youtube.com/watch?v=d2CyzcXw07c&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=42",
+        "Worlds": [ "Daybreak Town", "The Keyblade Graveyard" ],
+        "Characters": [ "Ephemer", "Ava", "Skuld", "Ventus", "Brain", "Player", "Chirithy", "Key Kid(s)", "Aced" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Tragic Memories",
+        "Link": "https://www.youtube.com/watch?v=vX1cKK2u8ck&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=43",
+        "Worlds": [ "Daybreak Town", "The Keyblade Graveyard" ],
+        "Characters": [ "Player", "Chirithy", "Ava", "Ephemer", "Skuld", "Ventus", "Brain" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Sorrowful Memories",
+        "Link": "https://www.youtube.com/watch?v=q2QjbeCMrsQ",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Bandana Kid", "Pink Frog Kid", "Afro Kid", "Mog Kid", "Player", "Chirithy", "Aced", "Invi", "Ira", "Gula", "Ava" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "An Ending World",
+        "Link": "https://www.youtube.com/watch?v=q2QjbeCMrsQ",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Wielders' Brawl",
+        "Link": "https://www.youtube.com/watch?v=nuvcUu8wXIQ",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Chirithy", "Key Kid(s)", "Skuld", "Aced" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "An Inevitable Clash",
+        "Link": "https://www.youtube.com/watch?v=Lb8XRDBE-Zw",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Aced", "Skuld", "Chirithy", "Key Kid(s)", "Ira" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Vision",
+        "Link": "https://www.youtube.com/watch?v=BJiS6D9Jlm8",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Contemplation",
+        "Link": "https://www.youtube.com/watch?v=d8OT_8OSEIM",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Skuld", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Master Gula's Belief",
+        "Link": "https://www.youtube.com/watch?v=ysUmTslDti4",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Skuld", "Chirithy", "Gula" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Luxu's Role",
+        "Link": "https://www.youtube.com/watch?v=37DI25CVUJA",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu", "Ava" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Barrens",
+        "Link": "https://www.youtube.com/watch?v=aLVce88wKTg",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Ava", "Ira", "Invi", "Aced", "Gula", "Player", "Key Kid(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "As the Bells Toll",
+        "Link": "https://www.youtube.com/watch?v=hT-kVGgAE4o",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu", "Ava", "Player", "Skuld", "Gula", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Nightmares Projected",
+        "Link": "https://www.youtube.com/watch?v=j62qeb_E1VA",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Skuld", "Chirithy", "Dark Chirithy", "Darkling(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Clash Foretold Pt. 1",
+        "Link": "https://www.youtube.com/watch?v=m8BkOrwEmzY",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Player", "Aced", "Key Kid(s)", "Ira" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Clash Foretold Pt. 2",
+        "Link": "https://www.youtube.com/watch?v=nB_45V21Vtk",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Player", "Invi", "Key Kid(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Clash Foretold Pt. 3",
+        "Link": "https://www.youtube.com/watch?v=1mMYFc8q8yg",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Player", "Gula", "Key Kid(s)", "Ava" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Clash Foretold Pt. 4",
+        "Link": "https://www.youtube.com/watch?v=u62FvAGT5mQ",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Player", "Ava" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Let's Go",
+        "Link": "https://www.youtube.com/watch?v=7eHykJ0tBIo",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Player", "Chirithy", "Skuld", "Ephemer" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Into the Corridor of Darkness",
+        "Link": "https://www.youtube.com/watch?v=tGyHCTsg358",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Bandana Kid" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Chasing the Heartless",
+        "Link": "https://www.youtube.com/watch?v=LUDcqQbdrzQ",
+        "Worlds": [ "Dark World" ],
+        "Characters": [ "Player", "Fluttering(s)", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A New World",
+        "Link": "https://www.youtube.com/watch?v=z1A0d-gX0F4&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=101",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Aurora", "Prince Phillip", "Samson" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Beautiful Melody",
+        "Link": "https://www.youtube.com/watch?v=GSltrMo8qVc&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=102",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Prince Phillip", "Samson", "Shadow Witch(es)", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Once Upon a Dream",
+        "Link": "https://www.youtube.com/watch?v=P4hdN3gcLss&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=103",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Shadow Witch(es)", "Samson", "Prince Phillip", "Aurora", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Familiar Foe",
+        "Link": "https://www.youtube.com/watch?v=MZM2dV6OFb0&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=104",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Aurora", "Wild Shaman(s)", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Heartless Must Go",
+        "Link": "https://www.youtube.com/watch?v=SzW9bwv19BI&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=105",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Fluttering(s)", "Player", "Flora", "Fauna", "Merryweather" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Three Fairies",
+        "Link": "https://www.youtube.com/watch?v=VDx1S0N7v5k&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=106",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Fluttering(s)", "Player", "Flora", "Fauna", "Merryweather", "Chirithy", "Diablo", "Aurora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Royal Secret",
+        "Link": "https://www.youtube.com/watch?v=3IxObQmJTrg&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=107",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Aurora", "Flora", "Fauna", "Merryweather", "Diablo" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Knowing Smile",
+        "Link": "https://www.youtube.com/watch?v=TN806GPTENI&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=108",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Diablo", "Maleficent" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Curse",
+        "Link": "https://www.youtube.com/watch?v=ZS3NtqYLinI&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=109",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Flora", "Fauna", "Merryweather", "Aurora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Return to the Castle",
+        "Link": "https://www.youtube.com/watch?v=Gb6qOlhiy6o&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=110",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Aurora", "Flora", "Fauna", "Merryweather", "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Green Glow",
+        "Link": "https://www.youtube.com/watch?v=Iw7Q2695jMo&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=111",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Aurora", "Flora", "Fauna", "Merryweather", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Hindering Heartless",
+        "Link": "https://www.youtube.com/watch?v=WApTuEIxE4Y&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=112",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Aurora", "Player", "Maleficent", "Thornsnake" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Deep Slumber",
+        "Link": "https://www.youtube.com/watch?v=koUWr3sckqA&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=113",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Thornsnake", "Aurora", "Flora", "Fauna", "Merryweather", "Maleficent", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I Shall Have Revenge",
+        "Link": "https://www.youtube.com/watch?v=YQSNGb-QV6c&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=10",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Mog Kid", "Gummi Hound" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Beach",
+        "Link": "https://www.youtube.com/watch?v=ef_pJD34Fn4&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=11",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Mog Kid", "Pink Frog Kid", "Bandana Kid", "Afro Kid" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Preparations",
+        "Link": "https://www.youtube.com/watch?v=9VvYsRyBtPI&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=12",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Mog Kid", "Afro Kid", "Pink Frog Kid", "Bandana Kid" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "An Important Mission",
+        "Link": "https://www.youtube.com/watch?v=ioSoxN8Axkw&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=13",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Bandana Kid", "Afro Kid", "Pink Frog Kid", "Mog Kid", "Straw Hat Kid" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Dangerous Waters",
+        "Link": "https://www.youtube.com/watch?v=T_pf0A-MRjM&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=14",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Bandana Kid", "Mog Kid", "Pink Frog Kid", "Afro Kid", "Shipwreck Shark(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Summer Vacation",
+        "Link": "https://www.youtube.com/watch?v=-ckl4yKJXJk&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=15",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Bandana Kid", "Afro Kid", "Pink Frog Kid", "Mog Kid", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Secret Admirer",
+        "Link": "https://www.youtube.com/watch?v=e1n4ZM-XE88&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=44",
+        "Worlds": [ "Daybreak Town", "Dwarf Woodlands", "Olympus Coliseum", "Wonderland", "Agrabah", "Castle of Dreams", "Beast's Castle" ],
+        "Characters": [ "Key Kid(s)", "Strelitzia", "Chirithy", "Player", "Ava", "Phil", "Cheshire Cat", "Guard(s)", "Grand Duke", "Moogle(s)", "Aced", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I Need to Tell You",
+        "Link": "https://www.youtube.com/watch?v=DuQuK4fnksI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=45",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Strelitzia", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "One Last Wish",
+        "Link": "https://www.youtube.com/watch?v=Riop-MJHy9w&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=46",
+        "Worlds": [ "Daybreak Town", "Dwarf Woodlands", "Agrabah" ],
+        "Characters": [ "Strelitzia", "Chirithy", "Guard(s)", "Key Kid(s)", "Player", "Moogle(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Number Five",
+        "Link": "https://www.youtube.com/watch?v=tMfH1yMqKtk&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=47",
+        "Worlds": [ "The Keyblade Graveyard" ],
+        "Characters": [ "Brain", "Skuld", "Ephemer", "Ventus", "Lauriam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Devourer of Nightmares",
+        "Link": "https://www.youtube.com/watch?v=PUiD3sHPj0A&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=48",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Skuld", "Brain", "Ventus", "Lauriam", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A New Partner",
+        "Link": "https://www.youtube.com/watch?v=vcGY0H98mwc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=49",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Chirithy", "Kitstar" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Golden Scarab",
+        "Link": "https://www.youtube.com/watch?v=xnEMxWX9vho&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=73",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Chirithy", "Jafar", "Iago" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Cave of Wonders",
+        "Link": "https://www.youtube.com/watch?v=Kulzy5JS0SM&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=74",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Jafar", "Iago", "Cave of Wonders Guardian", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Much-Needed Rest",
+        "Link": "https://www.youtube.com/watch?v=PwpdZFX6oGI&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=75",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Princess Jasmine",
+        "Link": "https://www.youtube.com/watch?v=5W71DF-vO7k&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=76",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jasmine", "Bandit(s)", "Aladdin", "Abu" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Diamond in the Rough",
+        "Link": "https://www.youtube.com/watch?v=baWsvwXRBSI&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=77",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Iago", "Jafar", "Aladdin", "Jasmine", "Guard(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Aladdin's Been Caught!",
+        "Link": "https://www.youtube.com/watch?v=xqvvmE7DbNE&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=78",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Chirithy", "Guard(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Cave's Treasures",
+        "Link": "https://www.youtube.com/watch?v=R4xA9S-K9MI&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=79",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Aladdin", "Player", "Abu", "Jafar", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Chasing Aladdin",
+        "Link": "https://www.youtube.com/watch?v=5mstZd2h6YM&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=80",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Ferry Reaper" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Into the Cave of Wonders",
+        "Link": "https://www.youtube.com/watch?v=k0s-9klPprw&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=81",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Aladdin", "Abu", "Cave of Wonders Guardian", "Jafar", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Magic Carpet",
+        "Link": "https://www.youtube.com/watch?v=tTZPvZDBSL0&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=82",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Abu", "Carpet" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fire and Ice",
+        "Link": "https://www.youtube.com/watch?v=zxBOWG__uB4&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=83",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Abu", "Carpet", "Blizzard Lord", "Volcanic Lord" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Magic Lamp",
+        "Link": "https://www.youtube.com/watch?v=Uuv_7m-XXrQ&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=84",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Volcanic Lord", "Blizzard Lord", "Abu", "Carpet", "Jafar", "Cave of Wonders Guardian" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Sad Injustice",
+        "Link": "https://www.youtube.com/watch?v=yA0XR0Yuqlg&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=85",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jasmine", "Sultan" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Genie of the Lamp",
+        "Link": "https://www.youtube.com/watch?v=ECjeBdiSESI",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Abu", "Carpet", "Genie" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Jafar's Plan",
+        "Link": "https://www.youtube.com/watch?v=ZSjXOoaPR0E&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=87",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sultan", "Jafar", "Jasmine", "Iago" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The First Wish",
+        "Link": "https://www.youtube.com/watch?v=OLm6tQIWlYI&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=88",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Genie", "Abu", "Carpet", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Prince Ali Ababwa",
+        "Link": "https://www.youtube.com/watch?v=0KC9zlxPe2w&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=89",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jafar", "Sultan", "Iago", "Aladdin", "Jasmine" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Wonderful Night",
+        "Link": "https://www.youtube.com/watch?v=0fE7lq4qBr0",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jasmine", "Aladdin", "Carpet" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Second Wish",
+        "Link": "https://www.youtube.com/watch?v=d-UyRxK35Yk&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=91",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Aladdin", "Guard(s)", "Genie", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Plan Exposed",
+        "Link": "https://www.youtube.com/watch?v=CNReHrLJAms&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=92",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jasmine", "Sultan", "Jafar", "Iago", "Player", "Fortuneteller" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Master, Jafar",
+        "Link": "https://www.youtube.com/watch?v=67O2GrKcg9s",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sultan", "Jasmine", "Aladdin", "Jafar", "Iago", "Genie", "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Who is Prince Ali?",
+        "Link": "https://www.youtube.com/watch?v=13jDpeX7bPQ&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=94",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sultan", "Player", "Aladdin", "Jafar", "Jasmine", "Iago" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Back to Agrabah",
+        "Link": "https://www.youtube.com/watch?v=VY3NllI9wYg",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Carpet" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Jasmine's in Trouble",
+        "Link": "https://www.youtube.com/watch?v=GMf4-TQG650&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=96",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sultan", "Iago", "Abu", "Genie", "Jafar", "Cobra Jafar", "Jasmine", "Aladdin", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Genie Jafar",
+        "Link": "https://www.youtube.com/watch?v=geGGXlA9lO8&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=97",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Cobra Jafar", "Genie", "Genie Jafar" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Third Wish",
+        "Link": "https://www.youtube.com/watch?v=PjxHe9K-5dk&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=98",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Player", "Aladdin", "Genie Jafar", "Genie", "Jasmine", "Abu", "Carpet", "Sultan", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "An Unexpected Attack",
+        "Link": "https://www.youtube.com/watch?v=bKCU5KAbz3o&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=114",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Prince Phillip", "Samson", "Maleficent's Goon(s)", "Maleficent" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Cottage",
+        "Link": "https://www.youtube.com/watch?v=YNNcz4fe3KQ&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=115",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Aurora", "Flora", "Fauna", "Merryweather" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Witch is Back",
+        "Link": "https://www.youtube.com/watch?v=OEdyRNA6uwQ&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=116",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Flora", "Fauna", "Merryweather" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Miniature Plan",
+        "Link": "https://www.youtube.com/watch?v=c8rTx62FHkU&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=117",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Flora", "Fauna", "Merryweather", "Player", "Maleficent's Goon(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Captured",
+        "Link": "https://www.youtube.com/watch?v=nNCH6FEfWwc&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=118",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Merryweather", "Flora", "Fauna", "Maleficent", "Diablo", "Prince Phillip", "Aurora" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Dangerous Road",
+        "Link": "https://www.youtube.com/watch?v=3eIsjbkOTYU&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=119",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Maleficent", "Diablo", "Flora", "Fauna", "Merryweather", "Player", "Prince Phillip" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Maleficent's Wrath",
+        "Link": "https://www.youtube.com/watch?v=o2PTZpAH-Hc&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=120",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Flora", "Fauna", "Merryweather", "Prince Phillip", "Samson", "Diablo", "Maleficent's Goon(s)", "Player", "Maleficent" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Spell of Thorns",
+        "Link": "https://www.youtube.com/watch?v=5u5mQ-euR6c&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=121",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Maleficent", "Prince Phillip", "Samson", "Flora", "Fauna", "Merryweather" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Castle",
+        "Link": "https://www.youtube.com/watch?v=5JvBHZJkNaE&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=122",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Power of Darkness",
+        "Link": "https://www.youtube.com/watch?v=GMHGCvm25rs&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=123",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Prince Phillip", "Samson", "Flora", "Fauna", "Merryweather", "Maleficent", "Dragon Maleficent", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Sword of Truth",
+        "Link": "https://www.youtube.com/watch?v=ak5IGrezMI4&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=124",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Player", "Prince Phillip", "Dragon Maleficent", "Flora", "Fauna", "Merryweather" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "From a Deep Slumber",
+        "Link": "https://www.youtube.com/watch?v=mrio64TlUZ4&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=125",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Aurora", "Flora", "Fauna", "Merryweather", "Prince Phillip" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "True Love",
+        "Link": "https://www.youtube.com/watch?v=Y08-ZJh9MsU&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=126",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Aurora", "Prince Phillip", "Nobles", "Flora", "Fauna", "Merryweather", "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "True Love",
+        "Link": "https://www.youtube.com/watch?v=Y08-ZJh9MsU&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=126",
+        "Worlds": [ "Enchanted Dominion" ],
+        "Characters": [ "Aurora", "Prince Phillip", "Nobles", "Flora", "Fauna", "Merryweather", "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion; Belle of the Ball",
+        "Link": "https://www.youtube.com/watch?v=x_d1TvAVqEQ&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=16",
+        "Worlds": [ "Beast's Castle" ],
+        "Characters": [ "Player", "Belle", "Prince Adam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion; Dreams Come True",
+        "Link": "https://www.youtube.com/watch?v=GtC4BxMKLq4&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=17",
+        "Worlds": [ "Castle of Dreams" ],
+        "Characters": [ "Cinderella", "Prince Charming", "Player", "Jaq" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion; Hero of Olympus",
+        "Link": "https://www.youtube.com/watch?v=o7PBzOveYPU&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=18",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Player", "Hercules", "Phil" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion; For My Sweet Prince",
+        "Link": "https://www.youtube.com/watch?v=Mbl-jTaOh24&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=19",
+        "Worlds": [ "Dwarf Woodlands" ],
+        "Characters": [ "Snow White", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion; Curious Alice",
+        "Link": "https://www.youtube.com/watch?v=MUFwgMyGtK8&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=20",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Player", "Alice", "Cheshire Cat" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The End of Summer",
+        "Link": "https://www.youtube.com/watch?v=_I5yVQ2lGrI&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=21",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Mog Kid", "Pink Frog Kid", "Afro Kid", "Bandana Kid" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunion; The Desert Oasis",
+        "Link": "https://www.youtube.com/watch?v=_I5yVQ2lGrI&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=21",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Abu", "Carpet", "Aladdin", "Jasmine", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Keyblade's Light",
+        "Link": "https://www.youtube.com/watch?v=NN1Z_xITXHA&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=23",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Dark-Winged Angel",
+        "Link": "https://www.youtube.com/watch?v=-h37gJLcn1g&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=24",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Player", "Sephiroth" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Until the Time Comes",
+        "Link": "https://www.youtube.com/watch?v=80J_HJA0Vag&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=25",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Player", "Sephiroth" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Trapped in the Data World",
+        "Link": "https://www.youtube.com/watch?v=D6RL5_WUSew&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=50",
+        "Worlds": [ "Enchanted Dominion", "Hollow Bastion", "Dwarf Woodlands", "Wonderland", "Beast's Castle", "Castle of Dreams" ],
+        "Characters": [ "Maleficent", "Darkness", "Riku-Ansem", "Master Xehanort", "The Prince", "Snow White", "Doc", "Dopey", "Happy", "Bashful", "Sneezy", "Sleepy", "Grumpy", "Alice", "Queen of Hearts", "White Rabbit", "Card Soldier(s)", "Belle", "Beast", "Cinderella", "Prince Charming", "Aurora", "Prince Phillip" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Shift Pride",
+        "Link": "https://www.youtube.com/watch?v=Z5JWaPZYjJ8&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=51",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Skuld", "Brain", "Ventus", "Player", "Chirithy", "Key Kid(s)", "Lauriam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Elrena",
+        "Link": "https://www.youtube.com/watch?v=-LFyo5YM9y8&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=52",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Lauriam", "Elrena" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "\"Someone\"",
+        "Link": "https://www.youtube.com/watch?v=mktYdL8PhQs&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=53",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Lauriam", "Elrena", "Chirithy", "Ventus", "Ephemer", "Skuld", "Brain" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Long Time, No See",
+        "Link": "https://www.youtube.com/watch?v=yAq3C7xPBOs&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=54",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Chirithy", "Ephemer", "Lauriam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Strelitzia's Whereabouts",
+        "Link": "https://www.youtube.com/watch?v=mhaG7oGmuN0&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=55",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Lauriam", "Elrena", "Chirithy", "Strelitzia", "Brain", "Ventus", "Ephemer", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Plan",
+        "Link": "https://www.youtube.com/watch?v=NXVJmLFeATA&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=56",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Brain", "Ventus", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Plan",
+        "Link": "https://www.youtube.com/watch?v=NXVJmLFeATA&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=56",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Brain", "Ventus", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "It's Already Begun",
+        "Link": "https://www.youtube.com/watch?v=TQVpstUtlOs&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=57",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Ephemer", "Chirithy", "Ventus", "Skuld", "Ava", "Master of Masters", "Brain" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Entering the Chaos",
+        "Link": "https://www.youtube.com/watch?v=N24Nk2AmlRg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=58",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Ephemer", "Chirithy", "Flappy Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Surrounded",
+        "Link": "https://www.youtube.com/watch?v=VN4lqP55fQw&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=59",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ventus", "Flappy Bug(s)", "Ephemer", "Player", "Gargoyle", "Darkling(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Beyond the Wall",
+        "Link": "https://www.youtube.com/watch?v=mn5WGvLK_WU&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=60",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Ephemer", "Ventus", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Cause of It All",
+        "Link": "https://www.youtube.com/watch?v=l8IbXIVcftg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=61",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Brain", "Ephemer", "Ventus", "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A New Portal",
+        "Link": "https://www.youtube.com/watch?v=2yoDsAmIWyw&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=62",
+        "Worlds": [ "Game Central Station" ],
+        "Characters": [ "Ephemer", "Player", "Chirithy", "Gearbit(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Not...You",
+        "Link": "https://www.youtube.com/watch?v=CuQuRKOI-CY&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=63",
+        "Worlds": [ "Game Central Station" ],
+        "Characters": [ "Ephemer", "Player", "Darkling(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A World Connected",
+        "Link": "https://www.youtube.com/watch?v=O7U5soFDRnE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=64",
+        "Worlds": [ "Game Central Station" ],
+        "Characters": [ "Ephemer", "Player", "Darkling(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Let's Split Up",
+        "Link": "https://www.youtube.com/watch?v=FBPHDC8e3us&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=65",
+        "Worlds": [ "Game Central Station" ],
+        "Characters": [ "Ephemer", "Player", "Chirithy", "Flappy Bug(s)", "Darkling(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Worthy Investigation",
+        "Link": "https://www.youtube.com/watch?v=T5arrb7E_mQ&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=66",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Chirithy", "Blue Rhapsody", "Green Requiem(s)", "Yellow Opera(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Raining Bricks",
+        "Link": "https://www.youtube.com/watch?v=3bi3YFXSaMI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=67",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Ralph" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Large Man",
+        "Link": "https://www.youtube.com/watch?v=DRPlEApvwAo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=68",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Ralph" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Ralph's Dream",
+        "Link": "https://www.youtube.com/watch?v=_3zUYpLgVBc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=69",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Ralph", "Felix" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Link with Darkness",
+        "Link": "https://www.youtube.com/watch?v=_qlmlC5W8yU&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=70",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Penthouse",
+        "Link": "https://www.youtube.com/watch?v=pIZKoZvS-R8&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=71",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Chirithy", "Ralph" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Proof of a Good Guy",
+        "Link": "https://www.youtube.com/watch?v=fPryf-Rw5FQ",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Chirithy", "Ralph", "Felix" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Missing",
+        "Link": "https://www.youtube.com/watch?v=q9w77TWe6Ec&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=73",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Felix", "Flappy Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Out of Order",
+        "Link": "https://www.youtube.com/watch?v=TtX2-cMh0xI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=74",
+        "Worlds": [ "Niceland" ],
+        "Characters": [ "Player", "Felix" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Unknown",
+        "Link": "https://www.youtube.com/watch?v=vK7rO_2d7hs&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=75",
+        "Worlds": [ "Game Central Station" ],
+        "Characters": [ "Chirithy", "Player", "Ralph" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Different World",
+        "Link": "https://www.youtube.com/watch?v=b8sv1tLyOMM&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=76",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Player", "Chirithy", "Gearbit(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Pep Talk",
+        "Link": "https://www.youtube.com/watch?v=zN4kdAJuuYQ&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=77",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Ralph", "Space Marine(s)", "Calhoun", "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Ready, Rookie?",
+        "Link": "https://www.youtube.com/watch?v=mu4Xq8gu8ak&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=78",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Ralph", "Space Marine(s)", "Calhoun", "Player", "Chirithy", "Cy-Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "On the Battlefield",
+        "Link": "https://www.youtube.com/watch?v=29TunojsyiQ&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=79",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Space Marine(s)", "Calhoun", "Cy-Bug(s)", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Game Over",
+        "Link": "https://www.youtube.com/watch?v=5QIwDc-fEao&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=80",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Cy-Bug(s)", "Player", "Calhoun", "Ralph", "Space Marine(s)", "Flappy Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Tower",
+        "Link": "https://www.youtube.com/watch?v=b-voQznEJiw",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Player", "Flappy Bug(s)", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "High Definition",
+        "Link": "https://www.youtube.com/watch?v=_8Dcp03L6TI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=82",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Calhoun", "Space Marine(s)", "Felix" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Medal!",
+        "Link": "https://www.youtube.com/watch?v=8L6YfyuF-rM&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=83",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Ralph", "Cy-Bug(s)", "Player", "Chirithy", "Ephemer", "Darkling(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fused Together",
+        "Link": "https://www.youtube.com/watch?v=JMo1BEP0jRA&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=84",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Player", "Ephemer", "Darkling(s)", "Cy-Bug(s)", "Darkling Cy-Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Spotted",
+        "Link": "https://www.youtube.com/watch?v=B-hB7w1GRKc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=85",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Calhoun", "Felix" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Common Enemy",
+        "Link": "https://www.youtube.com/watch?v=ORDeSkshLoE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=86",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Calhoun", "Darkling Cy-Bug(s)", "Player", "Ephemer" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Ralph and a Cy-Bug",
+        "Link": "https://www.youtube.com/watch?v=s7rMEIKt2Pw&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=87",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Player", "Ephemer", "Calhoun", "Darkling Cy-Bug(s)", "Felix" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Sorting Out the Facts",
+        "Link": "https://www.youtube.com/watch?v=yvybYoPD9KY&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=88",
+        "Worlds": [ "Cy-Bug Sector" ],
+        "Characters": [ "Ephemer", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Cornerstones of the New World",
+        "Link": "https://www.youtube.com/watch?v=tpbJ1wnkZf8&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=89",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu", "Master of Masters" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Trapped in a Data Cage",
+        "Link": "https://www.youtube.com/watch?v=KkaZ23W4fF8&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=90",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Lauriam", "Skuld", "Ventus", "Ephemer", "Brain" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Book",
+        "Link": "https://www.youtube.com/watch?v=dUkHAjq2H2I&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=91",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Brain", "Ava", "Lauriam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Darkness in the Land of Light",
+        "Link": "https://www.youtube.com/watch?v=lWhimuSMA2w&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=92",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Maleficent", "Darkness" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Sweet Encounter",
+        "Link": "https://www.youtube.com/watch?v=eyeOkyV0c00&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=93",
+        "Worlds": [ "Candy Kingdom", "Game Central Station" ],
+        "Characters": [ "Ralph", "Cy-Bug(s)", "Vanellope", "Player", "Felix", "Calhoun", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Ticket to a Better Life",
+        "Link": "https://www.youtube.com/watch?v=3AhCrCtPYI4&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=94",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Ralph", "Vanellope" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Vanellope",
+        "Link": "https://www.youtube.com/watch?v=NUr2bfQ6U-4&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=95",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Vanellope", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Empty Racetrack",
+        "Link": "https://www.youtube.com/watch?v=e14MPD74HRE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=96",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Vanellope", "King Candy", "Sour Bill", "Lance Soldier(s)", "Soldier(s)", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I'm in the Race!",
+        "Link": "https://www.youtube.com/watch?v=PvbHCvB7gdY&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=97",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Lance Soldier(s)", "Soldier(s)", "Vanellope", "King Candy", "Sour Bill", "Ralph" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "King Candy's Request",
+        "Link": "https://www.youtube.com/watch?v=c3YAGlUfKjE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=98",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "King Candy", "Sour Bill", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I Knew It",
+        "Link": "https://www.youtube.com/watch?v=2dEftEy7_Rc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=99",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Brain", "Brain's Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Way to the Future",
+        "Link": "https://www.youtube.com/watch?v=sE_Tp69YMTQ&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=100",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Maleficent", "Darkness" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Replacement",
+        "Link": "https://www.youtube.com/watch?v=e8XX1xp_tiE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=101",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Brain" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Snow in the Data World",
+        "Link": "https://www.youtube.com/watch?v=oHMOUpho9Fw&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=102",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ventus", "Skuld", "Brain's Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Danger to All",
+        "Link": "https://www.youtube.com/watch?v=WDCANkVfiXM&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=103",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "King Candy", "Sour Bill" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Broken Cart",
+        "Link": "https://www.youtube.com/watch?v=Xl0sw3HJvdg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=104",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Vanellope", "Ralph", "Flappy Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Kart Bakery",
+        "Link": "https://www.youtube.com/watch?v=m1L6udIwYQE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=105",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Flappy Bug(s)", "Vanellope" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Plot Thickens",
+        "Link": "https://www.youtube.com/watch?v=vv1EtZvvfqE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=106",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Brain", "Ephemer", "Brain's Chirithy", "Ventus", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Waypoint",
+        "Link": "https://www.youtube.com/watch?v=_JhyF0eA4Cg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=107",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Maleficent", "Darkness", "Lauriam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Baking a Kart",
+        "Link": "https://www.youtube.com/watch?v=u1hmn_E3ocU&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=108",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Vanellope", "Ralph", "Cherry Kaboom(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Real Kart",
+        "Link": "https://www.youtube.com/watch?v=yabbSzJjXzo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=109",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Vanellope", "King Candy", "Lance Soldier(s)", "Noble Soldier(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Secret Entrance",
+        "Link": "https://www.youtube.com/watch?v=GngA-6Hhxqo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=110",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Vanellope", "Wyvern(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Glitch",
+        "Link": "https://www.youtube.com/watch?v=qgnW-2-jgKI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=111",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Vanellope", "King Candy", "Noble Soldier(s)", "Lance Soldier(s)", "Chirithy", "Bag O' Coal(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Racing Practice",
+        "Link": "https://www.youtube.com/watch?v=gj83Ql0eD-c&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=112",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Vanellope", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Master Ava's Plan?",
+        "Link": "https://www.youtube.com/watch?v=btFp2qujRvg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=113",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ventus", "Brain", "Ephemer", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Way Out",
+        "Link": "https://www.youtube.com/watch?v=jCGxqRZL5JY&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=114",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Maleficent", "Lauriam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "At the Abandoned House",
+        "Link": "https://www.youtube.com/watch?v=KQLT61N59wg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=115",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Skuld", "Brain", "Ventus", "Ephemer", "Ava", "Strelitzia", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Gone",
+        "Link": "https://www.youtube.com/watch?v=JhGUwgnk6uQ&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=116",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Lauriam" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Practice Continues",
+        "Link": "https://www.youtube.com/watch?v=c_cUlStmy5o&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=117",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Vanellope May Know",
+        "Link": "https://www.youtube.com/watch?v=g3WwRR4J4s0&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=118",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Chirithy", "Vanellope" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Visit to the Castle",
+        "Link": "https://www.youtube.com/watch?v=tZCkCyZSq0A&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=119",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Calhoun", "Felix", "Sour Bill" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Lauriam & Strelitzia",
+        "Link": "https://www.youtube.com/watch?v=QWEcGILussc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=120",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Lauriam", "Strelitzia" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Difficult Decision",
+        "Link": "https://www.youtube.com/watch?v=-CjBJPun0Wc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=121",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Ralph", "King Candy", "Player", "Vanellope", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "\"My Hero\"",
+        "Link": "https://www.youtube.com/watch?v=Vl3SFtRgdpc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=122",
+        "Worlds": [ "Niceland", "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Vanellope" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Talk!",
+        "Link": "https://www.youtube.com/watch?v=jkvaufC5t2I&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=123",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Sour Bill", "Ralph", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "King Candy's Agenda",
+        "Link": "https://www.youtube.com/watch?v=ZksJ1Yf8yY4&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=124",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Sour Bill", "Ralph", "Player", "King Candy", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Fungeon",
+        "Link": "https://www.youtube.com/watch?v=bGqzHTXQoA0&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=125",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Success!",
+        "Link": "https://www.youtube.com/watch?v=-PwqXk8YqQI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=126",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Happy Reunion?",
+        "Link": "https://www.youtube.com/watch?v=D_sIlSWdGDo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=127",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Felix", "Ralph", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Friends Once Again",
+        "Link": "https://www.youtube.com/watch?v=lWzZNhQlITA&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=128",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Vanellope", "Ralph", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Escape",
+        "Link": "https://www.youtube.com/watch?v=0qo1zpbnsDg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=129",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Maleficent", "Darkness" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Work of Darkness",
+        "Link": "https://www.youtube.com/watch?v=Epi8pU_e5uk&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=130",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Brain", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To Defeat Darkness",
+        "Link": "https://www.youtube.com/watch?v=bcdfU4swUoA&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=131",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu", "Master of Masters" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Breath of Darkness",
+        "Link": "https://www.youtube.com/watch?v=Q_iP7og7ERM&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=132",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ventus", "Strelitzia", "Chirithy", "Darkness", "Ava" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Let the Race Begin!",
+        "Link": "https://www.youtube.com/watch?v=0q8jB7g5I6w&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=133",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "King Candy", "Player", "Ralph", "Vanellope", "Felix", "Calhoun", "Candy Cy-Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Protect the Finish Line",
+        "Link": "https://www.youtube.com/watch?v=-_Pt03kqt9w&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=134",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Calhoun", "Cy-Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "As Darkness Stirs",
+        "Link": "https://www.youtube.com/watch?v=bhhnbDxHKmg&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=135",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Skuld", "Ephemer", "Brain", "Lauriam", "Ventus", "Darkness" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Big Reveal",
+        "Link": "https://www.youtube.com/watch?v=TogcmoRMkbU&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=136",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Calhoun", "Candy Cy-Bug(s)", "Vanellope", "King Candy", "Turbo", "Felix" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Evacuate!",
+        "Link": "https://www.youtube.com/watch?v=58MRlsPn9cc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=137",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Ralph", "Vanellope", "Player", "Felix", "Calhoun", "Candy Cy-Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Great Plan",
+        "Link": "https://www.youtube.com/watch?v=dnc1qfpaTyI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=138",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Calhoun", "Candy Cy-Bug(s)", "Felix", "Vanellope" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Confrontation",
+        "Link": "https://www.youtube.com/watch?v=r0ZHBGBg5wE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=139",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu", "Master of Masters", "Brain", "Darkness", "Ephemer", "Lauriam", "Skuld", "Ventus" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Wreck It!",
+        "Link": "https://www.youtube.com/watch?v=CcHE2vTtpaE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=140",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Ralph", "Wyvern(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Greatest Virus",
+        "Link": "https://www.youtube.com/watch?v=FJoYd52nT-o&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=141",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Ralph", "King Candy", "Turbo", "Player", "Candy Cy-Bug(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Final Stage",
+        "Link": "https://www.youtube.com/watch?v=H8bbBdKo_UY&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=142",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Ralph", "King Candy", "Turbo", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Up We Go",
+        "Link": "https://www.youtube.com/watch?v=Yn1atwG9cS8&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=143",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Ralph", "King Candy", "Turbo", "Player" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Being Me",
+        "Link": "https://www.youtube.com/watch?v=SwqYzA7aV34&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=144",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Candy Cy-Bug(s)", "Vanellope", "Calhoun", "Felix", "Ralph", "King Candy", "Turbo", "Player", "Chirithy", "Nightmare Cy-Bug" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Sugar Rush Royalty",
+        "Link": "https://www.youtube.com/watch?v=yj-tIoMKYZo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=145",
+        "Worlds": [ "Candy Kingdom" ],
+        "Characters": [ "Player", "Nightmare Cy-Bug", "Chirithy", "Felix", "Ralph", "Vanellope", "Calhoun", "Sour Bill" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Clock's Ticking",
+        "Link": "https://www.youtube.com/watch?v=8e4x5aSSz_k&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=146",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Our Plan",
+        "Link": "https://www.youtube.com/watch?v=pjG4vZ2CHHo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=147",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Master of Masters", "Luxu" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The World's End",
+        "Link": "https://www.youtube.com/watch?v=rUZypXgzwOI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=148",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ventus", "Lauriam", "Skuld", "Brain", "Ephemer", "Darkness", "Player", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Pure Light",
+        "Link": "https://www.youtube.com/watch?v=EkYOFqQYys4&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=149",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Player", "Lauriam", "Brain", "Skuld", "Darkness", "Ventus", "Darkling(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Seed of Light",
+        "Link": "https://www.youtube.com/watch?v=_-59qU5Ah7Y&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=150",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Darkness", "Luxu" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Purpose",
+        "Link": "https://www.youtube.com/watch?v=byKndzwJyMo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=151",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Darkness", "Master of Masters", "Ira", "Key Kid(s)", "Darkside", "Player", "Brain", "Skuld", "Lauriam", "Ephemer", "Ventus" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Backup Data",
+        "Link": "https://www.youtube.com/watch?v=MvNiuTz7aBc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=152",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Skuld", "Ephemer", "Ventus", "Lauriam", "Strelitzia", "Elrena", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Shadow's Identity",
+        "Link": "https://www.youtube.com/watch?v=oVgcCUN9UKI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=153",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu", "Darkness" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Resolutions",
+        "Link": "https://www.youtube.com/watch?v=QMxPo4YQhls&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=154",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Brain", "Elrena", "Lauriam", "Ventus", "Skuld", "Ephemer" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "7 and 13",
+        "Link": "https://www.youtube.com/watch?v=GZfexVPLh5U&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=155",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Luxu", "Master of Masters", "Aced", "Ira", "Invi", "Gula", "Ava" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To Keep Light Alive",
+        "Link": "https://www.youtube.com/watch?v=GdmOHXNUQyQ&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=156",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ventus", "Elrena", "Lauriam", "Brain", "Luxu" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fall to Darkness",
+        "Link": "https://www.youtube.com/watch?v=o1V99uXb4kc&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=157",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Skuld", "Ephemer", "Darkness" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Separated",
+        "Link": "https://www.youtube.com/watch?v=AtYbTEYLIqo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=158",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Skuld", "Ephemer", "Player", "Darkness" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "I'll Figure It Out",
+        "Link": "https://www.youtube.com/watch?v=rx0cDXrI_EI&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=159",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Brain", "Luxu" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Way Home",
+        "Link": "https://www.youtube.com/watch?v=9fI8jXvMqoo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=160",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Locked Inside",
+        "Link": "https://www.youtube.com/watch?v=K1jMA1FYyWo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=161",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Player", "Darkness", "Chirithy" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Nightfall",
+        "Link": "https://www.youtube.com/watch?v=KF683k6JnJw&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=162",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Skuld" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A World of Fiction",
+        "Link": "https://www.youtube.com/watch?v=sjG1hdnyDZ8&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=163",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Darkness", "Master of Masters" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Ephemer & Skuld",
+        "Link": "https://www.youtube.com/watch?v=qxXBWu5kjpE&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=164",
+        "Worlds": [ "Daybreak Town" ],
+        "Characters": [ "Ephemer", "Skuld", "Player", "Invisible(s)" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Goodnight",
+        "Link": "https://www.youtube.com/watch?v=HbRCPqsH178&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=165",
+        "Worlds": [ "Scala ad Caelum", "Destiny Islands" ],
+        "Characters": [ "Player", "Chirithy", "Key Kid(s)", "Dream Eater(s)", "Xehanort", "Eraqus" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Destinations",
+        "Link": "https://www.youtube.com/watch?v=S4E6PIfQLVo&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=166",
+        "Worlds": [ "Scala ad Caelum", "Mysterious Tower", "Dwarf Woodlands", "Enchanted Dominion", "The Keyblade Graveyard" ],
+        "Characters": [ "Ephemer", "Diablo", "Lauriam", "Elrena", "Ventus", "Brain" ],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "An Unfamiliar Town",
+        "Link": "https://www.youtube.com/watch?v=urGJtjuQ9BU",
+        "Worlds": [ "Scala ad Caelum" ],
+        "Characters": [ "Brain", "Sigurd" ],
+        "Areas": [],
+        "Music": []
       }
     ],
     "Kingdom Hearts III": [
