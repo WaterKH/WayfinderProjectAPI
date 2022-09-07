@@ -74,26 +74,56 @@ namespace WayfinderProjectAPI.Controllers
         [HttpGet("SearchForScenes")]
         public async Task<IEnumerable<SceneDto>> SearchForScenes([FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
         {
-            var gamesList = games?.Split(",").Select(x => x.Trim());
-            var scenesList = scenes?.Split(",").Select(x => x.Trim());
-            var worldsList = worlds?.Split(",").Select(x => x.Trim());
-            var charactersList = characters?.Split(",").Select(x => x.Trim());
-            var areasList = areas?.Split(",").Select(x => x.Trim());
-            var musicList = music?.Split(",").Select(x => x.Trim());
-            //var linesList = lines?.Split(",").Select(x => x.ToLower().Trim());
+            var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
 
-            return await _context.Scenes.Include(x => x.Script).Include(x => x.Script.Lines)
-                .Where(x =>
-                    (gamesList != null ? gamesList.Any(y => y == x.Game.Name) : true) &&
-                    (scenesList != null ? scenesList.Any(y => y == x.Name) : true) &&
-                    (worldsList != null ? x.Worlds.Any(y => worldsList.Any(z => z == y.Name)) : true) &&
-                    (charactersList != null ? x.Characters.Any(y => charactersList.Any(z => z == y.Name)) : true) &&
-                    (areasList != null ? x.Areas.Any(y => areasList.Any(z => z == y.Name)) : true) &&
-                    (musicList != null ? x.Music.Any(y => musicList.Any(z => z == y.Name)) : true) &&
-                    (line != null ? x.Script.Lines.ToList().Any(y => y.Line.ToLower().Contains(line.ToLower())) : true))
-                .OrderBy(x => x.Id)
-                .ToDto()
-                .ToListAsync();
+            if (games != null)
+            {
+                var gamesList = games.Split(",").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Any(y => y == x.Game.Name));
+            }
+
+            if (scenes != null)
+            {
+                var scenesList = scenes.Split(",").Select(x => x.Trim());
+
+                results = results.Where(x => scenesList.Any(y => y == x.Name));
+            }
+            
+            if (worlds != null)
+            {
+                var worldsList = worlds.Split(",").Select(x => x.Trim());
+
+                results = results.Where(x => x.Worlds.Any(y => worldsList.Any(z => z == y.Name)));
+            }
+
+            if (characters != null)
+            {
+                var charactersList = characters.Split(",").Select(x => x.Trim());
+
+                results = results.Where(x => x.Characters.Any(y => charactersList.Any(z => z == y.Name)));
+            }
+
+            if (areas != null)
+            {
+                var areasList = areas.Split(",").Select(x => x.Trim());
+
+                results = results.Where(x => x.Areas.Any(y => areasList.Any(z => z == y.Name)));
+            }
+
+            if (music != null)
+            {
+                var musicList = music.Split(",").Select(x => x.Trim());
+
+                results = results.Where(x => x.Music.Any(y => musicList.Any(z => z == y.Name)));
+            }
+
+            if (line != null)
+            {
+                results = results.Where(x => x.Script.Lines.ToList().Any(y => y.Line.ToLower().Contains(line.ToLower())));
+            }
+
+            return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
     }
 }
