@@ -169,30 +169,48 @@ else if (this.SceneDtos.Count > 0)
             <tr>
                 <td colspan="6" style="border: #545a60 2px solid;">
                     <strong>Lines & Extra Information:</strong>
-                    <div style="text-align: center;">
-                        <strong stlye="font-size: larger;">Worlds in Scene:</strong>
-                        <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Worlds.Select(x => x.Name)))</label><br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-1"></div>
 
-                        <strong stlye="font-size: larger;">Areas in Scene:</strong>
-                        <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Areas.Select(x => x.Name)))</label><br/>
+                        <div class="col-md-5" style="text-align: left;">
+                            <strong stlye="font-size: larger;">Worlds in Scene:</strong>
+                            <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Worlds.Select(x => x.Name)))</label><br/>
 
-                        <strong stlye="font-size: larger;">Characters in Scene:</strong>
-                        <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Characters.Select(x => x.Name)))</label><br/>
+                            <strong stlye="font-size: larger;">Areas in Scene:</strong>
+                            <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Areas.Select(x => x.Name)))</label><br/>
+                        </div>
+                        
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-5" style="text-align: left;">
+                            <strong stlye="font-size: larger;">Characters in Scene:</strong>
+                            <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Characters.Select(x => x.Name)))</label><br/>
                     
-                        <strong stlye="font-size: larger;">Music in Scene:</strong>
-                        <label>
-                            <div style="display: inline-flex;">
-                                @for (int i = 0; i < this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Music.Count; ++i)
-                                {
-                                    var currentScene = this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name);
-                                    <a href="@currentScene.Music.ToList()[i].Link" target="_blank">@currentScene.Music.ToList()[i].Name</a>
-                                    if (i < currentScene.Music.Count - 1)
+                            <strong stlye="font-size: larger;">Music in Scene:</strong>
+                            <label>
+                                <div style="display: inline-flex;">
+                                    @for (int i = 0; i < this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Music.Count; ++i)
                                     {
-                                        <div>,&nbsp;</div>
+                                        var currentScene = this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name);
+                                        <a href="@currentScene.Music.ToList()[i].Link" target="_blank">@currentScene.Music.ToList()[i].Name</a>
+                                        if (i < currentScene.Music.Count - 1)
+                                        {
+                                            <div>,&nbsp;</div>
+                                        }
                                     }
-                                }
-                            </div>
-                        </label><br/>
+                                </div>
+                            </label><br/>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center;">
+                            <iframe width="853px" height="505px" src="@(Scene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])"></iframe>
+                        </div>
                     </div>
 
                     <Table Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
