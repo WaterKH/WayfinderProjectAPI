@@ -17,22 +17,22 @@
     <div class="advanced-search-box">
         <div class="row" >
             <div class="col-md-4">
-                <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Search for Games..." Color="#cdd1ff" Selections="this.Games" UpdateSearch="@(() => Search())" />
+                <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Search for Games..." Color="#cdd1ff" Selections="this.Games" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Search for Worlds..." Color="#1bff9f" Selections="this.Worlds" UpdateSearch="@(() => Search())" />
+                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Search for Worlds..." Color="#1bff9f" Selections="this.Worlds" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Search for Areas..." Color="#94ffe1" Selections="this.Areas" UpdateSearch="@(() => Search())" />
+                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Search for Areas..." Color="#94ffe1" Selections="this.Areas" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Search for Scenes..." Color="#faa5f3" Selections="this.Scenes" UpdateSearch="@(() => Search())" />
+                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Search for Scenes..." Color="#faa5f3" Selections="this.Scenes" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Search for Characters..." Color="#beff6c" Selections="this.Characters" UpdateSearch="@(() => Search())" />
+                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Search for Characters..." Color="#beff6c" Selections="this.Characters" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Search for Music..." Color="#fffd9c" Selections="this.Music" UpdateSearch="@(() => Search())" />
+                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Search for Music..." Color="#fffd9c" Selections="this.Music" UpdateSearch="@(async () => await Search())" />
             </div>
         </div>
     </div>
@@ -41,7 +41,11 @@
 <br />
 <br />
 
-@if (this.SceneDtos.Count > 0)
+@if(this.Loading)
+{
+    <div class="loader"></div>
+}
+else if (this.SceneDtos.Count > 0)
 {
 <Table @ref="MainTable" Items="this.SceneDtos" Context="Scene">
     <TableHeader>
@@ -243,9 +247,25 @@
     border-radius: 500px;
     background-color: #bee2ff;
 }
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 </style>
 
 @code {
+    public bool Loading { get; set; }
+
     public List<string> Areas { get; set; } = new List<string>();
     public List<string> Characters { get; set; } = new List<string>();
     public List<string> Games { get; set; } = new List<string>();
@@ -296,6 +316,12 @@
 
     public async Task Search()
     {
+        this.Loading = true;
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+
         var api = new WayfinderProjectAPI.Controllers.WayfinderController(null, context);
 
         var games = this.GamesSearch != null ? string.Join(", ", this.GamesSearch.selected) != "" ? string.Join(", ", this.GamesSearch.selected) : null : null;
@@ -323,6 +349,7 @@
             MainTable.CurrentExpandedRow = -1;
         }
 
+        this.Loading = false;
         await InvokeAsync(() =>
         {
             StateHasChanged();

@@ -71,21 +71,21 @@
     [Parameter] public string Color { get; set; } = "#ffffff";
     [Parameter] public List<string> Selections { get; set; } = new List<string>();
 
-    [Parameter] public Action UpdateSearch { get; set; }
+    [Parameter] public Func<Task> UpdateSearch { get; set; }
 
     private string search = "";
     public List<string> selected { get; set; } = new List<string>();
     private List<string> results = new List<string>();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         this.Selections.Sort();
         this.results = this.Selections;
 
-        base.OnInitialized();
+        await base.OnInitializedAsync();
     }
 
-    private void Search(string search)
+    private async Task Search(string search)
     {
         this.search = search;
         this.results = new List<string>();
@@ -109,14 +109,19 @@
         this.results.Sort();
     }
 
-    private void Select(string value)
+    private async Task Select(string value)
     {
         this.selected.Add(value);
-        this.UpdateSearch.Invoke();
+        await this.UpdateSearch.Invoke();
+
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
 
         if (!string.IsNullOrEmpty(search))
         {
-            this.Search(this.search);
+            await this.Search(this.search);
         }
         else
         {
@@ -125,14 +130,19 @@
         }
     }
 
-    private void Remove(string value)
+    private async Task Remove(string value)
     {
         this.selected.Remove(value);
-        this.UpdateSearch.Invoke();
+        await this.UpdateSearch.Invoke();
+        
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
 
         if (!string.IsNullOrEmpty(search))
         {
-            this.Search(this.search);
+            await this.Search(this.search);
         }
         else
         {
