@@ -113,7 +113,6 @@
     private async Task Select(string value)
     {
         this.selected.Add(value);
-        await Task.Run(async () => await this.UpdateSearch.Invoke());
 
         if (!string.IsNullOrEmpty(search))
         {
@@ -124,12 +123,17 @@
             this.results.Remove(value);
             this.results.Sort();
         }
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+        
+        await Task.Run(async () => await this.UpdateSearch.Invoke());
     }
 
     private async Task Remove(string value)
     {
         this.selected.Remove(value);
-        await Task.Run(async () => await this.UpdateSearch.Invoke());
 
         if (!string.IsNullOrEmpty(search))
         {
@@ -140,5 +144,11 @@
             this.results.Add(value);
             this.results.Sort();
         }
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+        
+        await Task.Run(async () => await this.UpdateSearch.Invoke());
     }
 }

@@ -43,7 +43,9 @@
 
 @if (this.Loading)
 {
-    <div class="loader">TEST</div>
+    <div class="row" style="justify-content: center;">
+        <div class="loader col-md-12"></div>
+    </div>
 }
 else if (this.SceneDtos.Count > 0)
 {
@@ -318,7 +320,10 @@ else if (this.SceneDtos.Count > 0)
     {
         try
         {
-            this.Loading = true;
+            this.Loading = true;     
+            await InvokeAsync(() => { 
+                this.StateHasChanged(); 
+            });
 
             var api = new WayfinderProjectAPI.Controllers.WayfinderController(null, context);
 
@@ -350,8 +355,9 @@ else if (this.SceneDtos.Count > 0)
         finally
         {
             this.Loading = false;
+            await InvokeAsync(() => { 
+                this.StateHasChanged(); 
+            });
         }
-
-        await InvokeAsync(() => { this.StateHasChanged(); });
     }
 }
