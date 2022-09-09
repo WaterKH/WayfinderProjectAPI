@@ -2,13 +2,14 @@
 @inject WayfinderProjectAPI.Data.WayfinderContext context
 @using Microsoft.EntityFrameworkCore
 @using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
 
 <PageTitle>The Wayfinder Project</PageTitle>
 
 <div class="search-bar">
     <div class="row" style="width: 100%; margin: 25px 0px;">
         <div class="col-md-12" style="align-self: center;">
-            <input id="main-search" name="main-search" class="custom-input" oninput="@((ChangeEventArgs e) => this.SearchQuotes(e?.Value?.ToString()))" placeholder="Search for a Word, Phrase or Quote (Must be longer than 3 letters)..." />
+            <input id="main-search" name="main-search" class="custom-input" onchange="@((ChangeEventArgs e) => this.SearchQuotes(e?.Value?.ToString()))" placeholder="Search for a Word, Phrase or Quote (Must be longer than 3 letters)..." />
         </div>
     </div>
 </div>
@@ -305,9 +306,12 @@ else if (this.SceneDtos.Count > 0)
 
     private string quoteSearch = "";
     private List<SceneDto> SceneDtos = new List<SceneDto>();
+    private WayfinderController api;
 
     protected override async Task OnInitializedAsync()
     {
+        this.api = new WayfinderController(null, context);
+
         await Task.Run(async () => await this.ResetOptions());
 
         await base.OnInitializedAsync();
@@ -320,7 +324,11 @@ else if (this.SceneDtos.Count > 0)
         else
             this.quoteSearch = search;
 
-        await this.Search();
+
+        if (!this.Loading)
+        {
+            await this.Search();
+        }
     }
 
     public async Task Search()
@@ -331,8 +339,6 @@ else if (this.SceneDtos.Count > 0)
             await InvokeAsync(() => { 
                 this.StateHasChanged(); 
             });
-
-            var api = new WayfinderProjectAPI.Controllers.WayfinderController(null, context);
 
             var games = this.GamesSearch != null ? string.Join(", ", this.GamesSearch.selected) != "" ? string.Join(", ", this.GamesSearch.selected) : null : null;
             var scenes = this.ScenesSearch != null ? string.Join(", ", this.ScenesSearch.selected) != "" ? string.Join(", ", this.ScenesSearch.selected) : null : null;
@@ -352,7 +358,7 @@ else if (this.SceneDtos.Count > 0)
             else
             {
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                await Task.Run(async () => this.SceneDtos = (await api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList());
+                await Task.Run(async () => this.SceneDtos = (await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList());
 
                 this.UpdateOptions();
             }
