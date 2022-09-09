@@ -14,7 +14,7 @@ builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.Re
 var inMemorySqlite = new SqliteConnection("Data Source=:memory:");
 inMemorySqlite.Open();
 
-builder.Services.AddDbContext<WayfinderContext>(options => options.UseSqlite(inMemorySqlite));
+builder.Services.AddDbContext<WayfinderContext>(options => options.UseSqlite(inMemorySqlite), ServiceLifetime.Transient);
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();

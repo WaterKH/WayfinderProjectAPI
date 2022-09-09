@@ -96,7 +96,7 @@ namespace WayfinderProjectAPI.Controllers
                 var worldsList = worlds.Split(",").Select(x => x.Trim());
                 var contextWorlds = _context.Worlds.AsNoTrackingWithIdentityResolution().Where(x => worldsList.Contains(x.Name));
 
-                results = results.Where(x => x.Worlds.All(y => contextWorlds.Contains(y)));
+                results = results.Where(x => !contextWorlds.Except(x.Worlds).Any());
             }
 
             if (characters != null)
@@ -112,7 +112,7 @@ namespace WayfinderProjectAPI.Controllers
                 var areasList = areas.Split(",").Select(x => x.Trim());
                 var contextAreas = _context.Areas.AsNoTrackingWithIdentityResolution().Where(x => areasList.Contains(x.Name));
 
-                results = results.Where(x => x.Areas.All(y => contextAreas.Contains(y)));
+                results = results.Where(x => !contextAreas.Except(x.Areas).Any());
             }
 
             if (music != null)
@@ -120,7 +120,7 @@ namespace WayfinderProjectAPI.Controllers
                 var musicList = music.Split(",").Select(x => x.Trim());
                 var contextMusic = _context.Music.AsNoTrackingWithIdentityResolution().Where(x => musicList.Contains(x.Name));
 
-                results = results.Where(x => x.Music.All(y => contextMusic.Contains(y)));
+                results = results.Where(x => !contextMusic.Except(x.Music).Any());
             }
 
             if (line != null)

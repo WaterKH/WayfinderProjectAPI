@@ -19,22 +19,22 @@
     <div class="advanced-search-box">
         <div class="row" >
             <div class="col-md-4">
-                <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Search for Games..." Color="#cdd1ff" Selections="this.Games" UpdateSearch="@(async () => await Search())" />
+                <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Search for Games..." Color="#cdd1ff" Selections="this.Games" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Search for Worlds..." Color="#1bff9f" Selections="this.Worlds" UpdateSearch="@(async () => await Search())" />
+                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Search for Worlds..." Color="#1bff9f" Selections="this.Worlds" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Search for Areas..." Color="#94ffe1" Selections="this.Areas" UpdateSearch="@(async () => await Search())" />
+                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Search for Areas..." Color="#94ffe1" Selections="this.Areas" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Search for Scenes..." Color="#faa5f3" Selections="this.Scenes" UpdateSearch="@(async () => await Search())" />
+                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Search for Scenes..." Color="#faa5f3" Selections="this.Scenes" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Search for Characters..." Color="#beff6c" Selections="this.Characters" UpdateSearch="@(async () => await Search())" />
+                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Search for Characters..." Color="#beff6c" Selections="this.Characters" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
             </div>
             <div class="col-md-4">
-                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Search for Music..." Color="#fffd9c" Selections="this.Music" UpdateSearch="@(async () => await Search())" />
+                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Search for Music..." Color="#fffd9c" Selections="this.Music" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
             </div>
         </div>
     </div>
@@ -389,7 +389,6 @@ else if (this.SceneDtos.Count > 0)
 
         this.Areas.Sort();
         this.Characters.Sort();
-        this.Games.Sort();
         this.Music.Sort();
         this.Scenes.Sort();
         this.Worlds.Sort();
@@ -414,6 +413,12 @@ else if (this.SceneDtos.Count > 0)
         this.Music = await context.Music.Select(x => x.Name).ToListAsync();
         this.Scenes = await context.Scenes.Select(x => x.Name).ToListAsync();
         this.Worlds = await context.Worlds.Select(x => x.Name).ToListAsync();
+
+        this.Areas.Sort();
+        this.Characters.Sort();
+        this.Music.Sort();
+        this.Scenes.Sort();
+        this.Worlds.Sort();
 
         this.AreasSearch.Selections = this.AreasSearch.results = this.Areas;
         this.CharactersSearch.Selections = this.CharactersSearch.results = this.Characters;

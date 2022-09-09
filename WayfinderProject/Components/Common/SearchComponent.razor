@@ -2,7 +2,8 @@
     <div class="search-bar">
         <div class="row" style="width: 100%; margin: 25px 0px;">
             <div class="col-md-12" style="align-self: center;">
-                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input" oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" />
+                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input" 
+                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" disabled="@(!this.CanSearch)" />
             </div>
         </div>
     </div>
@@ -67,8 +68,8 @@
 @code {
     [Parameter] public string Id { get; set; } = "Search";
     [Parameter] public string Placeholder { get; set; } = "Search for values...";
-    //[Parameter] public int Limit { get; set; } = 15;
     [Parameter] public string Color { get; set; } = "#ffffff";
+    [Parameter] public bool CanSearch { get; set; } = true;
     [Parameter] public List<string> Selections { get; set; } = new List<string>();
 
     [Parameter] public Func<Task> UpdateSearch { get; set; }
@@ -113,6 +114,9 @@
     // TODO These still seem to lag a bit
     private async Task Select(string value)
     {
+        if (!this.CanSearch)
+            return;
+
         this.selected.Add(value);
 
         if (!string.IsNullOrEmpty(search))
@@ -136,6 +140,9 @@
 
     private async Task Remove(string value)
     {
+        if (!this.CanSearch)
+            return;
+
         this.selected.Remove(value);
 
         if (!string.IsNullOrEmpty(search))
