@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject WayfinderProjectAPI.Data.WayfinderContext context
+@using Microsoft.EntityFrameworkCore
 @using WayfinderProjectAPI.Data.DTOs
 
 <PageTitle>The Wayfinder Project</PageTitle>
@@ -307,19 +308,7 @@ else if (this.SceneDtos.Count > 0)
 
     protected override async Task OnInitializedAsync()
     {
-        this.Areas = context.Areas.Select(x => x.Name).ToList();
-        this.Characters = context.Characters.Select(x => x.Name).ToList();
-        this.Games = context.Games.Select(x => x.Name).ToList();
-        this.Music = context.Music.Select(x => x.Name).ToList();
-        this.Scenes = context.Scenes.Select(x => x.Name).ToList();
-        this.Worlds = context.Worlds.Select(x => x.Name).ToList();
-
-        if (this.GamesSearch != null)
-        {
-            var rand = new Random();
-            this.GamesSearch.selected = new List<string> { this.Games[rand.Next() % this.Games.Count] };
-            await this.Search();
-        }
+        await Task.Run(async () => await this.ResetOptions());
 
         await base.OnInitializedAsync();
     }
@@ -357,11 +346,15 @@ else if (this.SceneDtos.Count > 0)
             if (games == null && scenes == null && worlds == null && areas == null && characters == null && music == null && line == null)
             {
                 this.SceneDtos = new List<SceneDto>();
+
+                await Task.Run(async () => await this.ResetOptions());
             }
             else
             {
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                await Task.Run(async () => this.SceneDtos = (await api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList());            
+                await Task.Run(async () => this.SceneDtos = (await api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList());
+
+                this.UpdateOptions();
             }
 
             if (MainTable != null)
@@ -377,5 +370,54 @@ else if (this.SceneDtos.Count > 0)
                 this.StateHasChanged(); 
             });
         }
+    }
+
+    public void UpdateOptions()
+    {
+        this.Areas = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Where(x => this.AreasSearch.selected.Count == 0 ? true : this.AreasSearch.selected.Any(y => y != x)).Distinct().ToList();
+        this.Characters = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Where(x => this.CharactersSearch.selected.Count == 0 ? true : this.CharactersSearch.selected.Any(y => y != x)).Distinct().ToList();
+        this.Games = this.SceneDtos.Select(x => x.Game.Name).Where(x => this.GamesSearch.selected.Count == 0 ? true : this.GamesSearch.selected.Any(y => y != x)).Distinct().ToList();
+        this.Music = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Where(x => this.MusicSearch.selected.Count == 0 ? true : this.MusicSearch.selected.Any(y => y != x)).Distinct().ToList();
+        this.Scenes = this.SceneDtos.Select(x => x.Name).Where(x => this.ScenesSearch.selected.Count == 0 ? true : this.ScenesSearch.selected.Any(y => y != x)).Distinct().ToList();
+        this.Worlds = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Where(x => this.WorldsSearch.selected.Count == 0 ? true : this.WorldsSearch.selected.Any(y => y != x)).Distinct().ToList();
+
+        this.Areas.Sort();
+        this.Characters.Sort();
+        this.Games.Sort();
+        this.Music.Sort();
+        this.Scenes.Sort();
+        this.Worlds.Sort();
+
+        this.AreasSearch.Selections = this.AreasSearch.results = this.Areas;
+        this.CharactersSearch.Selections = this.CharactersSearch.results = this.Characters;
+        this.GamesSearch.Selections = this.GamesSearch.results = this.Games;
+        this.MusicSearch.Selections = this.MusicSearch.results = this.Music;
+        this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
+        this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
+
+        InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+    }
+
+    public async Task ResetOptions()
+    {
+        this.Areas = await context.Areas.Select(x => x.Name).ToListAsync();
+        this.Characters = await context.Characters.Select(x => x.Name).ToListAsync();
+        this.Games = await context.Games.Select(x => x.Name).ToListAsync();
+        this.Music = await context.Music.Select(x => x.Name).ToListAsync();
+        this.Scenes = await context.Scenes.Select(x => x.Name).ToListAsync();
+        this.Worlds = await context.Worlds.Select(x => x.Name).ToListAsync();
+
+        this.AreasSearch.Selections = this.AreasSearch.results = this.Areas;
+        this.CharactersSearch.Selections = this.CharactersSearch.results = this.Characters;
+        this.GamesSearch.Selections = this.GamesSearch.results = this.Games;
+        this.MusicSearch.Selections = this.MusicSearch.results = this.Music;
+        this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
+        this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
     }
 }
