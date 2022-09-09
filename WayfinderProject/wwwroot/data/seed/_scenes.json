@@ -909,7 +909,7 @@
         "Name": "Become Darkness",
         "Link": "https://www.youtube.com/watch?v=AUp7kHrnXXA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=144",
         "Worlds": [ "Hollow Bastion" ],
-        "Characters": [ "Riku", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Riku", "Ansem Seeker of Darkness" ],
         "Areas": [ "Castle Chapel" ],
         "Music": [ "Strange Whispers" ]
       },
@@ -1093,7 +1093,7 @@
         "Name": "The Light Within the Darkness",
         "Link": "https://www.youtube.com/watch?v=rS-oTPrBPOg&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=173",
         "Worlds": [ "End of the World" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Riku-Ansem", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Riku-Ansem", "Ansem Seeker of Darkness" ],
         "Areas": [ "Final Rest", "Homecoming" ],
         "Music": [ "End of the World", "The Deep End", "Destiny's Force" ]
       },
@@ -1101,7 +1101,7 @@
         "Name": "Kingdom Hearts",
         "Link": "https://www.youtube.com/watch?v=R0yMyfs0VQw&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=174",
         "Worlds": [ "End of the World" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Ansem, Seeker of Darkness", "World of Chaos" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ansem Seeker of Darkness", "World of Chaos" ],
         "Areas": [ "World of Chaos" ],
         "Music": [ "Guardando nel buio", "Beyond the Door" ]
       },
@@ -2735,7 +2735,7 @@
         "Name": "To the Heart of Darkness",
         "Link": "https://www.youtube.com/watch?v=LDk5jthZ34c&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=172",
         "Worlds": [ "Castle Oblivion" ],
-        "Characters": [ "Riku", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Riku", "Ansem Seeker of Darkness" ],
         "Areas": [ "Castle Oblivion" ],
         "Music": [ "The 13th Floor" ]
       },
@@ -2743,7 +2743,7 @@
         "Name": "The Foul Stench",
         "Link": "https://www.youtube.com/watch?v=uJ_4gGsjayU&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=173",
         "Worlds": [ "Castle Oblivion" ],
-        "Characters": [ "Riku", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Riku", "Ansem Seeker of Darkness" ],
         "Areas": [ "Castle Oblivion" ],
         "Music": [ "Face It!" ]
       },
@@ -2751,7 +2751,7 @@
         "Name": "Darkness Released",
         "Link": "https://www.youtube.com/watch?v=4wy5LBrMUfY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=174",
         "Worlds": [ "Endless Abyss" ],
-        "Characters": [ "Riku", "Ansem, Seeker of Darkness", "Guardian" ],
+        "Characters": [ "Riku", "Ansem Seeker of Darkness", "Guardian" ],
         "Areas": [ "Endless Abyss" ],
         "Music": []
       },
@@ -2759,7 +2759,7 @@
         "Name": "After the Battle",
         "Link": "https://www.youtube.com/watch?v=UCeLiZ5lsdM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=175",
         "Worlds": [ "Castle Oblivion" ],
-        "Characters": [ "Riku", "Ansem, Seeker of Darkness", "Mickey" ],
+        "Characters": [ "Riku", "Ansem Seeker of Darkness", "Mickey" ],
         "Areas": [ "Castle Oblivion" ],
         "Music": [ "Face It!" ]
       },
@@ -2777,7 +2777,7 @@
         "Name": "Dreams Connected",
         "Link": "https://www.youtube.com/watch?v=O8pKXD20McQ&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j",
         "Worlds": [ "Destiny Islands", "Hollow Bastion", "End of the World", "Castle Oblivion", "Dive to the Heart", "Dark World" ],
-        "Characters": [ "Sora", "Kairi", "Riku", "Donald", "Goofy", "Shadow(s)", "Ansem, Seeker of Darkness", "Naminé", "Marluxia", "Roxas", "Xemnas", "Darkside(s)" ],
+        "Characters": [ "Sora", "Kairi", "Riku", "Donald", "Goofy", "Shadow(s)", "Ansem Seeker of Darkness", "Naminé", "Marluxia", "Roxas", "Xemnas", "Darkside(s)" ],
         "Areas": [ "Seashore", "Rising Falls", "Grand Hall", "Station of Serenity", "Dark Margin", "Secret Place", "Storm-Tossed Island" ],
         "Music": [ "Sanctuary" ]
       },
@@ -3097,7 +3097,7 @@
         "Name": "A Dream Full of Promises",
         "Link": "https://www.youtube.com/watch?v=LbD9VWq_1Yw&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=43",
         "Worlds": [ "Hollow Bastion", "Traverse Town" ],
-        "Characters": [ "Sora", "Young Kairi", "Kairi", "Beast", "Riku", "Donald", "Goofy", "Xemnas", "Ansem, Seeker of Darkness", "Leon", "Aerith" ],
+        "Characters": [ "Sora", "Young Kairi", "Kairi", "Beast", "Riku", "Donald", "Goofy", "Xemnas", "Ansem Seeker of Darkness", "Leon", "Aerith" ],
         "Areas": [ "Library", "Grand Hall", "Rising Falls", "Entrance Hall", "Castle Chapel", "Secret Waterway", "Dark Depths" ],
         "Music": [ "Treasured Memories" ]
       },
@@ -3361,7 +3361,7 @@
         "Name": "A Dream of Goodbyes",
         "Link": "https://www.youtube.com/watch?v=PJGqKqGL_JA&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=78",
         "Worlds": [ "End of the World", "Castle Oblivion" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Chernabog", "Riku-Ansem", "Ansem, Seeker of Darkness", "World of Chaos", "Mickey", "Kairi", "Pluto", "Marluxia" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Chernabog", "Riku-Ansem", "Ansem Seeker of Darkness", "World of Chaos", "Mickey", "Kairi", "Pluto", "Marluxia" ],
         "Areas": [ "Gate to the Dark", "Final Dimension", "Evil Grounds", "Homecoming", "World of Chaos", "Endless Abyss", "Castle Oblivion Field", "Castle Oblivion" ],
         "Music": [ "Treasured Memories" ]
       },
@@ -5910,10 +5910,10 @@
         "Music": [ "Reviving Hollow Bastion" ]
       },
       {
-        "Name": "Ansem, Seeker of Darkness",
+        "Name": "Ansem Seeker of Darkness",
         "Link": "https://www.youtube.com/watch?v=_yT0bP0DIPA&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=442",
         "Worlds": [ "End of the World" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Mickey" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Mickey" ],
         "Areas": [ "Homecoming", "Endless Abyss" ],
         "Music": []
       },
@@ -10605,7 +10605,7 @@
         "Name": "A World Fallen into Darkness",
         "Link": "https://www.youtube.com/watch?v=Em-d8vxEFE8&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=270",
         "Worlds": [ "Dark World", "Neverland", "Traverse Town", "Twilight Town", "Destiny Islands", "Castle Oblivion" ],
-        "Characters": [ "Aqua", "Mickey", "Riku", "Kairi", "Donald", "Goofy", "Hayner", "Pence", "Olette", "Sora", "Ansem the Wise", "Roxas", "Xion", "Master Xehanort", "Ansem, Seeker of Darkness", "Xemnas" ],
+        "Characters": [ "Aqua", "Mickey", "Riku", "Kairi", "Donald", "Goofy", "Hayner", "Pence", "Olette", "Sora", "Ansem the Wise", "Roxas", "Xion", "Master Xehanort", "Ansem Seeker of Darkness", "Xemnas" ],
         "Areas": [ "Dark Castle of Dreams", "Realm of Darkness", "Clock Tower", "First District", "The Old Mansion", "Pod Room", "Seashore" ],
         "Music": [ "Destati -Drammatica-" ]
       },
@@ -10743,7 +10743,7 @@
         "Name": "Restoring the Island",
         "Link": "https://www.youtube.com/watch?v=cL5YhdE5CL0&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=7",
         "Worlds": [ "Destiny Islands", "Disney Castle" ],
-        "Characters": [ "Data-Sora", "Mickey", "Darkside(s)", "Shadow(s)", "Jiminy", "Donald", "Goofy", "Riku", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Data-Sora", "Mickey", "Darkside(s)", "Shadow(s)", "Jiminy", "Donald", "Goofy", "Riku", "Ansem Seeker of Darkness" ],
         "Areas": [ "Storm-tossed Island", "Library" ],
         "Music": [ "Dive into the Heart -Destati-", "Where Is This?" ]
       },
@@ -10879,7 +10879,7 @@
         "Name": "A Shady Character",
         "Link": "https://www.youtube.com/watch?v=b7PUN5RiccI&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=24",
         "Worlds": [ "Disney Castle", "Olympus Coliseum" ],
-        "Characters": [ "Data-Sora", "Mickey", "Donald", "Goofy", "Data-Riku", "Jiminy", "Ansem, Seeker of Darkness", "Pete" ],
+        "Characters": [ "Data-Sora", "Mickey", "Donald", "Goofy", "Data-Riku", "Jiminy", "Ansem Seeker of Darkness", "Pete" ],
         "Areas": [ "Library", "Vestibule" ],
         "Music": [ "Strange Whispers" ]
       },
@@ -11191,7 +11191,7 @@
         "Name": "Signs of What's Next",
         "Link": "https://www.youtube.com/watch?v=Q9oTsK_k9-Y&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=62",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [ "Mickey", "Yen Sid", "Ansem, Seeker of Darkness", "Xemnas", "Master Xehanort" ],
+        "Characters": [ "Mickey", "Yen Sid", "Ansem Seeker of Darkness", "Xemnas", "Master Xehanort" ],
         "Areas": [ "Sorcerer's Loft" ],
         "Music": [ "Magical Mystery" ]
       },
@@ -11209,7 +11209,7 @@
         "Name": "Opening",
         "Link": "https://www.youtube.com/watch?v=vVNOYTnxIuk&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=1",
         "Worlds": [ "Destiny Islands", "Castle Oblivion", "Twilight Town", "The World That Never Was", "The Keyblade Graveyard" ],
-        "Characters": [ "Mickey", "Donald", "Goofy", "Sora", "Riku", "Kairi", "Ansem, Seeker of Darkness", "Guardian", "Naminé", "Roxas", "Xion", "Axel", "Xemnas", "Xehanort", "Terra", "Ventus", "Aqua" ],
+        "Characters": [ "Mickey", "Donald", "Goofy", "Sora", "Riku", "Kairi", "Ansem Seeker of Darkness", "Guardian", "Naminé", "Roxas", "Xion", "Axel", "Xemnas", "Xehanort", "Terra", "Ventus", "Aqua" ],
         "Areas": [ "Seashore", "Castle Oblivion", "Pod Room", "Clock Tower", "Basement Hall", "World of Nothingness", "The Keyblade Graveyard" ],
         "Music": [ "Hikari -KINGDOM Orchestra Instrumental Version-" ]
       },
@@ -11241,7 +11241,7 @@
         "Name": "The Sleeping Keyholes",
         "Link": "https://www.youtube.com/watch?v=TSavEKwP4R0&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=5",
         "Worlds": [ "Destiny Islands" ],
-        "Characters": [ "Sora", "Riku", "Ursula", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Sora", "Riku", "Ursula", "Ansem Seeker of Darkness" ],
         "Areas": [ "Raft" ],
         "Music": [ "The Key of Light" ]
       },
@@ -11529,7 +11529,7 @@
         "Name": "The Road to Dawn",
         "Link": "https://www.youtube.com/watch?v=C5slDGUulks&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=41",
         "Worlds": [ "La Cité des Cloches" ],
-        "Characters": [ "Frollo", "Riku", "Wargoyle", "Ansem, Seeker of Darkness", "Young Xehanort" ],
+        "Characters": [ "Frollo", "Riku", "Wargoyle", "Ansem Seeker of Darkness", "Young Xehanort" ],
         "Areas": [ "Cathedral Roof" ],
         "Music": [ "Strange Whispers" ]
       },
@@ -11545,7 +11545,7 @@
         "Name": "The Path My Heart Walks",
         "Link": "https://www.youtube.com/watch?v=rmL7k-IB7ew&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=43",
         "Worlds": [ "La Cité des Cloches" ],
-        "Characters": [ "Quasimodo", "Riku", "Esmeralda", "Phoebus", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Quasimodo", "Riku", "Esmeralda", "Phoebus", "Ansem Seeker of Darkness" ],
         "Areas": [ "Square" ],
         "Music": [ "Destiny's Union" ]
       },
@@ -12241,7 +12241,7 @@
         "Name": "Pleasant Dreams, Kiddo",
         "Link": "https://www.youtube.com/watch?v=1M_rhHQjXNw&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=130",
         "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Sora", "Xigbar", "Ansem, Seeker of Darkness", "Xemnas", "Young Xehanort", "Riku" ],
+        "Characters": [ "Sora", "Xigbar", "Ansem Seeker of Darkness", "Xemnas", "Young Xehanort", "Riku" ],
         "Areas": [ "Memory's Skyscraper" ],
         "Music": [ "Sacred Distance", "Xigbar", "The Nightmare" ]
       },
@@ -12249,7 +12249,7 @@
         "Name": "Where It Started",
         "Link": "https://www.youtube.com/watch?v=ggjEysnlCOA&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=131",
         "Worlds": [ "Destiny Islands" ],
-        "Characters": [ "Sora", "Young Xehanort", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Sora", "Young Xehanort", "Ansem Seeker of Darkness" ],
         "Areas": [ "Seashore" ],
         "Music": [ "The Nightmare" ]
       },
@@ -12257,7 +12257,7 @@
         "Name": "Just Before the Darkness",
         "Link": "https://www.youtube.com/watch?v=2leO8zT2enk&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=132",
         "Worlds": [ "Destiny Islands" ],
-        "Characters": [ "Sora", "Ansem, Seeker of Darkness", "Young Xehanort", "Kairi" ],
+        "Characters": [ "Sora", "Ansem Seeker of Darkness", "Young Xehanort", "Kairi" ],
         "Areas": [ "Seashore" ],
         "Music": [ "Strange Whispers" ]
       },
@@ -12297,7 +12297,7 @@
         "Name": "A Brief and Early Memory",
         "Link": "https://www.youtube.com/watch?v=i23tNHGmWqY&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=137",
         "Worlds": [ "Destiny Islands" ],
-        "Characters": [ "Young Sora", "Young Riku", "Aqua", "Sora", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Young Sora", "Young Riku", "Aqua", "Sora", "Ansem Seeker of Darkness" ],
         "Areas": [ "Seashore" ],
         "Music": [ "Ventus" ]
       },
@@ -12353,7 +12353,7 @@
         "Name": "Riku Falls Into Darkness",
         "Link": "https://www.youtube.com/watch?v=i20kiVWvjuI&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=144",
         "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Anti Black Coat", "Riku", "Sora", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Anti Black Coat", "Riku", "Sora", "Ansem Seeker of Darkness" ],
         "Areas": [ "Verge of Chaos" ],
         "Music": [ "The Nightmare" ]
       },
@@ -12361,7 +12361,7 @@
         "Name": "Darkness's Call",
         "Link": "https://www.youtube.com/watch?v=DibDIYdcgTw&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=145",
         "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Riku", "Ansem, Seeker of Darkness" ],
+        "Characters": [ "Riku", "Ansem Seeker of Darkness" ],
         "Areas": [ "Darkness's Call" ],
         "Music": [ "L'Eminenza Oscura I" ]
       },
@@ -12369,7 +12369,7 @@
         "Name": "Darkest End",
         "Link": "https://www.youtube.com/watch?v=OARq7uh3YWo&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=146",
         "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Riku" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Riku" ],
         "Areas": [ "Darkness's Call" ],
         "Music": [ "L'Eminenza Oscura II" ]
       },
@@ -12377,7 +12377,7 @@
         "Name": "Strength, to Protect What Matters",
         "Link": "https://www.youtube.com/watch?v=5ENS68ZB1lg&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=147",
         "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Guardian", "Riku" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Guardian", "Riku" ],
         "Areas": [ "Darkest End" ],
         "Music": [ "Riku" ]
       },
@@ -12401,7 +12401,7 @@
         "Name": "The Past Xehanort",
         "Link": "https://www.youtube.com/watch?v=xA9WVLIBpg0&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=150",
         "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Riku", "Sora", "Young Xehanort", "Xigbar", "Xemnas", "Ansem, Seeker of Darkness", "True Organization XIII", "Mickey" ],
+        "Characters": [ "Riku", "Sora", "Young Xehanort", "Xigbar", "Xemnas", "Ansem Seeker of Darkness", "True Organization XIII", "Mickey" ],
         "Areas": [ "Where Nothing Gathers" ],
         "Music": [ "Organization XIII", "L'Impeto Oscuro" ]
       },
@@ -12417,7 +12417,7 @@
         "Name": "Seven Lights, Thirteen Darknesses",
         "Link": "https://www.youtube.com/watch?v=31EmViqDNjk&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=152",
         "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Riku", "Mickey", "Master Xehanort", "Xemnas", "Ansem, Seeker of Darkness", "Xigbar", "True Organization XIII", "Lea", "Saïx", "Guardian", "Donald", "Goofy" ],
+        "Characters": [ "Riku", "Mickey", "Master Xehanort", "Xemnas", "Ansem Seeker of Darkness", "Xigbar", "True Organization XIII", "Lea", "Saïx", "Guardian", "Donald", "Goofy" ],
         "Areas": [ "Where Nothing Gathers" ],
         "Music": [ "Xehanort", "Shaded Truths", "The Key of Darkness" ]
       },
@@ -12425,7 +12425,7 @@
         "Name": "The Return",
         "Link": "https://www.youtube.com/watch?v=zefVXgr8f2U&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=153",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [ "Riku", "Mickey", "Master Xehanort", "Xemnas", "Ansem, Seeker of Darkness", "Xigbar", "True Organization XIII", "Lea", "Saïx", "Guardian", "Donald", "Goofy" ],
+        "Characters": [ "Riku", "Mickey", "Master Xehanort", "Xemnas", "Ansem Seeker of Darkness", "Xigbar", "True Organization XIII", "Lea", "Saïx", "Guardian", "Donald", "Goofy" ],
         "Areas": [ "The Tower" ],
         "Music": [ "Magical Mystery" ]
       },
@@ -12473,7 +12473,7 @@
         "Name": "Unfinished Business/End Credits",
         "Link": "https://www.youtube.com/watch?v=Uhr_9_AJDm0&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=159",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [ "Riku", "Mickey", "Donald", "Goofy", "Sora", "Yen Sid", "Ursula", "Rhyme", "Beat", "Shiki", "Neku", "Joshua", "Meow Wow(s)", "Kooma Panda(s)", "Victor", "Hugo", "Laverne", "Quasimodo", "Esmeralda", "Phoebus", "Frollo", "Pinocchio", "Geppetto", "Jiminy Cricket", "Blue Fairy", "CLU", "Black Guard(s)", "Rinzler", "Sam Flynn", "Kevin Flynn", "Quorra", "Ienzo", "Aeleus", "Lea", "Pete", "Maleficent", "Diablo", "Moogle(s)", "Minnie", "Pluto", "Beagle Boys", "Enchanted Broom(s)", "Chernabog", "Fiend(s)", "Xigbar", "Xemnas", "Ansem, Seeker of Darkness", "Guardian", "Saix", "Young Xehanort", "Master Xehanort", "Roxas", "Xion", "Ansem the Wise", "Terra", "Aqua", "Ventus" ],
+        "Characters": [ "Riku", "Mickey", "Donald", "Goofy", "Sora", "Yen Sid", "Ursula", "Rhyme", "Beat", "Shiki", "Neku", "Joshua", "Meow Wow(s)", "Kooma Panda(s)", "Victor", "Hugo", "Laverne", "Quasimodo", "Esmeralda", "Phoebus", "Frollo", "Pinocchio", "Geppetto", "Jiminy Cricket", "Blue Fairy", "CLU", "Black Guard(s)", "Rinzler", "Sam Flynn", "Kevin Flynn", "Quorra", "Ienzo", "Aeleus", "Lea", "Pete", "Maleficent", "Diablo", "Moogle(s)", "Minnie", "Pluto", "Beagle Boys", "Enchanted Broom(s)", "Chernabog", "Fiend(s)", "Xigbar", "Xemnas", "Ansem Seeker of Darkness", "Guardian", "Saix", "Young Xehanort", "Master Xehanort", "Roxas", "Xion", "Ansem the Wise", "Terra", "Aqua", "Ventus" ],
         "Areas": [ "The Tower" ],
         "Music": ["Sanctuary ~After the battle~", "Dream Drop Distance -The Next Awakening-"]
       },
@@ -16325,7 +16325,7 @@
         "Name": "Ansem and Xemnas",
         "Link": "https://www.youtube.com/watch?v=vU0ZQ1giFyU&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=34",
         "Worlds": [ "Twilight Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Ansem, Seeker of Darkness", "Xemnas", "Neoshadow(s)", "Dusk(s)" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Ansem Seeker of Darkness", "Xemnas", "Neoshadow(s)", "Dusk(s)" ],
         "Areas": [ "Old Mansion" ],
         "Music": [ "Roxas", "Night of Fate" ]
       },
@@ -16349,7 +16349,7 @@
         "Name": "We'll All Wish",
         "Link": "https://www.youtube.com/watch?v=3U4FaMV3PSM&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=37",
         "Worlds": [ "Twilight Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Scrooge McDuck", "Little Chef", "Hayner", "Olette", "Ansem, Seeker of Darkness", "Xemnas", "Xigbar" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Scrooge McDuck", "Little Chef", "Hayner", "Olette", "Ansem Seeker of Darkness", "Xemnas", "Xigbar" ],
         "Areas": [ "Tram Common" ],
         "Music": [ "The Afternoon Streets" ]
       },
@@ -16373,7 +16373,7 @@
         "Name": "Terra's Whereabouts",
         "Link": "https://www.youtube.com/watch?v=5vW3E6hWtVE&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=40",
         "Worlds": [ "Radiant Garden", "World That Never Was" ],
-        "Characters": [ "Riku", "Mickey", "Dilan", "Terra-Xehanort", "Ansem the Wise", "Xehanort", "Ansem, Seeker of Darkness", "Xemnas", "Sora", "Xigbar" ],
+        "Characters": [ "Riku", "Mickey", "Dilan", "Terra-Xehanort", "Ansem the Wise", "Xehanort", "Ansem Seeker of Darkness", "Xemnas", "Sora", "Xigbar" ],
         "Areas": [ "Central Square", "Ansem's Study", "Where Nothing Gathers" ],
         "Music": [ "Strange Whispers" ]
       },
@@ -17085,7 +17085,7 @@
         "Name": "An Unexpected Encounter",
         "Link": "https://www.youtube.com/watch?v=tDt81ElWjuA&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=129",
         "Worlds": [ "Dark World" ],
-        "Characters": [ "Aqua", "Ansem the Wise", "Ansem, Seeker of Darkness", "Guardian" ],
+        "Characters": [ "Aqua", "Ansem the Wise", "Ansem Seeker of Darkness", "Guardian" ],
         "Areas": [ "Dark Margin" ],
         "Music": [ "Night in the Dark Dream", "The Deep End", "Aqua in the Abyss" ]
       },
@@ -17357,7 +17357,7 @@
         "Name": "Atonement",
         "Link": "https://www.youtube.com/watch?v=AK1R3tvlkWA&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=163",
         "Worlds": [ "Twilight Town" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Ansem the Wise", "Pence", "Hayner", "Olette", "Guardian", "Dusk(s)", "Roxas", "Vexen" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Ansem the Wise", "Pence", "Hayner", "Olette", "Guardian", "Dusk(s)", "Roxas", "Vexen" ],
         "Areas": [ "Old Mansion", "Underground Conduit" ],
         "Music": [ "Apprehension", "Thirteenth Discretion" ]
       },
@@ -17605,7 +17605,7 @@
         "Name": "The Xehanorts Gather",
         "Link": "https://www.youtube.com/watch?v=_eYiLG-b2b4&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=194",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Mickey", "Riku", "Kairi", "Aqua", "Ventus", "Lea", "Master Xehanort", "Ansem, Seeker of Darkness", "Xemnas", "Vanitas", "Young Xehanort", "Shadow(s)", "Dusk(s)", "Air Soldier(s)", "Spiked Turtletoad(s)", "Reaper(s)", "Fluttering(s)" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Mickey", "Riku", "Kairi", "Aqua", "Ventus", "Lea", "Master Xehanort", "Ansem Seeker of Darkness", "Xemnas", "Vanitas", "Young Xehanort", "Shadow(s)", "Dusk(s)", "Air Soldier(s)", "Spiked Turtletoad(s)", "Reaper(s)", "Fluttering(s)" ],
         "Areas": [ "The Badlands" ],
         "Music": [ "Sunset Horizons", "Sinister Shadows" ]
       },
@@ -17757,7 +17757,7 @@
         "Name": "Final Confrontations I",
         "Link": "https://www.youtube.com/watch?v=QTKUKR4xxiA&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=214",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Riku", "Dark Riku", "Xigbar", "Sora" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Riku", "Dark Riku", "Xigbar", "Sora" ],
         "Areas": [ "Trail of Valediction" ],
         "Music": [ "Forze del Male" ]
       },
@@ -17765,7 +17765,7 @@
         "Name": "Ansem Retreats",
         "Link": "https://www.youtube.com/watch?v=LuNTVV8SncE&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=214",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Sora", "Riku", "Dark Riku", "Xigbar" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Sora", "Riku", "Dark Riku", "Xigbar" ],
         "Areas": [ "Trail of Valediction" ],
         "Music": [ "The 13th Dilemma" ]
       },
@@ -17893,7 +17893,7 @@
         "Name": "Thirteen and Seven",
         "Link": "https://www.youtube.com/watch?v=LLXks4_6GyI&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=230",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Sora", "Riku", "Mickey", "Ansem, Seeker of Darkness", "Xemnas", "Young Xehanort", "Master Xehanort" ],
+        "Characters": [ "Sora", "Riku", "Mickey", "Ansem Seeker of Darkness", "Xemnas", "Young Xehanort", "Master Xehanort" ],
         "Areas": [ "Tower of Endings" ],
         "Music": [ "Xehanort", "Forza Finale" ]
       },
@@ -17901,7 +17901,7 @@
         "Name": "More to Seek",
         "Link": "https://www.youtube.com/watch?v=P56JOE3b5tI&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=231",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Sora", "Riku", "Mickey" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Sora", "Riku", "Mickey" ],
         "Areas": [ "Tower of Endings" ],
         "Music": [ "Ansem's Demise" ]
       },
@@ -18031,7 +18031,7 @@
         "Name": "The Plan",
         "Link": "https://www.youtube.com/watch?v=tq2MqR6LqDU&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=247",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Master Xehanort", "Xigbar", "Saïx", "Marluxia", "Larxene", "Luxord", "Ansem, Seeker of Darkness", "Xemnas", "Young Xehanort", "Vanitas", "Riku Replica", "Xion", "Vexen" ],
+        "Characters": [ "Master Xehanort", "Xigbar", "Saïx", "Marluxia", "Larxene", "Luxord", "Ansem Seeker of Darkness", "Xemnas", "Young Xehanort", "Vanitas", "Riku Replica", "Xion", "Vexen" ],
         "Areas": [ "The Badlands" ],
         "Music": [ "Destati ~ Organization XIII" ]
       },
@@ -18095,7 +18095,7 @@
         "Name": "Past Redux; Final Confrontations I",
         "Link": "https://www.youtube.com/watch?v=QTKUKR4xxiA&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=215",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Riku Dark", "Riku", "Xigbar", "Sora" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Riku Dark", "Riku", "Xigbar", "Sora" ],
         "Areas": [ "Trail of Valediction" ],
         "Music": [ "Forze del Male" ]
       },
@@ -18103,7 +18103,7 @@
         "Name": "Past Redux; Ansem Retreats",
         "Link": "https://www.youtube.com/watch?v=QTKUKR4xxiA&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=215",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Sora", "Riku", "Dark Riku", "Xigbar" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Sora", "Riku", "Dark Riku", "Xigbar" ],
         "Areas": [ "Trail of Valediction" ],
         "Music": [ "The 13th Dilemma" ]
       },
@@ -18271,7 +18271,7 @@
         "Name": "Thirteen and Seven",
         "Link": "https://www.youtube.com/watch?v=uCV2IlXDdn0&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=263",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Sora", "Riku", "Mickey", "Ansem, Seeker of Darkness", "Xemnas", "Young Xehanort", "Master Xehanort" ],
+        "Characters": [ "Sora", "Riku", "Mickey", "Ansem Seeker of Darkness", "Xemnas", "Young Xehanort", "Master Xehanort" ],
         "Areas": [ "Tower of Endings" ],
         "Music": [ "Xehanort", "Forza Finale" ]
       },
@@ -18279,7 +18279,7 @@
         "Name": "Journey's End",
         "Link": "https://www.youtube.com/watch?v=P56JOE3b5tI&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=231",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Ansem, Seeker of Darkness", "Sora", "Riku", "Mickey" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Sora", "Riku", "Mickey" ],
         "Areas": [ "Tower of Endings" ],
         "Music": [ "Ansem's Demise" ]
       },
@@ -18476,7 +18476,704 @@
         "Music": [ "Cavern of Remembrance" ]
       }
     ],
-    "Kingdom Hearts Dark Road": [],
+    "Kingdom Hearts Dark Road": [
+      {
+        "Name": "A Recurring Dream",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Across the Ocean",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "One Step Forward",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "An Unexpected Task",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Worlds Outside",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The First Encounter",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Where Monsters Roam",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Rough Battle",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Dangerous Mission",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Departure",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "What Am I?",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Strange Order",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Ruler of the Court",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Unknowing Darkness",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Dark Presenece",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Corridor of Darkness",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Not Too Curious",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Truth",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Darkness's True Form",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Journey's Purpose",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Before the Depature",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Gambit",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Magic Mirror",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Mine",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Seven Friends",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "In Search of Clues",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Asking the Mirror",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Bitter Clue",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Different Directions",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Former Friends",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Struggle to Answer",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Separate Paths",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "True Darkness",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Eerie Castle",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Stolen Rose",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Master of the Castle",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Culprit",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Cornered",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Urd",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "What Order Needs",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Returning the Rose",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Dark Emotions",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Cloaked Stranger",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Disposable",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Seeking the Lamp",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Cave of Wonders",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Chasing Eraqus",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Jafar's Plot",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fire and Ice",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Cave's Depths",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Uneasy Order",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Meeting",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Worthy Heart",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Reunited",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To Face True Darkness",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Baldr Returns",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "One Way Ticket",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To the Underworld",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Exchange",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Gatekeeper",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Leave it to Baldr",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Regrouping",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Cerberus Defeated",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Concerned",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The Departed",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Gone Missing",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Darkness or Light",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "One Must Stay",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Hasty Retreat",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Lost in Darkness",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Shattered Hope",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Left Behind",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Darkness Disguised",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Journey's Reward",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Doubt",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "VS Vidar",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Baldr's Darkness",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "To Vor",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Fallen to Darkness",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "The True Story",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Upstairs",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "A Place to Return",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Lights and Darknesses",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Two Kinds of People",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Comfort in Light",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Bragi's True Form",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      },
+      {
+        "Name": "Child of Destiny",
+        "Link": "",
+        "Worlds": [],
+        "Characters": [],
+        "Areas": [],
+        "Music": []
+      }
+    ],
     "Kingdom Hearts Melody of Memory": [
       {
         "Name": "KINGDOM HEARTS; Chapter 1",
@@ -18514,7 +19211,7 @@
         "Name": "KINGDOM HEARTS; Chapter 5",
         "Link": "https://www.youtube.com/watch?v=_MRJ8JqTI94&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=5",
         "Worlds": [ "End of the World" ],
-        "Characters": [ "Kairi", "Sora", "Donald", "Ansem, Seeker of Darkness", "Goofy", "Riku", "Mickey", "Pluto" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Ansem Seeker of Darkness", "Goofy", "Riku", "Mickey", "Pluto" ],
         "Areas": [ "The Door to Darkness" ],
         "Music": [ "Always on My Mind" ]
       },
@@ -18530,7 +19227,7 @@
         "Name": "KINGDOM HEARTS Re:Chain of Memories; Chapter 2",
         "Link": "https://www.youtube.com/watch?v=szpGrTIG2uQ&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=7",
         "Worlds": [ "Castle Oblivion" ],
-        "Characters": [ "Sora", "Kairi", "Naminé", "Larxene", "Riku", "Ansem, Seeker of Darkness", "Riku Replica", "Lexaeus", "Vexen", "Zexion", "Axel", "Marluxia" ],
+        "Characters": [ "Sora", "Kairi", "Naminé", "Larxene", "Riku", "Ansem Seeker of Darkness", "Riku Replica", "Lexaeus", "Vexen", "Zexion", "Axel", "Marluxia" ],
         "Areas": [ "Castle Oblivion" ],
         "Music": [ "The Force in You" ]
       },
@@ -18546,7 +19243,7 @@
         "Name": "KINGDOM HEARTS Re:Chain of Memories; Chapter 4",
         "Link": "https://www.youtube.com/watch?v=rSPYcj_5Xio&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=9",
         "Worlds": [ "Castle Oblivion", "Destiny Islands", "Twilight Town" ],
-        "Characters": [ "Sora", "Jiminy", "Naminé", "Donald", "Goofy", "Riku", "Zexion", "Kairi", "Riku Replica", "Ansem, Seeker of Darkness", "Mickey", "Ansem the Wise" ],
+        "Characters": [ "Sora", "Jiminy", "Naminé", "Donald", "Goofy", "Riku", "Zexion", "Kairi", "Riku Replica", "Ansem Seeker of Darkness", "Mickey", "Ansem the Wise" ],
         "Areas": [ "Castle Oblivion", "Storm-tossed Island", "The Old Mansion" ],
         "Music": [ "Naminé" ]
       },
@@ -18562,7 +19259,7 @@
         "Name": "KINGDOM HEARTS 358/2 Days; Chapter 2",
         "Link": "https://www.youtube.com/watch?v=Uuoh0O1ZNZE&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=11",
         "Worlds": [ "The World That Never Was", "Twilight Town" ],
-        "Characters": [ "Kairi", "Roxas", "Riku", "Ansem, Seeker of Darkness", "Guardian" ],
+        "Characters": [ "Kairi", "Roxas", "Riku", "Ansem Seeker of Darkness", "Guardian" ],
         "Areas": [ "Memory's Skyscraper", "Roxas's Room" ],
         "Music": [ "Another Side -Battle Ver.-", "Lazy Afternoons" ]
       },
@@ -18586,7 +19283,7 @@
         "Name": "KINGDOM HEARTS II; Chapter 3",
         "Link": "https://www.youtube.com/watch?v=IqIHCmNFrcc&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=14",
         "Worlds": [ "Hollow Bastion", "End of the World" ],
-        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Ansem the Wise", "Mickey", "Terra-Xehanort", "Ansem, Seeker of Darkness", "Xemnas", "Saïx", "Armored Knights", "Riku" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Ansem the Wise", "Mickey", "Terra-Xehanort", "Ansem Seeker of Darkness", "Xemnas", "Saïx", "Armored Knights", "Riku" ],
         "Areas": [ "Ansem's Study", "Homecoming", "The Great Maw", "The Dark Depths" ],
         "Music": [ "Organization XIII" ]
       },
@@ -18666,7 +19363,7 @@
         "Name": "KINGDOM HEARTS 3D [Dream Drop Distance]; Chapter 2",
         "Link": "https://www.youtube.com/watch?v=vXjeSRN-hqw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=24",
         "Worlds": [ "La Cité des Cloches", "The Grid", "Prankster's Paradise", "Country of the Musketeers", "Disney Castle", "Mysterious Tower" ],
-        "Characters": [ "Kairi", "Sora", "Quasimodo", "Phoebus", "Riku", "Blue Fairy", "Donald", "Goofy", "Mickey", "Young Xehanort", "Vanitas", "Ansem, Seeker of Darkness", "Xemnas", "Maleficent", "Pete", "Minnie", "Lea", "Yen Sid" ],
+        "Characters": [ "Kairi", "Sora", "Quasimodo", "Phoebus", "Riku", "Blue Fairy", "Donald", "Goofy", "Mickey", "Young Xehanort", "Vanitas", "Ansem Seeker of Darkness", "Xemnas", "Maleficent", "Pete", "Minnie", "Lea", "Yen Sid" ],
         "Areas": [ "Square", "Light Cycle Arena", "Promontory", "Training Yard", "Backstage", "Nave", "Throneship", "Library", "Sorcerer's Loft" ],
         "Music": [ "Majestic Wings" ]
       },
@@ -18674,7 +19371,7 @@
         "Name": "KINGDOM HEARTS 3D [Dream Drop Distance]; Chapter 3",
         "Link": "https://www.youtube.com/watch?v=JXmCK8CDky4&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=25",
         "Worlds": [ "The World That Never Was", "Destiny Islands" ],
-        "Characters": [ "Kairi", "Sora", "Young Xehanort", "Riku", "Ansem, Seeker of Darkness", "Guardian", "Master Xehanort", "Xemnas", "Xigbar", "Mickey", "Lea", "Donald", "Goofy" ],
+        "Characters": [ "Kairi", "Sora", "Young Xehanort", "Riku", "Ansem Seeker of Darkness", "Guardian", "Master Xehanort", "Xemnas", "Xigbar", "Mickey", "Lea", "Donald", "Goofy" ],
         "Areas": [ "Memory's Skyscraper", "Seashore", "Nightmarish Abyss", "Verge of Chaos", "Darkest End", "Where Nothing Gathers" ],
         "Music": [ "The Nightmare" ]
       },
@@ -18690,7 +19387,7 @@
         "Name": "KINGDOM HEARTS III; Chapter 1",
         "Link": "https://www.youtube.com/watch?v=GXLLS_hZMUw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=26",
         "Worlds": [ "Mysterious Tower", "Olympus", "Gummi Ship", "Twilight Town", "Radiant Garden", "Kingdom of Corona", "Toy Box", "Secret Forest" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Yen Sid", "Hercules", "Xigbar", "Zeus", "Jiminy", "Hanyer", "Pence", "Olette", "Roxas", "Ienzo", "Ansem, Seeker of Darkness", "Xemnas", "Rapunzel", "Woody", "Buzz", "Rex", "Hamm", "Young Xehanort", "Kairi", "Lea" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Yen Sid", "Hercules", "Xigbar", "Zeus", "Jiminy", "Hanyer", "Pence", "Olette", "Roxas", "Ienzo", "Ansem Seeker of Darkness", "Xemnas", "Rapunzel", "Woody", "Buzz", "Rex", "Hamm", "Young Xehanort", "Kairi", "Lea" ],
         "Areas": [ "Sorcerer's Loft", "Agora", "Alleyway", "Apex", "Summit", "Cockpit", "Tram Common", "Computer Room", "Ansem's Study", "The Old Mansion", "Hills", "Thoroughfare", "Wharf", "Andy's House", "Video Games", "Corridor of Darkness", "Secret Forest", "Central Square" ],
         "Music": [ "Treasured Memories" ]
       },
@@ -18738,7 +19435,7 @@
         "Name": "The Answer",
         "Link": "https://www.youtube.com/watch?v=oQEMOl9d79s&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=7",
         "Worlds": [ "The Final World" ],
-        "Characters": [ "Sora", "Master Xehanort", "Kairi", "Xemnas", "Ansem, Seeker of Darkness", "Terra-Xehanort" ],
+        "Characters": [ "Sora", "Master Xehanort", "Kairi", "Xemnas", "Ansem Seeker of Darkness", "Terra-Xehanort" ],
         "Areas": [ "The Final World" ],
         "Music": []
       },
