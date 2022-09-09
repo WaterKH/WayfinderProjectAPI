@@ -380,12 +380,12 @@ else if (this.SceneDtos.Count > 0)
 
     public void UpdateOptions()
     {
-        this.Areas = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Where(x => this.AreasSearch.selected.Count == 0 ? true : this.AreasSearch.selected.Any(y => y != x)).Distinct().ToList();
-        this.Characters = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Where(x => this.CharactersSearch.selected.Count == 0 ? true : this.CharactersSearch.selected.Any(y => y != x)).Distinct().ToList();
-        this.Games = this.SceneDtos.Select(x => x.Game.Name).Where(x => this.GamesSearch.selected.Count == 0 ? true : this.GamesSearch.selected.Any(y => y != x)).Distinct().ToList();
-        this.Music = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Where(x => this.MusicSearch.selected.Count == 0 ? true : this.MusicSearch.selected.Any(y => y != x)).Distinct().ToList();
-        this.Scenes = this.SceneDtos.Select(x => x.Name).Where(x => this.ScenesSearch.selected.Count == 0 ? true : this.ScenesSearch.selected.Any(y => y != x)).Distinct().ToList();
-        this.Worlds = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Where(x => this.WorldsSearch.selected.Count == 0 ? true : this.WorldsSearch.selected.Any(y => y != x)).Distinct().ToList();
+        this.Areas = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.AreasSearch.selected).Distinct().ToList();
+        this.Characters = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.CharactersSearch.selected).Distinct().ToList();
+        this.Games = this.SceneDtos.Select(x => x.Game.Name).Except(this.GamesSearch.selected).Distinct().ToList();
+        this.Music = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.MusicSearch.selected).Distinct().ToList();
+        this.Scenes = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSearch.selected).Distinct().ToList();
+        this.Worlds = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.WorldsSearch.selected).Distinct().ToList();
 
         this.Areas.Sort();
         this.Characters.Sort();

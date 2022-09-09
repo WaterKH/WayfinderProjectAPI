@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Components\Common\Tooltip.razor~RFfdb528.TMP" />
     <None Remove="Data\DTOs\ScriptLineDto.cs~RF21264c9d.TMP" />
     <None Remove="Data\WayfinderProject.db" />
     <None Remove="Pages\Index.razor~RF1edb7af7.TMP" />

@@ -72,7 +72,7 @@
     [Parameter] public List<string> Selections { get; set; } = new List<string>();
 
     [Parameter] public Func<Task> UpdateSearch { get; set; }
-    
+
 
     private string search = "";
     public List<string> selected { get; set; } = new List<string>();
@@ -125,6 +125,8 @@
             this.results.Sort();
         }
 
+        this.search = string.Empty;
+
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
@@ -145,6 +147,8 @@
             this.results.Add(value);
             this.results.Sort();
         }
+
+        this.search = string.Empty;
 
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
