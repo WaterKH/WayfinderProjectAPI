@@ -38,13 +38,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\data\seed\scripts\_kh1_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\data\seed\scripts\_khxbc_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\data\seed\scripts\_kh0_2_lines.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\data\seed\scripts\_kh1_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\data\seed\scripts\_khmom_lines.json">
