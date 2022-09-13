@@ -6,16 +6,56 @@
 
 <PageTitle>The Wayfinder Project</PageTitle>
 
-<div class="search-bar">
-    <div class="row" style="width: 100%; margin: 25px 0px;">
-        <div class="col-md-12" style="align-self: center;">
-            <input id="main-search" name="main-search" class="custom-input" onchange="@((ChangeEventArgs e) => this.SearchQuotes(e?.Value?.ToString()))" placeholder="Search for a Word, Phrase or Quote (Must be longer than 3 letters)..." />
+<div id="how-to-use">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="/images/WFP_logo.png" alt="The Wayfinder Project" width="100%">
+        </div>
+
+        <div class="col-md-9">
+            <br/>
+            <br/>
+            <br/>
+
+            <h3 style="text-align: center;">The Wayfinder Project - How To Use</h3>
+            
+            <br/>
+
+            <p>
+                Welcome to the Wayfinder Project, a directory and database for every cutscene in the Kingdom Hearts series! 
+                Over the course of 20+ years and more than 15 titles, the KH series is filled to the brim with over 2,000 cutscenes and thousands of lines of dialogue. 
+                The purpose of this database is to help you <strong>find any particular scene, moment, or line from the series</strong> with just a few keystrokes. 
+            </p>
+            <p>
+                For example, if you’re looking for, say, that scene with Xigbar and Zexion in KH2FM, you can enter both characters in the “character” field, and KH2 in the “games” field. 
+                This’ll narrow your search down to just two scenes: one with the entire Organization in the throne room, and one with just the two chatting after Vexen runs off in Twilight’s View.
+            </p>
+            <p>
+                Want to know <strong>every time a certain song is used</strong> in the series? Use the “Music” field to search for Rowdy Rumble, Tension Rising, The Other Promise, etc, and you’ll have your answer!
+            </p>
+            <p>
+                Brand new to this version of the Wayfinder Project is the ability to <strong>search any keyword within the games’ dialogue and get every instance of that word or phrase returned</strong>. 
+                For example, are you looking for that scene where Donald calls Goofy a big palooka? 
+                Search palooka in the topmost field and you’ll be directed to that exact scene, complete with everything else you’d want to know about it: the characters who appear in it, 
+                the world and area it takes place in, the music playing, and a transcript of all spoken dialogue in the scene. 
+                Embedded in the search result is a link to the scene on YouTube for your convenience. 
+            </p>
         </div>
     </div>
 </div>
 
+<br/>
+<br/>
 
-<Collapsable Title="Advanced Search Parameters">
+<Collapsable Title="Search Parameters">
+    <div class="search-bar">
+        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+            <div class="col-md-12" style="align-self: center;">
+                <input id="main-search" name="main-search" class="custom-input" onchange="@((ChangeEventArgs e) => this.SearchQuotes(e?.Value?.ToString()))" placeholder="Search for a Word, Phrase or Quote (Must be longer than 3 letters)..." />
+            </div>
+        </div>
+    </div>
+
     <div class="advanced-search-box">
         <div class="row" >
             <div class="col-md-4">

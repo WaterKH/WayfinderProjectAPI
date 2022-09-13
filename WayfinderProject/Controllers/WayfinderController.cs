@@ -20,57 +20,6 @@ namespace WayfinderProjectAPI.Controllers
             _context = context;
         }
 
-        [HttpGet("GetScenes")]
-        public IEnumerable<SceneDto> GetScenes()
-        {
-            return _context.Scenes.ToDto();
-        }
-
-        [HttpGet("GetScenes/{gameName}")]
-        public IEnumerable<SceneDto> GetScenes(string gameName)
-        {
-            return _context.Scenes
-                .Where(x => x.Game.Name == gameName)
-                .ToDto();
-        }
-
-        [HttpGet("SearchForScenes/{gameName}/{characters}")]
-        public IEnumerable<SceneDto> SearchForScenes(string gameName, string characters)
-        {
-            var charactersList = characters.Split(",").Select(x => x.Trim());
-
-            return _context.Scenes
-                .Where(x => x.Game.Name == gameName && 
-                        x.Characters.Any(y => charactersList.Contains(y.Name)))
-                .ToDto();
-        }
-
-        [HttpGet("SearchForScenes/{gameName}/{worlds}/{characters}")]
-        public IEnumerable<SceneDto> SearchForScenes(string gameName, string worlds, string characters)
-        {
-            var worldsList = worlds.Split(",").Select(x => x.Trim());
-            var charactersList = characters.Split(",").Select(x => x.Trim());
-
-            return _context.Scenes
-                .Where(x => x.Game.Name == gameName &&
-                        x.Worlds.Any(y => worldsList.Contains(y.Name)) &&
-                        x.Characters.Any(y => charactersList.Contains(y.Name)))
-                .ToDto();
-        }
-
-        [HttpGet("SearchForScenes/{gameName}/{worlds}/{characters}/{line}")]
-        public IEnumerable<SceneDto> SearchForScenes(string gameName, string worlds, string characters, string line)
-        {
-            var worldsList = worlds.Split(",").Select(x => x.Trim());
-            var charactersList = characters.Split(",").Select(x => x.Trim());
-
-            return _context.Scenes
-                .Where(x => x.Game.Name == gameName &&
-                        x.Worlds.Any(y => worldsList.Contains(y.Name)) &&
-                        x.Characters.Any(y => charactersList.Contains(y.Name)) &&
-                        x.Script.Lines.Any(y => y.Line.ToLower().Contains(line.ToLower())))
-                .ToDto();
-        }
 
         [HttpGet("SearchForScenes")]
         public async Task<IEnumerable<SceneDto>> SearchForScenes([FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
