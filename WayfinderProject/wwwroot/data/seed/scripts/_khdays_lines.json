@@ -16,29 +16,89 @@
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Roxas...are you really sure that you don't have a heart? True enough. Man, I miss the old times. Still got it memorized? The day we met, when you got your new name, you and I sat right here, just like this, and watched the sun set."
+        "Line": "Roxas... are you really sure that you don't have a heart?"
       },
       {
         "Order": 2,
         "Character": "Roxas",
-        "Line": "I dunno. I can't...just look inside. But I figure... if there is something in there...inside us---then we'd feel it, wouldn't we? Roxas."
+        "Line": "I dunno. I can't... just look inside. But I figure... if there is something in there... inside us- then we'd feel it, wouldn't we?"
       },
       {
         "Order": 3,
+        "Character": "Axel",
+        "Line": "True enough."
+      },
+      {
+        "Order": 4,
         "Character": "Xemnas",
-        "Line": "You seek answers. You feel nothing. Nothing is real. I can give you purpose. That is right---the new you."
+        "Line": "You seek answers. You feel nothing. Nothing is real. I can give you purpose."
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Roxas."
+      },
+      {
+        "Order": 6,
+        "Character": "Xemnas",
+        "Line": "That is right- the new you."
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Man, I miss the old times. Still got it memorized? The day we met, when you got your new name, you and I sat right here, just like this, and watched the sun set."
       }
     ],
     "Day 255; Why the Sun Sets Red": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "You're early. What's that about? So, you got the number memorized, do you? Right, that first week you could barely form a sentence. But come on, you're still kind of a zombie. Hey, Roxas. Bet you don't know why the sun sets red. You see, light is made up of lots of colors. And out of all those colors, red is the one that travels the farthest."
+        "Line": "You're early."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "No, you're just late. Today makes 255. It's been that many days since I first joined the Organization. Man, time flies. Yeah. Have to hang onto something, right? It's not like I have memories  from before the Organization. Don't you remember? I acted like a zombie. Oh, thanks! Like I asked! Know-it-all. Seriously, where is she? The destiny that is about to unfold actually started when we first met on the seventh day after I came here."
+        "Line": "No, you're just late. Today makes 255."
+      },
+      {
+        "Order": 2,
+        "Character": "Axel",
+        "Line": "What's that about?"
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "It's been that many days since I first joined the Organization. Man, time flies."
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "So, you got the number memorized, do you?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Yeah. Have to hang onto something, right? It's not like I have memories from before the Organization. Don't you remember? I acted like a zombie."
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "Right, that first week you could barely form a sentence. But come on, you're still kind of a zombie."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "Oh, thanks!"
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "Hey, Roxas. Bet you don't know why the sun sets red. You see, light is made up of lots of colors. And out of all those colors, red is the one that travels the farthest."
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "Like I asked! Know-it-all. Seriously, where is she? The destiny that is about to unfold actually started when we first met on the seventh day after I came here."
       }
     ],
     "Day 7; Number XIV": [
@@ -50,36 +110,149 @@
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "For the seven days since my arrival---the name Roxas, and the number thirteen were all I had. Who the people around me were, what they wanted, or what they were trying to do, I had no idea..."
+        "Line": "For the seven days since my arrival- the name Roxas, and the number thirteen were all I had. Who the people around me were, what they wanted, or what they were trying to do, I had no idea..."
       }
     ],
     "Day 8; Number XIV, Xion": [
       {
         "Order": 0,
         "Character": "Saïx",
-        "Line": "Teach him well, Axel. Number XIV, Xion."
+        "Line": "Teach him well, Axel."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Don't worry. I'll be sure he makes the grade. Roxas, let's go. Hmm? What's wrong? You worried about the new kid? What was that name again...Right. I knew that. Got it memorized, Roxas? Yeah? How 'bout my name, then? And how about our boss's name, huh? No way you're gonna forget his name, right? Let's go."
+        "Line": "Don't worry. I'll be sure he makes the grade. Roxas, let's go. Hmm? What's wrong? You worried about the new kid? What was that name again..."
       },
       {
         "Order": 2,
-        "Character": "Roxas",
-        "Line": "Xion...Yeah...Axel...Xemnas..."
-      }
-    ],
-    "Day 8; The Icing on the Cake": [
-      {
-        "Order": 0,
-        "Character": "Axel",
-        "Line": "The icing on the cake. You remember what this ice cream is called? Sea-salt ice cream. I already told you before. Get it memorized. Roxas, you said the same exact thing the other day. So what has it been, a week since you joined the Organization? You guess it has? C'mon, you must remember that much. Well, here you are, finally out in the field, working for the Organization, right? You might even say that today is where it all really begins for you."
+        "Character": "Saïx",
+        "Line": "Number XIV, Xion."
       },
       {
-        "Order": 1,
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "Right. I knew that."
+      },
+      {
+        "Order": 4,
         "Character": "Roxas",
-        "Line": "Huh? It's umm...It's salty...but sweet. I did? I don't remember...I guess it has...For the Organization...Where it all begins? As a member of the Organization, I'll be receiving missions everyday... But I'm still not exactly sure what I'm supposed to do."
+        "Line": "Xion..."
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Got it memorized, Roxas?"
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Yeah..."
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Yeah? How 'bout my name, then?"
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "Axel..."
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "And how about our boss's name, huh?"
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "Xemnas..."
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "No way you're gonna forget his name, right? Let's go."
+      },
+      {
+        "Order": 12,
+        "Character": "Day 8",
+        "Line": "The Icing on the Cake"
+      },
+      {
+        "Order": 13,
+        "Character": "Axel",
+        "Line": "The icing on the cake."
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 15,
+        "Character": "Axel",
+        "Line": "You remember what this ice cream is called?"
+      },
+      {
+        "Order": 16,
+        "Character": "Roxas",
+        "Line": "It's umm..."
+      },
+      {
+        "Order": 17,
+        "Character": "Axel",
+        "Line": "Sea-salt ice cream. I already told you before. Get it memorized."
+      },
+      {
+        "Order": 18,
+        "Character": "Roxas",
+        "Line": "It's salty... but sweet."
+      },
+      {
+        "Order": 19,
+        "Character": "Axel",
+        "Line": "Roxas, you said the same exact thing the other day."
+      },
+      {
+        "Order": 20,
+        "Character": "Roxas",
+        "Line": "I did? I don't remember..."
+      },
+      {
+        "Order": 21,
+        "Character": "Axel",
+        "Line": "So what has it been, a week since you joined the Organization?"
+      },
+      {
+        "Order": 22,
+        "Character": "Roxas",
+        "Line": "I guess it has..."
+      },
+      {
+        "Order": 23,
+        "Character": "Axel",
+        "Line": "You guess it has? C'mon, you must remember that much. Well, here you are, finally out in the field, working for the Organization, right?"
+      },
+      {
+        "Order": 24,
+        "Character": "Roxas",
+        "Line": "For the Organization..."
+      },
+      {
+        "Order": 25,
+        "Character": "Axel",
+        "Line": "You might even say that today is where it all really begins for you."
+      },
+      {
+        "Order": 26,
+        "Character": "Roxas",
+        "Line": "Where it all begins?"
+      },
+      {
+        "Order": 27,
+        "Character": "Roxas",
+        "Line": "As a member of the Organization, I'll be receiving missions everyday... But I'm still not exactly sure what I'm supposed to do."
       }
     ],
     "Day 9; Heartless": [
@@ -114,31 +287,121 @@
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "There are nice guys and not-so-nice guys in the Organization, but everyone's working together to complete Kingdom Hearts.There's lots I don't know, but I do know I have to keep fighting the darkness...so I can be whole."
+        "Line": "There are nice guys and not-so-nice guys in the Organization, but everyone's working together to complete Kingdom Hearts.There's lots I don't know, but I do know I have to keep fighting the darkness... so I can be whole."
       }
     ],
     "Day 14; Friends": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Who were they? Hmmm... So does everybody act that way? Like running around chasing each other, making all that noise...Hearts...Why? Friends...Yeah. Right. We're friends, huh..."
+        "Line": "Who were they?"
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Probably...just some kids who live here. What do you mean? Well, yeah...if they have hearts, I suppose that's what they do. C'mon, let's get some ice cream. \"Why\"? Uh, well...'cause... Because we're friends. Friends eat ice cream together, and talk and laugh about the stupidest things. Like those kids we just saw. C'mon, let's go. Hey, Roxas. After your next mission, let's meet up for ice cream again. No fun just going back and forth between the castle and work, right?"
+        "Line": "Probably... just some kids who live here."
+      },
+      {
+        "Order": 2,
+        "Character": "Roxas",
+        "Line": "Hmmm... So does everybody act that way?"
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "What do you mean?"
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "Like running around chasing each other, making all that noise..."
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Well, yeah... if they have hearts, I suppose that's what they do."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Hearts..."
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "C'mon, let's get some ice cream."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "Why?"
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "\"Why\"? Uh, well... 'cause... Because we're friends."
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "Friends..."
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "Friends eat ice cream together, and talk and laugh about the stupidest things. Like those kids we just saw. C'mon, let's go. Hey, Roxas. After your next mission, let's meet up for ice cream again. No fun just going back and forth between the castle and work, right?"
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "Yeah. Right. We're friends, huh..."
       }
     ],
     "Day 22; Left Behind": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "I'm gonna miss this ice cream thing we do. Gonna be away for awhile...starting tomorrow. I can fill you in since we're friends. I'm gonna be at Castle Oblivion. The Organization's got a second castle in the world between worlds. It's called Castle Oblivion. Got it memorized? Well, I gotta head back and get ready. Nothing but fun fun fun..."
+        "Line": "I'm gonna miss this ice cream thing we do."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Huh? Really...Castle Oblivion?I wish somebody told me these things."
+        "Line": "Huh?"
+      },
+      {
+        "Order": 2,
+        "Character": "Axel",
+        "Line": "Gonna be away for awhile... starting tomorrow."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "Really..."
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "I can fill you in since we're friends. I'm gonna be at Castle Oblivion."
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Castle Oblivion?"
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "The Organization's got a second castle in the world between worlds. It's called Castle Oblivion. Got it memorized?"
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "I wish somebody told me these things."
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "Well, I gotta head back and get ready. Nothing but fun fun fun..."
       }
     ],
     "Day 23; Axel's Orders": [
@@ -157,85 +420,315 @@
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Hey, Axel? What do I do with this?"
+        "Line": "Hey, Axel?"
       },
       {
         "Order": 1,
         "Character": "Saïx",
         "Line": "If you're looking for Axel, he's gone."
+      },
+      {
+        "Order": 2,
+        "Character": "Roxas",
+        "Line": "What do I do with this?"
       }
     ],
     "Day 24; Silence Broken": [
       {
         "Order": 0,
         "Character": "Demyx",
-        "Line": "This place is so much nicer without the loudmouths. Those bossy coworkers sent to Castle Oblivion."
+        "Line": "This place is so much nicer without the loudmouths."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Loudmouths? Oh...Poppet? \"Kiddo\"...? I've got someplace to be again today, so go on ahead without me. Huh? Xion...? Yeah. \"Roxas,\" huh."
+        "Line": "Loudmouths?"
       },
       {
         "Order": 2,
-        "Character": "Xigbar",
-        "Line": "Well, I suppose it's too bad you and Poppet didn't get to spend a little more time with them. I'm talking about Xion, kiddo."
+        "Character": "Demyx",
+        "Line": "Those bossy coworkers sent to Castle Oblivion."
       },
       {
         "Order": 3,
+        "Character": "Roxas",
+        "Line": "Oh..."
+      },
+      {
+        "Order": 4,
+        "Character": "Xigbar",
+        "Line": "Well, I suppose it's too bad you and Poppet didn't get to spend a little more time with them."
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Poppet?"
+      },
+      {
+        "Order": 6,
+        "Character": "Xigbar",
+        "Line": "I'm talking about Xion, kiddo."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "\"Kiddo\"...?"
+      },
+      {
+        "Order": 8,
         "Character": "Saïx",
         "Line": "Roxas, get to work."
       },
       {
-        "Order": 4,
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "I've got someplace to be again today, so go on ahead without me."
+      },
+      {
+        "Order": 10,
         "Character": "Xion",
-        "Line": "R...Roxas...Roxas...is your name."
+        "Line": "R...Roxas..."
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "Huh? Xion...?"
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "Roxas... is your name."
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Yeah. \"Roxas,\" huh."
       }
     ],
     "Day 25; Two Keys": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "Roxas. Best of luck today. You know...neither did I. Huh? This is such a great spot... How'd you find it? It's sweet...and salty. Sounds like it's yours, too! Like you just did for me? You guys must be really close. Friends... Do you think that I could be a friend? Okay!"
+        "Line": "Roxas. Best of luck today."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Yeah. Let's go. Wow, I... Xion, I didn't know you could use the Keyblade. You earned the icing on the cake. C'mon, I'll show you. Here ya go. Sea-salt ice cream. C'mon, try it.  It's good, right? Axel and I, we meet here for ice cream after work. This flavor is Axel's favorite. Yeah. Axel brought me here to eat ice cream on my first day with the Organization. And then after my first mission, he got me ice cream again. Said it was \"icing on the cake.\" Yeah. Well, Axel and I are friends. When Axel gets back, we'll all have ice cream together!"
+        "Line": "Yeah. Let's go. Wow, I... Xion, I didn't know you could use the Keyblade."
+      },
+      {
+        "Order": 2,
+        "Character": "Xion",
+        "Line": "You know... neither did I."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "You earned the icing on the cake."
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "C'mon, I'll show you."
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "This is such a great spot... How'd you find it?"
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "Here ya go. Sea-salt ice cream. C'mon, try it."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "It's sweet... and salty."
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "It's good, right? Axel and I, we meet here for ice cream after work. This flavor is Axel's favorite."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "Sounds like it's yours, too!"
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "Yeah. Axel brought me here to eat ice cream on my first day with the Organization. And then after my first mission, he got me ice cream again. Said it was \"icing on the cake.\""
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "Like you just did for me?"
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Yeah."
+      },
+      {
+        "Order": 14,
+        "Character": "Xion",
+        "Line": "You guys must be really close."
+      },
+      {
+        "Order": 15,
+        "Character": "Roxas",
+        "Line": "Well, Axel and I are friends."
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "Friends... Do you think that I could be a friend?"
+      },
+      {
+        "Order": 17,
+        "Character": "Roxas",
+        "Line": "When Axel gets back, we'll all have ice cream together!"
+      },
+      {
+        "Order": 18,
+        "Character": "Xion",
+        "Line": "Okay!"
       }
     ],
     "Day 26; Terminated": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Is it true then about Castle Oblivion? And Axel? What...? Hey, what happens when Heartless are destroyed? Then, can you tell me what remains if a Nobody is destroyed? And the members at Castle Oblivion, where'd they go? In which case, I'll never see them again? Huh? Oh, yeah. What's...happening..."
+        "Line": "Is it true then about Castle Oblivion?"
       },
       {
         "Order": 1,
         "Character": "Saïx",
-        "Line": "That's none of your concern. Gone. He may have disappeared for good."
+        "Line": "That's none of your concern."
       },
       {
         "Order": 2,
+        "Character": "Roxas",
+        "Line": "And Axel?"
+      },
+      {
+        "Order": 3,
+        "Character": "Saïx",
+        "Line": "Gone. He may have disappeared for good."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "What...? Hey, what happens when Heartless are destroyed?"
+      },
+      {
+        "Order": 5,
         "Character": "Xigbar",
-        "Line": "The hearts remain. And then those hearts gather together to form the great Kingdom Hearts. What's there to leave behind? We're not even supposed to \"be\" in the first place. Nothing's left of them. That's right. You coming?"
+        "Line": "The hearts remain. And then those hearts gather together to form the great Kingdom Hearts."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Then, can you tell me what remains if a Nobody is destroyed?"
+      },
+      {
+        "Order": 7,
+        "Character": "Xigbar",
+        "Line": "What's there to leave behind? We're not even supposed to \"be\" in the first place."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "And the members at Castle Oblivion, where'd they go?"
+      },
+      {
+        "Order": 9,
+        "Character": "Xigbar",
+        "Line": "Nothing's left of them."
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "In which case, I'll never see them again?"
+      },
+      {
+        "Order": 11,
+        "Character": "Xigbar",
+        "Line": "That's right. You coming?"
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "Huh? Oh, yeah. What's... happening..."
       }
     ],
     "Day 27~; The Dark Margin": [
       {
         "Order": 0,
         "Character": "Xemnas",
-        "Line": "I've been to see him. He looks a lot like you. I'm what's left. Or...maybe I'm all there ever was. My name is of no importance. What about you? Do you remember your true name? You have been with us for six days now. The time has come...Will he wake from this? Then I suppose much hinges on Castle Oblivion."
+        "Line": "I've been to see him. He looks a lot like you."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Who are you? I meant your name. My true name is..."
+        "Line": "Who are you?"
       },
       {
         "Order": 2,
+        "Character": "Xemnas",
+        "Line": "I'm what's left. Or... maybe I'm all there ever was."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "I meant your name."
+      },
+      {
+        "Order": 4,
+        "Character": "Xemnas",
+        "Line": "My name is of no importance. What about you? Do you remember your true name?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "My true name is..."
+      },
+      {
+        "Order": 6,
+        "Character": "Xemnas",
+        "Line": "You have been with us for six days now."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "The time has come..."
+      },
+      {
+        "Order": 8,
+        "Character": "Xemnas",
+        "Line": "Will he wake from this?"
+      },
+      {
+        "Order": 9,
         "Character": "Saïx",
-        "Line": "I am told Roxas will return---provided the hero is stripped of all his memories. Xion has gained power over the Keyblade, just as we intended. She can fill Roxas's shoes for the time being."
+        "Line": "I am told Roxas will return- provided the hero is stripped of all his memories."
+      },
+      {
+        "Order": 10,
+        "Character": "Xemnas",
+        "Line": "Then I suppose much hinges on Castle Oblivion."
+      },
+      {
+        "Order": 11,
+        "Character": "Saïx",
+        "Line": "Xion has gained power over the Keyblade, just as we intended. She can fill Roxas's shoes for the time being."
       }
     ],
     "Day 49; Sleep": [
@@ -254,65 +747,425 @@
       {
         "Order": 1,
         "Character": "Xion",
-        "Line": "Roxas!? You were sleeping for a long time. Saïx said there was no telling when you might wake up...But I'm glad you did. I brought you this. It's a seashell. I've been picking one up on every mission. Hold it up to your ear."
+        "Line": "Roxas!?"
       },
       {
         "Order": 2,
         "Character": "Roxas",
-        "Line": "Xion... What happened to me? I kinda feel like a zombie, though. Huh?"
+        "Line": "Xion... What happened to me?"
+      },
+      {
+        "Order": 3,
+        "Character": "Xion",
+        "Line": "You were sleeping for a long time. Saïx said there was no telling when you might wake up... But I'm glad you did."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "I kinda feel like a zombie, though."
+      },
+      {
+        "Order": 5,
+        "Character": "Xion",
+        "Line": "I brought you this."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 7,
+        "Character": "Xion",
+        "Line": "It's a seashell. I've been picking one up on every mission. Hold it up to your ear."
+      },
+      {
+        "Order": 8,
+        "Character": "Kairi",
+        "Line": "I knew that I'd find you snoozing down here."
       }
     ],
     "Day 71; Reunion": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "Hey, Roxas! It's been a while. What's the matter? You look like you've seen a ghost. Not me. I'm tough. Worry? We Nobodies don't have the hearts to worry, you know! Worry? We Nobodies don't have the hearts to worry, you know! I gotta check in with the boss, or he's gonna let me have it. Hm? No. I guess I just needed a little time to sort out my feelings, you know? Hm?  Hey, your ice cream's melting. Eat up. Xion?"
+        "Line": "Hey, Roxas! It's been a while. What's the matter? You look like you've seen a ghost."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Axel... I heard everyone at Castle Oblivion was annihilated...You had me worried. I'll go buy us some ice cream! You haven't reported back yet? Why'd you come here? I thought you didn't have a heart. Oh. You know, I started inviting Xion up here while you were gone. Yeah. I made her a promise the three of us could have ice cream when you got back. Xion...she's my friend too."
+        "Line": "Axel... I heard everyone at Castle Oblivion was annihilated..."
+      },
+      {
+        "Order": 2,
+        "Character": "Axel",
+        "Line": "Not me. I'm tough."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "You had me worried."
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "Worry? We Nobodies don't have the hearts to worry, you know!"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "I'll go buy us some ice cream!"
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "I gotta check in with the boss, or he's gonna let me have it."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "You haven't reported back yet?"
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "Hm? No."
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "Why'd you come here?"
+      },
+      {
+        "Order": 10,
+        "Character": "Axel",
+        "Line": "I guess I just needed a little time to sort out my feelings, you know?"
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "I thought you didn't have a heart."
+      },
+      {
+        "Order": 12,
+        "Character": "Axel",
+        "Line": "Hm? Hey, your ice cream's melting. Eat up."
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Oh. You know, I started inviting Xion up here while you were gone."
+      },
+      {
+        "Order": 14,
+        "Character": "Axel",
+        "Line": "Xion?"
+      },
+      {
+        "Order": 15,
+        "Character": "Roxas",
+        "Line": "Yeah. I made her a promise the three of us could have ice cream when you got back. Xion... she's my friend too."
       }
     ],
     "Day 72; Axel's Report": [
       {
         "Order": 0,
         "Character": "Saïx",
-        "Line": "Why didn't you report in? The only thing I've heard is that Naminé has gone missing. Did you search every room?  And the chamber? Did you find it? Hm. I merely rounded up and sent off the ones who were getting in the way. Good to see you made it back safe."
+        "Line": "Why didn't you report in?"
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "What, not even one little word of appreciation? There one minute, gone the next. I don't know how she got out. Are you kidding? You know as well as I do that searching through every room there is impossible. Come on, I would have told you that much. I gotta hand it to you... About Marluxia being one of the traitors. You knew exactly what was up from the start. Whoa there, was I one of those you wanted to erase? I disposed of Zexion, by the way. I moved things along just the way you wanted...at least for now."
+        "Line": "What, not even one little word of appreciation?"
+      },
+      {
+        "Order": 2,
+        "Character": "Saïx",
+        "Line": "The only thing I've heard is that Naminé has gone missing."
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "There one minute, gone the next. I don't know how she got out."
+      },
+      {
+        "Order": 4,
+        "Character": "Saïx",
+        "Line": "Did you search every room?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Are you kidding? You know as well as I do that searching through every room there is impossible."
+      },
+      {
+        "Order": 6,
+        "Character": "Saïx",
+        "Line": "And the chamber? Did you find it?"
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Come on, I would have told you that much. I gotta hand it to you... About Marluxia being one of the traitors. You knew exactly what was up from the start."
+      },
+      {
+        "Order": 8,
+        "Character": "Saïx",
+        "Line": "Hm. I merely rounded up and sent off the ones who were getting in the way."
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "Whoa there, was I one of those you wanted to erase?"
+      },
+      {
+        "Order": 10,
+        "Character": "Saïx",
+        "Line": "Good to see you made it back safe."
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "I disposed of Zexion, by the way. I moved things along just the way you wanted... at least for now."
       }
     ],
     "Day 72; Change": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "You know, you're more cheerful. Yeah, well... I guess... He musta rubbed off on me. Nah. It's thanks to you that we get to sit here again and laugh while having ice cream."
+        "Line": "You know, you're more cheerful."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "You really think so? I was thinking the same about you. Huh? I wonder if Xion's gonna show today..."
+        "Line": "You really think so? I was thinking the same about you."
+      },
+      {
+        "Order": 2,
+        "Character": "Axel",
+        "Line": "Yeah, well... I guess... He musta rubbed off on me."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "Nah. It's thanks to you that we get to sit here again and laugh while having ice cream."
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "I wonder if Xion's gonna show today..."
       }
     ],
     "Day 74; Trio": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Xion! Xion! Xion! Are you okay? Easy. Are you hurt? Eat up. It's gonna melt. Did something happen? He's right. That's what friends are for. What exactly happened? Is there anything you can do, Axel? We can't do anything? Did you think of something? Huh? That's it...! Yeah, I can do it. Of course I would!"
+        "Line": "Xion!"
       },
       {
         "Order": 1,
         "Character": "Xion",
-        "Line": "Roxas!? Nngh... Roxas? I'm fine... Thank you. It's just...Thank you...Yeah...I can't... I can't use the Keyblade anymore. And without the Keyblade, I can't do my job. I don't know. But if I don't defeat Heartless with the Keyblade...the  hearts they release will just find their way into other Heartless instead. I swat them in one place and they just pop up in another. My mission is to go out and collect hearts. If I'm unable to use the Keyblade...I'll...I'll be useless. And once they find out, they're gonna turn me into a Dusk. What do you mean? Would you? But---We're friends... Axel...does that mean you and I are friends, too? Thank you... Roxas, Axel!"
+        "Line": "Roxas!?"
       },
       {
         "Order": 2,
+        "Character": "Roxas",
+        "Line": "Xion!"
+      },
+      {
+        "Order": 3,
         "Character": "Axel",
-        "Line": "Roxas! We have to take that thing out first! You can tell us all about it---but why don't we head back first? There ya go. What's wrong? I thought you'd wolf it down. We're here for you if you want to get it off your chest. Right, Roxas? I wish there was, but...it's just like she said. Without the Keyblade, she can't collect hearts. I already told you, there's nothing we ca---Hold on...Roxas, you can work double duty! Xion, make sure your missions are with Roxas---until you can use the Keyblade again. That way, he can collect the hearts, and no one will know that you can't use the Keyblade. But, that means you have to collect twice as many hearts. Friends need to lean on each other every now and then. Ain't that right, Roxas? Well, if you're friends with Roxas, then yeah, of course you're my friend. Just eat your ice cream."
+        "Line": "Roxas! We have to take that thing out first!"
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "Xion! Are you okay?"
+      },
+      {
+        "Order": 5,
+        "Character": "Xion",
+        "Line": "Nngh... Roxas?"
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Easy. Are you hurt?"
+      },
+      {
+        "Order": 7,
+        "Character": "Xion",
+        "Line": "I'm fine... Thank you. It's just..."
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "You can tell us all about it- but why don't we head back first?"
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "There ya go."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "Thank you..."
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "Eat up. It's gonna melt."
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "Yeah..."
+      },
+      {
+        "Order": 13,
+        "Character": "Axel",
+        "Line": "What's wrong? I thought you'd wolf it down."
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "Did something happen?"
+      },
+      {
+        "Order": 15,
+        "Character": "Axel",
+        "Line": "We're here for you if you want to get it off your chest. Right, Roxas?"
+      },
+      {
+        "Order": 16,
+        "Character": "Roxas",
+        "Line": "He's right. That's what friends are for."
+      },
+      {
+        "Order": 17,
+        "Character": "Xion",
+        "Line": "I can't... I can't use the Keyblade anymore. And without the Keyblade, I can't do my job."
+      },
+      {
+        "Order": 18,
+        "Character": "Roxas",
+        "Line": "What exactly happened?"
+      },
+      {
+        "Order": 19,
+        "Character": "Xion",
+        "Line": "I don't know. But if I don't defeat Heartless with the Keyblade... the hearts they release will just find their way into other Heartless instead. I swat them in one place and they just pop up in another. My mission is to go out and collect hearts. If I'm unable to use the Keyblade... I'll... I'll be useless."
+      },
+      {
+        "Order": 20,
+        "Character": "Roxas",
+        "Line": "Is there anything you can do, Axel?"
+      },
+      {
+        "Order": 21,
+        "Character": "Axel",
+        "Line": "I wish there was, but... it's just like she said. Without the Keyblade, she can't collect hearts."
+      },
+      {
+        "Order": 22,
+        "Character": "Xion",
+        "Line": "And once they find out, they're gonna turn me into a Dusk."
+      },
+      {
+        "Order": 23,
+        "Character": "Roxas",
+        "Line": "We can't do anything?"
+      },
+      {
+        "Order": 24,
+        "Character": "Axel",
+        "Line": "I already told you, there's nothing we ca- Hold on..."
+      },
+      {
+        "Order": 25,
+        "Character": "Roxas",
+        "Line": "Did you think of something?"
+      },
+      {
+        "Order": 26,
+        "Character": "Axel",
+        "Line": "Roxas, you can work double duty?"
+      },
+      {
+        "Order": 27,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 28,
+        "Character": "Xion",
+        "Line": "What do you mean?"
+      },
+      {
+        "Order": 29,
+        "Character": "Axel",
+        "Line": "Xion, make sure your missions are with Roxas- until you can use the Keyblade again. That way, he can collect the hearts, and no one will know that you can't use the Keyblade."
+      },
+      {
+        "Order": 30,
+        "Character": "Roxas",
+        "Line": "That's it...!"
+      },
+      {
+        "Order": 31,
+        "Character": "Axel",
+        "Line": "But, that means you have to collect twice as many hearts."
+      },
+      {
+        "Order": 32,
+        "Character": "Roxas",
+        "Line": "Yeah, I can do it."
+      },
+      {
+        "Order": 33,
+        "Character": "Xion",
+        "Line": "Would you?"
+      },
+      {
+        "Order": 34,
+        "Character": "Roxas",
+        "Line": "Of course I would!"
+      },
+      {
+        "Order": 35,
+        "Character": "Xion",
+        "Line": "But-"
+      },
+      {
+        "Order": 36,
+        "Character": "Axel",
+        "Line": "Friends need to lean on each other every now and then. Ain't that right, Roxas?"
+      },
+      {
+        "Order": 37,
+        "Character": "Xion",
+        "Line": "We're friends... Axel... does that mean you and I are friends, too?"
+      },
+      {
+        "Order": 38,
+        "Character": "Axel",
+        "Line": "Well, if you're friends with Roxas, then yeah, of course you're my friend."
+      },
+      {
+        "Order": 39,
+        "Character": "Xion",
+        "Line": "Thank you... Roxas, Axel!"
+      },
+      {
+        "Order": 40,
+        "Character": "Axel",
+        "Line": "Just eat your ice cream."
       }
     ],
     "Day 75; Inseparable": [
@@ -324,140 +1177,790 @@
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "They're about the same. But I'd say best friends are a notch above just plain friends. I don't know. I couldn't tell ya because I don't have any best friends."
+        "Line": "They're about the same."
       },
       {
         "Order": 2,
         "Character": "Roxas",
-        "Line": "Best friends, huh...So how are they different? I see…"
+        "Line": "Best friends, huh..."
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "But I'd say best friends are a notch above just plain friends."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "So how are they different?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "I don't know. I couldn't tell ya because I don't have any best friends."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "I see..."
       }
     ],
     "Day 94; Kingdom Hearts": [
       {
         "Order": 0,
         "Character": "Xemnas",
-        "Line": "The time has arrived. And at long last, we see before us the great collection of hearts. Hearts full of rage...hate...sadness...and bliss. Shining down upon us is the crystallization of all hearts---Kingdom Hearts. There, in the sky, hangs the promise of a new world. My friends! Let us gain further power, to conquer the human heart, and claim it as our own. Let us remember why we are here and what we hope to achieve. Hearts shall be gathered, and be made our own. Hearts shall never again have power over us."
+        "Line": "The time has arrived. And at long last, we see before us the great collection of hearts. Hearts full of rage... hate... sadness... and bliss. Shining down upon us is the crystallization of all hearts- Kingdom Hearts. There, in the sky, hangs the promise of a new world. My friends! Let us gain further power, to conquer the human heart, and claim it as our own. Let us remember why we are here and what we hope to achieve. Hearts shall be gathered, and be made our own. Hearts shall never again have power over us."
       }
     ],
     "Day 94; Hearts": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "All this fighting... I wonder what it's for. But what is Kingdom Hearts? Is Kingdom Hearts really that important? I just don't see why having a heart is that important, you know. Well, I don't understand, since I don't have a heart. Okay... I guess you're right."
+        "Line": "All this fighting... I wonder what it's for."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Come on, you know what it's for. We have to complete the great Kingdom Hearts. You saw it, too, didn't you? It's where all the hearts wind up after they're released by you. When we gather enough, we might finally get hearts of our own. Are you crazy? Come on, you're wondering about that now? We'll understand once we have our own hearts. That's why we fight, to find out what it's about."
+        "Line": "Come on, you know what it's for. We have to complete the great Kingdom Hearts. You saw it, too, didn't you?"
       },
       {
         "Order": 2,
+        "Character": "Roxas",
+        "Line": "But what is Kingdom Hearts?"
+      },
+      {
+        "Order": 3,
         "Character": "Xion",
-        "Line": "It's the gathering place of hearts...isn't it? Hearts shall be made our own...Roxas..."
+        "Line": "It's the gathering place of hearts... isn't it?"
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "It's where all the hearts wind up after they're released by you. When we gather enough, we might finally get hearts of our own."
+      },
+      {
+        "Order": 5,
+        "Character": "Xion",
+        "Line": "Hearts shall be made our own..."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Is Kingdom Hearts really that important?"
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Are you crazy?"
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "I just don't see why having a heart is that important, you know."
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "Come on, you're wondering about that now?"
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "Well, I don't understand, since I don't have a heart."
+      },
+      {
+        "Order": 11,
+        "Character": "Xion",
+        "Line": "Roxas..."
+      },
+      {
+        "Order": 12,
+        "Character": "Axel",
+        "Line": "We'll understand once we have our own hearts. That's why we fight, to find out what it's about."
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Okay... I guess you're right."
       }
     ],
     "Day 95; Nobodies": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "It looks like every Nobody in the Organization is good at different things. You remember your past? But I don't. What were you like before you were a Nobody? I wish I could remember stuff like that. But I---I can't remember anything. Not even from when I was born a Nobody. Oh, thanks! I wonder what kind of guy I was before..."
+        "Line": "It looks like every Nobody in the Organization is good at different things."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "That's right. Everybody's unique. Just because we don't all have hearts doesn't mean that we're all exactly the same. We each have memories of our pasts. Yeah, that's one of the things that makes each member of the Organization special. We remember who we were as humans. Well, maybe that right there is what makes you guys the most unique in the Organization. Huh? Me? Oh, I dunno. I think I've always been pretty much the same. Really? It's just baggage, you know. All you did was stare into space! You two sure do have a lot in common."
+        "Line": "That's right. Everybody's unique."
       },
       {
         "Order": 2,
         "Character": "Xion",
-        "Line": "Even Nobodies without hearts? Memories? Me neither. You know, I don't remember much, either."
+        "Line": "Even Nobodies without hearts?"
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "Just because we don't all have hearts doesn't mean that we're all exactly the same. We each have memories of our pasts."
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "Memories?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "You remember your past?"
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "Yeah, that's one of the things that makes each member of the Organization special. We remember who we were as humans."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "But I don't."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "Me neither."
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "Well, maybe that right there is what makes you guys the most unique in the Organization."
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "What were you like before you were a Nobody?"
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "Huh? Me? Oh, I dunno. I think I've always been pretty much the same."
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "I wish I could remember stuff like that."
+      },
+      {
+        "Order": 13,
+        "Character": "Axel",
+        "Line": "Really? It's just baggage, you know."
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "But I-I can't remember anything. Not even from when I was born a Nobody."
+      },
+      {
+        "Order": 15,
+        "Character": "Axel",
+        "Line": "All you did was stare into space!"
+      },
+      {
+        "Order": 16,
+        "Character": "Roxas",
+        "Line": "Oh, thanks!"
+      },
+      {
+        "Order": 17,
+        "Character": "Xion",
+        "Line": "You know, I don't remember much, either."
+      },
+      {
+        "Order": 18,
+        "Character": "Axel",
+        "Line": "You two sure do have a lot in common."
+      },
+      {
+        "Order": 19,
+        "Character": "Roxas",
+        "Line": "I wonder what kind of guy I was before..."
       }
     ],
     "Day 96; Xion's Keyblade": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "Thanks, Roxas. You can have this back. I don't know...but let me try again. Huh? Roxas! It worked! Yeah! Roxas, Axel, thank you. You made it possible for us to go on a mission together. So thanks, Axel. Huh? You got it. I'll be right back! Me too."
+        "Line": "Thanks, Roxas. You can have this back."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Do you remember anything? You did it! I can't wait to tell Axel this. Let's go! Axel! How was your mission? I thought you said you were tough. Ta-daaah! If it weren't for you, Xion might never have remembered how to use the Keyblade. I hope we can always be just like this forever. I just...want these days to last forever. Hanging out, the ice cream, the sunsets...Huh? Wow, that was so not you."
+        "Line": "Do you remember anything?"
       },
       {
         "Order": 2,
+        "Character": "Xion",
+        "Line": "I don't know... but let me try again. Huh?"
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "You did it!"
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "Roxas! It worked!"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "I can't wait to tell Axel this. Let's go!"
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "Yeah!"
+      },
+      {
+        "Order": 7,
         "Character": "Axel",
-        "Line": "Ahh...Whoa! Where'd you come from? You know, I sure wish the Heartless would hold still once in a while. I fell right on my butt chasing them around. Yeah, whatever, that's got nothing to do with it. So how did your caper go? I didn't do anything. How 'bout a sea salt ice cream, then? Buy me one, and we'll call it even. What's that all about? Well, nothing lasts forever, you know? Least of all for a bunch of Nobodies like us. But it's okay if things change and we can't meet up here. As long as we keep each other in our thoughts, none of us will ever have to be apart. Got it memorized? Hey!"
+        "Line": "Ahh..."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "Axel!"
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "Whoa! Where'd you come from?"
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "How was your mission?"
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "You know, I sure wish the Heartless would hold still once in a while. I fell right on my butt chasing them around."
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "I thought you said you were tough."
+      },
+      {
+        "Order": 13,
+        "Character": "Axel",
+        "Line": "Yeah, whatever, that's got nothing to do with it. So how did your caper go?"
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "Ta-daaah!"
+      },
+      {
+        "Order": 15,
+        "Character": "Xion",
+        "Line": "Roxas, Axel, thank you."
+      },
+      {
+        "Order": 16,
+        "Character": "Axel",
+        "Line": "I didn't do anything."
+      },
+      {
+        "Order": 17,
+        "Character": "Xion",
+        "Line": "You made it possible for us to go on a mission together."
+      },
+      {
+        "Order": 18,
+        "Character": "Roxas",
+        "Line": "If it weren't for you, Xion might never have remembered how to use the Keyblade."
+      },
+      {
+        "Order": 19,
+        "Character": "Xion",
+        "Line": "So thanks, Axel."
+      },
+      {
+        "Order": 20,
+        "Character": "Axel",
+        "Line": "How 'bout a sea salt ice cream, then?"
+      },
+      {
+        "Order": 21,
+        "Character": "Xion",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 22,
+        "Character": "Axel",
+        "Line": "Buy me one, and we'll call it even."
+      },
+      {
+        "Order": 23,
+        "Character": "Xion",
+        "Line": "You got it. I'll be right back!"
+      },
+      {
+        "Order": 24,
+        "Character": "Roxas",
+        "Line": "I hope we can always be just like this forever."
+      },
+      {
+        "Order": 25,
+        "Character": "Xion",
+        "Line": "Me too."
+      },
+      {
+        "Order": 26,
+        "Character": "Axel",
+        "Line": "What's that all about?"
+      },
+      {
+        "Order": 27,
+        "Character": "Roxas",
+        "Line": "I just... want these days to last forever. Hanging out, the ice cream, the sunsets..."
+      },
+      {
+        "Order": 28,
+        "Character": "Axel",
+        "Line": "Well, nothing lasts forever, you know? Least of all for a bunch of Nobodies like us. But it's okay if things change and we can't meet up here."
+      },
+      {
+        "Order": 29,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 30,
+        "Character": "Axel",
+        "Line": "As long as we keep each other in our thoughts, none of us will ever have to be apart. Got it memorized?"
+      },
+      {
+        "Order": 31,
+        "Character": "Roxas",
+        "Line": "Wow, that was so not you."
+      },
+      {
+        "Order": 32,
+        "Character": "Axel",
+        "Line": "Hey!"
       }
     ],
     "Day 117; Secrets": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "Huh? Ever heard of knocking? What do you want? Well, how should I know? I'm not spying on her. So what, now I've gotta rat on my friends to you? I think you should just go. Well, thank you, sir, for personally delivering that message to me. Says Lord Xemnas? Even he doesn't know... You mean the chamber, right? We turned that place inside out. If it's there, we're not gonna find it just by looking. Hmph... Whatever. As far as the castle goes, you're the one who really wants to go there. By finding the room that Xemnas is searching for... You would find out everything about Xemnas's true agenda. Am I right? I knew the time would come when Vexen and Zexion got in your way. That's why I took the initiative...and cleared the way to the top for you. I can handle all the dirty work. You go all the way to the top. Castle Oblivion... Naminé...and Xion..."
+        "Line": "Huh? Ever heard of knocking? What do you want?"
       },
       {
         "Order": 1,
         "Character": "Saïx",
-        "Line": "Tell me what Xion has been doing. The two of you look pretty close. Today, you and Xion will be going on the same mission. We also need you to go back to Castle Oblivion soon. That castle hasn't given up all its secrets. One even he doesn't know of its whereabouts. Then let me give you another reason. Xion comes from the castle to which Naminé can be traced. The place where both Naminé and Xion were born... It's practically calling out for you. The Chamber of Repose, as well as the Chamber of Waking...Xemnas has an agenda that he hasn't told to anybody. And we are bound to find some clues in the Chamber of Waking. And once we obtain those clues, we'll have the upper hand for our own objectives. You will be going on a solo mission to Castle Oblivion. Expect the orders soon."
+        "Line": "Tell me what Xion has been doing."
+      },
+      {
+        "Order": 2,
+        "Character": "Axel",
+        "Line": "Well, how should I know? I'm not spying on her."
+      },
+      {
+        "Order": 3,
+        "Character": "Saïx",
+        "Line": "The two of you look pretty close."
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "So what, now I've gotta rat on my friends to you? I think you should just go."
+      },
+      {
+        "Order": 5,
+        "Character": "Saïx",
+        "Line": "Today, you and Xion will be going on the same mission."
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "Well, thank you, sir, for personally delivering that message to me."
+      },
+      {
+        "Order": 7,
+        "Character": "Saïx",
+        "Line": "We also need you to go back to Castle Oblivion soon."
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "Says Lord Xemnas?"
+      },
+      {
+        "Order": 9,
+        "Character": "Saïx",
+        "Line": "That castle hasn't given up all its secrets. One even he doesn't know of its whereabouts."
+      },
+      {
+        "Order": 10,
+        "Character": "Axel",
+        "Line": "Even he doesn't know... You mean the chamber, right? We turned that place inside out. If it's there, we're not gonna find it just by looking."
+      },
+      {
+        "Order": 11,
+        "Character": "Saïx",
+        "Line": "Then let me give you another reason. Xion comes from the castle to which Naminé can be traced. The place where both Naminé and Xion were born... It's practically calling out for you."
+      },
+      {
+        "Order": 12,
+        "Character": "Axel",
+        "Line": "Hmph... Whatever. As far as the castle goes, you're the one who really wants to go there. By finding the room that Xemnas is searching for... You would find out everything about Xemnas's true agenda. Am I right?"
+      },
+      {
+        "Order": 13,
+        "Character": "Saïx",
+        "Line": "The Chamber of Repose, as well as the Chamber of Waking... Xemnas has an agenda that he hasn't told to anybody. And we are bound to find some clues in the Chamber of Waking. And once we obtain those clues, we'll have the upper hand for our own objectives."
+      },
+      {
+        "Order": 14,
+        "Character": "Axel",
+        "Line": "I knew the time would come when Vexen and Zexion got in your way. That's why I took the initiative... and cleared the way to the top for you. I can handle all the dirty work. You go all the way to the top."
+      },
+      {
+        "Order": 15,
+        "Character": "Saïx",
+        "Line": "You will be going on a solo mission to Castle Oblivion. Expect the orders soon."
+      },
+      {
+        "Order": 16,
+        "Character": "Axel",
+        "Line": "Castle Oblivion... Naminé... and Xion..."
       }
     ],
     "Day 117; Recollection of Waves": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "Roxas is late today. Yeah, right? You know what, Axel? When I sit here and talk with you guys... I get the strangest feeling...that a long time ago, I used to watch the sunset with somebody else. It's the same when I watch the sea. Someplace by the sea...where I hear the sound of the waves... I get the feeling that I was talking with someone. No... It's not quite like that. Well, I dunno. What do you think? Are these memories? You have memories, don't you? Roxas is like me. Neither one of us remembers much. I wonder if he and I...had this much in common before we were Nobodies."
+        "Line": "Roxas is late today."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Hope Xigbar isn't giving him too hard of a time. Hm? So you mean that...you have memories of your past? Huh... I wouldn't know, either. Yeah, sorta. Though it's not like they've ever really done me any good."
+        "Line": "Hope Xigbar isn't giving him too hard of a time."
+      },
+      {
+        "Order": 2,
+        "Character": "Xion",
+        "Line": "Yeah, right? You know what, Axel?"
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "Hm?"
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "When I sit here and talk with you guys... I get the strangest feeling... that a long time ago, I used to watch the sunset with somebody else. It's the same when I watch the sea. Someplace by the sea... where I hear the sound of the waves... I get the feeling that I was talking with someone."
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "So you mean that... you have memories of your past?"
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "No... It's not quite like that. Well, I dunno. What do you think? Are these memories?"
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Huh... I wouldn't know, either."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "You have memories, don't you?"
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "Yeah, sorta. Though it's not like they've ever really done me any good."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "Roxas is like me. Neither one of us remembers much. I wonder if he and I... had this much in common before we were Nobodies."
       }
     ],
     "Day 118; Lazy Day": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "I knew you'd be here. Slept like a log. Are the kids here on summer vacation already? ...Nah, can't be. It's much too early. It's a dream come true, that's what---where they get a whole month off. You'd be surprised. They give you plenty of homework, and of course, you have to play with your friends everyday. Trust me, it's over before you can blink. Most kids spend the time just goofing off with their friends. They save the homework till the end and then help each other finish it. Hanging around with friends is fun. I'd forgotten all that since becoming a Nobody, I guess. So, how did you spend your day? Unlike you two lazybones, I work hard, so I'm tired, okay? Tomorrow, it's back to work. Oh yeah... I might not see you guys again for a while. They're sending me out on recon for a few days. Can't tell. It's a secret mission. Hey, I'm not about to tell you ALL my dark secrets. Got it memorized? Ha ha. I'm kidding. I just gotta keep my mouth shut about it, or else Saïx will get on my case. You know how he can get. Try not to bungle everything while I'm gone, huh? Well, considering your track record, I just can't count on you guys."
+        "Line": "I knew you'd be here."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Axel...Summer vacation? What's that? A month off!? I wouldn't know what to do with that much time. I can't even figure out how to fill a day. Hmm... I could deal with seven days, maybe. That sounds fun, I guess. Where did you go, Xion? Axel says he was asleep all day. Yeah...Huh? What's up with that? Dark secrets? Yeah. That's right, just you watch!"
+        "Line": "Axel..."
       },
       {
         "Order": 2,
+        "Character": "Axel",
+        "Line": "Slept like a log. Are the kids here on summer vacation already? ... Nah, can't be. It's much too early."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "Summer vacation? What's that?"
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "It's a dream come true, that's what- where they get a whole month off."
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "A month off!? I wouldn't know what to do with that much time. I can't even figure out how to fill a day."
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "You'd be surprised. They give you plenty of homework, and of course, you have to play with your friends everyday. Trust me, it's over before you can blink."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "Hmm... I could deal with seven days, maybe."
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "Most kids spend the time just goofing off with their friends. They save the homework till the end and then help each other finish it."
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "That sounds fun, I guess."
+      },
+      {
+        "Order": 10,
+        "Character": "Axel",
+        "Line": "Hanging around with friends is fun. I'd forgotten all that since becoming a Nobody, I guess. So, how did you spend your day?"
+      },
+      {
+        "Order": 11,
         "Character": "Xion",
-        "Line": "Hey, guys. How did I know you'd be here? I didn't go anywhere. What about you two? Did you guys go somewhere without me? What? What's that about? You wasted a day off? Unlike me and Roxas, maybe you're just out of shape! Hope we get another vacation soon. Where? But I thought we were friends. Now, why would we do that? Hey! We can handle things just fine!"
+        "Line": "Hey, guys. How did I know you'd be here?"
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "Where did you go, Xion?"
+      },
+      {
+        "Order": 13,
+        "Character": "Xion",
+        "Line": "I didn't go anywhere. What about you two? Did you guys go somewhere without me?"
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "Axel says he was asleep all day."
+      },
+      {
+        "Order": 15,
+        "Character": "Xion",
+        "Line": "What? What's that about? You wasted a day off?"
+      },
+      {
+        "Order": 16,
+        "Character": "Axel",
+        "Line": "Unlike you two lazybones, I work hard, so I'm tired, okay?"
+      },
+      {
+        "Order": 17,
+        "Character": "Xion",
+        "Line": "Unlike me and Roxas, maybe you're just out of shape!"
+      },
+      {
+        "Order": 18,
+        "Character": "Axel",
+        "Line": "Tomorrow, it's back to work."
+      },
+      {
+        "Order": 19,
+        "Character": "Roxas",
+        "Line": "Yeah..."
+      },
+      {
+        "Order": 20,
+        "Character": "Xion",
+        "Line": "Hope we get another vacation soon."
+      },
+      {
+        "Order": 21,
+        "Character": "Axel",
+        "Line": "Oh yeah... I might not see you guys again for a while."
+      },
+      {
+        "Order": 22,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 23,
+        "Character": "Axel",
+        "Line": "They're sending me out on recon for a few days."
+      },
+      {
+        "Order": 24,
+        "Character": "Xion",
+        "Line": "Where?"
+      },
+      {
+        "Order": 25,
+        "Character": "Axel",
+        "Line": "Can't tell."
+      },
+      {
+        "Order": 26,
+        "Character": "Roxas",
+        "Line": "What's up with that?"
+      },
+      {
+        "Order": 27,
+        "Character": "Axel",
+        "Line": "It's a secret mission."
+      },
+      {
+        "Order": 28,
+        "Character": "Xion",
+        "Line": "But I thought we were friends."
+      },
+      {
+        "Order": 29,
+        "Character": "Axel",
+        "Line": "Hey, I'm not about to tell you ALL my dark secrets. Got it memorized? "
+      },
+      {
+        "Order": 30,
+        "Character": "Roxas",
+        "Line": "Dark secrets?"
+      },
+      {
+        "Order": 31,
+        "Character": "Axel",
+        "Line": "Ha ha. I'm kidding. I just gotta keep my mouth shut about it, or else Saïx will get on my case. You know how he can get."
+      },
+      {
+        "Order": 32,
+        "Character": "Roxas",
+        "Line": "Yeah."
+      },
+      {
+        "Order": 33,
+        "Character": "Axel",
+        "Line": "Try not to bungle everything while I'm gone, huh?"
+      },
+      {
+        "Order": 34,
+        "Character": "Xion",
+        "Line": "Now, why would we do that?"
+      },
+      {
+        "Order": 35,
+        "Character": "Axel",
+        "Line": "Well, considering your track record, I just can't count on you guys."
+      },
+      {
+        "Order": 36,
+        "Character": "Xion",
+        "Line": "Hey! We can handle things just fine!"
+      },
+      {
+        "Order": 37,
+        "Character": "Roxas",
+        "Line": "That's right, just you watch!"
       }
     ],
     "Day 118; A Warning from Saïx": [
       {
         "Order": 0,
         "Character": "Saïx",
-        "Line": "What took you so long? You're letting yourself get too attached to them. You know, you've changed..."
+        "Line": "What took you so long?"
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "It's my vacation. I can take all the time I want. Since when do I have  to check in with you? Yeah, yeah, whatever you say."
+        "Line": "It's my vacation. I can take all the time I want. Since when do I have to check in with you?"
+      },
+      {
+        "Order": 2,
+        "Character": "Saïx",
+        "Line": "You're letting yourself get too attached to them."
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "Yeah, yeah, whatever you say."
+      },
+      {
+        "Order": 4,
+        "Character": "Saïx",
+        "Line": "You know, you've changed..."
       }
     ],
     "Day 149; Unlike Minds": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "Hey, Roxas! Yup, I just got home. So, are ya holding up? Where's Xion? Huh."
+        "Line": "Hey, Roxas!"
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Axel... You're back! Yeah. She's not here yet. She's usually here by now. This isn't like her...."
+        "Line": "Axel... You're back!"
       },
       {
         "Order": 2,
+        "Character": "Axel",
+        "Line": "Yup, I just got home. So, are ya holding up?"
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "Yeah."
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "Where's Xion?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "She's not here yet."
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "Huh."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "She's usually here by now. This isn't like her..."
+      },
+      {
+        "Order": 8,
         "Character": "Xion",
-        "Line": "How could he...I'm not a sham..."
+        "Line": "How could he... I'm not a sham..."
       }
     ],
     "Day 150; Xion's Plea": [
@@ -481,34 +1984,244 @@
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "Oh. Where's Xion? Oh well. Hm? Anything I couldn't bear to lose? What's that about? It's because you don't have a heart. Huh... I think you have a point there. So you don't need a heart to have something that you can't bear to lose then. If that's true, then I guess the closest thing that we Nobodies have would be memories of our past. It's the memories that create the things that we don't want to lose. Even though you might not remember the past, I'm sure you have things you don't wanna lose. You've got memories since you joined us, right? So then you really do have something that you can't bear to lose, right? Every one of us---including us Nobodies---we all have something that we want to hang on to. You can't be scared without a heart! \"Scared\" is not an emotion that can exist inside us. Maybe it's just that you remember what it's like to be scared, you know? Somewhere deep inside your memories."
+        "Line": "Oh. Where's Xion?"
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Haven't seen her today. Axel...Is there anything you couldn't bear to lose? Well, I met someone today who had something like that. This thing was so important to him he couldn't bear to lose it...and Xaldin said that was his weakness. Why don't I have anything like that? I guess... But Demyx doesn't have a heart, and I bet he'd get upset if you took his sitar away. Memories of the past... I don't remember MY past. Like what? I dunno... I do, don't I? I couldn't bear to lose my memories of you or Xion. It's scary. If my friends... If you or Xion were to disappear... It's...scary to think of what it would be like without you guys. Well... I am scared right now, for sure."
+        "Line": "Haven't seen her today."
+      },
+      {
+        "Order": 2,
+        "Character": "Axel",
+        "Line": "Oh well."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "Axel..."
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "Hm?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Is there anything you couldn't bear to lose?"
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "Anything I couldn't bear to lose? What's that about?"
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "Well, I met someone today who had something like that. This thing was so important to him he couldn't bear to lose it... and Xaldin said that was his weakness. Why don't I have anything like that?"
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "It's because you don't have a heart."
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "I guess... But Demyx doesn't have a heart, and I bet he'd get upset if you took his sitar away."
+      },
+      {
+        "Order": 10,
+        "Character": "Axel",
+        "Line": "Huh... I think you have a point there. So you don't need a heart to have something that you can't bear to lose then. If that's true, then I guess the closest thing that we Nobodies have would be memories of our past. It's the memories that create the things that we don't want to lose."
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "Memories of the past... I don't remember MY past."
+      },
+      {
+        "Order": 12,
+        "Character": "Axel",
+        "Line": "Even though you might not remember the past, I'm sure you have things you don't wanna lose."
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Like what?"
+      },
+      {
+        "Order": 14,
+        "Character": "Axel",
+        "Line": "You've got memories since you joined us, right?"
+      },
+      {
+        "Order": 15,
+        "Character": "Roxas",
+        "Line": "I dunno... I do, don't I? I couldn't bear to lose my memories of you or Xion."
+      },
+      {
+        "Order": 16,
+        "Character": "Axel",
+        "Line": "So then you really do have something that you can't bear to lose, right? Every one of us- including us Nobodies- we all have something that we want to hang on to."
+      },
+      {
+        "Order": 17,
+        "Character": "Roxas",
+        "Line": "It's scary."
+      },
+      {
+        "Order": 18,
+        "Character": "Axel",
+        "Line": "You can't be scared without a heart!"
+      },
+      {
+        "Order": 19,
+        "Character": "Roxas",
+        "Line": "If my friends... If you or Xion were to disappear... It's... scary to think of what it would be like without you guys."
+      },
+      {
+        "Order": 20,
+        "Character": "Axel",
+        "Line": "\"Scared\" is not an emotion that can exist inside us."
+      },
+      {
+        "Order": 21,
+        "Character": "Roxas",
+        "Line": "Well... I am scared right now, for sure."
+      },
+      {
+        "Order": 22,
+        "Character": "Axel",
+        "Line": "Maybe it's just that you remember what it's like to be scared, you know? Somewhere deep inside your memories."
       }
     ],
     "Day 151; Distress": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "I wonder where Axel is. Guess we got the work done a little TOO fast, huh? Xion? Xion! Something wrong? What do you mean, why? So we can get hearts of our own, right? I don't know. But I think once we have hearts, we probably won't have to think about why we're doing all this, or if we need hearts. Like nightmares? Xigbar said you and me were pretty special. \"Exceptional,\" he said. You're not a mistake. Xion...Axel...Actually, you just missed her."
+        "Line": "I wonder where Axel is. Guess we got the work done a little TOO fast, huh?"
       },
       {
         "Order": 1,
         "Character": "Riku",
-        "Line": "Your face... Who are you really? And why do you have a Keyblade? To make sure my best friend...sleeps in peace. I don't know who you're supposed to be. But...you can't fight fire with sparks. This Keyblade, it's a sham---worthless. Find a new crowd. Trust me. Those guys are bad news. Fair enough. You could say I am...the biggest nobody of them all."
+        "Line": "Your face... Who are you really? And why do you have a Keyblade?"
       },
       {
         "Order": 2,
         "Character": "Xion",
-        "Line": "Tell me first...why you are dressed as one of us. My Keyblade is not a sham! What gives you the right to say that? Why? You're the real sham. Sorry. My mind's on other things. Roxas, do you ever think...about why we're doing all of this? But what do we need hearts for? I'm not sure. I just wish I knew what I was doing here. I started having the strangest dreams. I can never remember what they're about. I just...wake up scared. Special? Isn't that...just another way of saying that I'm a mistake? Well, you and I may both be exceptional, Roxas, but...I don't think we're quite the same."
+        "Line": "Tell me first... why you are dressed as one of us."
       },
       {
         "Order": 3,
+        "Character": "Riku",
+        "Line": "To make sure my best friend... sleeps in peace. I don't know who you're supposed to be. But... you can't fight fire with sparks. This Keyblade, it's a sham- worthless."
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "My Keyblade is not a sham! What gives you the right to say that?"
+      },
+      {
+        "Order": 5,
+        "Character": "Riku",
+        "Line": "Find a new crowd. Trust me. Those guys are bad news."
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "Why? You're the real sham."
+      },
+      {
+        "Order": 7,
+        "Character": "Riku",
+        "Line": "Fair enough. You could say I am... the biggest nobody of them all."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "Xion? Xion! Something wrong?"
+      },
+      {
+        "Order": 9,
+        "Character": "Xion",
+        "Line": "Sorry. My mind's on other things. Roxas, do you ever think... about why we're doing all of this?"
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "What do you mean, why? So we can get hearts of our own, right?"
+      },
+      {
+        "Order": 11,
+        "Character": "Xion",
+        "Line": "But what do we need hearts for?"
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "I don't know. But I think once we have hearts, we probably won't have to think about why we're doing all this, or if we need hearts."
+      },
+      {
+        "Order": 13,
+        "Character": "Xion",
+        "Line": "I'm not sure. I just wish I knew what I was doing here. I started having the strangest dreams."
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "Like nightmares?"
+      },
+      {
+        "Order": 15,
+        "Character": "Xion",
+        "Line": "I can never remember what they're about. I just... wake up scared."
+      },
+      {
+        "Order": 16,
+        "Character": "Roxas",
+        "Line": "Xigbar said you and me were pretty special. \"Exceptional,\" he said."
+      },
+      {
+        "Order": 17,
+        "Character": "Xion",
+        "Line": "Special? Isn't that... just another way of saying that I'm a mistake?"
+      },
+      {
+        "Order": 18,
+        "Character": "Roxas",
+        "Line": "You're not a mistake."
+      },
+      {
+        "Order": 19,
+        "Character": "Xion",
+        "Line": "Well, you and I may both be exceptional, Roxas, but... I don't think we're quite the same."
+      },
+      {
+        "Order": 20,
+        "Character": "Roxas",
+        "Line": "Xion..."
+      },
+      {
+        "Order": 21,
         "Character": "Axel",
-        "Line": "Heya, Roxas! Xion couldn't make it again today?"
+        "Line": "Heya, Roxas!"
+      },
+      {
+        "Order": 22,
+        "Character": "Roxas",
+        "Line": "Axel..."
+      },
+      {
+        "Order": 23,
+        "Character": "Axel",
+        "Line": "Xion couldn't make it again today?"
+      },
+      {
+        "Order": 24,
+        "Character": "Roxas",
+        "Line": "Actually, you just missed her."
       }
     ],
     "Day 172; Sound of the Surf": [
@@ -520,12 +2233,42 @@
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Hey, that was uncalled for! And I'm telling you that I have to know what's the deal with Xion. If there's something going on, just be straight with me for once, will ya? Well, you've got me there, I guess. What do you mean?"
+        "Line": "Hey, that was uncalled for!"
       },
       {
         "Order": 2,
         "Character": "Saïx",
-        "Line": "I told you. Keep out of this. Do you mean just like you are always honest with me? Xion has no right to be among our number. It's plain to see. I have nothing more to say."
+        "Line": "I told you. Keep out of this."
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "And I'm telling you that I have to know what's the deal with Xion. If there's something going on, just be straight with me for once, will ya?"
+      },
+      {
+        "Order": 4,
+        "Character": "Saïx",
+        "Line": "Do you mean just like you are always honest with me?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Well, you've got me there, I guess."
+      },
+      {
+        "Order": 6,
+        "Character": "Saïx",
+        "Line": "Xion has no right to be among our number."
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "What do you mean?"
+      },
+      {
+        "Order": 8,
+        "Character": "Saïx",
+        "Line": "It's plain to see. I have nothing more to say."
       }
     ],
     "Day 193; Xion Awakens": [
@@ -537,12 +2280,87 @@
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "Whoa! Uh... Good morning, Xion. You woke up so suddenly, you just startled me. Do you hear it? About twenty days. Yeah. You were sleeping so much that me and Axel were getting worried. Oh...Huh? Oh, I'm about to head out. But don't you need some more rest? All right... Sure."
+        "Line": "Whoa! Uh... Good morning, Xion."
       },
       {
         "Order": 2,
         "Character": "Xion",
-        "Line": "Oh... Morning...S-sorry...Oh... Did you bring me these seashells? Yeah, the sound of the waves. How long was I asleep? That long!? I'm sorry about that. Kind of weird that we can feel anything at all. Without having hearts to feel with. Hey, Roxas. Don't you have work today? I'd like to tag along. I'll be fine. C'mon, take me with you."
+        "Line": "Oh... Morning..."
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "You woke up so suddenly, you just startled me."
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "S-sorry... Oh... Did you bring me these seashells?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Do you hear it?"
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "Yeah, the sound of the waves. How long was I asleep?"
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "About twenty days."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "That long!?"
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "Yeah. You were sleeping so much that me and Axel were getting worried."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "I'm sorry about that. Kind of weird that we can feel anything at all. Without having hearts to feel with."
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "Oh..."
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "Hey, Roxas. Don't you have work today?"
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Huh? Oh, I'm about to head out."
+      },
+      {
+        "Order": 14,
+        "Character": "Xion",
+        "Line": "I'd like to tag along."
+      },
+      {
+        "Order": 15,
+        "Character": "Roxas",
+        "Line": "But don't you need some more rest?"
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "I'll be fine. C'mon, take me with you."
+      },
+      {
+        "Order": 17,
+        "Character": "Roxas",
+        "Line": "All right... Sure."
       }
     ],
     "Day 193; Memories": [
@@ -566,78 +2384,370 @@
       {
         "Order": 0,
         "Character": "Saïx",
-        "Line": "Well, that didn't take long. Did it break again? You have changed... What happened at Castle Oblivion? Does the past mean nothing to you?"
+        "Line": "Well, that didn't take long. Did it break again?"
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "She's not an \"it\"! Are you worried about her, Axel? It just doesn't seem like you. I mean, you don't like things to be complicated. Huh? I don't know...We are? Oh yeah... Guess we are. Are you feeling better?"
+        "Line": "She's not an \"it\"!"
       },
       {
         "Order": 2,
         "Character": "Axel",
-        "Line": "Keep your mouth shut. Of course I am. What do you mean? You know, Roxas... Each day the three of us meet up there for ice cream. Now, why do you think that is? I mean, if you think about it, I don't need to go out of my way to meet you guys, right? You want me to tell you why? It's because you guys are my best friends. Get it memorized, alright? We are best friends. Don't scare us like that anymore. Just take it easy today."
+        "Line": "Keep your mouth shut."
       },
       {
         "Order": 3,
+        "Character": "Saïx",
+        "Line": "You have changed... What happened at Castle Oblivion? Does the past mean nothing to you?"
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "Are you worried about her, Axel?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Of course I am."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "It just doesn't seem like you."
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "What do you mean?"
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "I mean, you don't like things to be complicated."
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "You know, Roxas... Each day the three of us meet up there for ice cream. Now, why do you think that is?"
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "I mean, if you think about it, I don't need to go out of my way to meet you guys, right?"
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "I don't know..."
+      },
+      {
+        "Order": 13,
+        "Character": "Axel",
+        "Line": "You want me to tell you why? It's because you guys are my best friends."
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "We are?"
+      },
+      {
+        "Order": 15,
+        "Character": "Axel",
+        "Line": "Get it memorized, alright? We are best friends."
+      },
+      {
+        "Order": 16,
+        "Character": "Roxas",
+        "Line": "Oh yeah... Guess we are."
+      },
+      {
+        "Order": 17,
         "Character": "Xion",
-        "Line": "Thanks, Axel. You're sweet. I just got a little dizzy, that's all. Sorry to worry you guys. Mm-hmm. I will. Thanks. Both of you."
+        "Line": "Thanks, Axel. You're sweet."
+      },
+      {
+        "Order": 18,
+        "Character": "Roxas",
+        "Line": "Are you feeling better?"
+      },
+      {
+        "Order": 19,
+        "Character": "Xion",
+        "Line": "I just got a little dizzy, that's all. Sorry to worry you guys."
+      },
+      {
+        "Order": 20,
+        "Character": "Axel",
+        "Line": "Don't scare us like that anymore."
+      },
+      {
+        "Order": 21,
+        "Character": "Xion",
+        "Line": "Mm-hmm."
+      },
+      {
+        "Order": 22,
+        "Character": "Axel",
+        "Line": "Just take it easy today."
+      },
+      {
+        "Order": 23,
+        "Character": "Xion",
+        "Line": "I will. Thanks. Both of you."
       }
     ],
     "Day 224; Anomaly": [
       {
         "Order": 0,
         "Character": "Ansem the Wise",
-        "Line": "You seem to be struggling. A Nobody? Oh, I think he can do without a memory or two. Naminé... You are a witch who has power over Sora's memories and those connected to him. Are you seeing something I cannot? She?"
+        "Line": "You seem to be struggling."
       },
       {
         "Order": 1,
         "Character": "Naminé",
-        "Line": "A Nobody is interfering, I think. I keep trying to piece his memory back together, but what if some of the pieces got lost? There would be no way for me to finish. If that happened---and they found their way into someone else---he'd never get them back. But what---what if he needs those memories in order to wake up? What if they're the key? If his memories become her memories...she will never survive it."
+        "Line": "A Nobody is interfering, I think."
+      },
+      {
+        "Order": 2,
+        "Character": "Ansem the Wise",
+        "Line": "A Nobody?"
+      },
+      {
+        "Order": 3,
+        "Character": "Naminé",
+        "Line": "I keep trying to piece his memory back together, but what if some of the pieces got lost? There would be no way for me to finish. If that happened- and they found their way into someone else- he'd never get them back."
+      },
+      {
+        "Order": 4,
+        "Character": "Ansem the Wise",
+        "Line": "Oh, I think he can do without a memory or two."
+      },
+      {
+        "Order": 5,
+        "Character": "Naminé",
+        "Line": "But what- what if he needs those memories in order to wake up? What if they're the key?"
+      },
+      {
+        "Order": 6,
+        "Character": "Ansem the Wise",
+        "Line": "Naminé... You are a witch who has power over Sora's memories and those connected to him. Are you seeing something I cannot?"
+      },
+      {
+        "Order": 7,
+        "Character": "Naminé",
+        "Line": "If his memories become her memories... she will never survive it."
+      },
+      {
+        "Order": 8,
+        "Character": "Ansem the Wise",
+        "Line": "She?"
       }
     ],
     "Day 224; To the Beach": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "Hey, Axel? You've been to Castle Oblivion, right? What is it like? Although...they never send me or Roxas. I'm...I'm heading back. No, it's nothing like that. The beach? Where did that idea come from? I'll join you...if I can. Hmm... Yes, all right. Let's go."
+        "Line": "Hey, Axel?"
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Hm? Yeah. What's it like? Just an Organization research facility. Well...they probably just don't need you there. Got it! On our next day off, let's all go to the beach, huh? We should go someplace different for a change. Exactly. It'll be a blast, trust me."
+        "Line": "Hm?"
       },
       {
         "Order": 2,
-        "Character": "Roxas",
-        "Line": "For research, huh? Seems everyone gets sent there all the time. Especially you. Huh? Maybe you're not completely well yet. Huh? Got what? You're talking about a vacation with friends. What are you talking about, Xion?"
+        "Character": "Xion",
+        "Line": "You've been to Castle Oblivion, right?"
       },
       {
         "Order": 3,
-        "Character": "Dat 255",
-        "Line": "Xemnas's Plans"
+        "Character": "Axel",
+        "Line": "Yeah."
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "What is it like?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "What's it like? Just an Organization research facility."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "For research, huh? Seems everyone gets sent there all the time. Especially you."
+      },
+      {
+        "Order": 7,
+        "Character": "Xion",
+        "Line": "Although... they never send me or Roxas."
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "Well... they probably just don't need you there."
+      },
+      {
+        "Order": 9,
+        "Character": "Xion",
+        "Line": "I'm... I'm heading back."
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "Huh? Maybe you're not completely well yet."
+      },
+      {
+        "Order": 11,
+        "Character": "Xion",
+        "Line": "No, it's nothing like that."
+      },
+      {
+        "Order": 12,
+        "Character": "Axel",
+        "Line": "Got it!"
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Huh? Got what?"
+      },
+      {
+        "Order": 14,
+        "Character": "Axel",
+        "Line": "On our next day off, let's all go to the beach, huh?"
+      },
+      {
+        "Order": 15,
+        "Character": "Xion",
+        "Line": "The beach? Where did that idea come from?"
+      },
+      {
+        "Order": 16,
+        "Character": "Axel",
+        "Line": "We should go someplace different for a change."
+      },
+      {
+        "Order": 17,
+        "Character": "Roxas",
+        "Line": "You're talking about a vacation with friends."
+      },
+      {
+        "Order": 18,
+        "Character": "Axel",
+        "Line": "Exactly."
+      },
+      {
+        "Order": 19,
+        "Character": "Xion",
+        "Line": "I'll join you... if I can."
+      },
+      {
+        "Order": 20,
+        "Character": "Roxas",
+        "Line": "What are you talking about, Xion?"
+      },
+      {
+        "Order": 21,
+        "Character": "Axel",
+        "Line": "It'll be a blast, trust me."
+      },
+      {
+        "Order": 22,
+        "Character": "Xion",
+        "Line": "Hmm... Yes, all right. Let's go."
+      }
+    ],
+    "Day 255; Xemnas's Plans": [
+      {
+        "Order": 0,
+        "Character": "Saïx",
+        "Line": "I sent Axel to Castle Oblivion last night, to help expedite the matter we spoke of. I also instructed him to clear out our facilities there. He should return soon."
+      },
+      {
+        "Order": 1,
+        "Character": "Xemnas",
+        "Line": "And what of Naminé?"
+      },
+      {
+        "Order": 2,
+        "Character": "Saïx",
+        "Line": "Still missing, sir."
+      },
+      {
+        "Order": 3,
+        "Character": "Xigbar",
+        "Line": "Ha ha! Where, oh where could she be?"
       },
       {
         "Order": 4,
         "Character": "Saïx",
-        "Line": "I sent Axel to Castle Oblivion last night, to help expedite the matter we spoke of. I also instructed him to clear out our facilities there. He should return soon. Still missing, sir. Why, Xigbar... It almost sounds as though you know. Somebody accessed our main computer without authorization. Nonsense. I see no problem whatsoever. Something you find amusing? But sir, Xion---"
+        "Line": "Why, Xigbar... It almost sounds as though you know."
       },
       {
         "Order": 5,
         "Character": "Xemnas",
-        "Line": "And what of Naminé? Continue. No matter what unfolds, our plans remain unchanged. Axel, Roxas, and Xion will play the respective roles that Kingdom Hearts has given them. Leave it be. How can you not see how perfect this is? In truth, this is more than perfect. Xion is marching right into the arms of destiny, but to destiny's own time. We need not take any more steps. All we must do is watch with caution and patience."
+        "Line": "Continue."
       },
       {
         "Order": 6,
+        "Character": "Saïx",
+        "Line": "Somebody accessed our main computer without authorization."
+      },
+      {
+        "Order": 7,
         "Character": "Xigbar",
-        "Line": "Ha ha! Where, oh where could she be? And you expect us to believe you really don't know who it was? As if. Little Poppet is turning into a problem. Ha ha! Well no, apparently you don't! Ah, the things you hear from a guy with no heart."
+        "Line": "And you expect us to believe you really don't know who it was? As if. Little Poppet is turning into a problem."
+      },
+      {
+        "Order": 8,
+        "Character": "Saïx",
+        "Line": "Nonsense. I see no problem whatsoever."
+      },
+      {
+        "Order": 9,
+        "Character": "Xigbar",
+        "Line": "Ha ha! Well no, apparently you don't!"
+      },
+      {
+        "Order": 10,
+        "Character": "Saïx",
+        "Line": "Something you find amusing?"
+      },
+      {
+        "Order": 11,
+        "Character": "Xigbar",
+        "Line": "Ah, the things you hear from a guy with no heart."
+      },
+      {
+        "Order": 12,
+        "Character": "Xemnas",
+        "Line": "No matter what unfolds, our plans remain unchanged. Axel, Roxas, and Xion will play the respective roles that Kingdom Hearts has given them."
+      },
+      {
+        "Order": 13,
+        "Character": "Saïx",
+        "Line": "But sir, Xion-"
+      },
+      {
+        "Order": 14,
+        "Character": "Xemnas",
+        "Line": "Leave it be. How can you not see how perfect this is? In truth, this is more than perfect. Xion is marching right into the arms of destiny, but to destiny's own time. We need not take any more steps. All we must do is watch with caution and patience."
       }
     ],
     "Day 255; The Longest Day": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "My head...hurts...Axel... What are you doing here...? Lies! This is the place I come from. I just know it. Or else they'll turn me into a Dusk? And is that because I'm useless? I'm remembering things. I have memories of back when I was a human. I have dreams every night. And you're in those dreams, Axel! You can't fool me. We've met before, Axel, right here in this castle! Please, Axel...you've got to help me! I need to know who I am. Wh-What... Then I...wasn't who I am...?"
+        "Line": "My head... hurts..."
       },
       {
         "Order": 1,
@@ -646,94 +2756,534 @@
       },
       {
         "Order": 2,
-        "Character": "Axel",
-        "Line": "I'm just here on orders, that's all. There's nothing for you to see here. What about your mission? Don't be selfish. They'll do worse than turn you into a Dusk. They'll just destroy you. That's not it. Xion, go home. Well, stop remembering. Nothing good will come of it. Then they sure aren't memories. How could I be a part of your past? They're just dreams, that's all. No, we have not. Let's go home, Xion. Don't keep Roxas waiting. Stop! Stay out of there, Xion! You're early. What's that about? So, you got the number memorized, do you? Right, that first week you could barely form a sentence. But come on, you're still kind of a zombie. Hey, Roxas. Bet you don't know why the sun sets red. You see, light is made up of lots of colors. And out of all those colors, red is the one that travels the farthest."
+        "Character": "Xion",
+        "Line": "Axel... What are you doing here...?"
       },
       {
         "Order": 3,
+        "Character": "Axel",
+        "Line": "I'm just here on orders, that's all. There's nothing for you to see here."
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "Lies! This is the place I come from. I just know it."
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "What about your mission? Don't be selfish."
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "Or else they'll turn me into a Dusk?"
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "They'll do worse than turn you into a Dusk. They'll just destroy you."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "And is that because I'm useless?"
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "That's not it. Xion, go home."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "I'm remembering things. I have memories of back when I was a human."
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "Well, stop remembering. Nothing good will come of it."
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "I have dreams every night. And you're in those dreams, Axel!"
+      },
+      {
+        "Order": 13,
+        "Character": "Axel",
+        "Line": "Then they sure aren't memories. How could I be a part of your past? They're just dreams, that's all."
+      },
+      {
+        "Order": 14,
+        "Character": "Xion",
+        "Line": "You can't fool me. We've met before, Axel, right here in this castle!"
+      },
+      {
+        "Order": 15,
+        "Character": "Axel",
+        "Line": "No, we have not. Let's go home, Xion. Don't keep Roxas waiting."
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "Please, Axel... you've got to help me! I need to know who I am."
+      },
+      {
+        "Order": 17,
+        "Character": "Axel",
+        "Line": "Stop! Stay out of there, Xion! You're early."
+      },
+      {
+        "Order": 18,
         "Character": "Roxas",
-        "Line": "No, you're just late. Today makes 255. It's been that many days since I first joined the Organization. Man, time flies. Yeah. Have to hang onto something, right? It's not like I have memories  from before the Organization. Don't you remember? I acted like a zombie. Oh, thanks! Like I asked! Know-it-all. Seriously, where is she? The destiny that is about to unfold actually started when we first met on the seventh day after I came here."
+        "Line": "No, you're just late. Today makes 255."
+      },
+      {
+        "Order": 19,
+        "Character": "Axel",
+        "Line": "What's that about?"
+      },
+      {
+        "Order": 20,
+        "Character": "Roxas",
+        "Line": "It's been that many days since I first joined the Organization. Man, time flies."
+      },
+      {
+        "Order": 21,
+        "Character": "Axel",
+        "Line": "So, you got the number memorized, do you?"
+      },
+      {
+        "Order": 22,
+        "Character": "Roxas",
+        "Line": "Yeah. Have to hang onto something, right? It's not like I have memories from before the Organization. Don't you remember? I acted like a zombie."
+      },
+      {
+        "Order": 23,
+        "Character": "Axel",
+        "Line": "Right, that first week you could barely form a sentence. But come on, you're still kind of a zombie."
+      },
+      {
+        "Order": 24,
+        "Character": "Roxas",
+        "Line": "Oh, thanks!"
+      },
+      {
+        "Order": 25,
+        "Character": "Axel",
+        "Line": "Hey, Roxas. Bet you don't know why the sun sets red. You see, light is made up of lots of colors. And out of all those colors, red is the one that travels the farthest."
+      },
+      {
+        "Order": 26,
+        "Character": "Roxas",
+        "Line": "Like I asked! Know-it-all. Seriously, where is she?"
+      },
+      {
+        "Order": 27,
+        "Character": "Xion",
+        "Line": "Wh-What... Then I... wasn't who I am...?"
       }
     ],
     "Day 276; Disorder": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Xion...Xion!"
+        "Line": "Xion... Xion!"
       },
       {
         "Order": 1,
         "Character": "Zexion",
-        "Line": "Surely...you must've known that this was going to happen. Because, in your memory, you've been to a number of worlds before you came to this one. And of course, in those worlds, the only beings you met were the dark kind. That's all that's left in your heart- the darkest of memories.Your memories of home are gone---every one. That's a lie! I remember everyone from the islands! They're my...my...my closest friends...And who threw away those friends? Maybe it's your own actions you've forgotten. It was you who destroyed your home!"
+        "Line": "Surely... you must've known that this was going to happen."
       },
       {
         "Order": 2,
         "Character": "Riku",
-        "Line": "Why would I know? And of course, in those worlds, the only beings you met were the dark kind. That's all that's left in your heart- the darkest of memories. Your memories of home are gone---every one. That's a lie! I remember everyone from the islands! They're my...my...my closest friends...And who threw away those friends? Maybe it's your own actions you've forgotten. It was you who destroyed your home! You made me a promise. Can you tell me what's happening? How could that be? Isn't there a way to bring back just Sora's memories? So what can you do? All right."
+        "Line": "Why would I know?"
       },
       {
         "Order": 3,
-        "Character": "Xion",
-        "Line": "Who am I? What am I...here for? Is it that I'm not supposed to exist? I want...I want to be with you two. I can't... Not the way I am now. But...what would it take for me to be like you?"
+        "Character": "Zexion",
+        "Line": "Because, in your memory, you've been to a number of worlds before you came to this one."
       },
       {
         "Order": 4,
-        "Character": "Naminé",
-        "Line": "So we meet again. I remember. It was to look after Sora. I'm sorry... I'm not sure I've kept that promise very well. Some of Sora's memories are missing. Sora's memories are escaping through Sora's Nobody into a third person---and now they're starting to become a part of her. If they're still separate...then I think I can take out fragments of it. But if her memories and Sora's memory fragments are completely weaved together... I would need to untangle them from each other and that would take more time. Which means it would take even longer before Sora can wake up again. And DiZ wouldn't tolerate that. If I just jump in and rearrange her memory...then Sora might wake up only to find out that nobody remembers him anymore. That's a risk I just can't take. It's too late either way. Sora's awakening has already been delayed. Sora's Nobody and the one that's absorbing his memory... None of us imagined that they would fight so hard to become their own people. Unfortunately, the only real solution...is for them both to go away. Did you know her face was blank at first? But now...there is a face that is clearly visible. I think that's proof that she has entered Sora's memories. Sora's memories, Sora's Nobody's memories, and her memories... They're all a jumbled mess now. And to put them back into one... I'm afraid there's no other way."
+        "Character": "Zexion",
+        "Line": "And of course, in those worlds, the only beings you met were the dark kind."
       },
       {
         "Order": 5,
+        "Character": "Riku",
+        "Line": "And of course, in those worlds, the only beings you met were the dark kind."
+      },
+      {
+        "Order": 6,
+        "Character": "Zexion",
+        "Line": "That's all that's left in your heart"
+      },
+      {
+        "Order": 7,
+        "Character": "Riku",
+        "Line": "That's all that's left in your heart"
+      },
+      {
+        "Order": 8,
+        "Character": "Zexion",
+        "Line": "That's a lie! I remember everyone from the islands!"
+      },
+      {
+        "Order": 9,
+        "Character": "Riku",
+        "Line": "That's a lie! I remember everyone from the islands!"
+      },
+      {
+        "Order": 10,
+        "Character": "Zexion",
+        "Line": "They're my... my... my closest friends..."
+      },
+      {
+        "Order": 11,
+        "Character": "Riku",
+        "Line": "They're my... my... my closest friends..."
+      },
+      {
+        "Order": 12,
+        "Character": "Zexion",
+        "Line": "And who threw away those friends? Maybe it's your own actions you've forgotten."
+      },
+      {
+        "Order": 13,
+        "Character": "Riku",
+        "Line": "And who threw away those friends? Maybe it's your own actions you've forgotten."
+      },
+      {
+        "Order": 14,
+        "Character": "Zexion",
+        "Line": "It was you who destroyed your home!"
+      },
+      {
+        "Order": 15,
+        "Character": "Riku",
+        "Line": "It was you who destroyed your home!"
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "Who am I? What am I... here for?"
+      },
+      {
+        "Order": 17,
+        "Character": "Naminé",
+        "Line": "So we meet again."
+      },
+      {
+        "Order": 18,
+        "Character": "Riku",
+        "Line": "You made me a promise."
+      },
+      {
+        "Order": 19,
+        "Character": "Naminé",
+        "Line": "I remember. It was to look after Sora. I'm sorry... I'm not sure I've  kept that promise very well."
+      },
+      {
+        "Order": 20,
+        "Character": "Riku",
+        "Line": "Can you tell me what's happening?"
+      },
+      {
+        "Order": 21,
+        "Character": "Naminé",
+        "Line": "Some of Sora's memories are missing."
+      },
+      {
+        "Order": 22,
+        "Character": "Riku",
+        "Line": "How could that be?"
+      },
+      {
+        "Order": 23,
+        "Character": "Naminé",
+        "Line": "Sora's memories are escaping through Sora's Nobody into a third person- and now they're starting to become a part of her."
+      },
+      {
+        "Order": 24,
+        "Character": "Riku",
+        "Line": "Isn't there a way to bring back just Sora's memories?"
+      },
+      {
+        "Order": 25,
+        "Character": "Naminé",
+        "Line": "If they're still separate... then I think I can take out fragments of it. But if her memories and Sora's memory fragments are completely weaved together... I would need to untangle them from each other and that would take more time. Which means it would take even longer before Sora can wake up again. And DiZ wouldn't tolerate that."
+      },
+      {
+        "Order": 26,
+        "Character": "Riku",
+        "Line": "So what can you do?"
+      },
+      {
+        "Order": 27,
+        "Character": "Naminé",
+        "Line": "If I just jump in and rearrange her memory... then Sora might wake up only to find out that nobody remembers him anymore. That's a risk I just can't take. It's too late either way. Sora's awakening has already been delayed. Sora's Nobody and the one that's absorbing his memory... None of us imagined that they would fight so hard to become their own people. Unfortunately, the only real solution... is for them both to go away. Did you know her face was blank at first? But now... there is a face that is clearly visible. I think that's proof that she has entered Sora's memories. Sora's memories, Sora's Nobody's memories, and her memories... They're all a jumbled mess now. And to put them back into one... I'm afraid there's no other way."
+      },
+      {
+        "Order": 28,
+        "Character": "Riku",
+        "Line": "All right."
+      },
+      {
+        "Order": 29,
+        "Character": "Xion",
+        "Line": "Is it that I'm not supposed to exist?"
+      },
+      {
+        "Order": 30,
         "Character": "Axel",
         "Line": "Well, what do you want to do, Xion?"
       },
       {
-        "Order": 6,
+        "Order": 31,
+        "Character": "Xion",
+        "Line": "I want... I want to be with you two."
+      },
+      {
+        "Order": 32,
         "Character": "Roxas",
         "Line": "Then come back with us."
+      },
+      {
+        "Order": 33,
+        "Character": "Xion",
+        "Line": "I can't... Not the way I am now. But... what would it take for me to be like you?"
       }
     ],
     "Day 276; Tomorrow": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Hey... It's been a while. So...I went to the beach today. And there was this girl who looked kind of like Xion...but I couldn't get close enough to tell for sure. I probably imagined it. To be honest, I'm not even sure today's mission really happened. Feels like I just woke up from a dream or something. Do you remember our promise? When we said that the three of us would go to the beach on our next break? Maybe that's why. Maybe I saw Xion there because I wanted her to be there. Huh? Mm-hmm. Sounds good, let's do that."
+        "Line": "Hey... It's been a while."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "You think so? Wanna go look for her? Beginning tomorrow, let's use our spare time to find Xion."
+        "Line": "You think so?"
+      },
+      {
+        "Order": 2,
+        "Character": "Roxas",
+        "Line": "So... I went to the beach today. And there was this girl who looked kind of like Xion... but I couldn't get close enough to tell for sure. I probably imagined it. To be honest, I'm not even sure today's mission really happened. Feels like I just woke up from a dream or something. Do you remember our promise? When we said that the three of us would go to the beach on our next break? Maybe that's why. Maybe I saw Xion there because I wanted her to be there."
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "Wanna go look for her?"
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Beginning tomorrow, let's use our spare time to find Xion."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Mm-hmm. Sounds good, let's do that."
       }
     ],
     "Day 296; Confessions": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "It's no use. I've been everywhere I know how to get to. The only place I haven't been to is Castle Oblivion. It was just the other day that Xion was asking you what the place was like. And the day before she disappeared, you said she was put on an important mission. Remember? Well, Xion might be there. What? I had no idea...Castle Oblivion... Xion..."
+        "Line": "It's no use."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "You sure you're not forgetting some place? Alright...Yeah... But there's nothing there anymore. Hmm...Apparently...Xion comes from Castle Oblivion. That's probably why she was asking about the place. Me neither. I only found out a little while ago."
+        "Line": "You sure you're not forgetting some place?"
+      },
+      {
+        "Order": 2,
+        "Character": "Roxas",
+        "Line": "I've been everywhere I know how to get to."
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "Alright..."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "The only place I haven't been to is Castle Oblivion. It was just the other day that Xion was asking you what the place was like. And the day before she disappeared, you said she was put on an important mission. Remember?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Yeah... But there's nothing there anymore."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Well, Xion might be there."
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Hmm... Apparently... Xion comes from Castle Oblivion."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "What?"
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "That's probably why she was asking about the place."
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "I had no idea..."
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "Me neither. I only found out a little while ago."
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "Castle Oblivion... Xion..."
       }
     ],
     "Day 297; Contact": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "So, this is Castle Oblivion...Agh! My...my head! I'm fine! We have to...find Xion...Wh...what's happening? So much...rushing into...my head...No, wait… There's...something...I can...almost...Riku! I only remember going inside. I'm fine. Let's go back to Castle Oblivion. Xion?  Xion, wait! Rrgh... Out of the way! Hey! Xion...The one who ran away first was Xion. But...why run?"
+        "Line": "So, this is Castle Oblivion..."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Roxas!? Easy, man! Let's retreat for now and---Roxas! Let's get out of here for now! Are you alright? You collapsed just as you entered the castle doors. Don't you remember? Just take it easy for now. Don't push yourself, man. Who's there? Roxas, wait! I thought the impostor was sighted in Castle Oblivion! No way that was Xion!"
+        "Line": "Roxas!?"
       },
       {
         "Order": 2,
-        "Character": "Riku",
-        "Line": "Giving up already? I thought you were stronger than that. What...happened to me? You want to go back?"
+        "Character": "Roxas",
+        "Line": "Agh! My... my head!"
       },
       {
         "Order": 3,
+        "Character": "Axel",
+        "Line": "Easy, man! Let's retreat for now and-"
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "I'm fine! We have to... find Xion... Wh... what's happening?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "Roxas!"
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "So much... rushing into... my head..."
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Let's get out of here for now!"
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "No, wait... There's... something... I can... almost..."
+      },
+      {
+        "Order": 9,
+        "Character": "Riku",
+        "Line": "Giving up already? I thought you were stronger than that."
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "Riku!"
+      },
+      {
+        "Order": 11,
+        "Character": "Axel",
+        "Line": "Are you alright?"
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "What... happened to me?"
+      },
+      {
+        "Order": 13,
+        "Character": "Axel",
+        "Line": "You collapsed just as you entered the castle doors. Don't you remember?"
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "I only remember going inside."
+      },
+      {
+        "Order": 15,
+        "Character": "Axel",
+        "Line": "Just take it easy for now."
+      },
+      {
+        "Order": 16,
+        "Character": "Roxas",
+        "Line": "I'm fine. Let's go back to Castle Oblivion."
+      },
+      {
+        "Order": 17,
+        "Character": "Axel",
+        "Line": "Don't push yourself, man. Who's there?"
+      },
+      {
+        "Order": 18,
+        "Character": "Roxas",
+        "Line": "Xion? Xion, wait! Rrgh... Out of the way! Hey!"
+      },
+      {
+        "Order": 19,
+        "Character": "Axel",
+        "Line": "Roxas, wait! I thought the impostor was sighted in Castle Oblivion!"
+      },
+      {
+        "Order": 20,
+        "Character": "Roxas",
+        "Line": "Xion..."
+      },
+      {
+        "Order": 21,
+        "Character": "Axel",
+        "Line": "No way that was Xion!"
+      },
+      {
+        "Order": 22,
+        "Character": "Roxas",
+        "Line": "The one who ran away first was Xion. But... why run?"
+      },
+      {
+        "Order": 23,
+        "Character": "Riku",
+        "Line": "You want to go back?"
+      },
+      {
+        "Order": 24,
         "Character": "Xion",
         "Line": "Huh..."
       }
@@ -742,17 +3292,37 @@
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Xion. Where have you been? Axel and I have been looking all over for you. Let's go home. If you come back voluntarily, Saïx will let all this  drop. He has to. I don't care what he said to you. I'll be there. Me and Axel will  make sure---Why not? Come on...Wait! Axel? No, wait! Stop! Xion..."
+        "Line": "Xion. Where have you been? Axel and I have been looking all over for you."
       },
       {
         "Order": 1,
         "Character": "Xion",
-        "Line": "You have? Sorry. I really can't."
+        "Line": "You have? Sorry."
       },
       {
         "Order": 2,
+        "Character": "Roxas",
+        "Line": "Let's go home. If you come back voluntarily, Saïx will let all this drop. He has to. I don't care what he said to you. I'll be there. Me and Axel will make sure-"
+      },
+      {
+        "Order": 3,
+        "Character": "Xion",
+        "Line": "I really can't."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "Why not? Come on... Wait!"
+      },
+      {
+        "Order": 5,
         "Character": "Axel",
-        "Line": "Well, hello there...Xion."
+        "Line": "Well, hello there... Xion."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Axel? No, wait! Stop! Xion..."
       }
     ],
     "Day 299; Axel and Saïx": [
@@ -764,22 +3334,57 @@
       {
         "Order": 1,
         "Character": "Saïx",
-        "Line": "I never expected you to question it. If you could save one of them… why would you choose the puppet? Or put it this way. Which would you rather suffer the loss of- some  make-believe friendship, or a real one? Things are finally right again. Of course we're better off this way. Xemnas is exasperated from all the \"fixing\" we've had to do. We have to set things right. There is simply too much on the line...Lea."
+        "Line": "I never expected you to question it. If you could save one of them... why would you choose the puppet? Or put it this way. Which would you rather suffer the loss of- some make-believe friendship, or a real one? Things are finally right again. Of course we're better off this way. Xemnas is exasperated from all the \"fixing\" we've had to do. We have to set things right. There is simply too much on the line... Lea."
       }
     ],
     "Day 299; Sora": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "I need to know...Xion. Tell me what happened to her....Sora. Who is Sora? Connection? Understood."
+        "Line": "I need to know..."
       },
       {
         "Order": 1,
         "Character": "Xemnas",
-        "Line": "About what? Xion is a valued member of the Organization, but she needs her rest. So worry not. Sora. The connection. He is what makes you and Xion a part of each other's lives. And the reason I placed Xion among our number. If you want her to stay that way, I must insist you get your mind off these needless distractions. I will have Xion return to her duties tomorrow. Today, you must focus on yours."
+        "Line": "About what?"
       },
       {
         "Order": 2,
+        "Character": "Roxas",
+        "Line": "Xion. Tell me what happened to her."
+      },
+      {
+        "Order": 3,
+        "Character": "Xemnas",
+        "Line": "Xion is a valued member of the Organization, but she needs her rest. So worry not. Sora."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "... Sora. Who is Sora?"
+      },
+      {
+        "Order": 5,
+        "Character": "Xemnas",
+        "Line": "The connection."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Connection?"
+      },
+      {
+        "Order": 7,
+        "Character": "Xemnas",
+        "Line": "He is what makes you and Xion a part of each other's lives. And the reason I placed Xion among our number. If you want her to stay that way, I must insist you get your mind off these needless distractions. I will have Xion return to her duties tomorrow. Today, you must focus on yours."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "Understood."
+      },
+      {
+        "Order": 9,
         "Character": "Axel",
         "Line": "Hey, Roxas."
       }
@@ -788,12 +3393,37 @@
       {
         "Order": 0,
         "Character": "Saïx",
-        "Line": "Are you certain we've taken suitable measures with Xion and Roxas? Really? I see. And what of the imposter? Then we shall return to our original plan."
+        "Line": "Are you certain we've taken suitable measures with Xion and Roxas?"
       },
       {
         "Order": 1,
         "Character": "Xemnas",
-        "Line": "I will admit, Xion has strayed from our original designs. However, we are also seeing an interesting side effect. The Key. Xion was affected by Roxas, just as we had anticipated. This was indeed what we had hoped to achieve... But then, through Roxas, Sora himself began to shape \"it\" into \"her,\" giving Xion a sense of identity. Our plan seemed like a failure at this point... But then it occurred to me. Xion is keeping Sora's memories trapped by claiming them as her own. Keeping her close to Roxas will ultimately prevent Sora from ever waking. See that he stays away from Roxas. He is merely an impurity that would make Xion's existence incomplete."
+        "Line": "I will admit, Xion has strayed from our original designs. However, we are also seeing an interesting side effect."
+      },
+      {
+        "Order": 2,
+        "Character": "Saïx",
+        "Line": "Really?"
+      },
+      {
+        "Order": 3,
+        "Character": "Xemnas",
+        "Line": "The Key. Xion was affected by Roxas, just as we had anticipated. This was indeed what we had hoped to achieve... But then, through Roxas, Sora himself began to shape \"it\" into \"her,\" giving Xion a sense of identity. Our plan seemed like a failure at this point... But then it occurred to me. Xion is keeping Sora's memories trapped by claiming them as her own. Keeping her close to Roxas will ultimately prevent Sora from ever waking."
+      },
+      {
+        "Order": 4,
+        "Character": "Saïx",
+        "Line": "I see. And what of the imposter?"
+      },
+      {
+        "Order": 5,
+        "Character": "Xemnas",
+        "Line": "See that he stays away from Roxas. He is merely an impurity that would make Xion's existence incomplete."
+      },
+      {
+        "Order": 6,
+        "Character": "Saïx",
+        "Line": "Then we shall return to our original plan."
       }
     ],
     "Day 299; Riku and Xion": [
@@ -807,36 +3437,191 @@
       {
         "Order": 0,
         "Character": "Naminé",
-        "Line": "Oh no...Sora's memory...I'm afraid has stopped. Unless something is done, he'll never wake from his slumber. But...Yes..."
+        "Line": "Oh no..."
       },
       {
         "Order": 1,
         "Character": "Ansem the Wise",
-        "Line": "What has happened? What does that mean? The gloves must come off then. Nobodies never should have existed---as I'm sure you understand, Naminé."
+        "Line": "What has happened?"
+      },
+      {
+        "Order": 2,
+        "Character": "Naminé",
+        "Line": "Sora's memory... I'm afraid has stopped."
+      },
+      {
+        "Order": 3,
+        "Character": "Ansem the Wise",
+        "Line": "What does that mean?"
+      },
+      {
+        "Order": 4,
+        "Character": "Naminé",
+        "Line": "Unless something is done, he'll never wake from his slumber."
+      },
+      {
+        "Order": 5,
+        "Character": "Ansem the Wise",
+        "Line": "The gloves must come off then."
+      },
+      {
+        "Order": 6,
+        "Character": "Naminé",
+        "Line": "But..."
+      },
+      {
+        "Order": 7,
+        "Character": "Ansem the Wise",
+        "Line": "Nobodies never should have existed- as I'm sure you understand, Naminé."
+      },
+      {
+        "Order": 8,
+        "Character": "Naminé",
+        "Line": "Yes..."
       }
     ],
     "Day 321; Roxas's Tears": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "What..is this...?"
+        "Line": "What... is this...?"
       }
     ],
     "Day 321; Waning Power": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "Are you really okay? Huh? What do you mean \"weird\"? Roxas, of course I worry about you. Is Axel coming today? You didn't fight, did you? ... \"That jerk\"...? Do you mean Axel? But...I wouldn't be sitting here with you if Axel hadn't done that. He's your best friend. Heh. It's just not the same without all three of us...Axel! Well, um... Something's wrong with Roxas. You don't know why, do you? He says the Keyblade wears him out when he goes to use it. And then today, I was fighting the same way Roxas does. What do you mean? I'm not sure. What can I... Then what should I do? Sure. Can I ask you just one other thing? I saw a boy today who looks just like Roxas. Is he who I think he is?"
+        "Line": "Are you really okay?"
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "This is getting weird. Since when do you ever worry about me? Usually, I do all the worrying over you. I don't think it's ever been the other way around before. Just feels strange, that's all. I'm just glad you're back, Xion. Even though it might have been rough on you. Ah... Who knows...How could he? How could that jerk attack you like that? I know, but so are you."
+        "Line": "This is getting weird."
       },
       {
         "Order": 2,
+        "Character": "Xion",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 3,
+        "Character": "Roxas",
+        "Line": "Since when do you ever worry about me?"
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "What do you mean \"weird\"?"
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Usually, I do all the worrying over you. I don't think it's ever been the other way around before. Just feels strange, that's all."
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "Roxas, of course I worry about you."
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "I'm just glad you're back, Xion. Even though it might have been rough on you."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "Is Axel coming today?"
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "Ah... Who knows..."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "You didn't fight, did you?"
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "How could he? How could that jerk attack you like that?"
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "... \"That jerk\"...? Do you mean Axel? But... I wouldn't be sitting here with you if Axel hadn't done that. He's your best friend."
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "I know, but so are you."
+      },
+      {
+        "Order": 14,
+        "Character": "Xion",
+        "Line": "Heh. It's just not the same without all three of us... Axel!"
+      },
+      {
+        "Order": 15,
         "Character": "Axel",
-        "Line": "Huh? You need something? You would know more about Roxas than I do by now. Well, what do you think, Xion? Not sure, huh? Is that because you're a puppet? You do know that. You're a replica whose original purpose was to copy Roxas's powers. So if you see Roxas's powers getting weaker, while your powers are getting stronger... It could be that you're robbing Roxas of his powers more than you oughta be. You gotta think for yourself. Cuz I know you're not just a puppet. We're best friends. You, me, and Roxas, that is. Got it memorized? What's that?"
+        "Line": "Huh? You need something?"
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "Well, um... Something's wrong with Roxas. You don't know why, do you? He says the Keyblade wears him out when he goes to use it. And then today, I was fighting the same way Roxas does."
+      },
+      {
+        "Order": 17,
+        "Character": "Axel",
+        "Line": "You would know more about Roxas than I do by now."
+      },
+      {
+        "Order": 18,
+        "Character": "Xion",
+        "Line": "What do you mean?"
+      },
+      {
+        "Order": 19,
+        "Character": "Axel",
+        "Line": "Well, what do you think, Xion?"
+      },
+      {
+        "Order": 20,
+        "Character": "Xion",
+        "Line": "I'm not sure."
+      },
+      {
+        "Order": 21,
+        "Character": "Axel",
+        "Line": "Not sure, huh? Is that because you're a puppet? You do know that. You're a replica whose original purpose was to copy Roxas's powers. So if you see Roxas's powers getting weaker, while your powers are getting stronger... It could be that you're robbing Roxas of his powers more than you oughta be."
+      },
+      {
+        "Order": 22,
+        "Character": "Xion",
+        "Line": "What can I... Then what should I do?"
+      },
+      {
+        "Order": 23,
+        "Character": "Axel",
+        "Line": "You gotta think for yourself. Cuz I know you're not just a puppet. We're best friends. You, me, and Roxas, that is. Got it memorized?"
+      },
+      {
+        "Order": 24,
+        "Character": "Xion",
+        "Line": "Sure. Can I ask you just one other thing?"
+      },
+      {
+        "Order": 25,
+        "Character": "Axel",
+        "Line": "What's that?"
+      },
+      {
+        "Order": 26,
+        "Character": "Xion",
+        "Line": "I saw a boy today who looks just like Roxas. Is he who I think he is?"
       }
     ],
     "Day 322; The Program": [
@@ -848,56 +3633,296 @@
       {
         "Order": 1,
         "Character": "Xemnas",
-        "Line": "Yes, it was not supposed to gain a mind of its own---nor become the  person we see. But in the end, it only proves that the puppet is the more worthy vessel. The time has come. Saïx, are the devices ready? Good. Both of them have connections to Sora, but we only need one of them  under our thumb. Whether Xion takes from Roxas the rest of what he has to give...or, whether he destroys her first and takes back what is his, there is no change to our plans. No matter how, Sora's power will belong to us."
+        "Line": "Yes, it was not supposed to gain a mind of its own- nor become the person we see. But in the end, it only proves that the puppet is the more worthy vessel. The time has come. Saïx, are the devices ready?"
       },
       {
         "Order": 2,
         "Character": "Saïx",
-        "Line": "In a matter of days. And what of Roxas?"
+        "Line": "In a matter of days."
+      },
+      {
+        "Order": 3,
+        "Character": "Xemnas",
+        "Line": "Good."
+      },
+      {
+        "Order": 4,
+        "Character": "Saïx",
+        "Line": "And what of Roxas?"
+      },
+      {
+        "Order": 5,
+        "Character": "Xemnas",
+        "Line": "Both of them have connections to Sora, but we only need one of them under our thumb. Whether Xion takes from Roxas the rest of what he has to give... or, whether he destroys her first and takes back what is his, there is no change to our plans. No matter how, Sora's power will belong to us."
       }
     ],
     "Day 352; Xion's Reply": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "The way things are...I'm going to wreck everything...What should I do, Riku? Are you...Sora? You know Sora? Thank you. You saved me, but I don't know why...you did. Riku, please... Tell me more---about Sora and that girl he's always with. Kairi... That's right. She's the one who looks so much like me. It's just...I remember things about the two of them. But I'm nothing more than a puppet---something that somebody created. So why would I have...their memories? Do you know where Sora is now? Why's that? So you mean...I'm like a part of him? You can't, because part of it is inside of me. That means...he can't wake up. So, do you hate me for taking your friend away from you? I'm sorry, but...I can't go with you. It's my friends---they need me. And I need them, too. How will I know where I belong, truly? I'm not sure I can promise you I'll come up with the right answer. I'll try. Thank you, Riku. I have to make the most of the time Riku's given me."
+        "Line": "The way things are... I'm going to wreck everything... What should I do, Riku? Are you..."
       },
       {
         "Order": 1,
         "Character": "Riku",
-        "Line": "Riku. Sora's friend. Yeah. I guess...I just felt like it. You mean Kairi. To Sora, she's someone very special. That secret stays with me. Xion...your memories...they really belong to Sora. When his memories were scattered, some of them...found their way inside you. Now, Sora has been put to sleep so that we can piece together his memory. Except...Yeah. You got it. But, if you go with me to Sora right now, we could give the memories inside you back to him. Nah. I guess...I'm just sad. Maybe...you should take some time and think about it. Figure out who really needs you more. And where you belong. Well, the answer you come up with can't just be right for you. It has to  be one that works best for everybody. You and your friends and everyone else."
+        "Line": "Riku. Sora's friend."
+      },
+      {
+        "Order": 2,
+        "Character": "Xion",
+        "Line": "Sora? You know Sora?"
+      },
+      {
+        "Order": 3,
+        "Character": "Riku",
+        "Line": "Yeah."
+      },
+      {
+        "Order": 4,
+        "Character": "Xion",
+        "Line": "Thank you. You saved me, but I don't know why...you did."
+      },
+      {
+        "Order": 5,
+        "Character": "Riku",
+        "Line": "I guess... I just felt like it."
+      },
+      {
+        "Order": 6,
+        "Character": "Xion",
+        "Line": "Riku, please... Tell me more- about Sora and that girl he's always with."
+      },
+      {
+        "Order": 7,
+        "Character": "Riku",
+        "Line": "You mean Kairi."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "Kairi... That's right. She's the one who looks so much like me."
+      },
+      {
+        "Order": 9,
+        "Character": "Riku",
+        "Line": "To Sora, she's someone very special."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "It's just... I remember things about the two of them. But I'm nothing more than a puppet- something that somebody created. So why would I have... their memories? Do you know where Sora is now?"
+      },
+      {
+        "Order": 11,
+        "Character": "Riku",
+        "Line": "That secret stays with me."
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "Why's that?"
+      },
+      {
+        "Order": 13,
+        "Character": "Riku",
+        "Line": "Xion... your memories... they really belong to Sora."
+      },
+      {
+        "Order": 14,
+        "Character": "Xion",
+        "Line": "So you mean... I'm like a part of him?"
+      },
+      {
+        "Order": 15,
+        "Character": "Riku",
+        "Line": "When his memories were scattered, some of them... found their way inside you. Now, Sora has been put to sleep so that we can piece together his memory. Except..."
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "You can't, because part of it is inside of me. That means... he can't wake up."
+      },
+      {
+        "Order": 17,
+        "Character": "Riku",
+        "Line": "Yeah. You got it. But, if you go with me to Sora right now, we could give the memories inside you back to him."
+      },
+      {
+        "Order": 18,
+        "Character": "Xion",
+        "Line": "So, do you hate me for taking your friend away from you?"
+      },
+      {
+        "Order": 19,
+        "Character": "Riku",
+        "Line": "Nah. I guess... I'm just sad."
+      },
+      {
+        "Order": 20,
+        "Character": "Xion",
+        "Line": "I'm sorry, but... I can't go with you. It's my friends- they need me. And I need them, too."
+      },
+      {
+        "Order": 21,
+        "Character": "Riku",
+        "Line": "Maybe... you should take some time and think about it. Figure out who really needs you more. And where you belong."
+      },
+      {
+        "Order": 22,
+        "Character": "Xion",
+        "Line": "How will I know where I belong, truly? I'm not sure I can promise you I'll come up with the right answer."
+      },
+      {
+        "Order": 23,
+        "Character": "Riku",
+        "Line": "Well, the answer you come up with can't just be right for you. It has to be one that works best for everybody. You and your friends and everyone else."
+      },
+      {
+        "Order": 24,
+        "Character": "Xion",
+        "Line": "I'll try. Thank you, Riku. I have to make the most of the time Riku's given me."
       }
     ],
     "Day 352; Sunset": [
       {
         "Order": 0,
         "Character": "Xion",
-        "Line": "Brain freeze…Really? Heh heh heh... Wow. The sun's beautiful. I know we've seen a lot of sunsets, but today's puts them all to shame. If only things could stay like this forever...What? But we have nowhere to run. As long as we keep each other in our thoughts, we'll never be apart, right? We've got it memorized, Axel. I'll have these moments memorized for a long time. Forever."
+        "Line": "Brain freeze..."
       },
       {
         "Order": 1,
         "Character": "Roxas",
-        "Line": "It's been a while since we all hung out like this, hasn't it? Huh. Wait a second...Uhh...it's n-nothing. So then, what happens when you win? What, you don't know? Cool...Say... What if we all just took off? If we ran, I bet we could always be together. Yeah. I guess you're right. Me too. Forever..."
+        "Line": "It's been a while since we all hung out like this, hasn't it?"
       },
       {
         "Order": 2,
         "Character": "Axel",
-        "Line": "Well, we've had our share of drama lately. I just remembered---did you guys know you should be checking your ice cream sticks? Once you finish your ice cream, see if the stick says WINNER. Not that I've ever seen one myself. What is it? I'll tell ya... That's a good question. Well, it's gotta be something nifty, if you're a WINNER, right? What's important isn't that we hang out with each other every day— Good."
+        "Line": "Well, we've had our share of drama lately. I just remembered- did you guys know you should be checking your ice cream sticks?"
+      },
+      {
+        "Order": 3,
+        "Character": "Xion",
+        "Line": "Really?"
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "Once you finish your ice cream, see if the stick says WINNER. Not that I've ever seen one myself."
+      },
+      {
+        "Order": 5,
+        "Character": "Roxas",
+        "Line": "Huh. Wait a second..."
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "What is it?"
+      },
+      {
+        "Order": 7,
+        "Character": "Roxas",
+        "Line": "Uhh... it's n-nothing. So then, what happens when you win?"
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "I'll tell ya... That's a good question."
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "What, you don't know?"
+      },
+      {
+        "Order": 10,
+        "Character": "Axel",
+        "Line": "Well, it's gotta be something nifty, if you're a WINNER, right?"
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "Cool..."
+      },
+      {
+        "Order": 12,
+        "Character": "Xion",
+        "Line": "Heh heh heh... Wow. The sun's beautiful. I know we've seen a lot of sunsets, but today's puts them all to shame. If only things could stay like this forever..."
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Say... What if we all just took off?"
+      },
+      {
+        "Order": 14,
+        "Character": "Xion",
+        "Line": "What?"
+      },
+      {
+        "Order": 15,
+        "Character": "Roxas",
+        "Line": "If we ran, I bet we could always be together."
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "But we have nowhere to run."
+      },
+      {
+        "Order": 17,
+        "Character": "Roxas",
+        "Line": "Yeah. I guess you're right."
+      },
+      {
+        "Order": 18,
+        "Character": "Axel",
+        "Line": "What's important isn't that we hang out with each other every day-"
+      },
+      {
+        "Order": 19,
+        "Character": "Xion",
+        "Line": "As long as we keep each other in our thoughts, we'll never be apart, right? We've got it memorized, Axel."
+      },
+      {
+        "Order": 20,
+        "Character": "Axel",
+        "Line": "Good."
+      },
+      {
+        "Order": 21,
+        "Character": "Xion",
+        "Line": "I'll have these moments memorized for a long time. Forever."
+      },
+      {
+        "Order": 22,
+        "Character": "Roxas",
+        "Line": "Me too. Forever..."
       }
     ],
     "Day 352; Riku's Resolve": [
       {
         "Order": 0,
         "Character": "Naminé",
-        "Line": "Sora...Yes."
+        "Line": "Sora..."
       },
       {
         "Order": 1,
         "Character": "Ansem the Wise",
-        "Line": "It appears we've come to a standstill. This has gone on long enough. Riku...I think you know what needs to be done."
+        "Line": "It appears we've come to a standstill."
       },
       {
         "Order": 2,
+        "Character": "Naminé",
+        "Line": "Yes."
+      },
+      {
+        "Order": 3,
+        "Character": "Ansem the Wise",
+        "Line": "This has gone on long enough. Riku... I think you know what needs to be done."
+      },
+      {
+        "Order": 4,
         "Character": "Riku",
         "Line": "Right."
       }
@@ -906,151 +3931,831 @@
       {
         "Order": 0,
         "Character": "Saïx",
-        "Line": "Looks like you've meddled again. The Organization doesn't need both of them. Just one will suffice. Stop pretending. Think about that."
+        "Line": "Looks like you've meddled again."
       },
       {
         "Order": 1,
         "Character": "Axel",
         "Line": "Sorry, did you say something?"
+      },
+      {
+        "Order": 2,
+        "Character": "Saïx",
+        "Line": "The Organization doesn't need both of them. Just one will suffice. Stop pretending. Think about that."
       }
     ],
     "Day 353; Resolve": [
       {
         "Order": 0,
         "Character": "Xigbar",
-        "Line": "Ha ha ha! What a blast from the past. Of all the faces... Why do I look at her and see yours? Why is it that you always have to glare at me like that? Huh? I'll give him that. Can't toss the blame around. She flew the coop. Flamesilocks here couldn't trouble himself to clip her wings. Your friend sat there sucking his thumb while Xion walked right off. ...I'm going back to my room."
+        "Line": "Ha ha ha! What a blast from the past."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Xion, stop! What are you doing? But...you'd be...The old man needs to get his eye checked. She just got away. Nothing, really. It's just like Xigbar said. I just sat there sucking my thumb watching Xion run away. Xion is like a mirror that reflects you. Xion is a puppet, created to duplicate your powers. She's a mirror that reflects you. And when I looked in the mirror... It wasn't you I saw. That's not what I mean. It was only a matter of time before someone broke the mirror. Roxas, if somebody doesn't---then you won't be you anymore. That's not it. You're missing the whole point, Roxas. Roxas! I wish you'd understand, Roxas..."
+        "Line": "Xion, stop!"
       },
       {
         "Order": 2,
-        "Character": "Xion",
-        "Line": "Shut up! I'm sorry, Axel. Please...let me go. I have to do this, or else--- Just look. Please, Axel. You have to take care of Roxas. Please! Thank you, Axel. Riku! Yes, I certainly did. I'm on the verge of losing everything I care about. So please... Please Riku, tell me what I should do now. Naminé? What's she like? All right. Thanks, Riku. Good-bye..."
+        "Character": "Xigbar",
+        "Line": "Of all the faces... Why do I look at her and see yours? Why is it that you always have to glare at me like that?"
       },
       {
         "Order": 3,
-        "Character": "Saïx",
-        "Line": "Explain yourself, Axel. And now we're left with the one we can't use..."
+        "Character": "Xion",
+        "Line": "Shut up!"
       },
       {
         "Order": 4,
-        "Character": "Roxas",
-        "Line": "Did something happen? Where's Xion? Huh? What does he mean, Axel? What happened out there? \"Nothing\"? Xion's gone! How can that be nothing? I'm asking you WHY you did that, and you know it! You're not making any sense. Are you nuts? Xion's a person, not a puppet. Xion is Xion. You can't expect her to be me. You mean...they have to destroy her!? Answer me! I'll always be me! I'm still your best friend---just like Xion is my best friend! Forget this."
+        "Character": "Xigbar",
+        "Line": "Huh?"
       },
       {
         "Order": 5,
+        "Character": "Xion",
+        "Line": "I'm sorry, Axel."
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "What are you doing?"
+      },
+      {
+        "Order": 7,
+        "Character": "Xion",
+        "Line": "Please... let me go. I have to do this, or else- Just look."
+      },
+      {
+        "Order": 8,
+        "Character": "Xion",
+        "Line": "Please, Axel. You have to take care of Roxas."
+      },
+      {
+        "Order": 9,
+        "Character": "Axel",
+        "Line": "But... you'd be..."
+      },
+      {
+        "Order": 10,
+        "Character": "Xion",
+        "Line": "Please! Thank you, Axel."
+      },
+      {
+        "Order": 11,
+        "Character": "Saïx",
+        "Line": "Explain yourself, Axel."
+      },
+      {
+        "Order": 12,
+        "Character": "Axel",
+        "Line": "The old man needs to get his eye checked. She just got away."
+      },
+      {
+        "Order": 13,
+        "Character": "Xigbar",
+        "Line": "I'll give him that. Can't toss the blame around."
+      },
+      {
+        "Order": 14,
+        "Character": "Saïx",
+        "Line": "And now we're left with the one we can't use..."
+      },
+      {
+        "Order": 15,
+        "Character": "Roxas",
+        "Line": "Did something happen? Where's Xion?"
+      },
+      {
+        "Order": 16,
+        "Character": "Xigbar",
+        "Line": "She flew the coop. Flamesilocks here couldn't trouble himself to clip her wings."
+      },
+      {
+        "Order": 17,
+        "Character": "Roxas",
+        "Line": "Huh? What does he mean, Axel?"
+      },
+      {
+        "Order": 18,
+        "Character": "Xigbar",
+        "Line": "Your friend sat there sucking his thumb while Xion walked right off... I'm going back to my room."
+      },
+      {
+        "Order": 19,
+        "Character": "Roxas",
+        "Line": "What happened out there?"
+      },
+      {
+        "Order": 20,
+        "Character": "Axel",
+        "Line": "Nothing, really."
+      },
+      {
+        "Order": 21,
+        "Character": "Roxas",
+        "Line": "\"Nothing\"? Xion's gone! How can that be nothing?"
+      },
+      {
+        "Order": 22,
+        "Character": "Axel",
+        "Line": "It's just like Xigbar said. I just sat there sucking my thumb watching Xion run away."
+      },
+      {
+        "Order": 23,
+        "Character": "Roxas",
+        "Line": "I'm asking you WHY you did that, and you know it!"
+      },
+      {
+        "Order": 24,
+        "Character": "Axel",
+        "Line": "Xion is like a mirror that reflects you."
+      },
+      {
+        "Order": 25,
+        "Character": "Roxas",
+        "Line": "You're not making any sense."
+      },
+      {
+        "Order": 26,
+        "Character": "Axel",
+        "Line": "Xion is a puppet, created to duplicate your powers."
+      },
+      {
+        "Order": 27,
+        "Character": "Roxas",
+        "Line": "Are you nuts? Xion's a person, not a puppet."
+      },
+      {
+        "Order": 28,
+        "Character": "Axel",
+        "Line": "She's a mirror that reflects you. And when I looked in the mirror... It wasn't you I saw."
+      },
+      {
+        "Order": 29,
+        "Character": "Roxas",
+        "Line": "Xion is Xion. You can't expect her to be me."
+      },
+      {
+        "Order": 30,
+        "Character": "Axel",
+        "Line": "That's not what I mean. It was only a matter of time before someone broke the mirror."
+      },
+      {
+        "Order": 31,
+        "Character": "Roxas",
+        "Line": "You mean... they have to destroy her!? Answer me!"
+      },
+      {
+        "Order": 32,
+        "Character": "Axel",
+        "Line": "Roxas, if somebody doesn't- then you won't be you anymore."
+      },
+      {
+        "Order": 33,
+        "Character": "Roxas",
+        "Line": "I'll always be me! I'm still your best friend- just like Xion is my best friend!"
+      },
+      {
+        "Order": 34,
+        "Character": "Axel",
+        "Line": "That's not it. You're missing the whole point, Roxas."
+      },
+      {
+        "Order": 35,
+        "Character": "Roxas",
+        "Line": "Forget this."
+      },
+      {
+        "Order": 36,
+        "Character": "Axel",
+        "Line": "Roxas! I wish you'd understand, Roxas..."
+      },
+      {
+        "Order": 37,
+        "Character": "Xion",
+        "Line": "Riku!"
+      },
+      {
+        "Order": 38,
         "Character": "Riku",
-        "Line": "Did you find the answer? Go to Twilight Town. You'll find a girl there named Naminé. You'll find out. I don't think you'll have trouble finding her."
+        "Line": "Did you find the answer?"
+      },
+      {
+        "Order": 39,
+        "Character": "Xion",
+        "Line": "Yes, I certainly did. I'm on the verge of losing everything I care about. So please... Please Riku, tell me what I should do now."
+      },
+      {
+        "Order": 40,
+        "Character": "Riku",
+        "Line": "Go to Twilight Town. You'll find a girl there named Naminé."
+      },
+      {
+        "Order": 41,
+        "Character": "Xion",
+        "Line": "Naminé? What's she like?"
+      },
+      {
+        "Order": 42,
+        "Character": "Riku",
+        "Line": "You'll find out. I don't think you'll have trouble finding her."
+      },
+      {
+        "Order": 43,
+        "Character": "Xion",
+        "Line": "All right. Thanks, Riku. Good-bye..."
       }
     ],
     "Day 354; Truth": [
       {
         "Order": 0,
         "Character": "Xemnas",
-        "Line": "Xion has disappeared yet again. \"It\"---not \"she\"---is a replica, merely a puppet. Hmm. The purpose was to take a piece of the Keyblade wielder's memory and copy it, thus making his powers our own. This was one of several projects of ours being undertaken at Castle Oblivion. However, our efforts were severely derailed by Vexen's untimely demise. Needless to say, losing Vexen was not part of our plans. We were also caught off guard when this particular replica we called Xion formed an identity of its own. Whatever the puppet may decide to do, we can be certain it will no longer have an impact on our plans. Still, it knows our secrets. We need to shorten the leash. Perhaps even tighten it. Axel. The onus is on you to capture and bring back Xion. The escape was on your watch. I will overlook any nicks or scratches. Just ensure she still functions on arrival. Are we clear, Axel? Dismissed."
+        "Line": "Xion has disappeared yet again."
       },
       {
         "Order": 1,
         "Character": "Xaldin",
-        "Line": "Do we know where she has headed? Perhaps you'd care to enlighten us about this pet project of yours. Why would you allow a deserter back? We should simply eradicate her! Bring her back alive? It's sheer madness."
+        "Line": "Do we know where she has headed?"
       },
       {
         "Order": 2,
-        "Character": "Luxord",
-        "Line": "A puppet? What does that mean exactly? If only the whispers at the top carried to the bottom... Heh."
+        "Character": "Xemnas",
+        "Line": "\"It\"- not \"she\"- is a replica, merely a puppet."
       },
       {
         "Order": 3,
-        "Character": "Saïx",
-        "Line": "A puppet is a puppet. No one at Castle Oblivion ever reported any instance where a replica formed its own identity. Do you concur, Axel? It is not a \"deserter.\" It is just a flawed specimen that has wandered out. Axel. Those orders were absolute. Still here, Roxas? Proceed with your mission. A puppet couldn't be part of the Organization. Just count the seats here. We have and always will be thirteen."
+        "Character": "Luxord",
+        "Line": "A puppet? What does that mean exactly?"
       },
       {
         "Order": 4,
-        "Character": "Xigbar",
-        "Line": "Talking about the Replica Program, isn't it obvious? So now, we just sweep it up, huh? As if."
+        "Character": "Saïx",
+        "Line": "A puppet is a puppet."
       },
       {
         "Order": 5,
-        "Character": "Demyx",
-        "Line": "The what-ca? All this time, I've been talking to a puppet..."
+        "Character": "Xigbar",
+        "Line": "Talking about the Replica Program, isn't it obvious?"
       },
       {
         "Order": 6,
-        "Character": "Roxas",
-        "Line": "What exactly do you---Xion is...she's not a puppet Axel! Maybe it's best if Xion never comes back to the Organization. Do you really have to do what Xemnas says? In that case...can you at least try not to harm her? Dangerous? Not yet...How long have you known about her? Could it be... that you've known about her for a long time, and not told me anything?"
+        "Character": "Demyx",
+        "Line": "The what-ca?"
       },
       {
         "Order": 7,
+        "Character": "Xaldin",
+        "Line": "Perhaps you'd care to enlighten us about this pet project of yours."
+      },
+      {
+        "Order": 8,
+        "Character": "Xemnas",
+        "Line": "Hmm. The purpose was to take a piece of the Keyblade wielder's memory and copy it, thus making his powers our own. This was one of several projects of ours being undertaken at Castle Oblivion. However, our efforts were severely derailed by Vexen's untimely demise. Needless to say, losing Vexen was not part of our plans. We were also caught off guard when this particular replica we called Xion formed an identity of its own."
+      },
+      {
+        "Order": 9,
+        "Character": "Saïx",
+        "Line": "No one at Castle Oblivion ever reported any instance where a replica formed its own identity. Do you concur, Axel?"
+      },
+      {
+        "Order": 10,
+        "Character": "Xemnas",
+        "Line": "Whatever the puppet may decide to do, we can be certain it will no longer have an impact on our plans. Still, it knows our secrets. We need to shorten the leash. Perhaps even tighten it."
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "What exactly do you-"
+      },
+      {
+        "Order": 12,
+        "Character": "Xemnas",
+        "Line": "Axel. The onus is on you to capture and bring back Xion. The escape was on your watch. I will overlook any nicks or scratches. Just ensure she still functions on arrival."
+      },
+      {
+        "Order": 13,
+        "Character": "Xaldin",
+        "Line": "Why would you allow a deserter back? We should simply eradicate her!"
+      },
+      {
+        "Order": 14,
+        "Character": "Saïx",
+        "Line": "It is not a \"deserter.\" It is just a flawed specimen that has wandered out."
+      },
+      {
+        "Order": 15,
+        "Character": "Xemnas",
+        "Line": "Are we clear, Axel? Dismissed."
+      },
+      {
+        "Order": 16,
+        "Character": "Xaldin",
+        "Line": "Bring her back alive? It's sheer madness."
+      },
+      {
+        "Order": 17,
+        "Character": "Demyx",
+        "Line": "All this time, I've been talking to a puppet..."
+      },
+      {
+        "Order": 18,
+        "Character": "Xigbar",
+        "Line": "So now, we just sweep it up, huh? As if."
+      },
+      {
+        "Order": 19,
+        "Character": "Luxord",
+        "Line": "If only the whispers at the top carried to the bottom... Heh."
+      },
+      {
+        "Order": 20,
+        "Character": "Saïx",
+        "Line": "Axel. Those orders were absolute. Still here, Roxas? Proceed with your mission."
+      },
+      {
+        "Order": 21,
+        "Character": "Roxas",
+        "Line": "Xion is... she's not a puppet."
+      },
+      {
+        "Order": 22,
+        "Character": "Saïx",
+        "Line": "A puppet couldn't be part of the Organization. Just count the seats here. We have and always will be thirteen."
+      },
+      {
+        "Order": 23,
+        "Character": "Roxas",
+        "Line": "Axel! Maybe it's best if Xion never comes back to the Organization. Do you really have to do what Xemnas says?"
+      },
+      {
+        "Order": 24,
         "Character": "Axel",
-        "Line": "If I don't, they'll eradicate me next. That's up to her. Roxas... Xion is dangerous. Have you got all your strength back?"
+        "Line": "If I don't, they'll eradicate me next."
+      },
+      {
+        "Order": 25,
+        "Character": "Roxas",
+        "Line": "In that case... can you at least try not to harm her?"
+      },
+      {
+        "Order": 26,
+        "Character": "Axel",
+        "Line": "That's up to her. Roxas... Xion is dangerous."
+      },
+      {
+        "Order": 27,
+        "Character": "Roxas",
+        "Line": "Dangerous?"
+      },
+      {
+        "Order": 28,
+        "Character": "Axel",
+        "Line": "Have you got all your strength back?"
+      },
+      {
+        "Order": 29,
+        "Character": "Roxas",
+        "Line": "Not yet... How long have you known about her? Could it be... that you've known about her for a long time, and not told me anything?"
       }
     ],
     "Day 354; The King and Riku Reunited": [
       {
         "Order": 0,
-        "Character": "Mickey",
-        "Line": "Riku! Gosh, have I been worried about you! Where've you been all this time? The way you looked---And Sora... Did something go wrong with fixing all his memories? You know, you and me were both looking into what the Organization was up to, but what I saw didn't look like much. Almost like they're trying to buy some time...Huh? Well, then you have to let me help! Maybe I could get the memories back! What would that be? Riku...I promise, Riku."
+        "Character": "King Mickey",
+        "Line": "Riku!"
       },
       {
         "Order": 1,
         "Character": "Riku",
-        "Line": "Your Majesty. I've been...searching for a way to conquer the darkness within me while we wait for Sora to awaken. You don't have to worry about me. I'm getting the hang of keeping the darkness under control. There's a reason the Organization's been quiet since our battle at Castle Oblivion. And now I know it's not because a depletion in members had made them weak. Taking Sora's memory apart piece by piece was only the first step in what they were trying to do at Castle Oblivion. And I think they needed more time to fix his memory. Right. Sora's memories are what they're after. And they needed all this time until now to absorb every piece of it. The process of putting his memory back together has gone nowhere... They have what's most precious to Sora...his memories of Kairi. I've got that covered, Your Maj---I mean, Mickey. Instead, I want to ask you for a favor. I have to face one of the Organization's members soon. I might not survive the fight. And if I do, it might be because I gave in to the darkness. That means you're the only one who will be there for Sora, Donald, and Goofy---the only one who can guide them when they awaken. Promise me, Mickey. When our friends wake up, you have to be there to help them out."
+        "Line": "Your Majesty."
+      },
+      {
+        "Order": 2,
+        "Character": "King Mickey",
+        "Line": "Gosh, have I been worried about you! Where've you been all this time?"
+      },
+      {
+        "Order": 3,
+        "Character": "Riku",
+        "Line": "I've been... searching for a way to conquer the darkness within me while we wait for Sora to awaken."
+      },
+      {
+        "Order": 4,
+        "Character": "King Mickey",
+        "Line": "The way you looked-"
+      },
+      {
+        "Order": 5,
+        "Character": "Riku",
+        "Line": "You don't have to worry about me. I'm getting the hang of keeping the darkness under control."
+      },
+      {
+        "Order": 6,
+        "Character": "King Mickey",
+        "Line": "And Sora... Did something go wrong with fixing all his memories?"
+      },
+      {
+        "Order": 7,
+        "Character": "Riku",
+        "Line": "There's a reason the Organization's been quiet since our battle at Castle Oblivion. And now I know it's not because a depletion in members had made them weak. Taking Sora's memory apart piece by piece was only the first step in what they were trying to do at Castle Oblivion. And I think they needed more time to fix his memory."
+      },
+      {
+        "Order": 8,
+        "Character": "King Mickey",
+        "Line": "You know, you and me were both looking into what the Organization was up to, but what I saw didn't look like much. Almost like they're trying to buy some time..."
+      },
+      {
+        "Order": 9,
+        "Character": "Riku",
+        "Line": "Right. Sora's memories are what they're after. And they needed all this time until now to absorb every piece of it."
+      },
+      {
+        "Order": 10,
+        "Character": "King Mickey",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 11,
+        "Character": "Riku",
+        "Line": "The process of putting his memory back together has gone nowhere... They have what's most precious to Sora... his memories of Kairi."
+      },
+      {
+        "Order": 12,
+        "Character": "King Mickey",
+        "Line": "Well, then you have to let me help! Maybe I could get the memories back!"
+      },
+      {
+        "Order": 13,
+        "Character": "Riku",
+        "Line": "I've got that covered, Your Maj- I mean, Mickey. Instead, I want to ask you for a favor."
+      },
+      {
+        "Order": 14,
+        "Character": "King Mickey",
+        "Line": "What would that be?"
+      },
+      {
+        "Order": 15,
+        "Character": "Riku",
+        "Line": "I have to face one of the Organization's members soon. I might not survive the fight. And if I do, it might be because I gave in to the darkness. That means you're the only one who will be there for Sora, Donald, and Goofy- the only one who can guide them when they awaken."
+      },
+      {
+        "Order": 16,
+        "Character": "King Mickey",
+        "Line": "Riku..."
+      },
+      {
+        "Order": 17,
+        "Character": "Riku",
+        "Line": "Promise me, Mickey. When our friends wake up, you have to be there to help them out."
+      },
+      {
+        "Order": 18,
+        "Character": "King Mickey",
+        "Line": "I promise, Riku."
       }
     ],
     "Day 355; Unsaid, Unheard": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Xion... Replica Program... Xion was a puppet made to replicate my powers---the Keyblade's powers... When Xion left the Organization, Axel didn't stop her. Like he wanted her to go. Axel's probably known about Xion for some time now, but has kept it from me. Xion and I are both special Nobodies. Xion was a replica. A puppet. What about me? Am I a puppet, too? Xemnas said...Sora was what connects her and me. But who is Sora? And who am I...supposed to be? Axel... If he's hiding things from me about Xion, what could he be hiding about me? Axel. Did you find Xion yet? I suppose not... Have you known...about Xion this whole time? Since when then? Didn't get it memorized, huh? Axel... Who am I, really? I'm special, like Xion. I know that. But the Organization wanted me out of the picture. Am I right? I guess it's 'cause Xion copied my powers, and the Keyblade's powers, and they didn't need me anymore. And Axel, I guess you felt the same way. Best friends are supposed to be honest with each other! Who am I, Axel? Xemnas says me and Xion are connected to each other through Sora. I don't even know a Sora! Am I a puppet like Xion? Then why d— What makes you so sure about that? I have the right to know the truth! How did I even get here? Why am I so special? Where did I learn how to use the Keyblade? I hardly know who I am! What is so wrong with wanting some answers!? I need to know, Axel. Please... Who am I? I don't. I can't. Somebody knows where I came from. If I can't get answers here, I'll get them somewhere else. That'll be the person...I trust. I tried... But I have to find out about myself. There's no reason for me to be here...anymore. Why did the Keyblade choose me? I have to know. No one would miss me."
+        "Line": "Xion... Replica Program... Xion was a puppet made to replicate my powers- the Keyblade's powers... When Xion left the Organization, Axel didn't stop her. Like he wanted her to go. Axel's probably known about Xion for some time now, but has kept it from me. Xion and I are both special Nobodies. Xion was a replica. A puppet. What about me? Am I a puppet, too? Xemnas said... Sora was what connects her and me. But who is Sora? And who am I... supposed to be? Axel... If he's hiding things from me about Xion, what could he be hiding about me? Axel."
       },
       {
         "Order": 1,
         "Character": "Axel",
-        "Line": "Hey, Roxas. You know it isn't gonna be that easy. No, not the whole time. Uhhh... I can't exactly remember when. Yeah... They did. You're wrong there. You'll always be...my best friend. You're different from Xion. Finding out the truth doesn't always work out for the best. Roxas...You've just gotta trust me, Roxas. Roxas...Your mind's made up? You can't turn on the Organization! You get on their bad side, and they'll destroy you! That's not true. I would."
+        "Line": "Hey, Roxas."
+      },
+      {
+        "Order": 2,
+        "Character": "Roxas",
+        "Line": "Did you find Xion yet?"
+      },
+      {
+        "Order": 3,
+        "Character": "Axel",
+        "Line": "You know it isn't gonna be that easy."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "I suppose not... Have you known... about Xion this whole time?"
+      },
+      {
+        "Order": 5,
+        "Character": "Axel",
+        "Line": "No, not the whole time."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Since when then?"
+      },
+      {
+        "Order": 7,
+        "Character": "Axel",
+        "Line": "Uhhh... I can't exactly remember when."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "Didn't get it memorized, huh? Axel... Who am I, really?"
+      },
+      {
+        "Order": 9,
+        "Character": "Roxas",
+        "Line": "I'm special, like Xion. I know that. But the Organization wanted me out of the picture. Am I right?"
+      },
+      {
+        "Order": 10,
+        "Character": "Axel",
+        "Line": "Yeah... They did."
+      },
+      {
+        "Order": 11,
+        "Character": "Roxas",
+        "Line": "I guess it's 'cause Xion copied my powers, and the Keyblade's powers, and they didn't need me anymore. And Axel, I guess you felt the same way."
+      },
+      {
+        "Order": 12,
+        "Character": "Axel",
+        "Line": "You're wrong there. You'll always be... my best friend."
+      },
+      {
+        "Order": 13,
+        "Character": "Roxas",
+        "Line": "Best friends are supposed to be honest with each other! Who am I, Axel? Xemnas says me and Xion are connected to each other through Sora. I don't even know a Sora! Am I a puppet like Xion?"
+      },
+      {
+        "Order": 14,
+        "Character": "Axel",
+        "Line": "You're different from Xion."
+      },
+      {
+        "Order": 15,
+        "Character": "Roxas",
+        "Line": "Then why d-"
+      },
+      {
+        "Order": 16,
+        "Character": "Axel",
+        "Line": "Finding out the truth doesn't always work out for the best."
+      },
+      {
+        "Order": 17,
+        "Character": "Roxas",
+        "Line": "What makes you so sure about that? I have the right to know the truth! How did I even get here? Why am I so special? Where did I learn how to use the Keyblade? I hardly know who I am! What is so wrong with wanting some answers!?"
+      },
+      {
+        "Order": 18,
+        "Character": "Axel",
+        "Line": "Roxas..."
+      },
+      {
+        "Order": 19,
+        "Character": "Roxas",
+        "Line": "I need to know, Axel. Please... Who am I?"
+      },
+      {
+        "Order": 20,
+        "Character": "Axel",
+        "Line": "You've just gotta trust me, Roxas."
+      },
+      {
+        "Order": 21,
+        "Character": "Roxas",
+        "Line": "I don't. I can't."
+      },
+      {
+        "Order": 22,
+        "Character": "Axel",
+        "Line": "Roxas..."
+      },
+      {
+        "Order": 23,
+        "Character": "Roxas",
+        "Line": "Somebody knows where I came from. If I can't get answers here, I'll get them somewhere else. That'll be the person... I trust. I tried... But I have to find out about myself. There's no reason for me to be here... anymore."
+      },
+      {
+        "Order": 24,
+        "Character": "Axel",
+        "Line": "Your mind's made up?"
+      },
+      {
+        "Order": 25,
+        "Character": "Roxas",
+        "Line": "Why did the Keyblade choose me? I have to know."
+      },
+      {
+        "Order": 26,
+        "Character": "Axel",
+        "Line": "You can't turn on the Organization! You get on their bad side, and they'll destroy you!"
+      },
+      {
+        "Order": 27,
+        "Character": "Roxas",
+        "Line": "No one would miss me."
+      },
+      {
+        "Order": 28,
+        "Character": "Axel",
+        "Line": "That's not true. I would."
       }
     ],
     "Day 356; Xion and Naminé": [
       {
         "Order": 0,
         "Character": "Naminé",
-        "Line": "Nice to meet you...Xion. Yes. What do you want to do? You're not Sora, and you're not Roxas. You're Kairi as Sora remembers her. So you're going back to Sora? If you return your memories to him, then you will disappear. In exchange for not having your own memory, you're connected through other's memories. So when you disappear, no one will remember you. There won't be any \"you\" to remember. For all the powers I possess, I can't keep even one piece of the memory called \"you\" connected. I know. Roxas can't feel Sora just yet...All right. Well, if you're ready, let's go see Sora. Wait! Xion..."
+        "Line": "Nice to meet you... Xion."
       },
       {
         "Order": 1,
         "Character": "Xion",
-        "Line": "Naminé, are you able...to see my face? Then what do you think I should do? Hmm...At first, I just wanted to be with Roxas and Axel forever. But then I started to realize that my memories... Well, these aren't really even mine, are they? Oh... As I remember more of my past, the more I feel the need to go back where I came from... What should I do...to go back? I know. I'm ready. Otherwise I wouldn't be here. I also know that Roxas should be going back with me. But...I don't think he would understand. Not yet. Naminé, will you please watch over Roxas once I'm gone? You won't be alone. I asked someone else, too. There just isn't anything else I can do. Thank you...I can handle this!"
+        "Line": "Naminé, are you able... to see my face?"
       },
       {
         "Order": 2,
+        "Character": "Naminé",
+        "Line": "Yes."
+      },
+      {
+        "Order": 3,
+        "Character": "Xion",
+        "Line": "Then what do you think I should do?"
+      },
+      {
+        "Order": 4,
+        "Character": "Naminé",
+        "Line": "What do you want to do?"
+      },
+      {
+        "Order": 5,
+        "Character": "Xion",
+        "Line": "Hmm... At first, I just wanted to be with Roxas and Axel forever. But then I started to realize that my memories... Well, these aren't really even mine, are they?"
+      },
+      {
+        "Order": 6,
+        "Character": "Naminé",
+        "Line": "You're not Sora, and you're not Roxas. You're Kairi as Sora remembers her."
+      },
+      {
+        "Order": 7,
+        "Character": "Xion",
+        "Line": "Oh... As I remember more of my past, the more I feel the need to go back where I came from... What should I do... to go back?"
+      },
+      {
+        "Order": 8,
+        "Character": "Naminé",
+        "Line": "So you're going back to Sora? If you return your memories to him, then you will disappear. In exchange for not having your own memory, you're connected through other's memories. So when you disappear, no one will remember you. There won't be any \"you\" to remember. For all the powers I possess, I can't keep even one piece of the memory called \"you\" connected."
+      },
+      {
+        "Order": 9,
+        "Character": "Xion",
+        "Line": "I know. I'm ready. Otherwise I wouldn't be here. I also know that Roxas should be going back with me. But... I don't think he would understand. Not yet."
+      },
+      {
+        "Order": 10,
+        "Character": "Naminé",
+        "Line": "I know. Roxas can't feel Sora just yet..."
+      },
+      {
+        "Order": 11,
+        "Character": "Xion",
+        "Line": "Naminé, will you please watch over Roxas once I'm gone? You won't be alone. I asked someone else, too. There just isn't anything else I can do."
+      },
+      {
+        "Order": 12,
+        "Character": "Naminé",
+        "Line": "All right."
+      },
+      {
+        "Order": 13,
+        "Character": "Xion",
+        "Line": "Thank you..."
+      },
+      {
+        "Order": 14,
+        "Character": "Naminé",
+        "Line": "Well, if you're ready, let's go see Sora."
+      },
+      {
+        "Order": 15,
         "Character": "Ansem the Wise",
         "Line": "Naminé, it's them! The Organization has found us! They're almost here! This blasted puppet led them right to our doorstep! See what you get for trusting it?"
+      },
+      {
+        "Order": 16,
+        "Character": "Xion",
+        "Line": "I can handle this!"
+      },
+      {
+        "Order": 17,
+        "Character": "Naminé",
+        "Line": "Wait! Xion..."
       }
     ],
     "Day 356; Place to Belong": [
       {
         "Order": 0,
         "Character": "Axel",
-        "Line": "Why do I always get stuck with the icky jobs? Xion...what are you gonna do? Well, to be honest, I always felt that was best, right from the very beginning. But you know, it still really bugs me. Something about this just stinks. But how do you know that? Everybody thinks they're right...They're gonna destroy you! What's your problem? You both...think you can do whatever you want. Well, I'm sick of it. Go on, you just keep running. But I'll always be there to bring you back! Why you gotta cause me so much trouble..."
+        "Line": "Why do I always get stuck with the icky jobs?"
       },
       {
         "Order": 1,
         "Character": "Xion",
-        "Line": "Axel...I've decided that I have to go back to where I belong. It's for the good of everyone. This is right. Please don't hold back, Axel. Promise."
+        "Line": "Axel..."
+      },
+      {
+        "Order": 2,
+        "Character": "Axel",
+        "Line": "Xion... what are you gonna do?"
+      },
+      {
+        "Order": 3,
+        "Character": "Xion",
+        "Line": "I've decided that I have to go back to where I belong."
+      },
+      {
+        "Order": 4,
+        "Character": "Axel",
+        "Line": "Well, to be honest, I always felt that was best, right from the very  beginning. But you know, it still really bugs me. Something about this just stinks."
+      },
+      {
+        "Order": 5,
+        "Character": "Xion",
+        "Line": "It's for the good of everyone."
+      },
+      {
+        "Order": 6,
+        "Character": "Axel",
+        "Line": "But how do you know that? Everybody thinks they're right..."
+      },
+      {
+        "Order": 7,
+        "Character": "Xion",
+        "Line": "This is right."
+      },
+      {
+        "Order": 8,
+        "Character": "Axel",
+        "Line": "They're gonna destroy you!"
+      },
+      {
+        "Order": 9,
+        "Character": "Xion",
+        "Line": "Please don't hold back, Axel. Promise."
+      },
+      {
+        "Order": 10,
+        "Character": "Axel",
+        "Line": "What's your problem? You both... think you can do whatever you want. Well, I'm sick of it. Go on, you just keep running. But I'll always be there to bring you back! Why you gotta cause me so much trouble..."
       }
     ],
     "Day 357; Tears": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Where did I think I could go? What a joke. Xion! Thank you. Who are you...again? It's weird. I feel like I'm forgetting something  really important. Am I...the one who did this to you? Kingdom Hearts... Free them? No! Xion... Who else will I have ice cream with? Xion."
+        "Line": "Where did I think I could go? What a joke. Xion! Thank you."
       },
       {
         "Order": 1,
         "Character": "Xion",
-        "Line": "Roxas... I'm out of time. Even if I'm not ready...I have to make this choice. You have poured so many memories into me...given me so much...that I feel like I'm about to overflow. Look at me, Roxas. Who do you see? If you see somebody else's face...a boy's face...then that means I'm almost ready. This puppet will have to play her part. Roxas... This is him. It's Sora. You're next, Roxas. I have to make you a part of me, too. Don't you see? This is why I was created. You'll be...better off now...Roxas. No... It was my choice...to go away now. Better that, than to do nothing...and let Xemnas have his way. I belong with Sora. And now, I am going back...to be with him. Roxas...I need you...to do me a favor. All those hearts that I've captured... Kingdom Hearts... Set them free. It's too late...for me to undo my mistakes. But you can't let Xemnas...have Kingdom Hearts. You can't. Good-bye, Roxas. See you again. I'm glad...I got to meet you. Oh...and of course, Axel, too. You're both my best friends. Never forget. That's the truth."
+        "Line": "Roxas... I'm out of time. Even if I'm not ready...I have to make this choice. You have poured so many memories into me... given me so much... that I feel like I'm about to overflow. Look at me, Roxas. Who do you see? If you see somebody else's face... a boy's face... then that means I'm almost ready. This puppet will have to play her part. Roxas... This is him. It's Sora. You're next, Roxas. I have to make you a part of me, too. Don't you see? This is why I was created."
+      },
+      {
+        "Order": 2,
+        "Character": "Roxas",
+        "Line": "Who are you... again? It's weird. I feel like I'm forgetting something  really important."
+      },
+      {
+        "Order": 3,
+        "Character": "Xion",
+        "Line": "You'll be... better off now... Roxas."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "Am I... the one who did this to you?"
+      },
+      {
+        "Order": 5,
+        "Character": "Xion",
+        "Line": "No... It was my choice... to go away now. Better that, than to do nothing... and let Xemnas have his way. I belong with Sora. And now, I am going back... to be with him. Roxas... I need you... to do me a favor. All those hearts that I've captured... Kingdom Hearts... Set them free."
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "Kingdom Hearts... Free them?"
+      },
+      {
+        "Order": 7,
+        "Character": "Xion",
+        "Line": "It's too late... for me to undo my mistakes. But you can't let Xemnas... have Kingdom Hearts. You can't. Good-bye, Roxas. See you again. I'm glad... I got to meet you. Oh... and of course, Axel, too. You're both my best friends. Never forget. That's the truth."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "No! Xion... Who else will I have ice cream with? Xion."
       }
     ],
     "Day 357; WINNER": [
@@ -1064,29 +4769,139 @@
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Who are you? Why are you trying to stop me? Sora!? Enough about Sora! I'll set Kingdom Hearts free! Then everything will be the way it was! She'll come back...and the three of us can be together again! I'm freeing Kingdom Hearts and I'm going to find Sora! I want Xion back. I want my life back! Enough! Shut up! Why don't you quit? Huh? Get real! Look which one of us is winning. What are you talking about? I am me! Nobody else! How many times do I have to beat you? What?"
+        "Line": "Who are you?"
       },
       {
         "Order": 1,
         "Character": "Riku",
-        "Line": "What does it matter? I'm here for you. Because I want back the rest of Sora's memories. Do you have some kind of plan? You mean Xion? It's a struggle just to remember the name now... Either way, I can't let you go doing anything crazy. If you try and make contact with Kingdom Hearts, the last thing you'll get is your life back. The Organization will destroy you. Why!? Why do you have the Keyblade? Come on, Sora. I thought you were stronger than that. So it's true. You really are his Nobody. Guess DiZ was right after all. All right. You've left me with no other choice. I have to release the power in my heart--- the dark power that I've been holding back. Even...if it changes me forever. I have accepted it. DiZ...he could feel Sora. If he had met Sora, things might have been different."
+        "Line": "What does it matter? I'm here for you."
       },
       {
         "Order": 2,
-        "Character": "Xion",
-        "Line": "Riku, please! You have to stop him! Roxas, don't be sad. I came from you and Sora. I am you...the same way that I am Sora. You'll forget me, but the memories themselves will never go away. Memories of you and me will always be together...forever, inside him."
+        "Character": "Roxas",
+        "Line": "Why are you trying to stop me?"
       },
       {
         "Order": 3,
+        "Character": "Riku",
+        "Line": "Because I want back the rest of Sora's memories."
+      },
+      {
+        "Order": 4,
+        "Character": "Roxas",
+        "Line": "Sora!? Enough about Sora!"
+      },
+      {
+        "Order": 5,
+        "Character": "Riku",
+        "Line": "Do you have some kind of plan?"
+      },
+      {
+        "Order": 6,
+        "Character": "Roxas",
+        "Line": "I'll set Kingdom Hearts free! Then everything will be the way it was! She'll come back... and the three of us can be together again!"
+      },
+      {
+        "Order": 7,
+        "Character": "Riku",
+        "Line": "You mean Xion? It's a struggle just to remember the name now... Either way, I can't let you go doing anything crazy."
+      },
+      {
+        "Order": 8,
+        "Character": "Roxas",
+        "Line": "I'm freeing Kingdom Hearts and I'm going to find Sora! I want Xion back. I want my life back!"
+      },
+      {
+        "Order": 9,
+        "Character": "Riku",
+        "Line": "If you try and make contact with Kingdom Hearts, the last thing you'll get is your life back. The Organization will destroy you."
+      },
+      {
+        "Order": 10,
+        "Character": "Roxas",
+        "Line": "Enough!"
+      },
+      {
+        "Order": 11,
+        "Character": "Riku",
+        "Line": "Why!? Why do you have the Keyblade?"
+      },
+      {
+        "Order": 12,
+        "Character": "Roxas",
+        "Line": "Shut up! Why don't you quit?"
+      },
+      {
+        "Order": 13,
+        "Character": "Riku",
+        "Line": "Come on, Sora. I thought you were stronger than that."
+      },
+      {
+        "Order": 14,
+        "Character": "Roxas",
+        "Line": "Huh? Get real! Look which one of us is winning."
+      },
+      {
+        "Order": 15,
+        "Character": "Riku",
+        "Line": "So it's true. You really are his Nobody. Guess DiZ was right after all."
+      },
+      {
+        "Order": 16,
+        "Character": "Roxas",
+        "Line": "What are you talking about? I am me! Nobody else!"
+      },
+      {
+        "Order": 17,
+        "Character": "Xion",
+        "Line": "Riku, please! You have to stop him!"
+      },
+      {
+        "Order": 18,
+        "Character": "Roxas",
+        "Line": "How many times do I have to beat you?"
+      },
+      {
+        "Order": 19,
+        "Character": "Riku",
+        "Line": "All right. You've left me with no other choice."
+      },
+      {
+        "Order": 20,
+        "Character": "Roxas",
+        "Line": "What?"
+      },
+      {
+        "Order": 21,
+        "Character": "Riku",
+        "Line": "I have to release the power in my heart- the dark power that I've been holding back. Even... if it changes me forever. I have accepted it."
+      },
+      {
+        "Order": 22,
+        "Character": "Riku",
+        "Line": "DiZ... he could feel Sora."
+      },
+      {
+        "Order": 23,
         "Character": "Ansem the Wise",
         "Line": "Oh, he told you how he \"felt,\" did he? Ridiculous. A Nobody cannot feel anything. "
+      },
+      {
+        "Order": 24,
+        "Character": "Riku",
+        "Line": "If he had met Sora, things might have been different."
+      },
+      {
+        "Order": 25,
+        "Character": "Xion",
+        "Line": "Roxas, don't be sad. I came from you and Sora. I am you... the same way that I am Sora. You'll forget me, but the memories themselves will never go away. Memories of you and me will always be together... forever, inside him."
       }
     ],
     "Day 359; The First Day": [
       {
         "Order": 0,
         "Character": "Roxas",
-        "Line": "Another dream about him...Maybe...today we'll finally hit the beach! Only seven days to go, and then my summer vacation's over."
+        "Line": "Another dream about him... Maybe... today we'll finally hit the beach! Only seven days to go, and then my summer vacation's over."
       }
     ]
   }
