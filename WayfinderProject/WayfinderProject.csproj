@@ -74,9 +74,6 @@
     <Content Update="wwwroot\data\seed\_worlds.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\data\WayfinderProject.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="wwwroot\images\WFP.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

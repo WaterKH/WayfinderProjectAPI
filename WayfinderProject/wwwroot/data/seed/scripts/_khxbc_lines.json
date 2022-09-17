@@ -11,15 +11,30 @@
       {
         "Order": 0,
         "Character": "Master of Masters",
-        "Line": "So that makes you the indisposable number seven. Come on! It's simple. You six plus me is seven. Wait. Don't tell me I don't count! Here, take it."
+        "Line": "So that makes you the indisposable number seven."
       },
       {
         "Order": 1,
         "Character": "Luxu",
-        "Line": "Huh. No... Uh, um..."
+        "Line": "Huh."
       },
       {
         "Order": 2,
+        "Character": "Master of Masters",
+        "Line": "Come on! It's simple. You six plus me is seven. Wait. Don't tell me I don't count!"
+      },
+      {
+        "Order": 3,
+        "Character": "Luxu",
+        "Line": "No... Uh, um..."
+      },
+      {
+        "Order": 4,
+        "Character": "Master of Masters",
+        "Line": "Here, take it."
+      },
+      {
+        "Order": 5,
         "Character": "Chirithy",
         "Line": "In the Master's playful and mischievous way, he gave his apprentice Luxu a very important role. What seemed like a simple task was the element that would connect all of the events to come. Long, long ago, all the worlds were still one. One day, this would be called the age of fairy tales. It all began here in Daybreak Town. The Master of Masters had an eye that gazes into the future. He bestowed upon five of his six apprentices a copy of the Book of Prophecies, in which was written the events to come."
       }
@@ -28,12 +43,157 @@
       {
         "Order": 0,
         "Character": "Master of Masters",
-        "Line": "So, did you look through the Book? Wow, no quick skim for you, huh? Oh, yeah that. Bummer, huh? By the way, if one day I suddenly disappear, I'm countin' on you to keep the others calm. Okay? Vanish? Dim? Fade? I don't know how to explain it. It's just hypothetical talk. This world is full of light. It's a world comprised of many smaller worlds, all connected, stretching as far as the eye can see. One great light protects us all throughout this vast land. All worlds share one light, one fate. Yep! You're right on the money. People believe that the light that is Kingdom Hearts will be here forever. But if it were to disappear, the world would be enveloped in darkness. No, they're not for protecting Kingdom Hearts. The final passage reads, \"On that fated land, a great war shall transpire. Darkness will prevail and the light expire.\" Nah, not possible. You really think you can change the future? We have to focus on what comes after. There's no use thinking of ways to change events that we know are gonna happen. C'mon, are you telling me that you think the world can be saved by just seven people? Well, if you wanna give it a shot...All righty, good luck!"
+        "Line": "So, did you look through the Book?"
       },
       {
         "Order": 1,
         "Character": "Ira",
-        "Line": "Yes. But I'm still analyzing it. I just prefer to be thorough. Master, is what it says in the last passage true?...Yes. Huh? Dis...appear? Okay...Huh? I take it you're talking about Kingdom Hearts. I understand. And that is why you granted us these Keyblades. With these we can spread the teachings of light, and we can protect Kingdom Hearts from darkness--Huh? Isn't it our duty as Keyblade wielders to prevent this war from taking place? Wha--? Then...what do you want us to do? But, what about all of those who are here now? And the ones who will be here when the darkness finally comes? Are we to abandon all of them? We have to at least try! With enough Keyblade wielders we could--Yes."
+        "Line": "Yes. But I'm still analyzing it."
+      },
+      {
+        "Order": 2,
+        "Character": "Master of Masters",
+        "Line": "Wow, no quick skim for you, huh?"
+      },
+      {
+        "Order": 3,
+        "Character": "Ira",
+        "Line": "I just prefer to be thorough. Master, is what it says in the last passage true?"
+      },
+      {
+        "Order": 4,
+        "Character": "Master of Masters",
+        "Line": "Oh, yeah that. Bummer, huh?"
+      },
+      {
+        "Order": 5,
+        "Character": "Ira",
+        "Line": "... Yes."
+      },
+      {
+        "Order": 6,
+        "Character": "Master of Masters",
+        "Line": "By the way, if one day I suddenly disappear, I'm countin' on you to keep the others calm. Okay?"
+      },
+      {
+        "Order": 7,
+        "Character": "Ira",
+        "Line": "Huh? Dis... appear?"
+      },
+      {
+        "Order": 8,
+        "Character": "Master of Masters",
+        "Line": "Vanish? Dim? Fade? I don't know how to explain it. It's just hypothetical talk."
+      },
+      {
+        "Order": 9,
+        "Character": "Ira",
+        "Line": "Okay..."
+      },
+      {
+        "Order": 10,
+        "Character": "Master of Masters",
+        "Line": "This world is full of light."
+      },
+      {
+        "Order": 11,
+        "Character": "Ira",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 12,
+        "Character": "Master of Masters",
+        "Line": "It's a world comprised of many smaller worlds, all connected, stretching as far as the eye can see. One great light protects us all throughout this vast land. All worlds share one light, one fate."
+      },
+      {
+        "Order": 13,
+        "Character": "Ira",
+        "Line": "I take it you're talking about Kingdom Hearts."
+      },
+      {
+        "Order": 14,
+        "Character": "Master of Masters",
+        "Line": "Yep! You're right on the money. People believe that the light that is Kingdom Hearts will be here forever. But if it were to disappear, the world would be enveloped in darkness."
+      },
+      {
+        "Order": 15,
+        "Character": "Ira",
+        "Line": "I understand. And that is why you granted us these Keyblades. With these we can spread the teachings of light, and we can protect Kingdom Hearts from darkness-"
+      },
+      {
+        "Order": 16,
+        "Character": "Master of Masters",
+        "Line": "No, they're not for protecting Kingdom Hearts."
+      },
+      {
+        "Order": 17,
+        "Character": "Ira",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 18,
+        "Character": "Master of Masters",
+        "Line": "The final passage reads, \"On that fated land, a great war shall transpire. Darkness will prevail and the light expire.\""
+      },
+      {
+        "Order": 19,
+        "Character": "Ira",
+        "Line": "Isn't it our duty as Keyblade wielders to prevent this war from taking place?"
+      },
+      {
+        "Order": 20,
+        "Character": "Master of Masters",
+        "Line": "Nah, not possible."
+      },
+      {
+        "Order": 21,
+        "Character": "Ira",
+        "Line": "Wha-?"
+      },
+      {
+        "Order": 22,
+        "Character": "Master of Masters",
+        "Line": "You really think you can change the future?"
+      },
+      {
+        "Order": 23,
+        "Character": "Ira",
+        "Line": "Then... what do you want us to do?"
+      },
+      {
+        "Order": 24,
+        "Character": "Master of Masters",
+        "Line": "We have to focus on what comes after. There's no use thinking of ways to change events that we know are gonna happen."
+      },
+      {
+        "Order": 25,
+        "Character": "Ira",
+        "Line": "But, what about all of those who are here now? And the ones who will be here when the darkness finally comes? Are we to abandon all of them?"
+      },
+      {
+        "Order": 26,
+        "Character": "Master of Masters",
+        "Line": "C'mon, are you telling me that you think the world can be saved by just seven people?"
+      },
+      {
+        "Order": 27,
+        "Character": "Ira",
+        "Line": "We have to at least try! With enough Keyblade wielders we could-"
+      },
+      {
+        "Order": 28,
+        "Character": "Master of Masters",
+        "Line": "Well, if you wanna give it a shot..."
+      },
+      {
+        "Order": 29,
+        "Character": "Ira",
+        "Line": "Yes."
+      },
+      {
+        "Order": 30,
+        "Character": "Master of Masters",
+        "Line": "All righty, good luck!"
       }
     ],
     "The Foretellers": [
@@ -47,221 +207,1508 @@
       {
         "Order": 0,
         "Character": "Ira",
-        "Line": "There's a traitor among us. I found this sniffing around. So you're telling us that if we see a Nightmare...That's highly unlikely. Do you recall the tool the wielders were given in order to make them stronger? We generally don't concern ourselves with what they have at their disposal. However--I believe those tools were the Nightmare's doing. Collecting is fine. But using that power is the equivalent of using the power of darkness. Seeing as those bangles couldn't have been acquired by just anyone, I believe it's one of us here in this room. That didn't go as expected. A Lost Page... Something's missing from our Book of Prophecies. Each of our copies were said to contain the events of the future. But this incident, well, it's nowhere to be found. Like I said, it's nowhere to be found...in my Book. There is something going on, and a page is suspiciously missing from the Book. It's not so far-fetched to assume that the one who has the Lost Page has been turned, that they have fallen into the hands of darkness. Trust me. We have no way of knowing. The Master is gone."
+        "Line": "There's a traitor among us."
       },
       {
         "Order": 1,
         "Character": "Invi",
-        "Line": "Are you certain? What proof do you have? Is that...a Nightmare? Someone has fallen into darkness. Unfortunately, there are countless wielders in our Unions. It would be easy for any of us to summon a Chirithy that isn't a Nightmare. I'm afraid that your suggestion wouldn't help us get to the bottom of this. No, Ira. I respectfully disagree. What proof do we have that the bangles are tied to the power of darkness, or if a Nightmare is to blame? We shouldn't simply jump to conclusions. Aced, that's quite enough. Wait. Where do you think you're going? What's wrong, Ira? This isn't like you. And how does this whole thing with the traitor tie together? Ira. Are you implying that someone is in possession of the missing page? And the person with the complete Book is the traitor? There seems to be no record of it in my Book either. You may be onto something. I wonder... Could this have been the Master's plan all along? To grant the Lost Page to only one of us."
+        "Line": "Are you certain? What proof do you have?"
       },
       {
         "Order": 2,
-        "Character": "Ava",
-        "Line": "Is that...a dark Chirithy? Master, did you make this? It's so cute! Okay! No! I won't let you do that! Maybe you can growl at them? Yeah, in that case, who's to say that the Nightmare you saw belongs to one of us? It could belong to anyone in our Unions. The bangles? I know when they're equipped, they have the power to collect dark energy, but I thought we all agreed that was okay. Oh, no. Everyone's already equipped their bangles. I hope... I hope we can all resolve this soon..."
+        "Character": "Ira",
+        "Line": "I found this sniffing around."
       },
       {
         "Order": 3,
-        "Character": "Master of Masters",
-        "Line": "Well, things are gonna get pretty hectic around here soon. But this Spirit Chirithy is gonna make your lives much easier! Hopefully. You could say they're like cats or dogs. And they'll be your loyal pets. Every wielder will have one of these adorable little guys at their side. They're here to help, so play nice! Oh, right, before I forget...If a wielder is overcome by malice--or rather, if their heart is tainted by darkness--their adorable little Spirit will turn dark and become a Nightmare. Exactly. And if you don't stop this renegade Spirit, it'll plant darkness in the hearts of others and you'll have an army of Nightmares on your hands. Beware. Come on, Aced. You won't know if it works unless you try."
+        "Character": "Ava",
+        "Line": "Is that... a dark Chirithy?"
       },
       {
         "Order": 4,
-        "Character": "Gula",
-        "Line": "Spirit? No wonder you ended up as the bear. You're scary. There's an easy way to solve this. If we all summon our Spirits, then we'll know. It's a brilliant plan. Everyone knows that all Spirits look the same, and wielders exist in spades. There's no way to tell. I think we're done here. I trust you'll keep us all updated."
+        "Character": "Invi",
+        "Line": "Is that... a Nightmare?"
       },
       {
         "Order": 5,
+        "Character": "Ava",
+        "Line": "Master, did you make this? It's so cute!"
+      },
+      {
+        "Order": 6,
+        "Character": "Master of Masters",
+        "Line": "Well, things are gonna get pretty hectic around here soon. But this Spirit Chirithy is gonna make your lives much easier! Hopefully."
+      },
+      {
+        "Order": 7,
+        "Character": "Gula",
+        "Line": "Spirit?"
+      },
+      {
+        "Order": 8,
+        "Character": "Master of Masters",
+        "Line": "You could say they're like cats or dogs. And they'll be your loyal pets. Every wielder will have one of these adorable little guys at their side. They're here to help, so play nice!"
+      },
+      {
+        "Order": 9,
+        "Character": "Ava",
+        "Line": "Okay!"
+      },
+      {
+        "Order": 10,
+        "Character": "Master of Masters",
+        "Line": "Oh, right, before I forget... If a wielder is overcome by malice- or rather, if their heart is tainted by darkness- their adorable little Spirit will turn dark and become a Nightmare."
+      },
+      {
+        "Order": 11,
+        "Character": "Ira",
+        "Line": "So you're telling us that if we see a Nightmare..."
+      },
+      {
+        "Order": 12,
+        "Character": "Invi",
+        "Line": "Someone has fallen into darkness."
+      },
+      {
+        "Order": 13,
+        "Character": "Master of Masters",
+        "Line": "Exactly. And if you don't stop this renegade Spirit, it'll plant darkness in the hearts of others and you'll have an army of Nightmares on your hands. Beware."
+      },
+      {
+        "Order": 14,
         "Character": "Aced",
-        "Line": "So, if we see one of these Nightmares anywhere, we have to get rid of it on the spot. Your point? Hmm...Don't insult me! Please tell me you're joking. It's not me. So what now? How do we find out who's behind this? Ira. Some leader you are. You've managed to plant seeds of doubt in all of us with that speech. What? Did you expect the traitor to give themselves up with that accusation of yours? That was foolish. It looks to me like the Master made the wrong choice."
+        "Line": "So, if we see one of these Nightmares anywhere, we have to get rid of it on the spot."
+      },
+      {
+        "Order": 15,
+        "Character": "Ava",
+        "Line": "No! I won't let you do that!"
+      },
+      {
+        "Order": 16,
+        "Character": "Gula",
+        "Line": "No wonder you ended up as the bear. You're scary."
+      },
+      {
+        "Order": 17,
+        "Character": "Aced",
+        "Line": "Your point?"
+      },
+      {
+        "Order": 18,
+        "Character": "Ava",
+        "Line": "Maybe you can growl at them?"
+      },
+      {
+        "Order": 19,
+        "Character": "Aced",
+        "Line": "Hmm... Don't insult me!"
+      },
+      {
+        "Order": 20,
+        "Character": "Master of Masters",
+        "Line": "Come on, Aced. You won't know if it works unless you try."
+      },
+      {
+        "Order": 21,
+        "Character": "Aced",
+        "Line": "Please tell me you're joking."
+      },
+      {
+        "Order": 22,
+        "Character": "Aced",
+        "Line": "It's not me."
+      },
+      {
+        "Order": 23,
+        "Character": "Gula",
+        "Line": "There's an easy way to solve this. If we all summon our Spirits, then we'll know."
+      },
+      {
+        "Order": 24,
+        "Character": "Invi",
+        "Line": "Unfortunately, there are countless wielders in our Unions. It would be easy for any of us to summon a Chirithy that isn't a Nightmare. I'm afraid that your suggestion wouldn't help us get to the bottom of this."
+      },
+      {
+        "Order": 25,
+        "Character": "Ava",
+        "Line": "Yeah, in that case, who's to say that the Nightmare you saw belongs to one of us? It could belong to anyone in our Unions."
+      },
+      {
+        "Order": 26,
+        "Character": "Ira",
+        "Line": "That's highly unlikely. Do you recall the tool the wielders were given in order to make them stronger? We generally don't concern ourselves with what they have at their disposal. However- I believe those tools were the Nightmare's doing."
+      },
+      {
+        "Order": 27,
+        "Character": "Ava",
+        "Line": "The bangles? I know when they're equipped, they have the power to collect dark energy, but I thought we all agreed that was okay."
+      },
+      {
+        "Order": 28,
+        "Character": "Ira",
+        "Line": "Collecting is fine. But using that power is the equivalent of using the power of darkness."
+      },
+      {
+        "Order": 29,
+        "Character": "Gula",
+        "Line": "It's a brilliant plan. Everyone knows that all Spirits look the same, and wielders exist in spades. There's no way to tell."
+      },
+      {
+        "Order": 30,
+        "Character": "Ava",
+        "Line": "Oh, no. Everyone's already equipped their bangles."
+      },
+      {
+        "Order": 31,
+        "Character": "Aced",
+        "Line": "So what now? How do we find out who's behind this?"
+      },
+      {
+        "Order": 32,
+        "Character": "Ira",
+        "Line": "Seeing as those bangles couldn't have been acquired by just anyone, I believe it's one of us here in this room."
+      },
+      {
+        "Order": 33,
+        "Character": "Invi",
+        "Line": "No, Ira. I respectfully disagree. What proof do we have that the bangles are tied to the power of darkness, or if a Nightmare is to blame? We shouldn't simply jump to conclusions."
+      },
+      {
+        "Order": 34,
+        "Character": "Aced",
+        "Line": "Ira. Some leader you are. You've managed to plant seeds of doubt in all of us with that speech. What? Did you expect the traitor to give themselves up with that accusation of yours? That was foolish."
+      },
+      {
+        "Order": 35,
+        "Character": "Invi",
+        "Line": "Aced, that's quite enough."
+      },
+      {
+        "Order": 36,
+        "Character": "Aced",
+        "Line": "It looks to me like the Master made the wrong choice."
+      },
+      {
+        "Order": 37,
+        "Character": "Invi",
+        "Line": "Wait. Where do you think you're going?"
+      },
+      {
+        "Order": 38,
+        "Character": "Gula",
+        "Line": "I think we're done here. I trust you'll keep us all updated."
+      },
+      {
+        "Order": 39,
+        "Character": "Ava",
+        "Line": "I hope... I hope we can all resolve this soon..."
+      },
+      {
+        "Order": 40,
+        "Character": "Ira",
+        "Line": "That didn't go as expected."
+      },
+      {
+        "Order": 41,
+        "Character": "Invi",
+        "Line": "What's wrong, Ira? This isn't like you."
+      },
+      {
+        "Order": 42,
+        "Character": "Ira",
+        "Line": "A Lost Page... Something's missing from our Book of Prophecies. Each of our copies were said to contain the events of the future. But this incident, well, it's nowhere to be found."
+      },
+      {
+        "Order": 43,
+        "Character": "Invi",
+        "Line": "And how does this whole thing with the traitor tie together?"
+      },
+      {
+        "Order": 44,
+        "Character": "Ira",
+        "Line": "Like I said, it's nowhere to be found...in my Book."
+      },
+      {
+        "Order": 45,
+        "Character": "Invi",
+        "Line": "Ira. Are you implying that someone is in possession of the missing page? And the person with the complete Book is the traitor?"
+      },
+      {
+        "Order": 46,
+        "Character": "Ira",
+        "Line": "There is something going on, and a page is suspiciously missing from the Book. It's not so far-fetched to assume that the one who has the Lost Page has been turned, that they have fallen into the hands of darkness. Trust me."
+      },
+      {
+        "Order": 47,
+        "Character": "Invi",
+        "Line": "There seems to be no record of it in my Book either. You may be onto something. I wonder... Could this have been the Master's plan all along? To grant the Lost Page to only one of us."
+      },
+      {
+        "Order": 48,
+        "Character": "Ira",
+        "Line": "We have no way of knowing. The Master is gone."
+      },
+      {
+        "Order": 49,
+        "Character": "Invi",
+        "Line": "I understand what you are saying. I promise to keep a close eye on the others. I will keep you informed, as always."
+      },
+      {
+        "Order": 50,
+        "Character": "Ira",
+        "Line": "Thanks."
+      },
+      {
+        "Order": 51,
+        "Character": "Invi",
+        "Line": "Of course. After all, that is what the Master asked of me. And Ira, may your heart be your guiding key."
       }
     ],
     "Case of Invi": [
       {
         "Order": 0,
         "Character": "Master of Masters",
-        "Line": "So, to sum it up, I'll need you to observe the others. Easy breezy. Hmm. Like I said, Ira may have to take over for me... But don't be shy. Just be fair. And do not be afraid to speak up! Even though I say \"observe,\" you'll need to be the mediator; make sure people get along. Oh, come on. Lighten up a little! Maybe I'll never disappear. Wait. Do you want me to go? I was just kidding! Look, I get that change can be hard for everyone. But things need to keep moving forward. And you need to keep up. Otherwise, you'll just get left behind all alone. Now that you know what the future holds, Invi, what does your heart say? \"May your heart be your guiding key.\" I say it all the time; you ultimately need to do what your heart feels is right."
+        "Line": "So, to sum it up, I'll need you to observe the others. Easy breezy."
       },
       {
         "Order": 1,
         "Character": "Invi",
-        "Line": "A-all right. I understand, but...without you or Luxu, to form and maintain our own Unions is... It's a little unnerving, to be honest. What? N-no! Of course not! Oh... I see...Right."
+        "Line": "A-all right."
+      },
+      {
+        "Order": 2,
+        "Character": "Master of Masters",
+        "Line": "Hmm. Like I said, Ira may have to take over for me... But don't be shy. Just be fair. And do not be afraid to speak up! Even though I say \"observe,\" you'll need to be the mediator; make sure people get along."
+      },
+      {
+        "Order": 3,
+        "Character": "Invi",
+        "Line": "I understand, but... without you or Luxu, to form and maintain our own Unions is... It's a little unnerving, to be honest."
+      },
+      {
+        "Order": 4,
+        "Character": "Master of Masters",
+        "Line": "Oh, come on. Lighten up a little! Maybe I'll never disappear. Wait. Do you want me to go?"
+      },
+      {
+        "Order": 5,
+        "Character": "Invi",
+        "Line": "What? N-no! Of course not!"
+      },
+      {
+        "Order": 6,
+        "Character": "Master of Masters",
+        "Line": "I was just kidding!"
+      },
+      {
+        "Order": 7,
+        "Character": "Invi",
+        "Line": "Oh... I see..."
+      },
+      {
+        "Order": 8,
+        "Character": "Master of Masters",
+        "Line": "Look, I get that change can be hard for everyone. But things need to keep moving forward. And you need to keep up. Otherwise, you'll just get left behind all alone. Now that you know what the future holds, Invi, what does your heart say? \"May your heart be your guiding key.\" I say it all the time; you ultimately need to do what your heart feels is right."
+      },
+      {
+        "Order": 9,
+        "Character": "Invi",
+        "Line": "Right."
       }
     ],
     "The Alliance": [
       {
         "Order": 0,
         "Character": "Aced",
-        "Line": "I was wrong about Ira. I thought he would make a great leader, but he let me down. Well, what do you two think? You don't believe what Ira said, do you? Then he needs to tell us. How dare he look at us with suspicion. We're his comrades! I want the three of us to form an alliance. Confronting him is pointless. Ira won't change his mind. I know there's darkness at work. There's no question. But, I don't believe for a second there's a traitor among us. Unfortunately, Ira doesn't share the same belief. He's just wasting time trying to figure out who the traitor is. But darkness won't wait and neither should we. We need to band together now and find a way to fight it. He's no longer here. Understood. That's your choice to make. You should do whatever you feel is right. I haven't talked to Ira about it for obvious reasons, but I did ask Invi to join us. Hear me out, Invi. I want an alliance among our Unions. Gula here has already agreed. Will you join us and together we can--We don't have a choice! Darkness is approaching and we need to combine our strength to stand against it. I'm tainted by darkness? Then what about you, Invi? You spy on us and report everything you see back to Ira! You really think you have no darkness in your heart after what you did!? To observe us, yes. But not to disclose everything we say and do to Ira! For all we know, you and Ira could be allies, scheming behind our backs!"
+        "Line": "I was wrong about Ira. I thought he would make a great leader, but he let me down. Well, what do you two think? You don't believe what Ira said, do you?"
       },
       {
         "Order": 1,
         "Character": "Gula",
-        "Line": "Of course not. His argument was unconvincing. It's like Invi said, he's just making baseless assumptions given the situation. There's no evidence to tie his accusations to anyone, let alone one of us. I wouldn't call us \"comrades\"... Anyway, could you get to the point? I know you didn't call us here just to complain. I knew it. I had a feeling it would come to this. So, we join forces, then confront Ira? Ah... Guess it makes sense. I'm in. But let's be clear- the alliance is just between the two of us right now. I don't want my Union members involved. By the way, Aced. Do Ira and Invi know?"
+        "Line": "Of course not. His argument was unconvincing. It's like Invi said, he's just making baseless assumptions given the situation. There's no evidence to tie his accusations to anyone, let alone one of us."
       },
       {
         "Order": 2,
         "Character": "Ava",
-        "Line": "Maybe there's something he hasn't told us. But alliances are forbidden, Aced! I agree that we need to do something to fight the darkness, but combining our Unions? That was strictly forbidden by the Master. Gula! I want... I want to follow the Master's teachings. Yeah."
+        "Line": "Maybe there's something he hasn't told us."
       },
       {
         "Order": 3,
+        "Character": "Aced",
+        "Line": "Then he needs to tell us. How dare he look at us with suspicion. We're his comrades!"
+      },
+      {
+        "Order": 4,
+        "Character": "Gula",
+        "Line": "I wouldn't call us \"comrades\"... Anyway, could you get to the point? I know you didn't call us here just to complain."
+      },
+      {
+        "Order": 5,
+        "Character": "Aced",
+        "Line": "I want the three of us to form an alliance."
+      },
+      {
+        "Order": 6,
+        "Character": "Ava",
+        "Line": "But alliances are forbidden, Aced!"
+      },
+      {
+        "Order": 7,
+        "Character": "Gula",
+        "Line": "I knew it. I had a feeling it would come to this. So, we join forces, then confront Ira?"
+      },
+      {
+        "Order": 8,
+        "Character": "Aced",
+        "Line": "Confronting him is pointless. Ira won't change his mind. I know there's darkness at work. There's no question. But, I don't believe for a second there's a traitor among us. Unfortunately, Ira doesn't share the same belief. He's just wasting time trying to figure out who the traitor is. But darkness won't wait and neither should we. We need to band together now and find a way to fight it."
+      },
+      {
+        "Order": 9,
+        "Character": "Gula",
+        "Line": "Ah... Guess it makes sense."
+      },
+      {
+        "Order": 10,
+        "Character": "Ava",
+        "Line": "I agree that we need to do something to fight the darkness, but combining our Unions? That was strictly forbidden by the Master."
+      },
+      {
+        "Order": 11,
+        "Character": "Aced",
+        "Line": "He's no longer here."
+      },
+      {
+        "Order": 12,
+        "Character": "Gula",
+        "Line": "I'm in. But let's be clear"
+      },
+      {
+        "Order": 13,
+        "Character": "Ava",
+        "Line": "Gula! I want... I want to follow the Master's teachings."
+      },
+      {
+        "Order": 14,
+        "Character": "Aced",
+        "Line": "Understood. That's your choice to make. You should do whatever you feel is right."
+      },
+      {
+        "Order": 15,
+        "Character": "Ava",
+        "Line": "Yeah."
+      },
+      {
+        "Order": 16,
+        "Character": "Gula",
+        "Line": "By the way, Aced. Do Ira and Invi know?"
+      },
+      {
+        "Order": 17,
+        "Character": "Aced",
+        "Line": "I haven't talked to Ira about it for obvious reasons, but I did ask Invi to join us."
+      },
+      {
+        "Order": 18,
         "Character": "Invi",
-        "Line": "You wanted to see me? Gula, Ava, what are you doing here? What's the meaning of this? And disobey the Master's teachings!? The Master bestowed each of us with a different role and he specifically told us to keep our Unions separate to maintain the balance of power. He told us that any imbalance would lead to a desire for more power, which leads to darkness. I know you haven't forgotten! Perhaps...it's you who has been tainted by darkness. Because that is my role. That's...That's enough."
+        "Line": "You wanted to see me? Gula, Ava, what are you doing here? What's the meaning of this?"
+      },
+      {
+        "Order": 19,
+        "Character": "Aced",
+        "Line": "Hear me out, Invi. I want an alliance among our Unions. Gula here has already agreed. Will you join us and together we can-"
+      },
+      {
+        "Order": 20,
+        "Character": "Invi",
+        "Line": "And disobey the Master's teachings!?"
+      },
+      {
+        "Order": 21,
+        "Character": "Aced",
+        "Line": "We don't have a choice! Darkness is approaching and we need to combine our strength to stand against it."
+      },
+      {
+        "Order": 22,
+        "Character": "Invi",
+        "Line": "The Master bestowed each of us with a different role and he specifically told us to keep our Unions separate to maintain the balance of power. He told us that any imbalance would lead to a desire for more power, which leads to darkness. I know you haven't forgotten! Perhaps... it's you who has been tainted by darkness."
+      },
+      {
+        "Order": 23,
+        "Character": "Aced",
+        "Line": "I'm tainted by darkness? Then what about you, Invi? You spy on us and report everything you see back to Ira! You really think you have no darkness in your heart after what you did!?"
+      },
+      {
+        "Order": 24,
+        "Character": "Invi",
+        "Line": "Because that is my role."
+      },
+      {
+        "Order": 25,
+        "Character": "Aced",
+        "Line": "To observe us, yes. But not to disclose everything we say and do to Ira!"
+      },
+      {
+        "Order": 26,
+        "Character": "Invi",
+        "Line": "That's..."
+      },
+      {
+        "Order": 27,
+        "Character": "Aced",
+        "Line": "For all we know, you and Ira could be allies, scheming behind our backs!"
+      },
+      {
+        "Order": 28,
+        "Character": "Invi",
+        "Line": "That's enough."
       }
     ],
     "Dandelions": [
       {
         "Order": 0,
         "Character": "Ava",
-        "Line": "When will it stop? I don't want us to turn against each other...Oh. Hello! Your name is Ephemer, right? Oh. Hello! Your name is Ephemer, right? Uh-huh. Hmm... Long day... Do you remember what you asked me before? About why the Unions compete against each other instead of working together. Actually, I always wondered the same thing. Yes, and as such we must obey. The Master said so, so it is. But lately, I've really started to wonder. You once told me that you were looking for answers, that you wanted to solve the mysteries of this world. Well, I think that's how things should be. We need to question things and think for ourselves. Not a chance! You were trying to pull a fast one on me, weren't you? If you say so. But, to be honest, I think it would be great if all the Unions could work together and be friends. That sounds like so much fun! Then, you'd better go home and get some sleep. Thank you. If the worst happens, I'll be glad to leave the future to the kids who see the world in the way that you do. Let the wind carry you far, far away...my Dandelions."
+        "Line": "When will it stop? I don't want us to turn against each other..."
       },
       {
         "Order": 1,
         "Character": "Ephemer",
-        "Line": "Master Ava! Uh-huh! Uh, hey, can I join you? Why the long face? Did something happen? Huh? Isn't it just because the Master said so? Whoa! You're really not yourself today. I guess even foretellers have their off days. Hey, maybe talking about the Book will cheer you up! Awww. Uh... No, no, I was joking! You know, I made a friend from another Union today. Wasn't much of a talker, maybe just shy. We're meeting again tomorrow. 'Kay! Well, it was nice talking to you. I don't know what's got you down, but please cheer up!"
+        "Line": "Master Ava!"
+      },
+      {
+        "Order": 2,
+        "Character": "Ava",
+        "Line": "Oh. Hello! Your name is Ephemer, right?"
+      },
+      {
+        "Order": 3,
+        "Character": "Ephemer",
+        "Line": "Uh-huh! Uh, hey, can I join you?"
+      },
+      {
+        "Order": 4,
+        "Character": "Ava",
+        "Line": "Uh-huh."
+      },
+      {
+        "Order": 5,
+        "Character": "Ephemer",
+        "Line": "Why the long face? Did something happen?"
+      },
+      {
+        "Order": 6,
+        "Character": "Ava",
+        "Line": "Hmm... Long day... Do you remember what you asked me before? About why the Unions compete against each other instead of working together. Actually, I always wondered the same thing."
+      },
+      {
+        "Order": 7,
+        "Character": "Ephemer",
+        "Line": "Huh? Isn't it just because the Master said so?"
+      },
+      {
+        "Order": 8,
+        "Character": "Ava",
+        "Line": "Yes, and as such we must obey. The Master said so, so it is. But lately, I've really started to wonder. You once told me that you were looking for answers, that you wanted to solve the mysteries of this world. Well, I think that's how things should be. We need to question things and think for ourselves."
+      },
+      {
+        "Order": 9,
+        "Character": "Ephemer",
+        "Line": "Whoa! You're really not yourself today. I guess even foretellers have their off days. Hey, maybe talking about the Book will cheer you up!"
+      },
+      {
+        "Order": 10,
+        "Character": "Ava",
+        "Line": "Not a chance!"
+      },
+      {
+        "Order": 11,
+        "Character": "Ephemer",
+        "Line": "Awww."
+      },
+      {
+        "Order": 12,
+        "Character": "Ava",
+        "Line": "You were trying to pull a fast one on me, weren't you?"
+      },
+      {
+        "Order": 13,
+        "Character": "Ephemer",
+        "Line": "Uh... No, no, I was joking!"
+      },
+      {
+        "Order": 14,
+        "Character": "Ava",
+        "Line": "If you say so. But, to be honest, I think it would be great if all the Unions could work together and be friends."
+      },
+      {
+        "Order": 15,
+        "Character": "Ephemer",
+        "Line": "You know, I made a friend from another Union today. Wasn't much of a talker, maybe just shy. We're meeting again tomorrow."
+      },
+      {
+        "Order": 16,
+        "Character": "Ava",
+        "Line": "That sounds like so much fun! Then, you'd better go home and get some sleep."
+      },
+      {
+        "Order": 17,
+        "Character": "Ephemer",
+        "Line": "'Kay! Well, it was nice talking to you. I don't know what's got you down, but please cheer up!"
+      },
+      {
+        "Order": 18,
+        "Character": "Ava",
+        "Line": "Thank you. If the worst happens, I'll be glad to leave the future to the kids who see the world in the way that you do. Let the wind carry you far, far away... my Dandelions."
       }
     ],
     "Reporting In": [
       {
         "Order": 0,
         "Character": "Ira",
-        "Line": "Invi, have you learned something? So Aced is the traitor after all. Why's that? Even so, forming alliances was strictly forbidden by the Master. Then, I'll do it. All right. I'll leave it to you. Yes, I do."
+        "Line": "Invi, have you learned something?"
       },
       {
         "Order": 1,
         "Character": "Invi",
-        "Line": "It seems Aced and Gula's Unions are now allied. No, I don't believe he is. To Aced, unification is a means of gathering strength to oppose the darkness. So I believe his heart still belongs to the light. Yes, and his teachings are absolute. That's why I will try and persuade Gula to dissolve their alliance. No. Please, let me do the talking. Your intervention will do nothing more than spur Aced's anger. And one more thing. Aced has begun to question the two of us. As a precaution, my reports will be less frequent. I don't want him to get the wrong idea. Please understand."
+        "Line": "It seems Aced and Gula's Unions are now allied."
+      },
+      {
+        "Order": 2,
+        "Character": "Ira",
+        "Line": "So Aced is the traitor after all."
+      },
+      {
+        "Order": 3,
+        "Character": "Invi",
+        "Line": "No, I don't believe he is."
+      },
+      {
+        "Order": 4,
+        "Character": "Ira",
+        "Line": "Why's that?"
+      },
+      {
+        "Order": 5,
+        "Character": "Invi",
+        "Line": "To Aced, unification is a means of gathering strength to oppose the darkness. So I believe his heart still belongs to the light."
+      },
+      {
+        "Order": 6,
+        "Character": "Ira",
+        "Line": "Even so, forming alliances was strictly forbidden by the Master."
+      },
+      {
+        "Order": 7,
+        "Character": "Invi",
+        "Line": "Yes, and his teachings are absolute. That's why I will try and persuade Gula to dissolve their alliance."
+      },
+      {
+        "Order": 8,
+        "Character": "Ira",
+        "Line": "Then, I'll do it."
+      },
+      {
+        "Order": 9,
+        "Character": "Invi",
+        "Line": "No. Please, let me do the talking. Your intervention will do nothing more than spur Aced's anger."
+      },
+      {
+        "Order": 10,
+        "Character": "Ira",
+        "Line": "All right. I'll leave it to you."
+      },
+      {
+        "Order": 11,
+        "Character": "Invi",
+        "Line": "And one more thing. Aced has begun to question the two of us. As a precaution, my reports will be less frequent. I don't want him to get the wrong idea. Please understand."
+      },
+      {
+        "Order": 12,
+        "Character": "Ira",
+        "Line": "Yes, I do."
       }
     ],
     "Case of Aced": [
       {
         "Order": 0,
         "Character": "Gula",
-        "Line": "I think I'm done. The alliance. I think it's time to call it quits. To put it simply, I entered this alliance thinking we were preparing to fight some impending darkness, but it hasn't come. In fact, there haven't been any suspicious incidents recently, and you haven't rallied anyone else to your cause. This alliance is meaningless. Even Invi agrees. Oh...Uh-oh, you weren't supposed to find out. Uh... Maybe. But I'm the one who decided to do it, and I've already told you why. And that's exactly why. I just can't trust anyone but myself. Sorry, my mind's made up."
+        "Line": "I think I'm done."
       },
       {
         "Order": 1,
         "Character": "Aced",
-        "Line": "Done with what? For what reason? Yeah, but...Invi!? Is Invi the one who told you to break our alliance? But we don't even know who the traitor is yet! Don't you realize you won't stand a chance against the darkness on your own? Invi, you will regret this! No. Uh... You didn't forget, did you? You're the one who called me here. R-right...What? Ira's right-hand man? What do you mean? Explain to me, Master. What do you mean Ira's going to be leader? No! I mean, if you had asked me to be the leader, that's a different story, but I wasn't trying--I, well...Uhh... I agree, Ira is definitely the most worthy among us. I'm sure he'll make a fine leader. Wait. I agreed that he is worthy. But why do we need a new leader, Master? Does, does that mean you will no longer be teaching us? Disappear!? Why? Where!? But...Uh...right. Huh?"
+        "Line": "Done with what?"
       },
       {
         "Order": 2,
+        "Character": "Gula",
+        "Line": "The alliance. I think it's time to call it quits."
+      },
+      {
+        "Order": 3,
+        "Character": "Aced",
+        "Line": "For what reason?"
+      },
+      {
+        "Order": 4,
+        "Character": "Gula",
+        "Line": "To put it simply, I entered this alliance thinking we were preparing to fight some impending darkness, but it hasn't come. In fact, there haven't been any suspicious incidents recently, and you haven't rallied anyone else to your cause."
+      },
+      {
+        "Order": 5,
+        "Character": "Aced",
+        "Line": "Yeah, but..."
+      },
+      {
+        "Order": 6,
+        "Character": "Gula",
+        "Line": "This alliance is meaningless. Even Invi agrees. Oh..."
+      },
+      {
+        "Order": 7,
+        "Character": "Aced",
+        "Line": "Invi!?"
+      },
+      {
+        "Order": 8,
+        "Character": "Gula",
+        "Line": "Uh-oh, you weren't supposed to find out."
+      },
+      {
+        "Order": 9,
+        "Character": "Aced",
+        "Line": "Is Invi the one who told you to break our alliance?"
+      },
+      {
+        "Order": 10,
+        "Character": "Gula",
+        "Line": "Uh... Maybe. But I'm the one who decided to do it, and I've already told you why."
+      },
+      {
+        "Order": 11,
+        "Character": "Aced",
+        "Line": "But we don't even know who the traitor is yet!"
+      },
+      {
+        "Order": 12,
+        "Character": "Gula",
+        "Line": "And that's exactly why. I just can't trust anyone but myself."
+      },
+      {
+        "Order": 13,
+        "Character": "Aced",
+        "Line": "Don't you realize you won't stand a chance against the darkness on your own?"
+      },
+      {
+        "Order": 14,
+        "Character": "Gula",
+        "Line": "Sorry, my mind's made up."
+      },
+      {
+        "Order": 15,
+        "Character": "Aced",
+        "Line": "Invi, you will regret this!"
+      },
+      {
+        "Order": 16,
         "Character": "Master of Masters",
-        "Line": "You been here long? My bad. So, what did you want? Lighten up. I was just kidding! I didn't forget. Give me a little credit here. I was just testing you! Now then, allow me to tell you about your role. You're going to be Ira's right-hand man. Well, Ira's gonna be the new leader after I'm gone, you see, so just stand by him. Don't disappoint. What? Is that disappointment I hear? Did you want to be leader? You really wanna be leader, huh? I know you want it, but that just isn't enough. Any chump can say, \"You! Here's a huge promotion. Good job!\" and make you head honcho, but enthusiasm alone doesn't make a great leader. Ira needs someone like you to give him a push in the right direction. Heh. Then it's settled. Well... I might disappear one day... Uh... Well... I might disappear– Speak up sooner if you're listening. That was embarrassing for me! Anyway, I don't know if I'm gonna disappear or not. It's anyone's guess right now. In any case, you need to support Ira. We both know he's quite serious. He's always just thinking and thinking and thinking behind that unicorn mask of his, so everyone will be counting on you to spur him into action. You might not be entirely happy with your role, but just know that it's the most important one. Capiche? Shall I elaborate? Making Ira the leader is all good in theory, but sometime later you might think, \"eh, he's terrible at this,\" in which case it'll be your job to step up. Who knows? Your leadership might be just what everyone needs. And that is your true role. May your heart be your guiding key. Best of luck, Aced!"
+        "Line": "You been here long? My bad."
+      },
+      {
+        "Order": 17,
+        "Character": "Aced",
+        "Line": "No."
+      },
+      {
+        "Order": 18,
+        "Character": "Master of Masters",
+        "Line": "So, what did you want?"
+      },
+      {
+        "Order": 19,
+        "Character": "Aced",
+        "Line": "Uh... You didn't forget, did you? You're the one who called me here."
+      },
+      {
+        "Order": 20,
+        "Character": "Master of Masters",
+        "Line": "Lighten up. I was just kidding! I didn't forget. Give me a little credit here. I was just testing you!"
+      },
+      {
+        "Order": 21,
+        "Character": "Aced",
+        "Line": "R-right..."
+      },
+      {
+        "Order": 22,
+        "Character": "Master of Masters",
+        "Line": "Now then, allow me to tell you about your role. You're going to be Ira's right-hand man."
+      },
+      {
+        "Order": 23,
+        "Character": "Aced",
+        "Line": "What? Ira's right-hand man? What do you mean?"
+      },
+      {
+        "Order": 24,
+        "Character": "Master of Masters",
+        "Line": "Well, Ira's gonna be the new leader after I'm gone, you see, so just stand by him. Don't disappoint."
+      },
+      {
+        "Order": 25,
+        "Character": "Aced",
+        "Line": "Explain to me, Master. What do you mean Ira's going to be leader?"
+      },
+      {
+        "Order": 26,
+        "Character": "Master of Masters",
+        "Line": "What? Is that disappointment I hear? Did you want to be leader?"
+      },
+      {
+        "Order": 27,
+        "Character": "Aced",
+        "Line": "No! I mean, if you had asked me to be the leader, that's a different story, but I wasn't trying-"
+      },
+      {
+        "Order": 28,
+        "Character": "Master of Masters",
+        "Line": "You really wanna be leader, huh?"
+      },
+      {
+        "Order": 29,
+        "Character": "Aced",
+        "Line": "I, well..."
+      },
+      {
+        "Order": 30,
+        "Character": "Master of Masters",
+        "Line": "I know you want it, but that just isn't enough. Any chump can say, \"You! Here's a huge promotion. Good job!\" and make you head honcho, but enthusiasm alone doesn't make a great leader. Ira needs someone like you to give him a push in the right direction."
+      },
+      {
+        "Order": 31,
+        "Character": "Aced",
+        "Line": "Uhh... I agree, Ira is definitely the most worthy among us. I'm sure he'll make a fine leader."
+      },
+      {
+        "Order": 32,
+        "Character": "Master of Masters",
+        "Line": "Heh. Then it's settled."
+      },
+      {
+        "Order": 33,
+        "Character": "Aced",
+        "Line": "Wait. I agreed that he is worthy. But why do we need a new leader, Master? Does, does that mean you will no longer be teaching us?"
+      },
+      {
+        "Order": 34,
+        "Character": "Master of Masters",
+        "Line": "Well... I might disappear one day... Uh... Well... I might disappear-"
+      },
+      {
+        "Order": 35,
+        "Character": "Aced",
+        "Line": "Disappear!? Why? Where!?"
+      },
+      {
+        "Order": 36,
+        "Character": "Master of Masters",
+        "Line": "Speak up sooner if you're listening. That was embarrassing for me! Anyway, I don't know if I'm gonna disappear or not. It's anyone's guess right now."
+      },
+      {
+        "Order": 37,
+        "Character": "Aced",
+        "Line": "But..."
+      },
+      {
+        "Order": 38,
+        "Character": "Master of Masters",
+        "Line": "In any case, you need to support Ira. We both know he's quite serious. He's always just thinking and thinking and thinking behind that unicorn mask of his, so everyone will be counting on you to spur him into action."
+      },
+      {
+        "Order": 39,
+        "Character": "Aced",
+        "Line": "Uh...right."
+      },
+      {
+        "Order": 40,
+        "Character": "Master of Masters",
+        "Line": "You might not be entirely happy with your role, but just know that it's the most important one. Capiche?"
+      },
+      {
+        "Order": 41,
+        "Character": "Aced",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 42,
+        "Character": "Master of Masters",
+        "Line": "Shall I elaborate? Making Ira the leader is all good in theory, but sometime later you might think, \"eh, he's terrible at this,\" in which case it'll be your job to step up. Who knows? Your leadership might be just what everyone needs. And that is your true role. May your heart be your guiding key. Best of luck, Aced!"
       }
     ],
     "The Clash": [
       {
         "Order": 0,
         "Character": "Aced",
-        "Line": "It's been over a year since the Master left. It's time for me to fulfill my true role. Why do you get in my way? If we don't do something, light will expire! Then we won't be able to avoid the grim future that awaits. We need to defy the Master's teachings to protect the world! He's not here anymore. I won't let his prophecy come true. I won't let the world fall into darkness! May my heart be my guiding key."
+        "Line": "It's been over a year since the Master left. It's time for me to fulfill my true role. Why do you get in my way?"
       },
       {
         "Order": 1,
         "Character": "Invi",
-        "Line": "Don't be so conceited! I'm protecting the balance, just like the Master told us to! You need to come to your senses! You're saying he was wrong!? You fool! I found out who the traitor is, regrettably."
+        "Line": "Don't be so conceited! I'm protecting the balance, just like the Master told us to! You need to come to your senses!"
       },
       {
         "Order": 2,
-        "Character": "Gula",
-        "Line": "Ava, over here! Ava, there's no time to lose!"
+        "Character": "Aced",
+        "Line": "If we don't do something, light will expire! Then we won't be able to avoid the grim future that awaits. We need to defy the Master's teachings to protect the world!"
       },
       {
         "Order": 3,
+        "Character": "Invi",
+        "Line": "You're saying he was wrong!?"
+      },
+      {
+        "Order": 4,
+        "Character": "Aced",
+        "Line": "He's not here anymore. I won't let his prophecy come true. I won't let the world fall into darkness!"
+      },
+      {
+        "Order": 5,
+        "Character": "Invi",
+        "Line": "You fool!"
+      },
+      {
+        "Order": 6,
+        "Character": "Gula",
+        "Line": "Ava, over here!"
+      },
+      {
+        "Order": 7,
         "Character": "Ava",
-        "Line": "Invi, Aced! What's going on!? No, that's not true!"
+        "Line": "Invi, Aced! What's going on!?"
+      },
+      {
+        "Order": 8,
+        "Character": "Invi",
+        "Line": "I found out who the traitor is, regrettably."
+      },
+      {
+        "Order": 9,
+        "Character": "Ava",
+        "Line": "No, that's not true!"
+      },
+      {
+        "Order": 10,
+        "Character": "Gula",
+        "Line": "Ava, there's no time to lose!"
+      },
+      {
+        "Order": 11,
+        "Character": "Aced",
+        "Line": "May my heart be my guiding key."
       }
     ],
     "Case of Gula": [
       {
         "Order": 0,
         "Character": "Master of Masters",
-        "Line": "Mhm... Ah...Hm...Oh, I see. Sure. Oh! No, no no, stay! Now where-- Ah, here it is! Go on, read it. Yup. It's a page that's not in any of your Books. Your role. You must find the traitor hidden among you, and stop them before it's too late. And in order to help you find the traitor– Way to steal my thunder, show-off! It's not fair. My plan was supposed to blow your mind with its grandeur. Your jaw should've hit the floor at my sheer genius! No, you're right. So, I guess now you've earned your time in the limelight. Even though there is a traitor, act normal and keep focused. Trust no one but yourself."
+        "Line": "Mhm... Ah..."
       },
       {
         "Order": 1,
         "Character": "Gula",
-        "Line": "Master. Um...Master? If you're busy, I can always come back later. What's this? This is from the Book of Prophecies. But--And what's written here is...I get it. That's why you gave us all different roles, isn't it? If anyone deviates from the job they were given, we can easily conclude that they are the traitor. It's brilliant. Huh? I'm...sorry? But was my logic flawed? Trust no one but myself."
+        "Line": "Master."
+      },
+      {
+        "Order": 2,
+        "Character": "Master of Masters",
+        "Line": "Hm..."
+      },
+      {
+        "Order": 3,
+        "Character": "Gula",
+        "Line": "Um... Master?"
+      },
+      {
+        "Order": 4,
+        "Character": "Master of Masters",
+        "Line": "Oh, I see."
+      },
+      {
+        "Order": 5,
+        "Character": "Gula",
+        "Line": "If you're busy, I can always come back later."
+      },
+      {
+        "Order": 6,
+        "Character": "Master of Masters",
+        "Line": "Sure. Oh! No, no no, stay! Now where- Ah, here it is!"
+      },
+      {
+        "Order": 7,
+        "Character": "Gula",
+        "Line": "What's this?"
+      },
+      {
+        "Order": 8,
+        "Character": "Master of Masters",
+        "Line": "Go on, read it."
+      },
+      {
+        "Order": 9,
+        "Character": "Gula",
+        "Line": "This is from the Book of Prophecies. But--"
+      },
+      {
+        "Order": 10,
+        "Character": "Master of Masters",
+        "Line": "Yup. It's a page that's not in any of your Books."
+      },
+      {
+        "Order": 11,
+        "Character": "Gula",
+        "Line": "And what's written here is..."
+      },
+      {
+        "Order": 12,
+        "Character": "Master of Masters",
+        "Line": "Your role. You must find the traitor hidden among you, and stop them before it's too late. And in order to help you find the traitor-"
+      },
+      {
+        "Order": 13,
+        "Character": "Gula",
+        "Line": "I get it. That's why you gave us all different roles, isn't it? If anyone deviates from the job they were given, we can easily conclude that they are the traitor. It's brilliant."
+      },
+      {
+        "Order": 14,
+        "Character": "Master of Masters",
+        "Line": "Way to steal my thunder, show-off!"
+      },
+      {
+        "Order": 15,
+        "Character": "Gula",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 16,
+        "Character": "Master of Masters",
+        "Line": "It's not fair. My plan was supposed to blow your mind with its grandeur. Your jaw should've hit the floor at my sheer genius!"
+      },
+      {
+        "Order": 17,
+        "Character": "Gula",
+        "Line": "I'm... sorry? But was my logic flawed?"
+      },
+      {
+        "Order": 18,
+        "Character": "Master of Masters",
+        "Line": "No, you're right. So, I guess now you've earned your time in the limelight. Even though there is a traitor, act normal and keep focused. Trust no one but yourself."
+      },
+      {
+        "Order": 19,
+        "Character": "Gula",
+        "Line": "Trust no one but myself."
       }
     ],
     "Discord": [
       {
         "Order": 0,
         "Character": "Aced",
-        "Line": "Gula...Huh? Lost Page? I called you my \"comrade.\" But never again, Gula. It doesn't matter to me if you think I am the traitor and you want to strike me down. You knew there was a traitor, and you just watched silently as we fought each other, and I won't forgive you for that. Don't you underestimate me! You too, huh?"
+        "Line": "Gula..."
       },
       {
         "Order": 1,
         "Character": "Gula",
-        "Line": "Do you wanna know what my role is? The Books we were given are incomplete. There's a Lost Page. On that page, it is written that there is a traitor. The Master told me...to find and stop that person. You can barely stay on your feet! Just give up already!"
+        "Line": "Do you wanna know what my role is?"
       },
       {
         "Order": 2,
+        "Character": "Aced",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 3,
+        "Character": "Gula",
+        "Line": "The Books we were given are incomplete. There's a Lost Page."
+      },
+      {
+        "Order": 4,
+        "Character": "Aced",
+        "Line": "Lost Page?"
+      },
+      {
+        "Order": 5,
+        "Character": "Gula",
+        "Line": "On that page, it is written that there is a traitor. The Master told me... to find and stop that person."
+      },
+      {
+        "Order": 6,
+        "Character": "Aced",
+        "Line": "I called you my \"comrade.\" But never again, Gula. It doesn't matter to me if you think I am the traitor and you want to strike me down. You knew there was a traitor, and you just watched silently as we fought each other, and I won't forgive you for that."
+      },
+      {
+        "Order": 7,
+        "Character": "Gula",
+        "Line": "You can barely stay on your feet! Just give up already!"
+      },
+      {
+        "Order": 8,
+        "Character": "Aced",
+        "Line": "Don't you underestimate me!"
+      },
+      {
+        "Order": 9,
         "Character": "Ava",
-        "Line": "Please stop! Why? Why did it have to come to this?"
+        "Line": "Please stop!"
+      },
+      {
+        "Order": 10,
+        "Character": "Aced",
+        "Line": "You too, huh?"
+      },
+      {
+        "Order": 11,
+        "Character": "Ava",
+        "Line": "Why? Why did it have to come to this?"
       }
     ],
     "The Lost Page": [
       {
         "Order": 0,
         "Character": "Aced",
-        "Line": "Come to finish me off? Then make it quick. You...still count me as one of the five lights? Heh... Only you could be such a good guy after everything we've been through. But hey, I guess that's one of the reasons I respect you so much. However, we still might only be four.  I'm talking about Gula. He's using the knowledge of something called the Lost Page. He said that it contains events that are missing from all of our Books. He's using it to discover and apprehend whoever is the traitor, claims that's his role. But who knows what his real intentions are? What I do know is that I'll never forgive him for hiding the fact that he knew someone would betray us. That's the biggest betrayal of all. Understood."
+        "Line": "Come to finish me off? Then make it quick."
       },
       {
         "Order": 1,
         "Character": "Ira",
-        "Line": "That's not what brought me here today. I wish to fulfill the role bestowed upon me, that's all. It isn't our place to try to change the events of the future; that is not our mission. We're here to make sure that light lives on. With only five lights, we can't afford to lose any. Of course. I'd like to believe that Gula was simply carrying out his role... Aced, I'll deal with this matter. Please keep it to yourself for now. I need to see that Lost Page."
+        "Line": "That's not what brought me here today. I wish to fulfill the role bestowed upon me, that's all. It isn't our place to try to change the events of the future; that is not our mission. We're here to make sure that light lives on. With only five lights, we can't afford to lose any."
+      },
+      {
+        "Order": 2,
+        "Character": "Aced",
+        "Line": "You... still count me as one of the five lights?"
+      },
+      {
+        "Order": 3,
+        "Character": "Ira",
+        "Line": "Of course."
+      },
+      {
+        "Order": 4,
+        "Character": "Aced",
+        "Line": "Heh... Only you could be such a good guy after everything we've been through. But hey, I guess that's one of the reasons I respect you so much. However, we still might only be four. I'm talking about Gula. He's using the knowledge of something called the Lost Page. He said that it contains events that are missing from all of our Books. He's using it to discover and apprehend whoever is the traitor, claims that's his role. But who knows what his real intentions are? What I do know is that I'll never forgive him for hiding the fact that he knew someone would betray us. That's the biggest betrayal of all."
+      },
+      {
+        "Order": 5,
+        "Character": "Ira",
+        "Line": "I'd like to believe that Gula was simply carrying out his role... Aced, I'll deal with this matter. Please keep it to yourself for now."
+      },
+      {
+        "Order": 6,
+        "Character": "Aced",
+        "Line": "Understood."
+      },
+      {
+        "Order": 7,
+        "Character": "Ira",
+        "Line": "I need to see that Lost Page."
       }
     ],
     "An Inevitable End": [
       {
         "Order": 0,
         "Character": "Ava",
-        "Line": "Why did you tell Ira? It had to be you because you were the only one who knew where we were hiding. Didn't you think for a second that your actions could be making things worse than they already are? Yes, because that is my role! No, I shouldn't have snapped at you either. I don't know exactly. He just asked me to give up Gula. His eyes... They were...scary. I was worried he'd do something awful. I knew I couldn't tell him where Gula was. Then he turned around and walked away. I don't know. He's gone. Take care of him. Ira? Is something wrong? What!? But why? What are you going to do? Don't. I won't let you near him. Gula, what are you doing!? Ira was here. He wanted me to give you up. Come to what? The Lost Page? Why are you telling me this, Gula? I have enough to think about keeping with the Master's teachings and my role. But how? But he's not here anymore. What!? Summoning Kingdom Hearts is forbidden! I'm sorry. I know you want the Master to return, but you don't know how summoning Kingdom Hearts will affect the rest of the world. The Master... He forbid it for a reason. I'm afraid I can't help you. Gula's on a mission to collect Lux. Then what's written in the Book, all of it will happen...Invi, what are you going to do? Right..."
+        "Line": "Why did you tell Ira? It had to be you because you were the only one who knew where we were hiding. Didn't you think for a second that your actions could be making things worse than they already are?"
       },
       {
         "Order": 1,
         "Character": "Invi",
-        "Line": "And why should that even bother you? Not only do you have your Union but you've also gathered the finest Keyblade wielders from other Unions and you're training them in a secret location, aren't you? I had no idea... I apologize, I overstepped. What did Ira want? I see. And Gula? How is he doing? Ah. That explains why Aced and Ira are as well. They're trying to maintain the balance. But, that isn't the balance we were expected to keep. If everyone's collecting light solely for themselves, Keyblade wielders will soon turn against one another, which will lead to...the Keyblade War. Light will expire. I'll gather Lux, too. No matter what, the balance must be kept. Ava, you do the same. We must...delay the inevitable."
+        "Line": "And why should that even bother you? Not only do you have your Union but you've also gathered the finest Keyblade wielders from other Unions and you're training them in a secret location, aren't you?"
       },
       {
         "Order": 2,
+        "Character": "Ava",
+        "Line": "Yes, because that is my role!"
+      },
+      {
+        "Order": 3,
+        "Character": "Invi",
+        "Line": "I had no idea... I apologize, I overstepped."
+      },
+      {
+        "Order": 4,
+        "Character": "Ava",
+        "Line": "No, I shouldn't have snapped at you either."
+      },
+      {
+        "Order": 5,
+        "Character": "Invi",
+        "Line": "What did Ira want?"
+      },
+      {
+        "Order": 6,
+        "Character": "Ava",
+        "Line": "I don't know exactly. He just asked me to give up Gula. His eyes... They were... scary. I was worried he'd do something awful. I knew I couldn't tell him where Gula was. Then he turned around and walked away."
+      },
+      {
+        "Order": 7,
+        "Character": "Invi",
+        "Line": "I see. And Gula? How is he doing?"
+      },
+      {
+        "Order": 8,
+        "Character": "Ava",
+        "Line": "I don't know. He's gone."
+      },
+      {
+        "Order": 9,
         "Character": "Chirithy",
         "Line": "Someone's coming! They're headed straight this way!"
       },
       {
-        "Order": 3,
+        "Order": 10,
+        "Character": "Ava",
+        "Line": "Take care of him. Ira? Is something wrong?"
+      },
+      {
+        "Order": 11,
         "Character": "Ira",
-        "Line": "I know Gula's here. Tell me where he is. None of your concern. What? So that's it... All right. I'll go."
+        "Line": "I know Gula's here."
+      },
+      {
+        "Order": 12,
+        "Character": "Ava",
+        "Line": "What!?"
+      },
+      {
+        "Order": 13,
+        "Character": "Ira",
+        "Line": "Tell me where he is."
+      },
+      {
+        "Order": 14,
+        "Character": "Ava",
+        "Line": "But why? What are you going to do?"
+      },
+      {
+        "Order": 15,
+        "Character": "Ira",
+        "Line": "None of your concern."
+      },
+      {
+        "Order": 16,
+        "Character": "Ava",
+        "Line": "Don't."
+      },
+      {
+        "Order": 17,
+        "Character": "Ira",
+        "Line": "What?"
+      },
+      {
+        "Order": 18,
+        "Character": "Ava",
+        "Line": "I won't let you near him."
+      },
+      {
+        "Order": 19,
+        "Character": "Ira",
+        "Line": "So that's it... All right. I'll go."
+      },
+      {
+        "Order": 20,
+        "Character": "Ava",
+        "Line": "Gula, what are you doing!?"
+      },
+      {
+        "Order": 21,
+        "Character": "Gula",
+        "Line": "Something happen?"
+      },
+      {
+        "Order": 22,
+        "Character": "Ava",
+        "Line": "Ira was here. He wanted me to give you up."
+      },
+      {
+        "Order": 23,
+        "Character": "Gula",
+        "Line": "I knew it. It's finally come to this."
+      },
+      {
+        "Order": 24,
+        "Character": "Ava",
+        "Line": "Come to what?"
+      },
+      {
+        "Order": 25,
+        "Character": "Gula",
+        "Line": "Everyone wants to know about the Lost Page."
+      },
+      {
+        "Order": 26,
+        "Character": "Ava",
+        "Line": "The Lost Page?"
+      },
+      {
+        "Order": 27,
+        "Character": "Gula",
+        "Line": "Yeah. It's a page the Master gave me. It doesn't exist in any of our Books. It contains a passage about an inevitable betrayal. It talks about \"the one who bears the sigil.\" That's it. So, I don't know what to make of it to be honest. My role is to find out who it is. I suspected Aced and went to confront him. And look what happened."
+      },
+      {
+        "Order": 28,
+        "Character": "Ava",
+        "Line": "Why are you telling me this, Gula? I have enough to think about keeping with the Master's teachings and my role."
+      },
+      {
+        "Order": 29,
+        "Character": "Gula",
+        "Line": "Always walking the straight and narrow. I'm a fool for basing my actions on what is written on that Lost Page. Everything in the passage is ambiguous at best. That's why I need to find out."
+      },
+      {
+        "Order": 30,
+        "Character": "Ava",
+        "Line": "But how?"
+      },
+      {
+        "Order": 31,
+        "Character": "Gula",
+        "Line": "By asking the Master."
+      },
+      {
+        "Order": 32,
+        "Character": "Ava",
+        "Line": "But he's not here anymore."
+      },
+      {
+        "Order": 33,
+        "Character": "Gula",
+        "Line": "I'm going to summon Kingdom Hearts."
+      },
+      {
+        "Order": 34,
+        "Character": "Ava",
+        "Line": "What!?"
+      },
+      {
+        "Order": 35,
+        "Character": "Gula",
+        "Line": "Then he'll have no choice but to come back."
+      },
+      {
+        "Order": 36,
+        "Character": "Ava",
+        "Line": "Summoning Kingdom Hearts is forbidden!"
+      },
+      {
+        "Order": 37,
+        "Character": "Gula",
+        "Line": "That's exactly why! The only way to get him back is to break the rules! If things don't change, the entire world is doomed! But, in order to go through with it, I'll need Lux. I don't have nearly enough! You always do the right thing. Help me with this."
+      },
+      {
+        "Order": 38,
+        "Character": "Ava",
+        "Line": "I'm sorry. I know you want the Master to return, but you don't know how summoning Kingdom Hearts will affect the rest of the world. The Master... He forbid it for a reason. I'm afraid I can't help"
+      }
+    ],
+    "you.": [
+      {
+        "Order": 0,
+        "Character": "Gula",
+        "Line": "I see. May your heart be your guiding key."
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "Gula's on a mission to collect Lux."
+      },
+      {
+        "Order": 2,
+        "Character": "Invi",
+        "Line": "Ah. That explains why Aced and Ira are as well. They're trying to maintain the balance. But, that isn't the balance we were expected to keep. If everyone's collecting light solely for themselves, Keyblade wielders will soon turn against one another, which will lead to... the Keyblade War."
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "Then what's written in the Book, all of it will happen..."
       },
       {
         "Order": 4,
-        "Character": "Gula",
-        "Line": "Something happen? I knew it. It's finally come to this. Everyone wants to know about the Lost Page. Yeah. It's a page the Master gave me. It doesn't exist in any of our Books. It contains a passage about an inevitable betrayal. It talks about \"the one who bears the sigil.\" That's it. So, I don't know what to make of it to be honest. My role is to find out who it is. I suspected Aced and went to confront him. And look what happened. Always walking the straight and narrow. I'm a fool for basing my actions on what is written on that Lost Page. Everything in the passage is ambiguous at best. That's why I need to find out. By asking the Master. I'm going to summon Kingdom Hearts. Then he'll have no choice but to come back. That's exactly why! The only way to get him back is to break the rules! If things don't change, the entire world is doomed! But, in order to go through with it, I'll need Lux. I don't have nearly enough! You always do the right thing. Help me with this. I see. May your heart be your guiding key."
+        "Character": "Invi",
+        "Line": "Light will expire."
+      },
+      {
+        "Order": 5,
+        "Character": "Ava",
+        "Line": "Invi, what are you going to do?"
+      },
+      {
+        "Order": 6,
+        "Character": "Invi",
+        "Line": "I'll gather Lux, too. No matter what, the balance must be kept. Ava, you do the same. We must... delay the inevitable."
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "Right..."
       }
     ],
     "Case of Ava": [
       {
         "Order": 0,
         "Character": "Master of Masters",
-        "Line": "What's written in the last page of the Book is gonna happen. The entire world will be lost to darkness. Well, that's what brings me to your role. You might just be the only hope of keeping light from expiring. Don't get involved in any battles, forget the notion of Unions, find Keyblade wielders with potential, and create an entirely separate organization. Then, like the seeds of a dandelion, let them fly to another world. They will keep the light alive. Ava, you're the only person for this."
+        "Line": "What's written in the last page of the Book is gonna happen. The entire world will be lost to darkness."
       },
       {
         "Order": 1,
         "Character": "Ava",
-        "Line": "But Master, isn't there anything we can do? Hope? Master, what is it that you need me to do? Oh? You really think that...I'm the right person for this? I understand. Today you're here to continue with your training for our mission. This session may seem like it's familiar to you, but in a world that is different, one made of dreams… You are our hope. A war will soon wage. Those who strive to protect the light will turn their weapons on their allies for the sake of loyalty to their own Unions. To be honest, I don't know how far I can guide all of you. What you must remember is that anyone can lose themselves to the darkness. However, there will be no winners; everything will be lost. Except, all of you who are the seeds of hope. When the time comes, and there is war, you mustn't fight, but instead you must fly away from here to the world outside. This training is to help you fulfill this crucial task. The future is in all your hands--as is the world's light. May your hearts be your guiding key."
+        "Line": "But Master, isn't there anything we can do?"
+      },
+      {
+        "Order": 2,
+        "Character": "Master of Masters",
+        "Line": "Well, that's what brings me to your role. You might just be the only hope of keeping light from expiring."
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "Hope? Master, what is it that you need me to do? Oh?"
+      },
+      {
+        "Order": 4,
+        "Character": "Master of Masters",
+        "Line": "Don't get involved in any battles, forget the notion of Unions, find Keyblade wielders with potential, and create an entirely separate organization. Then, like the seeds of a dandelion, let them fly to another world. They will keep the light alive."
+      },
+      {
+        "Order": 5,
+        "Character": "Ava",
+        "Line": "You really think that...I'm the right person for this?"
+      },
+      {
+        "Order": 6,
+        "Character": "Master of Masters",
+        "Line": "Ava, you're the only person for this."
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "I understand. Today you're here to continue with your training for our mission. This session may seem like it's familiar to you, but in a world that is different, one made of dreams... You are our hope."
+      },
+      {
+        "Order": 8,
+        "Character": "Ava",
+        "Line": "A war will soon wage. Those who strive to protect the light will turn their weapons on their allies for the sake of loyalty to their own Unions. To be honest, I don't know how far I can guide all of you. What you must remember is that anyone can lose themselves to the darkness. However, there will be no winners; everything will be lost. Except, all of you who are the seeds of hope. When the time comes, and there is war, you mustn't fight, but instead you must fly away from here to the world outside. This training is to help you fulfill this crucial task. The future is in all your hands- as is the world's light. May your hearts be your guiding key."
       }
     ],
     "Case of Luxu": [
       {
         "Order": 0,
         "Character": "Luxu",
-        "Line": "The Gazing Eye? Oh, what then? No Name...Ew! N-no! So the Book of Prophecies...But I haven't done anything yet...Do I really have to go alone? What about the others? What's in it? Great, now I really wanna know. I promise. But why?"
+        "Line": "The Gazing Eye?"
       },
       {
         "Order": 1,
         "Character": "Master of Masters",
-        "Line": "Uh... That's not what it's called. Hm. Actually, no name. Well, \"gazing\" or not, that Keyblade does have an eye in it. My eye, to be exact. Oh, you think that's \"gross,\" do ya? Yeah, sure. Anyway, about your role. You need to pass down that Keyblade to your apprentice, and then him to his, so that my eye can see the future. Bingo! The fact that it exists is proof of your success! That means you've trained a worthy apprentice, passed down that handsome Keyblade, and fulfilled your role! Congratulations! What's the matter? Come on, you did a fantastic job! At least smile a little! Good point. Guess you better get started then! Unfortunately, you'll have to go alone from here on out. No Book of Prophecies to keep you company, either. I can't have you causing any temporal paradoxes. But, hey, we both know you'll do just fine without it, right? Minor details, so don't sweat it. For now, you, that Keyblade, and...this box need to stay out of sight. Just watch with your own eyes--and my eye, of course--as things unfold between the others. Then when the time is right, go off and do your thing. It's a secret. And, well, you see... the thing is... you can never, ever open it. Ah, all right. I'll indulge you. But this secret stays between the two of us, and you have to promise never to open the box. You'll see."
+        "Line": "Uh... That's not what it's called."
+      },
+      {
+        "Order": 2,
+        "Character": "Luxu",
+        "Line": "Oh, what then?"
+      },
+      {
+        "Order": 3,
+        "Character": "Master of Masters",
+        "Line": "Hm. Actually, no name."
+      },
+      {
+        "Order": 4,
+        "Character": "Luxu",
+        "Line": "No Name..."
+      },
+      {
+        "Order": 5,
+        "Character": "Master of Masters",
+        "Line": "Well, \"gazing\" or not, that Keyblade does have an eye in it. My eye, to be exact."
+      },
+      {
+        "Order": 6,
+        "Character": "Luxu",
+        "Line": "Ew!"
+      },
+      {
+        "Order": 7,
+        "Character": "Master of Masters",
+        "Line": "Oh, you think that's \"gross,\" do ya?"
+      },
+      {
+        "Order": 8,
+        "Character": "Luxu",
+        "Line": "N-no!"
+      },
+      {
+        "Order": 9,
+        "Character": "Master of Masters",
+        "Line": "Yeah, sure. Anyway, about your role. You need to pass down that Keyblade to your apprentice, and then him to his, so that my eye can see the future."
+      },
+      {
+        "Order": 10,
+        "Character": "Luxu",
+        "Line": "So the Book of Prophecies..."
+      },
+      {
+        "Order": 11,
+        "Character": "Master of Masters",
+        "Line": "Bingo! The fact that it exists is proof of your success! That means you've trained a worthy apprentice, passed down that handsome Keyblade, and fulfilled your role! Congratulations! What's the matter? Come on, you did a fantastic job! At least smile a little!"
+      },
+      {
+        "Order": 12,
+        "Character": "Luxu",
+        "Line": "But I haven't done anything yet..."
+      },
+      {
+        "Order": 13,
+        "Character": "Master of Masters",
+        "Line": "Good point. Guess you better get started then! Unfortunately, you'll have to go alone from here on out. No Book of Prophecies to keep you company, either. I can't have you causing any temporal paradoxes. But, hey, we both know you'll do just fine without it, right?"
+      },
+      {
+        "Order": 14,
+        "Character": "Luxu",
+        "Line": "Do I really have to go alone? What about the others?"
+      },
+      {
+        "Order": 15,
+        "Character": "Master of Masters",
+        "Line": "Minor details, so don't sweat it. For now, you, that Keyblade, and... this box need to stay out of sight. Just watch with your own eyes- and my eye, of course- as things unfold between the others. Then when the time is right, go off and do your thing."
+      },
+      {
+        "Order": 16,
+        "Character": "Luxu",
+        "Line": "What's in it?"
+      },
+      {
+        "Order": 17,
+        "Character": "Master of Masters",
+        "Line": "It's a secret. And, well, you see... the thing is... you can never, ever open it."
+      },
+      {
+        "Order": 18,
+        "Character": "Luxu",
+        "Line": "Great, now I really wanna know."
+      },
+      {
+        "Order": 19,
+        "Character": "Master of Masters",
+        "Line": "Ah, all right. I'll indulge you. But this secret stays between the two of us, and you have to promise never to open the box."
+      },
+      {
+        "Order": 20,
+        "Character": "Luxu",
+        "Line": "I promise. But why?"
+      },
+      {
+        "Order": 21,
+        "Character": "Master of Masters",
+        "Line": "You'll see."
       }
     ],
     "Heart & Key": [
