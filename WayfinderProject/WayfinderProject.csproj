@@ -41,6 +41,18 @@
     <Content Update="wwwroot\data\seed\scripts\_kh1_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\data\seed\scripts\_kh2_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\data\seed\scripts\_kh3d_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\data\seed\scripts\_kh3_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\data\seed\scripts\_khbbs_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\data\seed\scripts\_khxbc_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

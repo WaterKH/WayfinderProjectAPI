@@ -7,11 +7,18 @@
         "Line": "None"
       }
     ],
+    "Opening": [
+      {
+        "Order": 0,
+        "Character": "Sora",
+        "Line": "I've been having these weird thoughts lately. Like, is any of this for real or not?"
+      }
+    ],
     "Was It a Dream?": [
       {
         "Order": 0,
         "Character": "Sora",
-        "Line": "Whoa! Gimme a break, Kairi. "
+        "Line": "Whoa! Gimme a break, Kairi."
       },
       {
         "Order": 1,
@@ -713,7 +720,7 @@
       {
         "Order": 20,
         "Character": "Goofy",
-        "Line": "But they’re supposed to be a secret."
+        "Line": "But they're supposed to be a secret."
       },
       {
         "Order": 21,
@@ -793,12 +800,12 @@
       {
         "Order": 36,
         "Character": "Goofy",
-        "Line": "We’ve gotta find him quick!"
+        "Line": "We've gotta find him quick!"
       },
       {
         "Order": 37,
         "Character": "Donald",
-        "Line": "Wait! First, we need that “key”!"
+        "Line": "Wait! First, we need that \"key\"!"
       },
       {
         "Order": 38,
