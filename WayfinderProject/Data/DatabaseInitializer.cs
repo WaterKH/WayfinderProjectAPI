@@ -120,11 +120,11 @@ namespace WayfinderProjectAPI.Data
             CreateScript(context, "_khrecoded_lines.json", "Kingdom Hearts Re:Coded");
             CreateScript(context, "_kh3d_lines.json", "Kingdom Hearts Dream Drop Distance");
             CreateScript(context, "_kh3_lines.json", "Kingdom Hearts III");
+            CreateScript(context, "_khdr_lines.json", "Kingdom Hearts Dark Road");
             CreateScript(context, "_khmom_lines.json", "Kingdom Hearts Melody of Memory");
 
             //CreateScript(context, "_khx_lines.json", "Kingdom Hearts χ");
             //CreateScript(context, "_khux_lines.json", "Kingdom Hearts Union χ");
-            //CreateScript(context, "_khdr_lines.json", "Kingdom Hearts Dark Road");
         }
 
         class LineScriptObject

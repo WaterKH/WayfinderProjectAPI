@@ -34,6 +34,7 @@
     "Ava",
     "Axel",
     "Bag O' Coal(s)",
+    "Bag O' Jewels(s)",
     "Baldr",
     "Bambi",
     "Bandana Kid",
@@ -148,6 +149,7 @@
     "Ducky Goose",
     "Dusk(s)",
     "Eaglider(s)",
+    "Earth Gargoyle(s)",
     "Ed",
     "Eeyore",
     "Elizabeth Swann",
@@ -522,6 +524,8 @@
     "Twilight Thorn",
     "Tyranto Rex",
     "Undead Pirate(s)",
+    "Unknown",
+    "Unnamed Woman",
     "Urd",
     "Ursula",
     "Vanellope",
@@ -560,6 +564,7 @@
     "World of Chaos",
     "Wyvern(s)",
     "Xaldin",
+    "Xehanort",
     "Xemnas",
     "Xigbar",
     "Xion",
@@ -582,6 +587,7 @@
     "Zeus",
     "Zexion",
     "Zip Slasher(s)",
-    "Zolephant(s)"
+    "Zolephant(s)",
+    ":None:"
   ]
 }
