@@ -6,11 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>232a41f3-6262-4faf-bab4-6dbcc5291872</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Remove="wwwroot\data\seed\scripts\_kh0_2_lines.json~RF26577320.TMP" />
+    <Content Remove="wwwroot\data\seed\scripts\_khux_lines.json~RF21f1c183.TMP" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,6 +71,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\data\seed\scripts\_khrecom_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\data\seed\scripts\_khux_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\data\seed\scripts\_khx_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\data\seed\_areas.json">
