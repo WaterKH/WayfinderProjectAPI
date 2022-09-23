@@ -110,7 +110,9 @@ namespace WayfinderProjectAPI.Data
 
         public static void CreateScripts(WayfinderContext context)
         {
+            CreateScript(context, "_khx_lines.json", "Kingdom Hearts χ");
             CreateScript(context, "_khxbc_lines.json", "Kingdom Hearts χ Back Cover");
+            CreateScript(context, "_khux_lines.json", "Kingdom Hearts Union χ");
             CreateScript(context, "_khbbs_lines.json", "Kingdom Hearts Birth By Sleep");
             CreateScript(context, "_kh0_2_lines.json", "Kingdom Hearts 0.2");
             CreateScript(context, "_kh1_lines.json", "Kingdom Hearts");
@@ -122,9 +124,6 @@ namespace WayfinderProjectAPI.Data
             CreateScript(context, "_kh3_lines.json", "Kingdom Hearts III");
             CreateScript(context, "_khdr_lines.json", "Kingdom Hearts Dark Road");
             CreateScript(context, "_khmom_lines.json", "Kingdom Hearts Melody of Memory");
-
-            //CreateScript(context, "_khx_lines.json", "Kingdom Hearts χ");
-            //CreateScript(context, "_khux_lines.json", "Kingdom Hearts Union χ");
         }
 
         class LineScriptObject

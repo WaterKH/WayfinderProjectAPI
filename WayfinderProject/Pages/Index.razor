@@ -115,6 +115,8 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
+                    if (Scene.Worlds[0] != ":None:")
+                    {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Worlds.Count; ++i)
                         {
@@ -125,6 +127,7 @@ else if (this.SceneDtos.Count > 0)
                             }
                         }
                     </div>
+                    }
                 }
             </td>
             <td>
@@ -138,6 +141,8 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
+                    if (Scene.Areas[0] != ":None:")
+                    {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Areas.Count; ++i)
                         {
@@ -148,6 +153,7 @@ else if (this.SceneDtos.Count > 0)
                             }
                         }
                     </div>
+                    }
                 }
             </td>
             <td>
@@ -161,6 +167,8 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
+                    if (Scene.Characters[0] != ":None:")
+                    {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Characters.Count; ++i)
                         {
@@ -171,6 +179,7 @@ else if (this.SceneDtos.Count > 0)
                             }
                         }
                     </div>
+                    }
                 }
             </td>
             <td>
@@ -184,6 +193,8 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
+                    if (Scene.Music[0] != ":None:")
+                    {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Music.Count; ++i)
                         {
@@ -194,6 +205,7 @@ else if (this.SceneDtos.Count > 0)
                             }
                         }
                     </div>
+                    }
                 }
             </td>
             <td>

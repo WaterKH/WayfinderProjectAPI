@@ -1,0 +1,2024 @@
+{
+  "Script": {
+    "None": [
+      {
+        "Order": -1,
+        "Character": "None",
+        "Line": "None"
+      }
+    ],
+    "Fairytale": [
+      {
+        "Order": 0,
+        "Character": "Kairi's Grandma",
+        "Line": "Long ago, people lived in peace, bathed in the warmth of light. Everyone loved the light. Then people began to fight over it. They wanted to keep it for themselves. And darkness was born in their hearts. The darkness spread, swallowing the light and many people's hearts. It covered everything, and the world disappeared. But small fragments of light survived, in the hearts of children. With these fragments of light, children rebuilt the lost world. It's the world we live in now."
+      },
+      {
+        "Order": 1,
+        "Character": "Unknown",
+        "Line": "What kind of power flows within your heart? Your story will now begin"
+      }
+    ],
+    "Guiding Heart": [
+      {
+        "Order": 0,
+        "Character": "Unknown",
+        "Line": "The heart that guides you... what form does it take? The Keyblade. The power of the light that drives back the darkness"
+      }
+    ],
+    "The First Battle": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Ummm, I guess that's how they all start out. Hmm, yeah, this might be tougher than I thought. Excuse me, but, um, while you're pulling yourself together there, I'll go first. You have been chosen to be a Keyblade Wielder to seek the light. The Keyblade is the power of the heart of light. This world is being covered in darkness. The Keyblade is used to drive back the darkness and gather light to protect the world. I'm sorry, was that a bit hard to understand? There are monsters of darkness, like that one just now. They're called Heartless, by the way. Heartless are beings of darkness. They go after hearts and they stain the worlds with darkness. The Keyblade can fight against them. That's why you have to protect the worlds from the Heartless with your Keyblade. Um, all right so far? Yeah. Well, I watch out for Keyblade Wielders who are just starting out, like you, on orders from Up Above. My name is Chirithy. I'll stay with you, and I'll teach you all sorts of things, so don't worry... Well, as long as you can do it, I guess. O-okay, that Keyblade of yours. Just like you yourself, it's not at its best yet. It needs a little 'something' to draw out its power. We call those cards 'Fragments'. Oh! There's one right over there, go pick it up. Phew, I guess if I say too much at once, it will go over your head. I'm getting tired too, so we'll continue this next time, okay."
+      },
+      {
+        "Order": 1,
+        "Character": "Moogle(s)",
+        "Line": "Kupo? Finders keepers, kupo. This is mine, kupo. It sounds like these cards are important, kupo. If you're after cards like this, I've picked up loads, kupo. I can share them with you, but not for free, kupo. That's the world we live in, kupo. Actually, you look like you're going to be a regular, so I'll give you the first one as a bonus, kupo. That's what they call an investment, kupo!"
+      }
+    ],
+    "Strength to Fight": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "It seems like you were able to bring out the power of the Keyblade. This is certainly the way to defeat weak Heartless. However, to defeat the stronger Heartless... You must join forces with those who share your will and your path. There are a few other groups who are after the light in order to drive back the darkness, just like we are. However, it does not necessarily mean they share our will. In other words, there are people out there who are collecting the light for their own interests, rather than to help bring peace to the world. You'll have to work out for yourself who is a Seeker of Darkness, only pretending to be a Guardian of the Light."
+      },
+      {
+        "Order": 1,
+        "Character": "Gula",
+        "Line": "It seems like you were able to bring out the power of the Keyblade. This is certainly the way to defeat weak Heartless. However, to defeat the stronger Heartless... You must join forces with those who share your will and your path. There are a few other groups who are after the light in order to drive back the darkness, just like we are. However, it does not necessarily mean they share our will. In other words, there are people out there who are collecting the light for their own interests, rather than to help bring peace to the world. You'll have to work out for yourself who is a Seeker of Darkness, only pretending to be a Guardian of the Light."
+      },
+      {
+        "Order": 2,
+        "Character": "Aced",
+        "Line": "It seems like you were able to bring out the power of the Keyblade. This is certainly the way to defeat weak Heartless. However, to defeat the stronger Heartless... You must join forces with those who share your will and your path. There are a few other groups who are after the light in order to drive back the darkness, just like we are. However, it does not necessarily mean they share our will. In other words, there are people out there who are collecting the light for their own interests, rather than to help bring peace to the world. You'll have to work out for yourself who is a Seeker of Darkness, only pretending to be a Guardian of the Light."
+      },
+      {
+        "Order": 3,
+        "Character": "Invi",
+        "Line": "It seems like you were able to bring out the power of the Keyblade. This is certainly the way to defeat weak Heartless. However, to defeat the stronger Heartless... You must join forces with those who share your will and your path. There are a few other groups who are after the light in order to drive back the darkness, just like we are. However, it does not necessarily mean they share our will. In other words, there are people out there who are collecting the light for their own interests, rather than to help bring peace to the world. You'll have to work out for yourself who is a Seeker of Darkness, only pretending to be a Guardian of the Light."
+      },
+      {
+        "Order": 4,
+        "Character": "Ira",
+        "Line": "It seems like you were able to bring out the power of the Keyblade. This is certainly the way to defeat weak Heartless. However, to defeat the stronger Heartless... You must join forces with those who share your will and your path. There are a few other groups who are after the light in order to drive back the darkness, just like we are. However, it does not necessarily mean they share our will. In other words, there are people out there who are collecting the light for their own interests, rather than to help bring peace to the world. You'll have to work out for yourself who is a Seeker of Darkness, only pretending to be a Guardian of the Light."
+      }
+    ],
+    "Journey to the Outside World": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "What happened? Are you okay? I know you are confused, but the darkness eating away at the worlds isn't going to wait. The darkness has also appeared in places other than here. That means there are some worlds I'd like you to go visit. The door to the outside world has been opened."
+      }
+    ],
+    "Chirithy's Birth": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "The world was darkness. But, the world I was born into was engulfed in light and was very dazzling. My master, He who brought me into this world, looked at me inside the light with a smile."
+      }
+    ],
+    "The Foretellers": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "You've really shaped up as a Keyblade Wielder, haven't you. Uh-huh, you're looking really fine, too! I think it's time to tell you, then. Before my master, He who created me, disappeared, He bestowed His six followers with new names, and gave five of them a book of prophecies. These five followers, who were to become the Foretellers, read the future written in the book. Apparently a passage written on the last page shocked them. \"The World will be enveloped in eternal Darkness.\" In order to save the future World, the five Foretellers thought to use the power hidden in the book of prophecy. That's the power you are all using now. Through the cards, you are using the power of the future to try and protect the light from the darkness, and avert the future enveloped in darkness. Also, as you know even though the five Foretellers share the same goal, they by no means share the same will. So, you mustn't lose sight of it yourself."
+      }
+    ],
+    "To a New World": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Ah, I'm sorry. I was just checking things out by myself for a bit. You know those Darkballs that have been popping up lately. Just like I thought, those Heartless don't seem to have come from this world. Basically, this means that even this world is being eaten away by darkness right now, sad to say. But it'll be all right. You have the power to drive back the darkness! Plus, if you go to a new world, you should be able to get new power for your Keyblade. I think from here on out the fight will only get tougher, so I'd love for you to go out and get that power! Yeah. All right, please hold out your Keyblade. Come on, let's go to a new world!"
+      }
+    ],
+    "Of Each Chirithy": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Hey there, Chirithy."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Hey there, Chirithy."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "How're they doing? Your Player, I mean."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "They felt kinda apathetic, really."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Oh, really..."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "Maybe they haven't been put through enough trials yet."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "That sucks."
+      },
+      {
+        "Order": 7,
+        "Character": "Chirithy",
+        "Line": "And there are already only five forces of light, to boot."
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "We can't cover up deficiencies. I guess all we can do is place our hope in their growth."
+      }
+    ],
+    "Keyblade Wielders": [
+      {
+        "Order": 0,
+        "Character": "Key Kid(s)",
+        "Line": "Hello. I see you have a Keyblade, too. By the way, have you heard? A new kind of Heartless appeared in town. They look pretty tough, you know. There are a lot them, too, so we've been trying to share the task of defeating them among all of us. So there you have it. We'd love it if you helped out. Once we've defeated some Heartless, we'll meet up back at this shop. All right, we're counting on you!"
+      }
+    ],
+    "Message from Him": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "He won't be coming, now... He left me with a message. \"I'm sorry I couldn't keep my promise.\" Well, I'm sure it made it."
+      }
+    ],
+    "Chirithy's Fate": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Hey there, Chirithy..."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "... Hey."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "My player was erased by the darkness..."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "..."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "I guess my duty is finished, too..."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "Familiars like us are tied to our players. If our player is erased, so are we."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "Yeah..."
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "Due to the actions of the Keyblade Wielders we have gathered a great deal of Lux, but even so, the power of the darkness is growing with even greater force."
+      },
+      {
+        "Order": 8,
+        "Character": "Gula",
+        "Line": "Due to the actions of the Keyblade Wielders we have gathered a great deal of Lux, but even so, the power of the darkness is growing with even greater force."
+      },
+      {
+        "Order": 9,
+        "Character": "Aced",
+        "Line": "Due to the actions of the Keyblade Wielders we have gathered a great deal of Lux, but even so, the power of the darkness is growing with even greater force."
+      },
+      {
+        "Order": 10,
+        "Character": "Invi",
+        "Line": "Due to the actions of the Keyblade Wielders we have gathered a great deal of Lux, but even so, the power of the darkness is growing with even greater force."
+      },
+      {
+        "Order": 11,
+        "Character": "Ira",
+        "Line": "Due to the actions of the Keyblade Wielders we have gathered a great deal of Lux, but even so, the power of the darkness is growing with even greater force."
+      },
+      {
+        "Order": 12,
+        "Character": "Chirithy",
+        "Line": "Then there really is a traitor within the five forces of light?"
+      },
+      {
+        "Order": 13,
+        "Character": "Ava",
+        "Line": "I do not want to believe so, not yet."
+      },
+      {
+        "Order": 14,
+        "Character": "Gula",
+        "Line": "I do not want to believe so, not yet."
+      },
+      {
+        "Order": 15,
+        "Character": "Aced",
+        "Line": "I do not want to believe so, not yet."
+      },
+      {
+        "Order": 16,
+        "Character": "Invi",
+        "Line": "I do not want to believe so, not yet."
+      },
+      {
+        "Order": 17,
+        "Character": "Ira",
+        "Line": "I do not want to believe so, not yet."
+      },
+      {
+        "Order": 18,
+        "Character": "Chirithy",
+        "Line": "... Yeah."
+      }
+    ],
+    "A New Power": [
+      {
+        "Order": 0,
+        "Character": "Dark Chirithy",
+        "Line": "Wow, you look like you've been working hard. I'm always by your side watching all the things you're doing, like I said. You want to get even stronger, right? Well then, I have a present here for you. Drumroll please~ A Strength Bangle~ Ooh-ahh! It looks great on you! While you have this equipped, Heartless you defeat can drop Guilt. You can swap your own strength by collecting that Guilt. That doesn't mean all Heartless will drop Guilt, though, and the power you've obtained can only be used once, so be careful. Hey hey, don't make that face. Try it and see, first! Huh? No, you don't need to give that back. Didn't I tell you right at the start that it is a present! Oh well... Yeah. Just equip that and do your very best to defeat more and more Heartless. Mm-hm. That's the spirit. All right, I'm counting on you."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "What the... ?"
+      }
+    ],
+    "The Dream Chirithy Showed": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "What's wrong? You seemed to have a nightmare. You should try sleeping again. Are you the one interfering?"
+      },
+      {
+        "Order": 1,
+        "Character": "Dark Chirithy",
+        "Line": "Did you show them the dream? What are you trying to do?"
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "The exact opposite of what you are doing."
+      },
+      {
+        "Order": 3,
+        "Character": "Dark Chirithy",
+        "Line": "Then I guess that we are enemies now."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "I hope I will be able to protect..."
+      }
+    ],
+    "Meeting Ephemer": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "I'm okay. Thank you. I guess it was a little silly of me to take that thing on by myself. I'm Ephemer of -----. Who are you?"
+      },
+      {
+        "Order": 1,
+        "Character": "Player",
+        "Line": "Player of Anguis / Leopardus / Unicornis / Ursus / Vulpes."
+      },
+      {
+        "Order": 2,
+        "Character": "Ephemer",
+        "Line": "I see, so we're rivals. But today I'm doing my own thing outside of missions, so don't be too guarded. Hmm... Maybe this was somehow fated, too. How about I tell you, as thanks for saving me? The Lux that we are recovering is not the light of the worlds from the fairy tale. These worlds are an illusion, like a three-dimensional projection. What we've been recovering is actually the light of this world. Mm... Strictly speaking, the world we are on now is joined physically to countless existing worlds. But, it's impossible to go to all those worlds to recover Lux. So, we make worlds that would never appear here in this place. This set up is how we can actually recover the Lux of far-off places. Oh, and! I tried investigating how the system works. And, I'm pretty sure that the source of those illusory worlds are the Book of Prophecies that the Foreteller of each Union holds... I don't think you quite grasp how important this is. Oh well, in any case, we have actually been recovering the light of this vast World from such a narrow space. For some reason, we're fighting to snatch it from each other without once questioning why. That's why I was looking for the reason, but it seems like the five Unions each have different goals. What's wrong? That's extremely interesting... What do you think? Shall we do a little investigating together? Alright, well, let's try visiting the place from your dream."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Did you put him up to this?"
+      },
+      {
+        "Order": 4,
+        "Character": "Dark Chirithy",
+        "Line": "Did I?"
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "You've changed color since I saw you last."
+      },
+      {
+        "Order": 6,
+        "Character": "Dark Chirithy",
+        "Line": "Oh, so you noticed. What will you do? They're getting closer to the truth. Are you okay with that?"
+      },
+      {
+        "Order": 7,
+        "Character": "Ephemer",
+        "Line": "Do you have any idea where the room you saw in your dream could be? I've tried to investigate the tower many times, but I've never been able to get in. Let's split up for a bit and see if we can find a place to sneak in, okay?"
+      }
+    ],
+    "The Room Seen in the Dream": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "You've certainly kept tabs here. It looks like this is the only place that connects to the outside, other than the front of the building. But, it looks like there are Heartless here too, so be careful."
+      }
+    ],
+    "The Promise That Could Not Be Protected": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "I think this repays what you did for me, don’t you? Hang on. Let’s stop here for today. We took too long. Even if we sneak in now, it’ll probably still take some time to search the room. If we are away from our Union missions for long they’ll definitely suspect us. We’ve secured a way to infiltrate the tower now, so why don’t we rendezvous and check it out the next chance we get? Good. Well, our friendship transcends Unions. Let’s meet up at the plaza tomorrow afternoon!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "What’s up? Look at that grin, did something nice happen? I see. You’ve made a friend. I don’t have any, so I wouldn’t know whether it’s really that nice or not. Huh? You are? I see, friends huh... Ehehe"
+      },
+      {
+        "Order": 2,
+        "Character": "Ephemer",
+        "Line": "I’m sorry... Player..."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "What’s wrong? You didn’t go on your mission today, or yesterday either... Let’s just go home, we’ll call it a day... I’m sure something came up. The only time a friend is unable to keep a promise is when something super serious has happened. I know you’re worried, but you just have to believe. If you’re sad, I’ll be sad too. Well now, I’m your friend too, right? Aww."
+      }
+    ],
+    "Dandelion": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "Oh? You seem a little quiet today. So even Foretellers aren’t above feeling a little worry sometimes. Hey, would you tell me the secret of the Book of Prophecies?"
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "Absolutely not."
+      },
+      {
+        "Order": 2,
+        "Character": "Ephemer",
+        "Line": "Awwww."
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "Are you mocking me, just because I’m the easiest Foreteller to speak to?"
+      },
+      {
+        "Order": 4,
+        "Character": "Ephemer",
+        "Line": "No, no, I would never."
+      },
+      {
+        "Order": 5,
+        "Character": "Ava",
+        "Line": "Well, whatever. But, it’s not a bad way of thinking–making friends with people who aren’t tied to the Union, like you."
+      },
+      {
+        "Order": 6,
+        "Character": "Ephemer",
+        "Line": "Today I made a friend from another Union. They're a strange one, though. Don’t say much. We promised we’d meet again tomorrow."
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "A promise to a friend, huh... Well then, you’d better hurry back and get some rest."
+      },
+      {
+        "Order": 8,
+        "Character": "Ephemer",
+        "Line": "All right then, I’ll take my leave. I don’t know much about what’s going on, but please keep your spirits up, okay?"
+      },
+      {
+        "Order": 9,
+        "Character": "Ava",
+        "Line": "Thank you. If the worst happens, I’m leaving it in the hands of children like you who are not bound to the unions. Ride the wind, and fly somewhere far away... Dandelion."
+      }
+    ],
+    "Dream of a Friend": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "I’m sorry, I’m sorry. I know, I’m so, so sorry. I just absolutely couldn’t make it. Something came up... Well then, how about we go together now? It’s just ahead. Are you ready? Yeah, I thought as much. It’s still a little too soon for you. I’ll be waiting, Player."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Did you have another dream? You dreamed about your friend, then. Huh? Search the tower for your friend? No, you can’t do that... Well... That place is the domain of the Foretellers alone, and besides, it’s really bad timing right now... I can’t really say much, but the truth is, there’s been some trouble recently between the Foretellers that are the masters of each Union. I don’t think it’s a good idea to go near them any more than you have to right now..."
+      }
+    ],
+    "Searching for a Friend": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "I thought I told you, you can’t do this. You aren’t listening at all, are you... Hey! Where are you going!?"
+      }
+    ],
+    "The Foretellers’ Territory": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Master Ava..."
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "You’re Player of Anguis / Leopardus / Unicornis / Ursus / Vulpes,  aren’t you? Why have you followed me? Ephemer? I know him, but why come to me? You sought me out on a rumor like that? A dream? I see... You dreamed that Ephemer was waiting for you here. And, as this domain belongs to us, the Foretellers, you thought that Ephemer was involved somehow with us and our recent troubles. Which means you thought I was the most suspicious of all, right? Understand this, child. It’s quite a pity, but I can’t tell you more just yet."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Huuuuhh!?"
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "Now, ready your Keyblade."
+      }
+    ],
+    "Master Ava’s Teachings": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "Not quite there, are you. Maybe I do feel some talent in you. But, there is sadness in your heart. Sadness will eventually lead to darkness. Move past that sadness, quickly. It seems as though you have a good child with you, so I am sure it will be fine. Go home for today. From now on, you mustn’t approach this place so casually. I see. So you are the friend who doesn’t say much..."
+      }
+    ],
+    "Ephemer’s Whereabouts": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "I’m sorry, Player... Who’s there? You!?"
+      }
+    ],
+    "Unchained": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "So much happened today, didn’t it... I sure was surprised that you ended up fighting a Foreteller. "
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "As was I. That's now how I usually do things, you know."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Master Ava... Why?"
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "You don’t have to call me Master. Was it you who showed them a dream of Ephemer?"
+      }
+    ],
+    "Chirithy:No, no, it wasn’t me this time.": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "I see. Then perhaps Ephemer himself spoke from within the dream."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "From within the dream? What does that mean?"
+      },
+      {
+        "Order": 2,
+        "Character": "Ava",
+        "Line": "Ephemer draws close to the truth. I believe he spoke to this child from another plane, a released state known as ‘Unchained’. I believe that if this child is connected to Ephemer inside their dreams, it means they too will draw close to the other plane. If they are to move forward, they can only follow their own heart. Protect them from nightmares, okay, Chirithy? So that Player may ride the wind and fly. "
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Me, protect you from nightmares?"
+      }
+    ],
+    "An Encounter with Skuld": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Nice job. I know, gathering Lux has been pretty tough lately, hasn’t it? No, it’s just how it is. All the Unions are really going at it hard with gathering right now."
+      },
+      {
+        "Order": 1,
+        "Character": "Skuld",
+        "Line": "I wonder why we’re competing? All the Unions share the same goal"
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Who are you?"
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "I’m Skuld. You’re Player, aren’t you? Nice to meet you. By the way, do you know someone called Ephemer? I guess you’re wondering why I’d say that. I was in the same party as him. Well, that said, it was back when I’d only just become a Keyblade wielder. He’s a bit of a strange one, and after a while, one day he quit the party. Now, and this is where it gets real, okay, just the other day, he appeared in my dreams, and told me to go with you. "
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Why?"
+      },
+      {
+        "Order": 5,
+        "Character": "Skuld",
+        "Line": "I wonder? I’ve brushed with him several times even after he left the party, but we never moved past the level of exchanging basic greetings, so I have no idea why he’d appear in my dreams either. As you can imagine, I don’t know his reasons for telling me to go with you, either. Actually, I came here hoping that if I asked you, you’d know something. Huh? He appeared in your dreams, too? Did he say anything? What sort of dream was it? Oh... that’s... He told you he was waiting, then... What about going to the place you were meant to go with Ephemer one more time with me? "
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "No, you can’t! Lady Ava told you to stay away from there!"
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "She told you to stay away specifically because there’s something there then, right? I’m sure this is what Ephemer meant when he told me expressly to go with you. And, one more thing— What!?"
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "That sounded close, didn’t it..."
+      },
+      {
+        "Order": 9,
+        "Character": "Skuld",
+        "Line": "I’ll go and check it out!"
+      },
+      {
+        "Order": 10,
+        "Character": "Chirithy",
+        "Line": "Huh? Huh?"
+      }
+    ],
+    "Battle Between Foretellers": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "Why!?"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Oh..."
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "Why would Foretellers be fighting amongst themselves? What Ephemer was saying is true after all... What I was about to say before. Actually, Ephemer said one more thing to me at the end of the dream. He said the end of the world is near..."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "What does that mean?"
+      },
+      {
+        "Order": 4,
+        "Character": "Skuld",
+        "Line": "I don’t know. But, an ending would come suddenly, without prior warning. The same way Ephemer vanished. "
+      },
+      {
+        "Order": 5,
+        "Character": "Player",
+        "Line": "Let’s go."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "Okay."
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "Huh? Huhh?"
+      }
+    ],
+    "Mysterious Black Garment": [
+      {
+        "Order": 0,
+        "Character": "Darkling(s)",
+        "Line": "... ux..."
+      },
+      {
+        "Order": 1,
+        "Character": "Darkling(s)",
+        "Line": "... Lux..."
+      },
+      {
+        "Order": 2,
+        "Character": "Darkling(s)",
+        "Line": "Give us... Lux..."
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "What are you!"
+      },
+      {
+        "Order": 4,
+        "Character": "Darkling(s)",
+        "Line": "Hand the Lux over!"
+      }
+    ],
+    "Nightmare": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Who are you?"
+      },
+      {
+        "Order": 1,
+        "Character": "Dark Chirithy",
+        "Line": "Hey."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "You’re..."
+      },
+      {
+        "Order": 3,
+        "Character": "Dark Chirithy",
+        "Line": "In the end, Lux is the source of the fighting, so I think you’d better just hand it over to us. Oh well, you can hang on to it a little longer if you like. "
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Those colors..."
+      },
+      {
+        "Order": 5,
+        "Character": "Dark Chirithy",
+        "Line": "What do you think of my new form? "
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "The darkness has completely tainted you, hasn’t it..."
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "By the darkness..."
+      },
+      {
+        "Order": 8,
+        "Character": "Dark Chirithy",
+        "Line": "Why do you hate the darkness so much? Just like the world has night and day, you guys have light and darkness inside you. What are you afraid of?"
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "Those three just now, they used to be human, didn’t they..."
+      },
+      {
+        "Order": 10,
+        "Character": "Dark Chirithy",
+        "Line": "Yep."
+      },
+      {
+        "Order": 11,
+        "Character": "Skuld",
+        "Line": "Keyblade wielders... like us?"
+      },
+      {
+        "Order": 12,
+        "Character": "Dark Chirithy",
+        "Line": "Weak-hearted people fear the darkness, and get swallowed up by it. Accept the darkness, control the darkness, and you can gain true strength. Those guys aren’t using fragments of the Foretellers’ power, like you are. They fought you with their own abilities, you know? How incredibly..."
+      },
+      {
+        "Order": 13,
+        "Character": "Chirithy",
+        "Line": "This isn’t the Master’s teaching..."
+      },
+      {
+        "Order": 14,
+        "Character": "Dark Chirithy",
+        "Line": "Teaching? That’s got nothing to do with this. The truth about the world isn’t something you can just be taught by someone. It’s something you learn for yourself."
+      },
+      {
+        "Order": 15,
+        "Character": "Chirithy",
+        "Line": "Who on earth is your player?"
+      },
+      {
+        "Order": 16,
+        "Character": "Dark Chirithy",
+        "Line": "Heh heh heh... They’re close by, you’ll find out soon enough."
+      }
+    ],
+    "Chasing Ephemer": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "This is where you last saw Ephemer? There’s something secret up ahead, I’m sure of it..."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Are you really going to keep going in? What with the Black Garments and the dark Chirithy just now... I’ve got an awful feeling about this..."
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "Hey you, you know the layout of the inside of this tower, don’t you?"
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Y-yeah..."
+      },
+      {
+        "Order": 4,
+        "Character": "Skuld",
+        "Line": "Well then, lead us."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "All right already... But going in there really is forbidden, so we’re coming right back after just a quick peek."
+      },
+      {
+        "Order": 6,
+        "Character": "Skuld",
+        "Line": "I promise we will."
+      }
+    ],
+    "The Foretellers’ Room": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "What is this place?"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "This is the last room... The Foreteller’s room."
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "I wonder if Ephemer made it here?"
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Well as you can see, nobody’s here. There’s nothing here...And since we’re not going to go fiddling around with the things left in here, let’s go back already, like we promised. We’ll be in huge trouble if anyone finds us..."
+      },
+      {
+        "Order": 4,
+        "Character": "Skuld",
+        "Line": "Yeah... So there’s nothing here, huh... I almost feel like we’ve been sidestepped. What on earth did the dream of Ephemer mean..."
+      },
+      {
+        "Order": 5,
+        "Character": "Ira",
+        "Line": "What are you doing?"
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "Master Ira..."
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "Excuse us! We are looking for a friend."
+      },
+      {
+        "Order": 8,
+        "Character": "Ira",
+        "Line": "Chirithy, how were they allowed to get in here if you were accompanying them?"
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "I’m sorry..."
+      },
+      {
+        "Order": 10,
+        "Character": "Ira",
+        "Line": "There was another trespasser in here a few days ago. Your friend, perhaps?"
+      },
+      {
+        "Order": 11,
+        "Character": "Player",
+        "Line": "Yes."
+      },
+      {
+        "Order": 12,
+        "Character": "Skuld",
+        "Line": "Do you know him then– Ephemer?"
+      },
+      {
+        "Order": 13,
+        "Character": "Ira",
+        "Line": "The union he belonged to was gathering Lux in direct conflict with the goals of we Unicornis. He got close to you in order to gather intelligence on our union. There’s no way you will be seeing him again."
+      },
+      {
+        "Order": 14,
+        "Character": "Skuld",
+        "Line": "You didn’t... Not Ephemer..."
+      },
+      {
+        "Order": 15,
+        "Character": "Ira",
+        "Line": "... I had him disappear."
+      },
+      {
+        "Order": 16,
+        "Character": "Chirithy",
+        "Line": "Player..."
+      },
+      {
+        "Order": 17,
+        "Character": "Skuld",
+        "Line": "You won’t get away with this..."
+      },
+      {
+        "Order": 18,
+        "Character": "Ira",
+        "Line": "What do you think you’re going to do?"
+      },
+      {
+        "Order": 19,
+        "Character": "Chirithy",
+        "Line": "No, Skuld, you can’t! Master Ira! I’m the one responsible for everything that’s happened today! Please forgive these two! Player..."
+      },
+      {
+        "Order": 20,
+        "Character": "Player",
+        "Line": "Master, until today, I have devoted myself to the union, to gathering light, in order to save the world. I’ve even competed against fellow fighters I think of as friends. I thought it was just what had to be done to save the world, and I’ve tried not to dwell on what that means. But, in the middle of that, someone asked me that same simple question. That person was Ephemer. My encounter with him only lasted a moment, and he even broke a promise to me, so my memories of him aren’t exactly fun, but they are huge and important in my heart. I’m sure that’s because he is my friend. For a friend like that to be snatched away... Even if these feelings, anger and sadness, signify darkness, pushing them down is proving impossible. Even if I cross my Keyblade with you, Master, I don’t think I will come away from this with any kind of peace. Maybe I’ll disappear, too. But even so, I’m sure that if Ephemer were here, this is what he’d do... Master Ira, raise your Keyblade."
+      },
+      {
+        "Order": 21,
+        "Character": "Ira",
+        "Line": "Come."
+      },
+      {
+        "Order": 22,
+        "Character": "Chirithy",
+        "Line": "Player!!"
+      }
+    ],
+    "Invitation to the Dandelions": [
+      {
+        "Order": 0,
+        "Character": "Ira",
+        "Line": "You avoided being swallowed by your anger and sadness–you fought well."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Lady Ava..."
+      },
+      {
+        "Order": 2,
+        "Character": "Ava",
+        "Line": "Player, Skuld. You allowed me to determine the strength of  your hearts. The Master you were fighting, as well as the location, was an illusion I created here."
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "What is the meaning of this?"
+      },
+      {
+        "Order": 4,
+        "Character": "Ava",
+        "Line": "As Ephemer told you in your dream, the end of the world seems to be upon us. If all of us are swallowed up by the end of this world, that will be the end of Keyblade wielders. That must be avoided. I began carrying out my own missions. I’ve been preparing so that superior Keyblade wielders, regardless of Union, will last in the next world."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "Last... in the next world?"
+      },
+      {
+        "Order": 6,
+        "Character": "Skuld",
+        "Line": "This is all happening too fast... What happened to Ephemer, then?"
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "As I just said, this world is facing its end. Perhaps in a way, he felt doubt and started to make inquiries because he began to feel that. He got close to the truth faster than any other. So, I asked him a favor. I asked him to guide the Dandelions in my stead. "
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "Dandelions?"
+      },
+      {
+        "Order": 9,
+        "Character": "Ava",
+        "Line": "The Keyblade wielders that will last in the next world. They are the Dandelions. They who shall not witness the end of the world. My duty is to establish those Dandelions. However, I must witness the end of the world. Thus, so that he may guide those who are left for me once I’m gone, I decided to have Ephemer wait ahead somewhere else."
+      },
+      {
+        "Order": 10,
+        "Character": "Skuld",
+        "Line": "Somewhere else... Ephemer is safe, then, right?"
+      },
+      {
+        "Order": 11,
+        "Character": "Ava",
+        "Line": "This world will end because among the Keyblade wielders are some who have been swallowed by darkness. I’m sure you’ve met the dark Chirithy. He is proof. So that power of darkness will not persist into the next world, I give the hearts of you Keyblade wielders a shake, and choose those who cannot be swallowed by a little darkness to be Dandelions. And so, I wish to ask you, too. Will you join the Dandelions?"
+      },
+      {
+        "Order": 12,
+        "Character": "Skuld",
+        "Line": "I understand. What’s wrong, Player?"
+      },
+      {
+        "Order": 13,
+        "Character": "Player",
+        "Line": "But what will happen to all the other Keyblade wielders who don’t get chosen to be Dandelions?"
+      },
+      {
+        "Order": 14,
+        "Character": "Ava",
+        "Line": "At the end, this world will face a Keyblade War."
+      },
+      {
+        "Order": 15,
+        "Character": "Skuld",
+        "Line": "A Keyblade War..."
+      },
+      {
+        "Order": 16,
+        "Character": "Ava",
+        "Line": "It’s already unavoidable..."
+      },
+      {
+        "Order": 17,
+        "Character": "Player",
+        "Line": "Please let me think over your offer to join the Dandelions."
+      },
+      {
+        "Order": 18,
+        "Character": "Skuld",
+        "Line": "Player!"
+      },
+      {
+        "Order": 19,
+        "Character": "Ava",
+        "Line": "I understand. You are under no obligations. However, so that we don’t fall into chaos, please don’t speak of this."
+      }
+    ],
+    "A Talk with Skuld": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Why are you holding back on joining in? If you’d said yes, you probably could be with Ephemer right now."
+      },
+      {
+        "Order": 1,
+        "Character": "Player",
+        "Line": "Ephemer is an important friend, yeah. But, the Keyblade wielders I’ve fought alongside all this time are important to me, too."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Oh..."
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "Can I say something? The truth is, back when I became a Keyblade wielder, I made a party, but no one would join me. And then, Ephemer did. For a while, it was just the two of us in the party, actually. The party did grow in members after a bit, and we all got so involved in collecting Lux together... I had less and less chances to talk to Ephemer one-on-one, and then one day, he told me he thought I’d be okay now, and left the party. After that, I lost myself in collecting Lux with my party members. But, I realized my party was losing members, and in the end, I was alone again... I think Ephemer probably kept on worrying about me even after leaving the party. I think that’s why he told me to try and meet you. I’ve realized a lot of things, thanks to you. But, I want to see Ephemer, and thank him. That’s why I’m going to join. Let’s meet again."
+      }
+    ],
+    "Seeds of Hope": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "Today too will involve training imitating all the missions you’ve completed until now. You will relive things you have already experienced, only in a world just like a dream, in a space separate from here... You are the hope. Soon, the conflict will begin. Fighters who share the same wish to protect the light, divided by nothing but a difference in Union, will make enemies of the friends they once competed with. I myself do not know how long I can continue to guide them true. Perhaps I will be swallowed by my own darkness, and swing my own Keyblade in the middle of the strife. However, this battle will have no victor, everything will only be annihilated. But, I want you, as seeds of hope, to last on. After this, when that conflict breaks out, I want you to not participate in the battle, and instead depart for the outside world. That is why I want you to repeat separate training every day like this. To you I entrust the future of the Keyblade wielders, the Realm of Light. May your hearts be your guiding key."
+      }
+    ],
+    "End of the World": [
+      {
+        "Order": 0,
+        "Character": "Player",
+        "Line": "I’d thought the end would be a horrific scene where the world burned away to nothing."
+      }
+    ],
+    "Battle of the Keyblade Wielders": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Not again, sheesh..."
+      },
+      {
+        "Order": 1,
+        "Character": "Player",
+        "Line": "Leave them be. I know how you feel, but if you start you’ll never stop. This has been happening too often lately, hasn’t it? Honestly, what’ll become of us, I wonder..."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Player! How could you raise your Keyblade against an ally!?"
+      },
+      {
+        "Order": 3,
+        "Character": "Key Kid(s)",
+        "Line": "An ally? Don’t make me laugh. This piece of work was stealing our Lux."
+      },
+      {
+        "Order": 4,
+        "Character": "Key Kid(s)",
+        "Line": "Excuse you! We’re the ones protecting the light. What if your Union is the one betraying us to the darkness, hm?"
+      },
+      {
+        "Order": 5,
+        "Character": "Key Kid(s)",
+        "Line": "What if YOUR Union is the dar one stealing the light, hm!?"
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "Wait! Even if we’re from different Unions, we’re allies who share the same goal, and fighting is wrong!"
+      },
+      {
+        "Order": 7,
+        "Character": "Key Kid(s)",
+        "Line": "You stay out of it!"
+      },
+      {
+        "Order": 8,
+        "Character": "Skuld",
+        "Line": "Stop right there!"
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "Skuld!"
+      },
+      {
+        "Order": 10,
+        "Character": "Key Kid(s)",
+        "Line": "Oh yeah? What Union are you from?"
+      },
+      {
+        "Order": 11,
+        "Character": "Skuld",
+        "Line": "That’s completely irrelevant. Our enemies are the dark monsters. Keyblades are not something to be raised against human beings!"
+      },
+      {
+        "Order": 12,
+        "Character": "Key Kid(s)",
+        "Line": "Human or not, anyone stealing light is a creature of darkness, no different from a monster!"
+      },
+      {
+        "Order": 13,
+        "Character": "Skuld",
+        "Line": "How can you say that!?"
+      },
+      {
+        "Order": 14,
+        "Character": "Key Kid(s)",
+        "Line": "The fight’s already started."
+      },
+      {
+        "Order": 15,
+        "Character": "Aced",
+        "Line": "That’s right... The only thing we can trust now is the unity of our Union. Someone may be a fellow Keyblade wielder, but we cannot divine whether their heart is dark or not. Warriors of absolute strength, the strength of a Union is not the amount of light it has collected. A strong Union is justice itself. That is something that can only be proved through battle."
+      },
+      {
+        "Order": 16,
+        "Character": "Skuld",
+        "Line": "But...!"
+      },
+      {
+        "Order": 17,
+        "Character": "Aced",
+        "Line": "Do you object? Aren’t you people part of the gang Ava’s organizing behind our backs, the Dandelions? Ava’s actions are also, in the end, a power display. How is it any different?"
+      },
+      {
+        "Order": 18,
+        "Character": "Player",
+        "Line": "I’m not a Dandelion."
+      },
+      {
+        "Order": 19,
+        "Character": "Aced",
+        "Line": "Oh, then what is your Union?"
+      },
+      {
+        "Order": 20,
+        "Character": "Player",
+        "Line": "Anguis / Leopardus / Unicornis / Ursus / Vulpes."
+      },
+      {
+        "Order": 21,
+        "Character": "Aced",
+        "Line": "Raise your Keyblade."
+      }
+    ],
+    "Inevitable Decisive Battle": [
+      {
+        "Order": 0,
+        "Character": "Aced",
+        "Line": "You fail as a Keyblade wielder."
+      },
+      {
+        "Order": 1,
+        "Character": "Ira",
+        "Line": "Put away your Keyblade, Aced."
+      },
+      {
+        "Order": 2,
+        "Character": "Aced",
+        "Line": "Ira..."
+      },
+      {
+        "Order": 3,
+        "Character": "Ira",
+        "Line": "How are you supposed to be a Master, how could you harm a Keyblade wielder!?"
+      },
+      {
+        "Order": 4,
+        "Character": "Aced",
+        "Line": "Bah! I only went so far as to test their strength."
+      },
+      {
+        "Order": 5,
+        "Character": "Ira",
+        "Line": "I came here because I sensed your bloodthirst."
+      },
+      {
+        "Order": 6,
+        "Character": "Aced",
+        "Line": "A final battle is no longer avoidable. Invi, Gula, Ava, and you, too, Ira. All desperate to collect more Lux than the other Unions. The battle had already begun. It was you people who aggravated the situation."
+      },
+      {
+        "Order": 7,
+        "Character": "Ira",
+        "Line": "Are you saying we must check them by force?"
+      },
+      {
+        "Order": 8,
+        "Character": "Aced",
+        "Line": "In the end, it’s a strong leader who controls the world. It’s not Lux I’ll gather more of than anyone– it’s soldiers. Strong organization is imperative. When it comes to maintaining the balance, there need only be one leader. I’ll banish the four of you, and unify all the Unions under me."
+      },
+      {
+        "Order": 9,
+        "Character": "Ira",
+        "Line": "Don’t overestimate yourself, Aced. You aren’t that strong. Let me show you how pride comes before a deadly fall."
+      },
+      {
+        "Order": 10,
+        "Character": "Aced",
+        "Line": "I’ll be waiting in the land of the final battle!"
+      },
+      {
+        "Order": 11,
+        "Character": "Skuld",
+        "Line": "Master Ira. He said something about the land of a final battle...What’s going to happen?"
+      },
+      {
+        "Order": 12,
+        "Character": "Ira",
+        "Line": "The agreed time is nearly upon us."
+      },
+      {
+        "Order": 13,
+        "Character": "Skuld",
+        "Line": "So this is what Lady Ava meant..."
+      },
+      {
+        "Order": 14,
+        "Character": "Ira",
+        "Line": "It can no longer be avoided."
+      },
+      {
+        "Order": 15,
+        "Character": "Skuld",
+        "Line": "But...! Lady Ava said there will be no victor in that battle. So why are you going to fight? "
+      },
+      {
+        "Order": 16,
+        "Character": "Ira",
+        "Line": "Well... so that a victor is not born. Prepare yourselves."
+      },
+      {
+        "Order": 17,
+        "Character": "Skuld",
+        "Line": "Player!!"
+      }
+    ],
+    "Vision": [
+      {
+        "Order": 0,
+        "Character": "Player",
+        "Line": "This place, it’s... Who... What is this...! This is..."
+      }
+    ],
+    "Skuld’s Anxiety": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "I wonder if they’re okay."
+      },
+      {
+        "Order": 1,
+        "Character": "Skuld",
+        "Line": "Yeah, they pushed themselves, didn’t they?"
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Thank you, Skuld."
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "At any rate, the atmosphere gets worse every day. I see little stand-offs everywhere."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Yeah..."
+      },
+      {
+        "Order": 5,
+        "Character": "Skuld",
+        "Line": "How are the Masters? Well, I suppose what happened just now tells us all we need to know..."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "Yeah... they’ve already fallen apart. I don’t know what happened, but they’ve all completely changed."
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "Yes... there really isn’t any way to avoid a battle at this point, is there?"
+      },
+      {
+        "Order": 8,
+        "Character": "Player",
+        "Line": "Ephemer. "
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "Ah!"
+      },
+      {
+        "Order": 10,
+        "Character": "Skuld",
+        "Line": "Oh, great! You’re awake!"
+      },
+      {
+        "Order": 11,
+        "Character": "Player",
+        "Line": "Have you been able to see Ephemer?"
+      },
+      {
+        "Order": 12,
+        "Character": "Skuld",
+        "Line": "Not yet, but apparently he is doing things under the direction of Lady Ava. I’ve been trying to persuade as many Keyblade wielders as I can to turn away from the final battle. But most people just aren’t believing in the end of the world... In fact, even the Dandelions are starting to get anxious without Lady Ava around, and morale has started to drop..."
+      },
+      {
+        "Order": 13,
+        "Character": "Player",
+        "Line": "What’s this about Lady Ava?"
+      },
+      {
+        "Order": 14,
+        "Character": "Chirithy",
+        "Line": "The truth is, Lady Ava’s been missing recently... But, maybe Lord Gula knows something. The two of them are friends, after all."
+      },
+      {
+        "Order": 15,
+        "Character": "Player",
+        "Line": "Let’s go ask Lord Gula."
+      },
+      {
+        "Order": 16,
+        "Character": "Chirithy",
+        "Line": "You have to rest more!"
+      },
+      {
+        "Order": 17,
+        "Character": "Player",
+        "Line": "There’s no time."
+      },
+      {
+        "Order": 18,
+        "Character": "Skuld",
+        "Line": "... You’re right."
+      },
+      {
+        "Order": 19,
+        "Character": "Chirithy",
+        "Line": "But."
+      },
+      {
+        "Order": 20,
+        "Character": "Player",
+        "Line": "I’m fine, Chirithy."
+      },
+      {
+        "Order": 21,
+        "Character": "Chirithy",
+        "Line": "Okay..."
+      }
+    ],
+    "Master Gula’s Suggestion": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "It’s quiet."
+      },
+      {
+        "Order": 1,
+        "Character": "Gula",
+        "Line": "Do you have business with me?"
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Lord Gula!"
+      },
+      {
+        "Order": 3,
+        "Character": "Gula",
+        "Line": "If you’re skipping out on collecting Lux to come here, then you’ve Ava’s Dandelions, aren’t you?"
+      },
+      {
+        "Order": 4,
+        "Character": "Skuld",
+        "Line": "Ah, yes."
+      },
+      {
+        "Order": 5,
+        "Character": "Gula",
+        "Line": "Are you looking for Ava?"
+      },
+      {
+        "Order": 6,
+        "Character": "Skuld",
+        "Line": "We are."
+      },
+      {
+        "Order": 7,
+        "Character": "Gula",
+        "Line": "And what will you do when you see her? Will you beg her to fix the situation with the final battle we’re heading towards? Not even Ava can pull that off. Or are you going to ask about the situation? Even if you knew, you wouldn’t be able to do anything."
+      },
+      {
+        "Order": 8,
+        "Character": "Skuld",
+        "Line": "But I can’t twiddle my thumbs and wait for the end of the world. I’ll make as many of my friends as possible avoid the final battle. That’s the mission of the Dandelions."
+      },
+      {
+        "Order": 9,
+        "Character": "Gula",
+        "Line": "Well, you’ll certainly have as many as Ava has collected. You’re just like her. Ava"
+      },
+      {
+        "Order": 10,
+        "Character": "Skuld",
+        "Line": "Master?"
+      },
+      {
+        "Order": 11,
+        "Character": "Gula",
+        "Line": "You’ve heard about him from Chirithy, haven’t you? We five who are called the Foretellers were the apprentices of the Master of Masters. He is the only one who could possibly change this situation now."
+      },
+      {
+        "Order": 12,
+        "Character": "Skuld",
+        "Line": "Where is this Master?"
+      },
+      {
+        "Order": 13,
+        "Character": "Gula",
+        "Line": "Right? I knew you’d go there. But, the Master disappeared out of the blue one day. Ava and I have both tried to find him, but there wasn’t a single clue. The only one who we can assume acquired knowledge of the Master’s whereabouts is Luxu."
+      },
+      {
+        "Order": 14,
+        "Character": "Chirithy",
+        "Line": "Lord Luxu."
+      },
+      {
+        "Order": 15,
+        "Character": "Skuld",
+        "Line": "You know him?"
+      },
+      {
+        "Order": 16,
+        "Character": "Chirithy",
+        "Line": "He was the 6th apprentice of the Master of Masters. Lord Luxu disappeared too, right after the Master did, like he was following him..."
+      },
+      {
+        "Order": 17,
+        "Character": "Skuld",
+        "Line": "So you can’t find this Lord Luxu person either?"
+      },
+      {
+        "Order": 18,
+        "Character": "Gula",
+        "Line": "Of course you go there, huh? You really are like Ava."
+      },
+      {
+        "Order": 19,
+        "Character": "Skuld",
+        "Line": "You mean, Lady Ava is..."
+      },
+      {
+        "Order": 20,
+        "Character": "Gula",
+        "Line": "Yes. She’s searching for Luxu. To ask him about the whereabouts of the Master, yeah."
+      }
+    ],
+    "Luxu’s Goal": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "I’ve finally found you, Luxu."
+      },
+      {
+        "Order": 1,
+        "Character": "Luxu",
+        "Line": "Ava, huh..."
+      },
+      {
+        "Order": 2,
+        "Character": "Ava",
+        "Line": "What have you been doing all this time?"
+      },
+      {
+        "Order": 3,
+        "Character": "Luxu",
+        "Line": "Watching."
+      },
+      {
+        "Order": 4,
+        "Character": "Ava",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 5,
+        "Character": "Luxu",
+        "Line": "That’s my mission, after all."
+      },
+      {
+        "Order": 6,
+        "Character": "Ava",
+        "Line": "What sort of mission is that?"
+      },
+      {
+        "Order": 7,
+        "Character": "Luxu",
+        "Line": "To watch."
+      },
+      {
+        "Order": 8,
+        "Character": "Ava",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 9,
+        "Character": "Luxu",
+        "Line": "Just to watch."
+      },
+      {
+        "Order": 10,
+        "Character": "Ava",
+        "Line": "What do you mean?"
+      },
+      {
+        "Order": 11,
+        "Character": "Luxu",
+        "Line": "Unlike you five, I was not given a Book of Prophecies. Instead, I have to move forward to the future written about in those books. I’ll watch this world end, and then I’ll set off."
+      },
+      {
+        "Order": 12,
+        "Character": "Ava",
+        "Line": "Huh...?"
+      },
+      {
+        "Order": 13,
+        "Character": "Luxu",
+        "Line": "Ava, you want to avoid a Keyblade War, don’t you? That’s why you came looking for me, who disappeared just like the Master"
+      },
+      {
+        "Order": 14,
+        "Character": "Ava",
+        "Line": "Luxu, what do you know?"
+      },
+      {
+        "Order": 15,
+        "Character": "Luxu",
+        "Line": "The lost page... That which has been foretold, that you and the others don’t know. The Master’s intentions."
+      },
+      {
+        "Order": 16,
+        "Character": "Ava",
+        "Line": "The Master’s intentions? Are you saying everything turning out like this, and the end of the world, too, was the Master’s intention?"
+      },
+      {
+        "Order": 17,
+        "Character": "Luxu",
+        "Line": "My mission is to inherit the secret. That is why I must keep this world moving forward according to the lost page. The Master’s intentions are not concerned with the longevity of the world. I will act in order to carry out my mission, and watch."
+      },
+      {
+        "Order": 18,
+        "Character": "Ava",
+        "Line": "What’s written on the lost page? Luxu... have you been behind all this? ... Are you the traitor?"
+      }
+    ],
+    "Wasteland Battleground": [
+      {
+        "Order": 0,
+        "Character": "Player",
+        "Line": "The words of the Foreteller weren’t listened to at all. What are they going to start here? What is happening before my very eyes...? Overwhelmed by the unnaturally heightened atmosphere, vivid fragments of sights and sounds are burned into my memory. There is no time to even think about the reason for the battle. The enemies standing before us are not the grotesque monsters we’ve faced so far, but those who were once friends. No matter how desperate the situation, people want to believe in that sliver of a dream, that hope, until the very last moment. It’s not the end just yet."
+      }
+    ],
+    "The Bell That Tolls for the Battle": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "What’s written on the lost page? Luxu... have you been behind all this? ... Are you the traitor?"
+      },
+      {
+        "Order": 1,
+        "Character": "Gula",
+        "Line": "Unable to permit disharmony, you will be disappointed by fate, and lost sight of true strength... Misreading the truth, you will venture forth in secrecy..."
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "What’s that?"
+      },
+      {
+        "Order": 3,
+        "Character": "Gula",
+        "Line": "Text from the lost page... I wonder who it is talking about..."
+      },
+      {
+        "Order": 4,
+        "Character": "Ava",
+        "Line": "But that’s..."
+      },
+      {
+        "Order": 5,
+        "Character": "Luxu",
+        "Line": "Yes, that is the truth about the traitor. Is this reality something that can be stopped by you, I wonder?"
+      },
+      {
+        "Order": 6,
+        "Character": "Ava",
+        "Line": "I can’t believe that this is reality."
+      },
+      {
+        "Order": 7,
+        "Character": "Luxu",
+        "Line": "That’s why, as fated, the battle is unavoidable. Even if there is another answer, it must come after the battle. Maybe the Master was less interested in the fate of the world, and more interested in finding out how we disciples would guide the keys?"
+      },
+      {
+        "Order": 8,
+        "Character": "Ava",
+        "Line": "Us over the world? There’s no way! Luxu... you’re just making your own use of the Master’s intentions. There’s no way the Master would want something like that!"
+      },
+      {
+        "Order": 9,
+        "Character": "Skuld",
+        "Line": "What does it mean?"
+      },
+      {
+        "Order": 10,
+        "Character": "Gula",
+        "Line": "It’s why the traitor began trying to end the world."
+      },
+      {
+        "Order": 11,
+        "Character": "Skuld",
+        "Line": "What?!"
+      },
+      {
+        "Order": 12,
+        "Character": "Gula",
+        "Line": "I had my eye out for it, but in the end I couldn’t stop it. Maybe I was actually looking out for the wrong thing."
+      },
+      {
+        "Order": 13,
+        "Character": "Skuld",
+        "Line": "Misreading the truth, you will venture forth in secrecy...What does that mean?"
+      },
+      {
+        "Order": 14,
+        "Character": "Gula",
+        "Line": "There’s more. And then with that one strike, a bell will toll for the final battle, and the battle will begin at last, and the time shall be chosen..."
+      },
+      {
+        "Order": 15,
+        "Character": "Chirithy",
+        "Line": "Is it really okay for you to tell us such an important passage from the Book of Prophecies like that...?"
+      },
+      {
+        "Order": 16,
+        "Character": "Gula",
+        "Line": "No, not really. But war is already unavoidable, and once you understand that, nothing means anything anymore. There, it’s begun."
+      },
+      {
+        "Order": 17,
+        "Character": "Skuld",
+        "Line": "Those chosen time...?"
+      },
+      {
+        "Order": 18,
+        "Character": "Gula",
+        "Line": "You should go back there one more time, too. It’s likely that each Union will be called to assemble."
+      }
+    ],
+    "A Being That Shows Nightmares": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "Well, I’m going back to my Dandelion friends. Are you coming too, Player? Yeah, I know. But I don’t want you to join in the fighting. I want you to come with us on our journey to the outside world. I’m sure Ephemer wants that, too. Please think about it. Well then... see you."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Are you okay? I see... Well, let’s go back to your room."
+      },
+      {
+        "Order": 2,
+        "Character": "Player",
+        "Line": "Chirithy..."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 4,
+        "Character": "Player",
+        "Line": "If I am destroyed, what will happen to you? Will you disappear?"
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "Yeah..."
+      },
+      {
+        "Order": 6,
+        "Character": "Player",
+        "Line": "Oh... What do you think, Chirithy? What should I do?"
+      },
+      {
+        "Order": 7,
+        "Character": "Chirithy",
+        "Line": "I don’t want you to die, Player. Maybe it means going against the intentions of the honorable Foretellers, but, speaking not as some tough evil creature, but as your friend, I don’t want you to join in the battle."
+      },
+      {
+        "Order": 8,
+        "Character": "Player",
+        "Line": "Thank you."
+      },
+      {
+        "Order": 9,
+        "Character": "Dark Chirithy",
+        "Line": "Whaaat? You’re gonna skip out on the battle? You’re going to join the Dandelions and run away from the battle, huh?"
+      },
+      {
+        "Order": 10,
+        "Character": "Chirithy",
+        "Line": "You again! The Dandelions aren’t running away."
+      },
+      {
+        "Order": 11,
+        "Character": "Dark Chirithy",
+        "Line": "Oh yeah, they’re going to guide the future Keyblade wielders or something, right? That’s all well and good, but when it comes down to it, aren’t you just abandoning a whole lot of your friends?"
+      },
+      {
+        "Order": 12,
+        "Character": "Player",
+        "Line": "Who are you?"
+      },
+      {
+        "Order": 13,
+        "Character": "Dark Chirithy",
+        "Line": "Some time ago, you guys starting using a bangle to gather the “sins” of this world, and you started turning those sings, which are a form of darkness, into power."
+      },
+      {
+        "Order": 14,
+        "Character": "Player",
+        "Line": "Sins?"
+      },
+      {
+        "Order": 15,
+        "Character": "Dark Chirithy",
+        "Line": "Yes. You guys changed its name to “guilt” and were using the power of darkness."
+      },
+      {
+        "Order": 16,
+        "Character": "Chirithy",
+        "Line": "That can’t be true..."
+      },
+      {
+        "Order": 17,
+        "Character": "Dark Chirithy",
+        "Line": "It’s all right. That was the Master’s intention too, he who used us. You get that, right?"
+      },
+      {
+        "Order": 18,
+        "Character": "Chirithy",
+        "Line": "No, that bangle was made to gather sins and purify them into light..."
+      },
+      {
+        "Order": 19,
+        "Character": "Dark Chirithy",
+        "Line": "Well then how do you explain how I exist? Why was I born? You don’t think the Master predicted that too? Now that I’ve said that much, I’m sure you’ve figured out who I am, haven’t you? That’s right. I was born from your darkness. You’re my player."
+      },
+      {
+        "Order": 20,
+        "Character": "Chirithy",
+        "Line": "You’re lying!"
+      },
+      {
+        "Order": 21,
+        "Character": "Dark Chirithy",
+        "Line": "What would be the point of lying at a time like this? Ah, it’s not like I could have been by your side all the time like that Chirithy, I’ve been doing things under my own intentions."
+      },
+      {
+        "Order": 22,
+        "Character": "Chirithy",
+        "Line": "What on earth!?"
+      },
+      {
+        "Order": 23,
+        "Character": "Dark Chirithy",
+        "Line": "If you won’t join in the final battle, then I’ll show you a dream."
+      },
+      {
+        "Order": 24,
+        "Character": "Player",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 25,
+        "Character": "Chirithy",
+        "Line": "Huh? If they’re really your player, then why!?"
+      },
+      {
+        "Order": 26,
+        "Character": "Dark Chirithy",
+        "Line": "Unlike you Spirits, we Nightmares are beings that show bad dreams. Because of that we can sever bonds, and live free."
+      },
+      {
+        "Order": 27,
+        "Character": "Chirithy",
+        "Line": "Spirit...? Nightmare...?"
+      }
+    ],
+    "Severed Bond": [
+      {
+        "Order": 0,
+        "Character": "Dark Chirithy",
+        "Line": "You’ve gotten stronger, I’m glad. Well now, time for the real deal. Now the bond has been severed..."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Will you disappear?"
+      },
+      {
+        "Order": 2,
+        "Character": "Dark Chirithy",
+        "Line": "For now... Let’s meet again in another dream..."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "... Another?"
+      }
+    ],
+    "Master Aced Stands in the Way": [
+      {
+        "Order": 0,
+        "Character": "Player",
+        "Line": "It’s not the end just yet."
+      },
+      {
+        "Order": 1,
+        "Character": "Aced",
+        "Line": "You!! I thought I told you you were unfit for this! Oh, you want a fight? I want guts like that in my Union. Splendid! You pass!! You’re strong! A strong one indeed! Which is exactly why you die here! I don’t need a threat like you in the wings! Iraaaaaaaaaaaa!!!!"
+      },
+      {
+        "Order": 2,
+        "Character": "Ira",
+        "Line": "We settle this now."
+      },
+      {
+        "Order": 3,
+        "Character": "Player",
+        "Line": "It’s still going..."
+      }
+    ],
+    "Master Invi Stands in the Way": [
+      {
+        "Order": 0,
+        "Character": "Invi",
+        "Line": "I’m sorry you got tangled up in this... I’ll at least make sure you go quickly... That’s our Ava... She raised a good kid... Live a good, long life..."
+      },
+      {
+        "Order": 1,
+        "Character": "Player",
+        "Line": "No, no, you can’t go..."
+      }
+    ],
+    "Master Gula Stands in the Way": [
+      {
+        "Order": 0,
+        "Character": "Gula",
+        "Line": "Oh, it’s you from before... You’re already pretty beaten up, aren’t you? Are you okay? Oh, so we can do it then, right? Yeah, this is a battlefield after all. Whoa, you’re tough! If I’m going to have to actually put in real effort to stop things getting sketchy, I’ll pass. Well, maybe we’ll meet again somewhere."
+      }
+    ],
+    "Master Ira Stands in the Way": [
+      {
+        "Order": 0,
+        "Character": "Ira",
+        "Line": "You, huh... I’ll at least make sure you go peacefully... You’ve really grown, well done... It’s a shame, such a shame, to lose a Keyblade wielder like you..."
+      },
+      {
+        "Order": 1,
+        "Character": "Aced",
+        "Line": "I’ve been waiting for this moment... Ira."
+      },
+      {
+        "Order": 2,
+        "Character": "Ira",
+        "Line": "You’re...!"
+      },
+      {
+        "Order": 3,
+        "Character": "Aced",
+        "Line": "I’ll rebuild this world, as its new king!"
+      },
+      {
+        "Order": 4,
+        "Character": "Ira",
+        "Line": "If only you hadn’t broken the harmony!!!"
+      }
+    ],
+    "Master Ava Stands in the Way": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "You’re..."
+      },
+      {
+        "Order": 1,
+        "Character": "Player",
+        "Line": "I looked everywhere for you. Why are you here, Lady Ava? Did you come to stop the battle– Wha..."
+      },
+      {
+        "Order": 2,
+        "Character": "Ava",
+        "Line": "... Raise your blade."
+      },
+      {
+        "Order": 3,
+        "Character": "Player",
+        "Line": "What happened..."
+      },
+      {
+        "Order": 4,
+        "Character": "Ava",
+        "Line": "I told you to raise your blade!"
+      },
+      {
+        "Order": 5,
+        "Character": "Player",
+        "Line": "Why..."
+      },
+      {
+        "Order": 6,
+        "Character": "Ava",
+        "Line": "There are secrets that no one should ever know... Get away from here. Go to the Dandelions..."
+      },
+      {
+        "Order": 7,
+        "Character": "Player",
+        "Line": "Lady Ava..."
+      }
+    ],
+    "We’ll Go Together": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Don’t move now, it’s okay..."
+      },
+      {
+        "Order": 1,
+        "Character": "Player",
+        "Line": "A goddess... Skuld."
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "Player."
+      },
+      {
+        "Order": 3,
+        "Character": "Player",
+        "Line": "You broke... our promise..."
+      },
+      {
+        "Order": 4,
+        "Character": "Ephemer",
+        "Line": "We finally meet again."
+      },
+      {
+        "Order": 5,
+        "Character": "Player",
+        "Line": "You’re late..."
+      },
+      {
+        "Order": 6,
+        "Character": "Ephemer",
+        "Line": "Yeah, I’m sorry... We’ll go together."
+      }
+    ],
+    "The World You Wished For": [
+      {
+        "Order": 0,
+        "Character": "Unknown",
+        "Line": "When you wake up, what kind of world will you find yourself in? Will the world reflected in your eyes be the world you wished for...? The one who will decide that is you."
+      }
+    ],
+    "Awakening": [
+      {
+        "Order": 0,
+        "Character": "Player",
+        "Line": "... Ephemer. Skuld... What happened... I..."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Did you have that dream again?"
+      },
+      {
+        "Order": 2,
+        "Character": "Player",
+        "Line": "Dream..."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "It looks like you’ve had it over and over, ever since that day. Are you okay?"
+      },
+      {
+        "Order": 4,
+        "Character": "Player",
+        "Line": "That day?"
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "The day Lady Ava invited you into the Dandelions, and you talked to Skuld at the Fountain Plaza, and you saw her off as she went to join them. Ever since then, it seems like you’ve been having weird dreams from time to time."
+      },
+      {
+        "Order": 6,
+        "Character": "Player",
+        "Line": "Oh... But, what was I doing sleeping in a place like this?"
+      },
+      {
+        "Order": 7,
+        "Character": "Chirithy",
+        "Line": "Hmmm, I think maybe ‘cause lately it’s been sucky thing after sucky thing and you’re exhausted, and getting to a new world made you more open-minded? It’s okay to take it easy every now and then, y’know. Wow... We can’t get through this, can we? How about we call it a day, and come back once we’ve thought of a way through? If only we had wings, too, right? Okay, let’s head home."
+      }
+    ],
+    "Dark Footsteps": [
+      {
+        "Order": 0,
+        "Character": "Maleficent",
+        "Line": "It seems it went well. Even so, where has that fool gone now? Oh well. Not even Sora and his friends can meddle in this world. Not when nuisances won’t get in. Haaaahahaha! Haaaaahahaha!"
+      }
+    ]
+  }
+}
