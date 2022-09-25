@@ -111,6 +111,7 @@ namespace WayfinderProjectAPI.Data
         public static void CreateScripts(WayfinderContext context)
         {
             CreateScript(context, "_khx_lines.json", "Kingdom Hearts χ");
+            CreateScript(context, "_kh_unchainedx_lines.json", "Kingdom Hearts Unchained χ");
             CreateScript(context, "_khxbc_lines.json", "Kingdom Hearts χ Back Cover");
             CreateScript(context, "_khux_lines.json", "Kingdom Hearts Union χ");
             CreateScript(context, "_khbbs_lines.json", "Kingdom Hearts Birth By Sleep");

@@ -1,0 +1,2863 @@
+{
+  "Script": {
+    "None": [
+      {
+        "Order": -1,
+        "Character": "None",
+        "Line": "This will be updated after Damo279's big project."
+      }
+    ],
+    "Opening Movie": [
+      {
+        "Order": 0,
+        "Character": "Kairi's Grandma",
+        "Line": "Long ago, people lived in peace, bathed in the warmth of light. Everyone loved the light. Then people began to fight over it. They wanted to keep it for themselves. And darkness was born in their hearts. The darkness spread, swallowing the light and many people's hearts. It covered everything, and the world disappeared. But small fragments of light survived, in the hearts of children. With these fragments of light, children rebuilt the lost world. It's the world we live in now."
+      },
+      {
+        "Order": 1,
+        "Character": "Unknown",
+        "Line": "Look deep inside your heart. This is where your journey begins."
+      }
+    ],
+    "The Power of Light": [
+      {
+        "Order": 0,
+        "Character": "Unknown",
+        "Line": "Which Union does your heart belong to? The Keyblade holds the power of light- the power to drive away the darkness."
+      }
+    ],
+    "The Power of Friendship": [
+      {
+        "Order": 0,
+        "Character": "Aced",
+        "Line": "You've managed to tap into the power of the Keyblade. Lesser Heartless won't stand a chance, but in order to defeat stronger foes... you must combine your strength with those who share your purpose and aspirations. Your friends will become your power. There are others who collect the light, but not all of them share the same goal of bringing peace to the world. You must discover who amongst us walks the path of darkness."
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "You've managed to tap into the power of the Keyblade. Lesser Heartless won't stand a chance, but in order to defeat stronger foes... you must combine your strength with those who share your purpose and aspirations. Your friends will become your power. There are others who collect the light, but not all of them share the same goal of bringing peace to the world. You must discover who amongst us walks the path of darkness."
+      },
+      {
+        "Order": 2,
+        "Character": "Gula",
+        "Line": "You've managed to tap into the power of the Keyblade. Lesser Heartless won't stand a chance, but in order to defeat stronger foes... you must combine your strength with those who share your purpose and aspirations. Your friends will become your power. There are others who collect the light, but not all of them share the same goal of bringing peace to the world. You must discover who amongst us walks the path of darkness."
+      },
+      {
+        "Order": 3,
+        "Character": "Invi",
+        "Line": "You've managed to tap into the power of the Keyblade. Lesser Heartless won't stand a chance, but in order to defeat stronger foes... you must combine your strength with those who share your purpose and aspirations. Your friends will become your power. There are others who collect the light, but not all of them share the same goal of bringing peace to the world. You must discover who amongst us walks the path of darkness."
+      },
+      {
+        "Order": 4,
+        "Character": "Ira",
+        "Line": "You've managed to tap into the power of the Keyblade. Lesser Heartless won't stand a chance, but in order to defeat stronger foes... you must combine your strength with those who share your purpose and aspirations. Your friends will become your power. There are others who collect the light, but not all of them share the same goal of bringing peace to the world. You must discover who amongst us walks the path of darkness."
+      }
+    ],
+    "To Other Worlds": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "I know this is overwhelming, but darkness waits for no one! In fact, it's found its way to a bunch of other worlds, which need your help. I know a way to these places. Are you ready?"
+      }
+    ],
+    "An Enchanting Encounter": [
+      {
+        "Order": 0,
+        "Character": "Magic Mirror",
+        "Line": "What wouldst thou know, my Queen?"
+      },
+      {
+        "Order": 1,
+        "Character": "The Queen",
+        "Line": "Magic Mirror on the wall- who is the fairest one of all?"
+      },
+      {
+        "Order": 2,
+        "Character": "Magic Mirror",
+        "Line": "Famed is thy beauty, Majesty, but hold- A lovely maid I see- Rags cannot hide her gentle grace. Alas, she is more fair than thee."
+      },
+      {
+        "Order": 3,
+        "Character": "The Queen",
+        "Line": "Alas for her! Reveal her name."
+      },
+      {
+        "Order": 4,
+        "Character": "Magic Mirror",
+        "Line": "Lips red as the rose, hair black as ebony, skin white as snow- "
+      },
+      {
+        "Order": 5,
+        "Character": "The Queen",
+        "Line": "Snow White!"
+      }
+    ],
+    "Doc": [
+      {
+        "Order": 0,
+        "Character": "Doc",
+        "Line": "Why, why, who are you? I was standin' right over there, and I saw you use that key of yours to get rid of those teachers- uh, creatures. They've been nothin' but bubbles- uh- uh troubles. Oh, dear, I haven't introduced myself! I'm Doc. Me and my friends smirk in the twine- uh, work in the mine. Today was just a plain ol' day until those- those monsters sprung up outta nowhere. We all ran out to chase 'em away, but no one's come back. Oh, where could they have gone? I should thank my muddy jars- uh, lucky stars you showed up! I didn't know what to do. I was sure I was done for! Well- uh, well, perhaps you wouldn't mind helping me find my friends? I sure could use a band- uh, stand- uh, your help. You will? Oh, thank you! I'll show you the way to the mine. Maybe we'll see one of the men on the way. The mine's through the forest. We can't be too careful with those pesky monsters around! I sure feel safe with you here. It's up ahead. Jiminy Crickets! I thought I'd stop at our cottage first, but we have unexpected visitors! We gotta do somethin' before they dash our gnome- uh, smash our home to smithereens! Will you help me? You sure showed him! And our cottage looks just dandy. I'm gonna pake a teak- uh, take a peek inside to see if anyone's come home."
+      }
+    ],
+    "Happy": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "You seem to be doing all right! I can't say the same for the person you were talking to. He looked pretty worried."
+      },
+      {
+        "Order": 1,
+        "Character": "Doc",
+        "Line": "Oh, am I glad to see you! The cottage was empty, so I went to check the mine. But another of those crying jeepers- uh, giant creatures showed up again! I ran as soon as I saw it, but that solves nuthin'. Could you get rid of him like you did the other one? I'd sure be grateful if you could take care of that monster. I'm righty- uh, lighty- uh, mighty grateful for your help! Now I better take a look inside the mine. Maybe the others are back at work. It's full o' monsters in here! They should be in here somewhere... There you are, Happy!"
+      },
+      {
+        "Order": 2,
+        "Character": "Happy",
+        "Line": "Why, if it ain't Doc! What's wrong? You sure look frazzled."
+      },
+      {
+        "Order": 3,
+        "Character": "Doc",
+        "Line": "Well, a horse- uh, of course! I didn't know where you'd gone!"
+      },
+      {
+        "Order": 4,
+        "Character": "Happy",
+        "Line": "Gosh, that all? The mine car broke down, and there ain't no other way of gettin' back."
+      },
+      {
+        "Order": 5,
+        "Character": "Doc",
+        "Line": "Well, I'm just thankful you're all right. But where are the rest of the men? Are they around here?"
+      },
+      {
+        "Order": 6,
+        "Character": "Happy",
+        "Line": "I thought they were with you."
+      },
+      {
+        "Order": 7,
+        "Character": "Doc",
+        "Line": "Oh, dear me... Who- uh, where could they have gone? Thank you for your help! I never woulda found Happy here without you."
+      },
+      {
+        "Order": 8,
+        "Character": "Happy",
+        "Line": "You're the one who helped Doc? Gosh, I'm mighty grateful, friend. That sure was nice of you. Now don't you worry, me and Doc will take it from here."
+      },
+      {
+        "Order": 9,
+        "Character": "Doc",
+        "Line": "Good muck- I mean luck with everything."
+      }
+    ],
+    "A Curious World": [
+      {
+        "Order": 0,
+        "Character": "Doorknob",
+        "Line": "Looking for a way out, I suppose. Sorry, you're much too big. Simply impassable. Oh no. You're not going to cry, are you? Crying won't help. Hmm...But perhaps this will. A girl visited earlier. Why don't you talk to her? She may have some advice. Where is she, you ask? Why, on the other side. Naturally. No, no, no. As I said, you're simply much too big. Of course,  there's always another way. Why don't you try the bottle on the table? Read the directions, and directly you'll be directed in the right direction. And then- Wait, you have a key! Well, why didn't you say so? Now all you need- Oh, that's rather unfortunate."
+      }
+    ],
+    "The Perfect Size": [
+      {
+        "Order": 0,
+        "Character": "Doorknob",
+        "Line": "You've retrieved the bottle, I see. Drinking the contents will- Well, I suppose that hardly requires an explanation. As you can imagine, it's very useful for crawling through small spaces. And should you wish to undo things, try the cookie on the table."
+      }
+    ],
+    "Alice": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Brrr, there's darkness all around! You've got your work cut out for you, kiddo. I'll bet you can easily jump over that log."
+      },
+      {
+        "Order": 1,
+        "Character": "Alice",
+        "Line": "Why, hello there. My name is Alice. Who might you be? Oh? Thank goodness! I was afraid you'd speak in riddles, too. I don't suppose you've seen a white rabbit, have you? I've been looking for him everywhere.I see. How unfortunate. Now, where could he have gone?"
+      },
+      {
+        "Order": 2,
+        "Character": "White Rabbit",
+        "Line": "I'm late! I'm late! For a very important date! No time to say hello. Goodbye! I'm late, I'm late, I'm late!"
+      },
+      {
+        "Order": 3,
+        "Character": "Alice",
+        "Line": "Why, there he is! Wait! Please! Mr. Rabbit!"
+      },
+      {
+        "Order": 4,
+        "Character": "Cheshire Cat",
+        "Line": "Lose something? Your way, perhaps? Or an answer? I've lots of those. The questions don't matter, of course. All answers here have lots of questions."
+      },
+      {
+        "Order": 5,
+        "Character": "Alice",
+        "Line": "I was chasing the White Rabbit, but I've lost sight of him. I'll keep searching. Would you look for him as well? Mr. Rabbit, where are you? I've lost sight of the White Rabbit, AND I've gotten myself lost... Could you show me the way back to where I was? Oh, it's rather slippery. Thank you oh so much. Perhaps he's gone this way. I'll keep looking. Why, the White Rabbit has some peculiar-looking visitors. He's not here either. Oh, where could he have gone? Well, now that his visitors have left, I can continue my search. Thank you for all your help."
+      },
+      {
+        "Order": 6,
+        "Character": "Cheshire Cat",
+        "Line": "If I were looking for a white rabbit... I'd look over there. Today's one of his particularly twitchy days."
+      },
+      {
+        "Order": 7,
+        "Character": "White Rabbit",
+        "Line": "Oh, my fur and whiskers! The numbers on my watch have disappeared! How will I tell the time? How will I know if I'm late? If only I hadn't tripped and fallen in that puddle! Oh, my poor watch!"
+      },
+      {
+        "Order": 8,
+        "Character": "Alice",
+        "Line": "The White Rabbit seems to be in quite a predicament. Perhaps I can help. There. That's all of them."
+      },
+      {
+        "Order": 9,
+        "Character": "White Rabbit",
+        "Line": "It's fixed, it's fixed! My watch is fixed! No, no, no, no, no, I'm overdue! I'm really in a stew! I'm late, I'm late, I'm late!"
+      },
+      {
+        "Order": 10,
+        "Character": "Alice",
+        "Line": "Wait, please! Mr. Rabbit! I'm going to ask the Doorknob if he's seen him."
+      },
+      {
+        "Order": 11,
+        "Character": "Doorknob",
+        "Line": "The White Rabbit? He hasn't come by, but you're free to search the room if you'd like. Well?"
+      },
+      {
+        "Order": 12,
+        "Character": "Alice",
+        "Line": "He's not here."
+      },
+      {
+        "Order": 13,
+        "Character": "Doorknob",
+        "Line": "I can't show you where he is, but I can show you where he lives."
+      },
+      {
+        "Order": 14,
+        "Character": "Alice",
+        "Line": "I see now. I must have taken a wrong turn at the fork. I'd better make sure to take the right path this time."
+      },
+      {
+        "Order": 15,
+        "Character": "White Rabbit",
+        "Line": "Help! Help! How am I to get inside my house with this- this giant monster in the way? The monster is gone! Oh, but so is the time! I'm late, I'm late, I'm late!"
+      },
+      {
+        "Order": 16,
+        "Character": "Alice",
+        "Line": "Wait! Mr. Rabbit! He's been in there an awfully long time. He should be coming out any  minute, and I'll wait right here until he does."
+      },
+      {
+        "Order": 17,
+        "Character": "Chirithy",
+        "Line": "Hmm, I don't see her anywhere. Maybe the Cheshire Cat knows something."
+      },
+      {
+        "Order": 18,
+        "Character": "Cheshire Cat",
+        "Line": "If it's Alice you seek, finding her will depend on where she is. Look. Visitors have made their way here. But all ways here are the Queen's way. You simply must deal with the ordeal, before we can deal with the matter. Alone again. Yes, that's much better. I'm sure Alice would  prefer it this way. Curiously, she scurried to the Curious Room."
+      },
+      {
+        "Order": 19,
+        "Character": "Doorknob",
+        "Line": "Yawn... What is that ruckus? What disturbs my sleep? This won't do. This won't do at all... Who? Alice? Oh, she's in the back garden with whoever is making that racket."
+      },
+      {
+        "Order": 20,
+        "Character": "Alice",
+        "Line": "Oh, what shall I do? Thank goodness you're here! The Doorknob can't get his rest with all  the commotion out here. I told them to shush, but no one will listen! Perhaps you can do something. Oh, thank you! I hope those rude little monsters learned their lesson. Now perhaps the Doorknob can sleep."
+      },
+      {
+        "Order": 21,
+        "Character": "Doorknob",
+        "Line": "Speech may be silver, but silence truly is golden! I look forward to a long-awaited good night's rest. Thank you, both of you."
+      },
+      {
+        "Order": 22,
+        "Character": "Alice",
+        "Line": "Oh dear, my handkerchief is missing. I must have dropped it somewhere...Why, here it is! I suppose it fell out of my pocket. I'm so glad I found it again. Now that I'm quite happy, I wonder how Mr. Rabbit is. Shall we visit him at home? Thank you for your company. I'd better go inside to see if he's  all right. Good luck!"
+      }
+    ],
+    "Kidnapped": [
+      {
+        "Order": 0,
+        "Character": "Guard(s)",
+        "Line": "Stop, thief!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aladdin",
+        "Line": "Breakfast is served. Look, Abu. I wonder what it would be like to live there..."
+      },
+      {
+        "Order": 2,
+        "Character": "Voice",
+        "Line": "Run!"
+      },
+      {
+        "Order": 3,
+        "Character": "Aladdin",
+        "Line": "What's going on?"
+      },
+      {
+        "Order": 4,
+        "Character": "Voice",
+        "Line": "Monsters!"
+      },
+      {
+        "Order": 5,
+        "Character": "Aladdin",
+        "Line": "What!? Come on, Abu. Let's check it out! So, you thought you could attack my city and get away with it? Not on my watch! Abu! No!"
+      }
+    ],
+    "A Close Call": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Phew, thanks! I'd have been in real trouble if you hadn't come along. By the way, my name's Aladdin. I don't think I've seen you around before. You're not from here, are you? Then, you should probably go home. There's these strange monsters in the city so it's not safe. Look what happened to me. I can't just stay here; I have to go back. Agrabah's my home. If I don't protect it, who will? Promise me you'll go home, okay?"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "You didn't say yes, did you? Then come on, let's go take a peek!"
+      },
+      {
+        "Order": 2,
+        "Character": "Aladdin",
+        "Line": "You're still here!? Well, I guess it's too late to turn back now. Just...be careful. It's weird. Agrabah's like a ghost town. Everyone got scared and left. Hey, I've got an idea. The palace guards always know what's going on. But you'll have to ask them yourself. They... Well, let's just say they're not my biggest fans."
+      },
+      {
+        "Order": 3,
+        "Character": "Guard(s)",
+        "Line": "I hear strange noises coming from the storehouse. With all the monsters around, I can't help but think it's one of them... What? You'll check it out? Well, if you insist, then you have my permission. So it really was one of those monsters. You did a great job. The townspeople can rest easy now."
+      },
+      {
+        "Order": 4,
+        "Character": "Aladdin",
+        "Line": "You're okay!? What a relief. But what brings you here? Me? Well, I heard the Red Bandit monster's out in the desert. I'm just grabbing a few things for the road. That monster and I have some unfinished business. What? You wanna come with me? I appreciate it, but I can't let you do that. Of course, I can't really stop you either... Just try not to get hurt, okay? Safety comes first, okay? Look at all these monsters... There's gonna be trouble if they make it into the city. Let's take care of 'em now! Well, that takes care of those bad guys! Now let's get back to  finding that Red Bandit. The Red Bandit was spotted in this area. He's a real tricky one. We can't let our guard down for a second. That wasn't him. That wasn't the red monster I was after. Wonder where he could be. Anyway, thanks for the help, but I can take it from here. I'll let you know if I'm ever in trouble. You do the same, okay?"
+      }
+    ],
+    "A Failed Attempt": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Oh? That guard over there, he looks awfully troubled."
+      },
+      {
+        "Order": 1,
+        "Character": "Guard(s)",
+        "Line": "This isn't good. One of the other guards went into the desert, and he should've been back hours ago. I'd go and search for him, but I can't leave my post. You'll look for him? Thanks. I'm counting on you to bring him back safely."
+      },
+      {
+        "Order": 2,
+        "Character": "Aladdin",
+        "Line": "Hey, what're you doing here? Me? I heard a rumor that the Red Bandit was out here and came to check it out. But it wasn't him this time, either. I'm going back to the city. Be careful out here, okay?"
+      },
+      {
+        "Order": 3,
+        "Character": "Guard A",
+        "Line": "Thanks! Not that I couldn't have handled that myself. I've never seen a monster that size before. Can you imagine what would happen if something like that found its way to the palace? I should hurry back and report my findings. There are more monsters than ever in the desert. What in the world is going on!? That's the monster from before! I hope I'm not too late. The palace is undefended! I need your help, kid. I gotta make sure the palace is secure. So, you stay here and guard the city!"
+      },
+      {
+        "Order": 4,
+        "Character": "Aladdin",
+        "Line": "Hold on! This one's mine. You with me? All right, let's let him have it! No, wait! I'll find you, Abu. I promise. That monster... It took my best friend. You want to help me get him back? Thanks, but I have to do this alone. You seem like a good person. Abu wouldn't want you putting yourself in danger to save him. Besides, I don't even know where to start looking. But I promise to find you if I need help, okay?"
+      },
+      {
+        "Order": 5,
+        "Character": "Guard(s)",
+        "Line": "I heard you got rid of that giant monster. But we can't relax just yet. The city's still infested. I need to protect the palace, so it's up to you to do something about it. Hey, it's you! You did good, kid. Don't let your guard down, though. Never know when those monsters might attack again."
+      },
+      {
+        "Order": 6,
+        "Character": "Guard(s)",
+        "Line": "You're pretty talented with that strange sword. Maybe you could teach me a few tricks."
+      }
+    ],
+    "Sleepy and Grumpy": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Hm, what's that? It's a bottle. And there's something inside."
+      },
+      {
+        "Order": 1,
+        "Character": "Doc",
+        "Line": "You found a lottle with a better inside? I mean a bottle with a letter? Let me see... Why, it's from Sleepy! It says he was in the marsh when the water level note- uh, froze- uh, rose, and now he's stuck. Oh no! Would you please help our friend?"
+      },
+      {
+        "Order": 2,
+        "Character": "Sleepy",
+        "Line": "Yawwwn... I wish that monster would let us through."
+      },
+      {
+        "Order": 3,
+        "Character": "Grumpy",
+        "Line": "Aw, lemme at 'em! Hmph! Who asked for yer help? I coulda taken down ten of 'em!"
+      },
+      {
+        "Order": 4,
+        "Character": "Sleepy",
+        "Line": "Are ya sure? We were there for a long time. I was gettin' kind of sleepy."
+      },
+      {
+        "Order": 5,
+        "Character": "Grumpy",
+        "Line": "Shush, ya fool! You're always sleepy. Stop yer whinin'! You come to lead us out of here? Then what're you waitin' for!?"
+      },
+      {
+        "Order": 6,
+        "Character": "Sleepy",
+        "Line": "You came for us? That's swell. But can I take a short name first?"
+      },
+      {
+        "Order": 7,
+        "Character": "Grumpy",
+        "Line": "No time for that now! Come on, before he falls asleep! Giddap!"
+      },
+      {
+        "Order": 8,
+        "Character": "Doc",
+        "Line": "Thank goodness, you're both safe!"
+      },
+      {
+        "Order": 9,
+        "Character": "Grumpy",
+        "Line": "Hmph! Course we are!"
+      },
+      {
+        "Order": 10,
+        "Character": "Doc",
+        "Line": "You saved the day again! Thank you, friend! Now, we'd best go to the mine to look for the others."
+      },
+      {
+        "Order": 11,
+        "Character": "Sleepy",
+        "Line": "Yaaawn...!"
+      },
+      {
+        "Order": 12,
+        "Character": "Grumpy",
+        "Line": "Well, we ain't got all day! He won't last a minute longer!"
+      }
+    ],
+    "A New Accessory": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "You're making amazing progress! I could tell you had potential from day one. But what if I told you... I had something to make you even stronger? Let's see here... Dun dada duuun! Check out this Power Bangle! Yes, looks great. Moving on. With the help of the bangle, you'll be able to strengthen your Medals even more! You can boost each Medal a different amount. Try it out, have fun with it! Don't look at me like that. Come on, give it a shot. It won't be so bad! And the best part is, it's a gift! The bangle is yours to keep. Well, if you really want to do something in return, just keep it equipped and continue to do what you're doing. I hope it'll motivate you to get out there and do even better! I knew I could count on you. Good luck!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Huh?"
+      }
+    ],
+    "Chirithy's Story": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "The world was pure darkness. But I was born into a radiant world enveloped in a brilliant light. From within that light, my master gazed upon me and smiled."
+      }
+    ],
+    "The Foretellers": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Looks like you're getting the hang of that thing. Yep, you kinda look the part too! It's time that you learn how this all came to be. Before he disappeared, the one who made me bestowed names on his six apprentices, and passed down the Book of Prophecies to five who came to be known as the foretellers. The five read the manuscript, and were shocked by the final entry. \"The fated land will be the battleground for a great war. Light will see defeat and expire, while darkness prevails evermore.\" They decided to draw on the powers of the book to prevent that from happening. The Medals you're using are one of those powers. They harness unimaginable forces from the future to protect light and keep the world safe from the inevitable darkness. As for the foretellers, you should know that they share the same goal, but they don't follow the same path. Don't lose sight of yours, okay?"
+      }
+    ],
+    "Chirithy and Chirithy": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Hi, Chirithy."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Hi, Chirithy."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "How's your wielder?"
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Indifferent."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Oh."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "I don't think they understand what's going on."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "They'll learn. They have to."
+      },
+      {
+        "Order": 7,
+        "Character": "Chirithy",
+        "Line": "You're right. There are only 5 unions..."
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "... And we can't afford to lose any of them, which is why we need to trust our wielders will flourish."
+      }
+    ],
+    "A Message": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "He's not coming, but he left you a message. \"I'm sorry I couldn't keep our promise.\" That's it. Hafta go!"
+      }
+    ],
+    "Chirithy's Fate": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Hi, Chirithy."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "What's wrong?"
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "My wielder disappeared into darkness."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Oh."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Is this the end?"
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "We have a connection to our Keyblade wielders. If they disappear, so do we."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "Yeah..."
+      },
+      {
+        "Order": 7,
+        "Character": "Aced",
+        "Line": "The wielders are gathering Lux at an extraordinary pace. However, the darkness is spreading even faster."
+      },
+      {
+        "Order": 8,
+        "Character": "Ava",
+        "Line": "The wielders are gathering Lux at an extraordinary pace. However, the darkness is spreading even faster."
+      },
+      {
+        "Order": 9,
+        "Character": "Gula",
+        "Line": "The wielders are gathering Lux at an extraordinary pace. However, the darkness is spreading even faster."
+      },
+      {
+        "Order": 10,
+        "Character": "Invi",
+        "Line": "The wielders are gathering Lux at an extraordinary pace. However, the darkness is spreading even faster."
+      },
+      {
+        "Order": 11,
+        "Character": "Ira",
+        "Line": "The wielders are gathering Lux at an extraordinary pace. However, the darkness is spreading even faster."
+      },
+      {
+        "Order": 12,
+        "Character": "Chirithy",
+        "Line": "Then there really is a traitor among the five?"
+      },
+      {
+        "Order": 13,
+        "Character": "Aced",
+        "Line": "I'm not willing to believe that yet."
+      },
+      {
+        "Order": 14,
+        "Character": "Ava",
+        "Line": "I'm not willing to believe that yet."
+      },
+      {
+        "Order": 15,
+        "Character": "Gula",
+        "Line": "I'm not willing to believe that yet."
+      },
+      {
+        "Order": 16,
+        "Character": "Invi",
+        "Line": "I'm not willing to believe that yet."
+      },
+      {
+        "Order": 17,
+        "Character": "Ira",
+        "Line": "I'm not willing to believe that yet."
+      },
+      {
+        "Order": 18,
+        "Character": "Chirithy",
+        "Line": "...Right."
+      }
+    ],
+    "A Determined Competitor": [
+      {
+        "Order": 0,
+        "Character": "Phil",
+        "Line": "Hey kid, you look different. Been workin' out? Good, 'cause it's tournament time! Show me what ya got. Not bad, kid! Keep up the good work! Nice! Way to roll with the punches! That was some show, kid. Who knows, you just might have what it takes to be the champ! That's the spirit! But seriously, at this rate, you could go all the way."
+      },
+      {
+        "Order": 1,
+        "Character": "Cloud",
+        "Line": "Just give up. There's no reason for you to keep going. No matter how hard you try, you're not going to win."
+      },
+      {
+        "Order": 2,
+        "Character": "Phil",
+        "Line": "Huh!?"
+      },
+      {
+        "Order": 3,
+        "Character": "Cloud",
+        "Line": "I'm going to win this tournament. I have to."
+      },
+      {
+        "Order": 4,
+        "Character": "Phil",
+        "Line": "What oracle died and made you judge? Nothin's set in stone, and this hero-in-training's not goin' down without a fight."
+      },
+      {
+        "Order": 5,
+        "Character": "Cloud",
+        "Line": "Hero, huh?"
+      },
+      {
+        "Order": 6,
+        "Character": "Phil",
+        "Line": "Y-yeah."
+      },
+      {
+        "Order": 7,
+        "Character": "Cloud",
+        "Line": "Not interested."
+      }
+    ],
+    "Sneezy and Dopey": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "It looks like everyone's at the mine. Why don't you find out what's going on?"
+      },
+      {
+        "Order": 1,
+        "Character": "Grumpy",
+        "Line": "You again? Hmph. S'pose you're lookin' for the others. They're thatta way. There's a big ol' monster causin' all sorts of trouble. Figures. Think ya can do somethin' about it?"
+      },
+      {
+        "Order": 2,
+        "Character": "Sleepy",
+        "Line": "Gosh the ground sure is rocky. Better be careful."
+      },
+      {
+        "Order": 3,
+        "Character": "Sneezy",
+        "Line": "Ah, ah, ah...Achoo!"
+      },
+      {
+        "Order": 4,
+        "Character": "Grumpy",
+        "Line": "Sneezy! Dopey! What in the tarnation are ya doin' here? Oh, calm yer horses, Dopey! I ain't upset with ya. Now go on! Git! And you! Stop that sneezin'! The ground ain't so stable in these parts. Come on. Everyone's awaitin'."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "It looks like you're right on track. But we have a problem. Something terrible's going to happen! A great light is about to be enveloped by darkness! Someone needs your help. She's in the Dark Forest!"
+      }
+    ],
+    "A Precious Light": [
+      {
+        "Order": 0,
+        "Character": "Snow White",
+        "Line": "Oh, dear. Oh, dear. I'm so afraid! It's much too dark and scary in this glade! Oh, but you're not scary. No, not quite. You seem so warm and made of light. Why is that so? Tell me, please. It's from your heart? How sweet. Meeting you is quite a treat. Oh, how silly. I haven't introduced myself. My name is Snow White. But I mustn't stay. It's too dangerous for me here. Good-bye!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "That's her all right. She's a precious light, one the world can't afford to lose. That's why you need to watch over her. I'm counting on you!"
+      },
+      {
+        "Order": 2,
+        "Character": "Snow White",
+        "Line": "Eek! A monster! Oh, thank you! This forest is so scary when I'm alone. Would you be kind and walk me through the forest? I'd feel so much better if you would. Look! A cottage! Oh, thank you. I don't think I could have gotten here on my own. Oh, it's adorable! Just like a doll's house. It certainly is untidy. Everything's covered with dust. Oh, but I'm a little sleepy. Perhaps I'll take a rest."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "I can't think of a safer place for her to be. Now that she's settled, maybe you should see what the Dwarfs are up to."
+      }
+    ],
+    "Bashful": [
+      {
+        "Order": 0,
+        "Character": "Doc",
+        "Line": "Oh, it's you! Thank goodness! We're in quite a tickle- uh, mickle- uh... We're in trouble."
+      },
+      {
+        "Order": 1,
+        "Character": "Happy",
+        "Line": "We were tryin' to dig through these rocks to help Bashful."
+      },
+      {
+        "Order": 2,
+        "Character": "Sneezy",
+        "Line": "Ah, ah, ah... I didn't sneeze once!"
+      },
+      {
+        "Order": 3,
+        "Character": "Sleepy",
+        "Line": "But the rocks are mighty deep and awful hard to move..."
+      },
+      {
+        "Order": 4,
+        "Character": "Doc",
+        "Line": "So, do you think you could blues- uh- uh, choose- no, not choose..."
+      },
+      {
+        "Order": 5,
+        "Character": "Grumpy",
+        "Line": "Aw, stop standin' there sputterin' like a doodlebug! Just ask 'em to use that key o' theirs!"
+      },
+      {
+        "Order": 6,
+        "Character": "Doc",
+        "Line": "Yes, yes, that's it. Could you use that key of yours to do something?"
+      },
+      {
+        "Order": 7,
+        "Character": "Bashful",
+        "Line": "Gosh, what's everybody doin' here?"
+      },
+      {
+        "Order": 8,
+        "Character": "Grumpy",
+        "Line": "Hmph, finally! Bein' Bashful don't mean ya hafta hide!"
+      },
+      {
+        "Order": 9,
+        "Character": "Doc",
+        "Line": "We were worried sick! Are you all right?"
+      },
+      {
+        "Order": 10,
+        "Character": "Happy",
+        "Line": "It sure is good to see ya!"
+      },
+      {
+        "Order": 11,
+        "Character": "Sleepy",
+        "Line": "Yawwwn. Now that everyone's here, can we go home? I wanna take a nap in my own bed."
+      },
+      {
+        "Order": 12,
+        "Character": "Sneezy",
+        "Line": "Ah, ah, achoo! Yeah, it's awful dusty here."
+      },
+      {
+        "Order": 13,
+        "Character": "Bashful",
+        "Line": "Who's that?"
+      },
+      {
+        "Order": 14,
+        "Character": "Grumpy",
+        "Line": "That's the reason we're all here safe and sound. Don't tell me ya fools forgot already!"
+      },
+      {
+        "Order": 15,
+        "Character": "Doc",
+        "Line": "Of course not. Thank you, friend. You sure have been a big help. Now we can finally go home!"
+      },
+      {
+        "Order": 16,
+        "Character": "Happy",
+        "Line": "Finally! My tummy's rumblin'."
+      },
+      {
+        "Order": 17,
+        "Character": "Sleepy",
+        "Line": "And I miss my pillow."
+      },
+      {
+        "Order": 18,
+        "Character": "Grumpy",
+        "Line": "Don't got all day! Hurry up!"
+      }
+    ],
+    "A Monster": [
+      {
+        "Order": 0,
+        "Character": "Doc",
+        "Line": "What wonderflual- uh, wondafoil- uh, great timing! There's a monster in our house, and we're gonna sneak up on it. Would you come with us?"
+      },
+      {
+        "Order": 1,
+        "Character": "Grumpy",
+        "Line": "You're askin' for help again!?"
+      },
+      {
+        "Order": 2,
+        "Character": "Doc",
+        "Line": "We got to! The monster might be- "
+      },
+      {
+        "Order": 3,
+        "Character": "Sleepy",
+        "Line": "Big!"
+      },
+      {
+        "Order": 4,
+        "Character": "Happy",
+        "Line": "Maybe it's a dragon!"
+      },
+      {
+        "Order": 5,
+        "Character": "Sneezy",
+        "Line": "Maybe it has horns!"
+      },
+      {
+        "Order": 6,
+        "Character": "Bashful",
+        "Line": "And breathes fire!"
+      },
+      {
+        "Order": 7,
+        "Character": "Doc",
+        "Line": "Will you help us? I knew we could count on you!"
+      },
+      {
+        "Order": 8,
+        "Character": "Grumpy",
+        "Line": "Can't say no to nothin', can ya?"
+      },
+      {
+        "Order": 9,
+        "Character": "Doc",
+        "Line": "Let's attack while it's still sleeping! Why, i-it's a girl! Well, my dear, we're uh, we're honored to have you in our home. Can I ask what brings you here?"
+      },
+      {
+        "Order": 10,
+        "Character": "Grumpy",
+        "Line": "Honored? We're mad as hornets! Now tell her to git!"
+      },
+      {
+        "Order": 11,
+        "Character": "Snow White",
+        "Line": "Please, don't send me away. If you do, she'll kill me."
+      },
+      {
+        "Order": 12,
+        "Character": "Dwarfs",
+        "Line": "Kill you! Who will?"
+      },
+      {
+        "Order": 13,
+        "Character": "Snow White",
+        "Line": "My stepmother, the Queen."
+      },
+      {
+        "Order": 14,
+        "Character": "Grumpy",
+        "Line": "Her!? She's an old witch! She's full of black magic. She can even make herself invisible. Might be in this room right now."
+      },
+      {
+        "Order": 15,
+        "Character": "Snow White",
+        "Line": "Oh, she'll never find me here. And if you let me stay, I'll keep house for you. I'll wash and sew and sweep and cook."
+      },
+      {
+        "Order": 16,
+        "Character": "Sneezy",
+        "Line": "Cook!"
+      },
+      {
+        "Order": 17,
+        "Character": "Doc",
+        "Line": "Can ya make dapple lumpkins- uh, lumple dapplins- uh, apple dumplings?"
+      },
+      {
+        "Order": 18,
+        "Character": "Snow White",
+        "Line": "Yes, and plum pudding and gooseberry pie."
+      },
+      {
+        "Order": 19,
+        "Character": "Sneezy",
+        "Line": "Hurray! She stays!"
+      },
+      {
+        "Order": 20,
+        "Character": "Snow White",
+        "Line": "Now, time for supper."
+      },
+      {
+        "Order": 21,
+        "Character": "Chirithy",
+        "Line": "It looks like quite a party! What's wrong? Why aren't you in there with everyone else? You look sad. But you know, you're not alone. You may not understand it yet, but no matter how far apart you are, your heart is always connected to your friends' hearts. There's no reason to be lonely. One day, you'll see."
+      }
+    ],
+    "An Evil Plan": [
+      {
+        "Order": 0,
+        "Character": "Doc",
+        "Line": "Well, hello friend. Sorry we're in such a plate- uh- uh, state. We were supposed to start workin' again but, um, well..."
+      },
+      {
+        "Order": 1,
+        "Character": "Happy",
+        "Line": "Dopey's gone and lost the key to the mine. No matter where we look we can't find it."
+      },
+      {
+        "Order": 2,
+        "Character": "Grumpy",
+        "Line": "Hmph! Fool prob'ly dropped it on the way home."
+      },
+      {
+        "Order": 3,
+        "Character": "The Queen",
+        "Line": "Magic Mirror on the wall- who now is the fairest one of all?"
+      },
+      {
+        "Order": 4,
+        "Character": "Magic Mirror",
+        "Line": "In the cottage of the Seven Dwarfs dwells Snow White, fairest one of all."
+      },
+      {
+        "Order": 5,
+        "Character": "The Queen",
+        "Line": "Snow White lies dead in the forest. The Huntsman has brought me proof."
+      },
+      {
+        "Order": 6,
+        "Character": "Magic Mirror",
+        "Line": "Snow White still lives, the fairest in the land."
+      }
+    ],
+    "The Queen:I've been tricked! I'll go myself to the Dwarfs' cottage in a disguise so complete no one will ever suspect. All I'll need is a formula to transform my beauty into ugliness, change my queenly raiment to a peddler's cloak. A poisoned apple will do the trick. When she tastes the apple in my hand, her breath will still, her blood congeal. Then I'll be fairest in the land. Only Love's First Kiss can awaken her from her slumber. Bah! There's no fear of that.": [
+      {
+        "Order": 0,
+        "Character": "Doc",
+        "Line": "We're all here. Back to work, men!"
+      }
+    ],
+    "Threat of Darkness": [
+      {
+        "Order": 0,
+        "Character": "Snow White",
+        "Line": "Isn't it a beautiful day? I thought I'd gather some wood for the fireplace. This should be enough. Oh! I'd better start supper soon. The men will be hungry when they get home from work. They're awfully late. I hope nothing's wrong. You don't suppose they were attacked by a monster, do you? Would you go and see if they're all right?"
+      },
+      {
+        "Order": 1,
+        "Character": "Sleepy",
+        "Line": "Yawwwn... Trapped again."
+      },
+      {
+        "Order": 2,
+        "Character": "Happy",
+        "Line": "Funny, ain't it? Seems we're always gettin' trapped in dark places."
+      },
+      {
+        "Order": 3,
+        "Character": "Doc",
+        "Line": "Oh, hello there, friend! Are we glad to see you! We were just headin' home, when monsters appeared in our path. We're pluck- uh, muck- uh, stuck here with no place to go. Can you help us? Thank you! You sure are good at helpin' folks."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "It's terrible! It's horrible! The light! Darkness has the princess! Can't explain. Hafta go!"
+      },
+      {
+        "Order": 5,
+        "Character": "Grumpy",
+        "Line": "Hey! What're ya doin' just standin' there?"
+      },
+      {
+        "Order": 6,
+        "Character": "Sleepy",
+        "Line": "The old Queen's got Snow White!"
+      },
+      {
+        "Order": 7,
+        "Character": "Doc",
+        "Line": "We have to flurry and wave- uh, hurry and save her!"
+      },
+      {
+        "Order": 8,
+        "Character": "The Queen",
+        "Line": "Because you've been so good to poor old Granny, I'll share a secret with you. This is no ordinary apple. It's a magic wishing apple."
+      },
+      {
+        "Order": 9,
+        "Character": "Snow White",
+        "Line": "A wishing apple?"
+      },
+      {
+        "Order": 10,
+        "Character": "The Queen",
+        "Line": "Yes! One bite, and all your dreams will come true."
+      },
+      {
+        "Order": 11,
+        "Character": "Snow White",
+        "Line": "Really?"
+      },
+      {
+        "Order": 12,
+        "Character": "The Queen",
+        "Line": "Yes, girlie. Now, make a wish, and take a bite."
+      }
+    ],
+    "The Poisoned Apple": [
+      {
+        "Order": 0,
+        "Character": "The Queen",
+        "Line": "Go on, dearie. Make a wish."
+      },
+      {
+        "Order": 1,
+        "Character": "Snow White",
+        "Line": "I wish for the one I love to come and carry me away to his castle where we'll live happily ever after."
+      },
+      {
+        "Order": 2,
+        "Character": "The Queen",
+        "Line": "Fine, fine! Now take a bite. Don't let the wish grow cold."
+      },
+      {
+        "Order": 3,
+        "Character": "Snow White",
+        "Line": "Oh, I feel strange."
+      },
+      {
+        "Order": 4,
+        "Character": "The Queen",
+        "Line": "Her breath will still. Her blood congeal. Hahaha! Now I'll be the fairest in the land!"
+      },
+      {
+        "Order": 5,
+        "Character": "Grumpy",
+        "Line": "It's the witch!  She ran into the Dark Forest! After her!"
+      }
+    ],
+    "Hearts Connected": [
+      {
+        "Order": 0,
+        "Character": "Grumpy",
+        "Line": "Look out!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Luckily, she wasn't lost to darkness. She's just fallen into a deep, deep sleep. Perhaps... No. You don't have that kind of power. Oh! The Prince and Snow White's hearts must have been connected; that's why he showed up when he did. The bond between hearts is a strong, beautiful power. Maybe it's a power you have deep inside you."
+      }
+    ],
+    "A Shooting Star": [
+      {
+        "Order": 0,
+        "Character": "Moogle",
+        "Line": "Kupo! I smell a munny maker, kupo!"
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "Aw phooey! How did this happen?"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "I don't know, Donald. It's like the whole thing just fell apart. Gawrsh! Is that what I think it is?"
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "A Keyblade!? "
+      }
+    ],
+    "A Gummi Ship in Ruins": [
+      {
+        "Order": 0,
+        "Character": "Donald",
+        "Line": "Wak! What was that?"
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "Got me! Hmm... What's this? Huh?"
+      },
+      {
+        "Order": 2,
+        "Character": "Donald",
+        "Line": "A Gummi block! How did you do that?"
+      },
+      {
+        "Order": 3,
+        "Character": "Goofy",
+        "Line": "I think maybe it's 'cause of this."
+      },
+      {
+        "Order": 4,
+        "Character": "Goofy",
+        "Line": "When a Gummi Heartless is defeated, this Gummi radar retrieves the Gummi block it was carrying. Of course, we couldn't have done it without our new friend!"
+      },
+      {
+        "Order": 5,
+        "Character": "Donald",
+        "Line": "Oh. Okay... Hey! I almost forgot! Why do YOU have a Keyblade? Masked figures in white robes? Chirithy? What's the big idea!? How come I've never heard of them before?"
+      },
+      {
+        "Order": 6,
+        "Character": "Goofy",
+        "Line": "Well, maybe it's because we're someplace new. I bet there's still lots we don't know about this world."
+      },
+      {
+        "Order": 7,
+        "Character": "Donald",
+        "Line": "Possibly..."
+      },
+      {
+        "Order": 8,
+        "Character": "Goofy",
+        "Line": "Say, maybe you can help us. We came here in a Gummi ship, but it fell apart when we landed. And then the blocks that the ship was made of were stolen by the Heartless. Do ya think you can help us get 'em back?"
+      },
+      {
+        "Order": 9,
+        "Character": "Donald",
+        "Line": "Goofy! What are you doing!? We don't need help. We can do it on our own."
+      },
+      {
+        "Order": 10,
+        "Character": "Goofy",
+        "Line": "No, we can't, Donald. Remember, we don't have anything to fight with."
+      },
+      {
+        "Order": 11,
+        "Character": "Donald",
+        "Line": "Oh. Right."
+      },
+      {
+        "Order": 12,
+        "Character": "Goofy",
+        "Line": "So, what do ya say, pal? Do ya think you could collect the Gummi blocks we need?"
+      },
+      {
+        "Order": 13,
+        "Character": "Donald",
+        "Line": "Yeah. It sure would help us."
+      },
+      {
+        "Order": 14,
+        "Character": "Goofy",
+        "Line": "Gawrsh, thanks! Oh, and be sure to take this with ya. We'll be right here tryin' to rebuild the ship with the parts we still have."
+      }
+    ],
+    "Not Quite Right": [
+      {
+        "Order": 0,
+        "Character": "Goofy",
+        "Line": "Thanks! You sure found lots of pieces. Now let's see if we can put 'em together."
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "These pieces fit like this..."
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "And this one goes here..."
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "WAK! Goofy! That doesn't go there!"
+      },
+      {
+        "Order": 4,
+        "Character": "Goofy",
+        "Line": "Hmm, I don't remember our ship lookin' like this."
+      },
+      {
+        "Order": 5,
+        "Character": "Donald",
+        "Line": "Yeah, there's something screwy going on."
+      },
+      {
+        "Order": 6,
+        "Character": "Goofy",
+        "Line": "Uh, Donald? I don't think that's a spaceship."
+      },
+      {
+        "Order": 7,
+        "Character": "Donald",
+        "Line": "WAK! What do you mean it's not a- Hey! That's not a spaceship! This is all your fault."
+      },
+      {
+        "Order": 8,
+        "Character": "Goofy",
+        "Line": "Uh... It looks like we're still missin' a few blocks. Could ya collect some more for us?"
+      }
+    ],
+    "Mickey, Chip, and Dale": [
+      {
+        "Order": 0,
+        "Character": "Mickey",
+        "Line": "Uh-oh! There's darkness in this world too... Oh, and Keyblade wielders. Hiya, pal. I'm Mickey. It looks like I took a surprise journey to a new world. Say, have you seen my friends Donald and Goofy? They would have appeared outta the sky just like me. Their ship was destroyed? And you're helping them rebuild it? Gosh, thanks! Guess it's a lucky thing I landed here. Of course, I never would have made it without my two co-pilots."
+      },
+      {
+        "Order": 1,
+        "Character": "Chip",
+        "Line": "Your Majesty, remind me to show you how to use the brakes next time!"
+      },
+      {
+        "Order": 2,
+        "Character": "Dale",
+        "Line": "Oh boy! That was exciting!"
+      },
+      {
+        "Order": 3,
+        "Character": "Mickey",
+        "Line": "Sorry, Chip. Sorry, Dale. It's just that I was in a hurry. Now, I've gotta go look into something. Fellas, would you two go and give Donald and Goofy a hand? Just follow our new friend. Say pal, would you show them the way? Thanks!"
+      },
+      {
+        "Order": 4,
+        "Character": "Chip",
+        "Line": "We're right behind ya!"
+      },
+      {
+        "Order": 5,
+        "Character": "Dale",
+        "Line": "Wait for me!"
+      },
+      {
+        "Order": 6,
+        "Character": "Mickey",
+        "Line": "So it wasn't the Star Shard that led me here. Hmm... What exactly is going on?"
+      }
+    ],
+    "Missing Parts": [
+      {
+        "Order": 0,
+        "Character": "Dale",
+        "Line": "Wow! This is neat!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chip",
+        "Line": "No, it's not! It's not neat! It's a disaster! How did this happen?"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "I don't know. Chip, what do you think? Huh? Chip! Dale! You're here!"
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "What!?"
+      },
+      {
+        "Order": 4,
+        "Character": "Chip",
+        "Line": "Sit back and relax, fellas!"
+      },
+      {
+        "Order": 5,
+        "Character": "Dale",
+        "Line": "Yeah, leave this to us!"
+      },
+      {
+        "Order": 6,
+        "Character": "Chip",
+        "Line": "We're missing a bunch of core parts."
+      },
+      {
+        "Order": 7,
+        "Character": "Dale",
+        "Line": "But the frame is perfect."
+      },
+      {
+        "Order": 8,
+        "Character": "Donald",
+        "Line": "Core parts?"
+      },
+      {
+        "Order": 9,
+        "Character": "Goofy",
+        "Line": "Ya mean like that one?"
+      },
+      {
+        "Order": 10,
+        "Character": "Chip",
+        "Line": "Yep! You'll need a lot of those if you want the ship to fly again."
+      },
+      {
+        "Order": 11,
+        "Character": "Dale",
+        "Line": "A whole lot."
+      },
+      {
+        "Order": 12,
+        "Character": "Goofy",
+        "Line": "Gawrsh pal, I guess we'll be needin' some more of your help."
+      }
+    ],
+    "Taking Flight": [
+      {
+        "Order": 0,
+        "Character": "Chip",
+        "Line": "Ta-da! You better check the engine."
+      },
+      {
+        "Order": 1,
+        "Character": "Donald",
+        "Line": "It's this button, right?"
+      },
+      {
+        "Order": 2,
+        "Character": "Goofy",
+        "Line": "Donald! No!"
+      },
+      {
+        "Order": 3,
+        "Character": "Donald",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 4,
+        "Character": "Dale",
+        "Line": "What's happening?"
+      },
+      {
+        "Order": 5,
+        "Character": "Chip",
+        "Line": "The ship's gonna fall apart if we don't take off! Now!"
+      },
+      {
+        "Order": 6,
+        "Character": "Dale",
+        "Line": "But what about the King?"
+      },
+      {
+        "Order": 7,
+        "Character": "Mickey",
+        "Line": "C'mon, it's time to go home- to our world."
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "They were a friendly, noisy bunch, weren't they? So HE's the King."
+      },
+      {
+        "Order": 9,
+        "Character": "Moogle",
+        "Line": "It's finally complete! Now I can open up shop in every corner of the world, kupo! Now for a test drive. H-How do you board this thing? Back to the drawing board, kupo..."
+      }
+    ],
+    "A Familiar Face": [
+      {
+        "Order": 0,
+        "Character": "Phil",
+        "Line": "Way to go, kid! That championship is as good as yours. Of course, it would be a different story if Herc were around, but he ain't. So now's your chance. Ready to meet your opponent? I shoulda known. Don't know what his deal is, but...Never mind. It's nothin'. Just be careful, kid. You never know what them dark, broody types are thinkin'."
+      }
+    ],
+    "Hades": [
+      {
+        "Order": 0,
+        "Character": "Hercules",
+        "Line": "I don't think so."
+      },
+      {
+        "Order": 1,
+        "Character": "Phil",
+        "Line": "Herc!"
+      },
+      {
+        "Order": 2,
+        "Character": "Hercules",
+        "Line": "We were tricked, Phil. This whole tournament's a sham."
+      },
+      {
+        "Order": 3,
+        "Character": "Phil",
+        "Line": "Whaddaya mean, a sham!?"
+      },
+      {
+        "Order": 4,
+        "Character": "Hercules",
+        "Line": "Look at the entry sheet."
+      },
+      {
+        "Order": 5,
+        "Character": "Phil",
+        "Line": "What? ...Hey, wait a second, there's somethin' written here real small... \"The winner will receive a free trip to the Underworld.\" What kind of a prize is that!?"
+      },
+      {
+        "Order": 6,
+        "Character": "Hercules",
+        "Line": "One only you-know-who would think up."
+      },
+      {
+        "Order": 7,
+        "Character": "Hades",
+        "Line": "That's right, Wonderboy! This tournament was a production of yours truly. Of course, I was expecting YOU to enter, but hey, I'm a flexible guy. And we'd all die of boredom if things always went according to plan- not that that's a bad thing... So which of you is my champ?"
+      },
+      {
+        "Order": 8,
+        "Character": "Hercules",
+        "Line": "Neither. Nobody won, so you can keep your \"prize.\""
+      },
+      {
+        "Order": 9,
+        "Character": "Hades",
+        "Line": "What!?"
+      },
+      {
+        "Order": 10,
+        "Character": "Cloud",
+        "Line": "I'll go with you."
+      },
+      {
+        "Order": 11,
+        "Character": "Hades",
+        "Line": "Who're you?"
+      },
+      {
+        "Order": 12,
+        "Character": "Cloud",
+        "Line": "...Cloud. So are we going or not?"
+      },
+      {
+        "Order": 13,
+        "Character": "Hercules",
+        "Line": "Wait! You don't know what you're getting yourself into."
+      },
+      {
+        "Order": 14,
+        "Character": "Phil",
+        "Line": "The Underworld ain't just dark and scary. It's the land of the dead!"
+      },
+      {
+        "Order": 15,
+        "Character": "Cloud",
+        "Line": "I know. The Underworld... Seems like his kind of place."
+      },
+      {
+        "Order": 16,
+        "Character": "Hades",
+        "Line": "Well... Gotta say, I was not expecting a volunteer, but... Hey, I'll take what I can get."
+      },
+      {
+        "Order": 17,
+        "Character": "Hercules",
+        "Line": "I don't like this. We have to go after him."
+      },
+      {
+        "Order": 18,
+        "Character": "Phil",
+        "Line": "Herc!"
+      },
+      {
+        "Order": 19,
+        "Character": "Hercules",
+        "Line": "Don't try and stop me, Phil."
+      },
+      {
+        "Order": 20,
+        "Character": "Phil",
+        "Line": "I'm not. Just listen, I got two words for you- Make. Him. Pay! Don't know what to tell ya, kid. But the tournament's definitely canceled. Trust me, you don't wanna get involved with a guy like Hades. So go home before it's too late."
+      },
+      {
+        "Order": 21,
+        "Character": "Chirithy",
+        "Line": "I'm with him, kiddo! Let's skedaddle! Your heart's still not strong enough to take on the darkness in the Underworld. I had a feeling you'd say that. That's why... I had a gate prepared for you. But be careful. Beyond the gate is a kingdom ruled by darkness. Don't let your guard down even for a second! Bon voyage!"
+      }
+    ],
+    "Cerberus": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "Sheesh! After all the trouble I go through to bring a champion here, he has the gall to refuse my generous offer. When I get my hands on Mr. \"I'm So Aloof,\" I swear I'll- ! Wait a second. I don't remember inviting guests. You! What do you think you're doing here? Know what? I don't care. I'm done playing nice. Cerberus! It's dinner time! Bon appétit! I'll be watching from the best seat in the house."
+      }
+    ],
+    "Plan B": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "That's right, run! Tomorrow, I'm getting a real guard dog! One with four heads, who breathes fire! Why is everyone against me today!? I swear, I haven't had this much trouble since the ferryman went on strike. No. No. I'm cool. I can fix this. I just have to think... Think! Eureka! I am a genius! All I gotta do is talk some sense into this kid... Hey, my friend. My buddy. My chum. Who woulda thought you'd defeat Cerberus? Trust me, nobody woulda taken that bet. But hey, you know what they say? Don't judge a scroll by its roll. Now, I'm thinkin' you wanna be stronger, right? Well, I know just the guy to help you. Me! Come on, don't be shy. This is a once-in-a-lifetime opportunity! You'll be mentored by the one and only lord of the dead. Whaddaya say, pal? Great, it's a deal! Well, long story short, darkness is the only real power in the world. \"Why?\" you ask. Because everything was born from darkness. So if you can control the darkness, you can control everything. Take it from me, the expert on all things dark and deadly. Oh! Almost forgot. I need proof that you can handle the darkness in the Underworld. You know, like a little test. I got it. Your first job as my underling is to get to my office. Alive. Little advice- don't keep me waiting."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "So you're really going... Remember where you are- the Underworld. Wielding darkness may be the shortcut to power, but you might not be able to turn back once you head down that road... But in the end... what you do is up to you. I'm here to watch over you. That's all."
+      }
+    ],
+    "Trials of the Underworld": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "Did I say there'd be a prize for speedy arrival? No. The only prize you're getting is a lesson in the power of darkness. As promised. What's that? You wanna know where Cloud is? Does it look like I give two drachmas about that spiky-headed ingrate!? But, since you asked, I'll just say... Humans don't last very long in the Underworld, if you get my drift. Not you, thought! You weren't crushed by the darkness. No, you've got potential. And yours truly is willing to help you turn that potential into true power. What? Don't look so down on yourself. It'll be a piece of cake. Just do every little thing I tell you, and you'll be a master of darkness in no time! All right, first thing's first- there's some unwanted guests hanging out in the Cave of the Dead. Get rid of em' will ya? You're still alive? Will wonders never cease? Well, don't get too comfortable, 'cause next up, I need you to exterminate some pests at the entrance to the Underworld. Defeat them and you'll be one step closer to mastering this whole darkness thing. Whoo! I may have a winner on my hands! Go on, you've earned yourself a break. "
+      }
+    ],
+    "On the Same Side": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "Might as well get acquainted with the place. I opened the door at the entrance to the Underworld. Take a peek at just how deep the darkness goes."
+      },
+      {
+        "Order": 1,
+        "Character": "Cloud",
+        "Line": "I had a feeling you'd find me. But you shouldn't be here. This is no place for the living. We need to head back."
+      },
+      {
+        "Order": 2,
+        "Character": "Hercules",
+        "Line": "There you are! Glad I found you together. Come on, let's get out of here."
+      },
+      {
+        "Order": 3,
+        "Character": "Cloud",
+        "Line": "Like I need to be told."
+      },
+      {
+        "Order": 4,
+        "Character": "Hercules",
+        "Line": "Hades!"
+      },
+      {
+        "Order": 5,
+        "Character": "Hades",
+        "Line": "I came to see what the holdup was, and look! You're all here having a party without me. What? Did my invitation get lost in the mail?"
+      },
+      {
+        "Order": 6,
+        "Character": "Hercules",
+        "Line": "Sorry, but the party's over. We're leaving."
+      },
+      {
+        "Order": 7,
+        "Character": "Hades",
+        "Line": "Whoa, you got it all backwards, Blunderboy. The real party's just getting started! It's showtime, kid! Let 'em have it!"
+      },
+      {
+        "Order": 8,
+        "Character": "Hercules",
+        "Line": "What're you talking about?"
+      },
+      {
+        "Order": 9,
+        "Character": "Hades",
+        "Line": "So you think I'm the bad guy, huh? Look at who's betraying who here."
+      },
+      {
+        "Order": 10,
+        "Character": "Hercules",
+        "Line": "You're wrong, Hades. My friend was never on your side."
+      },
+      {
+        "Order": 11,
+        "Character": "Hades",
+        "Line": "Well, you know what they say- if you want something done right, call your mother. Short of that, do it yourself."
+      },
+      {
+        "Order": 12,
+        "Character": "Hercules",
+        "Line": "I don't know what you're scheming, but it won't work. Good-bye, Hades."
+      },
+      {
+        "Order": 13,
+        "Character": "Hades",
+        "Line": "Hey, hey, hey, the night is young. Don't be such a party pooper."
+      },
+      {
+        "Order": 14,
+        "Character": "Hercules",
+        "Line": "We're leaving. Just try and stop us! What's wrong with me? I feel so weak."
+      },
+      {
+        "Order": 15,
+        "Character": "Hades",
+        "Line": "Yes! Does it feel like the life's being drained from you drop by precious drop? Well, it is! You walked right into my trap, Jerkules. You're such a \"hero\" that I knew you'd come looking for these two. All I had to do was wait."
+      },
+      {
+        "Order": 16,
+        "Character": "Cloud",
+        "Line": "You used me?"
+      },
+      {
+        "Order": 17,
+        "Character": "Hades",
+        "Line": "Duh! Now this is what I call a party! Let me show you to the VIP room. And it wouldn't be a party without the decorations! Think I'll go give the Coliseum a new look for the occasion. See ya, suckers!"
+      },
+      {
+        "Order": 18,
+        "Character": "Cloud",
+        "Line": "We have to move. I'll buy us some time. You go find Hercules. Don't get me wrong. We're not allies. I just don't like being used."
+      }
+    ],
+    "To the Coliseum": [
+      {
+        "Order": 0,
+        "Character": "Hercules",
+        "Line": "Thanks. I owe you one. Hurry! We gotta get to the Coliseum! You're coming with me, aren't you? This is a job for two heroes."
+      }
+    ],
+    "Fighting Together": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "Hercules! How did you- !?"
+      },
+      {
+        "Order": 1,
+        "Character": "Hercules",
+        "Line": "Don't worry, we'll take it from here."
+      },
+      {
+        "Order": 2,
+        "Character": "Cloud",
+        "Line": "Have it your way. But he won't go down easy."
+      },
+      {
+        "Order": 3,
+        "Character": "Hercules",
+        "Line": "I'm not worried. After all, I'm not going in alone."
+      },
+      {
+        "Order": 4,
+        "Character": "Cloud",
+        "Line": "Not alone, huh... Must be nice."
+      },
+      {
+        "Order": 5,
+        "Character": "Hercules",
+        "Line": "You ready? Phil, come out here. Cloud's hurt. I need you to keep an eye on him."
+      },
+      {
+        "Order": 6,
+        "Character": "Phil",
+        "Line": "Well, it's about time you showed up! Look at this place. It's a shambles!"
+      },
+      {
+        "Order": 7,
+        "Character": "Hercules",
+        "Line": "I'll help you clean up later, Phil. There's something else we need to take care of first."
+      },
+      {
+        "Order": 8,
+        "Character": "Hades",
+        "Line": "Sheesh. This party's more dead than those stiffs back home. Aw, lighten up, Wonderbreath. Don't you like my festive decorations?"
+      },
+      {
+        "Order": 9,
+        "Character": "Hercules",
+        "Line": "You never know when to give up, do you, Hades? You don't stand a chance against us."
+      },
+      {
+        "Order": 10,
+        "Character": "Hades",
+        "Line": "Wanna bet!?"
+      }
+    ],
+    "The Strength of a Heart": [
+      {
+        "Order": 0,
+        "Character": "Hades",
+        "Line": "Impossible!"
+      },
+      {
+        "Order": 1,
+        "Character": "Hercules",
+        "Line": "Give up yet?"
+      },
+      {
+        "Order": 2,
+        "Character": "Hades",
+        "Line": "Never. But I'm a busy guy, and I got places to be. Was taking that kid under my wing the wrong move or what?"
+      },
+      {
+        "Order": 3,
+        "Character": "Phil",
+        "Line": "Nice goin', Herc! You had me worried for a sec, but you really pulled through at the end, kid. You two got a lot of heart."
+      },
+      {
+        "Order": 4,
+        "Character": "Hercules",
+        "Line": "Yep. That's what makes us strong."
+      },
+      {
+        "Order": 5,
+        "Character": "Cloud",
+        "Line": "The strength of a heart..."
+      },
+      {
+        "Order": 6,
+        "Character": "Hercules",
+        "Line": "You're leaving?"
+      },
+      {
+        "Order": 7,
+        "Character": "Cloud",
+        "Line": "There's no reason for me to stay."
+      },
+      {
+        "Order": 8,
+        "Character": "Phil",
+        "Line": "Not so fast, bub!"
+      },
+      {
+        "Order": 9,
+        "Character": "Cloud",
+        "Line": "I already told you. There's no reason for me to- "
+      },
+      {
+        "Order": 10,
+        "Character": "Phil",
+        "Line": "I got two words for you! Clean. This. Up!"
+      },
+      {
+        "Order": 11,
+        "Character": "Cloud",
+        "Line": "Why me?"
+      },
+      {
+        "Order": 12,
+        "Character": "Chirithy",
+        "Line": "What's this \"real strength\" he saw in you? Guess I'll never know."
+      }
+    ],
+    "The Dream": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "That must've been some dream. You were tossing and turning like crazy. Close your eyes and try to get some sleep. Was that you?"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Did you show them the dream? What is it you're trying to do?"
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "The opposite of what you're doing."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "I guess that makes us enemies."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Don't worry. I'll protect you. I have to..."
+      }
+    ],
+    "Ephemer": [
+      {
+        "Order": 0,
+        "Character": "Moogle",
+        "Line": "Help! There's a big, scary monster in Waterfront Park, kupo! It's frightening away all my customers! If I have to close up shop, my regulars will be lost, kupo! Can you go and take care of it? Please, kupo?"
+      },
+      {
+        "Order": 1,
+        "Character": "Ephemer",
+        "Line": "I'm all right.Thanks. I guess I got a little cocky. I'm Ephemer. I belong to the Union Anguis/Leopardus/Unicornis/Ursus/Vulpes. Nice to meet you! Looks like we're on different teams. But I'm working on something other than my Union task today, so think of me as Union free for the day. Hmm. I guess I can tell you what it is, since you helped me out. Can you keep a secret? The worlds we visit- the worlds of fairy tales- are nothing more than holograms. You know, projections. The light we collect there is actually this world's light. Umm, to put it simply- There are lots of worlds, right? And they're all connected by land. But it's impossible to go around to all of them. That's why there's a mechanism that projects those worlds here and allows us to collect Lux from far away lands. I'm gathering information, trying to figure out how the whole thing works. My hunch is that the Book of Prophecies held by the foretellers is what's creating these holograms. Get it? Or have I lost you? Good. Anyway, we're in this town, gathering the light that belongs to this vast world. Not just gathering, fighting over it, without knowing why. Ater a little digging, I discovered that all the Unions have different goals. What is it? Really? Interesting... Hey, I've got an idea. Why don't you come with me? Great! Then let's head to the place you saw in your dream."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Is he yours?"
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "I don't know, is he?"
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "You're not the same color you were before."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "Very perceptive. So what's your next move? They're getting closer to the truth. Are you going to allow that?"
+      },
+      {
+        "Order": 6,
+        "Character": "Ephemer",
+        "Line": "So you don't know where the room is? I've been here a few times, but I haven't found a way in. All right, let's split up and see if we can get inside somehow."
+      }
+    ],
+    "Just Like the Dream": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "Great minds think alike. Other than the entrance, this is the only place that connects outside. Be careful, there's a fair share of Heartless around here."
+      }
+    ],
+    "A Broken Promise": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "Now we're even. Wait. I think we should come back later. It's taken us this long just to find a way in. Think of how much longer it'll take for us to enter the tower and find the room. It's gonna look suspicious to our Union leaders if we're missing for too long. We know how to get in now. Let's save the rest for another day. We may not be in the same Union, but we're friends, right? Let's meet tomorrow at Fountain Square. How about noon?"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Someone looks happy. Tell me, tell me! You made a new friend? That's great! No wonder you're smiling. I hear having friends is nice. But I wouldn't know because I don't have any. Huh? You? You're my friend...?"
+      },
+      {
+        "Order": 2,
+        "Character": "Ephemer",
+        "Line": "Sorry..."
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Have you been here all day? Come on, let's head home. Look. I'm sure something important came up. A friend always keeps their promise. Maybe he had an emergency. You should give him the benefit of the doubt. Don't be sad. When you're sad, it makes me sad too. After all, we're friends, right? What- ? Whoa!"
+      }
+    ],
+    "The White Rabbit": [
+      {
+        "Order": 0,
+        "Character": "White Rabbit",
+        "Line": "Mary Ann! Mary Ann! Oh, thank goodness you're here. Mary Ann went in to get my gloves and she won't come out. And now I've gone and lost my key, so I can't get in. Oh, a key! But I'm afraid that's the wrong kind. What are you doing!? You stop that right now! No, no, no! You'll wreck my poor house! Oh my fur and whiskers! I remember now. I dropped my key in that room with the small door. Oh, please, do go and get it. Don't just do something, stand there! Uh... no, no! Go, go! Find my key!"
+      },
+      {
+        "Order": 1,
+        "Character": "Doorknob",
+        "Line": "The White Rabbit's key? I'm afraid I've neither seen hide nor HARE of it. Rather good one, eh? Oh, but I did hear something drop over there. Splendid. That's sure to put an extra spring in his step."
+      }
+    ],
+    "A Giant Mistake": [
+      {
+        "Order": 0,
+        "Character": "White Rabbit",
+        "Line": "Now you see here, Mary Ann! HELP! A monster! Help! Assistance!"
+      },
+      {
+        "Order": 1,
+        "Character": "Alice",
+        "Line": "Oh dear. Could you please help me? I'd be ever so grateful."
+      }
+    ],
+    "Vegetables from the Garden": [
+      {
+        "Order": 0,
+        "Character": "Alice",
+        "Line": "That's better. At least now I shan't be burnt. Oh, but what ever shall I do about my... unusual size? Why, look! A garden! Perhaps if I ate something, I'd return to my regular size. Oh, but I can't quite reach it. Would you kindly gather some vegetables for me?"
+      }
+    ],
+    "A Small Miscalculation": [
+      {
+        "Order": 0,
+        "Character": "White Rabbit",
+        "Line": "Oh dear, I'm here, I should be there. I'm late, I'm late, I'm late!"
+      },
+      {
+        "Order": 1,
+        "Character": "Alice",
+        "Line": "Wait! Please, wait! Mr. Rabbit!"
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "What a weird world."
+      }
+    ],
+    "A Tea Party": [
+      {
+        "Order": 0,
+        "Character": "Cheshire Cat",
+        "Line": "I say, how are you getting on? Still looking for Alice? Well, if I were looking for her and she was looking for a white rabbit, I'd ask the Mad Hatter, in a westerly direction."
+      },
+      {
+        "Order": 1,
+        "Character": "Mad Hatter",
+        "Line": "Happy Unbirthday to you!"
+      },
+      {
+        "Order": 2,
+        "Character": "March Hare",
+        "Line": "Happy Unbirthday to you!"
+      },
+      {
+        "Order": 3,
+        "Character": "Mad Hatter",
+        "Line": "No room, no room!"
+      },
+      {
+        "Order": 4,
+        "Character": "March Hare",
+        "Line": "All seats are taken!"
+      },
+      {
+        "Order": 5,
+        "Character": "Mad Hatter",
+        "Line": "I can't believe it! Uninvited guests at OUR unbirthday party?"
+      },
+      {
+        "Order": 6,
+        "Character": "March Hare",
+        "Line": "You know, it's very rude to attend a party without being invited!"
+      },
+      {
+        "Order": 7,
+        "Character": "Mad Hatter",
+        "Line": "I'll say it's rude! It's very, very rude, indeed! Oh, but we never get company. Do stay. You must have a cup of tea!"
+      },
+      {
+        "Order": 8,
+        "Character": "March Hare",
+        "Line": "Sugar?"
+      },
+      {
+        "Order": 9,
+        "Character": "Mad Hatter",
+        "Line": "Well, of course. You can't have tea without sugar! Oh dear, we're out of sugar!"
+      },
+      {
+        "Order": 10,
+        "Character": "March Hare",
+        "Line": "Then our guest must bring us some. After all, guests always  bring the sugar."
+      },
+      {
+        "Order": 11,
+        "Character": "Mad Hatter",
+        "Line": "Yes, yes. Two cups please."
+      },
+      {
+        "Order": 12,
+        "Character": "Doorknob",
+        "Line": "Sugar? Why, on the table, naturally."
+      }
+    ],
+    "An Unwanted Guest": [
+      {
+        "Order": 0,
+        "Character": "Mad Hatter",
+        "Line": "How delightful! Now we can finally have our tea. Clean cup, clean up! Move down, move down!"
+      },
+      {
+        "Order": 1,
+        "Character": "March Hare",
+        "Line": "Move down, move down!"
+      },
+      {
+        "Order": 2,
+        "Character": "Mad Hatter",
+        "Line": "Now, how about some tea?"
+      },
+      {
+        "Order": 3,
+        "Character": "March Hare",
+        "Line": "Ah, yes! The tea! You must have a cup of tea!"
+      },
+      {
+        "Order": 4,
+        "Character": "Mad Hatter",
+        "Line": "Wait just a moment! Isn't today a special day?"
+      },
+      {
+        "Order": 5,
+        "Character": "March Hare",
+        "Line": "Why, yes it is. Today is your unbirthday. And it also happens to be my unbirthday."
+      },
+      {
+        "Order": 6,
+        "Character": "Mad Hatter",
+        "Line": "That's right! How silly of me to forget. We simply won't have time to entertain guests."
+      },
+      {
+        "Order": 7,
+        "Character": "March Hare",
+        "Line": "I'm afraid you've overstayed your welcome."
+      },
+      {
+        "Order": 8,
+        "Character": "Mad Hatter",
+        "Line": "Yes! Yes! Toodle-oo! Now then, a very happy unbirthday to you!"
+      },
+      {
+        "Order": 9,
+        "Character": "March Hare",
+        "Line": "Now then, a very happy unbirthday to you!"
+      },
+      {
+        "Order": 10,
+        "Character": "Chirithy",
+        "Line": "Cheer up, kiddo. Your job is to collect the light and protect the world. This isn't the time to be having a tea party anyway. I know it's hard to think straight in this wacky place, but you have to try. I knew I could count on you. By the way, did you notice anything special about Alice? She's one of the precious lights of the world. You didn't notice, huh... Well, it doesn't matter. Now you know. She's one of the lights and you have to protect her... from the darkness. So why don't you go find Alice? Any idea where she might be? The Cheshire Cat said he has lots of answers? What an odd thing to say. Well, it's worth a try!"
+      }
+    ],
+    "A Hidden Shortcut": [
+      {
+        "Order": 0,
+        "Character": "Cheshire Cat",
+        "Line": "Beg pardon? Alice wasn't there? You may have noticed that I'm not all there myself. Oh yes, Alice. Well, she hurriedly scurried in a flurry down the shortcut to see the Queen."
+      }
+    ],
+    "The Trial": [
+      {
+        "Order": 0,
+        "Character": "Card Soldier",
+        "Line": "We planted white roses by mistake, so we're painting the roses red before we lose our heads. Help! The red roses are attacking! We'll lose our heads if the Queen finds out."
+      },
+      {
+        "Order": 1,
+        "Character": "Card Soldier",
+        "Line": "The Queen!"
+      },
+      {
+        "Order": 2,
+        "Character": "White Rabbit",
+        "Line": "The prisoner at the bar is charged with malice aforethought teasing, tormenting and otherwise annoying Her Majesty, and- "
+      },
+      {
+        "Order": 3,
+        "Character": "Queen of Hearts",
+        "Line": "Never mind all that! Get to the part where I lose my temper."
+      },
+      {
+        "Order": 4,
+        "Character": "White Rabbit",
+        "Line": "- thereby causing the Queen to lose her temper."
+      },
+      {
+        "Order": 5,
+        "Character": "Queen of Hearts",
+        "Line": "Now then. Are you ready for your sentence?"
+      },
+      {
+        "Order": 6,
+        "Character": "Alice",
+        "Line": "Oh, but there must be a verdict first. That just isn't the way."
+      },
+      {
+        "Order": 7,
+        "Character": "Queen of Hearts",
+        "Line": "All ways are- "
+      },
+      {
+        "Order": 8,
+        "Character": "Alice",
+        "Line": "Your ways, Your Majesty."
+      },
+      {
+        "Order": 9,
+        "Character": "Queen of Hearts",
+        "Line": "Yes, my child... Now, off with her- "
+      },
+      {
+        "Order": 10,
+        "Character": "Alice",
+        "Line": "But please, at least tell me what I've done!"
+      },
+      {
+        "Order": 11,
+        "Character": "Queen of Hearts",
+        "Line": "Well, get on with it."
+      },
+      {
+        "Order": 12,
+        "Character": "White Rabbit",
+        "Line": "- and forcibly opening the door and entering Wonderland without- "
+      },
+      {
+        "Order": 13,
+        "Character": "Alice",
+        "Line": "But I didn't open any door!"
+      },
+      {
+        "Order": 14,
+        "Character": "Queen of Hearts",
+        "Line": "Then how did you get in!?"
+      },
+      {
+        "Order": 15,
+        "Character": "Alice",
+        "Line": "Well, there was a bottle on a table and I drank from it and- "
+      },
+      {
+        "Order": 16,
+        "Character": "Queen of Hearts",
+        "Line": "NONSENSE!"
+      },
+      {
+        "Order": 17,
+        "Character": "Alice",
+        "Line": "But it's true! Oh, you believe me, don't you? You must've gotten through the door the same way. Your Majesty, please wait. We have proof."
+      },
+      {
+        "Order": 18,
+        "Character": "Queen of Hearts",
+        "Line": "Well, then... Show me this \"proof.\" QUICKLY!"
+      },
+      {
+        "Order": 19,
+        "Character": "Alice",
+        "Line": "Please hurry before she changes her mind. I rather like my head just where it is."
+      },
+      {
+        "Order": 20,
+        "Character": "Doorknob",
+        "Line": "A trial? How unfortunate. Well, you'd best take that bottle to the poor girl so she can clear her name."
+      },
+      {
+        "Order": 21,
+        "Character": "Alice",
+        "Line": "Let me explain... If you drink from this bottle, you'll grow so small you won't need to open any doors."
+      },
+      {
+        "Order": 22,
+        "Character": "White Rabbit",
+        "Line": "Oh dear me."
+      },
+      {
+        "Order": 23,
+        "Character": "Queen of Hearts",
+        "Line": "Suspicious. Very suspicious. Read her next crime!"
+      },
+      {
+        "Order": 24,
+        "Character": "Alice",
+        "Line": "There's more?"
+      },
+      {
+        "Order": 25,
+        "Character": "White Rabbit",
+        "Line": "The defendant is also charged with planting white roses in the Queen's garden!"
+      },
+      {
+        "Order": 26,
+        "Character": "Alice",
+        "Line": "Poppycock! I did no such thing. The roses were already- Oh, never mind. Would you please help me sort this out? You see? There aren't any white roses in the garden."
+      },
+      {
+        "Order": 27,
+        "Character": "White Rabbit",
+        "Line": "Oh. Oh me, oh my..."
+      },
+      {
+        "Order": 28,
+        "Character": "Queen of Hearts",
+        "Line": "Grrr... Her next crime!"
+      },
+      {
+        "Order": 29,
+        "Character": "White Rabbit",
+        "Line": "Y-yes, Your Majesty! The defendant is also charged with bringing monsters to Wonderland."
+      },
+      {
+        "Order": 30,
+        "Character": "Alice",
+        "Line": "Monsters!? But how could I-  Oh, it's no use. There's no one here who can prove my innocence."
+      },
+      {
+        "Order": 31,
+        "Character": "Cheshire Cat",
+        "Line": "A witness? For a trial? At the Queen's Castle? Oh, that will be loads of fun."
+      }
+    ],
+    "The Verdict": [
+      {
+        "Order": 0,
+        "Character": "Queen of Hearts",
+        "Line": "WELL, GET ON WITH IT!"
+      },
+      {
+        "Order": 1,
+        "Character": "Alice",
+        "Line": "As I thought, there's no witness at all is there?"
+      },
+      {
+        "Order": 2,
+        "Character": "Queen of Hearts",
+        "Line": "SPEAK UP!"
+      },
+      {
+        "Order": 3,
+        "Character": "Alice",
+        "Line": "Oh, Cheshire Cat. It's you! You'll tell her I'm innocent, won't you?"
+      },
+      {
+        "Order": 4,
+        "Character": "Cheshire Cat",
+        "Line": "Will I? And let the cat out of the bag so soon?"
+      },
+      {
+        "Order": 5,
+        "Character": "Alice",
+        "Line": "Yes, you must!"
+      },
+      {
+        "Order": 6,
+        "Character": "Cheshire Cat",
+        "Line": "Very well. It's light in here, so answers are far. But as darkness nears, illumination appears. Look not to Alice... for she's far too light to carry such a heavy crime."
+      },
+      {
+        "Order": 7,
+        "Character": "Queen of Hearts",
+        "Line": "Grrr... Next crime! READ IT!"
+      },
+      {
+        "Order": 8,
+        "Character": "White Rabbit",
+        "Line": "But there are none, Your Majesty."
+      },
+      {
+        "Order": 9,
+        "Character": "Alice",
+        "Line": "See? I told you I'm innocent. Thank you so much for saving me. Your Majesty, may I please now have the verdict?"
+      },
+      {
+        "Order": 10,
+        "Character": "Queen of Hearts",
+        "Line": "GUILTY!"
+      },
+      {
+        "Order": 11,
+        "Character": "Alice",
+        "Line": "But I- "
+      },
+      {
+        "Order": 12,
+        "Character": "Queen of Hearts",
+        "Line": "OFF WITH HER HEAD!"
+      }
+    ],
+    "Following Your Heart": [
+      {
+        "Order": 0,
+        "Character": "Alice",
+        "Line": "Oh, you're safe! Thank goodness. I never would have escaped if not for you. The queen is nothing but a pompous, bad-tempered, old tyrant. Her way. Why must all ways be HER ways? Well, I think I shall explore a little more MY way. After all, you'll be around to save me. Good day!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "A curious girl in a curious world, huh? Doing what her heart desires is probably what makes her such an important light, even if she doesn't realize it. Maybe you could learn a thing or two from her. She'll come to understand her role in time. And your role is to keep her out of harm's way, no matter what! Out of harm's way AND the Queen's way! Why aren't you laughing? It's funny! I guess I shouldn't quit my day job."
+      }
+    ],
+    "Dandelions": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "Master Ava, you're really not yourself today. I guess even foretellers have their off days. Hey, maybe talking about the Book will cheer you up!"
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "Not a chance!"
+      },
+      {
+        "Order": 2,
+        "Character": "Ephemer",
+        "Line": "Awww."
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "You were trying to pull a fast one on me, weren't you?"
+      },
+      {
+        "Order": 4,
+        "Character": "Ephemer",
+        "Line": "No, no! I was joking!"
+      },
+      {
+        "Order": 5,
+        "Character": "Ava",
+        "Line": "If you say so. But, I really do think it would be great if all the Unions could work together and be friends."
+      },
+      {
+        "Order": 6,
+        "Character": "Ephemer",
+        "Line": "You know, I made a friend from another Union today. They don't talk much, but I think they're just shy. We're meeting again tomorrow."
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "That sounds fun. You'd better go home and get some sleep then."
+      },
+      {
+        "Order": 8,
+        "Character": "Ephemer",
+        "Line": "'Kay! We'll, it was nice talking to you. I don't know what's got you down, but please cheer up!"
+      },
+      {
+        "Order": 9,
+        "Character": "Ava",
+        "Line": "Thank you. If worse comes to worst, I want to leave the future to kids who see the world like you do. Let the wind carry you far, far away... My Dandelions."
+      }
+    ],
+    "Another Dream": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "Sorry! I'm sorry. I really am! There was something important I had to take care of. I hope you can forgive me. Are you still up for our adventure? It's up ahead. Are you with me? Ah, you're not ready yet. I had a feeling that might be the case. I'll be waiting."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Did you have another dream? It was about your friend, wasn't it? You want to go search for him in the tower? No way! Only the foretellers are allowed there. Besides... now's not a good time. I can't go into detail, but the foretellers... Well, lately, they've been disagreeing on a few things. Let's just say, you should steer clear of that tower for the time being."
+      }
+    ],
+    "Searching for Ephemer": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "I don't think this is a good idea. Are you even listening? Wait! Where are you going?"
+      },
+      {
+        "Order": 1,
+        "Character": "Key Kid(s)",
+        "Line": "I heard something interesting. It seems one of the Masters is recruiting Keyblade wielders with potential."
+      },
+      {
+        "Order": 2,
+        "Character": "Key Kid(s)",
+        "Line": "I believe it's Master Ava, the one in the fox mask. These days, I see her around the plaza all the time."
+      },
+      {
+        "Order": 3,
+        "Character": "Key Kid(s)",
+        "Line": "Ephemer? The kid with the silver hair, right? I saw him talking to Master Ava the other day. I have a friend who knows the Master pretty well. Unfortunately, he's off completing a task in Agrabah. I don't know when he'll be back. Why don't you go and find him yourself?"
+      },
+      {
+        "Order": 4,
+        "Character": "Key Kid(s)",
+        "Line": "Hi! What brings you out here? Huh? You were looking for me? So you want to know about Master Ava. I can't tell you much, except that I see her around the tower a lot. I don't know how to get inside, but there has to be a way, right?"
+      }
+    ],
+    "Off-Limits": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Master Ava...!?"
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "You're... Why are you here? Ephemer? Yes, I know him, but you still haven't answered my question. You came to find me because of some rumor? You had a dream? I see. Ephemer said he was waiting for you here in your dream, but this place is restricted. So you thought that he may have gotten caught up in the problems that we foretellers have been having lately. And because someone saw us talking the other day, you thought that maybe I had something to do with it. You're honest. I like you. You're not too far off base, but I can't tell you much else right now."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Master Ava!?"
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "Show me what you can do."
+      }
+    ],
+    "Master Ava's Guidance": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "Not bad. I see a lot of potential in you. But I also see sadness in your heart. Hanging onto it will eventually lead to darkness. You need to somehow let it go. With this little one helping you, you'll be fine. Now, go home. And I'm sorry, but this area is strictly off-limits, all right? So it's you. You're the friend he told me about..."
+      }
+    ],
+    "MIA": [
+      {
+        "Order": 0,
+        "Character": "Ephemer",
+        "Line": "Sorry, Player. Who is it? You...!?"
+      }
+    ],
+    "Unchained": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "That was one doozy of a day. Betcha didn't think you'd end up having to fight a foreteller."
+      },
+      {
+        "Order": 1,
+        "Character": "Ava",
+        "Line": "I'm sorry. But it wasn't fun for me either, you know."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Master Ava! What are you doing here?"
+      },
+      {
+        "Order": 3,
+        "Character": "Ava",
+        "Line": "Please, call me \"Ava.\" Did you show him the dream of Ephemer?"
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "No. That wasn't me."
+      },
+      {
+        "Order": 5,
+        "Character": "Ava",
+        "Line": "Then perhaps it was Ephemer himself."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "Huh? How is that possible?"
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "Ephemer's getting very close to the truth. He's fallen into an unchained state and now finds himself in a different realm. From that realm, I believe he tried reaching out to them. If they connected, even in a dream, that means they're getting closer to that realm too. Whether they continue down that path is up to their own heart. Chirithy, you have to protect them from the nightmares, so the wind can carry them far away from here."
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "Me...?"
+      }
+    ],
+    "The Enchanted Castle": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "This place gives me the creeps! But even if it's haunted, you can't turn back. As a Keyblade wielder, it's your duty to- Hm? What is it? It's just a statue, silly. What? Are you sure you're not seeing things? I told you already, there's nothing- AHHH! Oh wait, it's just a Heartless. Well, don't just stand there! Go after it! Wait for me!"
+      }
+    ],
+    "A Heart's Sadness": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "He wasn't very friendly, was he? But he helped defeat the Heartless, so maybe he's not all bad. This isn't the warmest welcome we've ever had, though... By the way, do you remember what Master Ava said? That's right. The sadness in the heart leads to darkness. There might be sadness in his heart, too. At any rate, you've seen Heartless in this world. This isn't the time to be sitting around feeling sorry for yourself! You gotta break outta here! The door is locked? Well, I'm sure there's something you can do. Hold it! I hear someone!"
+      },
+      {
+        "Order": 1,
+        "Character": "Belle",
+        "Line": "Is this the one you were telling me about? Hello, my name is Belle, and these are my friends. I heard that you made some of those monsters go away. You must be very brave. I'm sorry you were locked up like this."
+      },
+      {
+        "Order": 2,
+        "Character": "Cogsworth",
+        "Line": "Yes, we'll see what we can do about that. But first- introductions. I am Cogsworth, head of the household."
+      },
+      {
+        "Order": 3,
+        "Character": "Lumière",
+        "Line": "I am Lumière. It is a pleasure to meet you."
+      },
+      {
+        "Order": 4,
+        "Character": "Mrs. Potts",
+        "Line": "Indeed it is. I'm Mrs. Potts. And this is my son- "
+      },
+      {
+        "Order": 5,
+        "Character": "Chip",
+        "Line": "Chip!"
+      },
+      {
+        "Order": 6,
+        "Character": "Belle",
+        "Line": "It's nice to meet you. But I must ask; why did you come here? So the monsters are drawn to a darkness in someone's heart... and you're here to defeat those monsters?"
+      },
+      {
+        "Order": 7,
+        "Character": "Cogsworth",
+        "Line": "Preposterous! That would mean someone in this castle is to blame."
+      },
+      {
+        "Order": 8,
+        "Character": "Lumière",
+        "Line": "You seem surprised, mon ami. Don't tell me you forgot what happened earlier today."
+      },
+      {
+        "Order": 9,
+        "Character": "Cogsworth",
+        "Line": "Oh, I suppose you're right..."
+      },
+      {
+        "Order": 10,
+        "Character": "Mrs. Potts",
+        "Line": "And here I thought the master had changed now that Belle's here..."
+      },
+      {
+        "Order": 11,
+        "Character": "Chip",
+        "Line": "Changed how, Mama?"
+      },
+      {
+        "Order": 12,
+        "Character": "Mrs. Potts",
+        "Line": "Never you mind that, Chip."
+      },
+      {
+        "Order": 13,
+        "Character": "Belle",
+        "Line": "I'm afraid Chip's not the only one confused. I still don't understand. I knew he was angry. But you think it might be sadness in the Beast's heart? Well, there's only one way to find out. We'll just have to talk to him. Will you follow me to his room?"
+      }
+    ],
+    "Protecting the Castle": [
+      {
+        "Order": 0,
+        "Character": "Belle",
+        "Line": "His room is in the West Wing. But the hallway is filled with monsters... Do you think you could clear the way for us? Thank you! Now follow me."
+      },
+      {
+        "Order": 1,
+        "Character": "Cogsworth",
+        "Line": "Just because they're monsters, that's no excuse for their ill manners. Would you mind, ahem, disposing of them? You have my deepest gratitude. Now we must hasten to the master's room."
+      },
+      {
+        "Order": 2,
+        "Character": "Belle",
+        "Line": "Please! Stop! Tell me what happened."
+      },
+      {
+        "Order": 3,
+        "Character": "Beast",
+        "Line": "Those monsters... They tried to take something from me."
+      },
+      {
+        "Order": 4,
+        "Character": "Belle",
+        "Line": "I see... It must be very important to you."
+      },
+      {
+        "Order": 5,
+        "Character": "Beast",
+        "Line": "Get out! I know you're one of them!"
+      },
+      {
+        "Order": 6,
+        "Character": "Belle",
+        "Line": "No! They are here to help us, not them! Please, we have to work together!"
+      },
+      {
+        "Order": 7,
+        "Character": "Beast",
+        "Line": "I can't. I must stay here."
+      },
+      {
+        "Order": 8,
+        "Character": "Belle",
+        "Line": "But those creatures will overrun the castle. We should leave."
+      },
+      {
+        "Order": 9,
+        "Character": "Beast",
+        "Line": "Wait! I'll go with you. I must protect... my castle."
+      },
+      {
+        "Order": 10,
+        "Character": "Belle",
+        "Line": "Thank you."
+      },
+      {
+        "Order": 11,
+        "Character": "Cogsworth",
+        "Line": "Master, say the word and it shall be done."
+      },
+      {
+        "Order": 12,
+        "Character": "Lumière",
+        "Line": "I shall drive back the invaders. They'll be scorched, burned, flambéed!"
+      },
+      {
+        "Order": 13,
+        "Character": "Chip",
+        "Line": "I can help, too!"
+      },
+      {
+        "Order": 14,
+        "Character": "Mrs. Potts",
+        "Line": "Yes, sire. We'll do whatever we can."
+      },
+      {
+        "Order": 15,
+        "Character": "Wardrobe",
+        "Line": "Count me in! I can't let you have all the fun."
+      },
+      {
+        "Order": 16,
+        "Character": "Beast",
+        "Line": "Thank you. But be careful. I don't want anyone getting hurt."
+      }
+    ],
+    "A Special Surprise": [
+      {
+        "Order": 0,
+        "Character": "Beast",
+        "Line": "I think we've driven away the last of the monsters. Now, I must return to the West Wing to see Belle."
+      },
+      {
+        "Order": 1,
+        "Character": "Belle",
+        "Line": "You're all right! Thank you for all your help."
+      },
+      {
+        "Order": 2,
+        "Character": "Beast",
+        "Line": "Yes. I am in your debt. Thank you. And thank you, Belle... You helped me see......that there's still kindness in the world."
+      },
+      {
+        "Order": 3,
+        "Character": "Belle",
+        "Line": "You don't have to thank me. I can see how much you cared for everyone here."
+      },
+      {
+        "Order": 4,
+        "Character": "Beast",
+        "Line": "Belle, there's something I want to show you. But first, you have to close your eyes. It's a surprise."
+      },
+      {
+        "Order": 5,
+        "Character": "Belle",
+        "Line": "Can I open my eyes?"
+      },
+      {
+        "Order": 6,
+        "Character": "Beast",
+        "Line": "All right. I can't believe it. I've never seen so many books before in all my life!"
+      },
+      {
+        "Order": 7,
+        "Character": "Beast",
+        "Line": "You like it?"
+      },
+      {
+        "Order": 8,
+        "Character": "Belle",
+        "Line": "It's wonderful!"
+      },
+      {
+        "Order": 9,
+        "Character": "Beast",
+        "Line": "Then it's yours."
+      },
+      {
+        "Order": 10,
+        "Character": "Belle",
+        "Line": "Oh, thank you so much!"
+      },
+      {
+        "Order": 11,
+        "Character": "Mrs. Potts",
+        "Line": "Would you look at that?"
+      },
+      {
+        "Order": 12,
+        "Character": "Lumière",
+        "Line": "Haha! I knew it would work."
+      },
+      {
+        "Order": 13,
+        "Character": "Chip",
+        "Line": "What? What works?"
+      },
+      {
+        "Order": 14,
+        "Character": "Cogsworth",
+        "Line": "It's very encouraging."
+      },
+      {
+        "Order": 15,
+        "Character": "Chip",
+        "Line": "I didn't see anything."
+      },
+      {
+        "Order": 16,
+        "Character": "Mrs. Potts",
+        "Line": "Come along, Chip. There's chores to be done in the kitchen."
+      },
+      {
+        "Order": 17,
+        "Character": "Chirithy",
+        "Line": "Well, that wraps up this world! That didn't take long at all. Maybe you're getting stronger. Uh oh! I wonder what happened. Maybe you should follow her and find out."
+      }
+    ],
+    "Another Heartless Attack": [
+      {
+        "Order": 0,
+        "Character": "Belle",
+        "Line": "Thank you. Again. The Beast let me go so I could help my father. But then we were attacked by those monsters. I didn't realize there were still more of them here. Oh, I hope he's all right! I have to take my father home, but could you please check on the Beast for me?"
+      }
+    ],
+    "Let Them Come": [
+      {
+        "Order": 0,
+        "Character": "Mrs. Potts",
+        "Line": "Pardon me, master."
+      },
+      {
+        "Order": 1,
+        "Character": "Beast",
+        "Line": "Leave me in peace."
+      },
+      {
+        "Order": 2,
+        "Character": "Mrs. Potts",
+        "Line": "But, sir, the castle is under attack! What shall we do?"
+      },
+      {
+        "Order": 3,
+        "Character": "Beast",
+        "Line": "It doesn't matter now. Just let them come."
+      },
+      {
+        "Order": 4,
+        "Character": "Mrs. Potts",
+        "Line": "I'm afraid with Belle gone, his heart is broken. It's up to us now. We must protect the castle!"
+      }
+    ],
+    "Gaston's Darkness": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Look! I don't think there's anything you can do to help. His heart is full of sadness. There's only one person who can help him now. Oh, there she is!"
+      },
+      {
+        "Order": 1,
+        "Character": "Belle",
+        "Line": "No! Gaston, don't!"
+      }
+    ],
+    "The Power of True Love": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "The greater the darkness, the stronger a Heartless it creates."
+      },
+      {
+        "Order": 1,
+        "Character": "Gaston",
+        "Line": "Come on out and fight! Are you in love with her, Beast? Do you honestly think she'd want you, when she had someone like me? It's over, Beast! Belle is mine! Let me go! Let me go! Please! Don't hurt me! I'll do anything! Anything!"
+      },
+      {
+        "Order": 2,
+        "Character": "Beast",
+        "Line": "Get out."
+      },
+      {
+        "Order": 3,
+        "Character": "Belle",
+        "Line": "Beast!"
+      },
+      {
+        "Order": 4,
+        "Character": "Beast",
+        "Line": "Belle! Belle... You came back. You came back."
+      },
+      {
+        "Order": 5,
+        "Character": "Belle",
+        "Line": "Of course I came back. I couldn't let them-  Oh, this is all my fault. If only I'd gotten here sooner."
+      },
+      {
+        "Order": 6,
+        "Character": "Beast",
+        "Line": "Maybe... it's better this way."
+      },
+      {
+        "Order": 7,
+        "Character": "Belle",
+        "Line": "Don't talk like that. You'll be all right. We're together now. Everything's going to be fine. You'll see."
+      },
+      {
+        "Order": 8,
+        "Character": "Beast",
+        "Line": "At least I got to see you one... last... time."
+      },
+      {
+        "Order": 9,
+        "Character": "Belle",
+        "Line": "No, no! Please! Please! Please don't leave me! I love you!"
+      },
+      {
+        "Order": 10,
+        "Character": "Beast",
+        "Line": "Belle...it's me."
+      },
+      {
+        "Order": 11,
+        "Character": "Belle",
+        "Line": "It IS you!"
+      },
+      {
+        "Order": 12,
+        "Character": "Chirithy",
+        "Line": "I'm sure you've already noticed, but... she's the precious light of this world."
+      }
+    ],
+    "Corridor of Darkness": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "You've been doing a fantastic job lately. So, I have a present for you! Dun dada duuun! The Bracelet of Light! I'm glad you're excited, but gee, calm down. Why don't you put it  somewhere for safekeeping? With that bracelet, you can protect yourself against darkness.  You'll need it for the special mission we got from the foretellers. You'll be doing the same thing, you know, dealing with monsters...just in a different, darker place... Your mission is to defeat the Heartless in the Corridor of Darkness. But be careful. That bracelet can only protect you for so long. I knew I could count on you, kiddo. Now go and get 'em! I'm rootin' for you!"
+      }
+    ],
+    "Darkness Draws Near": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "You were great in there, kiddo! Let's call it a day. But you never know when we'll get another mission like this, so be prepared!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aced",
+        "Line": "I see... They've made great progress."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "E-excuse me... Don't you think it was a little early for him to take on this mission?"
+      },
+      {
+        "Order": 3,
+        "Character": "Aced",
+        "Line": "I have no choice but to hasten their training. They must strengthen their resistance to the darkness as quickly as possible."
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Why?"
+      },
+      {
+        "Order": 5,
+        "Character": "Aced",
+        "Line": "The darkness is drawing near. We need as many warriors as we can get on our side- the side of light."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "O-okay..."
+      }
+    ]
+  }
+}
