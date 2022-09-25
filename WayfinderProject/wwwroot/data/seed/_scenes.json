@@ -1202,12 +1202,36 @@
         "Music": [ ":None:" ]
       },
       {
+        "Name": "Jane and Terk Trapped",
+        "Link": "https://www.youtube.com/watch?v=B1lEkNX0R1Y&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=9",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Jane", "Terk" ],
+        "Areas": [ "Climbing Trees" ],
+        "Music": [ ":None:" ]
+      },
+      {
         "Name": "Cloud Wins",
         "Link": "https://www.youtube.com/watch?v=hvmllFzIOAM",
         "Worlds": [ "Olympus Coliseum" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Cloud", "Phil", "Hades", "Cerberus", "Hercules" ],
         "Areas": [ "Arena" ],
         "Music": [ "No Time to Think" ]
+      },
+      {
+        "Name": "Block Tigger; Low Score",
+        "Link": "https://www.youtube.com/watch?v=GkijAkBKxN0&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=10",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Tigger" ],
+        "Areas": [ "Rabbit's House" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Block Tigger; Medium Score",
+        "Link": "https://www.youtube.com/watch?v=z5O3gQXoC6c&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=11",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Tigger" ],
+        "Areas": [ "Rabbit's House" ],
+        "Music": [ ":None:" ]
       },
       {
         "Name": "Figures in the Darkness (Alternate)",
@@ -2806,7 +2830,7 @@
         "Music": [ "Lazy Afternoons", "Sinister Sundown" ]
       },
       {
-        "Name": "The Thief",
+        "Name": "The Thief!?",
         "Link": "https://www.youtube.com/watch?v=c77umRw6dWk&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=5",
         "Worlds": [ "Simulated Twilight Town" ],
         "Characters": [ "Seifer", "Rai", "Fuu", "Pence", "Hayner", "Olette", "Roxas", "Dusk(s)" ],
@@ -3010,6 +3034,14 @@
         "Link": "https://www.youtube.com/watch?v=GjTK_AjBI9A&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=32",
         "Worlds": [ "Simulated Twilight Town" ],
         "Characters": [ "Roxas", "Seifer", "Rai", "Fuu", "Vivi", "Dusk(s)" ],
+        "Areas": [ "The Sandlot" ],
+        "Music": [ "Sinister Sundown" ]
+      },
+      {
+        "Name": "Her Voice, Her Guidance",
+        "Link": "https://www.youtube.com/watch?v=edhtOq2N6r8",
+        "Worlds": [ "Simulated Twilight Town" ],
+        "Characters": [ "Roxas", "Seifer", "Rai", "Fuu", "Vivi", "Dusk(s)", "Naminé" ],
         "Areas": [ "The Sandlot" ],
         "Music": [ "Sinister Sundown" ]
       },
@@ -3351,7 +3383,7 @@
       },
       {
         "Name": "The Finishing Touches",
-        "Link": "https://www.youtube.com/watch?v=CcXYqXLJczA&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=77",
+        "Link": "https://www.youtube.com/watch?v=RBGJVU-GDr0",
         "Worlds": [ "Twilight Town" ],
         "Characters": [ "Ansem the Wise", "Riku" ],
         "Areas": [ "Dining Room" ],
@@ -7270,27 +7302,19 @@
         "Music": [ "Deep Drive", "Sacred Moon" ]
       },
       {
-        "Name": "The Truth About DiZ",
-        "Link": "https://www.youtube.com/watch?v=vfhHDgG6J_g&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=630",
-        "Worlds": [ "The World That Never Was" ],
-        "Characters": [ "Mickey", "Neoshadow(s)", "Dusk(s)", "Ansem the Wise" ],
-        "Areas": [ "Hall of Empty Melodies" ],
-        "Music": [ "Apprehension", "The 13th Dilemma" ]
-      },
-      {
         "Name": "Xigbar",
         "Link": "https://www.youtube.com/watch?v=k2NQ5O8BVLo&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=631",
         "Worlds": [ "The World That Never Was" ],
         "Characters": [ "Sora", "Shadow(s)", "Kairi", "Riku", "Xigbar", "Armored Knight(s)", "Donald", "Goofy" ],
         "Areas": [ "Hall of Empty Melodies" ],
-        "Music": [ ":None:" ]
+        "Music": [ "Apprehension", "The 13th Dilemma" ]
       },
       {
         "Name": "On Our Way",
         "Link": "https://www.youtube.com/watch?v=uba3Afmgv8k&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=632",
         "Worlds": [ "The World That Never Was" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Xigbar", "Mickey", "Ansem the Wise", "Kairi", "Riku", "Shadow(s)" ],
-        "Areas": [ "The Altar of Naught" ],
+        "Areas": [ "Hall of Empty Melodies" ],
         "Music": [ ":None:" ]
       },
       {
@@ -7298,16 +7322,16 @@
         "Link": "https://www.youtube.com/watch?v=1HWyPH0Xchc&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=633",
         "Worlds": [ "The World That Never Was" ],
         "Characters": [ "Xemnas", "Saïx" ],
-        "Areas": [ "Hall of Empty Melodies" ],
-        "Music": [ "Friends in My Heart" ]
+        "Areas": [ "The Altar of Naught" ],
+        "Music": [ ":None:" ]
       },
       {
         "Name": "It's You!",
         "Link": "https://www.youtube.com/watch?v=EdOM0qlYw_Q&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=634",
         "Worlds": [ "The World That Never Was" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Riku" ],
-        "Areas": [ ":None:" ],
-        "Music": [ ":None:" ]
+        "Areas": [ "Hall of Empty Melodies" ],
+        "Music": [ "Friends in My Heart" ]
       },
       {
         "Name": "Ansem's Wager",
@@ -7536,7 +7560,7 @@
       {
         "Name": "Seifer Wins",
         "Link": "https://www.youtube.com/watch?v=DVpw9f-hoV0&list=PLYnY5NdwIhRDKqXdJaqX_9kZPo5ak6fA7&index=2",
-        "Worlds": [ "Twilight Town" ],
+        "Worlds": [ "Simulated Twilight Town" ],
         "Characters": [ "Roxas", "Seifer", "Rai", "Fuu", "Hayner", "Pence", "Olette", "Dusk(s)" ],
         "Areas": [ "The Sandlot", "The Woods" ],
         "Music": [ "Sinister Sundown" ]
@@ -7544,9 +7568,17 @@
       {
         "Name": "Setzer Wins",
         "Link": "https://www.youtube.com/watch?v=24YG-neOjNk&list=PLYnY5NdwIhRDKqXdJaqX_9kZPo5ak6fA7&index=3",
-        "Worlds": [ "Twilight Town" ],
+        "Worlds": [ "Simulated Twilight Town" ],
         "Characters": [ "Setzer", "Roxas", "Hayner", "Olette", "Pence", "Wallace", "Struggle Tournament Sponsor", "Jessie", "Biggs" ],
         "Areas": [ "The Sandlot" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Meets Seifer",
+        "Link": "https://www.youtube.com/watch?v=24YG-neOjNk&list=PLYnY5NdwIhRDKqXdJaqX_9kZPo5ak6fA7&index=3",
+        "Worlds": [ "Twilight Town" ],
+        "Characters": [ "Setzer", "Rai", "Fuu", "Sora", "Donald", "Goofy", "Struggle Tournament Sponsor" ],
+        "Areas": [ "The Afternoon Streets" ],
         "Music": [ ":None:" ]
       },
       {
@@ -16795,7 +16827,7 @@
       },
       {
         "Name": "Randall's Revenge",
-        "Link": "https://www.youtube.com/watch?v=HrZ-Df7bHH0&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=93",
+        "Link": "https://www.youtube.com/watch?v=goDn9zYJKvU&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=94",
         "Worlds": [ "Monstropolis" ],
         "Characters": [ "Sora", "Goofy", "Sulley", "Boo", "Donald", "Mike", "Randall" ],
         "Areas": [ "Lower Level", "Basement" ],
@@ -17371,7 +17403,7 @@
       },
       {
         "Name": "The AR Device",
-        "Link": "https://www.youtube.com/watch?v=Afg8Er3kFHQ&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=165",
+        "Link": "https://www.youtube.com/watch?v=9zO1TEabYws&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=165",
         "Worlds": [ "San Fransokyo" ],
         "Characters": [ "Go Go", "Hiro", "Honey Lemon", "Wasabi", "Baymax", "Fred", "Sora", "Donald", "Goofy", "Shadow(s)" ],
         "Areas": [ "Hiro's Garage" ],
