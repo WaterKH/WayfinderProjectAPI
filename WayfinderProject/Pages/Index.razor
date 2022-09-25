@@ -115,7 +115,7 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
-                    if (Scene.Worlds.First().Name != ":None:")
+                    if (Scene.Worlds.Count > 0 && Scene.Worlds.First().Name != ":None:")
                     {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Worlds.Count; ++i)
@@ -141,7 +141,7 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
-                    if (Scene.Areas.First().Name != ":None:")
+                    if (Scene.Areas.Count > 0 && Scene.Areas.First().Name != ":None:")
                     {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Areas.Count; ++i)
@@ -167,7 +167,7 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
-                    if (Scene.Characters.First().Name != ":None:")
+                    if (Scene.Characters.Count > 0 && Scene.Characters.First().Name != ":None:")
                     {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Characters.Count; ++i)
@@ -193,7 +193,7 @@ else if (this.SceneDtos.Count > 0)
                 }
                 else
                 {
-                    if (Scene.Music.First().Name != ":None:")
+                    if (Scene.Music.Count > 0 && Scene.Music.First().Name != ":None:")
                     {
                     <div style="display: inline-flex">
                         @for (int i = 0; i < Scene.Music.Count; ++i)
