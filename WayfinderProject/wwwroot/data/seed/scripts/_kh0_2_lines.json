@@ -1,1080 +1,1089 @@
 {
-  "A Secret Unveiled": [
-    {
-      "Order": 0,
-      "Character": "Yen Sid",
-      "Line": "The great battle with Xehanort is almost upon us. As you know, we must take action to keep the seven pure lights safe, and thus we must hasten to assemble the seven guardians of light. It is time to return to our world the three Keyblade wielders we lost over a decade ago. Ventus, Terra, and Aqua must be saved from their sad end, for they have more to achieve. Following their first battle with Xehanort, Ventus's heart refused to awaken, and so Aqua found a safe location to conceal him. But when she set off in search of her other missing friend Terra, she fell to a place from which there is no return without outside help."
-    },
-    {
-      "Order": 1,
-      "Character": "Mickey",
-      "Line": "I saw her. In the realm of darkness."
-    }
-  ],
-  "Castle of Dreams": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Could it be? Why is Cinderella's world... here in the darkness? There's no \"time\" in the realm of darkness.I walk... on and on without end. In the realm of light, do days or years pass with each step? I know something has started to go wrong."
-    }
-  ],
-  "A Stirring": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "I guess I know which way I'm going. I haven't felt my heart stir in a long time. Something about this place... It looks like worse things are stirring!"
-    }
-  ],
-  "Days No More": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "I took it for granted. I thought I had nothing in life to lose. Here, too. Everyone in this world thought that they were safe. Not just the people... but the dog waiting for his owner... the cat curled up in her nook... So much life. Trees and flowers... There's no deeper sadness than discovering all that you knew is gone. The grief in this place is too much to fathom. That's enough. I can't keep on wishing for the past."
-    }
-  ],
-  "Time Stands Still": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "The road collapsed when the clock advanced. If only I'd made it in time... But there is no time in this place, only... the clock. I knew it."
-    }
-  ],
-  "No Going Back": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Not even memories... are safe from the darkness. What I wouldn't give to really turn back time... To spend one more night beneath the stars with my best friends. I'm doing it again."
-    },
-    {
-      "Order": 1,
-      "Character": "Terra",
-      "Line": "Aqua."
-    },
-    {
-      "Order": 2,
-      "Character": "Aqua",
-      "Line": "It can't be. What are you doing here? You should be in the realm of light. Oh no! Did you not make it out? Don't tell me. Has the realm of light– Why won't you say anything to me? So what are you, a memory among these shadows? Are you here to...try and tell me not to lose heart? The world keeps our thoughts alive. But where did the people who lived here go, once their world was taken away? At least they're not here. So, they haven't fallen to darkness. I'll take what solace I can from that."
-    }
-  ],
-  "Reflection": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Another world that was lost to the darkness? Hmm? Is that...? Ven!? Ven. What did you come here to tell me? I know I promised to wake you up. I'm sorry. But I have to find a way home before I can help you. I just want you to know that it's been you that keeps my heart strong. Keeps the dark away. It's a mirror... What!? What just happened? Those mirrors... Maybe they're a clue."
-    }
-  ],
-  "Phantoms": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Is this what it means to face your demons?"
-    },
-    {
-      "Order": 1,
-      "Character": "Phantom Aqua",
-      "Line": "Only your heart is hollow enough to be a demon's."
-    },
-    {
-      "Order": 2,
-      "Character": "Aqua",
-      "Line": "That's not true! My heart is strong! I'll prove it! Terra, Ven... and now my own phantom? What could it all mean? That's all of them. Terra and Ven didn't have anything to say. But my shadow... She wanted to destroy me."
-    }
-  ],
-  "Questions": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Never would have thought I'd become my own worst enemy. I've talked to myself a lot since falling into these shadows. But with the phantom, it's as though all of my doubts have gained a voice of their own. She's the weakness in my heart. I know I'm alone here. Have the uncountable hours in the shadows whittled away the courage I never really had? I'm losing this fight. The darkness has found the cracks in my heart. Is this...the last apparition before it takes me over?"
-    }
-  ],
-  "Visions": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Another world I know. Terra. Ven. Are they... phantoms...? I don't care if they are, or if I fall into the darkness.  I miss them! Get out of my way! You really think you can keep me away from my friends?"
-    }
-  ],
-  "The Giant": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Okay then..."
-    }
-  ],
-  "Reunion": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Terra, Ven."
-    },
-    {
-      "Order": 1,
-      "Character": "Terra",
-      "Line": "Aqua, you're--"
-    },
-    {
-      "Order": 2,
-      "Character": "Aqua",
-      "Line": "Terra. You spoke?"
-    },
-    {
-      "Order": 3,
-      "Character": "Terra",
-      "Line": "Can you see me?"
-    },
-    {
-      "Order": 4,
-      "Character": "Aqua",
-      "Line": "Of course! I see Ven too."
-    },
-    {
-      "Order": 5,
-      "Character": "Terra",
-      "Line": "Ven? He's here?"
-    },
-    {
-      "Order": 6,
-      "Character": "Aqua",
-      "Line": "Terra, what's wrong? Don't you see him?"
-    },
-    {
-      "Order": 7,
-      "Character": "Terra",
-      "Line": "Where are we?"
-    },
-    {
-      "Order": 8,
-      "Character": "Aqua",
-      "Line": "A world the darkness has consumed. It's Enchanted Dominion."
-    },
-    {
-      "Order": 9,
-      "Character": "Terra",
-      "Line": "Consumed? The worlds fell?"
-    },
-    {
-      "Order": 10,
-      "Character": "Aqua",
-      "Line": "What's gotten into you? How do I know that you're Terra? And not the weakness that's in my heart playing more tricks? Ven! Please say something."
-    },
-    {
-      "Order": 11,
-      "Character": "Terra",
-      "Line": "Aqua, listen. I promise this is me. But I'm not myself."
-    },
-    {
-      "Order": 12,
-      "Character": "Aqua",
-      "Line": "What do you mean?"
-    },
-    {
-      "Order": 13,
-      "Character": "Terra",
-      "Line": "You're using the name \"Terra.\" That means you're seeing me the way that you remember me. But your heart is just painting the picture that it so wants to see. The real me is lost in shadow."
-    },
-    {
-      "Order": 14,
-      "Character": "Aqua",
-      "Line": "Then you're here, trapped in the realm of darkness."
-    },
-    {
-      "Order": 15,
-      "Character": "Terra",
-      "Line": "No. My heart has ties to the dark. That must be why we can talk. But I can't see anything, Aqua. If you say Ven is there, then he's like me- an illusion created by your heart."
-    },
-    {
-      "Order": 16,
-      "Character": "Aqua",
-      "Line": "I understand. Then, you and Ven are safe in the outside world?"
-    },
-    {
-      "Order": 17,
-      "Character": "Terra",
-      "Line": "I think."
-    },
-    {
-      "Order": 18,
-      "Character": "Aqua",
-      "Line": "That's good. But, how did you find me?"
-    },
-    {
-      "Order": 19,
-      "Character": "Terra",
-      "Line": "I looked here. And heard you in the darkness."
-    },
-    {
-      "Order": 20,
-      "Character": "Aqua",
-      "Line": "Right, but why does your heart have... ties to the darkness now? What did you mean \"lost in shadow\"?"
-    },
-    {
-      "Order": 21,
-      "Character": "Terra",
-      "Line": "Forget about me. Aqua, Xehanort is trying to locate Ven."
-    },
-    {
-      "Order": 22,
-      "Character": "Aqua",
-      "Line": "He'll never find him. I hid Ven well. I think the reason he's not talking to me here, is because he's still there sleeping."
-    },
-    {
-      "Order": 23,
-      "Character": "Terra",
-      "Line": "No, I can't control-"
-    },
-    {
-      "Order": 24,
-      "Character": "Terra-Xehanort:",
-      "Line": "This \"place.\" Is it the Chamber of Waking?"
-    },
-    {
-      "Order": 25,
-      "Character": "Aqua",
-      "Line": "Yes- Who are you? Really."
-    },
-    {
-      "Order": 26,
-      "Character": "Terra-Xehanort",
-      "Line": "You don't know? My name--"
-    },
-    {
-      "Order": 27,
-      "Character": "Terra",
-      "Line": "Aqua! Get back!"
-    },
-    {
-      "Order": 28,
-      "Character": "Aqua",
-      "Line": "Terra!"
-    },
-    {
-      "Order": 29,
-      "Character": "Terra",
-      "Line": "I messed up. Xehanort is part of me. Now he's using me so you'll tell him where you hid Ven!"
-    },
-    {
-      "Order": 30,
-      "Character": "Terra-Xehanort",
-      "Line": "Silence!"
-    },
-    {
-      "Order": 31,
-      "Character": "Terra",
-      "Line": "I won't give in! Aqua! You have to-"
-    },
-    {
-      "Order": 32,
-      "Character": "Terra-Xehanort",
-      "Line": "Still you struggle!"
-    },
-    {
-      "Order": 33,
-      "Character": "Aqua",
-      "Line": "Terra!"
-    },
-    {
-      "Order": 34,
-      "Character": "Terra",
-      "Line": "Aqua!"
-    },
-    {
-      "Order": 35,
-      "Character": "Xehanort",
-      "Line": "Now you can be one with the darkness!"
-    },
-    {
-      "Order": 36,
-      "Character": "Aqua",
-      "Line": "Ven..."
-    },
-    {
-      "Order": 37,
-      "Character": "Terra",
-      "Line": "That is enough!"
-    },
-    {
-      "Order": 38,
-      "Character": "Aqua",
-      "Line": "Terra..."
-    }
-  ],
-  "Time Past": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "Now I can be... one with darkness..."
-    },
-    {
-      "Order": 1,
-      "Character": "Mickey",
-      "Line": "Aqua, are you okay?"
-    },
-    {
-      "Order": 2,
-      "Character": "Aqua",
-      "Line": "Mickey, how did- Terra! Ven!"
-    },
-    {
-      "Order": 3,
-      "Character": "Mickey",
-      "Line": "No time to talk."
-    },
-    {
-      "Order": 4,
-      "Character": "Aqua",
-      "Line": "Dwellers of darkness..."
-    },
-    {
-      "Order": 5,
-      "Character": "Mickey",
-      "Line": "They're called Heartless! Better not push our luck. Gosh. I never thought I'd find ya in the realm of darkness, that's for sure. So, um, what happened?"
-    },
-    {
-      "Order": 6,
-      "Character": "Aqua",
-      "Line": "Have you seen Terra or Ven?"
-    },
-    {
-      "Order": 7,
-      "Character": "Mickey",
-      "Line": "No, just you."
-    },
-    {
-      "Order": 8,
-      "Character": "Aqua",
-      "Line": "I'm sorry. The darkness in this place, it's getting to me."
-    },
-    {
-      "Order": 9,
-      "Character": "Mickey",
-      "Line": "Oh. But, you'll be okay."
-    },
-    {
-      "Order": 10,
-      "Character": "Aqua",
-      "Line": "Right."
-    },
-    {
-      "Order": 11,
-      "Character": "Mickey",
-      "Line": "Say, we've been looking for ya a long time. How come you're in this place?"
-    },
-    {
-      "Order": 12,
-      "Character": "Aqua",
-      "Line": "First tell me"
-    },
-    {
-      "Order": 13,
-      "Character": "Mickey",
-      "Line": "About... ten years."
-    },
-    {
-      "Order": 14,
-      "Character": "Aqua",
-      "Line": "Interesting. After we last spoke, I took Ven somewhere safe, and then I went after Terra. But Terra was about to fall to darkness, so I had one choice. I stayed here in hopes of giving him a chance."
-    },
-    {
-      "Order": 15,
-      "Character": "Mickey",
-      "Line": "I... didn't know."
-    },
-    {
-      "Order": 16,
-      "Character": "Aqua",
-      "Line": "How 'bout you? What could've brought you here? Has something happened? In the realm of light?"
-    },
-    {
-      "Order": 17,
-      "Character": "Mickey",
-      "Line": "It's the Heartless. They've been attacking worlds and taking their hearts. And worlds with no hearts vanish into darkness. But if we can lock the door between the two realms- light and dark- from both sides, we can protect the other worlds. So ya see, I came here to find the key on this side. Turns out, it's not so easy getting into the realm of darkness. The points you can cross have become unstable. It's only when a world gets consumed, that an entrance appears in the realm between. So, I waited for my chance... to sneak in. But hey, when I got here, I felt a warm, familiar light. I followed it to find my way... to you."
-    },
-    {
-      "Order": 18,
-      "Character": "Aqua",
-      "Line": "The charm. So they were helping. Terra and Ven brought you and I back together again."
-    },
-    {
-      "Order": 19,
-      "Character": "Mickey",
-      "Line": "Yeah!"
-    },
-    {
-      "Order": 20,
-      "Character": "Aqua",
-      "Line": "But, the worlds are still in danger. Terra- did he make it back to the realm of light?"
-    },
-    {
-      "Order": 21,
-      "Character": "Mickey",
-      "Line": "We still haven't found him."
-    },
-    {
-      "Order": 22,
-      "Character": "Aqua",
-      "Line": "I see. Well, wherever he is, he's fighting. He'll beat his darkness. And I know he wants me to fight too."
-    },
-    {
-      "Order": 23,
-      "Character": "Mickey",
-      "Line": "I think you're right. He'll be just fine."
-    },
-    {
-      "Order": 24,
-      "Character": "Aqua",
-      "Line": "Yes. But what about Ven? He won't wake up unless I'm there with him. I have to go. I have to find a way back to the realm of light."
-    },
-    {
-      "Order": 25,
-      "Character": "Mickey",
-      "Line": "Good. Then let's locate that key and go home together!"
-    },
-    {
-      "Order": 26,
-      "Character": "Aqua",
-      "Line": "Does that mean you know an exit?"
-    },
-    {
-      "Order": 27,
-      "Character": "Mickey",
-      "Line": "Well, uh, I was so busy finding a way in, that I didn't give a lot of thought to where there'd be a way out. But, together we're sure to find one!"
-    },
-    {
-      "Order": 28,
-      "Character": "Aqua",
-      "Line": "You haven't changed at all."
-    },
-    {
-      "Order": 29,
-      "Character": "Mickey",
-      "Line": "May our hearts be our guiding key."
-    },
-    {
-      "Order": 30,
-      "Character": "Aqua",
-      "Line": "There's a phrase no one's used in ages."
-    },
-    {
-      "Order": 31,
-      "Character": "Mickey",
-      "Line": "Keyblade wielders used to say those words to each other. And now, it's something I like to try and remember. So. Ready?"
-    },
-    {
-      "Order": 32,
-      "Character": "Aqua",
-      "Line": "Ready!"
-    }
-  ],
-  "Past and Present": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "This is... where I met those children."
-    },
-    {
-      "Order": 1,
-      "Character": "Mickey",
-      "Line": "So many worlds have been lost. And now they're trapped here in the dark. Wait- you know this place, Aqua?"
-    },
-    {
-      "Order": 2,
-      "Character": "Aqua",
-      "Line": "Yes. I visited once, and I met two boys I considered passing the Keyblade on to. But because Terra had already given one of them the power, I didn't."
-    },
-    {
-      "Order": 3,
-      "Character": "Mickey",
-      "Line": "Aqua. What were the boys' names?"
-    },
-    {
-      "Order": 4,
-      "Character": "Aqua",
-      "Line": "They were... Sora and Riku."
-    },
-    {
-      "Order": 5,
-      "Character": "Mickey",
-      "Line": "I see. We're getting warm."
-    },
-    {
-      "Order": 6,
-      "Character": "Aqua",
-      "Line": "Huh?"
-    },
-    {
-      "Order": 7,
-      "Character": "Mickey",
-      "Line": "Welp, it's Sora and Riku who've been helpin' me. We're tryin' to get that door shut for good."
-    },
-    {
-      "Order": 8,
-      "Character": "Aqua",
-      "Line": "Oh- The same boys?"
-    },
-    {
-      "Order": 9,
-      "Character": "Mickey",
-      "Line": "Aqua, if this is where my friends first got the Keyblade, it also must be where we'll find its counterpart. The Keyblade of darkness has gotta be here on the dark side of their world. We'll have to hurry. C'mon! Let's keep goin'."
-    }
-  ],
-  "Keyblade of Darkness": [
-    {
-      "Order": 0,
-      "Character": "Mickey",
-      "Line": "I bet it's in here. There!"
-    },
-    {
-      "Order": 1,
-      "Character": "Aqua",
-      "Line": "Is that what you're after?"
-    },
-    {
-      "Order": 2,
-      "Character": "Mickey",
-      "Line": "Yep, it's just the key I was looking for. A Keyblade from the dark realm!"
-    },
-    {
-      "Order": 3,
-      "Character": "Aqua",
-      "Line": "A Keyblade of darkness."
-    },
-    {
-      "Order": 4,
-      "Character": "Mickey",
-      "Line": "\"The door of darkness... tied by two keys. The door of darkness... to seal the light.\" Welp, we've got the keys. Now we find the ones to close the door."
-    },
-    {
-      "Order": 5,
-      "Character": "Aqua",
-      "Line": "Sorry?"
-    },
-    {
-      "Order": 6,
-      "Character": "Mickey",
-      "Line": "The door between the two realms- it won't let a heart with light pass through. So only darkness keeps spilling out. We can lock the door by using the two Keyblades, but we need help on both sides to get the door shut."
-    },
-    {
-      "Order": 7,
-      "Character": "Aqua",
-      "Line": "Well, then, since you'll be doing the locking, let me be the one to close the door."
-    },
-    {
-      "Order": 8,
-      "Character": "Mickey",
-      "Line": "Sorry, but the job's taken... by somebody else."
-    },
-    {
-      "Order": 9,
-      "Character": "Aqua",
-      "Line": "Huh?"
-    },
-    {
-      "Order": 10,
-      "Character": "Aqua",
-      "Line": "Is that the one?"
-    },
-    {
-      "Order": 11,
-      "Character": "Mickey",
-      "Line": "Yep, the door to Kingdom Hearts. Welp, it's not the Kingdom Hearts you know. Not exactly. But even though it's smaller, it's still the heart of many worlds. And even if it's not a complete Kingdom Hearts, we definitely can't leave it open like this, or darkness will escape and destroy the remaining worlds. It's time. With this key and Sora's in the realm of light, we're gonna close this door. Now, all we need is Riku."
-    },
-    {
-      "Order": 12,
-      "Character": "Aqua",
-      "Line": "Sora, Riku."
-    },
-    {
-      "Order": 13,
-      "Character": "Mickey",
-      "Line": "There! That's everybody! Come on, Aqua- Oh no!"
-    },
-    {
-      "Order": 14,
-      "Character": "Aqua",
-      "Line": "Back off!"
-    },
-    {
-      "Order": 15,
-      "Character": "Mickey",
-      "Line": "Aqua!"
-    },
-    {
-      "Order": 16,
-      "Character": "Aqua",
-      "Line": "Go without me!"
-    },
-    {
-      "Order": 17,
-      "Character": "Mickey",
-      "Line": "No, I-! Aqua!"
-    }
-  ],
-  "I Will Stay": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "The battle for the realm of light... is not won. Thanks to Terra and Mickey, I know what's at stake. I'm not afraid. I will face the long darkness. The next time someone wanders into the realm of darkness, I'll be here. A light to cut through all the shadows. I will be their wayfinder. And one day, I'll return to Terra and Ven. I am Master Aqua. And that's a promise."
-    }
-  ],
-  "Closing the Door": [
-    {
-      "Order": 0,
-      "Character": "Mickey",
-      "Line": "Aqua... Now, Sora! Let's close this door for good!"
-    }
-  ],
-  "A World Restored": [
-    {
-      "Order": 0,
-      "Character": "Aqua",
-      "Line": "It's beautiful. The stars are out. Terra, Ven... Just me again. They did it. The worlds are being restored. \"May our hearts be our guiding key.\" You'll know... where I am."
-    }
-  ],
-  "2.9 - The First Volume": [
-    {
-      "Order": 0,
-      "Character": "Mickey",
-      "Line": "I thought... I heard her voice in the distance."
-    },
-    {
-      "Order": 1,
-      "Character": "Riku",
-      "Line": "She sacrificed herself to save me? Why did you keep it from me for so long?"
-    },
-    {
-      "Order": 2,
-      "Character": "Mickey",
-      "Line": "I had to respect her choice."
-    },
-    {
-      "Order": 3,
-      "Character": "Riku",
-      "Line": "What about us? You could've given us a choice. We could have gone and helped her."
-    },
-    {
-      "Order": 4,
-      "Character": "Mickey",
-      "Line": "I know."
-    },
-    {
-      "Order": 5,
-      "Character": "Yen Sid",
-      "Line": "Do not be rash, Riku. As Mickey told you clearly in his story, reaching the realm of darkness the first time was not a simple task. And even if we had found a way back in, regrettably none of us possessed the necessary means to get Aqua back out safely. So I forbade Mickey from telling you, let alone going after her."
-    },
-    {
-      "Order": 6,
-      "Character": "Riku",
-      "Line": "Why keep it secret?"
-    },
-    {
-      "Order": 7,
-      "Character": "Yen Sid",
-      "Line": "That much is obvious. If not you, then certainly Sora would have staged a reckless attempt at rescue."
-    },
-    {
-      "Order": 8,
-      "Character": "Mickey",
-      "Line": "But, now we can help Aqua. You and I- we're gonna go find her!"
-    },
-    {
-      "Order": 9,
-      "Character": "Riku",
-      "Line": "Yeah! Count me in!"
-    },
-    {
-      "Order": 10,
-      "Character": "Mickey",
-      "Line": "Yep!"
-    },
-    {
-      "Order": 11,
-      "Character": "Kairi",
-      "Line": "Who's this new Riku and where's the old one?"
-    },
-    {
-      "Order": 12,
-      "Character": "Riku",
-      "Line": "New me?"
-    },
-    {
-      "Order": 13,
-      "Character": "Kairi",
-      "Line": "Yeah. You're more like Sora."
-    },
-    {
-      "Order": 14,
-      "Character": "Riku",
-      "Line": "Should I be flattered? I try too hard to be the role model. It's more fun to just listen to my heart. Which is Sora-esque."
-    },
-    {
-      "Order": 15,
-      "Character": "Kairi",
-      "Line": "Well, we still like you. Master, I came here because I wanted to help somehow. What can I do?"
-    },
-    {
-      "Order": 16,
-      "Character": "Yen Sid",
-      "Line": "I have entrusted the wizard Merlin to oversee the training for our new Keyblade wielders, yourself and Lea."
-    },
-    {
-      "Order": 17,
-      "Character": "Kairi",
-      "Line": "Lea?"
-    },
-    {
-      "Order": 18,
-      "Character": "Mickey",
-      "Line": "He means Axel."
-    },
-    {
-      "Order": 19,
-      "Character": "Kairi",
-      "Line": "What!?"
-    },
-    {
-      "Order": 20,
-      "Character": "Mickey",
-      "Line": "Aw. He's a regular person now. He even saved Sora for us. You can trust him! C'mon, Riku. It's time for us to go. First, we gotta find an entrance to the realm of darkness."
-    },
-    {
-      "Order": 21,
-      "Character": "Yen Sid",
-      "Line": "Mickey, take these along with you. The three good fairies asked that you be presented with them. They are new vestments which will shield the both of you from the darkness."
-    },
-    {
-      "Order": 22,
-      "Character": "Riku",
-      "Line": "Thank you, Master."
-    },
-    {
-      "Order": 23,
-      "Character": "Mickey",
-      "Line": "Thank you, Master."
-    },
-    {
-      "Order": 24,
-      "Character": "Mickey",
-      "Line": "Okay, let's go!"
-    },
-    {
-      "Order": 25,
-      "Character": "Donald",
-      "Line": "Okay, start talking!"
-    },
-    {
-      "Order": 26,
-      "Character": "Goofy",
-      "Line": "You were gone a long time. What were ya doin'?"
-    },
-    {
-      "Order": 27,
-      "Character": "Sora",
-      "Line": "Heh heh heh. Secret. I'm back!"
-    },
-    {
-      "Order": 28,
-      "Character": "Goofy",
-      "Line": "A-hyuck!"
-    },
-    {
-      "Order": 29,
-      "Character": "Sora",
-      "Line": "Huh? Just us?"
-    },
-    {
-      "Order": 30,
-      "Character": "Yen Sid",
-      "Line": "The others all had important work to do. So I sent them on their way."
-    },
-    {
-      "Order": 31,
-      "Character": "Sora",
-      "Line": "That's great. They coulda said good-bye."
-    },
-    {
-      "Order": 32,
-      "Character": "Donald",
-      "Line": "It's your fault you missed them."
-    },
-    {
-      "Order": 33,
-      "Character": "Sora",
-      "Line": "It is not. I just like to say good-bye to all my friends."
-    },
-    {
-      "Order": 34,
-      "Character": "Donald",
-      "Line": "Then do it faster!"
-    },
-    {
-      "Order": 35,
-      "Character": "Sora",
-      "Line": "I'm here now, right?"
-    },
-    {
-      "Order": 36,
-      "Character": "Yen Sid",
-      "Line": "We have matters to discuss."
-    },
-    {
-      "Order": 37,
-      "Character": "Sora",
-      "Line": "Hmm?"
-    },
-    {
-      "Order": 38,
-      "Character": "Donald",
-      "Line": "What?"
-    },
-    {
-      "Order": 39,
-      "Character": "Yen Sid",
-      "Line": "In order to defeat Xehanort, there are allies we must gather, acting now to rouse them from their slumber. We have discussed this before, Sora. Your Mark of Mastery exam was conducted in the hopes you would acquire the power to wake them. However, the darkness nearly took control of you, and your grasp of your new abilities leaves much to be desired."
-    },
-    {
-      "Order": 40,
-      "Character": "Sora",
-      "Line": "Oh--"
-    },
-    {
-      "Order": 41,
-      "Character": "Yen Sid",
-      "Line": "Furthermore, Xehanort nearly made you his vessel, and in the process stripped you of most of the power you had gained by then. I suspect you have already noticed this, correct?"
-    },
-    {
-      "Order": 42,
-      "Character": "Donald",
-      "Line": "Sora... "
-    },
-    {
-      "Order": 43,
-      "Character": "Goofy",
-      "Line": "Sora..."
-    },
-    {
-      "Order": 44,
-      "Character": "Sora",
-      "Line": "Whatever! Happens all the time."
-    },
-    {
-      "Order": 45,
-      "Character": "Yen Sid",
-      "Line": "Yes. Chip and Dale are currently analyzing data that Ansem the Wise provided to Riku and which could offer us a clue to retrieving our friends' lost hearts. I have very high hopes for this data. However, our greatest chance of stopping Xehanort's plan still lies with you, Sora. If you trust the guidance your heart gives, I know we will find all of the guardians of light. But first, you must regain all the strength you have lost. Perhaps it is foolish to expect a complete recovery, but it is absolutely vital you perfect one power- the power of waking, which you failed to master during your exam. There's someone who lost his strength and found it again, a true hero to whom you ought to pay a visit. Perhaps he can point you in the right direction."
-    },
-    {
-      "Order": 46,
-      "Character": "Sora",
-      "Line": "Got it."
-    },
-    {
-      "Order": 47,
-      "Character": "Donald",
-      "Line": "Master Yen Sid..."
-    },
-    {
-      "Order": 48,
-      "Character": "Goofy",
-      "Line": "You can count on us to take care of Sora!"
-    },
-    {
-      "Order": 49,
-      "Character": "Yen Sid",
-      "Line": "I would have it no other way. I put Sora in your hands."
-    },
-    {
-      "Order": 50,
-      "Character": "Sora",
-      "Line": "Donald! Goofy!"
-    },
-    {
-      "Order": 51,
-      "Character": "Donald",
-      "Line": "You can't become a master without us!"
-    },
-    {
-      "Order": 52,
-      "Character": "Sora",
-      "Line": "Huh?"
-    },
-    {
-      "Order": 53,
-      "Character": "Goofy",
-      "Line": "I never woulda thought you'd fail that exam, Sora."
-    },
-    {
-      "Order": 54,
-      "Character": "Sora",
-      "Line": "Hey!"
-    },
-    {
-      "Order": 55,
-      "Character": "Donald",
-      "Line": "Face it, you're just a half-pint."
-    },
-    {
-      "Order": 56,
-      "Character": "Goofy",
-      "Line": "But the three of us together make a whole pint!"
-    },
-    {
-      "Order": 57,
-      "Character": "Sora",
-      "Line": "Pint an' a half."
-    },
-    {
-      "Order": 58,
-      "Character": "Donald",
-      "Line": "And don't forget, we'll keep an eye on you."
-    },
-    {
-      "Order": 59,
-      "Character": "Goofy",
-      "Line": "Oh, this is gonna be lots of fun!"
-    },
-    {
-      "Order": 60,
-      "Character": "Sora",
-      "Line": "It's not a vacation! Let's go! Donald, & Goofy"
-    },
-    {
-      "Order": 61,
-      "Character": "Donald",
-      "Line": "What? I thought you knew!"
-    },
-    {
-      "Order": 62,
-      "Character": "Goofy",
-      "Line": "Looks like all the old highways are closed. Didn't Master Yen Sid say that Sora should trust the guidance his heart gives?"
-    },
-    {
-      "Order": 63,
-      "Character": "Donald",
-      "Line": "C'mon, Sora. Which way?"
-    },
-    {
-      "Order": 64,
-      "Character": "Sora",
-      "Line": "Ummm..."
-    },
-    {
-      "Order": 65,
-      "Character": "Donald",
-      "Line": "Hey, would you get serious?"
-    },
-    {
-      "Order": 66,
-      "Character": "Sora",
-      "Line": "Gimme a break, I'm trying. These things take time!"
-    },
-    {
-      "Order": 67,
-      "Character": "Goofy",
-      "Line": "Well, since we've already been before, why don't you try picturing our friends like we're there?"
-    },
-    {
-      "Order": 68,
-      "Character": "Sora",
-      "Line": "Hmmm..."
-    },
-    {
-      "Order": 69,
-      "Character": "Donald",
-      "Line": "Well?"
-    },
-    {
-      "Order": 70,
-      "Character": "Sora",
-      "Line": "Sorry, I got nothin'. What did you expect?"
-    },
-    {
-      "Order": 71,
-      "Character": "Donald",
-      "Line": "Aw!"
-    },
-    {
-      "Order": 72,
-      "Character": "Goofy",
-      "Line": "\"May your heart be your guiding key.\""
-    },
-    {
-      "Order": 73,
-      "Character": "Sora",
-      "Line": "Huh? What's that?"
-    },
-    {
-      "Order": 74,
-      "Character": "Goofy",
-      "Line": "Master Yen Sid always said that, right before we went off on any of our real important adventures."
-    },
-    {
-      "Order": 75,
-      "Character": "Sora",
-      "Line": "Really? Ring a bell?"
-    },
-    {
-      "Order": 76,
-      "Character": "Donald",
-      "Line": "Uh uh."
-    },
-    {
-      "Order": 77,
-      "Character": "Goofy",
-      "Line": "Maybe I just imagined it."
-    },
-    {
-      "Order": 78,
-      "Character": "Sora",
-      "Line": "\"May my heart be my guiding key.\" I've got it!"
-    },
-    {
-      "Order": 79,
-      "Character": "Donald",
-      "Line": "It's a gate!"
-    },
-    {
-      "Order": 80,
-      "Character": "Goofy",
-      "Line": "It's a gate!"
-    },
-    {
-      "Order": 81,
-      "Character": "Sora",
-      "Line": "All right! Olympus Coliseum, here we come!"
-    },
-    {
-      "Order": 82,
-      "Character": "Mickey",
-      "Line": "I thought... I heard her voice in the distance. I had to respect her choice. I had to respect her choice. I know. But, now we can help Aqua. You and I--we're gonna go find her! Yep! He means Axel. Aw. He's a regular person now. He even saved Sora for us. You can trust him! C'mon, Riku. It's time for us to go. First, we gotta find an entrance to the realm of darkness. Thank you, Master. Okay, let's go!"
-    },
-    {
-      "Order": 83,
-      "Character": "Riku",
-      "Line": "She sacrificed herself to save me? Why did you keep it from me for so long? What about us? You could've given us a choice. We could have gone and helped her. Why keep it secret? Yeah! Count me in! New me? Should I be flattered? I try too hard to be the role model. It's more fun to just listen to my heart. Which is Sora-esque. Thank you, Master."
-    },
-    {
-      "Order": 84,
-      "Character": "Yen Sid",
-      "Line": "Do not be rash, Riku. As Mickey told you clearly in his story, reaching the realm of darkness the first time was not a simple task. And even if we had found a way back in, regrettably none of us possessed the necessary means to get Aqua back out safely. So I forbade Mickey from telling you, let alone going after her. That much is obvious. If not you, then certainly Sora would have staged a reckless attempt at rescue. I have entrusted the wizard Merlin to oversee the training for our new Keyblade wielders, yourself and Lea.  Mickey, take these along with you. The three good fairies asked that you be presented with them. They are new vestments which will shield the both of you from the darkness. The others all had important work to do. So I sent them on their way. We have matters to discuss. In order to defeat Xehanort, there are allies we must gather, acting now to rouse them from their slumber. We have discussed this before, Sora. Your Mark of Mastery exam was conducted in the hopes you would acquire the power to wake them. However, the darkness nearly took control of you, and your grasp of your new abilities leaves much to be desired.  Furthermore, Xehanort nearly made you his vessel, and in the process stripped you of most of the power you had gained by then. I suspect you have already noticed this, correct? Yes. Chip and Dale are currently analyzing data that Ansem the Wise provided to Riku and which could offer us a clue to retrieving our friends' lost hearts. I have very high hopes for this data. However, our greatest chance of stopping Xehanort's plan still lies with you, Sora. If you trust the guidance your heart gives, I know we will find all of the guardians of light. But first, you must regain all the strength you have lost. Perhaps it is foolish to expect a complete recovery, but it is absolutely vital you perfect one power--the power of waking, which you failed to master during your exam. There's someone who lost his strength and found it again, a true hero to whom you ought to pay a visit. Perhaps he can point you in the right direction. I would have it no other way. I put Sora in your hands."
-    },
-    {
-      "Order": 85,
-      "Character": "Kairi",
-      "Line": "Who's this new Riku and where's the old one? Yeah. You're more like Sora. Well, we still like you. Master, I came here because I wanted to help somehow. What can I do? Lea? What!?"
-    },
-    {
-      "Order": 86,
-      "Character": "Donald",
-      "Line": "Okay, start talking! It's your fault you missed them. Then do it faster! What? Sora... Master Yen Sid... You can't become a master without us! Face it, you're just a half-pint. And don't forget, we'll keep an eye on you. Count on us! What? I thought you knew! C'mon, Sora. Which way? Hey, would you get serious? Well? Aw! Uh uh. It's a gate!"
-    },
-    {
-      "Order": 87,
-      "Character": "Goofy",
-      "Line": "You were gone a long time. What were ya doin'? A-hyuck! Sora... You can count on us to take care of Sora! I never woulda thought you'd fail that exam, Sora. But the three of us together make a whole pint! Oh, this is gonna be lots of fun! Count on us! Looks like all the old highways are closed. Didn't Master Yen Sid say that Sora should trust the guidance his heart gives? Well, since we've already been before, why don't you try picturing our friends like we're there? \"May your heart be your guiding key.\" Master Yen Sid always said that, right before we went off on any of our real important adventures. Maybe I just imagined it. It's a gate!"
-    },
-    {
-      "Order": 88,
-      "Character": "Sora",
-      "Line": "Heh heh heh. Secret.  I'm back! Huh? Just us? That's great. They coulda said good-bye. It is not. I just like to say good-bye to all my friends. I'm here now, right? Hmm? Oh– Whatever! Happens all the time. Got it. Donald! Goofy! Huh? Hey! Pint an' a half. It's not a vacation! Let's go! Count on us! How're we supposed to get there now? Ummm...Gimme a break, I'm trying. These things take time! Hmmm...Sorry, I got nothin'. What did you expect? Huh? What's that? Really? Ring a bell? \"May my heart be my guiding key.\"  I've got it! All right! Olympus Coliseum, here we come!"
-    }
-  ]
+  "Script": {
+    "None": [
+      {
+        "Order": -1,
+        "Character": "None",
+        "Line": "This will be updated after Damo279's big project."
+      }
+    ],
+    "A Secret Unveiled": [
+      {
+        "Order": 0,
+        "Character": "Yen Sid",
+        "Line": "The great battle with Xehanort is almost upon us. As you know, we must take action to keep the seven pure lights safe, and thus we must hasten to assemble the seven guardians of light. It is time to return to our world the three Keyblade wielders we lost over a decade ago. Ventus, Terra, and Aqua must be saved from their sad end, for they have more to achieve. Following their first battle with Xehanort, Ventus's heart refused to awaken, and so Aqua found a safe location to conceal him. But when she set off in search of her other missing friend Terra, she fell to a place from which there is no return without outside help."
+      },
+      {
+        "Order": 1,
+        "Character": "Mickey",
+        "Line": "I saw her. In the realm of darkness."
+      }
+    ],
+    "Castle of Dreams": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Could it be? Why is Cinderella's world... here in the darkness? There's no \"time\" in the realm of darkness.I walk... on and on without end. In the realm of light, do days or years pass with each step? I know something has started to go wrong."
+      }
+    ],
+    "A Stirring": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "I guess I know which way I'm going. I haven't felt my heart stir in a long time. Something about this place... It looks like worse things are stirring!"
+      }
+    ],
+    "Days No More": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "I took it for granted. I thought I had nothing in life to lose. Here, too. Everyone in this world thought that they were safe. Not just the people... but the dog waiting for his owner... the cat curled up in her nook... So much life. Trees and flowers... There's no deeper sadness than discovering all that you knew is gone. The grief in this place is too much to fathom. That's enough. I can't keep on wishing for the past."
+      }
+    ],
+    "Time Stands Still": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "The road collapsed when the clock advanced. If only I'd made it in time... But there is no time in this place, only... the clock. I knew it."
+      }
+    ],
+    "No Going Back": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Not even memories... are safe from the darkness. What I wouldn't give to really turn back time... To spend one more night beneath the stars with my best friends. I'm doing it again."
+      },
+      {
+        "Order": 1,
+        "Character": "Terra",
+        "Line": "Aqua."
+      },
+      {
+        "Order": 2,
+        "Character": "Aqua",
+        "Line": "It can't be. What are you doing here? You should be in the realm of light. Oh no! Did you not make it out? Don't tell me. Has the realm of light– Why won't you say anything to me? So what are you, a memory among these shadows? Are you here to...try and tell me not to lose heart? The world keeps our thoughts alive. But where did the people who lived here go, once their world was taken away? At least they're not here. So, they haven't fallen to darkness. I'll take what solace I can from that."
+      }
+    ],
+    "Reflection": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Another world that was lost to the darkness? Hmm? Is that...? Ven!? Ven. What did you come here to tell me? I know I promised to wake you up. I'm sorry. But I have to find a way home before I can help you. I just want you to know that it's been you that keeps my heart strong. Keeps the dark away. It's a mirror... What!? What just happened? Those mirrors... Maybe they're a clue."
+      }
+    ],
+    "Phantoms": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Is this what it means to face your demons?"
+      },
+      {
+        "Order": 1,
+        "Character": "Phantom Aqua",
+        "Line": "Only your heart is hollow enough to be a demon's."
+      },
+      {
+        "Order": 2,
+        "Character": "Aqua",
+        "Line": "That's not true! My heart is strong! I'll prove it! Terra, Ven... and now my own phantom? What could it all mean? That's all of them. Terra and Ven didn't have anything to say. But my shadow... She wanted to destroy me."
+      }
+    ],
+    "Questions": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Never would have thought I'd become my own worst enemy. I've talked to myself a lot since falling into these shadows. But with the phantom, it's as though all of my doubts have gained a voice of their own. She's the weakness in my heart. I know I'm alone here. Have the uncountable hours in the shadows whittled away the courage I never really had? I'm losing this fight. The darkness has found the cracks in my heart. Is this...the last apparition before it takes me over?"
+      }
+    ],
+    "Visions": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Another world I know. Terra. Ven. Are they... phantoms...? I don't care if they are, or if I fall into the darkness.  I miss them! Get out of my way! You really think you can keep me away from my friends?"
+      }
+    ],
+    "The Giant": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Okay then..."
+      }
+    ],
+    "Reunion": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Terra, Ven."
+      },
+      {
+        "Order": 1,
+        "Character": "Terra",
+        "Line": "Aqua, you're--"
+      },
+      {
+        "Order": 2,
+        "Character": "Aqua",
+        "Line": "Terra. You spoke?"
+      },
+      {
+        "Order": 3,
+        "Character": "Terra",
+        "Line": "Can you see me?"
+      },
+      {
+        "Order": 4,
+        "Character": "Aqua",
+        "Line": "Of course! I see Ven too."
+      },
+      {
+        "Order": 5,
+        "Character": "Terra",
+        "Line": "Ven? He's here?"
+      },
+      {
+        "Order": 6,
+        "Character": "Aqua",
+        "Line": "Terra, what's wrong? Don't you see him?"
+      },
+      {
+        "Order": 7,
+        "Character": "Terra",
+        "Line": "Where are we?"
+      },
+      {
+        "Order": 8,
+        "Character": "Aqua",
+        "Line": "A world the darkness has consumed. It's Enchanted Dominion."
+      },
+      {
+        "Order": 9,
+        "Character": "Terra",
+        "Line": "Consumed? The worlds fell?"
+      },
+      {
+        "Order": 10,
+        "Character": "Aqua",
+        "Line": "What's gotten into you? How do I know that you're Terra? And not the weakness that's in my heart playing more tricks? Ven! Please say something."
+      },
+      {
+        "Order": 11,
+        "Character": "Terra",
+        "Line": "Aqua, listen. I promise this is me. But I'm not myself."
+      },
+      {
+        "Order": 12,
+        "Character": "Aqua",
+        "Line": "What do you mean?"
+      },
+      {
+        "Order": 13,
+        "Character": "Terra",
+        "Line": "You're using the name \"Terra.\" That means you're seeing me the way that you remember me. But your heart is just painting the picture that it so wants to see. The real me is lost in shadow."
+      },
+      {
+        "Order": 14,
+        "Character": "Aqua",
+        "Line": "Then you're here, trapped in the realm of darkness."
+      },
+      {
+        "Order": 15,
+        "Character": "Terra",
+        "Line": "No. My heart has ties to the dark. That must be why we can talk. But I can't see anything, Aqua. If you say Ven is there, then he's like me- an illusion created by your heart."
+      },
+      {
+        "Order": 16,
+        "Character": "Aqua",
+        "Line": "I understand. Then, you and Ven are safe in the outside world?"
+      },
+      {
+        "Order": 17,
+        "Character": "Terra",
+        "Line": "I think."
+      },
+      {
+        "Order": 18,
+        "Character": "Aqua",
+        "Line": "That's good. But, how did you find me?"
+      },
+      {
+        "Order": 19,
+        "Character": "Terra",
+        "Line": "I looked here. And heard you in the darkness."
+      },
+      {
+        "Order": 20,
+        "Character": "Aqua",
+        "Line": "Right, but why does your heart have... ties to the darkness now? What did you mean \"lost in shadow\"?"
+      },
+      {
+        "Order": 21,
+        "Character": "Terra",
+        "Line": "Forget about me. Aqua, Xehanort is trying to locate Ven."
+      },
+      {
+        "Order": 22,
+        "Character": "Aqua",
+        "Line": "He'll never find him. I hid Ven well. I think the reason he's not talking to me here, is because he's still there sleeping."
+      },
+      {
+        "Order": 23,
+        "Character": "Terra",
+        "Line": "No, I can't control-"
+      },
+      {
+        "Order": 24,
+        "Character": "Terra-Xehanort:",
+        "Line": "This \"place.\" Is it the Chamber of Waking?"
+      },
+      {
+        "Order": 25,
+        "Character": "Aqua",
+        "Line": "Yes- Who are you? Really."
+      },
+      {
+        "Order": 26,
+        "Character": "Terra-Xehanort",
+        "Line": "You don't know? My name--"
+      },
+      {
+        "Order": 27,
+        "Character": "Terra",
+        "Line": "Aqua! Get back!"
+      },
+      {
+        "Order": 28,
+        "Character": "Aqua",
+        "Line": "Terra!"
+      },
+      {
+        "Order": 29,
+        "Character": "Terra",
+        "Line": "I messed up. Xehanort is part of me. Now he's using me so you'll tell him where you hid Ven!"
+      },
+      {
+        "Order": 30,
+        "Character": "Terra-Xehanort",
+        "Line": "Silence!"
+      },
+      {
+        "Order": 31,
+        "Character": "Terra",
+        "Line": "I won't give in! Aqua! You have to-"
+      },
+      {
+        "Order": 32,
+        "Character": "Terra-Xehanort",
+        "Line": "Still you struggle!"
+      },
+      {
+        "Order": 33,
+        "Character": "Aqua",
+        "Line": "Terra!"
+      },
+      {
+        "Order": 34,
+        "Character": "Terra",
+        "Line": "Aqua!"
+      },
+      {
+        "Order": 35,
+        "Character": "Xehanort",
+        "Line": "Now you can be one with the darkness!"
+      },
+      {
+        "Order": 36,
+        "Character": "Aqua",
+        "Line": "Ven..."
+      },
+      {
+        "Order": 37,
+        "Character": "Terra",
+        "Line": "That is enough!"
+      },
+      {
+        "Order": 38,
+        "Character": "Aqua",
+        "Line": "Terra..."
+      }
+    ],
+    "Time Past": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "Now I can be... one with darkness..."
+      },
+      {
+        "Order": 1,
+        "Character": "Mickey",
+        "Line": "Aqua, are you okay?"
+      },
+      {
+        "Order": 2,
+        "Character": "Aqua",
+        "Line": "Mickey, how did- Terra! Ven!"
+      },
+      {
+        "Order": 3,
+        "Character": "Mickey",
+        "Line": "No time to talk."
+      },
+      {
+        "Order": 4,
+        "Character": "Aqua",
+        "Line": "Dwellers of darkness..."
+      },
+      {
+        "Order": 5,
+        "Character": "Mickey",
+        "Line": "They're called Heartless! Better not push our luck. Gosh. I never thought I'd find ya in the realm of darkness, that's for sure. So, um, what happened?"
+      },
+      {
+        "Order": 6,
+        "Character": "Aqua",
+        "Line": "Have you seen Terra or Ven?"
+      },
+      {
+        "Order": 7,
+        "Character": "Mickey",
+        "Line": "No, just you."
+      },
+      {
+        "Order": 8,
+        "Character": "Aqua",
+        "Line": "I'm sorry. The darkness in this place, it's getting to me."
+      },
+      {
+        "Order": 9,
+        "Character": "Mickey",
+        "Line": "Oh. But, you'll be okay."
+      },
+      {
+        "Order": 10,
+        "Character": "Aqua",
+        "Line": "Right."
+      },
+      {
+        "Order": 11,
+        "Character": "Mickey",
+        "Line": "Say, we've been looking for ya a long time. How come you're in this place?"
+      },
+      {
+        "Order": 12,
+        "Character": "Aqua",
+        "Line": "First tell me"
+      },
+      {
+        "Order": 13,
+        "Character": "Mickey",
+        "Line": "About... ten years."
+      },
+      {
+        "Order": 14,
+        "Character": "Aqua",
+        "Line": "Interesting. After we last spoke, I took Ven somewhere safe, and then I went after Terra. But Terra was about to fall to darkness, so I had one choice. I stayed here in hopes of giving him a chance."
+      },
+      {
+        "Order": 15,
+        "Character": "Mickey",
+        "Line": "I... didn't know."
+      },
+      {
+        "Order": 16,
+        "Character": "Aqua",
+        "Line": "How 'bout you? What could've brought you here? Has something happened? In the realm of light?"
+      },
+      {
+        "Order": 17,
+        "Character": "Mickey",
+        "Line": "It's the Heartless. They've been attacking worlds and taking their hearts. And worlds with no hearts vanish into darkness. But if we can lock the door between the two realms- light and dark- from both sides, we can protect the other worlds. So ya see, I came here to find the key on this side. Turns out, it's not so easy getting into the realm of darkness. The points you can cross have become unstable. It's only when a world gets consumed, that an entrance appears in the realm between. So, I waited for my chance... to sneak in. But hey, when I got here, I felt a warm, familiar light. I followed it to find my way... to you."
+      },
+      {
+        "Order": 18,
+        "Character": "Aqua",
+        "Line": "The charm. So they were helping. Terra and Ven brought you and I back together again."
+      },
+      {
+        "Order": 19,
+        "Character": "Mickey",
+        "Line": "Yeah!"
+      },
+      {
+        "Order": 20,
+        "Character": "Aqua",
+        "Line": "But, the worlds are still in danger. Terra- did he make it back to the realm of light?"
+      },
+      {
+        "Order": 21,
+        "Character": "Mickey",
+        "Line": "We still haven't found him."
+      },
+      {
+        "Order": 22,
+        "Character": "Aqua",
+        "Line": "I see. Well, wherever he is, he's fighting. He'll beat his darkness. And I know he wants me to fight too."
+      },
+      {
+        "Order": 23,
+        "Character": "Mickey",
+        "Line": "I think you're right. He'll be just fine."
+      },
+      {
+        "Order": 24,
+        "Character": "Aqua",
+        "Line": "Yes. But what about Ven? He won't wake up unless I'm there with him. I have to go. I have to find a way back to the realm of light."
+      },
+      {
+        "Order": 25,
+        "Character": "Mickey",
+        "Line": "Good. Then let's locate that key and go home together!"
+      },
+      {
+        "Order": 26,
+        "Character": "Aqua",
+        "Line": "Does that mean you know an exit?"
+      },
+      {
+        "Order": 27,
+        "Character": "Mickey",
+        "Line": "Well, uh, I was so busy finding a way in, that I didn't give a lot of thought to where there'd be a way out. But, together we're sure to find one!"
+      },
+      {
+        "Order": 28,
+        "Character": "Aqua",
+        "Line": "You haven't changed at all."
+      },
+      {
+        "Order": 29,
+        "Character": "Mickey",
+        "Line": "May our hearts be our guiding key."
+      },
+      {
+        "Order": 30,
+        "Character": "Aqua",
+        "Line": "There's a phrase no one's used in ages."
+      },
+      {
+        "Order": 31,
+        "Character": "Mickey",
+        "Line": "Keyblade wielders used to say those words to each other. And now, it's something I like to try and remember. So. Ready?"
+      },
+      {
+        "Order": 32,
+        "Character": "Aqua",
+        "Line": "Ready!"
+      }
+    ],
+    "Past and Present": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "This is... where I met those children."
+      },
+      {
+        "Order": 1,
+        "Character": "Mickey",
+        "Line": "So many worlds have been lost. And now they're trapped here in the dark. Wait- you know this place, Aqua?"
+      },
+      {
+        "Order": 2,
+        "Character": "Aqua",
+        "Line": "Yes. I visited once, and I met two boys I considered passing the Keyblade on to. But because Terra had already given one of them the power, I didn't."
+      },
+      {
+        "Order": 3,
+        "Character": "Mickey",
+        "Line": "Aqua. What were the boys' names?"
+      },
+      {
+        "Order": 4,
+        "Character": "Aqua",
+        "Line": "They were... Sora and Riku."
+      },
+      {
+        "Order": 5,
+        "Character": "Mickey",
+        "Line": "I see. We're getting warm."
+      },
+      {
+        "Order": 6,
+        "Character": "Aqua",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 7,
+        "Character": "Mickey",
+        "Line": "Welp, it's Sora and Riku who've been helpin' me. We're tryin' to get that door shut for good."
+      },
+      {
+        "Order": 8,
+        "Character": "Aqua",
+        "Line": "Oh- The same boys?"
+      },
+      {
+        "Order": 9,
+        "Character": "Mickey",
+        "Line": "Aqua, if this is where my friends first got the Keyblade, it also must be where we'll find its counterpart. The Keyblade of darkness has gotta be here on the dark side of their world. We'll have to hurry. C'mon! Let's keep goin'."
+      }
+    ],
+    "Keyblade of Darkness": [
+      {
+        "Order": 0,
+        "Character": "Mickey",
+        "Line": "I bet it's in here. There!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aqua",
+        "Line": "Is that what you're after?"
+      },
+      {
+        "Order": 2,
+        "Character": "Mickey",
+        "Line": "Yep, it's just the key I was looking for. A Keyblade from the dark realm!"
+      },
+      {
+        "Order": 3,
+        "Character": "Aqua",
+        "Line": "A Keyblade of darkness."
+      },
+      {
+        "Order": 4,
+        "Character": "Mickey",
+        "Line": "\"The door of darkness... tied by two keys. The door of darkness... to seal the light.\" Welp, we've got the keys. Now we find the ones to close the door."
+      },
+      {
+        "Order": 5,
+        "Character": "Aqua",
+        "Line": "Sorry?"
+      },
+      {
+        "Order": 6,
+        "Character": "Mickey",
+        "Line": "The door between the two realms- it won't let a heart with light pass through. So only darkness keeps spilling out. We can lock the door by using the two Keyblades, but we need help on both sides to get the door shut."
+      },
+      {
+        "Order": 7,
+        "Character": "Aqua",
+        "Line": "Well, then, since you'll be doing the locking, let me be the one to close the door."
+      },
+      {
+        "Order": 8,
+        "Character": "Mickey",
+        "Line": "Sorry, but the job's taken... by somebody else."
+      },
+      {
+        "Order": 9,
+        "Character": "Aqua",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 10,
+        "Character": "Aqua",
+        "Line": "Is that the one?"
+      },
+      {
+        "Order": 11,
+        "Character": "Mickey",
+        "Line": "Yep, the door to Kingdom Hearts. Welp, it's not the Kingdom Hearts you know. Not exactly. But even though it's smaller, it's still the heart of many worlds. And even if it's not a complete Kingdom Hearts, we definitely can't leave it open like this, or darkness will escape and destroy the remaining worlds. It's time. With this key and Sora's in the realm of light, we're gonna close this door. Now, all we need is Riku."
+      },
+      {
+        "Order": 12,
+        "Character": "Aqua",
+        "Line": "Sora, Riku."
+      },
+      {
+        "Order": 13,
+        "Character": "Mickey",
+        "Line": "There! That's everybody! Come on, Aqua- Oh no!"
+      },
+      {
+        "Order": 14,
+        "Character": "Aqua",
+        "Line": "Back off!"
+      },
+      {
+        "Order": 15,
+        "Character": "Mickey",
+        "Line": "Aqua!"
+      },
+      {
+        "Order": 16,
+        "Character": "Aqua",
+        "Line": "Go without me!"
+      },
+      {
+        "Order": 17,
+        "Character": "Mickey",
+        "Line": "No, I-! Aqua!"
+      }
+    ],
+    "I Will Stay": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "The battle for the realm of light... is not won. Thanks to Terra and Mickey, I know what's at stake. I'm not afraid. I will face the long darkness. The next time someone wanders into the realm of darkness, I'll be here. A light to cut through all the shadows. I will be their wayfinder. And one day, I'll return to Terra and Ven. I am Master Aqua. And that's a promise."
+      }
+    ],
+    "Closing the Door": [
+      {
+        "Order": 0,
+        "Character": "Mickey",
+        "Line": "Aqua... Now, Sora! Let's close this door for good!"
+      }
+    ],
+    "A World Restored": [
+      {
+        "Order": 0,
+        "Character": "Aqua",
+        "Line": "It's beautiful. The stars are out. Terra, Ven... Just me again. They did it. The worlds are being restored. \"May our hearts be our guiding key.\" You'll know... where I am."
+      }
+    ],
+    "2.9 - The First Volume": [
+      {
+        "Order": 0,
+        "Character": "Mickey",
+        "Line": "I thought... I heard her voice in the distance."
+      },
+      {
+        "Order": 1,
+        "Character": "Riku",
+        "Line": "She sacrificed herself to save me? Why did you keep it from me for so long?"
+      },
+      {
+        "Order": 2,
+        "Character": "Mickey",
+        "Line": "I had to respect her choice."
+      },
+      {
+        "Order": 3,
+        "Character": "Riku",
+        "Line": "What about us? You could've given us a choice. We could have gone and helped her."
+      },
+      {
+        "Order": 4,
+        "Character": "Mickey",
+        "Line": "I know."
+      },
+      {
+        "Order": 5,
+        "Character": "Yen Sid",
+        "Line": "Do not be rash, Riku. As Mickey told you clearly in his story, reaching the realm of darkness the first time was not a simple task. And even if we had found a way back in, regrettably none of us possessed the necessary means to get Aqua back out safely. So I forbade Mickey from telling you, let alone going after her."
+      },
+      {
+        "Order": 6,
+        "Character": "Riku",
+        "Line": "Why keep it secret?"
+      },
+      {
+        "Order": 7,
+        "Character": "Yen Sid",
+        "Line": "That much is obvious. If not you, then certainly Sora would have staged a reckless attempt at rescue."
+      },
+      {
+        "Order": 8,
+        "Character": "Mickey",
+        "Line": "But, now we can help Aqua. You and I- we're gonna go find her!"
+      },
+      {
+        "Order": 9,
+        "Character": "Riku",
+        "Line": "Yeah! Count me in!"
+      },
+      {
+        "Order": 10,
+        "Character": "Mickey",
+        "Line": "Yep!"
+      },
+      {
+        "Order": 11,
+        "Character": "Kairi",
+        "Line": "Who's this new Riku and where's the old one?"
+      },
+      {
+        "Order": 12,
+        "Character": "Riku",
+        "Line": "New me?"
+      },
+      {
+        "Order": 13,
+        "Character": "Kairi",
+        "Line": "Yeah. You're more like Sora."
+      },
+      {
+        "Order": 14,
+        "Character": "Riku",
+        "Line": "Should I be flattered? I try too hard to be the role model. It's more fun to just listen to my heart. Which is Sora-esque."
+      },
+      {
+        "Order": 15,
+        "Character": "Kairi",
+        "Line": "Well, we still like you. Master, I came here because I wanted to help somehow. What can I do?"
+      },
+      {
+        "Order": 16,
+        "Character": "Yen Sid",
+        "Line": "I have entrusted the wizard Merlin to oversee the training for our new Keyblade wielders, yourself and Lea."
+      },
+      {
+        "Order": 17,
+        "Character": "Kairi",
+        "Line": "Lea?"
+      },
+      {
+        "Order": 18,
+        "Character": "Mickey",
+        "Line": "He means Axel."
+      },
+      {
+        "Order": 19,
+        "Character": "Kairi",
+        "Line": "What!?"
+      },
+      {
+        "Order": 20,
+        "Character": "Mickey",
+        "Line": "Aw. He's a regular person now. He even saved Sora for us. You can trust him! C'mon, Riku. It's time for us to go. First, we gotta find an entrance to the realm of darkness."
+      },
+      {
+        "Order": 21,
+        "Character": "Yen Sid",
+        "Line": "Mickey, take these along with you. The three good fairies asked that you be presented with them. They are new vestments which will shield the both of you from the darkness."
+      },
+      {
+        "Order": 22,
+        "Character": "Riku",
+        "Line": "Thank you, Master."
+      },
+      {
+        "Order": 23,
+        "Character": "Mickey",
+        "Line": "Thank you, Master."
+      },
+      {
+        "Order": 24,
+        "Character": "Mickey",
+        "Line": "Okay, let's go!"
+      },
+      {
+        "Order": 25,
+        "Character": "Donald",
+        "Line": "Okay, start talking!"
+      },
+      {
+        "Order": 26,
+        "Character": "Goofy",
+        "Line": "You were gone a long time. What were ya doin'?"
+      },
+      {
+        "Order": 27,
+        "Character": "Sora",
+        "Line": "Heh heh heh. Secret. I'm back!"
+      },
+      {
+        "Order": 28,
+        "Character": "Goofy",
+        "Line": "A-hyuck!"
+      },
+      {
+        "Order": 29,
+        "Character": "Sora",
+        "Line": "Huh? Just us?"
+      },
+      {
+        "Order": 30,
+        "Character": "Yen Sid",
+        "Line": "The others all had important work to do. So I sent them on their way."
+      },
+      {
+        "Order": 31,
+        "Character": "Sora",
+        "Line": "That's great. They coulda said good-bye."
+      },
+      {
+        "Order": 32,
+        "Character": "Donald",
+        "Line": "It's your fault you missed them."
+      },
+      {
+        "Order": 33,
+        "Character": "Sora",
+        "Line": "It is not. I just like to say good-bye to all my friends."
+      },
+      {
+        "Order": 34,
+        "Character": "Donald",
+        "Line": "Then do it faster!"
+      },
+      {
+        "Order": 35,
+        "Character": "Sora",
+        "Line": "I'm here now, right?"
+      },
+      {
+        "Order": 36,
+        "Character": "Yen Sid",
+        "Line": "We have matters to discuss."
+      },
+      {
+        "Order": 37,
+        "Character": "Sora",
+        "Line": "Hmm?"
+      },
+      {
+        "Order": 38,
+        "Character": "Donald",
+        "Line": "What?"
+      },
+      {
+        "Order": 39,
+        "Character": "Yen Sid",
+        "Line": "In order to defeat Xehanort, there are allies we must gather, acting now to rouse them from their slumber. We have discussed this before, Sora. Your Mark of Mastery exam was conducted in the hopes you would acquire the power to wake them. However, the darkness nearly took control of you, and your grasp of your new abilities leaves much to be desired."
+      },
+      {
+        "Order": 40,
+        "Character": "Sora",
+        "Line": "Oh--"
+      },
+      {
+        "Order": 41,
+        "Character": "Yen Sid",
+        "Line": "Furthermore, Xehanort nearly made you his vessel, and in the process stripped you of most of the power you had gained by then. I suspect you have already noticed this, correct?"
+      },
+      {
+        "Order": 42,
+        "Character": "Donald",
+        "Line": "Sora... "
+      },
+      {
+        "Order": 43,
+        "Character": "Goofy",
+        "Line": "Sora..."
+      },
+      {
+        "Order": 44,
+        "Character": "Sora",
+        "Line": "Whatever! Happens all the time."
+      },
+      {
+        "Order": 45,
+        "Character": "Yen Sid",
+        "Line": "Yes. Chip and Dale are currently analyzing data that Ansem the Wise provided to Riku and which could offer us a clue to retrieving our friends' lost hearts. I have very high hopes for this data. However, our greatest chance of stopping Xehanort's plan still lies with you, Sora. If you trust the guidance your heart gives, I know we will find all of the guardians of light. But first, you must regain all the strength you have lost. Perhaps it is foolish to expect a complete recovery, but it is absolutely vital you perfect one power- the power of waking, which you failed to master during your exam. There's someone who lost his strength and found it again, a true hero to whom you ought to pay a visit. Perhaps he can point you in the right direction."
+      },
+      {
+        "Order": 46,
+        "Character": "Sora",
+        "Line": "Got it."
+      },
+      {
+        "Order": 47,
+        "Character": "Donald",
+        "Line": "Master Yen Sid..."
+      },
+      {
+        "Order": 48,
+        "Character": "Goofy",
+        "Line": "You can count on us to take care of Sora!"
+      },
+      {
+        "Order": 49,
+        "Character": "Yen Sid",
+        "Line": "I would have it no other way. I put Sora in your hands."
+      },
+      {
+        "Order": 50,
+        "Character": "Sora",
+        "Line": "Donald! Goofy!"
+      },
+      {
+        "Order": 51,
+        "Character": "Donald",
+        "Line": "You can't become a master without us!"
+      },
+      {
+        "Order": 52,
+        "Character": "Sora",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 53,
+        "Character": "Goofy",
+        "Line": "I never woulda thought you'd fail that exam, Sora."
+      },
+      {
+        "Order": 54,
+        "Character": "Sora",
+        "Line": "Hey!"
+      },
+      {
+        "Order": 55,
+        "Character": "Donald",
+        "Line": "Face it, you're just a half-pint."
+      },
+      {
+        "Order": 56,
+        "Character": "Goofy",
+        "Line": "But the three of us together make a whole pint!"
+      },
+      {
+        "Order": 57,
+        "Character": "Sora",
+        "Line": "Pint an' a half."
+      },
+      {
+        "Order": 58,
+        "Character": "Donald",
+        "Line": "And don't forget, we'll keep an eye on you."
+      },
+      {
+        "Order": 59,
+        "Character": "Goofy",
+        "Line": "Oh, this is gonna be lots of fun!"
+      },
+      {
+        "Order": 60,
+        "Character": "Sora",
+        "Line": "It's not a vacation! Let's go! Donald, & Goofy"
+      },
+      {
+        "Order": 61,
+        "Character": "Donald",
+        "Line": "What? I thought you knew!"
+      },
+      {
+        "Order": 62,
+        "Character": "Goofy",
+        "Line": "Looks like all the old highways are closed. Didn't Master Yen Sid say that Sora should trust the guidance his heart gives?"
+      },
+      {
+        "Order": 63,
+        "Character": "Donald",
+        "Line": "C'mon, Sora. Which way?"
+      },
+      {
+        "Order": 64,
+        "Character": "Sora",
+        "Line": "Ummm..."
+      },
+      {
+        "Order": 65,
+        "Character": "Donald",
+        "Line": "Hey, would you get serious?"
+      },
+      {
+        "Order": 66,
+        "Character": "Sora",
+        "Line": "Gimme a break, I'm trying. These things take time!"
+      },
+      {
+        "Order": 67,
+        "Character": "Goofy",
+        "Line": "Well, since we've already been before, why don't you try picturing our friends like we're there?"
+      },
+      {
+        "Order": 68,
+        "Character": "Sora",
+        "Line": "Hmmm..."
+      },
+      {
+        "Order": 69,
+        "Character": "Donald",
+        "Line": "Well?"
+      },
+      {
+        "Order": 70,
+        "Character": "Sora",
+        "Line": "Sorry, I got nothin'. What did you expect?"
+      },
+      {
+        "Order": 71,
+        "Character": "Donald",
+        "Line": "Aw!"
+      },
+      {
+        "Order": 72,
+        "Character": "Goofy",
+        "Line": "\"May your heart be your guiding key.\""
+      },
+      {
+        "Order": 73,
+        "Character": "Sora",
+        "Line": "Huh? What's that?"
+      },
+      {
+        "Order": 74,
+        "Character": "Goofy",
+        "Line": "Master Yen Sid always said that, right before we went off on any of our real important adventures."
+      },
+      {
+        "Order": 75,
+        "Character": "Sora",
+        "Line": "Really? Ring a bell?"
+      },
+      {
+        "Order": 76,
+        "Character": "Donald",
+        "Line": "Uh uh."
+      },
+      {
+        "Order": 77,
+        "Character": "Goofy",
+        "Line": "Maybe I just imagined it."
+      },
+      {
+        "Order": 78,
+        "Character": "Sora",
+        "Line": "\"May my heart be my guiding key.\" I've got it!"
+      },
+      {
+        "Order": 79,
+        "Character": "Donald",
+        "Line": "It's a gate!"
+      },
+      {
+        "Order": 80,
+        "Character": "Goofy",
+        "Line": "It's a gate!"
+      },
+      {
+        "Order": 81,
+        "Character": "Sora",
+        "Line": "All right! Olympus Coliseum, here we come!"
+      },
+      {
+        "Order": 82,
+        "Character": "Mickey",
+        "Line": "I thought... I heard her voice in the distance. I had to respect her choice. I had to respect her choice. I know. But, now we can help Aqua. You and I--we're gonna go find her! Yep! He means Axel. Aw. He's a regular person now. He even saved Sora for us. You can trust him! C'mon, Riku. It's time for us to go. First, we gotta find an entrance to the realm of darkness. Thank you, Master. Okay, let's go!"
+      },
+      {
+        "Order": 83,
+        "Character": "Riku",
+        "Line": "She sacrificed herself to save me? Why did you keep it from me for so long? What about us? You could've given us a choice. We could have gone and helped her. Why keep it secret? Yeah! Count me in! New me? Should I be flattered? I try too hard to be the role model. It's more fun to just listen to my heart. Which is Sora-esque. Thank you, Master."
+      },
+      {
+        "Order": 84,
+        "Character": "Yen Sid",
+        "Line": "Do not be rash, Riku. As Mickey told you clearly in his story, reaching the realm of darkness the first time was not a simple task. And even if we had found a way back in, regrettably none of us possessed the necessary means to get Aqua back out safely. So I forbade Mickey from telling you, let alone going after her. That much is obvious. If not you, then certainly Sora would have staged a reckless attempt at rescue. I have entrusted the wizard Merlin to oversee the training for our new Keyblade wielders, yourself and Lea.  Mickey, take these along with you. The three good fairies asked that you be presented with them. They are new vestments which will shield the both of you from the darkness. The others all had important work to do. So I sent them on their way. We have matters to discuss. In order to defeat Xehanort, there are allies we must gather, acting now to rouse them from their slumber. We have discussed this before, Sora. Your Mark of Mastery exam was conducted in the hopes you would acquire the power to wake them. However, the darkness nearly took control of you, and your grasp of your new abilities leaves much to be desired.  Furthermore, Xehanort nearly made you his vessel, and in the process stripped you of most of the power you had gained by then. I suspect you have already noticed this, correct? Yes. Chip and Dale are currently analyzing data that Ansem the Wise provided to Riku and which could offer us a clue to retrieving our friends' lost hearts. I have very high hopes for this data. However, our greatest chance of stopping Xehanort's plan still lies with you, Sora. If you trust the guidance your heart gives, I know we will find all of the guardians of light. But first, you must regain all the strength you have lost. Perhaps it is foolish to expect a complete recovery, but it is absolutely vital you perfect one power--the power of waking, which you failed to master during your exam. There's someone who lost his strength and found it again, a true hero to whom you ought to pay a visit. Perhaps he can point you in the right direction. I would have it no other way. I put Sora in your hands."
+      },
+      {
+        "Order": 85,
+        "Character": "Kairi",
+        "Line": "Who's this new Riku and where's the old one? Yeah. You're more like Sora. Well, we still like you. Master, I came here because I wanted to help somehow. What can I do? Lea? What!?"
+      },
+      {
+        "Order": 86,
+        "Character": "Donald",
+        "Line": "Okay, start talking! It's your fault you missed them. Then do it faster! What? Sora... Master Yen Sid... You can't become a master without us! Face it, you're just a half-pint. And don't forget, we'll keep an eye on you. Count on us! What? I thought you knew! C'mon, Sora. Which way? Hey, would you get serious? Well? Aw! Uh uh. It's a gate!"
+      },
+      {
+        "Order": 87,
+        "Character": "Goofy",
+        "Line": "You were gone a long time. What were ya doin'? A-hyuck! Sora... You can count on us to take care of Sora! I never woulda thought you'd fail that exam, Sora. But the three of us together make a whole pint! Oh, this is gonna be lots of fun! Count on us! Looks like all the old highways are closed. Didn't Master Yen Sid say that Sora should trust the guidance his heart gives? Well, since we've already been before, why don't you try picturing our friends like we're there? \"May your heart be your guiding key.\" Master Yen Sid always said that, right before we went off on any of our real important adventures. Maybe I just imagined it. It's a gate!"
+      },
+      {
+        "Order": 88,
+        "Character": "Sora",
+        "Line": "Heh heh heh. Secret.  I'm back! Huh? Just us? That's great. They coulda said good-bye. It is not. I just like to say good-bye to all my friends. I'm here now, right? Hmm? Oh– Whatever! Happens all the time. Got it. Donald! Goofy! Huh? Hey! Pint an' a half. It's not a vacation! Let's go! Count on us! How're we supposed to get there now? Ummm...Gimme a break, I'm trying. These things take time! Hmmm...Sorry, I got nothin'. What did you expect? Huh? What's that? Really? Ring a bell? \"May my heart be my guiding key.\"  I've got it! All right! Olympus Coliseum, here we come!"
+      }
+    ]
+  }
 }
