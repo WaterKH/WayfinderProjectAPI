@@ -1,0 +1,71 @@
+﻿@using Data.Models;
+@inject IJSRuntime JS
+
+
+<div class="@(this.IsSelected ? "search-option-selected" : "search-option")" @onclick="@(() => this.SelectValue.InvokeAsync(this.Value))">
+    <div class="row">
+        <div class="col-md-1 wayfinder-option-color" style="background-color: @(this.Color)">
+        </div>
+
+        <div class="col-md-1 wayfinder-option-padding" style="padding-top: 15px;">
+            <div class="container">
+                <input type="radio" checked="@this.IsSelected">
+                <span class="checkmark"></span>
+            </div>
+        </div>
+
+        <div class="col-md-8 wayfinder-option-padding" style="padding-top: 15px;">
+            <label @ref="ParentElement" class="wayfinder-label">
+                <div @ref="Element" class="wayfinder-text @(this.CanScroll ? "wayfinder-text-animated" : "")" style="padding-left: 15px;">@this.Value</div>
+            </label>
+        </div>
+
+        <div class="col-md-2 wayfinder-option-padding" style="font-size: x-small; text-align: center; padding-top: 15px; align-self: center;">
+            <em>@this.Id</em>
+        </div>
+    </div>
+</div>
+
+<style>
+    
+@@keyframes backAndForth {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(0); }
+  45% { transform: translateX(calc(-100%)); }
+  55% { transform: translateX(calc(-100%)); }
+  90% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+</style>
+
+@code {
+    [Parameter] public string Id { get; set; }
+    [Parameter] public string Color { get; set; }
+    [Parameter] public string Value { get; set; }
+    [Parameter] public bool IsSelected { get; set; }
+
+    [Parameter] public EventCallback<string> SelectValue { get; set; }
+
+    private ElementReference Element;
+    private ElementReference ParentElement;
+    private bool CanScroll = false;
+    private ScrollWidth scrollWidth = new ScrollWidth();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            scrollWidth = await JS.InvokeAsync<ScrollWidth>("isHidden", this.Element, this.ParentElement);
+
+            this.CanScroll = (scrollWidth.width > scrollWidth.boundingWidth);
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

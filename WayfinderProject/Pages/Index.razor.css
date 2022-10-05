@@ -1,0 +1,68 @@
+﻿.wayfinder-background {
+    border-radius: 35px;
+    background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #f7dfec);
+}
+
+.wayfinder-parallax {
+    padding: 20px;
+    background-image: url(/images/WFP_logo_INVIS.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.wayfinder-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-size: xx-large;
+}
+
+.wayfinder-description {
+    text-align: center;
+    font-size: larger;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.wayfinder-search {
+    text-align: center;
+    margin-left: 80px;
+}
+
+.wayfinder-search-icon {
+    left: 40px;
+    top: 7px;
+    position: relative;
+    color: #536fe9;
+}
+
+.wayfinder-search-button {
+    padding: 5px 30px;
+    right: 120px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    font-size: small;
+}
+
+    .wayfinder-search-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.custom-input {
+    padding: 10px 100px 10px 40px;
+    border-radius: 50px;
+    text-align: left;
+    width: 40%;
+    height: auto;
+    border: 2px solid #2888ff;
+    overflow-wrap: break-word;
+}
+
+    .custom-input:focus {
+        outline: none;
+        border: 2px solid #2888ff;
+    }

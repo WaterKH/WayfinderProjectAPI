@@ -16409,141 +16409,144 @@
         "Order": 4,
         "Character": "Sora",
         "Line": "I know Riku wouldn't do this. Not without a good reason."
-      }
-    ],
-    "Dark Riku:A reason? When did that ever matter? We've been trying to one-up each other since we were kids.": [
-      {
-        "Order": 0,
-        "Character": "Sora",
-        "Line": "What...?"
-      },
-      {
-        "Order": 1,
-        "Character": "Donald",
-        "Line": "Don't listen to him, Sora!"
-      },
-      {
-        "Order": 2,
-        "Character": "Goofy",
-        "Line": "The coat means he's with Organization XIII! And THAT means he's not really Riku."
-      },
-      {
-        "Order": 3,
-        "Character": "Dark Riku",
-        "Line": "Smarter than you look."
-      },
-      {
-        "Order": 4,
-        "Character": "Goofy",
-        "Line": "We defeated Ansem and Xehanort- every last one of 'em. But still they all came back anyway, right? So, maybe this Riku \"came back\" too, from the time when Ansem possessed him."
       },
       {
         "Order": 5,
-        "Character": "Donald",
-        "Line": "Yeah, from the past!"
+        "Character": "Dark Riku",
+        "Line": "A reason? When did that ever matter? We've been trying to one-up each other since we were kids."
       },
       {
         "Order": 6,
         "Character": "Sora",
-        "Line": "What? How?"
+        "Line": "What...?"
       },
       {
         "Order": 7,
-        "Character": "Dark Riku",
-        "Line": "Unlike a certain wizard you know, I had to play by the rules to travel through time. Which meant leaving my body behind."
+        "Character": "Donald",
+        "Line": "Don't listen to him, Sora!"
       },
       {
         "Order": 8,
-        "Character": "Sora",
-        "Line": "I know about this... But... you have a body."
+        "Character": "Goofy",
+        "Line": "The coat means he's with Organization XIII! And THAT means he's not really Riku."
       },
       {
         "Order": 9,
         "Character": "Dark Riku",
-        "Line": "Xehanort's heart left his body in order to voyage back through time. He needed to tell his younger self of the great plans he had in store. There in the past, his heart stayed, and waited out the years until you and I came along. Xehanort's heart possessed me and became Ansem, the first adversary you faced. The rest of him, the piece he left behind, took the name Xemnas and created the first Organization. It was all a part of a larger plan to bring Xehanort into contact with the right hearts- enough of them to form the real Organization XIII. They could come from anywhere, any WHEN... just as long as he had the right vessels at hand to place their hearts in."
+        "Line": "Smarter than you look."
       },
       {
         "Order": 10,
-        "Character": "Sora",
-        "Line": "Vessels?"
+        "Character": "Goofy",
+        "Line": "We defeated Ansem and Xehanort- every last one of 'em. But still they all came back anyway, right? So, maybe this Riku \"came back\" too, from the time when Ansem possessed him."
       },
       {
         "Order": 11,
         "Character": "Donald",
-        "Line": "Replicas!"
+        "Line": "Yeah, from the past!"
       },
       {
         "Order": 12,
-        "Character": "Goofy",
-        "Line": "Replicas!"
+        "Character": "Sora",
+        "Line": "What? How?"
       },
       {
         "Order": 13,
         "Character": "Dark Riku",
-        "Line": "That's right. The Replica Program was a success. We are as real as people."
+        "Line": "Unlike a certain wizard you know, I had to play by the rules to travel through time. Which meant leaving my body behind."
       },
       {
         "Order": 14,
         "Character": "Sora",
-        "Line": "Then pack up and leave! What are you still doing here?"
+        "Line": "I know about this... But... you have a body."
       },
       {
         "Order": 15,
         "Character": "Dark Riku",
-        "Line": "To see if we can recreate a heart from data."
+        "Line": "Xehanort's heart left his body in order to voyage back through time. He needed to tell his younger self of the great plans he had in store. There in the past, his heart stayed, and waited out the years until you and I came along. Xehanort's heart possessed me and became Ansem, the first adversary you faced. The rest of him, the piece he left behind, took the name Xemnas and created the first Organization. It was all a part of a larger plan to bring Xehanort into contact with the right hearts- enough of them to form the real Organization XIII. They could come from anywhere, any WHEN... just as long as he had the right vessels at hand to place their hearts in."
       },
       {
         "Order": 16,
         "Character": "Sora",
-        "Line": "What?"
+        "Line": "Vessels?"
       },
       {
         "Order": 17,
+        "Character": "Donald",
+        "Line": "Replicas!"
+      },
+      {
+        "Order": 18,
+        "Character": "Goofy",
+        "Line": "Replicas!"
+      },
+      {
+        "Order": 19,
+        "Character": "Dark Riku",
+        "Line": "That's right. The Replica Program was a success. We are as real as people."
+      },
+      {
+        "Order": 20,
+        "Character": "Sora",
+        "Line": "Then pack up and leave! What are you still doing here?"
+      },
+      {
+        "Order": 21,
+        "Character": "Dark Riku",
+        "Line": "To see if we can recreate a heart from data."
+      },
+      {
+        "Order": 22,
+        "Character": "Sora",
+        "Line": "What?"
+      },
+      {
+        "Order": 23,
         "Character": "Dark Riku",
         "Line": "Sorry, did we steal your idea? That walking balloon over there has a \"heart.\" At least that's the nonsense I'm supposed to believe."
       },
       {
-        "Order": 18,
+        "Order": 24,
         "Character": "Sora",
         "Line": "There are hearts all around us. You only have to see them for them to become real."
       },
       {
-        "Order": 19,
+        "Order": 25,
         "Character": "Hiro",
         "Line": "Where'd you get that? That's my chip. I made it."
       },
       {
-        "Order": 20,
+        "Order": 26,
         "Character": "Dark Riku",
         "Line": "Oh, well, I'm sorry about that. But I promise I'll put it right back where I found it."
       },
       {
-        "Order": 21,
+        "Order": 27,
         "Character": "Hiro",
         "Line": "What do you mean?"
       },
       {
-        "Order": 22,
+        "Order": 28,
         "Character": "Dark Riku",
         "Line": "I think I'll be getting back to work now."
       },
       {
-        "Order": 23,
+        "Order": 29,
         "Character": "Sora",
         "Line": "No!"
       },
       {
-        "Order": 24,
+        "Order": 30,
         "Character": "Hiro",
         "Line": "Wait! We gotta stop him. Guys- "
       },
       {
-        "Order": 25,
+        "Order": 31,
         "Character": "Baymax",
         "Line": "You are all suffering from acute exhaustion. I recommend rest."
       },
       {
-        "Order": 26,
+        "Order": 32,
         "Character": "Hiro",
         "Line": "Yeah, you're right. Let's regroup."
       }

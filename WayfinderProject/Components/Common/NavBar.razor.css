@@ -1,0 +1,37 @@
+.wayfinder-nav-bar {
+    display: flex;
+    padding: 30px 15px 0px 15px;
+}
+
+.wayfinder-nav-bar-border {
+    border-bottom: 3px solid #dcdcdc;
+    margin-top: -4px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.wayfinder-option {
+    cursor: pointer;
+    color: #acacac;
+    margin: 0px 20px;
+}
+
+    .wayfinder-option:hover {
+        color: #000000;
+    }
+
+.wayfinder-option-active {
+    cursor: pointer;
+    color: #000000;
+    margin: 0px 20px;
+}
+
+.wayfinder-container {
+    text-align: center;
+}
+
+.wayfinder-container-active {
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border-bottom: 5px solid #2784fb;
+}

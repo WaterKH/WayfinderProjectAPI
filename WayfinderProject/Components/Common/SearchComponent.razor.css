@@ -8,11 +8,70 @@
 }
 
 .search-results {
-    max-height: 150px;
+    max-height: 250px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .search-selected {
     max-height: 150px;
     overflow-y: auto;
 }
+
+.wayfinder-buttons {
+    float: right;
+}
+
+
+.wayfinder-search-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+}
+
+    .wayfinder-search-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.wayfinder-outlined-button {
+    padding: 5px 30px;
+    color: black;
+    border: 1px solid #2787fd;
+    border-radius: 20px;
+    background: #f1f1f1;
+}
+
+    .wayfinder-outlined-button:focus {
+        outline: none;
+    }
+
+
+.wayfinder-search {
+    
+}
+
+.wayfinder-search-icon {
+    left: 40px;
+    top: 7px;
+    position: relative;
+    color: #536fe9;
+}
+
+.custom-input {
+    padding: 10px 100px 10px 40px;
+    border-radius: 50px;
+    text-align: left;
+    width: 40%;
+    height: auto;
+    border: 2px solid #2888ff;
+    overflow-wrap: break-word;
+}
+
+    .custom-input:focus {
+        outline: none;
+        border: 2px solid #2888ff;
+    }

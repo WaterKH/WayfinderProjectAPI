@@ -6,79 +6,50 @@
 
 <PageTitle>The Wayfinder Project</PageTitle>
 
-<div id="how-to-use">
-    <div class="row">
-        <div class="col-md-3">
-            <img src="/images/WFP_logo.png" alt="The Wayfinder Project" width="100%">
-        </div>
+<br/>
+<br/>
 
-        <div class="col-md-9">
-            <br/>
-            <br/>
-            <br/>
+<div class="wayfinder-background">
+    <div class="wayfinder-parallax">
+        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+            <div class="col-md-12" style="align-self: center;">
+                <div class="wayfinder-title">
+                    <img src="/images/wayfinder_project_title.png" />
+                </div>
 
-            <h3 style="text-align: center;">The Wayfinder Project - How To Use</h3>
-            
-            <br/>
+                <div class="wayfinder-description">
+                    <strong>Search for a <span style="color: #522aff;">Word</span>, <span style="color: #ff7519;">Phrase</span> or <span style="color: #2cce78;">Quote</span>...</strong>
+                </div>
 
-            <p>
-                Welcome to the Wayfinder Project, a directory and database for every cutscene in the Kingdom Hearts series! 
-                Over the course of 20+ years and more than 15 titles, the KH series is filled to the brim with over 2,000 cutscenes and thousands of lines of dialogue. 
-                The purpose of this database is to help you <strong>find any particular scene, moment, or line from the series</strong> with just a few keystrokes. 
-            </p>
-            <p>
-                For example, if you’re looking for, say, that scene with Xigbar and Zexion in KH2FM, you can enter both characters in the “character” field, and KH2 in the “games” field. 
-                This’ll narrow your search down to just two scenes: one with the entire Organization in the throne room, and one with just the two chatting after Vexen runs off in Twilight’s View.
-            </p>
-            <p>
-                Want to know <strong>every time a certain song is used</strong> in the series? Use the “Music” field to search for Rowdy Rumble, Tension Rising, The Other Promise, etc, and you’ll have your answer!
-            </p>
-            <p>
-                Brand new to this version of the Wayfinder Project is the ability to <strong>search any keyword within the games’ dialogue and get every instance of that word or phrase returned</strong>. 
-                For example, are you looking for that scene where Donald calls Goofy a big palooka? 
-                Search palooka in the topmost field and you’ll be directed to that exact scene, complete with everything else you’d want to know about it: the characters who appear in it, 
-                the world and area it takes place in, the music playing, and a transcript of all spoken dialogue in the scene. 
-                Embedded in the search result is a link to the scene on YouTube for your convenience. 
-            </p>
+                <div class="wayfinder-search">
+                    <span class="wayfinder-search-icon material-icons">search</span>
+                    <input id="main-search" name="main-search" class="custom-input" onchange="@((ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString(); this.SearchQuotes(e?.Value?.ToString()); })" placeholder="Start Typing..." >
+                    <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<br/>
-<br/>
+<NavBar @ref="WayfinderNavBar" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" />
 
-<Collapsable Title="Search Parameters">
-    <div class="search-bar">
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-12" style="align-self: center;">
-                <input id="main-search" name="main-search" class="custom-input" onchange="@((ChangeEventArgs e) => this.SearchQuotes(e?.Value?.ToString()))" placeholder="Search for a Word, Phrase or Quote (Must be longer than 3 letters)..." />
-            </div>
+<div class="advanced-search-box">
+    <div class="row">
+        <div class="col-md-12">
+            <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Selections="this.Games" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+
+            <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Selections="this.Scenes" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+                
+            <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ffcf2f" Selections="this.Worlds" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+                
+            <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#94ffaa" Selections="this.Areas" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+                
+            <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#ff6060" Selections="this.Characters" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+                
+            <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#78b1d4" Selections="this.Music" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
         </div>
     </div>
-
-    <div class="advanced-search-box">
-        <div class="row" >
-            <div class="col-md-4">
-                <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Search for Games..." Color="#cdd1ff" Selections="this.Games" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
-            </div>
-            <div class="col-md-4">
-                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Search for Worlds..." Color="#1bff9f" Selections="this.Worlds" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
-            </div>
-            <div class="col-md-4">
-                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Search for Areas..." Color="#94ffe1" Selections="this.Areas" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
-            </div>
-            <div class="col-md-4">
-                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Search for Scenes..." Color="#faa5f3" Selections="this.Scenes" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
-            </div>
-            <div class="col-md-4">
-                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Search for Characters..." Color="#beff6c" Selections="this.Characters" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
-            </div>
-            <div class="col-md-4">
-                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Search for Music..." Color="#fffd9c" Selections="this.Music" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" />
-            </div>
-        </div>
-    </div>
-</Collapsable>
+</div>
 
 <br />
 <br />
@@ -285,23 +256,13 @@ else if (this.SceneDtos.Count > 0)
 
 
 <style>
-.custom-input {
-    padding: 5px 15px;
-    border-radius: 50px;
-    text-align: left;
-    width: 100%;
-    height: auto;
-    border: 1px solid black;
-    overflow-wrap: break-word;
-}
-
 .advanced-search-box {
-    padding: 5px 15px;
-    border-radius: 35px;
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
     width: 100%;
-    border: 1px solid black;
     height: auto;
-    background-color: #ffffff;
+    background-color: #f1f1f1;
 }
 
 .clickable {
@@ -339,6 +300,7 @@ else if (this.SceneDtos.Count > 0)
 
 @code {
     public bool Loading { get; set; }
+    public string CurrentOption { get; set; } = "Games";
 
     public List<string> Areas { get; set; } = new List<string>();
     public List<string> Characters { get; set; } = new List<string>();
@@ -359,6 +321,9 @@ else if (this.SceneDtos.Count > 0)
     private string quoteSearch = "";
     private List<SceneDto> SceneDtos = new List<SceneDto>();
     private WayfinderController api;
+
+    private List<string> options = new List<string> { "Games", "Scenes", "Worlds", "Areas", "Characters", "Music" };
+    private NavBar? WayfinderNavBar;
 
     protected override async Task OnInitializedAsync()
     {
@@ -428,6 +393,15 @@ else if (this.SceneDtos.Count > 0)
                 this.StateHasChanged(); 
             });
         }
+    }
+
+    public async Task UpdateCurrentOption(string option)
+    {
+        this.CurrentOption = option;
+
+        await InvokeAsync(() => {
+            this.StateHasChanged();
+        });
     }
 
     public void UpdateOptions()

@@ -26,10 +26,10 @@ namespace WayfinderProjectAPI.Data
             CreateWorlds(context);
 
             // Load Script Data into Database
-            CreateScripts(context);
+            //CreateScripts(context);
 
             // Load Scene Data into Database
-            CreateScenes(context);
+            //CreateScenes(context);
         }
 
         public static void CreateAreas(WayfinderContext context)

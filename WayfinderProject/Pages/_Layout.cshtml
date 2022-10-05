@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="WayfinderProject.styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
@@ -28,5 +29,14 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+
+    <script>
+        window.isHidden = function (el, pEl) {
+            let contBound = pEl.getBoundingClientRect();
+            let w = el.scrollWidth;
+
+            return {'width': w, 'boundingWidth': contBound.width};
+        }
+    </script>
 </body>
 </html>

@@ -1,44 +1,67 @@
-﻿<div class="search">
-    <div class="search-bar">
-        <div class="row" style="width: 100%; margin: 25px 0px;">
-            <div class="col-md-12" style="align-self: center;">
-                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input" 
-                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" disabled="@(!this.CanSearch)" />
-            </div>
-        </div>
+﻿@if(this.CurrentOption == this.Id)
+{
+<div class="search">
+    <div class="wayfinder-buttons">
+        <button class="@(this.CurrentView == "Selections" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())">@(this.CurrentView == "Options" ? "Filters" : "Options")</button>
     </div>
 
+
+    <div class="search-bar" style="margin: 10px 0px 30px 0px; margin-left: -45px;">
+        <span class="wayfinder-search-icon material-icons">search</span>
+        <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input"
+            oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Options")">
+    </div>
+
+    @if (this.CurrentView == "Options")
+    {
     <div class="search-results">
         @if (this.results.Count > 0)
         {
-            @for (int i = 0; i < this.results.Count; ++i)
-            {
-                //@if (i <= this.Limit)
-                //{
-                var tempResult = this.results[i];
-                <span class="search-result" style="background-color: @(this.Color)"
-                    @onclick="@(() => this.Select(tempResult))">@tempResult</span>
-                //}
-            }
+            <div class="row" style="padding-left: 15px;">
+                @for (int i = 0; i < this.results.Count; ++i)
+                {
+                    var tempResult = this.results[i];
+                    <div class="col-md-5">
+                        <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="false" SelectValue="@(() => Select(tempResult))" />
+                    </div>
+
+                    if (i % 2 != 0)
+                    {
+                        <div class="col-md-2"></div>
+                    }
+                }
+            </div>
         }
         else if (!string.IsNullOrEmpty(this.search))
         {
             <em>No results were found for that string.</em>
         }
     </div>
-
-    <div class="search-selected">
-        @if (this.selected.Count > 0)
-        {
-            <hr />
-            @foreach (var value in this.selected)
+    }
+    else if (this.CurrentView == "Selections")
+    {
+            <div class="search-results">
+            @if (this.selected.Count > 0)
             {
-                <span class="search-result remove" @onclick="@(() => this.Remove(value))">@value</span>
-            }
-        }
-    </div>
-</div>
+                <div class="row" style="padding-left: 15px;">
+                    @for (int i = 0; i < this.selected.Count; ++i)
+                    {
+                        var tempResult = this.selected[i];
+                        <div class="col-md-5">
+                            <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="true" SelectValue="@(() => Remove(tempResult))" />
+                        </div>
 
+                        if (i % 2 != 0)
+                        {
+                            <div class="col-md-2"></div>
+                        }
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
+}
 
 <style>
     .search-result {
@@ -66,18 +89,25 @@
         }
 </style>
 @code {
-    [Parameter] public string Id { get; set; } = "Search";
+    [Parameter] public string Id { get; set; }
     [Parameter] public string Placeholder { get; set; } = "Search for values...";
     [Parameter] public string Color { get; set; } = "#ffffff";
     [Parameter] public bool CanSearch { get; set; } = true;
     [Parameter] public List<string> Selections { get; set; } = new List<string>();
+    [Parameter] public string CurrentOption { get; set; }
 
     [Parameter] public Func<Task> UpdateSearch { get; set; }
 
 
     private string search = "";
+
     public List<string> selected { get; set; } = new List<string>();
     public List<string> results = new List<string>();
+    public string CurrentView = "Options";
+
+    private Dictionary<string, string> Colors = new Dictionary<string, string> {
+        { "", "" }
+    };
 
     protected override async Task OnInitializedAsync()
     {
@@ -111,7 +141,6 @@
         this.results.Sort();
     }
 
-    // TODO These still seem to lag a bit
     private async Task Select(string value)
     {
         if (!this.CanSearch)
@@ -130,11 +159,13 @@
         }
 
         this.search = string.Empty;
+        if (this.results.Count == 0)
+            this.CurrentView = "Selections";
 
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
-        
+
         await Task.Run(async () => await this.UpdateSearch.Invoke());
     }
 
@@ -156,11 +187,25 @@
         }
 
         this.search = string.Empty;
+        if (this.selected.Count == 0)
+            this.CurrentView = "Options";
 
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
-        
+
         await Task.Run(async () => await this.UpdateSearch.Invoke());
+    }
+
+    private void ToggleView()
+    {
+        if (this.CurrentView == "Options")
+        {
+            this.CurrentView = "Selections";
+        }
+        else if (this.CurrentView == "Selections")
+        {
+            this.CurrentView = "Options";
+        }
     }
 }

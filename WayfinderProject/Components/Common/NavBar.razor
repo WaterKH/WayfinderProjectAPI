@@ -1,0 +1,37 @@
+﻿<div class="wayfinder-nav-bar">
+    @foreach (var option in this.Options)
+    {
+        <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")">
+            <span class="@((this.CurrentOption == option) ? "wayfinder-option-active" : "wayfinder-option")" @onclick="@(() => this.Select(option))">@option</span>
+        </div>
+    }
+
+    @if (this.AnySelected)
+    {
+        <div class="@((this.CurrentOption == "All") ? "wayfinder-container-active" : "wayfinder-container")" style="margin-left: 25px;">
+            <span class="@((this.CurrentOption == "All") ? "wayfinder-option-active" : "wayfinder-option")" @onclick="@(() => this.Select("All"))">All</span>
+        </div>
+    }
+</div>
+
+<div class="wayfinder-nav-bar-border"></div>
+
+@code {
+    [Parameter] public List<string> Options { get; set; }
+    [Parameter] public bool AnySelected { get; set; }
+
+    [Parameter] public Action<string> UpdateCurrentOption { get; set; }
+
+    public string CurrentOption { get; set; } = "Games";
+
+    public async Task Select(string option)
+    {
+        this.CurrentOption = option;
+
+        this.UpdateCurrentOption.Invoke(option);
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+    }
+}

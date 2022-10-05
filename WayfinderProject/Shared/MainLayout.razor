@@ -4,21 +4,43 @@
 
 <div class="page">
     <main>
-        <div class="top-row px-4">
-            <a href="/"><img src="/images/WFP.png" alt="The Wayfinder Project" style="position: absolute; left: 0; top: 0; width: 125px;"></a>
+        <div class="top-row px-4" style="background-color: white;">
+            <a href="/"><img src="/images/wayfinder_project_icon.png" alt="The Wayfinder Project" style="position: absolute; left: 50px; top: 12px; width: 28px;"></a>
 
-            <div class="links" style="left: 125px; position: absolute;">
-                <a href="/">Home</a>
-                <a href="/faq">FAQ</a>
-                <a href="/about">About</a>
+            <div class="links" style="left: 135px; position: absolute; cursor: default;">
+                <a class="wayfinder-link" href="/" style="color: #3c39de;">Home</a>
+                <span class="wayfinder-span" style="color: #68a4ff;">•</span>
+                <a class="wayfinder-link" href="/faq" style="color: #387ee6;">FAQ</a>
+                <span class="wayfinder-span" style="color: #387ee6">•</span>
+                <a class="wayfinder-link" href="/about" style="color: #5067bb">About</a>
             </div>
 
-            <a href="/swagger" target="_blank">API Reference</a>
-            <a href="https://github.com/WaterKH/WayfinderProjectAPI/commits/main" target="_blank">Version History</a>
+            <a class="wayfinder-link" href="/swagger" target="_blank" style="color: #387ee6">API Reference</a>
+            <span class="wayfinder-larger-span" style="color: #625ff5">•</span>
+            <a class="wayfinder-link" href="https://github.com/WaterKH/WayfinderProjectAPI/commits/main" target="_blank" style="color: #583ead">Version History</a>
         </div>
 
-        <article class="content px-4">
+        <article class="content px-4" style="padding-top: 0px;">
             @Body
         </article>
     </main>
 </div>
+
+<style>
+.wayfinder-link {
+    text-decoration: none;
+    margin: 0px !important;
+}
+
+.wayfinder-span {
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: default;
+}
+
+.wayfinder-larger-span {
+    margin-left: 40px;
+    margin-right: 40px;
+    cursor: default;
+}
+</style>
