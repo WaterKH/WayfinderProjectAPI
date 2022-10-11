@@ -7,6 +7,7 @@
     <UserSecretsId>232a41f3-6262-4faf-bab4-6dbcc5291872</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>

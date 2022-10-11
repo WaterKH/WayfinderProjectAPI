@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<NavBar @ref="WayfinderNavBar" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" />
+<NavBar @ref="WayfinderNavBar" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" CustomStyle="@("padding: 30px 15px 0px 15px;")" StartingOption="@this.CurrentOption" />
 
 <div class="advanced-search-box">
     <div class="row">
@@ -60,27 +60,33 @@
         <div class="loader col-md-12"></div>
     </div>
 }
-else if (this.SceneDtos.Count > 0)
-{
+@*else if (this.SceneDtos.Count > 0)
+{*@
     <Table @ref="MainTable" Items="this.SceneDtos" Context="Scene">
         <TableHeader>
-            <th>Game</th>
-            <th>Scene</th>
-            <th>Worlds</th>
-            <th>Areas</th>
-            <th>Characters</th>
-            <th>Music</th>
+            <th><img src="/images/icons/crown_gray.png" width="25px" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scene_gray.png" width="25px" class="header-margins"> <label class="header-label">Scene</label></th>
+            <th><img src="/images/icons/world_gray.png" width="25px" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/area_gray.png" width="25px" class="header-margins"> <label class="header-label">Areas</label></th>
+            <th><img src="/images/icons/character_gray.png" width="25px" class="header-margins"> <label class="header-label">Characters</label></th>
+            <th><img src="/images/icons/music_gray.png" width="25px" class="header-margins"> <label class="header-label">Music</label></th>
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <td>@Scene.Game.Name</td>
-            <td><a href="@Scene.Link" target="_blank">@Scene.Name</a></td>
-            <td>
+            <td style="vertical-align: middle;">
+                <span style="font-weight: 600;">@Scene.Game.Name</span>
+            </td>
+            <td style="vertical-align: middle;">
+                <a style="font-weight: 600; color: #1a00ff;" href="@Scene.Link" target="_blank">@Scene.Name</a>
+            </td>
+            <td style="vertical-align: middle;">
                 @if (Scene.Worlds.Count > 2)
                 {
-                    <div style="margin-left: -5px;">
+                    <div style="margin-left: -5px; height: 38px;">
                         <Tooltip Text="@(string.Join(", ", Scene.Worlds.Select(x => x.Name)))">
-                            <em>Multiple</em> <i class="oi oi-info icon"></i>
+                            <div class="world-display">
+                                Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                            </div>
                         </Tooltip>
                     </div>
                 }
@@ -88,10 +94,10 @@ else if (this.SceneDtos.Count > 0)
                 {
                     if (Scene.Worlds.Count > 0 && Scene.Worlds.First().Name != ":None:")
                     {
-                    <div style="display: inline-flex">
+                    <div style="display: inline-flex" class="@(Scene.Worlds.Count == 2 ? "world-display" : "")">
                         @for (int i = 0; i < Scene.Worlds.Count; ++i)
                         {
-                            @Scene.Worlds.ToList()[i].Name
+                            <span class="world-color">@Scene.Worlds.ToList()[i].Name</span>
                             if (i < Scene.Worlds.Count - 1)
                             {
                                 <div>,&nbsp;</div>
@@ -101,12 +107,14 @@ else if (this.SceneDtos.Count > 0)
                     }
                 }
             </td>
-            <td>
+            <td style="vertical-align: middle;">
                 @if (Scene.Areas.Count > 2)
                 {
-                    <div style="margin-left: -5px;">
+                    <div style="margin-left: -5px; height: 38px;">
                         <Tooltip Text="@(string.Join(", ", Scene.Areas.Select(x => x.Name)))">
-                            <em>Multiple</em> <i class="oi oi-info icon"></i>
+                            <div class="area-display">
+                                Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                            </div>
                         </Tooltip>
                     </div>
                 }
@@ -114,10 +122,10 @@ else if (this.SceneDtos.Count > 0)
                 {
                     if (Scene.Areas.Count > 0 && Scene.Areas.First().Name != ":None:")
                     {
-                    <div style="display: inline-flex">
+                    <div style="display: inline-flex" class="@(Scene.Areas.Count == 2 ? "area-display" : "")">
                         @for (int i = 0; i < Scene.Areas.Count; ++i)
                         {
-                            @Scene.Areas.ToList()[i].Name
+                            <span class="area-color">@Scene.Areas.ToList()[i].Name</span>
                             if (i < Scene.Areas.Count - 1)
                             {
                                 <div>,&nbsp;</div>
@@ -127,12 +135,14 @@ else if (this.SceneDtos.Count > 0)
                     }
                 }
             </td>
-            <td>
+            <td style="vertical-align: middle;">
                 @if (Scene.Characters.Count > 2)
                 {
-                    <div style="margin-left: -5px;">
+                    <div style="margin-left: -5px; height: 38px;">
                         <Tooltip Text="@(string.Join(", ", Scene.Characters.Select(x => x.Name)))">
-                            <em>Multiple</em> <i class="oi oi-info icon"></i>
+                            <div class="character-display">
+                                Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                            </div>
                         </Tooltip>
                     </div>
                 }
@@ -140,10 +150,10 @@ else if (this.SceneDtos.Count > 0)
                 {
                     if (Scene.Characters.Count > 0 && Scene.Characters.First().Name != ":None:")
                     {
-                    <div style="display: inline-flex">
+                    <div style="display: inline-flex" class="@(Scene.Characters.Count == 2 ? "character-display" : "")">
                         @for (int i = 0; i < Scene.Characters.Count; ++i)
                         {
-                            @Scene.Characters.ToList()[i].Name
+                            <span class="character-color">@Scene.Characters.ToList()[i].Name</span>
                             if (i < Scene.Characters.Count - 1)
                             {
                                 <div>,&nbsp;</div>
@@ -153,12 +163,14 @@ else if (this.SceneDtos.Count > 0)
                     }
                 }
             </td>
-            <td>
+            <td style="vertical-align: middle;">
                 @if (Scene.Music.Count > 2)
                 {
-                    <div style="margin-left: -5px;">
+                    <div style="margin-left: -5px; height: 38px;">
                         <Tooltip Text="@(string.Join(", ", Scene.Music.Select(x => x.Name)))">
-                            <em>Multiple</em> <i class="oi oi-info icon"></i>
+                            <div class="music-display">
+                                Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                            </div>
                         </Tooltip>
                     </div>
                 }
@@ -166,10 +178,10 @@ else if (this.SceneDtos.Count > 0)
                 {
                     if (Scene.Music.Count > 0 && Scene.Music.First().Name != ":None:")
                     {
-                    <div style="display: inline-flex">
+                    <div style="display: inline-flex" class="@(Scene.Music.Count == 2 ? "music-display" : "")">
                         @for (int i = 0; i < Scene.Music.Count; ++i)
                         {
-                            <a href="@Scene.Music.ToList()[i].Link" target="_blank">@Scene.Music.ToList()[i].Name</a>
+                            <a class="music-color" style="color: #1a00ff;" href="@Scene.Music.ToList()[i].Link" target="_blank">@Scene.Music.ToList()[i].Name</a>
                             if (i < Scene.Music.Count - 1)
                             {
                                 <div>,&nbsp;</div>
@@ -179,7 +191,7 @@ else if (this.SceneDtos.Count > 0)
                     }
                 }
             </td>
-            <td>
+            <td style="vertical-align: middle;">
                 @if (MainTable.CurrentExpandedRow == Scene.Id)
                 {
                     <span class="oi oi-minus mr-1 clickable" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))"></span>
@@ -192,67 +204,78 @@ else if (this.SceneDtos.Count > 0)
         </RowTemplate>
         <ExpandedRowTemplate>
             <tr>
-                <td colspan="6" style="border: #545a60 2px solid;">
-                    <strong>Lines & Extra Information:</strong>
-                    <br/>
-                    <br/>
+                <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
                     <div class="row">
-                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <NavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" />
 
-                        <div class="col-md-5" style="text-align: left;">
-                            <strong stlye="font-size: larger;">Worlds in Scene:</strong>
-                            <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Worlds.Select(x => x.Name)))</label><br/>
+                            @if (this.CurrentSubOption == "Details")
+                            {
+                            <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px;">
+                                <div class="row" style="height: 281px;">
+                                    <div class="col-md-12">
+                                        <h3 class="world-color"><img src="/images/icons/world.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
+                                        <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Worlds.Select(x => x.Name)))</label><br />
+                                    </div>
+                                    
+                                    <br/>
+                                    
+                                    <div class="col-md-12" style="margin-top: 25px;">
+                                        <h3 class="character-color"><img src="/images/icons/character.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
+                                        <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Characters.Select(x => x.Name)))</label><br />
+                                    </div>
 
-                            <strong stlye="font-size: larger;">Areas in Scene:</strong>
-                            <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Areas.Select(x => x.Name)))</label><br/>
-                        </div>
-                        
-                        <div class="col-md-1"></div>
+                                    <div class="col-md-12" style="margin-top: 25px;">
+                                        <h3 class="area-color"><img src="/images/icons/area.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Areas</h3>
+                                        <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Areas.Select(x => x.Name)))</label><br />
+                                    </div>
 
-                        <div class="col-md-5" style="text-align: left;">
-                            <strong stlye="font-size: larger;">Characters in Scene:</strong>
-                            <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Characters.Select(x => x.Name)))</label><br/>
-                    
-                            <strong stlye="font-size: larger;">Music in Scene:</strong>
-                            <label>
-                                <div style="display: inline-flex;">
-                                    @for (int i = 0; i < this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Music.Count; ++i)
-                                    {
-                                        var currentScene = this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name);
-                                        <a href="@currentScene.Music.ToList()[i].Link" target="_blank">@currentScene.Music.ToList()[i].Name</a>
-                                        if (i < currentScene.Music.Count - 1)
-                                        {
-                                            <div>,&nbsp;</div>
-                                        }
-                                    }
+                                    <div class="col-md-12" style="margin-top: 25px;">
+                                        <h3 class="music-color"><img src="/images/icons/music.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Music</h3>
+                                        <label>
+                                            <div style="display: inline-flex;">
+                                                @for (int i = 0; i < this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Music.Count; ++i)
+                                                {
+                                                    var currentScene = this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name);
+                                                    <a href="@currentScene.Music.ToList()[i].Link" target="_blank">@currentScene.Music.ToList()[i].Name</a>
+                                                    if (i < currentScene.Music.Count - 1)
+                                                    {
+                                                        <div>,&ensp;</div>
+                                                    }
+                                                }
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
-                            </label><br/>
+                            </div>
+                            }
+                            else if (this.CurrentSubOption == "Dialogue")
+                            {
+                            <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 523px; overflow-y: auto; margin-top: 10px;">
+                                <Table Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
+                                    <TableHeader>
+                                        <th>Dialogue</th>
+                                        <th></th>
+                                    </TableHeader>
+                                    <RowTemplate>
+                                        <td><strong>@Line.Character</strong></td>
+                                        <td>@Line.Line</td>
+                                    </RowTemplate>
+                                </Table>
+                            </div>
+                            }
+                        </div>
+
+                        
+                        <div class="col-md-7">
+                            <iframe width="1000px" height="563px" src="@(Scene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])"></iframe>
                         </div>
                     </div>
-
-                    <hr/>
-
-                    <div class="row">
-                        <div class="col-md-12" style="text-align: center;">
-                            <iframe width="853px" height="505px" src="@(Scene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])"></iframe>
-                        </div>
-                    </div>
-
-                    <Table Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
-                        <TableHeader>
-                            <th>Character</th>
-                            <th>Line</th>
-                        </TableHeader>
-                        <RowTemplate>
-                            <td><strong>@Line.Character</strong></td>
-                            <td>@Line.Line</td>
-                        </RowTemplate>
-                    </Table>
                 </td>
             </tr>
         </ExpandedRowTemplate>
     </Table>
-}
+@*}*@
 
 
 <style>
@@ -301,6 +324,7 @@ else if (this.SceneDtos.Count > 0)
 @code {
     public bool Loading { get; set; }
     public string CurrentOption { get; set; } = "Games";
+    public string CurrentSubOption { get; set; } = "Details";
 
     public List<string> Areas { get; set; } = new List<string>();
     public List<string> Characters { get; set; } = new List<string>();
@@ -400,6 +424,16 @@ else if (this.SceneDtos.Count > 0)
         this.CurrentOption = option;
 
         await InvokeAsync(() => {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
             this.StateHasChanged();
         });
     }

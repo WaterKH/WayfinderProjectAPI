@@ -1,4 +1,4 @@
-﻿<div class="wayfinder-nav-bar">
+﻿<div class="wayfinder-nav-bar" style="@(CustomStyle)">
     @foreach (var option in this.Options)
     {
         <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")">
@@ -19,10 +19,19 @@
 @code {
     [Parameter] public List<string> Options { get; set; }
     [Parameter] public bool AnySelected { get; set; }
+    [Parameter] public string CustomStyle { get; set; }
+    [Parameter] public string StartingOption { get; set; }
 
     [Parameter] public Action<string> UpdateCurrentOption { get; set; }
 
     public string CurrentOption { get; set; } = "Games";
+
+    protected override void OnInitialized()
+    {
+        this.CurrentOption = this.StartingOption;
+
+        base.OnInitialized();
+    }
 
     public async Task Select(string option)
     {

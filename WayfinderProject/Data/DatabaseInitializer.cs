@@ -110,21 +110,21 @@ namespace WayfinderProjectAPI.Data
 
         public static void CreateScripts(WayfinderContext context)
         {
-            CreateScript(context, "_khx_lines.json", "Kingdom Hearts χ");
-            CreateScript(context, "_kh_unchainedx_lines.json", "Kingdom Hearts Unchained χ");
-            CreateScript(context, "_khxbc_lines.json", "Kingdom Hearts χ Back Cover");
-            CreateScript(context, "_khux_lines.json", "Kingdom Hearts Union χ");
-            CreateScript(context, "_khbbs_lines.json", "Kingdom Hearts Birth By Sleep");
-            CreateScript(context, "_kh0_2_lines.json", "Kingdom Hearts 0.2");
+            //CreateScript(context, "_khx_lines.json", "Kingdom Hearts χ");
+            //CreateScript(context, "_kh_unchainedx_lines.json", "Kingdom Hearts Unchained χ");
+            //CreateScript(context, "_khxbc_lines.json", "Kingdom Hearts χ Back Cover");
+            //CreateScript(context, "_khux_lines.json", "Kingdom Hearts Union χ");
+            //CreateScript(context, "_khbbs_lines.json", "Kingdom Hearts Birth By Sleep");
+            //CreateScript(context, "_kh0_2_lines.json", "Kingdom Hearts 0.2");
             CreateScript(context, "_kh1_lines.json", "Kingdom Hearts");
-            CreateScript(context, "_khdays_lines.json", "Kingdom Hearts 358/2 Days");
-            CreateScript(context, "_khrecom_lines.json", "Kingdom Hearts Re:Chain of Memories");
-            CreateScript(context, "_kh2_lines.json", "Kingdom Hearts II");
-            CreateScript(context, "_khrecoded_lines.json", "Kingdom Hearts Re:Coded");
-            CreateScript(context, "_kh3d_lines.json", "Kingdom Hearts Dream Drop Distance");
-            CreateScript(context, "_kh3_lines.json", "Kingdom Hearts III");
-            CreateScript(context, "_khdr_lines.json", "Kingdom Hearts Dark Road");
-            CreateScript(context, "_khmom_lines.json", "Kingdom Hearts Melody of Memory");
+            //CreateScript(context, "_khdays_lines.json", "Kingdom Hearts 358/2 Days");
+            //CreateScript(context, "_khrecom_lines.json", "Kingdom Hearts Re:Chain of Memories");
+            //CreateScript(context, "_kh2_lines.json", "Kingdom Hearts II");
+            //CreateScript(context, "_khrecoded_lines.json", "Kingdom Hearts Re:Coded");
+            //CreateScript(context, "_kh3d_lines.json", "Kingdom Hearts Dream Drop Distance");
+            //CreateScript(context, "_kh3_lines.json", "Kingdom Hearts III");
+            //CreateScript(context, "_khdr_lines.json", "Kingdom Hearts Dark Road");
+            //CreateScript(context, "_khmom_lines.json", "Kingdom Hearts Melody of Memory");
         }
 
         class LineScriptObject
@@ -153,6 +153,7 @@ namespace WayfinderProjectAPI.Data
                 context.Script.Add(temp);
             }
 
+
             context.SaveChanges();
         }
 
@@ -179,6 +180,10 @@ namespace WayfinderProjectAPI.Data
                 foreach (var scene in scenes)
                 {
                     var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+
+                    // Remove
+                    if (game.Name != "Kingdom Hearts") continue;
+
                     var worlds = context.Worlds.Where(x => scene.Worlds.Contains(x.Name)).ToList();
                     var characters = context.Characters.Where(x => scene.Characters.Contains(x.Name)).ToList();
                     var areas = context.Areas.Where(x => scene.Areas.Contains(x.Name)).ToList();
