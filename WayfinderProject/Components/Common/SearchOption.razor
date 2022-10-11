@@ -54,17 +54,17 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
-        {
-            scrollWidth = await JS.InvokeAsync<ScrollWidth>("isHidden", this.Element, this.ParentElement);
+        //if (firstRender)
+        //{
+        //    scrollWidth = await JS.InvokeAsync<ScrollWidth>("isHidden", this.Element, this.ParentElement);
 
-            this.CanScroll = (scrollWidth.width > scrollWidth.boundingWidth);
+        //    this.CanScroll = (scrollWidth.width > scrollWidth.boundingWidth);
 
-            await InvokeAsync(() =>
-            {
-                this.StateHasChanged();
-            });
-        }
+        //    await InvokeAsync(() =>
+        //    {
+        //        this.StateHasChanged();
+        //    });
+        //}
 
         await base.OnAfterRenderAsync(firstRender);
     }
