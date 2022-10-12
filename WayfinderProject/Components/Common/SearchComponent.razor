@@ -159,14 +159,16 @@
         }
 
         this.search = string.Empty;
+
+        await Task.Run(async () => await this.UpdateSearch.Invoke());
+
         if (this.results.Count == 0)
             this.CurrentView = "Selections";
 
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
         });
-
-        await Task.Run(async () => await this.UpdateSearch.Invoke());
     }
 
     private async Task Remove(string value)
@@ -187,14 +189,16 @@
         }
 
         this.search = string.Empty;
+
+        await Task.Run(async () => await this.UpdateSearch.Invoke());
+
         if (this.selected.Count == 0)
             this.CurrentView = "Options";
 
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
         });
-
-        await Task.Run(async () => await this.UpdateSearch.Invoke());
     }
 
     private void ToggleView()

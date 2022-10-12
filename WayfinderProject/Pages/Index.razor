@@ -40,13 +40,13 @@
 
             <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Selections="this.Scenes" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
                 
-            <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ffcf2f" Selections="this.Worlds" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Selections="this.Worlds" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
                 
-            <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#94ffaa" Selections="this.Areas" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Selections="this.Areas" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
                 
-            <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#ff6060" Selections="this.Characters" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Selections="this.Characters" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
                 
-            <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#78b1d4" Selections="this.Music" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Selections="this.Music" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
         </div>
     </div>
 </div>
@@ -60,15 +60,15 @@
         <div class="loader col-md-12"></div>
     </div>
 }
-@*else if (this.SceneDtos.Count > 0)
-{*@
+else if (this.SceneDtos.Count > 0)
+{
     <Table @ref="MainTable" Items="this.SceneDtos" Context="Scene">
         <TableHeader>
-            <th><img src="/images/icons/crown_gray.png" width="25px" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scene_gray.png" width="25px" class="header-margins"> <label class="header-label">Scene</label></th>
-            <th><img src="/images/icons/world_gray.png" width="25px" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/area_gray.png" width="25px" class="header-margins"> <label class="header-label">Areas</label></th>
-            <th><img src="/images/icons/character_gray.png" width="25px" class="header-margins"> <label class="header-label">Characters</label></th>
+            <th><img src="/images/icons/games_gray.png" width="25px" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" width="25px" class="header-margins"> <label class="header-label">Scene</label></th>
+            <th><img src="/images/icons/worlds_gray.png" width="25px" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/areas_gray.png" width="25px" class="header-margins"> <label class="header-label">Areas</label></th>
+            <th><img src="/images/icons/characters_gray.png" width="25px" class="header-margins"> <label class="header-label">Characters</label></th>
             <th><img src="/images/icons/music_gray.png" width="25px" class="header-margins"> <label class="header-label">Music</label></th>
             <th style="text-align: right;"></th>
         </TableHeader>
@@ -194,11 +194,15 @@
             <td style="vertical-align: middle;">
                 @if (MainTable.CurrentExpandedRow == Scene.Id)
                 {
-                    <span class="oi oi-minus mr-1 clickable" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))"></span>
+                    <div style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;">
+                        <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))"></span>
+                    </div>
                 }
                 else
                 {
-                    <span class="oi oi-plus mr-1 clickable" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))"></span>
+                    <div style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;">
+                        <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))"></span>
+                    </div>
                 }    
             </td>
         </RowTemplate>
@@ -214,19 +218,19 @@
                             <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px;">
                                 <div class="row" style="height: 281px;">
                                     <div class="col-md-12">
-                                        <h3 class="world-color"><img src="/images/icons/world.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
+                                        <h3 class="world-color"><img src="/images/icons/worlds.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
                                         <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Worlds.Select(x => x.Name)))</label><br />
                                     </div>
                                     
                                     <br/>
                                     
                                     <div class="col-md-12" style="margin-top: 25px;">
-                                        <h3 class="character-color"><img src="/images/icons/character.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
+                                        <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
                                         <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Characters.Select(x => x.Name)))</label><br />
                                     </div>
 
                                     <div class="col-md-12" style="margin-top: 25px;">
-                                        <h3 class="area-color"><img src="/images/icons/area.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Areas</h3>
+                                        <h3 class="area-color"><img src="/images/icons/areas.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Areas</h3>
                                         <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Areas.Select(x => x.Name)))</label><br />
                                     </div>
 
@@ -275,7 +279,7 @@
             </tr>
         </ExpandedRowTemplate>
     </Table>
-@*}*@
+}
 
 
 <style>
