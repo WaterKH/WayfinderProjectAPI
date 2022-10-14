@@ -1,0 +1,79 @@
+﻿.wayfinder-background {
+    border-radius: 35px;
+    background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #f7dfec);
+    margin-left: -30px;
+    margin-top: 40px;
+    border-bottom-left-radius: unset;
+    border-top-left-radius: unset;
+    width: 90%;
+}
+
+.wayfinder-title {
+    text-align: left;
+    font-size: large;
+}
+
+.wayfinder-description {
+    margin-top: 15px;
+    text-align: left;
+    font-size: large;
+}
+
+.wayfinder-clickable {
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    text-align: -webkit-center;
+}
+
+.wayfinder-header {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: large;
+}
+
+.header-margins {
+    margin-top: -5px;
+    margin-right: 15px;
+}
+
+.header-label {
+    font-size: large;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        border-radius: 10px;
+    }
