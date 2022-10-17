@@ -1,5 +1,6 @@
 {
   "Worlds": [
+    ":None:",
     "100 Acre Wood",
     "Agrabah",
     "Arendelle",
@@ -63,7 +64,6 @@
     "Traverse Town",
     "Twilight Town",
     "Void",
-    "Wonderland",
-    ":None:"
+    "Wonderland"
   ]
 }

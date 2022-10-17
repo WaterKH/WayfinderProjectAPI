@@ -115,6 +115,6 @@
     </Content>
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4seed_4scripts_4_3kh3_3lines_1json__JsonSchema="r" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4seed_4_3areas_1json__JsonSchema="https://appliedengdesign.github.io/cnccodes-json-schema/draft/2022-07/schema" wwwroot_4data_4seed_4scripts_4_3kh3_3lines_1json__JsonSchema="r" /></VisualStudio></ProjectExtensions>
 
 </Project>
