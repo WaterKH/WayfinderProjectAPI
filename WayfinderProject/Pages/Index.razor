@@ -26,6 +26,13 @@
                     <input id="main-search" name="main-search" class="custom-input" onchange="@((ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString(); this.SearchQuotes(e?.Value?.ToString()); })" placeholder="Start Typing..." >
                     <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
                 </div>
+
+                <div class="wayfinder-sub-description">
+                    <strong>
+                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Scenes</span>, <span style="color: #ea4a4a;">Worlds</span>
+                        , <span style="color: #5499fc;">Areas</span>, <span style="color: #f3b222;">Characters</span> and <span style="color: #a13bfb;">Music</span>.
+                    </strong>
+                </div>
             </div>
         </div>
     </div>

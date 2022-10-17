@@ -24,6 +24,12 @@
     margin-bottom: 40px;
 }
 
+.wayfinder-sub-description {
+    text-align: center;
+    font-size: larger;
+    margin-top: 25px;
+}
+
 .wayfinder-search {
     text-align: center;
     margin-left: 80px;
