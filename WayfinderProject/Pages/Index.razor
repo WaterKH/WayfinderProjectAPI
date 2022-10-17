@@ -346,6 +346,8 @@ else if (this.SceneDtos.Count > 0)
 
     private Table<SceneDto>? MainTable;
 
+    private bool firstLoad = false;
+    private bool failed = false;
     private string quoteSearch = "";
     private List<SceneDto> SceneDtos = new List<SceneDto>();
     private WayfinderController api;
@@ -357,9 +359,43 @@ else if (this.SceneDtos.Count > 0)
     {
         this.api = new WayfinderController(null, context);
 
-        await Task.Run(async () => await this.ResetOptions());
+        try
+        {
+            await Task.Run(async () => await this.ResetOptions());
+        }
+        catch (Exception ex)
+        {
+            // Catch the SqliteException, do not set firstLoad to true
+            this.failed = true;
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
 
         await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (this.failed)
+        {
+            try
+            {
+                await Task.Run(async () =>
+                {
+                    Thread.Sleep(1000);
+                    await this.ResetOptions();
+                });
+            }
+            catch (Exception ex)
+            {
+                // Catch the SqliteException, do not set firstLoad to true
+            }
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
     }
 
     public async Task SearchQuotes(string search)
@@ -380,7 +416,8 @@ else if (this.SceneDtos.Count > 0)
     {
         try
         {
-            this.Loading = true;     
+            this.Loading = true;
+
             await InvokeAsync(() => { 
                 this.StateHasChanged(); 
             });
@@ -417,6 +454,7 @@ else if (this.SceneDtos.Count > 0)
         finally
         {
             this.Loading = false;
+
             await InvokeAsync(() => { 
                 this.StateHasChanged(); 
             });
@@ -442,8 +480,14 @@ else if (this.SceneDtos.Count > 0)
         });
     }
 
-    public void UpdateOptions()
+    public async void UpdateOptions()
     {
+        this.Loading = true;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
         this.Areas = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.AreasSearch.selected).Distinct().ToList();
         this.Characters = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.CharactersSearch.selected).Distinct().ToList();
         this.Games = this.SceneDtos.Select(x => x.Game.Name).Except(this.GamesSearch.selected).Distinct().ToList();
@@ -464,19 +508,27 @@ else if (this.SceneDtos.Count > 0)
         this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
         this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
 
-        InvokeAsync(() => { 
+        this.Loading = false;
+
+        await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
     }
 
     public async Task ResetOptions()
     {
-        this.Areas = await context.Areas.Select(x => x.Name).ToListAsync();
-        this.Characters = await context.Characters.Select(x => x.Name).ToListAsync();
-        this.Games = await context.Games.Select(x => x.Name).ToListAsync();
-        this.Music = await context.Music.Select(x => x.Name).ToListAsync();
-        this.Scenes = await context.Scenes.Select(x => x.Name).ToListAsync();
-        this.Worlds = await context.Worlds.Select(x => x.Name).ToListAsync();
+        this.Loading = true;
+        
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Games = await context.Games.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
 
         this.Areas.Sort();
         this.Characters.Sort();
@@ -490,6 +542,9 @@ else if (this.SceneDtos.Count > 0)
         this.MusicSearch.Selections = this.MusicSearch.results = this.Music;
         this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
         this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
+
+        this.Loading = false;
+        this.failed = false;
 
         await InvokeAsync(() => { 
             this.StateHasChanged(); 

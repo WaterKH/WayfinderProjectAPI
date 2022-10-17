@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 // Add DataBase
-var inMemorySqlite = new SqliteConnection("Data Source=:memory:");
+var inMemorySqlite = new SqliteConnection("Data Source=:memory:;Pooling=false;");
 inMemorySqlite.Open();
 
 builder.Services.AddDbContext<WayfinderContext>(options => options.UseSqlite(inMemorySqlite), ServiceLifetime.Transient);
