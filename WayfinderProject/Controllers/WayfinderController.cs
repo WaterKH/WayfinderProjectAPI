@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using WayfinderProjectAPI.Data;
 using WayfinderProjectAPI.Data.DTOs;
 using WayfinderProjectAPI.Data.Models;
@@ -25,6 +27,7 @@ namespace WayfinderProjectAPI.Controllers
         public async Task<IEnumerable<SceneDto>> SearchForScenes([FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
         {
             var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
+            var queryString = (line == null ? line : line.Any(x => char.IsPunctuation(x)) ? line : Regex.Replace(line, @"[^\w\s]", ""));
 
             if (games != null)
             {
@@ -72,9 +75,37 @@ namespace WayfinderProjectAPI.Controllers
                 results = results.Where(x => !contextMusic.Except(x.Music).Any());
             }
 
-            if (line != null)
+            if (queryString != null)
             {
-                results = results.Where(x => x.Script.Lines.ToList().Any(y => y.Line.ToLower().Contains(line.ToLower())));
+                if (!queryString.Contains("\""))
+                {
+                    queryString = queryString.ToLower();
+
+                    var tempResults = new List<Scene>();
+                    foreach (var result in results.Include(x => x.Script).Include(x => x.Script.Lines))
+                    {
+                        if (result.Script.Lines == null)
+                            continue;
+
+                        foreach (var scriptLine in result.Script.Lines)
+                        {
+                            var tempLine = scriptLine.Line; 
+                            if (!queryString.Any(x => char.IsPunctuation(x)))
+                                tempLine = Regex.Replace(scriptLine.Line, @"[^\w\s]", "");
+                            
+                            if (tempLine.ToLower().Contains(queryString))
+                                tempResults.Add(result);
+                        }
+                    }
+
+                    results = results.Where(x => tempResults.Select(y =>  y.Id).Contains(x.Id));
+                }
+                else
+                {
+                    queryString = queryString.Replace("\"", "");
+
+                    results = results.Where(x => x.Script.Lines.ToList().Any(y => y.Line.Contains(queryString)));
+                }
             }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();

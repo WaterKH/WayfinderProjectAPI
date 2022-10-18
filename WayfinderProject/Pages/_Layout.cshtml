@@ -31,6 +31,15 @@
 
     <script src="_framework/blazor.server.js"></script>
 
+    <script type="text/javascript">
+        window.getDimensions = function() {
+            return {
+                width: window.innerWidth,
+                height: window.innerHeight 
+            };
+        };
+    </script>
+
     <script>
         window.isHidden = function (el, pEl) {
             let contBound = pEl.getBoundingClientRect();

@@ -98,5 +98,10 @@
             this.CurrentExpandedRow = -1;
         else
             this.CurrentExpandedRow = id;
+
+        InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
     }
 }
