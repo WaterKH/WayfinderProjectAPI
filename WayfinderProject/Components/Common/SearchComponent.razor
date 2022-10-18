@@ -1,66 +1,75 @@
 ﻿@if(this.CurrentOption == this.Id)
 {
-<div class="search">
-    <div class="wayfinder-buttons">
-        <button class="@(this.CurrentView == "Selections" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())">@(this.CurrentView == "Options" ? "Filters" : "Options")</button>
-    </div>
-
-
-    <div class="search-bar" style="margin: 10px 0px 30px 0px; margin-left: -45px;">
-        <span class="wayfinder-search-icon material-icons">search</span>
-        <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input"
-            oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Options")">
-    </div>
-
-    @if (this.CurrentView == "Options")
+    if (this.loaded)
     {
-    <div class="search-results">
-        @if (this.results.Count > 0)
-        {
-            <div class="row" style="padding-left: 15px;">
-                @for (int i = 0; i < this.results.Count; ++i)
-                {
-                    var tempResult = this.results[i];
-                    <div class="col-md-5">
-                        <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="false" SelectValue="@(() => Select(tempResult))" />
-                    </div>
+        <div class="search">
+            <div class="wayfinder-buttons">
+                <button class="@(this.CurrentView == "Selections" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())">@(this.CurrentView == "Options" ? "Filters" : "Options")</button>
+            </div>
 
-                    if (i % 2 != 0)
-                    {
-                        <div class="col-md-2"></div>
-                    }
+
+            <div class="search-bar" style="margin: 10px 0px 30px 0px; margin-left: -45px;">
+                <span class="wayfinder-search-icon material-icons">search</span>
+                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input"
+                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Options")">
+            </div>
+
+            @if (this.CurrentView == "Options")
+            {
+            <div class="search-results">
+                @if (this.results.Count > 0)
+                {
+                    <div class="row" style="padding-left: 15px;">
+                        @for (int i = 0; i < this.results.Count; ++i)
+                        {
+                            var tempResult = this.results[i];
+                            <div class="col-md-5">
+                                <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="false" SelectValue="@(() => Select(tempResult))" />
+                            </div>
+
+                            if (i % 2 != 0)
+                            {
+                                <div class="col-md-2"></div>
+                            }
+                        }
+                    </div>
+                }
+                else if (!string.IsNullOrEmpty(this.search))
+                {
+                    <em>Nothing found with this search.</em>
                 }
             </div>
-        }
-        else if (!string.IsNullOrEmpty(this.search))
-        {
-            <em>Nothing found with this search.</em>
-        }
-    </div>
-    }
-    else if (this.CurrentView == "Selections")
-    {
-            <div class="search-results">
-            @if (this.selected.Count > 0)
+            }
+            else if (this.CurrentView == "Selections")
             {
-                <div class="row" style="padding-left: 15px;">
-                    @for (int i = 0; i < this.selected.Count; ++i)
+                    <div class="search-results">
+                    @if (this.selected.Count > 0)
                     {
-                        var tempResult = this.selected[i];
-                        <div class="col-md-5">
-                            <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="true" SelectValue="@(() => Remove(tempResult))" />
-                        </div>
+                        <div class="row" style="padding-left: 15px;">
+                            @for (int i = 0; i < this.selected.Count; ++i)
+                            {
+                                var tempResult = this.selected[i];
+                                <div class="col-md-5">
+                                    <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="true" SelectValue="@(() => Remove(tempResult))" />
+                                </div>
 
-                        if (i % 2 != 0)
-                        {
-                            <div class="col-md-2"></div>
-                        }
+                                if (i % 2 != 0)
+                                {
+                                    <div class="col-md-2"></div>
+                                }
+                            }
+                        </div>
                     }
                 </div>
             }
         </div>
     }
-</div>
+    else
+    {
+        <div class="row" style="justify-content: center; padding: 20px;">
+            <div class="loader col-md-12"></div>
+        </div>
+    }
 }
 
 <style>
@@ -87,6 +96,21 @@
         .remove:hover {
             background-color: #ce5858 !important;
         }
+
+
+    .loader {
+        border: 16px solid #ffffff; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @@keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 </style>
 @code {
     [Parameter] public string Id { get; set; }
@@ -100,6 +124,7 @@
 
 
     private string search = "";
+    private bool loaded = true;
 
     public List<string> selected { get; set; } = new List<string>();
     public List<string> results = new List<string>();
@@ -115,6 +140,40 @@
         this.results = this.Selections;
 
         await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (this.CurrentOption == this.Id)
+        {
+            this.loaded = false;
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
+
+        await base.OnParametersSetAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (this.CurrentOption == this.Id)
+        {
+            var oldLoaded = this.loaded;
+            this.loaded = true;
+
+            if (oldLoaded != this.loaded)
+            {
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
     }
 
     private void Search(string search)

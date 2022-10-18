@@ -37,7 +37,7 @@
     {
         this.CurrentOption = option;
 
-        this.UpdateCurrentOption.Invoke(option);
+        await Task.Run(() => this.UpdateCurrentOption.Invoke(option));
 
         await InvokeAsync(() => { 
             this.StateHasChanged(); 

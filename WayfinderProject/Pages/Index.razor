@@ -221,51 +221,46 @@ else if (this.SceneDtos.Count > 0)
 
     public async Task Search()
     {
-        try
+        this.Loading = true;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        var games = this.GamesSearch != null ? string.Join(", ", this.GamesSearch.selected) != "" ? string.Join(", ", this.GamesSearch.selected) : null : null;
+        var scenes = this.ScenesSearch != null ? string.Join(", ", this.ScenesSearch.selected) != "" ? string.Join(", ", this.ScenesSearch.selected) : null : null;
+        var worlds = this.WorldsSearch != null ? string.Join(", ", this.WorldsSearch.selected) != "" ? string.Join(", ", this.WorldsSearch.selected) : null : null;
+        var areas = this.AreasSearch != null ? string.Join(", ", this.AreasSearch.selected) != "" ? string.Join(", ", this.AreasSearch.selected) : null : null;
+        var characters = this.CharactersSearch != null ? string.Join(", ", this.CharactersSearch.selected) != "" ? string.Join(", ", this.CharactersSearch.selected) : null : null;
+        var music = this.MusicSearch != null ? string.Join(", ", this.MusicSearch.selected) != "" ? string.Join(", ", this.MusicSearch.selected) : null : null;
+        var line = this.quoteSearch != "" ? this.quoteSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (games == null && scenes == null && worlds == null && areas == null && characters == null && music == null && line == null)
         {
-            this.Loading = true;
+            this.SceneDtos = new List<SceneDto>();
 
-            await InvokeAsync(() => { 
-                this.StateHasChanged(); 
-            });
-
-            var games = this.GamesSearch != null ? string.Join(", ", this.GamesSearch.selected) != "" ? string.Join(", ", this.GamesSearch.selected) : null : null;
-            var scenes = this.ScenesSearch != null ? string.Join(", ", this.ScenesSearch.selected) != "" ? string.Join(", ", this.ScenesSearch.selected) : null : null;
-            var worlds = this.WorldsSearch != null ? string.Join(", ", this.WorldsSearch.selected) != "" ? string.Join(", ", this.WorldsSearch.selected) : null : null;
-            var areas = this.AreasSearch != null ? string.Join(", ", this.AreasSearch.selected) != "" ? string.Join(", ", this.AreasSearch.selected) : null : null;
-            var characters = this.CharactersSearch != null ? string.Join(", ", this.CharactersSearch.selected) != "" ? string.Join(", ", this.CharactersSearch.selected) : null : null;
-            var music = this.MusicSearch != null ? string.Join(", ", this.MusicSearch.selected) != "" ? string.Join(", ", this.MusicSearch.selected) : null : null;
-            var line = this.quoteSearch != "" ? this.quoteSearch : null;
-
-            // TODO Remove this after we add in the pagination limiter?
-            if (games == null && scenes == null && worlds == null && areas == null && characters == null && music == null && line == null)
-            {
-                this.SceneDtos = new List<SceneDto>();
-
-                await Task.Run(async () => await this.ResetOptions());
-            }
-            else
-            {
-                // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                await Task.Run(async () => this.SceneDtos = (await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line)).ToList());
-
-                this.UpdateOptions();
-            }
-
-            if (MainTable != null)
-            {
-                MainTable.CurrentPage = 1;
-                MainTable.CurrentExpandedRow = -1;
-            }
+            await Task.Run(async () => await this.ResetOptions());
         }
-        finally
+        else
         {
-            this.Loading = false;
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
 
-            await InvokeAsync(() => { 
-                this.StateHasChanged(); 
-            });
+            this.UpdateOptions();
         }
+
+        if (MainTable != null)
+        {
+            MainTable.CurrentPage = 1;
+            MainTable.CurrentExpandedRow = -1;
+        }
+        
+        this.Loading = false;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
     }
 
     public async Task UpdateCurrentOption(string option)
