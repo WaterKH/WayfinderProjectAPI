@@ -10,8 +10,8 @@
 
             <div class="search-bar" style="margin: 10px 0px 30px 0px; margin-left: -45px;">
                 <span class="wayfinder-search-icon material-icons">search</span>
-                <input value="@this.search" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input"
-                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" @onfocus="@(() => this.Search(""))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Options")">
+                <input value="@this.displaySearch" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input"
+                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Options")">
             </div>
 
             @if (this.CurrentView == "Options")
@@ -124,6 +124,7 @@
 
 
     private string search = "";
+    private string displaySearch = "";
     private bool loaded = true;
 
     public List<string> selected { get; set; } = new List<string>();
@@ -166,6 +167,8 @@
 
             if (oldLoaded != this.loaded)
             {
+                this.displaySearch = this.search;
+
                 await InvokeAsync(() =>
                 {
                     this.StateHasChanged();
