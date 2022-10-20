@@ -227,12 +227,12 @@ else if (this.SceneDtos.Count > 0)
             this.StateHasChanged(); 
         });
 
-        var games = this.GamesSearch != null ? string.Join(", ", this.GamesSearch.selected) != "" ? string.Join(", ", this.GamesSearch.selected) : null : null;
-        var scenes = this.ScenesSearch != null ? string.Join(", ", this.ScenesSearch.selected) != "" ? string.Join(", ", this.ScenesSearch.selected) : null : null;
-        var worlds = this.WorldsSearch != null ? string.Join(", ", this.WorldsSearch.selected) != "" ? string.Join(", ", this.WorldsSearch.selected) : null : null;
-        var areas = this.AreasSearch != null ? string.Join(", ", this.AreasSearch.selected) != "" ? string.Join(", ", this.AreasSearch.selected) : null : null;
-        var characters = this.CharactersSearch != null ? string.Join(", ", this.CharactersSearch.selected) != "" ? string.Join(", ", this.CharactersSearch.selected) : null : null;
-        var music = this.MusicSearch != null ? string.Join(", ", this.MusicSearch.selected) != "" ? string.Join(", ", this.MusicSearch.selected) : null : null;
+        var games = this.GamesSearch != null ? string.Join("::", this.GamesSearch.selected) != "" ? string.Join("::", this.GamesSearch.selected) : null : null;
+        var scenes = this.ScenesSearch != null ? string.Join("::", this.ScenesSearch.selected) != "" ? string.Join("::", this.ScenesSearch.selected) : null : null;
+        var worlds = this.WorldsSearch != null ? string.Join("::", this.WorldsSearch.selected) != "" ? string.Join("::", this.WorldsSearch.selected) : null : null;
+        var areas = this.AreasSearch != null ? string.Join("::", this.AreasSearch.selected) != "" ? string.Join("::", this.AreasSearch.selected) : null : null;
+        var characters = this.CharactersSearch != null ? string.Join("::", this.CharactersSearch.selected) != "" ? string.Join("::", this.CharactersSearch.selected) : null : null;
+        var music = this.MusicSearch != null ? string.Join("::", this.MusicSearch.selected) != "" ? string.Join("::", this.MusicSearch.selected) : null : null;
         var line = this.quoteSearch != "" ? this.quoteSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?

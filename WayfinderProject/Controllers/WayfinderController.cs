@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
@@ -31,48 +32,44 @@ namespace WayfinderProjectAPI.Controllers
 
             if (games != null)
             {
-                var gamesList = games.Split(",").Select(x => x.Trim());
+                var gamesList = games.Split("::").Select(x => x.Trim());
                 
                 results = results.Where(x => gamesList.Contains(x.Game.Name));
             }
 
             if (scenes != null)
             {
-                var scenesList = scenes.Split(",").Select(x => x.Trim());
+                var scenesList = scenes.Split("::").Select(x => x.Trim());
 
                 results = results.Where(x => scenesList.Contains(x.Name));
             }
             
             if (worlds != null)
             {
-                var worldsList = worlds.Split(",").Select(x => x.Trim());
-                var contextWorlds = _context.Worlds.AsNoTrackingWithIdentityResolution().Where(x => worldsList.Contains(x.Name));
+                var worldsList = worlds.Split("::").Select(x => x.Trim());
 
-                results = results.Where(x => !contextWorlds.Except(x.Worlds).Any());
+                results = results.Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name)));
             }
 
             if (characters != null)
             {
-                var charactersList = characters.Split(",").Select(x => x.Trim());
-                var contextCharacters = _context.Characters.AsNoTrackingWithIdentityResolution().Where(x => charactersList.Contains(x.Name));
+                var charactersList = characters.Split("::").Select(x => x.Trim());
 
-                results = results.Where(x => !contextCharacters.Except(x.Characters).Any());
+                results = results.Where(x => x.Characters.Any(y => charactersList.Contains(y.Name)));
             }
 
             if (areas != null)
             {
-                var areasList = areas.Split(",").Select(x => x.Trim());
-                var contextAreas = _context.Areas.AsNoTrackingWithIdentityResolution().Where(x => areasList.Contains(x.Name));
+                var areasList = areas.Split("::").Select(x => x.Trim());
 
-                results = results.Where(x => !contextAreas.Except(x.Areas).Any());
+                results = results.Where(x => x.Areas.Any(y => areasList.Contains(y.Name)));
             }
 
             if (music != null)
             {
-                var musicList = music.Split(",").Select(x => x.Trim());
-                var contextMusic = _context.Music.AsNoTrackingWithIdentityResolution().Where(x => musicList.Contains(x.Name));
+                var musicList = music.Split("::").Select(x => x.Trim());
 
-                results = results.Where(x => !contextMusic.Except(x.Music).Any());
+                results = results.Where(x => x.Music.Any(y => musicList.Contains(y.Name)));
             }
 
             if (queryString != null)
