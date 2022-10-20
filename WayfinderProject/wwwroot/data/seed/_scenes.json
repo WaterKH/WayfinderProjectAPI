@@ -8575,7 +8575,7 @@
         "Worlds": [ "The Land of Departure" ],
         "Characters": [ "Terra", "Master Xehanort" ],
         "Areas": [ "Forecourt" ],
-        "Music": [ "Xehanort -The Early Years-" ]
+        "Music": [ "Xehanort" ]
       },
       {
         "Name": "The Unversed Threat (Terra ver.)",
@@ -8783,7 +8783,7 @@
         "Worlds": [ "The Keyblade Graveyard" ],
         "Characters": [ "Terra", "Master Xehanort" ],
         "Areas": [ "The Badlands" ],
-        "Music": [ "Xehanort -The Early Years-" ]
+        "Music": [ "Xehanort" ]
       },
       {
         "Name": "Flashback; The Boy with No Memories",
@@ -9191,7 +9191,7 @@
         "Worlds": [ "The Keyblade Graveyard" ],
         "Characters": [ "Terra", "Aqua", "Ventus", "Master Xehanort", "Vanitas" ],
         "Areas": [ "The Keyblade Graveyard" ],
-        "Music": [ "Keyblade Graveyard Horizon", "Ventus", "Xehanort -The Early Years-", "Black Powder" ]
+        "Music": [ "Keyblade Graveyard Horizon", "Ventus", "Xehanort", "Black Powder" ]
       },
       {
         "Name": "Kingdom Hearts (Terra ver.)",
@@ -18937,7 +18937,7 @@
         "Worlds": [ "Dark World" ],
         "Characters": [ "Master Xehanort", "Ventus", "Player" ],
         "Areas": [ "Corridor of Darkness" ],
-        "Music": [ "Xehanort -The Early Years-" ]
+        "Music": [ "Xehanort" ]
       },
       {
         "Name": "Reunited",
@@ -19097,7 +19097,7 @@
         "Worlds": [ "The Land of Departure", "The Keyblade Graveyard", "Daybreak Town" ],
         "Characters": [ "Master Xehanort", "Vanitas", "Aced", "Invi", "Ava", "Gula", "Ira", "Luxu", "Master of Masters", "Ventus" ],
         "Areas": [ "Castle Throne Room", "The Badlands", "Foretellers' Chamber" ],
-        "Music": [ "Xehanort -The Early Years-" ]
+        "Music": [ "Xehanort" ]
       },
       {
         "Name": "Journey's Reward",
@@ -19467,7 +19467,7 @@
         "Worlds": [ "The Final World", "The Keyblade Graveyard" ],
         "Characters": [ "Kairi", "Master Xehanort", "Sora" ],
         "Areas": [ "The Final World", "Tower of Endings" ],
-        "Music": [ "Xehanort -The Early Years-" ]
+        "Music": [ "Xehanort" ]
       },
       {
         "Name": "The Answer",
