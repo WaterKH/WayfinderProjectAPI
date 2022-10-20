@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Xml.Linq;
 
 namespace WayfinderProjectAPI.Data.Models
 {
+    [Index(nameof(GameName), nameof(SceneName), Name = "Index_GameSceneName")]
     public class Script
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

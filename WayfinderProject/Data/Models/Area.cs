@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
 namespace WayfinderProjectAPI.Data.Models
 {
+    [Index(nameof(Name), Name = "Index_AreaName")]
     public class Area
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -962,11 +962,14 @@
         "Order": 6,
         "Character": "Magic Mirror",
         "Line": "Snow White still lives, the fairest in the land."
-      }
-    ],
-    "The Queen:I've been tricked! I'll go myself to the Dwarfs' cottage in a disguise so complete no one will ever suspect. All I'll need is a formula to transform my beauty into ugliness, change my queenly raiment to a peddler's cloak. A poisoned apple will do the trick. When she tastes the apple in my hand, her breath will still, her blood congeal. Then I'll be fairest in the land. Only Love's First Kiss can awaken her from her slumber. Bah! There's no fear of that.": [
+      },
       {
-        "Order": 0,
+        "Order": 7,
+        "Character": "The Queen",
+        "Line": "I've been tricked! I'll go myself to the Dwarfs' cottage in a disguise so complete no one will ever suspect. All I'll need is a formula to transform my beauty into ugliness, change my queenly raiment to a peddler's cloak. A poisoned apple will do the trick. When she tastes the apple in my hand, her breath will still, her blood congeal. Then I'll be fairest in the land. Only Love's First Kiss can awaken her from her slumber. Bah! There's no fear of that."
+      },
+      {
+        "Order": 8,
         "Character": "Doc",
         "Line": "We're all here. Back to work, men!"
       }

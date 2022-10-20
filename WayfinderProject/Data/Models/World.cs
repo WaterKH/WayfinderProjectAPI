@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Xml.Linq;
 
 namespace WayfinderProjectAPI.Data.Models
 {
+    [Index(nameof(Name), Name = "Index_WorldName")]
     public class World
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

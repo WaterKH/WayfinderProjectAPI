@@ -18,15 +18,26 @@ namespace WayfinderProjectAPI.Data
                     Characters = x.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
                     Areas = x.Areas.Select(y => new AreaDto { Id = y.Id, Name = y.Name }).ToList(),
                     Music = x.Music.Select(y => new MusicDto { Id = y.Id, Name = y.Name, Link = y.Link }).ToList(),
-                    Script = new ScriptDto
-                    {
-                        Id = x.Script.Id,
-                        SceneName = x.Script.SceneName,
-                        GameName = x.Script.GameName,
-                        Lines = x.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
-                    },
+                    //Script = new ScriptDto
+                    //{
+                    //    Id = x.Script.Id,
+                    //    SceneName = x.Script.SceneName,
+                    //    GameName = x.Script.GameName,
+                    //    Lines = x.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
+                    //},
                     Notes = x.Notes
                 });
+        }
+
+        public static ScriptDto ToDto(this Script script)
+        {
+            return new ScriptDto
+                {
+                    Id = script.Id,
+                    SceneName = script.SceneName,
+                    GameName = script.GameName,
+                    Lines = script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
+                };
         }
     }
 }

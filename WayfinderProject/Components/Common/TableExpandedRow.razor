@@ -75,9 +75,17 @@
 @code {
     [Parameter] public List<SceneDto> SceneDtos { get; set; }
     [Parameter] public SceneDto Scene {get; set;}
+    [Parameter] public WayfinderProjectAPI.Controllers.WayfinderController API { get; set; }
 
     public string CurrentSubOption { get; set; } = "Details";
 
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.Scene.Script = await this.API.GetScript(Scene.Game.Name, Scene.Name);
+
+        await base.OnInitializedAsync();
+    }
 
     public async Task UpdateCurrentSubOption(string option)
     {

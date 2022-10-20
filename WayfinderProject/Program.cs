@@ -1,5 +1,5 @@
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 using System.Text.Json.Serialization;
 using WayfinderProject.Data;
 using WayfinderProjectAPI.Data;
@@ -10,10 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 // Add DataBase
-var inMemorySqlite = new SqliteConnection("Data Source=:memory:;Pooling=false;");
-inMemorySqlite.Open();
+var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+var connection = new MySqlConnection(connectionString);
+connection.Open();
 
-builder.Services.AddDbContext<WayfinderContext>(options => options.UseSqlite(inMemorySqlite), ServiceLifetime.Transient);
+builder.Services.AddDbContext<WayfinderContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)), ServiceLifetime.Transient);
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -24,12 +25,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<WayfinderContext>();
+//using (var scope = app.Services.CreateScope())
+//{
+//    var context = scope.ServiceProvider.GetRequiredService<WayfinderContext>();
 
-    DatabaseInitializer.Initialize(context);
-}
+//    DatabaseInitializer.Initialize(context);
+//}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

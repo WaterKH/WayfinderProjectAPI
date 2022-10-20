@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -109,6 +109,26 @@ namespace WayfinderProjectAPI.Controllers
             }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        [HttpGet("GetScript")]
+        public async Task<ScriptDto> GetScript([FromQuery] string gameName, [FromQuery] string sceneName)
+        {
+            var result = await _context.Script.AsNoTrackingWithIdentityResolution().Include(x => x.Lines).FirstOrDefaultAsync(x => x.GameName == gameName && x.SceneName == sceneName);
+
+            if (result == null)
+            {
+                return new ScriptDto
+                {
+                    GameName = gameName,
+                    SceneName = sceneName,
+                    Lines = gameName == "Kingdom Hearts Union χ" ?
+                        new List<ScriptLineDto> { new ScriptLineDto { Character = "None", Line = "This will be updated after Damo279's big project." } } : 
+                        new List<ScriptLineDto> { new ScriptLineDto { Character = "None", Line = "None" } }
+                };
+            }
+
+            return result.ToDto();
         }
     }
 }

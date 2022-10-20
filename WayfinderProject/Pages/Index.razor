@@ -83,7 +83,7 @@ else if (this.SceneDtos.Count > 0)
             <TableRow Scene="@Scene" MainTable="@MainTable" />
         </RowTemplate>
         <ExpandedRowTemplate>
-            <TableExpandedRow SceneDtos="@this.SceneDtos" Scene="@Scene" />
+            <TableExpandedRow SceneDtos="@this.SceneDtos" Scene="@Scene" API="@this.api" />
         </ExpandedRowTemplate>
     </Table>
 }
