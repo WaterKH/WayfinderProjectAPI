@@ -845,37 +845,35 @@
       {
         "Order": 3,
         "Character": "Sora",
-        "Line": "Well, uhh... She was quiet... and always drawing. When we'd go to the beach, she'd draw a picture instead of swimming. Sometimes she'd draw us, too! She was really good. I remember Riku and I fighting over who she'd draw next. But one day, she was gone, just like that. I think the grown-ups knew the reason. They might even have tried to explain some of it to me. But I was little. I"
-      }
-    ],
-    "probably didn't understand what was happening. I remember crying after she was gone.  But... that's all. I still don't remember her name.": [
+        "Line": "Well, uhh... She was quiet... and always drawing. When we'd go to the beach, she'd draw a picture instead of swimming. Sometimes she'd draw us, too! She was really good. I remember Riku and I fighting over who she'd draw next. But one day, she was gone, just like that. I think the grown-ups knew the reason. They might even have tried to explain some of it to me. But I was little. I probably didn't understand what was happening. I remember crying after she was gone.  But... that's all. I still don't remember her name."
+      },
       {
-        "Order": 0,
+        "Order": 4,
         "Character": "Donald",
         "Line": "Oh, I bet you'll remember it in no time!"
       },
       {
-        "Order": 1,
+        "Order": 5,
         "Character": "Jiminy",
         "Line": "I must point out. Sora keeps remembering things instead of forgetting them. It seems to me forgetting things may be the only way--- to reach the memories buried deeper down inside each of us."
       },
       {
-        "Order": 2,
+        "Order": 6,
         "Character": "Goofy",
         "Line": "So we should forget in order to remember?"
       },
       {
-        "Order": 3,
+        "Order": 7,
         "Character": "Sora",
         "Line": "Like those guys said... \"Our most precious memories lie so deep in our hearts, that they're out of reach.\" All that stuff about finding being losing and losing being finding... I didn't get it at first, but maybe this is what they meant."
       },
       {
-        "Order": 4,
+        "Order": 8,
         "Character": "Goofy",
         "Line": "Gawrsh, Sora, I think I'm a little jealous of ya. How come me and Donald and Jiminy aren't rememberin' more of the stuff from our memories?"
       },
       {
-        "Order": 5,
+        "Order": 9,
         "Character": "Donald",
         "Line": "Come on, Goofy! Let's get going. We've got to forget things faster."
       }
@@ -1834,42 +1832,40 @@
       {
         "Order": 6,
         "Character": "Vexen",
-        "Line": "So, feeling nostalgic? Sora... a question, then, for you... Your memories of Naminé or your"
-      }
-    ],
-    "feelings here--- which of the two of these is more real, I wonder.": [
+        "Line": "So, feeling nostalgic? Sora... a question, then, for you... Your memories of Naminé or your feelings here--- which of the two of these is more real, I wonder."
+      },
       {
-        "Order": 0,
+        "Order": 7,
         "Character": "Sora",
         "Line": "Naminé, of course! Whatever it is that I'm feeling, I bet it's just another one of your mean little tricks!"
       },
       {
-        "Order": 1,
+        "Order": 8,
         "Character": "Vexen",
         "Line": "The memory's wiles can be cruel. In its silence, we forget. In its obsession, it binds our hearts."
       },
       {
-        "Order": 2,
+        "Order": 9,
         "Character": "Sora",
         "Line": "Cut the riddles!"
       },
       {
-        "Order": 3,
+        "Order": 10,
         "Character": "Vexen",
         "Line": "I told you--- This place was created solely from another side of your memory. It is on the other side of your heart that the memory of this place exists. It is your heart that remembers."
       },
       {
-        "Order": 4,
+        "Order": 11,
         "Character": "Sora",
         "Line": "You're wrong! I don't know this place!"
       },
       {
-        "Order": 5,
+        "Order": 12,
         "Character": "Vexen",
         "Line": "If you remain bound by the chain of memories and refuse to believe what is truly found inside your heart... then throw it away. You are not a Keyblade master--- just a slave to twisted memories. Yes... Exactly like my Riku. Your existence is worth nothing!"
       },
       {
-        "Order": 6,
+        "Order": 13,
         "Character": "Sora",
         "Line": "Like YOUR Riku? Worth nothing? That's enough! YOU'RE the one who changed Riku! Every word you've said is a lie! I'd never throw away my heart! I'm gonna take you down and save Riku and Naminé. THAT'S what's in my heart!"
       }
@@ -2391,10 +2387,9 @@
       {
         "Order": 4,
         "Character": "Riku Replica",
-        "Line": "Let ME explain this. Plain and simple. Your memory is a train wreck. You're not the one who's"
+        "Line": "Let ME explain this. Plain and simple. Your memory is a train wreck. You're not the one who's meant to protect Naminé. It's supposed to be me! But you and your messed-up memories are always in the way, Sora!"
       }
     ],
-    "meant to protect Naminé. It's supposed to be me! But you and your messed-up memories are always in the way, Sora!": [],
     "Larxene's Sneer": [
       {
         "Order": 0,
@@ -2711,77 +2706,75 @@
       {
         "Order": 21,
         "Character": "Sora",
-        "Line": "It's like this... I'm really not happy about you messing with my memories. But... you know--- I can't really get mad at you for it, either. These memories you gave me... In my head, I know they're lies--- but they still feel right. Like the promise I made. I said I would protect you and that I wouldn't"
-      }
-    ],
-    "make you cry... not ever. Naminé... if you cry now--- I'll feel guilty, like I let you down. So don't cry... please. Until I get my memories back, smile and try to be happy. It's easier on me that way.": [
+        "Line": "It's like this... I'm really not happy about you messing with my memories. But... you know--- I can't really get mad at you for it, either. These memories you gave me... In my head, I know they're lies--- but they still feel right. Like the promise I made. I said I would protect you and that I wouldn't make you cry... not ever. Naminé... if you cry now--- I'll feel guilty, like I let you down. So don't cry... please. Until I get my memories back, smile and try to be happy. It's easier on me that way."
+      },
       {
-        "Order": 0,
+        "Order": 22,
         "Character": "Naminé",
         "Line": "Sora..."
       },
       {
-        "Order": 1,
+        "Order": 23,
         "Character": "Donald",
         "Line": "Oh, brother! That's a bit much."
       },
       {
-        "Order": 2,
+        "Order": 24,
         "Character": "Goofy",
         "Line": "It's okay. Sora always gets like this every time he's around a girl!"
       },
       {
-        "Order": 3,
+        "Order": 25,
         "Character": "Sora",
         "Line": "Aw, cut it out! I thought you both lost your memories, too!"
       },
       {
-        "Order": 4,
+        "Order": 26,
         "Character": "Donald",
         "Line": "Too bad. Good friends don't forget the good stuff!"
       },
       {
-        "Order": 5,
+        "Order": 27,
         "Character": "Sora",
         "Line": "Come on..."
       },
       {
-        "Order": 6,
+        "Order": 28,
         "Character": "Sora",
         "Line": "There! That's it! That's the Naminé I remember. Yeah... I really liked it when you used to smile. Of course, that was really only in my fake memories. But what I'm feeling now definitely isn't fake. It's real."
       },
       {
-        "Order": 7,
+        "Order": 29,
         "Character": "Naminé",
         "Line": "Thank you."
       },
       {
-        "Order": 8,
+        "Order": 30,
         "Character": "Sora",
         "Line": "Well, then, let's go."
       },
       {
-        "Order": 9,
+        "Order": 31,
         "Character": "Donald",
         "Line": "Oh boy! I can't wait to get my memory back!"
       },
       {
-        "Order": 10,
+        "Order": 32,
         "Character": "Goofy",
         "Line": "Naminé, Marluxia is gonna be up there, so maybe you'd better stay down here."
       },
       {
-        "Order": 11,
+        "Order": 33,
         "Character": "Sora",
         "Line": "Yeah. Maybe you could look after Riku? We'll come get you when it's over."
       },
       {
-        "Order": 12,
+        "Order": 34,
         "Character": "Naminé",
         "Line": "Okay. Please be careful, Sora."
       },
       {
-        "Order": 13,
+        "Order": 35,
         "Character": "Sora",
         "Line": "I'll be okay... I promise!"
       }
@@ -3103,10 +3096,9 @@
       {
         "Order": 25,
         "Character": "Marluxia",
-        "Line": "Imbeciles... You would knowingly shackle your heart with a chain of memories born"
+        "Line": "Imbeciles... You would knowingly shackle your heart with a chain of memories born of lies? You would be one who has a heart, yet cast aside your heart's freedom? You turn from the truth because your heart is weak--- You will never defeat me!"
       }
     ],
-    "of lies? You would be one who has a heart, yet cast aside your heart's freedom? You turn from the truth because your heart is weak--- You will never defeat me!": [],
     "To the Last Battle": [
       {
         "Order": 0,
@@ -3402,22 +3394,20 @@
       {
         "Order": 21,
         "Character": "Naminé",
-        "Line": "Don't worry. You might forget about me... but with our promise, I can"
-      }
-    ],
-    "come back.": [
+        "Line": "Don't worry. You might forget about me... but with our promise, I can come back."
+      },
       {
-        "Order": 0,
+        "Order": 22,
         "Character": "Sora",
         "Line": "A promise is a promise."
       },
       {
-        "Order": 1,
+        "Order": 23,
         "Character": "Naminé",
         "Line": "Yes. One day the light--- it will be ours, and it will bring us together. Til then--- I'll be in your heart."
       },
       {
-        "Order": 2,
+        "Order": 25,
         "Character": "Sora",
         "Line": "Right. Forgotten--- but not lost."
       }
@@ -3446,47 +3436,45 @@
       {
         "Order": 4,
         "Character": "Riku",
-        "Line": "Between... what? The king! Where's the king?! Together we closed the door to darkness."
-      }
-    ],
-    "After that---": [
+        "Line": "Between... what? The king! Where's the king?! Together we closed the door to darkness. After that---"
+      },
       {
-        "Order": 0,
+        "Order": 5,
         "Character": "Ansem the Wise",
         "Line": "You came drifting here by yourself. You did not have the strength to overcome the darkness. Or... maybe you were close to it."
       },
       {
-        "Order": 1,
+        "Order": 6,
         "Character": "Riku",
         "Line": "Hmph. As if I'm some kind of demon."
       },
       {
-        "Order": 2,
+        "Order": 7,
         "Character": "Ansem the Wise",
         "Line": "Hmm. Turn from the light. Shut your eyes. Here blanketed by the darkness, sleep is safety. Sleep is eternal. But..."
       },
       {
-        "Order": 3,
+        "Order": 8,
         "Character": "Riku",
         "Line": "What's this?"
       },
       {
-        "Order": 4,
+        "Order": 9,
         "Character": "Ansem the Wise",
         "Line": "It is a door to the truth. Take it and your sleep ends, as you take the first step toward the truth. But know this"
       },
       {
-        "Order": 5,
+        "Order": 10,
         "Character": "Riku",
         "Line": "This seemed like a boring place to take a nap anyway."
       },
       {
-        "Order": 6,
+        "Order": 11,
         "Character": "Ansem the Wise",
         "Line": "That was very well said, Riku."
       },
       {
-        "Order": 7,
+        "Order": 12,
         "Character": "Riku",
         "Line": "A door to the truth, huh..."
       }
@@ -3624,32 +3612,30 @@
       {
         "Order": 2,
         "Character": "Riku",
-        "Line": "Don't worry, I'm not running. Give it. I'll enter the world and in the"
-      }
-    ],
-    "end, if I haven't given in to the darkness... Then I win.": [
+        "Line": "Don't worry, I'm not running. Give it. I'll enter the world and in the end, if I haven't given in to the darkness... Then I win."
+      },
       {
-        "Order": 0,
+        "Order": 3,
         "Character": "Ansem the Wise",
         "Line": "I have one more gift for you."
       },
       {
-        "Order": 1,
+        "Order": 4,
         "Character": "Riku",
         "Line": "What'd you do?!"
       },
       {
-        "Order": 2,
+        "Order": 5,
         "Character": "Ansem the Wise",
         "Line": "I simply tempered the darkness that yet remains in your heart."
       },
       {
-        "Order": 3,
+        "Order": 6,
         "Character": "Riku",
         "Line": "You still think that I'd rely on darkness?"
       },
       {
-        "Order": 4,
+        "Order": 7,
         "Character": "Ansem the Wise",
         "Line": "To use it or not is your choice. I'll be waiting, Riku... for you to sense it and yield to the darkness in your heart!"
       }

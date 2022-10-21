@@ -488,26 +488,29 @@
         "Order": 3,
         "Character": "Ava",
         "Line": "You don't have to call me Master. Was it you who showed them a dream of Ephemer?"
-      }
-    ],
-    "Chirithy:No, no, it wasn't me this time.": [
+      },
       {
-        "Order": 0,
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "No, no, it wasn't me this time."
+      },
+      {
+        "Order": 5,
         "Character": "Ava",
         "Line": "I see. Then perhaps Ephemer himself spoke from within the dream."
       },
       {
-        "Order": 1,
+        "Order": 6,
         "Character": "Chirithy",
         "Line": "From within the dream? What does that mean?"
       },
       {
-        "Order": 2,
+        "Order": 7,
         "Character": "Ava",
         "Line": "Ephemer draws close to the truth. I believe he spoke to this child from another plane, a released state known as ‘Unchained'. I believe that if this child is connected to Ephemer inside their dreams, it means they too will draw close to the other plane. If they are to move forward, they can only follow their own heart. Protect them from nightmares, okay, Chirithy? So that Player may ride the wind and fly. "
       },
       {
-        "Order": 3,
+        "Order": 8,
         "Character": "Chirithy",
         "Line": "Me, protect you from nightmares?"
       }

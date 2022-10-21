@@ -489,10 +489,9 @@
       {
         "Order": 0,
         "Character": "Yen Sid",
-        "Line": "Long ago, in the age of fairy tales, the World was filled with light- a gift, many believed, from an unseen power known as \"Kingdom Hearts.\" You see, Kingdom Hearts was protected by its counterpart, the \"χ-blade,\" so that none could ever lay hands on its mysteries. But in time, the World was overrun by legions who wanted the light all for themselves, and the first shadows were cast upon the land. These warriors crafted \"Keyblades\" in the image of the original χ-blade, and waged a great war over Kingdom Hearts. We call this the \"Keyblade War.\" But though the war extinguished all light from the World, the darkness could not reach the brightness inside every child's heart. With that light, the World was remade as we know it today, with countless smaller worlds shining like stars in the sky. As for the real χ-blade, it did not survive the battle. The two elements that created it, one of darkness and one of light, shattered into twenty pieces- seven of light; thirteen of darkness. And as for the source of all light- the one true Kingdom Hearts- it was swallowed by the darkness, never to be seen again. As long as it remains there, even the brightest world will have its dark corners. After all, light begets darkness, and darkness is drawn to light. For this reason, some decided to use the Keyblade- "
+        "Line": "Long ago, in the age of fairy tales, the World was filled with light- a gift, many believed, from an unseen power known as \"Kingdom Hearts.\" You see, Kingdom Hearts was protected by its counterpart, the \"χ-blade,\" so that none could ever lay hands on its mysteries. But in time, the World was overrun by legions who wanted the light all for themselves, and the first shadows were cast upon the land. These warriors crafted \"Keyblades\" in the image of the original χ-blade, and waged a great war over Kingdom Hearts. We call this the \"Keyblade War.\" But though the war extinguished all light from the World, the darkness could not reach the brightness inside every child's heart. With that light, the World was remade as we know it today, with countless smaller worlds shining like stars in the sky. As for the real χ-blade, it did not survive the battle. The two elements that created it, one of darkness and one of light, shattered into twenty pieces- seven of light; thirteen of darkness. And as for the source of all light- the one true Kingdom Hearts- it was swallowed by the darkness, never to be seen again. As long as it remains there, even the brightest world will have its dark corners. After all, light begets darkness, and darkness is drawn to light. For this reason, some decided to use the Keyblade- a weapon designed to conquer the light- to defend the light instead. These were the first heroes of the Keyblade."
       }
     ],
-    "a weapon designed to conquer the light- to defend the light instead. These were the first heroes of the Keyblade.": [],
     "No Sign of Neku": [
       {
         "Order": 0,
@@ -3293,7 +3292,7 @@
       },
       {
         "Order": 3,
-        "Character": "Kevin Flynn:",
+        "Character": "Kevin Flynn",
         "Line": "She's removing herself from the equation."
       },
       {
@@ -3528,11 +3527,14 @@
         "Order": 1,
         "Character": "CLU",
         "Line": "You! You promised that we would change the world...together! You broke your promise! I took the System to its maximum potential. And now, you see the applications at my disposal!"
-      }
-    ],
-    "Kevin Flynn:I don't believe it.": [
+      },
       {
-        "Order": 0,
+        "Order": 2,
+        "Character": "Kevin Flynn",
+        "Line": "I don't believe it."
+      },
+      {
+        "Order": 3,
         "Character": "Riku",
         "Line": "You can leave this one to me."
       }

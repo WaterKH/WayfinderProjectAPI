@@ -4463,166 +4463,169 @@
         "Order": 12,
         "Character": "Young Xehanort",
         "Line": "Even less."
-      }
-    ],
-    "Master of Masters:Ouch. Well, anyhoo, I just wanted to warn you that going through these gates exposed is a no-no.": [
-      {
-        "Order": 0,
-        "Character": "Young Xehanort",
-        "Line": "Fine."
-      },
-      {
-        "Order": 1,
-        "Character": "Master of Masters",
-        "Line": "Here, take it."
-      },
-      {
-        "Order": 2,
-        "Character": "Young Xehanort",
-        "Line": "What's this?"
-      },
-      {
-        "Order": 3,
-        "Character": "Master of Masters",
-        "Line": "A fabulous garment. It's a little out of fashion compared to that armor of yours, but it provides better protection. The armor's a newer style more suited to combat, but these coats can withstand way more darkness. If you think you can tough it out without the armor, you ought to make the switch."
-      },
-      {
-        "Order": 4,
-        "Character": "Young Xehanort",
-        "Line": "Are you trying to sell me this coat?"
-      },
-      {
-        "Order": 5,
-        "Character": "Master of Masters",
-        "Line": "No, no, it's free! I promise."
-      },
-      {
-        "Order": 6,
-        "Character": "Young Xehanort",
-        "Line": "...Still don't trust you."
-      },
-      {
-        "Order": 7,
-        "Character": "Master of Masters",
-        "Line": "Stubborn, huh? How'd you end up in there, anyway?"
-      },
-      {
-        "Order": 8,
-        "Character": "Young Xehanort",
-        "Line": "I'm in the middle of my journey to prepare for the Mark of Mastery exam."
-      },
-      {
-        "Order": 9,
-        "Character": "Master of Masters",
-        "Line": "Your what?"
-      },
-      {
-        "Order": 10,
-        "Character": "Young Xehanort",
-        "Line": "I thought you said you used to be a Keyblade wielder."
-      },
-      {
-        "Order": 11,
-        "Character": "Master of Masters",
-        "Line": "More or less."
-      },
-      {
-        "Order": 12,
-        "Character": "Young Xehanort",
-        "Line": "Right. Well, anyone who's qualified to take the exam needs to travel the outside worlds alone to broaden their horizons."
       },
       {
         "Order": 13,
         "Character": "Master of Masters",
-        "Line": "Ugh, sounds like work."
+        "Line": "Ouch. Well, anyhoo, I just wanted to warn you that going through these gates exposed is a no-no."
       },
       {
         "Order": 14,
         "Character": "Young Xehanort",
-        "Line": "It's part of the training."
+        "Line": "Fine."
       },
       {
         "Order": 15,
         "Character": "Master of Masters",
-        "Line": "Still."
+        "Line": "Here, take it."
       },
       {
         "Order": 16,
         "Character": "Young Xehanort",
-        "Line": "Hey, you asked."
+        "Line": "What's this?"
       },
       {
         "Order": 17,
         "Character": "Master of Masters",
-        "Line": "So your trip's not over yet?"
+        "Line": "A fabulous garment. It's a little out of fashion compared to that armor of yours, but it provides better protection. The armor's a newer style more suited to combat, but these coats can withstand way more darkness. If you think you can tough it out without the armor, you ought to make the switch."
       },
       {
         "Order": 18,
         "Character": "Young Xehanort",
-        "Line": "No."
+        "Line": "Are you trying to sell me this coat?"
       },
       {
         "Order": 19,
         "Character": "Master of Masters",
-        "Line": "In that case... maybe you can do me a favor. You know, since I gave you that coat."
+        "Line": "No, no, it's free! I promise."
       },
       {
         "Order": 20,
         "Character": "Young Xehanort",
-        "Line": "I thought you said it was free."
+        "Line": "...Still don't trust you."
       },
       {
         "Order": 21,
         "Character": "Master of Masters",
-        "Line": "I just need you to take a peek."
+        "Line": "Stubborn, huh? How'd you end up in there, anyway?"
       },
       {
         "Order": 22,
         "Character": "Young Xehanort",
-        "Line": "At what?"
+        "Line": "I'm in the middle of my journey to prepare for the Mark of Mastery exam."
       },
       {
         "Order": 23,
         "Character": "Master of Masters",
-        "Line": "People's hearts."
+        "Line": "Your what?"
       },
       {
         "Order": 24,
         "Character": "Young Xehanort",
-        "Line": "Huh?"
+        "Line": "I thought you said you used to be a Keyblade wielder."
       },
       {
         "Order": 25,
         "Character": "Master of Masters",
-        "Line": "Human emotions are complex. For example, what you feel toward someone you love isn't always good or well-meaning. It can be a false kind of light. Which begs the question- are these messy feelings that emerge from love still light? Or are they darkness?"
+        "Line": "More or less."
       },
       {
         "Order": 26,
         "Character": "Young Xehanort",
-        "Line": "Whoa, where did that come from?"
+        "Line": "Right. Well, anyone who's qualified to take the exam needs to travel the outside worlds alone to broaden their horizons."
       },
       {
         "Order": 27,
         "Character": "Master of Masters",
-        "Line": "The dark thoughts that dwell inside most hearts bubble to the surface when we drag others down. There are those with power and those without. Those who possess it harbor feelings of superiority and judgment. And those who don't, inferiority and envy. The weak who fear the strong desire to strip them of their power. So, who are you? Someone with power? Or someone without? One of the strong? Or one of the weak?"
+        "Line": "Ugh, sounds like work."
       },
       {
         "Order": 28,
         "Character": "Young Xehanort",
-        "Line": "People shouldn't be categorized in extremes. And even if I was either type, it doesn't mean that I carry those dark intentions."
+        "Line": "It's part of the training."
       },
       {
         "Order": 29,
         "Character": "Master of Masters",
-        "Line": "Is that what your experience tells you? This trip is supposed to broaden your horizons, right? What I'm asking from you will help with that. In the meantime, I'll be waiting right here for you to get back."
+        "Line": "Still."
       },
       {
         "Order": 30,
         "Character": "Young Xehanort",
-        "Line": "Huh?"
+        "Line": "Hey, you asked."
       },
       {
         "Order": 31,
+        "Character": "Master of Masters",
+        "Line": "So your trip's not over yet?"
+      },
+      {
+        "Order": 32,
+        "Character": "Young Xehanort",
+        "Line": "No."
+      },
+      {
+        "Order": 33,
+        "Character": "Master of Masters",
+        "Line": "In that case... maybe you can do me a favor. You know, since I gave you that coat."
+      },
+      {
+        "Order": 34,
+        "Character": "Young Xehanort",
+        "Line": "I thought you said it was free."
+      },
+      {
+        "Order": 35,
+        "Character": "Master of Masters",
+        "Line": "I just need you to take a peek."
+      },
+      {
+        "Order": 36,
+        "Character": "Young Xehanort",
+        "Line": "At what?"
+      },
+      {
+        "Order": 37,
+        "Character": "Master of Masters",
+        "Line": "People's hearts."
+      },
+      {
+        "Order": 38,
+        "Character": "Young Xehanort",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 39,
+        "Character": "Master of Masters",
+        "Line": "Human emotions are complex. For example, what you feel toward someone you love isn't always good or well-meaning. It can be a false kind of light. Which begs the question- are these messy feelings that emerge from love still light? Or are they darkness?"
+      },
+      {
+        "Order": 40,
+        "Character": "Young Xehanort",
+        "Line": "Whoa, where did that come from?"
+      },
+      {
+        "Order": 41,
+        "Character": "Master of Masters",
+        "Line": "The dark thoughts that dwell inside most hearts bubble to the surface when we drag others down. There are those with power and those without. Those who possess it harbor feelings of superiority and judgment. And those who don't, inferiority and envy. The weak who fear the strong desire to strip them of their power. So, who are you? Someone with power? Or someone without? One of the strong? Or one of the weak?"
+      },
+      {
+        "Order": 42,
+        "Character": "Young Xehanort",
+        "Line": "People shouldn't be categorized in extremes. And even if I was either type, it doesn't mean that I carry those dark intentions."
+      },
+      {
+        "Order": 43,
+        "Character": "Master of Masters",
+        "Line": "Is that what your experience tells you? This trip is supposed to broaden your horizons, right? What I'm asking from you will help with that. In the meantime, I'll be waiting right here for you to get back."
+      },
+      {
+        "Order": 44,
+        "Character": "Young Xehanort",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 45,
         "Character": "Master of Masters",
         "Line": "I look forward to hearing all about it."
       }
@@ -5343,96 +5346,99 @@
         "Order": 11,
         "Character": "Young Xehanort",
         "Line": "Because left alone, the world would fall to chaos. There needs to be order."
-      }
-    ],
-    "Master of Masters:You sure about that? Why not just sit back and watch it play out?": [
+      },
       {
-        "Order": 0,
+        "Order": 12,
+        "Character": "Master of Masters",
+        "Line": "You sure about that? Why not just sit back and watch it play out?"
+      },
+      {
+        "Order": 13,
         "Character": "Young Xehanort",
         "Line": "Understanding hearts is difficult; more so the emotions within. I simply realize that it's easy to dismiss what you don't comprehend."
       },
       {
-        "Order": 1,
+        "Order": 14,
         "Character": "Master of Masters",
         "Line": "All right, all right... The world needs you, I'll grant you that one."
       },
       {
-        "Order": 2,
+        "Order": 15,
         "Character": "Young Xehanort",
         "Line": "I don't know what I can do, but I will act. What comes next is too important."
       },
       {
-        "Order": 3,
+        "Order": 16,
         "Character": "Master of Masters",
         "Line": "I suppose letting false light dictate the future might be a... pretty lousy move. So? You can make a change, you have that power. What do you want for the world?"
       },
       {
-        "Order": 4,
+        "Order": 17,
         "Character": "Young Xehanort",
         "Line": "Power, eh...? Who knows? My training's coming to an end, and the exam's not far off. Maybe I can gain some clarity then."
       },
       {
-        "Order": 5,
+        "Order": 18,
         "Character": "Master of Masters",
         "Line": "You're letting the exam decide? Listen to me, the results don't matter. You believe the world needs you. Sounds like you already know where you're headed."
       },
       {
-        "Order": 6,
+        "Order": 19,
         "Character": "Young Xehanort",
         "Line": "It's funny. Somehow, I can sense where I'm supposed to go, and what I'm supposed to do. Yes, even this coat, there's something familiar about it, as if I'm meant to wear this."
       },
       {
-        "Order": 7,
+        "Order": 20,
         "Character": "Master of Masters",
         "Line": "Hmm... No... you'll ditch it soon."
       },
       {
-        "Order": 8,
+        "Order": 21,
         "Character": "Young Xehanort",
         "Line": "What do you mean?"
       },
       {
-        "Order": 9,
+        "Order": 22,
         "Character": "Master of Masters",
         "Line": "I mean that one day you're going to outgrow it."
       },
       {
-        "Order": 10,
+        "Order": 23,
         "Character": "Young Xehanort",
         "Line": "How so?"
       },
       {
-        "Order": 11,
+        "Order": 24,
         "Character": "Master of Masters",
         "Line": "If you truly possess great power, the darkness can't control you. You won't need a silly old coat to stay safe. In fact, you'll be the one controlling the darkness instead. Me, on the other hand, I'm too much of a scaredy-cat to ever take mine off."
       },
       {
-        "Order": 12,
+        "Order": 25,
         "Character": "Young Xehanort",
         "Line": "Who are you really? Some kind of fortune-teller?"
       },
       {
-        "Order": 13,
+        "Order": 26,
         "Character": "Master of Masters",
         "Line": "Well, I could lie and tell you that's what I am, when I'm actually a brilliant artist, or even a scholar. I could tell you that I dream of world peace, when I'm actually planning for its destruction. The truth is what you see with your eyes, not what you hear."
       },
       {
-        "Order": 14,
+        "Order": 27,
         "Character": "Young Xehanort",
         "Line": "So, your name?"
       },
       {
-        "Order": 15,
+        "Order": 28,
         "Character": "Master of Masters",
         "Line": "What did I just- Never mind, I guess there's no harm. My name is– I'm a Lost Master."
       },
       {
-        "Order": 16,
+        "Order": 29,
         "Character": "Young Xehanort",
         "Line": "Lost... Master..."
       },
       {
-        "Order": 17,
+        "Order": 30,
         "Character": "Master of Masters",
         "Line": "May your heart be your guiding key."
       }
@@ -5487,7 +5493,7 @@
       },
       {
         "Order": 5,
-        "Character": "Eraqus:",
+        "Character": "Eraqus",
         "Line": "There's no need. Your letter said enough. Water under the bridge."
       },
       {

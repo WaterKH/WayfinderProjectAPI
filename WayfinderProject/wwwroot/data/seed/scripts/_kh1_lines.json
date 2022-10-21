@@ -1393,9 +1393,13 @@
         "Order": 9,
         "Character": "Hercules",
         "Line": "Well, that's just something you'll have to find out for yourselves. Just the way that I did. Just between us, I'd already worn Cerberus down by the time the little guy jumped in."
+      },
+      {
+        "Order": 8,
+        "Character": "Phil",
+        "Line": "My lips are sealed."
       }
     ],
-    "Phil:My lips are sealed.": [],
     "Cloud's Darkness": [
       {
         "Order": 0,
@@ -2715,27 +2719,25 @@
       {
         "Order": 0,
         "Character": "Sora",
-        "Line": "Riku! What's the matter with you? What are you thinking? Don't you "
-      }
-    ],
-    "realize what you're doing?": [
+        "Line": "Riku! What's the matter with you? What are you thinking? Don't you realize what you're doing?"
+      },
       {
-        "Order": 0,
+        "Order": 1,
         "Character": "Riku",
         "Line": "I was about to ask you the same thing, Sora. You only seem interested in running around and showing off that Keyblade these days. Do you even want to save Kairi?"
       },
       {
-        "Order": 1,
+        "Order": 2,
         "Character": "Sora",
-        "Line": "I do. "
+        "Line": "I do."
       },
       {
-        "Order": 2,
+        "Order": 3,
         "Character": "Riku",
         "Line": "You up for this?"
       },
       {
-        "Order": 3,
+        "Order": 4,
         "Character": "Sora",
         "Line": "No problem. Let's do it!"
       }
@@ -3291,12 +3293,10 @@
       {
         "Order": 1,
         "Character": "Jack Skellington",
-        "Line": "Thank you, thank you! But their movement still needs work. It's "
-      }
-    ],
-    "not scary enough. I want to strike bone-chilling terror. I'm going to consult the doctor.": [
+        "Line": "Thank you, thank you! But their movement still needs work. It's not scary enough. I want to strike bone-chilling terror. I'm going to consult the doctor."
+      },
       {
-        "Order": 0,
+        "Order": 2,
         "Character": "Mayor",
         "Line": "Then I'll go attend to the decorations."
       }
@@ -3394,10 +3394,9 @@
       {
         "Order": 1,
         "Character": "Jack Skellington",
-        "Line": "Hmm... Maybe our experiment triggered something. Everything will be "
+        "Line": "Hmm... Maybe our experiment triggered something. Everything will be fine, Mayor. You have nothing to worry about."
       }
-    ],
-    "fine, Mayor. You have nothing to worry about.": [],
+    ]
     "The Memory": [
       {
         "Order": 0,
@@ -4100,22 +4099,20 @@
       {
         "Order": 2,
         "Character": "Captain Hook",
-        "Line": "To the ruins of Hollow Bastion, where Maleficent resides. But you won't be going there. Unless you intend to leave your little pixie friend behind? Hand over the Keyblade and I'll spare your lives. Be glad I'm merciful, unlike the Heartless. So, which will it be? The Keyblade, "
-      }
-    ],
-    "or the plank? It's him! The crocodile that took me hand! Oh, Smee! He's after me other hand! I can't stay here! Go away! Oh, I can't stand the sight of him! Smee, you take care of them!": [
+        "Line": "To the ruins of Hollow Bastion, where Maleficent resides. But you won't be going there. Unless you intend to leave your little pixie friend behind? Hand over the Keyblade and I'll spare your lives. Be glad I'm merciful, unlike the Heartless. So, which will it be? The Keyblade, or the plank? It's him! The crocodile that took me hand! Oh, Smee! He's after me other hand! I can't stay here! Go away! Oh, I can't stand the sight of him! Smee, you take care of them!"
+      },
       {
-        "Order": 0,
+        "Order": 3,
         "Character": "Peter Pan",
         "Line": "Fly, Sora! Just believe, and you can do it! "
       },
       {
-        "Order": 1,
+        "Order": 4,
         "Character": "Sora",
         "Line": "Thanks, Peter."
       },
       {
-        "Order": 2,
+        "Order": 5,
         "Character": "Peter Pan",
         "Line": "Hey, don't mention it. You didn't think I'd leave you and Tink behind, did you?"
       }
@@ -4183,27 +4180,25 @@
       {
         "Order": 0,
         "Character": "Young Riku",
-        "Line": "When we grow up, let's get off this island. We'll go on real "
-      }
-    ],
-    "adventures, not this kid stuff!": [
+        "Line": "When we grow up, let's get off this island. We'll go on real adventures, not this kid stuff!"
+      },
       {
-        "Order": 0,
+        "Order": 1,
         "Character": "Young Sora",
         "Line": "Sure. But isn't there anything fun to do now? Hey, you know the new girl at the mayor's house? She arrived on the night of the meteor shower!"
       },
       {
-        "Order": 1,
+        "Order": 2,
         "Character": "Maleficent",
         "Line": "It was reckless to bring her here without at least using a vessel. Remember, relying too heavily on the dark powers could cost you your heart. A castaway. Though his world perished, his heart did not. When we took the princess from his castle, he apparently followed her here through sheer force of will. But fear not. No harm will come to you. He is no match for your power. "
       },
       {
-        "Order": 2,
+        "Order": 3,
         "Character": "Riku",
         "Line": "My power?"
       },
       {
-        "Order": 3,
+        "Order": 4,
         "Character": "Maleficent",
         "Line": "Yes, the untapped power that lies within you. Now, child, it's time you awakened that power and realized your true potential."
       }
@@ -4824,52 +4819,50 @@
       {
         "Order": 12,
         "Character": "Ansem Seeker of Darkness",
-        "Line": "So, you have awakened at last, Princess. The Keyhole is now "
-      }
-    ],
-    "complete. You have served your purpose. But now it's over.": [
+        "Line": "So, you have awakened at last, Princess. The Keyhole is now complete. You have served your purpose. But now it's over."
+      },
       {
-        "Order": 0,
+        "Order": 13,
         "Character": "Donald",
         "Line": "Don't make another move!"
       },
       {
-        "Order": 1,
+        "Order": 14,
         "Character": "Goofy",
         "Line": "Do you think we can stop him all by ourselves?"
       },
       {
-        "Order": 2,
+        "Order": 15,
         "Character": "Donald",
         "Line": "I don't know!"
       },
       {
-        "Order": 3,
+        "Order": 16,
         "Character": "Ansem Seeker of Darkness",
         "Line": "Impossible..."
       },
       {
-        "Order": 4,
+        "Order": 17,
         "Character": "Riku",
         "Line": "No. You won't use me for this!"
       },
       {
-        "Order": 5,
+        "Order": 18,
         "Character": "Kairi",
         "Line": "Riku!"
       },
       {
-        "Order": 6,
+        "Order": 19,
         "Character": "Riku",
         "Line": "You've got to run! The Heartless are coming!"
       },
       {
-        "Order": 7,
+        "Order": 20,
         "Character": "Goofy",
         "Line": "What about the Keyhole?"
       },
       {
-        "Order": 8,
+        "Order": 21,
         "Character": "Donald",
         "Line": "Let's just get out of here!"
       }
@@ -4928,12 +4921,10 @@
       {
         "Order": 10,
         "Character": "Beast",
-        "Line": "Go! Now! I told you before, I'm not leaving without Belle. Now, go! The "
-      }
-    ],
-    "Heartless are coming!": [
+        "Line": "Go! Now! I told you before, I'm not leaving without Belle. Now, go! The Heartless are coming!"
+      },
       {
-        "Order": 0,
+        "Order": 11,
         "Character": "Sora",
         "Line": "All right. Let's get out of here."
       }

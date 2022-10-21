@@ -1316,7 +1316,7 @@
       },
       {
         "Order": 6,
-        "Character": "The Queen:",
+        "Character": "The Queen",
         "Line": "You dare defy your Queen?"
       },
       {
@@ -7744,11 +7744,14 @@
         "Order": 8,
         "Character": "Intercom",
         "Line": "Red alert. Red alert. Experiment 626 and two prisoners have escaped from the cell bay. Security, locate the fugitives immediately. Repeat. Experiment 626 and two prisoners have escaped from the cell bay. Security, locate the fugitives immediately."
-      }
-    ],
-    "Dr. Jumba:Not so fast!": [
+      },
       {
-        "Order": 0,
+        "Order": 9,
+        "Character": "Dr. Jumba",
+        "Line": "Not so fast!"
+      },
+      {
+        "Order": 10,
         "Character": "Terra",
         "Line": "Well, I can't stay here and get caught. Ven, Aqua... I'll find some way to make things right."
       }
@@ -8295,16 +8298,19 @@
         "Order": 4,
         "Character": "Ventus",
         "Line": "What is it? What's going on?"
-      }
-    ],
-    "Stitch:Eega jugee baba!": [
+      },
       {
-        "Order": 0,
+        "Order": 5,
+        "Character": "Stitch",
+        "Line": "Eega jugee baba!"
+      },
+      {
+        "Order": 6,
         "Character": "Ventus",
         "Line": "Whoa!"
       },
       {
-        "Order": 1,
+        "Order": 7,
         "Character": "Experiment 626",
         "Line": "Ven!"
       }
@@ -9617,136 +9623,139 @@
         "Order": 3,
         "Character": "Young Riku",
         "Line": "Giving up already? Come on, Sora."
-      }
-    ],
-    "Young Sora:That's enough, I can't run anymore!": [
-      {
-        "Order": 0,
-        "Character": "Terra",
-        "Line": "Light... Was I guided here in order to meet that boy?"
-      },
-      {
-        "Order": 1,
-        "Character": "Young Sora",
-        "Line": "Oh! Ahoy! We're over here! Riku, race ya. First one to the boat gets to be captain! C'mon! You call that running?"
-      },
-      {
-        "Order": 2,
-        "Character": "Young Riku",
-        "Line": "Hey. Did you come from the outside world?"
-      },
-      {
-        "Order": 3,
-        "Character": "Terra",
-        "Line": "Huh? Why would you say that?"
       },
       {
         "Order": 4,
-        "Character": "Young Riku",
-        "Line": "Because nobody lives out here, and I know you're not from the main island."
+        "Character": "Young Sora",
+        "Line": "That's enough, I can't run anymore!"
       },
       {
         "Order": 5,
         "Character": "Terra",
-        "Line": "Smart kid. So how about you? What are you doing here?"
+        "Line": "Light... Was I guided here in order to meet that boy?"
       },
       {
         "Order": 6,
+        "Character": "Young Sora",
+        "Line": "Oh! Ahoy! We're over here! Riku, race ya. First one to the boat gets to be captain! C'mon! You call that running?"
+      },
+      {
+        "Order": 7,
+        "Character": "Young Riku",
+        "Line": "Hey. Did you come from the outside world?"
+      },
+      {
+        "Order": 8,
+        "Character": "Terra",
+        "Line": "Huh? Why would you say that?"
+      },
+      {
+        "Order": 9,
+        "Character": "Young Riku",
+        "Line": "Because nobody lives out here, and I know you're not from the main island."
+      },
+      {
+        "Order": 10,
+        "Character": "Terra",
+        "Line": "Smart kid. So how about you? What are you doing here?"
+      },
+      {
+        "Order": 11,
         "Character": "Young Riku",
         "Line": "Oh, my friend's dad took us out on the boat. This is where we like to play, but they won't let us row out here by ourselves, not till we get older."
       },
       {
-        "Order": 7,
+        "Order": 12,
         "Character": "Terra",
         "Line": "Must be hard, huh, stuck in one place."
       },
       {
-        "Order": 8,
+        "Order": 13,
         "Character": "Young Riku",
         "Line": "I heard once there was a kid who left for good. So how did you get here, anyway?"
       },
       {
-        "Order": 9,
+        "Order": 14,
         "Character": "Terra",
         "Line": "Is there some reason you're interested in the outside world?"
       },
       {
-        "Order": 10,
+        "Order": 15,
         "Character": "Young Riku",
         "Line": "Yeah. I wanna be strong one day. Like that kid who left. He went to the outside world- I bet he's really strong now. I know it's out there somewhere- the strength that I need."
       },
       {
-        "Order": 11,
+        "Order": 16,
         "Character": "Terra",
         "Line": "Strength for what?"
       },
       {
-        "Order": 12,
+        "Order": 17,
         "Character": "Young Riku",
         "Line": "To protect the things that matter. You know, like my friends."
       },
       {
-        "Order": 13,
+        "Order": 18,
         "Character": "Terra",
         "Line": "Outside this tiny world is a much bigger one. In your hand, take this key. So long as you have the makings, then through this simple act of taking... its wielder you shall one day be. And you will find me, friend- no ocean will contain you then. No more borders around, or below, or above, so long as you champion the ones you love."
       },
       {
-        "Order": 14,
+        "Order": 19,
         "Character": "Young Sora",
         "Line": "Riku! C'mon, hurry it up!"
       },
       {
-        "Order": 15,
+        "Order": 20,
         "Character": "Terra",
         "Line": "You've gotta keep this a secret, okay? Otherwise, all the magic will wear off."
       },
       {
-        "Order": 16,
+        "Order": 21,
         "Character": "Young Sora",
         "Line": "Hey, what was that all about?"
       },
       {
-        "Order": 17,
+        "Order": 22,
         "Character": "Young Riku",
         "Line": "Aw, you know."
       },
       {
-        "Order": 18,
+        "Order": 23,
         "Character": "Young Sora",
         "Line": "Know what? Why won't you tell me? Who was that guy- somebody you know?"
       },
       {
-        "Order": 19,
-        "Character": "Young Riku:",
+        "Order": 24,
+        "Character": "Young Riku",
         "Line": "Maybe."
       },
       {
-        "Order": 20,
+        "Order": 25,
         "Character": "Young Sora",
         "Line": "Aw, there you go again! Just tell me."
       },
       {
-        "Order": 21,
+        "Order": 26,
         "Character": "Young Riku",
         "Line": "I really can't. I've gotta keep it a secret."
       },
       {
-        "Order": 22,
+        "Order": 27,
         "Character": "Young Sora",
         "Line": "Not with me you don't! I'm like the best secret-keeper in the world!"
       },
       {
-        "Order": 23,
+        "Order": 28,
         "Character": "Young Riku",
         "Line": "Nice try."
       },
       {
-        "Order": 24,
+        "Order": 29,
         "Character": "Young Sora",
         "Line": "Aww. Riku!"
       },
       {
-        "Order": 25,
+        "Order": 30,
         "Character": "Terra",
         "Line": "Protect the things that matter... Right. My friends matter to me, too. So, I still have things that  I have to protect."
       }
@@ -9940,31 +9949,34 @@
         "Order": 6,
         "Character": "Aqua",
         "Line": "This boy looks so sincere- just like Terra. And this one- he's the spitting image of Ven. One of you might be special enough. Hey, you two mind telling me your names?"
-      }
-    ],
-    "Young Sora:I'm Sora!": [
+      },
       {
-        "Order": 0,
+        "Order": 7,
+        "Character": "Young Sora",
+        "Line": "I'm Sora!"
+      },
+      {
+        "Order": 8,
         "Character": "Aqua",
         "Line": "And you?"
       },
       {
-        "Order": 1,
+        "Order": 9,
         "Character": "Young Riku",
         "Line": "Riku."
       },
       {
-        "Order": 2,
+        "Order": 10,
         "Character": "Aqua",
         "Line": "Someone has already passed this boy the power. Was it Terra? Sora, do you like Riku?"
       },
       {
-        "Order": 3,
+        "Order": 11,
         "Character": "Young Sora",
         "Line": "Of course I like him, he's my best friend!"
       },
       {
-        "Order": 4,
+        "Order": 12,
         "Character": "Aqua",
         "Line": "Good. So then, if something happens, and Riku is about to get lost- or say, he starts wandering down a dark path alone- you make sure to stay with him and keep him safe. That's your job, Sora, and I'm counting on you to do it, okay? One Keyblade is enough... for any friendship. I learned it the hard way. I wouldn't wish our lives on those children. Terra, please tell me- what's to become of us?"
       }

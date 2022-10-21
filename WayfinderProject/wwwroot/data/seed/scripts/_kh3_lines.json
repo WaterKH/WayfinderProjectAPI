@@ -424,12 +424,10 @@
       {
         "Order": 19,
         "Character": "Hades",
-        "Line": "Black box, huh? Hmm... Black box, black box, black box... Wait. Don't tell me... "
-      }
-    ],
-    "You're after the one Zeus hid on earth?": [
+        "Line": "Black box, huh? Hmm... Black box, black box, black box... Wait. Don't tell me... You're after the one Zeus hid on earth?"
+      },
       {
-        "Order": 0,
+        "Order": 20,
         "Character": "Maleficent",
         "Line": "Possibly. If I were, where might it be?"
       }
@@ -6499,16 +6497,19 @@
         "Order": 14,
         "Character": "Sora",
         "Line": "Yup. We'll take care of them. Go on, skedaddle!"
-      }
-    ],
-    "Flynn Rider:You have my thanks. The horse was enough. Don't need any monsters on my trail.": [
+      },
       {
-        "Order": 0,
+        "Order": 13,
+        "Character": "Flynn Rider",
+        "Line": "You have my thanks. The horse was enough. Don't need any monsters on my trail."
+      },
+      {
+        "Order": 14,
         "Character": "Donald",
         "Line": "The WHAT was enough?"
       },
       {
-        "Order": 1,
+        "Order": 15,
         "Character": "Flynn Rider",
         "Line": "Oh, nothing, nothing. Name's Flynn. Flynn Rider. Ohh! Watch out, they look mad! Slowly... Slowly... Outta here!"
       }
@@ -7939,131 +7940,134 @@
         "Order": 7,
         "Character": "Goofy",
         "Line": "Now, Flynn, you and Maximus play nice."
-      }
-    ],
-    "Flynn Rider:Huh? Fine.": [
-      {
-        "Order": 0,
-        "Character": "Sora",
-        "Line": "You're gonna be great."
-      },
-      {
-        "Order": 1,
-        "Character": "Rapunzel",
-        "Line": "Huh?"
-      },
-      {
-        "Order": 2,
-        "Character": "Flynn Rider",
-        "Line": "Huh?"
-      },
-      {
-        "Order": 3,
-        "Character": "Sora",
-        "Line": "We haven't seen the guy controlling the monsters in a while, so that's one less worry."
-      },
-      {
-        "Order": 4,
-        "Character": "Goofy",
-        "Line": "But there's still a chance that he might be around here somewhere."
-      },
-      {
-        "Order": 5,
-        "Character": "Sora",
-        "Line": "Well, if he comes back and tries to bother Rapunzel again, then Flynn will keep her safe. And we three wont be far behind."
-      },
-      {
-        "Order": 6,
-        "Character": "Donald",
-        "Line": "Come on. Rapunzel's the tough one, if you ask me."
-      },
-      {
-        "Order": 7,
-        "Character": "Flynn Rider",
-        "Line": "True. But nevertheless, I won't let her out of my sight."
       },
       {
         "Order": 8,
-        "Character": "Rapunzel",
-        "Line": "Oh... Eugene."
+        "Character": "Flynn Rider",
+        "Line": "Huh? Fine."
       },
       {
         "Order": 9,
         "Character": "Sora",
-        "Line": "\"Eugene\"?"
+        "Line": "You're gonna be great."
       },
       {
         "Order": 10,
+        "Character": "Rapunzel",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 11,
+        "Character": "Flynn Rider",
+        "Line": "Huh?"
+      },
+      {
+        "Order": 12,
+        "Character": "Sora",
+        "Line": "We haven't seen the guy controlling the monsters in a while, so that's one less worry."
+      },
+      {
+        "Order": 13,
+        "Character": "Goofy",
+        "Line": "But there's still a chance that he might be around here somewhere."
+      },
+      {
+        "Order": 14,
+        "Character": "Sora",
+        "Line": "Well, if he comes back and tries to bother Rapunzel again, then Flynn will keep her safe. And we three wont be far behind."
+      },
+      {
+        "Order": 15,
+        "Character": "Donald",
+        "Line": "Come on. Rapunzel's the tough one, if you ask me."
+      },
+      {
+        "Order": 16,
+        "Character": "Flynn Rider",
+        "Line": "True. But nevertheless, I won't let her out of my sight."
+      },
+      {
+        "Order": 17,
+        "Character": "Rapunzel",
+        "Line": "Oh... Eugene."
+      },
+      {
+        "Order": 18,
+        "Character": "Sora",
+        "Line": "\"Eugene\"?"
+      },
+      {
+        "Order": 19,
         "Character": "Flynn Rider",
         "Line": "Oh! That's my real name. Eugene Fitzherbert. That's right. I never told you guys."
       },
       {
-        "Order": 11,
+        "Order": 20,
         "Character": "Donald",
         "Line": "That's different."
       },
       {
-        "Order": 12,
+        "Order": 21,
         "Character": "Goofy",
         "Line": "I think it's a great name!"
       },
       {
-        "Order": 13,
+        "Order": 22,
         "Character": "Sora",
         "Line": "Me too. Nice to re-meet you, Eugene."
       },
       {
-        "Order": 14,
+        "Order": 23,
         "Character": "Rapunzel",
         "Line": "Hey! I thought I was the only one you were going to tell."
       },
       {
-        "Order": 15,
+        "Order": 24,
         "Character": "Flynn Rider",
         "Line": "Don't worry. I've saved plenty of Fitzherbert-y secrets just for you."
       },
       {
-        "Order": 16,
+        "Order": 25,
         "Character": "Rapunzel",
         "Line": "Really?"
       },
       {
-        "Order": 17,
+        "Order": 26,
         "Character": "Sora",
         "Line": "Hey! What are you two lovebirds talking about?"
       },
       {
-        "Order": 18,
+        "Order": 27,
         "Character": "Flynn Rider",
         "Line": "Nothing!"
       },
       {
-        "Order": 19,
+        "Order": 28,
         "Character": "Rapunzel",
         "Line": "Nothing."
       },
       {
-        "Order": 20,
+        "Order": 29,
         "Character": "Donald",
         "Line": "Hey, you can tell us!"
       },
       {
-        "Order": 21,
+        "Order": 30,
         "Character": "Goofy",
         "Line": "Yeah, it's not nice to keep secrets."
       },
       {
-        "Order": 22,
+        "Order": 31,
         "Character": "Flynn Rider",
         "Line": "This one is none of your business."
       },
       {
-        "Order": 23,
+        "Order": 32,
         "Character": "Sora",
         "Line": "Maximus, get him!"
       },
       {
-        "Order": 24,
+        "Order": 3,
         "Character": "Flynn Rider",
         "Line": "Huh? You have got to be kidding me!"
       }
@@ -14992,7 +14996,7 @@
       },
       {
         "Order": 4,
-        "Character": "Ansem Seeker of Darkness:",
+        "Character": "Ansem Seeker of Darkness",
         "Line": "Yes, you have. All the children sacrificed in the name of your  research... So make things right."
       },
       {
@@ -18886,46 +18890,49 @@
         "Order": 16,
         "Character": "Sora",
         "Line": "Really? Hmm... Well, I wish I could help... but my situation's no better."
-      }
-    ],
-    "Nameless Star:You must see to the tasks before you first.": [
+      },
       {
-        "Order": 0,
+        "Order": 17,
+        "Character": "Nameless Star",
+        "Line": "You must see to the tasks before you first."
+      },
+      {
+        "Order": 18,
         "Character": "Sora",
         "Line": "The tasks before me? There's so many."
       },
       {
-        "Order": 1,
+        "Order": 19,
         "Character": "Nameless Star",
         "Line": "All the more reason for you to make an effort."
       },
       {
-        "Order": 2,
+        "Order": 20,
         "Character": "Sora",
         "Line": "Yeah. You're right. I just wish I knew what to do."
       },
       {
-        "Order": 3,
+        "Order": 21,
         "Character": "Nameless Star",
         "Line": "Here you are on the brink, and yet you hold on to who you are. You possess a strong sense of purpose. And in that purpose you will find direction."
       },
       {
-        "Order": 4,
+        "Order": 22,
         "Character": "Sora",
         "Line": "Thank you. I'm really glad we met. You cheer me up. I hope that friend of yours finds you soon."
       },
       {
-        "Order": 5,
+        "Order": 23,
         "Character": "Nameless Star",
         "Line": "Thank you. Me too."
       },
       {
-        "Order": 6,
+        "Order": 24,
         "Character": "Sora",
         "Line": "Oh, hey. If I see him, I'll tell him that you're here. What's his name? Huh?"
       },
       {
-        "Order": 7,
+        "Order": 25,
         "Character": "Nameless Star",
         "Line": "Our secret."
       }
@@ -20531,16 +20538,19 @@
         "Order": 12,
         "Character": "Saïx",
         "Line": "See you, Lea."
-      }
-    ],
-    "Lea:You go help Kairi.": [
+      },
       {
-        "Order": 0,
+        "Order": 13,
+        "Character": "Lea",
+        "Line": "You go help Kairi."
+      },
+      {
+        "Order": 14,
         "Character": "Sora",
         "Line": "Right. Gotta run! Good luck."
       },
       {
-        "Order": 1,
+        "Order": 15,
         "Character": "Lea",
         "Line": "All right. What now? Guess I... shoulda brought some ice cream."
       }
