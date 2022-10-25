@@ -1,0 +1,28 @@
+.clear-button {
+    padding: 15px;
+    margin: 15px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    opacity: 1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .clear-button:hover {
+        background-color: #f84e4e !important;
+    }
+
+.clear-all-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #d91515, #fd2727);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+    .clear-all-button:hover {
+        opacity: .75;
+    }

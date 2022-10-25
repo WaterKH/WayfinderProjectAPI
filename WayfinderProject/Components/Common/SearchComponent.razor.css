@@ -75,3 +75,13 @@
         outline: none;
         border: 2px solid #2888ff;
     }
+
+.clear-all-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #d91515, #fd2727);
+    margin-right: 10px;
+}

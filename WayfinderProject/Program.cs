@@ -1,3 +1,4 @@
+using Blazored.Modal;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using System.Text.Json.Serialization;
@@ -19,6 +20,7 @@ builder.Services.AddDbContext<WayfinderContext>(options => options.UseMySql(conn
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<BrowserService>();
+builder.Services.AddBlazoredModal();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

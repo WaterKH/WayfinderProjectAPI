@@ -1,0 +1,44 @@
+﻿<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-3">
+            <button class="clear-button" style="background-color: #cdd1ff;" onclick="@(async () => await ClearAllSubMethod.Invoke("Games"))">Clear All Games</button>
+        </div>
+
+        <div class="col-md-3">
+            <button class="clear-button" style="background-color: #e685da;" onclick="@(async () => await ClearAllSubMethod.Invoke("Scenes"))">Clear All Scenes</button>
+        </div>
+
+        <div class="col-md-3">
+            <button class="clear-button" style="background-color: #ea4a4a;" onclick="@(async () => await ClearAllSubMethod.Invoke("Worlds"))">Clear All Worlds</button>
+        </div>
+
+        <div class="col-md-3">
+            <button class="clear-button" style="background-color: #5499fc;" onclick="@(async () => await ClearAllSubMethod.Invoke("Areas"))">Clear All Areas</button>
+        </div>
+
+        <div class="col-md-3">
+            <button class="clear-button" style="background-color: #f3b222;" onclick="@(async () => await ClearAllSubMethod.Invoke("Characters"))">Clear All Characters</button>
+        </div>
+
+        <div class="col-md-3">
+            <button class="clear-button" style="background-color: #a13bfb;" onclick="@(async () => await ClearAllSubMethod.Invoke("Music"))">Clear All Music</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <button class="clear-all-button" onclick="@(async () => { await ClearAllSubMethod.Invoke("All"); await BlazoredModal.CancelAsync(); })">Clear All Filters</button>
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Cancel</button>
+</div>
+
+@code {
+
+    [Parameter] public Func<string, Task> ClearAllSubMethod { get; set; }
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+}

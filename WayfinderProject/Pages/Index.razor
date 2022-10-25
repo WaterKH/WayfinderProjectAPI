@@ -43,17 +43,23 @@
 <div class="advanced-search-box">
     <div class="row">
         <div class="col-md-12">
-            <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Selections="this.Games" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Selections="this.Games" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
 
-            <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Selections="this.Scenes" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Selections="this.Scenes" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
                 
-            <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Selections="this.Worlds" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Selections="this.Worlds" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
                 
-            <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Selections="this.Areas" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Selections="this.Areas" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
                 
-            <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Selections="this.Characters" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Selections="this.Characters" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
                 
-            <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Selections="this.Music" CanSearch="!this.Loading" UpdateSearch="@(async () => await Search())" CurrentOption="@this.CurrentOption" />
+            <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Selections="this.Music" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
         </div>
     </div>
 </div>
@@ -162,6 +168,8 @@ else if (this.SceneDtos.Count > 0)
     private List<string> options = new List<string> { "Games", "Scenes", "Worlds", "Areas", "Characters", "Music" };
     private NavBar? WayfinderNavBar;
 
+    private bool canDisplayClearAll;
+
     protected override async Task OnInitializedAsync()
     {
         this.api = new WayfinderController(null, context);
@@ -241,6 +249,8 @@ else if (this.SceneDtos.Count > 0)
             this.SceneDtos = new List<SceneDto>();
 
             await Task.Run(async () => await this.ResetOptions());
+
+            this.canDisplayClearAll = false;
         }
         else
         {
@@ -248,6 +258,8 @@ else if (this.SceneDtos.Count > 0)
             this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
 
             this.UpdateOptions();
+
+            this.canDisplayClearAll = true;
         }
 
         if (MainTable != null)
@@ -255,7 +267,7 @@ else if (this.SceneDtos.Count > 0)
             MainTable.CurrentPage = 1;
             MainTable.CurrentExpandedRow = -1;
         }
-        
+
         this.Loading = false;
 
         await InvokeAsync(() => { 
@@ -310,7 +322,7 @@ else if (this.SceneDtos.Count > 0)
     public async Task ResetOptions()
     {
         this.Loading = true;
-        
+
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
@@ -335,11 +347,88 @@ else if (this.SceneDtos.Count > 0)
         this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
         this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
 
+        this.GamesSearch.selected = new List<string>();
+        this.ScenesSearch.selected = new List<string>();
+        this.WorldsSearch.selected = new List<string>();
+        this.AreasSearch.selected = new List<string>();
+        this.CharactersSearch.selected = new List<string>();
+        this.MusicSearch.selected = new List<string>();
+
         this.Loading = false;
         this.failed = false;
 
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
+    }
+
+    public async Task ClearAll(string clearString)
+    {
+        if (clearString == "Games")
+        {
+            this.Games = await context.Games.AsNoTracking().Select(x => x.Name).ToListAsync();
+
+            this.GamesSearch.Selections = this.GamesSearch.results = this.Games;
+            this.GamesSearch.selected = new List<string>();
+            this.GamesSearch.CurrentView = "Options";
+        }
+        else if (clearString == "Scenes")
+        {
+            this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Scenes.Sort();
+
+            this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
+            this.ScenesSearch.selected = new List<string>();
+            this.ScenesSearch.CurrentView = "Options";
+        }
+        else if (clearString == "Worlds")
+        {
+            this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Worlds.Sort();
+
+            this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
+            this.WorldsSearch.selected = new List<string>();
+            this.WorldsSearch.CurrentView = "Options";
+        }
+        else if (clearString == "Areas")
+        {
+            this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Areas.Sort();
+
+            this.AreasSearch.Selections = this.AreasSearch.results = this.Areas;
+            this.AreasSearch.selected = new List<string>();
+            this.AreasSearch.CurrentView = "Options";
+        }
+        else if (clearString == "Characters")
+        {
+            this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Characters.Sort();
+
+            this.CharactersSearch.Selections = this.CharactersSearch.results = this.Characters;
+            this.CharactersSearch.selected = new List<string>();
+            this.CharactersSearch.CurrentView = "Options";
+        }
+        else if (clearString == "Music")
+        {
+            this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Music.Sort();
+
+            this.MusicSearch.Selections = this.MusicSearch.results = this.Music;
+            this.MusicSearch.selected = new List<string>();
+            this.MusicSearch.CurrentView = "Options";
+        }
+        else
+        {
+            await this.ResetOptions();
+
+            this.GamesSearch.CurrentView = "Options";
+            this.ScenesSearch.CurrentView = "Options";
+            this.WorldsSearch.CurrentView = "Options";
+            this.AreasSearch.CurrentView = "Options";
+            this.CharactersSearch.CurrentView = "Options";
+            this.MusicSearch.CurrentView = "Options";
+        }
+
+        await this.Search();
     }
 }
