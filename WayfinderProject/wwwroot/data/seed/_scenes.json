@@ -7545,7 +7545,7 @@
         "Name": "Gathering",
         "Link": "https://www.youtube.com/watch?v=fhG919KY5-8&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=661",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Terra", "Aqua", "Ven", "Young Xehanort" ],
+        "Characters": [ "Terra", "Aqua", "Ven", "Master Xehanort" ],
         "Areas": [ "The Keyblade Graveyard" ],
         "Music": [ "Sunset Horizons" ]
       },
@@ -7553,7 +7553,7 @@
         "Name": "Birth by Sleep",
         "Link": "https://www.youtube.com/watch?v=NfqvFIAC8Ts&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=662",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Young Xehanort", "Vanitas", "Mickey" ],
+        "Characters": [ "Master Xehanort", "Vanitas", "Mickey" ],
         "Areas": [ "The Keyblade Graveyard" ],
         "Music": [ "Fate of the Unknown" ]
       },
@@ -8503,7 +8503,7 @@
         "Worlds": [ "Destiny Islands" ],
         "Characters": [ "Master Xehanort", "Ventus" ],
         "Areas": [ "Seashore" ],
-        "Music": [ "Young Xehanort", "Dive into the Heart -Destati-" ]
+        "Music": [ "Xehanort", "Dive into the Heart -Destati-" ]
       },
       {
         "Name": "Heart to Heart",
@@ -8879,7 +8879,7 @@
         "Worlds": [ "Radiant Garden" ],
         "Characters": [ "Terra", "Braig", "Master Xehanort" ],
         "Areas": [ "Purification Facility" ],
-        "Music": [ "Black Powder", "Young Xehanort" ]
+        "Music": [ "Black Powder", "Xehanort" ]
       },
       {
         "Name": "An Eerie Farewell (Terra)",
@@ -9831,7 +9831,7 @@
         "Worlds": [ "The Keyblade Graveyard", "Destiny Islands", "The Land of Departure" ],
         "Characters": [ "Ventus", "Mickey", "Master Xehanort", "Eraqus" ],
         "Areas": [ "The Badlands", "Seashore", "Forecourt" ],
-        "Music": [ "Young Xehanort", "The Key" ]
+        "Music": [ "Xehanort", "The Key" ]
       },
       {
         "Name": "Seeking the Truth",
@@ -10615,7 +10615,7 @@
         "Worlds": [ "Radiant Garden", "Dark World", "Twilight Town", "The Land of Departure", "Destiny Islands" ],
         "Characters": [ "Master Xehanort", "Terra", "Terra-Xehanort", "Braig", "Ienzo", "Ansem the Wise", "Aqua", "Naminé", "Roxas", "Axel", "Xion", "Ventus", "Sora", "Riku", "Kairi" ],
         "Areas": [ "Corridors", "Dark Margin", "The Old Mansion", "The White Room", "Clock Tower", "Summit", "Seashore" ],
-        "Music": [ "Young Xehanort", "Aqua", "Dearly Beloved" ]
+        "Music": [ "Xehanort", "Aqua", "Dearly Beloved" ]
       },
       {
         "Name": "Realm of Darkness",
@@ -11241,7 +11241,7 @@
         "Name": "Opening",
         "Link": "https://www.youtube.com/watch?v=vVNOYTnxIuk&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=1",
         "Worlds": [ "Destiny Islands", "Castle Oblivion", "Twilight Town", "The World That Never Was", "The Keyblade Graveyard" ],
-        "Characters": [ "Mickey", "Donald", "Goofy", "Sora", "Riku", "Kairi", "Ansem Seeker of Darkness", "Guardian", "Naminé", "Roxas", "Xion", "Axel", "Xemnas", "Young Xehanort", "Terra", "Ventus", "Aqua" ],
+        "Characters": [ "Mickey", "Donald", "Goofy", "Sora", "Riku", "Kairi", "Ansem Seeker of Darkness", "Guardian", "Naminé", "Roxas", "Xion", "Axel", "Xemnas", "Master Xehanort", "Terra", "Ventus", "Aqua" ],
         "Areas": [ "Seashore", "Castle Oblivion", "Pod Room", "Clock Tower", "Basement Hall", "World of Nothingness", "The Keyblade Graveyard" ],
         "Music": [ "Hikari -KINGDOM Orchestra Instrumental Version-" ]
       },
@@ -12451,7 +12451,7 @@
         "Worlds": [ "The World That Never Was" ],
         "Characters": [ "Riku", "Mickey", "Master Xehanort", "Xemnas", "Ansem Seeker of Darkness", "Xigbar", "True Organization XIII", "Lea", "Saïx", "Guardian", "Donald", "Goofy" ],
         "Areas": [ "Where Nothing Gathers" ],
-        "Music": [ "Young Xehanort", "Shaded Truths", "The Key of Darkness" ]
+        "Music": [ "Xehanort", "Shaded Truths", "The Key of Darkness" ]
       },
       {
         "Name": "The Return",
@@ -16101,7 +16101,7 @@
         "Name": "Opening",
         "Link": "https://www.youtube.com/watch?v=t9bsdJ3jtnE&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=2",
         "Worlds": [ "The Final World", "Scala ad Caelum", "The Land of Departure", "Dive to the Heart", "Destiny Islands", "Castle Oblivion", "Twilight Town", "Keyblade Graveyard" ],
-        "Characters": [ "Sora", "Young Xehanort", "Terra", "Aqua", "Ventus", "Riku", "Kairi", "Ansem", "Naminé", "Roxas", "Axel", "Xion", "Xemnas", "Marluxia", "Young Xehanort", "Donald", "Goofy", "Mickey" ],
+        "Characters": [ "Sora", "Young Xehanort", "Terra", "Aqua", "Ventus", "Riku", "Kairi", "Ansem", "Naminé", "Roxas", "Axel", "Xion", "Xemnas", "Marluxia", "Master Xehanort", "Donald", "Goofy", "Mickey" ],
         "Areas": [ "The Final World", "Scala ad Caelum", "The Land of Departure", "Dive to the Heart", "Destiny Islands", "Castle Oblivion", "Twilight Town", "Keyblade Graveyard" ],
         "Music": [ "Face My Fears" ]
       },
@@ -17927,7 +17927,7 @@
         "Worlds": [ "The Keyblade Graveyard" ],
         "Characters": [ "Sora", "Riku", "Mickey", "Ansem Seeker of Darkness", "Xemnas", "Young Xehanort", "Master Xehanort" ],
         "Areas": [ "Tower of Endings" ],
-        "Music": [ "Young Xehanort", "Forza Finale" ]
+        "Music": [ "Xehanort", "Forza Finale" ]
       },
       {
         "Name": "More to Seek",
@@ -17957,7 +17957,7 @@
         "Name": "Kingdom Hearts",
         "Link": "https://www.youtube.com/watch?v=JqXmfSqnbGo&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=234",
         "Worlds": [ "The Keyblade Graveyard", "World That Never Was" ],
-        "Characters": [ "Master Xehanort", "Sora", "Riku", "Mickey", "Kairi", "Donald", "Goofy", "Roxas", "Xion", "Lea", "Terra", "Aqua", "Ventus", "Young Xehanort" ],
+        "Characters": [ "Master Xehanort", "Sora", "Riku", "Mickey", "Kairi", "Donald", "Goofy", "Roxas", "Xion", "Lea", "Terra", "Aqua", "Ventus" ],
         "Areas": [ "Tower of Endings", "Where Nothing Gathers" ],
         "Music": [ "12 Keys", "The Key", "The Guardians of Light" ]
       },
@@ -18303,7 +18303,7 @@
         "Worlds": [ "The Keyblade Graveyard" ],
         "Characters": [ "Sora", "Riku", "Mickey", "Ansem Seeker of Darkness", "Xemnas", "Young Xehanort", "Master Xehanort" ],
         "Areas": [ "Tower of Endings" ],
-        "Music": [ "Young Xehanort", "Forza Finale" ]
+        "Music": [ "Xehanort", "Forza Finale" ]
       },
       {
         "Name": "Journey's End",
@@ -18333,7 +18333,7 @@
         "Name": "Kairi's Whereabouts",
         "Link": "https://www.youtube.com/watch?v=Ra1ks9CAVAk&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=264",
         "Worlds": [ "The Keyblade Graveyard", "Dive to the Heart" ],
-        "Characters": [ "Master Xehanort", "Sora", "Riku", "Mickey", "Kairi", "Donald", "Goofy", "Roxas", "Xion", "Lea", "Terra", "Aqua", "Ventus", "Young Xehanort" ],
+        "Characters": [ "Master Xehanort", "Sora", "Riku", "Mickey", "Kairi", "Donald", "Goofy", "Roxas", "Xion", "Lea", "Terra", "Aqua", "Ventus" ],
         "Areas": [ "Tower of Endings", "Station of Awakening" ],
         "Music": [ "12 Keys", "The Key", "The Guardians of Light" ]
       },
