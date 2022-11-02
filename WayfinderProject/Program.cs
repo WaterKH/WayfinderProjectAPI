@@ -1,6 +1,7 @@
 using Blazored.Modal;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.Text.Json.Serialization;
 using WayfinderProject.Data;
 using WayfinderProjectAPI.Data;
@@ -15,7 +16,7 @@ var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
 var connection = new MySqlConnection(connectionString);
 connection.Open();
 
-builder.Services.AddDbContext<WayfinderContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)), ServiceLifetime.Transient);
+builder.Services.AddDbContext<WayfinderContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.SchemaBehavior(MySqlSchemaBehavior.Translate, (schema, entity) => $"{schema ?? "WFP"}_{entity}")), ServiceLifetime.Transient);
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();

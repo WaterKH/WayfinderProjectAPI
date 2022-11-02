@@ -7,6 +7,7 @@ using System.Xml.Linq;
 namespace WayfinderProjectAPI.Data.Models
 {
     [Index(nameof(Name), Name = "Index_SceneName")]
+    [Table("MA_Scene")]
     public class Scene
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -39,6 +39,10 @@ namespace WayfinderProjectAPI.Data
             // Load Scene Data into Database
             CreateScenes(context);
 
+            // JJ
+            // Character
+            CreateCharactersJJ(context);
+
             IsInitializing = false;
         }
 
@@ -214,6 +218,17 @@ namespace WayfinderProjectAPI.Data
             }
 
             context.SaveChanges();
+        }
+
+        public static void CreateCharactersJJ(WayfinderContext context)
+        {
+            //context.JJCharacters.Add(new JJCharacter
+            //{
+            //    Character = context.Characters.FirstOrDefault(x => x.Name == "Sora"),
+            //    Title = "Entry I",
+            //    Description = "Test description",
+            //    AdditionalInformation = "More additional information"
+            //});
         }
     }
 }
