@@ -1,0 +1,40 @@
+@using WayfinderProjectAPI.Controllers;
+
+<div>
+    <h3>Missing Materials</h3>
+    @{
+        var Totals = GetMissingMaterialTotals();
+
+        foreach(var total in Totals.Totals)
+        {
+            <div>
+                @total.Key @total.Value
+            </div>
+        }
+    }
+
+
+
+</div>
+
+@code 
+{
+    [Parameter]public SynthController controller { get; set; }
+    [Parameter]public UserSynthTracker userData {get;set;}
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        await base.OnInitializedAsync();
+    }
+
+    ItemTotals GetMissingMaterialTotals()
+    {
+        return controller.GetMissingTotals(userData);
+    }
+
+}

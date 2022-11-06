@@ -1,0 +1,45 @@
+@using WayfinderProjectAPI.Controllers;
+
+<div>
+    <h3>Recipe List</h3>
+    @foreach(var recipe in controller.SynthSource.Recipes)
+    {
+        <div>
+            @recipe.name
+            @if(userData.CraftedRecipes.Contains(recipe.name))
+            {
+                <div>MIX</div>
+            }
+
+            <button @onclick="(e => CraftRecipe(recipe.name))">Craft</button>
+        </div>
+    }
+</div>
+
+@code
+{
+    [Parameter]public SynthController controller { get; set; }
+    [Parameter]public UserSynthTracker userData {get;set;}
+
+    [Parameter]public EventCallback<string> RecipeCrafted {get;set;}
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        await base.OnInitializedAsync();
+    }
+
+    private void CraftRecipe(string strRecipe)
+    {
+        Console.WriteLine("{0} Crafted clicked", strRecipe);
+
+        if(controller.Craft(userData, strRecipe)) {
+            RecipeCrafted.InvokeAsync();
+        }
+    }
+
+}

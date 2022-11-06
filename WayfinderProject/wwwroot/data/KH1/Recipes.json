@@ -1,0 +1,730 @@
+{
+	"recipes":
+	[
+		{
+			"name": "Mega Potion",
+			"group": 1,
+			"materials":
+			[
+				{
+					"name": "Spirit Shard",
+					"count": 1
+				},
+				{
+					"name": "Power Shard",
+					"count": 1
+				},
+				{
+					"name": "Mythril Shard",
+					"count": 1
+				}
+			]
+		},
+		{
+			"name": "Cottage",
+			"group": 1,
+			"materials":
+			[
+				{
+					"name": "Lucid Shard",
+					"count": 1
+				},
+				{
+					"name": "Bright Shard",
+					"count": 1
+				}
+			]
+		},
+		{
+			"name": "Energy Bangle",
+			"group": 1,
+			"materials":
+			[
+				{
+					"name": "Spirit Shard",
+					"count": 1
+				},
+				{
+					"name": "Bright Shard",
+					"count": 2
+				}
+			]
+		},
+		{
+			"name": "Power Chain",
+			"group": 1,
+			"materials":
+			[
+				{
+					"name": "Power Shard",
+					"count": 2
+				},
+				{
+					"name": "Lucid Shard",
+					"count": 1
+				}
+			]
+		},
+		{
+			"name": "Magic Armlet",
+			"group": 1,
+			"materials":
+			[
+				{
+					"name": "Blaze Shard",
+					"count": 3
+				},
+				{
+					"name": "Frost Shard",
+					"count": 3
+				},
+				{
+					"name": "Thunder Shard",
+					"count": 3
+				}
+			]
+		},
+		{
+			"name": "EXP Earring",
+			"group": 1,
+			"materials":
+			[
+				{
+					"name": "Spirit Stone",
+					"count": 1
+				},
+				{
+					"name": "Power Stone",
+					"count": 1
+				},
+				{
+					"name": "Mythril Stone",
+					"count": 1
+				},
+				{
+					"name": "Serenity Power",
+					"count": 1
+				},
+				{
+					"name": "Dark Matter",
+					"count": 3
+				}
+			]
+		},
+		{
+			"name": "Mega Ether",
+			"group": 2,
+			"materials":
+			[
+				{
+					"name": "Frost Shard",
+					"count": 1
+				},
+				{
+					"name": "Blaze Shard",
+					"count": 1
+				},
+				{
+					"name": "Thunder Shard",
+					"count": 1
+				},
+				{
+					"name": "Mythril",
+					"count": 2
+				}
+			]
+		},
+		{
+			"name": "Guard Earring",
+			"group": 2,
+			"materials":
+			[
+				{
+					"name": "Bright Shard",
+					"count": 3
+				},
+				{
+					"name": "Frost Shard",
+					"count": 1
+				},
+				{
+					"name": "Mythril Shard",
+					"count": 3
+				}
+			]
+		},
+		{
+			"name": "Angel Bangle",
+			"group": 2,
+			"materials":
+			[
+				{
+					"name": "Thunder Shard",
+					"count": 3
+				},
+				{
+					"name": "Bright Gem",
+					"count": 1
+				}
+			]
+		},
+		{
+			"name": "Golem Chain",
+			"group": 2,
+			"materials":
+			[
+				{
+					"name": "Blaze Shard",
+					"count": 3
+				},
+				{
+					"name": "Spirit Gem",
+					"count": 1
+				}
+			]
+		},
+		{
+			"name": "Rune Armlet",
+			"group": 2,
+			"materials":
+			[
+				{
+					"name": "Blaze Gem",
+					"count": 3
+				},
+				{
+					"name": "Frost Gem",
+					"count": 3
+				},
+				{
+					"name": "Thunder Gem",
+					"count": 3
+				}
+			]
+		},
+		{
+			"name": "Moogle Badge",
+			"group": 2,
+			"materials":
+			[
+				{
+					"name": "Blaze Stone",
+					"count": 1
+				},
+				{
+					"name": "Frost Stone",
+					"count": 1
+				},
+				{
+					"name": "Thunder Stone",
+					"count": 1
+				},
+				{
+					"name": "Mythril",
+					"count": 5
+				},
+				{
+					"name": "Orichalcum",
+					"count": 3
+				}
+				
+			]
+		},
+		{
+			"name": "AP Up",
+			"group": 3,
+			"materials":
+			[
+				{
+					"name": "Blaze Gem",
+					"count": 2
+				},
+				{
+					"name": "Frost Gem",
+					"count": 2
+				},
+				{
+					"name": "Thunder Gem",
+					"count": 2
+				},
+				{
+					"name": "Mythril",
+					"count": 4
+				}
+				
+			]
+		},
+		{
+			"name": "Dark Ring",
+			"group": 3,
+			"materials":
+			[
+				{
+					"name": "Lucid Gem",
+					"count": 2
+				},
+				{
+					"name": "Bright Gem",
+					"count": 2
+				}
+				
+			]
+		},{
+			"name": "Master Earring",
+			"group": 3,
+			"materials":
+			[
+				{
+					"name": "Spirit Shard",
+					"count": 5
+				},
+				{
+					"name": "Spirit Gem",
+					"count": 3
+				},
+				{
+					"name": "Spirit Stone",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Gaia Bangle",
+			"group": 3,
+			"materials":
+			[
+				{
+					"name": "Lucid Shard",
+					"count": 5
+				},
+				{
+					"name": "Lucid Gem",
+					"count": 3
+				},
+				{
+					"name": "Thunder Stone",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Titan Chain",
+			"group": 3,
+			"materials":
+			[
+				{
+					"name": "Power Shard",
+					"count": 5
+				},
+				{
+					"name": "Power Gem",
+					"count": 3
+				},
+				{
+					"name": "Power Stone",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Mythril",
+			"group": 3,
+			"materials":
+			[
+				{
+					"name": "Mythril Shard",
+					"count": 5
+				},
+				{
+					"name": "Mythril Stone",
+					"count": 1
+				},
+				{
+					"name": "Mystery Goo",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Elixir",
+			"group": 4,
+			"materials":
+			[
+				{
+					"name": "Power Crystal",
+					"count": 1
+				},
+				{
+					"name": "Shiny Crystal",
+					"count": 1
+				},
+				{
+					"name": "Bright Crystal",
+					"count": 2
+				},
+				{
+					"name": "Orichalcum",
+					"count": 3
+				}
+				
+			]
+		},
+		{
+			"name": "Defense Up",
+			"group": 4,
+			"materials":
+			[
+				{
+					"name": "Lucid Shard",
+					"count": 3
+				},
+				{
+					"name": "Bright Shard",
+					"count": 3
+				},
+				{
+					"name": "Bright Gem",
+					"count": 2
+				},
+				{
+					"name": "Power Crystal",
+					"count": 1
+				},
+				{
+					"name": "Orichalcum",
+					"count": 5
+				}
+				
+			]
+		},
+		{
+			"name": "Heartguard",
+			"group": 4,
+			"materials":
+			[
+				{
+					"name": "Lucid Gem",
+					"count": 3
+				},
+				{
+					"name": "Lucid Crystal",
+					"count": 1
+				},
+				{
+					"name": "Bright Crystal",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Three Stars",
+			"group": 4,
+			"materials":
+			[
+				{
+					"name": "Power Gem",
+					"count": 1
+				},
+				{
+					"name": "Mystery Goo",
+					"count": 3
+				},
+				{
+					"name": "Shiny Crystal",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Atlas Armlet",
+			"group": 4,
+			"materials":
+			[
+				{
+					"name": "Blaze Shard",
+					"count": 5
+				},
+				{
+					"name": "Frost Shard",
+					"count": 5
+				},
+				{
+					"name": "Thunder Shard",
+					"count": 5
+				},
+				{
+					"name": "Mystery Goo",
+					"count": 1
+				},
+				{
+					"name": "Dark Matter",
+					"count": 3
+				}
+				
+			]
+		},
+		{
+			"name": "Crystal Crown",
+			"group": 4,
+			"materials":
+			[
+				{
+					"name": "Lucid Crystal",
+					"count": 5
+				},
+				{
+					"name": "Power Crystal",
+					"count": 1
+				},
+				{
+					"name": "Shiny Crystal",
+					"count": 1
+				},
+				{
+					"name": "Blaze Stone",
+					"count": 3
+				},
+				{
+					"name": "Frost Stone",
+					"count": 3
+				}
+				
+			]
+		},
+		{
+			"name": "Dark Matter",
+			"group": 5,
+			"materials":
+			[
+				{
+					"name": "Lucid Shard",
+					"count": 9
+				},
+				{
+					"name": "Gale",
+					"count": 1
+				},
+				{
+					"name": "Mythril",
+					"count": 2
+				}
+				
+			]
+		},
+		{
+			"name": "Megalixir",
+			"group": 5,
+			"materials":
+			[
+				{
+					"name": "Lucid Gem",
+					"count": 5
+				},
+				{
+					"name": "Lucid Crystal",
+					"count": 3
+				},
+				{
+					"name": "Gale",
+					"count": 2
+				},
+				{
+					"name": "Dark Matter",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Power Up",
+			"group": 5,
+			"materials":
+			[
+				{
+					"name": "Spirit Shard",
+					"count": 5
+				},
+				{
+					"name": "Spirit Gem",
+					"count": 3
+				},
+				{
+					"name": "Power Shard",
+					"count": 5
+				},
+				{
+					"name": "Power Gem",
+					"count": 3
+				},
+				{
+					"name": "Dark Matter",
+					"count": 1
+				}
+				
+			]
+		},
+		{
+			"name": "Cosmic Arts",
+			"group": 5,
+			"materials":
+			[
+				{
+					"name": "Bright Shard",
+					"count": 5
+				},
+				{
+					"name": "Bright Gem",
+					"count": 3
+				},
+				{
+					"name": "Bright Crystal",
+					"count": 1
+				},
+				{
+					"name": "Mythril Stone",
+					"count": 3
+				}
+				
+			]
+		},
+		{
+			"name": "EXP Bracelet",
+			"group": 5,
+			"materials":
+			[
+				{
+					"name": "Energy Stone",
+					"count": 1
+				},
+				{
+					"name": "Shiny Stone",
+					"count": 1
+				},
+				{
+					"name": "Stormy Stone",
+					"count": 1
+				},
+				{
+					"name": "Orichalcum",
+					"count": 8
+				},
+				{
+					"name": "Dark Matter",
+					"count": 3
+				}
+				
+			]
+		},
+		{
+			"name": "Ribbon",
+			"group": 5,
+			"materials":
+			[
+				{
+					"name": "Blaze Gem",
+					"count": 5
+				},
+				{
+					"name": "Frost Gem",
+					"count": 5
+				},
+				{
+					"name": "Thunder Gem",
+					"count": 5
+				},
+				{
+					"name": "Gale",
+					"count": 1
+				},
+				{
+					"name": "Mystery Power",
+					"count": 3
+				}
+				
+			]
+		},
+		{
+			"name": "Fantasista",
+			"group": 6,
+			"materials":
+			[
+				{
+					"name": "Spirit Stone",
+					"count": 3
+				},
+				{
+					"name": "Power Stone",
+					"count": 3
+				},
+				{
+					"name": "Mythril Stone",
+					"count": 3
+				},
+				{
+					"name": "Energy Stone",
+					"count": 5
+				}
+				
+			]
+		},
+		{
+			"name": "Seven Elements",
+			"group": 6,
+			"materials":
+			[
+				{
+					"name": "Blaze Stone",
+					"count": 3
+				},
+				{
+					"name": "Frost Stone",
+					"count": 3
+				},
+				{
+					"name": "Thunder Stone",
+					"count": 3
+				},
+				{
+					"name": "Shiny Stone",
+					"count": 5
+				}
+				
+			]
+		},
+		{
+			"name": "Ultima Weapon",
+			"group": 6,
+			"materials":
+			[
+				{
+					"name": "Thunder Gem",
+					"count": 5
+				},
+				{
+					"name": "Mystery Goo",
+					"count": 5
+				},
+				{
+					"name": "Mystery Power",
+					"count": 3
+				},
+				{
+					"name": "Stormy Stone",
+					"count": 3
+				},
+				{
+					"name": "Dark Matter",
+					"count": 3
+				}
+				
+			]
+		}
+		
+	]
+}

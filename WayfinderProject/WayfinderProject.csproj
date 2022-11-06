@@ -1,5 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -9,24 +8,21 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
-
   <ItemGroup>
-    <Content Remove="wwwroot\data\seed\scripts\_kh0_2_lines.json~RF26577320.TMP" />
-    <Content Remove="wwwroot\data\seed\scripts\_khux_lines.json~RF21f1c183.TMP" />
-    <Content Remove="wwwroot\data\seed\_games.json~RF108e4fa1.TMP" />
+    <Content Remove="wwwroot\data\seed\scripts\_kh0_2_lines.json~RF26577320.TMP"/>
+    <Content Remove="wwwroot\data\seed\scripts\_khux_lines.json~RF21f1c183.TMP"/>
+    <Content Remove="wwwroot\data\seed\_games.json~RF108e4fa1.TMP"/>
   </ItemGroup>
-
   <ItemGroup>
-    <None Remove="Components\Common\Tooltip.razor~RFfdb528.TMP" />
-    <None Remove="Data\DTOs\ScriptLineDto.cs~RF21264c9d.TMP" />
-    <None Remove="Data\WayfinderProject.db" />
-    <None Remove="Pages\Index.razor~RF1edb7af7.TMP" />
-    <None Remove="Pages\Index.razor~RF1ef9fdd1.TMP" />
+    <None Remove="Components\Common\Tooltip.razor~RFfdb528.TMP"/>
+    <None Remove="Data\DTOs\ScriptLineDto.cs~RF21264c9d.TMP"/>
+    <None Remove="Data\WayfinderProject.db"/>
+    <None Remove="Pages\Index.razor~RF1edb7af7.TMP"/>
+    <None Remove="Pages\Index.razor~RF1ef9fdd1.TMP"/>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Blazored.Modal" Version="7.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Blazored.Modal" Version="7.1.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -35,13 +31,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1"/>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0"/>
+    <PackageReference Include="Blazored.LocalStorage" Version="4.2.0"/>
   </ItemGroup>
-
   <ItemGroup>
     <Content Update="wwwroot\data\seed\scripts\_kh1_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -116,7 +112,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
-  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4seed_4_3areas_1json__JsonSchema="https://appliedengdesign.github.io/cnccodes-json-schema/draft/2022-07/schema" wwwroot_4data_4seed_4scripts_4_3kh3_3lines_1json__JsonSchema="r" /></VisualStudio></ProjectExtensions>
-
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties wwwroot_4data_4seed_4_3areas_1json__JsonSchema="https://appliedengdesign.github.io/cnccodes-json-schema/draft/2022-07/schema" wwwroot_4data_4seed_4scripts_4_3kh3_3lines_1json__JsonSchema="r"/>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

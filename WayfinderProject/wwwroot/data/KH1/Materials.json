@@ -1,0 +1,107 @@
+{
+	"materials":
+	[
+		{
+			"name": "Lucid Shard"
+		},
+		{
+			"name": "Lucid Gem"
+		},
+		{
+			"name": "Lucid Crystal"
+		},
+		{
+			"name": "Spirit Shard"
+		},
+		{
+			"name": "Spirit Gem"
+		},
+		{
+			"name": "Power Shard"
+		},
+		{
+			"name": "Power Gem"
+		},
+		{
+			"name": "Power Crystal"
+		},
+		{
+			"name": "Blaze Shard"
+		},
+		{
+			"name": "Blaze Gem"
+		},
+		{
+			"name": "Frost Shard"
+		},
+		{
+			"name": "Frost Gem"
+		},
+		{
+			"name": "Thunder Shard"
+		},
+		{
+			"name": "Thunder Gem"
+		},
+		{
+			"name": "Shiny Crystal"
+		},
+		{
+			"name": "Bright Shard"
+		},
+		{
+			"name": "Bright Gem"
+		},
+		{
+			"name": "Bright Crystal"
+		},
+		{
+			"name": "Mystery Goo"
+		},
+		{
+			"name": "Gale"
+		},
+		{
+			"name": "Mythril Shard"
+		},
+		{
+			"name": "Mythril"
+		},
+		{
+			"name": "Orichalcum"
+		},
+		{
+			"name": "Spirit Stone"
+		},
+		{
+			"name": "Power Stone"
+		},
+		{
+			"name": "Energy Stone"
+		},
+		{
+			"name": "Blaze Stone"
+		},
+		{
+			"name": "Frost Stone"
+		},
+		{
+			"name": "Thunder Stone"
+		},
+		{
+			"name": "Shiny Stone"
+		},
+		{
+			"name": "Mystery Power"
+		},
+		{
+			"name": "Stormy Stone"
+		},
+		{
+			"name": "Mythril Stone"
+		},
+		{
+			"name": "Dark Matter"
+		}
+	]
+}

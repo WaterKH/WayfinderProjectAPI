@@ -1,0 +1,97 @@
+@page "/synth"
+
+@using WayfinderProjectAPI.Controllers
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+
+<PageTitle>Test</PageTitle>
+<div> 
+    <SynthRecipes controller="@synthController" userData="@userTracker" RecipeCrafted="@RecipeCrafted" />
+
+    <SynthUserMaterials controller="@synthController" userData="@userTracker" ItemCountChanged="@ItemCountHasChanged"/>
+
+    <SynthRequirements controller="@synthController" userData="@userTracker" />
+</div>
+
+@code {
+    SynthController synthController = new SynthController();
+    UserSynthTracker userTracker = new UserSynthTracker();
+
+    protected override async Task OnInitializedAsync()
+    {
+        synthController.LoadGame("KH1");
+        await base.OnInitializedAsync();
+    }
+
+    // I'm getting an error when trying to access the local storage during OnInitializeAsync
+    protected override async Task OnAfterRenderAsync(bool bFirstRender)
+    {
+        if(bFirstRender) {
+            await LoadUserData();
+        }
+    }
+
+    void ItemCountHasChanged(string strItem)
+    {
+        Console.WriteLine("{0} count changed", strItem);
+        this.StateHasChanged();
+
+        SaveUserData();
+    }
+
+    void RecipeCrafted()
+    {
+        this.StateHasChanged();
+
+        SaveUserData();
+    }
+
+    string GetDataScope() 
+    {
+        return synthController.GameName + "_";
+    }
+
+    void SaveUserData()
+    {
+        string strScope = GetDataScope();
+        string strRecipesKey = strScope + "Recipes";
+        string strItemsKey = strScope + "Items";
+
+        string strValue = string.Join(",", userTracker.CraftedRecipes);
+
+
+        localStorage.SetItemAsync(strRecipesKey, strValue);
+
+        string strItems = userTracker.UsersItems.Serialize();
+        localStorage.SetItemAsync(strItemsKey, strItems);
+    }
+
+    async Task LoadUserData()
+    {
+        string strScope = GetDataScope();
+        string strRecipesKey = strScope + "Recipes";
+        string strItemsKey = strScope + "Items";
+
+
+        string res = await localStorage.GetItemAsync<string>(strRecipesKey);
+        if(res  != null)
+        {
+            var strArr = res.Split(",");
+
+
+            foreach(var strRecipe in strArr)
+            {
+                userTracker.AddCraftedRecipe(strRecipe);
+            }
+        }
+
+        string strItemsResult = await localStorage.GetItemAsync<string>(strItemsKey);
+        if(strItemsResult != null) 
+        {
+            userTracker.UsersItems.Deserialize(strItemsResult);
+        }
+
+
+        this.StateHasChanged();
+    }
+}

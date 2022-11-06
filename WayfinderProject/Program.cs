@@ -1,4 +1,5 @@
 using Blazored.Modal;
+using Blazored.LocalStorage;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using System.Text.Json.Serialization;
@@ -24,6 +25,8 @@ builder.Services.AddBlazoredModal();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddBlazoredLocalStorage(config => config.JsonSerializerOptions.WriteIndented = true);
 
 var app = builder.Build();
 

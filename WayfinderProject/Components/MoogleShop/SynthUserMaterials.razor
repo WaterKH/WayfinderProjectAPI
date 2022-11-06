@@ -1,0 +1,39 @@
+@using WayfinderProjectAPI.Controllers;
+
+<div>
+    <h3>Materials</h3>
+    @foreach(var item in controller.SynthSource.Items)
+    {
+        <div>@item.Name</div>
+        <div>@userData.UsersItems.GetCount(@item.Name)</div>
+        <button @onclick="(e => AddItem(item.Name, 1))">+</button>
+        <button @onclick="(e => AddItem(item.Name, -1))">-</button>
+
+    }
+</div>
+
+@code 
+{
+    [Parameter]public SynthController controller { get; set; }
+    [Parameter]public UserSynthTracker userData {get;set;}
+
+    [Parameter] public EventCallback<string> ItemCountChanged {get;set;}
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        await base.OnInitializedAsync();
+    }
+
+    private void AddItem(string strItem, int iValue)
+    {
+        userData.AddItem(strItem, iValue);
+
+        ItemCountChanged.InvokeAsync(strItem);
+    }
+}
