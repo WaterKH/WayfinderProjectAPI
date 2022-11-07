@@ -943,7 +943,7 @@
         "Worlds": [ "Hollow Bastion" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Riku-Ansem" ],
         "Areas": [ "Grand Hall" ],
-        "Music": [ "An Intense Situation" ]
+        "Music": [ "An Intense Situation", "Forze del Male" ]
       },
       {
         "Name": "Kairi Awakens",
@@ -13317,7 +13317,7 @@
       },
       {
         "Name": "The Foretellers",
-        "Link": "https://www.youtube.com/watch?v=m9plr2-VgVg&list=PLYnY5NdwIhRCd7HGEwKowXjcOpyYhqKib&index=3",
+        "Link": "https://www.youtube.com/watch?v=k_u4EUmXVWo&list=PLYnY5NdwIhRCd7HGEwKowXjcOpyYhqKib&index=4",
         "Worlds": [ "Daybreak Town", "Dive to the Heart", "Keyblade Graveyard" ],
         "Characters": [ "Master of Masters", "Chirithy", "Ira", "Invi", "Aced", "Ava", "Gula", "Luxu", "Player", "Darkside(s)" ],
         "Areas": [ "Cliffside", "Stations of Awakening", "The Badlands", "Fountain Square", "Master's Loft" ],
