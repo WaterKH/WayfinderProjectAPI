@@ -19447,10 +19447,10 @@
       },
       {
         "Name": "Arrival",
-        "Link": "https://www.youtube.com/watch?v=dISaayZUWGk&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=4",
-        "Worlds": [ "The Final World" ],
-        "Characters": [ "Kairi" ],
-        "Areas": [ "The Final World" ],
+        "Link": "https://www.youtube.com/watch?v=EXypFx-oZIw",
+        "Worlds": [ "Radiant Garden", "The Final World" ],
+        "Characters": [ "Ansem the Wise", "Ienzo", "Kairi" ],
+        "Areas": [ "Ansem's Lab", "The Final World" ],
         "Music": [ ":None:" ]
       },
       {
@@ -19458,7 +19458,7 @@
         "Link": "https://www.youtube.com/watch?v=4lbG2ZLgrU8&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=5",
         "Worlds": [ "The Final World", "Radiant Garden" ],
         "Characters": [ "Kairi", "Young Kairi", "Shadow(s)", "Terra-Xehanort" ],
-        "Areas": [ "The Final World", "Central Square", "Ansem's Laboratory" ],
+        "Areas": [ "The Final World", "Central Square", "Ansem's Lab" ],
         "Music": [ "Night of Fate", "Kairi" ]
       },
       {
