@@ -8911,7 +8911,7 @@
         "Worlds": [ "Disney Town" ],
         "Characters": [ "Glidewinder(s)", "Terra", "Minnie", "Chip", "Dale", "Captain Dark" ],
         "Areas": [ "Raceway Registration" ],
-        "Music": [ "Hero or Heel?", "Mickey Mouse March" ]
+        "Music": [ "Hero or Heel?", "Mickey Mouse Club March" ]
       },
       {
         "Name": "No More Bending the Rules",
@@ -9575,7 +9575,7 @@
         "Worlds": [ "Disney Town" ],
         "Characters": [ "Ventus", "Captain Justice", "Pluto", "Huey", "Dewey", "Louie", "Minnie" ],
         "Areas": [ "Main Plaza" ],
-        "Music": [ "Hero or Heel?", "Mickey Mouse March" ]
+        "Music": [ "Hero or Heel?", "Mickey Mouse Club March" ]
       },
       {
         "Name": "Making Ice Cream",
@@ -9583,7 +9583,7 @@
         "Worlds": [ "Disney Town" ],
         "Characters": [ "Ventus", "Captain Justice", "Huey", "Dewey", "Louie", "Minnie" ],
         "Areas": [ "Main Plaza" ],
-        "Music": [ "Mickey Mouse March", "Hero or Heel?" ]
+        "Music": [ "Mickey Mouse Club March", "Hero or Heel?" ]
       },
       {
         "Name": "Who's Looking Out for Me?",
@@ -10239,7 +10239,7 @@
         "Worlds": [ "Disney Town" ],
         "Characters": [ "Aqua", "Captain Justice", "Horace" ],
         "Areas": [ "Main Plaza" ],
-        "Music": [ "Hero or Heel?", "Mickey Mouse March" ]
+        "Music": [ "Hero or Heel?", "Mickey Mouse Club March" ]
       },
       {
         "Name": "Aqua Is Number One",
@@ -10863,7 +10863,7 @@
         "Name": "Beneath the Hood",
         "Link": "https://www.youtube.com/watch?v=USm1Aycn1E4&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=19",
         "Worlds": [ "Disney Castle", "Wonderland" ],
-        "Characters": [ "Mickey Mouse", "Donald", "Goofy", "Jiminy", "Data-Riku", "Data-Sora", "Chip", "Dale" ],
+        "Characters": [ "Mickey", "Donald", "Goofy", "Jiminy", "Data-Riku", "Data-Sora", "Chip", "Dale" ],
         "Areas": [ "Library", "Clearing" ],
         "Music": [ "Strange Whispers", "Organization XIII", "Just Wondering", "An Intense Situation", "Sora" ]
       },
