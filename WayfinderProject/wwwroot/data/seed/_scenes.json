@@ -7056,7 +7056,7 @@
       {
         "Name": "Radiant Garden",
         "Link": "https://www.youtube.com/watch?v=MkNBZs2PpyE&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=598",
-        "Worlds": [ "Hollow Bastion" ],
+        "Worlds": [ "Hollow Bastion", "Radiant Garden" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Aerith", "Yuffie" ],
         "Areas": [ "Postern" ],
         "Music": [ ":None:" ]

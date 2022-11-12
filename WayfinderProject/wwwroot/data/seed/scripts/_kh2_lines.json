@@ -19471,7 +19471,7 @@
         "Line": "That's right... I remember now."
       }
     ],
-    "Radiant Garden": [
+    "Shimmering Lights": [
       {
         "Order": 0,
         "Character": "Cid",
@@ -19481,19 +19481,21 @@
         "Order": 1,
         "Character": "Merlin",
         "Line": "Hmm... I'd be fascinated to ascertain as to when the town got such a dreadful name as Hollow Bastion!"
-      },
+      }
+    ],
+    "Radiant Garden": [
       {
-        "Order": 2,
+        "Order": 0,
         "Character": "Aerith",
         "Line": "You know, this town had another name once."
       },
       {
-        "Order": 3,
+        "Order": 1,
         "Character": "Sora",
         "Line": "Hm?"
       },
       {
-        "Order": 4,
+        "Order": 2,
         "Character": "Aerith",
         "Line": "Radiant Garden."
       }
