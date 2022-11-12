@@ -45,7 +45,7 @@
         "Name": "This World Has Been Connected",
         "Link": "https://www.youtube.com/watch?v=tGUevZOp9K8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=7",
         "Worlds": [ "Destiny Islands" ],
-        "Characters": [ "Young Sora", "Young Kairi", "Sora", "Ansem (Brown Robe)" ],
+        "Characters": [ "Young Sora", "Young Kairi", "Sora", "Ansem Seeker of Darkness" ],
         "Areas": [ "Secret Place" ],
         "Music": [ "Treasured Memories", "Strange Whispers" ]
       },
@@ -19449,7 +19449,7 @@
         "Name": "Arrival",
         "Link": "https://www.youtube.com/watch?v=EXypFx-oZIw",
         "Worlds": [ "Radiant Garden", "The Final World" ],
-        "Characters": [ "Ansem the Wise", "Ienzo", "Kairi" ],
+        "Characters": [ "Even", "Ansem the Wise", "Ienzo", "Kairi" ],
         "Areas": [ "Ansem's Lab", "The Final World" ],
         "Music": [ ":None:" ]
       },
