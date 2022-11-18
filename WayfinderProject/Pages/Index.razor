@@ -211,6 +211,8 @@ else if (this.SceneDtos.Count > 0)
         try
         {
             await this.ResetOptions();
+
+            await this.HandleQueryParams();
         }
         catch (Exception ex)
         {
@@ -222,8 +224,6 @@ else if (this.SceneDtos.Count > 0)
                 this.StateHasChanged();
             });
         }
-
-        await this.HandleQueryParams();
 
         await base.OnInitializedAsync();
     }
@@ -237,14 +237,14 @@ else if (this.SceneDtos.Count > 0)
                 Thread.Sleep(1000);
 
                 await this.ResetOptions();
+
+                await this.HandleQueryParams();
             }
             catch (Exception ex)
             {
                 // Catch the SqliteException, do not set firstLoad to true
             }
         }
-
-        await this.HandleQueryParams();
 
         await base.OnAfterRenderAsync(firstRender);
     }
