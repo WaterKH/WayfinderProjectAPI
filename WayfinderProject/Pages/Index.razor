@@ -223,6 +223,8 @@ else if (this.SceneDtos.Count > 0)
             });
         }
 
+        await this.HandleQueryParams();
+
         await base.OnInitializedAsync();
     }
 
@@ -242,7 +244,7 @@ else if (this.SceneDtos.Count > 0)
             }
         }
 
-        this.HandleQueryParams();
+        await this.HandleQueryParams();
 
         await base.OnAfterRenderAsync(firstRender);
     }
