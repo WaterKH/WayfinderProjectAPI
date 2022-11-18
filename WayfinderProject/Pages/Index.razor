@@ -212,7 +212,9 @@ else if (this.SceneDtos.Count > 0)
         {
             await this.ResetOptions();
 
-            this.HandleQueryParams();
+            Thread.Sleep(1000);
+
+            await this.HandleQueryParams();
         }
         catch (Exception ex)
         {
@@ -238,7 +240,9 @@ else if (this.SceneDtos.Count > 0)
 
                 await this.ResetOptions();
 
-                this.HandleQueryParams();
+                Thread.Sleep(1000);
+
+                await this.HandleQueryParams();
             }
             catch (Exception ex)
             {
@@ -523,11 +527,11 @@ else if (this.SceneDtos.Count > 0)
         });
     }
 
-    public bool HandleQueryParams()
+    public async Task<bool> HandleQueryParams()
     {
         var optionUpdated = false;
 
-        InvokeAsync(() =>
+        await InvokeAsync(() =>
         {
             this.StateHasChanged();
         });
@@ -596,7 +600,7 @@ else if (this.SceneDtos.Count > 0)
 
             if (optionUpdated)
             {
-                this.Search();
+                await this.Search();
             }
         }
         catch(Exception ex)
@@ -604,7 +608,7 @@ else if (this.SceneDtos.Count > 0)
             //this.failed = true;
         }
         
-        InvokeAsync(() => { 
+        await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
 
