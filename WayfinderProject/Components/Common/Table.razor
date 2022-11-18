@@ -56,6 +56,9 @@
     [Parameter]
     public int CurrentPage { get; set; } = 1;
 
+    [Parameter]
+    public int OpenRowQuery { get; set; }
+
     private int totalPages { get; set; } = 1;
     private Dictionary<int, bool> paginations { get; set; } = new();
     public int CurrentExpandedRow { get; set; } = -1;
@@ -72,6 +75,11 @@
             this.paginations = new();
             for (int i = 1; i <= this.totalPages; ++i)
                 this.paginations.Add(i, false);
+        }
+
+        if (this.OpenRowQuery != 0)
+        {
+            this.CurrentExpandedRow = this.OpenRowQuery;
         }
 
         await base.SetParametersAsync(parameters);
