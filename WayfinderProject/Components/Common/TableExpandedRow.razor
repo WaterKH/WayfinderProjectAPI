@@ -11,6 +11,15 @@
                     <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px;">
                         <div class="row" style="height: 281px;">
                             <div class="col-md-12">
+                                <div id="share" class="share" @onclick="@(() => this.GenerateShareLink.Invoke())">
+                                    <span class="copyable">
+                                        <i class="oi oi-file"></i>
+                                        <label class="share-text"><b>Share Scene</b></label>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
                                 <h3 class="world-color"><img src="/images/icons/worlds.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
                                 <label>@(string.Join(", ", this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Worlds.Select(x => x.Name)))</label><br />
                             </div>
@@ -76,6 +85,8 @@
     [Parameter] public List<SceneDto> SceneDtos { get; set; }
     [Parameter] public SceneDto Scene {get; set;}
     [Parameter] public WayfinderProjectAPI.Controllers.WayfinderController API { get; set; }
+
+    [Parameter] public Func<Task> GenerateShareLink { get; set; }
 
     public string CurrentSubOption { get; set; } = "Details";
 

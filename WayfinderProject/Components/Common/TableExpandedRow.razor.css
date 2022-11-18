@@ -94,3 +94,16 @@
         background: #555;
         border-radius: 10px;
     }
+
+
+.share {
+    cursor: pointer;
+    color: #4d84ff;
+    font-size: larger;
+    float: right;
+}
+
+.share-text {
+    cursor: pointer;
+    text-decoration: underline;
+}
