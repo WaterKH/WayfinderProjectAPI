@@ -129,6 +129,39 @@ namespace WayfinderProject.Migrations
                     b.ToTable("Games");
                 });
 
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JJCharacter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AdditionalInformation")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("CharacterId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CharacterId");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("JJ_Character");
+                });
+
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Music", b =>
                 {
                     b.Property<int>("Id")
@@ -308,6 +341,25 @@ namespace WayfinderProject.Migrations
                         .HasForeignKey("WorldsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JJCharacter", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Character", "Character")
+                        .WithMany()
+                        .HasForeignKey("CharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Character");
+
+                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Scene", b =>

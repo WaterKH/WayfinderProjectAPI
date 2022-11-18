@@ -10,8 +10,8 @@ using WayfinderProjectAPI.Data;
 namespace WayfinderProject.Migrations
 {
     [DbContext(typeof(WayfinderContext))]
-    [Migration("20221019234123_IndexAddition")]
-    partial class IndexAddition
+    [Migration("20221112023611_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,9 +88,11 @@ namespace WayfinderProject.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex(new[] { "Name" }, "Index_AreaName");
 
                     b.ToTable("Areas");
                 });
@@ -127,6 +129,39 @@ namespace WayfinderProject.Migrations
                     b.HasIndex(new[] { "Name" }, "Index_GameName");
 
                     b.ToTable("Games");
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JJCharacter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AdditionalInformation")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("CharacterId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CharacterId");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("JJ_Character");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Music", b =>
@@ -182,7 +217,7 @@ namespace WayfinderProject.Migrations
 
                     b.HasIndex(new[] { "Name" }, "Index_SceneName");
 
-                    b.ToTable("Scenes");
+                    b.ToTable("MA_Scene");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Script", b =>
@@ -308,6 +343,25 @@ namespace WayfinderProject.Migrations
                         .HasForeignKey("WorldsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JJCharacter", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Character", "Character")
+                        .WithMany()
+                        .HasForeignKey("CharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Character");
+
+                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Scene", b =>
