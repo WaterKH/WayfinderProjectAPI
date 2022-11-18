@@ -238,9 +238,9 @@ else if (this.SceneDtos.Count > 0)
                 {
                     Thread.Sleep(1000);
                     await this.ResetOptions();
-
-                    this.HandleQueryParams();
                 });
+
+                this.HandleQueryParams();
             }
             catch (Exception ex)
             {
@@ -518,71 +518,78 @@ else if (this.SceneDtos.Count > 0)
 
     public async Task HandleQueryParams()
     {
-        var optionUpdated = false;
-
-        if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
+        try
         {
-            var areaIds = this.AreaQuery.Select(x => int.Parse(x));
+            var optionUpdated = false;
 
-            this.AreasSearch.selected = this.context.Areas.Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            this.AreasSearch.CurrentView = "Selections";
+            if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
+            {
+                var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
-            optionUpdated = true;
+                this.AreasSearch.selected = this.context.Areas.Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.AreasSearch.CurrentView = "Selections";
+
+                optionUpdated = true;
+            }
+
+            if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0)
+            {
+                var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
+
+                this.CharactersSearch.selected = this.context.Characters.Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.CharactersSearch.CurrentView = "Selections";
+
+                optionUpdated = true;
+            }
+
+            if (this.GameQuery != null && this.GameQuery.Count() > 0)
+            {
+                var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+                this.GamesSearch.selected = this.context.Games.Where(x => gameIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.GamesSearch.CurrentView = "Selections";
+
+                optionUpdated = true;
+            }
+
+            if (this.MusicQuery != null && this.MusicQuery.Count() > 0)
+            {
+                var musicIds = this.MusicQuery.Select(x => int.Parse(x));
+
+                this.MusicSearch.selected = this.context.Music.Where(x => musicIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.MusicSearch.CurrentView = "Selections";
+
+                optionUpdated = true;
+            }
+
+            if (this.SceneQuery != null && this.SceneQuery.Count() > 0)
+            {
+                var sceneIds = this.SceneQuery.Select(x => int.Parse(x));
+
+                this.ScenesSearch.selected = this.context.Scenes.Where(x => sceneIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.ScenesSearch.CurrentView = "Selections";
+
+                optionUpdated = true;
+            }
+
+            if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
+            {
+                var worldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+                this.WorldsSearch.selected = this.context.Worlds.Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.WorldsSearch.CurrentView = "Selections";
+
+                optionUpdated = true;
+            }
+
+            if (optionUpdated)
+            {
+                this.Search();
+            }
         }
-
-        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0)
+        catch(Exception ex)
         {
-            var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
-
-            this.CharactersSearch.selected = this.context.Characters.Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            this.CharactersSearch.CurrentView = "Selections";
-
-            optionUpdated = true;
-        }
-
-        if (this.GameQuery != null && this.GameQuery.Count() > 0)
-        {
-            var gameIds = this.GameQuery.Select(x => int.Parse(x));
-
-            this.GamesSearch.selected = this.context.Games.Where(x => gameIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            this.GamesSearch.CurrentView = "Selections";
-
-            optionUpdated = true;
-        }
-
-        if (this.MusicQuery != null && this.MusicQuery.Count() > 0)
-        {
-            var musicIds = this.MusicQuery.Select(x => int.Parse(x));
-
-            this.MusicSearch.selected = this.context.Music.Where(x => musicIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            this.MusicSearch.CurrentView = "Selections";
-
-            optionUpdated = true;
-        }
-
-        if (this.SceneQuery != null && this.SceneQuery.Count() > 0)
-        {
-            var sceneIds = this.SceneQuery.Select(x => int.Parse(x));
-
-            this.ScenesSearch.selected = this.context.Scenes.Where(x => sceneIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            this.ScenesSearch.CurrentView = "Selections";
-
-            optionUpdated = true;
-        }
-
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
-        {
-            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
-
-            this.WorldsSearch.selected = this.context.Worlds.Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            this.WorldsSearch.CurrentView = "Selections";
-
-            optionUpdated = true;
-        }
-
-        if (optionUpdated)
-        {
-            this.Search();
+            this.failed = true;
         }
     }
 }
