@@ -520,6 +520,9 @@ else if (this.SceneDtos.Count > 0)
     {
         try
         {
+            // Wait for page load
+            Thread.Sleep(1000);
+
             var optionUpdated = false;
 
             if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
