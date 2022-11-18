@@ -210,9 +210,7 @@ else if (this.SceneDtos.Count > 0)
 
         try
         {
-            await Task.Run(async () => await this.ResetOptions());
-
-            this.HandleQueryParams();
+            await this.ResetOptions();
         }
         catch (Exception ex)
         {
@@ -234,19 +232,17 @@ else if (this.SceneDtos.Count > 0)
         {
             try
             {
-                await Task.Run(async () =>
-                {
-                    Thread.Sleep(1000);
-                    await this.ResetOptions();
-                });
+                Thread.Sleep(1000);
 
-                this.HandleQueryParams();
+                await this.ResetOptions();
             }
             catch (Exception ex)
             {
                 // Catch the SqliteException, do not set firstLoad to true
             }
         }
+
+        this.HandleQueryParams();
 
         await base.OnAfterRenderAsync(firstRender);
     }
@@ -395,6 +391,8 @@ else if (this.SceneDtos.Count > 0)
         this.Loading = false;
         this.failed = false;
 
+        await this.HandleQueryParams();
+
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
@@ -516,15 +514,12 @@ else if (this.SceneDtos.Count > 0)
         }
     }
 
-    public async Task HandleQueryParams()
+    public async Task<bool> HandleQueryParams()
     {
+        var optionUpdated = false;
+
         try
         {
-            // Wait for page load
-            Thread.Sleep(1000);
-
-            var optionUpdated = false;
-
             if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
             {
                 var areaIds = this.AreaQuery.Select(x => int.Parse(x));
@@ -592,7 +587,9 @@ else if (this.SceneDtos.Count > 0)
         }
         catch(Exception ex)
         {
-            this.failed = true;
+            //this.failed = true;
         }
+
+        return optionUpdated;
     }
 }
