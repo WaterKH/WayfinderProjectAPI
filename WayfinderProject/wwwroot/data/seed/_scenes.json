@@ -37,7 +37,7 @@
         "Name": "Disney Castle",
         "Link": "https://www.youtube.com/watch?v=gJpUyIFyIUI&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=6",
         "Worlds": [ "Disney Castle" ],
-        "Characters": [ "Donald", "Pluto", "Goofy", "Minnie", "Daisy" ],
+        "Characters": [ "Donald", "Pluto", "Goofy", "Minnie", "Daisy", "Enchanted Broom(s)" ],
         "Areas": [ "Colonnade", "Audience Chamber", "Courtyard" ],
         "Music": [ "Mickey Mouse Club March" ]
       },
@@ -127,7 +127,7 @@
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Leon", "Yuffie" ],
         "Areas": [ "Third District" ],
-        "Music": [ ":None:" ]
+        "Music": [ "Nights of the Cursed" ]
       },
       {
         "Name": "Assembly of Darkness",
@@ -1079,7 +1079,7 @@
         "Worlds": [ "End of the World" ],
         "Characters": [ "Sora", "Donald", "Goofy" ],
         "Areas": [ "Gate to the Dark", "Final Dimension" ],
-        "Music": [ "End of the World" ]
+        "Music": []
       },
       {
         "Name": "Chernabog",
@@ -2709,7 +2709,7 @@
       },
       {
         "Name": "DiZ",
-        "Link": "https://www.youtube.com/watch?v=OheVdS5vnnM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=165",
+        "Link": "https://www.youtube.com/watch?v=I-6ore6Ag0Y&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=166",
         "Worlds": [ "Twilight Town" ],
         "Characters": [ "Riku", "Ansem the Wise", "DiZ" ],
         "Areas": [ "Tram Common" ],
@@ -12275,7 +12275,7 @@
         "Worlds": [ "The World That Never Was" ],
         "Characters": [ "Sora", "Xigbar", "Ansem Seeker of Darkness", "Xemnas", "Young Xehanort", "Riku" ],
         "Areas": [ "Memory's Skyscraper" ],
-        "Music": [ "Sacred Distance", "Xigbar", "The Nightmare" ]
+        "Music": [ "Sacred Moon", "Xigbar", "The Nightmare" ]
       },
       {
         "Name": "Where It Started",
