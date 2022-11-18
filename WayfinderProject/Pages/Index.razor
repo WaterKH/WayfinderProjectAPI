@@ -212,7 +212,7 @@ else if (this.SceneDtos.Count > 0)
         {
             await this.ResetOptions();
 
-            await this.HandleQueryParams();
+            this.HandleQueryParams();
         }
         catch (Exception ex)
         {
@@ -238,7 +238,7 @@ else if (this.SceneDtos.Count > 0)
 
                 await this.ResetOptions();
 
-                await this.HandleQueryParams();
+                this.HandleQueryParams();
             }
             catch (Exception ex)
             {
@@ -391,10 +391,7 @@ else if (this.SceneDtos.Count > 0)
         this.MusicSearch.selected = new List<string>();
 
         this.Loading = false;
-        this.failed = false;
-
-        await this.HandleQueryParams();
-
+        
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
@@ -516,7 +513,7 @@ else if (this.SceneDtos.Count > 0)
         }
     }
 
-    public async Task<bool> HandleQueryParams()
+    public bool HandleQueryParams()
     {
         var optionUpdated = false;
 
