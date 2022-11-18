@@ -469,6 +469,11 @@ else if (this.SceneDtos.Count > 0)
 
     public async Task GenerateSharedLink()
     {
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
         try
         {
             var shareLink = $"{NavigationManager.BaseUri}?";
@@ -511,11 +516,21 @@ else if (this.SceneDtos.Count > 0)
         {
             // Catch potential issue when trying to access disposed object
         }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
     }
 
     public bool HandleQueryParams()
     {
         var optionUpdated = false;
+
+        InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
 
         try
         {
@@ -588,6 +603,10 @@ else if (this.SceneDtos.Count > 0)
         {
             //this.failed = true;
         }
+        
+        InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
 
         return optionUpdated;
     }
