@@ -5,6 +5,8 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.Text.Json.Serialization;
 using WayfinderProject.Data;
 using WayfinderProjectAPI.Data;
+using Microsoft.AspNetCore.Identity;
+using WayfinderProject.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,8 @@ builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.Re
 var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
 var connection = new MySqlConnection(connectionString);
 connection.Open();
+
+builder.Services.AddDefaultIdentity<WayfinderProjectUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<WayfinderContext>();
 
 builder.Services.AddDbContext<WayfinderContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.SchemaBehavior(MySqlSchemaBehavior.Translate, (schema, entity) => $"{schema ?? "WFP"}_{entity}")), ServiceLifetime.Transient);
 

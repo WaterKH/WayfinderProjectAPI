@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using WayfinderProject.Data.Models;
 using WayfinderProjectAPI.Data.Models;
 
 namespace WayfinderProjectAPI.Data
 {
-    public class WayfinderContext : DbContext
+    public class WayfinderContext : IdentityDbContext<WayfinderProjectUser>
     {
         public WayfinderContext(DbContextOptions<WayfinderContext> options) : base(options)
         {
@@ -22,6 +23,8 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<Script>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             modelBuilder.Entity<JJCharacter>().Property(p => p.Id).ValueGeneratedOnAdd();
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Area> Areas { get; set; } = null!;

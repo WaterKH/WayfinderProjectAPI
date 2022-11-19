@@ -18,7 +18,7 @@ namespace WayfinderProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -33,7 +33,7 @@ namespace WayfinderProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -48,7 +48,7 @@ namespace WayfinderProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -63,7 +63,7 @@ namespace WayfinderProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Link = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -80,9 +80,9 @@ namespace WayfinderProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    GameName = table.Column<string>(type: "longtext", nullable: false)
+                    GameName = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    SceneName = table.Column<string>(type: "longtext", nullable: false)
+                    SceneName = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -97,7 +97,7 @@ namespace WayfinderProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -107,12 +107,45 @@ namespace WayfinderProject.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Scenes",
+                name: "JJ_Character",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Title = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    AdditionalInformation = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    GameId = table.Column<int>(type: "int", nullable: false),
+                    CharacterId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_JJ_Character", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_JJ_Character_Characters_CharacterId",
+                        column: x => x.CharacterId,
+                        principalTable: "Characters",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_JJ_Character_Games_GameId",
+                        column: x => x.GameId,
+                        principalTable: "Games",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "MA_Scene",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Link = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -123,15 +156,15 @@ namespace WayfinderProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Scenes", x => x.Id);
+                    table.PrimaryKey("PK_MA_Scene", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Scenes_Games_GameId",
+                        name: "FK_MA_Scene_Games_GameId",
                         column: x => x.GameId,
                         principalTable: "Games",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Scenes_Script_ScriptId",
+                        name: "FK_MA_Scene_Script_ScriptId",
                         column: x => x.ScriptId,
                         principalTable: "Script",
                         principalColumn: "Id",
@@ -181,9 +214,9 @@ namespace WayfinderProject.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AreaScene_Scenes_ScenesId",
+                        name: "FK_AreaScene_MA_Scene_ScenesId",
                         column: x => x.ScenesId,
-                        principalTable: "Scenes",
+                        principalTable: "MA_Scene",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -206,9 +239,9 @@ namespace WayfinderProject.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CharacterScene_Scenes_ScenesId",
+                        name: "FK_CharacterScene_MA_Scene_ScenesId",
                         column: x => x.ScenesId,
-                        principalTable: "Scenes",
+                        principalTable: "MA_Scene",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -225,15 +258,15 @@ namespace WayfinderProject.Migrations
                 {
                     table.PrimaryKey("PK_MusicScene", x => new { x.MusicId, x.ScenesId });
                     table.ForeignKey(
-                        name: "FK_MusicScene_Music_MusicId",
-                        column: x => x.MusicId,
-                        principalTable: "Music",
+                        name: "FK_MusicScene_MA_Scene_ScenesId",
+                        column: x => x.ScenesId,
+                        principalTable: "MA_Scene",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MusicScene_Scenes_ScenesId",
-                        column: x => x.ScenesId,
-                        principalTable: "Scenes",
+                        name: "FK_MusicScene_Music_MusicId",
+                        column: x => x.MusicId,
+                        principalTable: "Music",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -250,9 +283,9 @@ namespace WayfinderProject.Migrations
                 {
                     table.PrimaryKey("PK_SceneWorld", x => new { x.ScenesId, x.WorldsId });
                     table.ForeignKey(
-                        name: "FK_SceneWorld_Scenes_ScenesId",
+                        name: "FK_SceneWorld_MA_Scene_ScenesId",
                         column: x => x.ScenesId,
-                        principalTable: "Scenes",
+                        principalTable: "MA_Scene",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -265,9 +298,19 @@ namespace WayfinderProject.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
+                name: "Index_AreaName",
+                table: "Areas",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AreaScene_ScenesId",
                 table: "AreaScene",
                 column: "ScenesId");
+
+            migrationBuilder.CreateIndex(
+                name: "Index_CharacterName",
+                table: "Characters",
+                column: "Name");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CharacterScene_ScenesId",
@@ -275,19 +318,44 @@ namespace WayfinderProject.Migrations
                 column: "ScenesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MusicScene_ScenesId",
-                table: "MusicScene",
-                column: "ScenesId");
+                name: "Index_GameName",
+                table: "Games",
+                column: "Name");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Scenes_GameId",
-                table: "Scenes",
+                name: "IX_JJ_Character_CharacterId",
+                table: "JJ_Character",
+                column: "CharacterId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_JJ_Character_GameId",
+                table: "JJ_Character",
                 column: "GameId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Scenes_ScriptId",
-                table: "Scenes",
+                name: "Index_SceneName",
+                table: "MA_Scene",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MA_Scene_GameId",
+                table: "MA_Scene",
+                column: "GameId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MA_Scene_ScriptId",
+                table: "MA_Scene",
                 column: "ScriptId");
+
+            migrationBuilder.CreateIndex(
+                name: "Index_MusicName",
+                table: "Music",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MusicScene_ScenesId",
+                table: "MusicScene",
+                column: "ScenesId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SceneWorld_WorldsId",
@@ -295,9 +363,19 @@ namespace WayfinderProject.Migrations
                 column: "WorldsId");
 
             migrationBuilder.CreateIndex(
+                name: "Index_GameSceneName",
+                table: "Script",
+                columns: new[] { "GameName", "SceneName" });
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ScriptLine_ScriptId",
                 table: "ScriptLine",
                 column: "ScriptId");
+
+            migrationBuilder.CreateIndex(
+                name: "Index_WorldName",
+                table: "Worlds",
+                column: "Name");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -307,6 +385,9 @@ namespace WayfinderProject.Migrations
 
             migrationBuilder.DropTable(
                 name: "CharacterScene");
+
+            migrationBuilder.DropTable(
+                name: "JJ_Character");
 
             migrationBuilder.DropTable(
                 name: "MusicScene");
@@ -327,7 +408,7 @@ namespace WayfinderProject.Migrations
                 name: "Music");
 
             migrationBuilder.DropTable(
-                name: "Scenes");
+                name: "MA_Scene");
 
             migrationBuilder.DropTable(
                 name: "Worlds");

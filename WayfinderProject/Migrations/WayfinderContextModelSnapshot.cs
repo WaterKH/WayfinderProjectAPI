@@ -146,6 +146,9 @@ namespace WayfinderProject.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -153,6 +156,8 @@ namespace WayfinderProject.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CharacterId");
+
+                    b.HasIndex("GameId");
 
                     b.ToTable("JJ_Character");
                 });
@@ -346,7 +351,15 @@ namespace WayfinderProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Character");
+
+                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Scene", b =>
