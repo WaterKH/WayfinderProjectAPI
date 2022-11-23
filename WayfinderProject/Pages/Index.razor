@@ -1,7 +1,9 @@
 ﻿@page "/"
 @inject WayfinderProjectAPI.Data.WayfinderContext context
 @inject NavigationManager NavigationManager
+
 @inject IJSRuntime JS
+@inject IToastService toastService
 
 
 @using Microsoft.EntityFrameworkCore
@@ -93,7 +95,7 @@ else if (this.SceneDtos.Count > 0)
             <TableRow Scene="@Scene" MainTable="@MainTable" />
         </RowTemplate>
         <ExpandedRowTemplate>
-            <TableExpandedRow SceneDtos="@this.SceneDtos" Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateSharedLink())" />
+            <TableExpandedRow SceneDtos="@this.SceneDtos" Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
         </ExpandedRowTemplate>
     </Table>
 }
@@ -143,6 +145,9 @@ else if (this.SceneDtos.Count > 0)
 </style>
 
 @code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
     public bool Loading { get; set; }
     public string CurrentOption { get; set; } = "Games";
     public string CurrentSubOption { get; set; } = "Details";
@@ -206,6 +211,13 @@ else if (this.SceneDtos.Count > 0)
 
     protected override async Task OnInitializedAsync()
     {
+        var authState = await authenticationStateTask;
+
+        if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+        {
+            NavigationManager.NavigateTo("/Identity/Account/Login");
+        }
+
         this.api = new WayfinderController(null, context);
 
         try
@@ -294,8 +306,35 @@ else if (this.SceneDtos.Count > 0)
         }
         else
         {
+            var authState = await authenticationStateTask;
+            var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
+
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000).");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            }
 
             this.UpdateOptions();
 
@@ -471,13 +510,8 @@ else if (this.SceneDtos.Count > 0)
         await this.Search();
     }
 
-    public async Task GenerateSharedLink()
+    public async Task GenerateShareLink()
     {
-        await InvokeAsync(() =>
-        {
-            this.StateHasChanged();
-        });
-
         try
         {
             var shareLink = $"{NavigationManager.BaseUri}?";
@@ -515,6 +549,8 @@ else if (this.SceneDtos.Count > 0)
             shareLink += $"open_row={this.MainTable.CurrentExpandedRow}";
 
             await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+            
+            toastService.ShowInfo($"Copied link to '{this.context.Scenes.FirstOrDefault(x => x.Id == this.MainTable.CurrentExpandedRow).Name}' scene.");
         }
         catch (Exception ex)
         {

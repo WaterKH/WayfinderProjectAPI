@@ -1,6 +1,13 @@
-﻿@inherits LayoutComponentBase
+﻿@using Blazored.Toast.Configuration;
+@inherits LayoutComponentBase
 
 <PageTitle>WayfinderProject</PageTitle>
+
+<BlazoredToasts Position="ToastPosition.BottomRight"
+                Timeout="5"
+                ShowProgressBar="true"
+                RemoveToastsOnNavigation="true"
+                MaxToastCount="3" />
 
 <div class="page">
     <main>
