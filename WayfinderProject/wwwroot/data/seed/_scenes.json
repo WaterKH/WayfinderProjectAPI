@@ -17773,7 +17773,7 @@
         "Name": "A Corridor of Light",
         "Link": "https://www.youtube.com/watch?v=GNrqAsaYa2o&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=211",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Sora", "Riku", "Mickey", "Donald", "Goofy", "Kairi", "Ventus", "Aqua", "Lea", "Dark", "Riku", "Xigbar", "Yen Sid", ".", "Shadow(s)", "Demon Tower", "Dusk(s)", "Flood(s)" ],
+        "Characters": [ "Sora", "Riku", "Mickey", "Donald", "Goofy", "Kairi", "Ventus", "Aqua", "Lea", "Dark Riku", "Xigbar", "Yen Sid", "Shadow(s)", "Demon Tower", "Dusk(s)", "Flood(s)" ],
         "Areas": [ "The Badlands" ],
         "Music": [ "Forze del Male" ]
       },
@@ -18125,7 +18125,7 @@
         "Name": "Past Redux; Final Confrontations I",
         "Link": "https://www.youtube.com/watch?v=QTKUKR4xxiA&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=215",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Ansem Seeker of Darkness", "Riku Dark", "Riku", "Xigbar", "Sora" ],
+        "Characters": [ "Ansem Seeker of Darkness", "Riku", "Dark Riku", "Xigbar", "Sora" ],
         "Areas": [ "Trail of Valediction" ],
         "Music": [ "Forze del Male" ]
       },
