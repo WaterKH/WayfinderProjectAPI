@@ -1,24 +1,10 @@
-using Blazored.Modal;
-using Microsoft.EntityFrameworkCore;
-using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using System.Text.Json.Serialization;
-using WayfinderProject.Data;
-using WayfinderProjectAPI.Data;
-using Microsoft.AspNetCore.Identity;
-using WayfinderProject.Data.Models;
-using Microsoft.AspNetCore.Components.Authorization;
-using WayfinderProject.Areas.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Blazored.Toast;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 // Add DataBase
-var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+var connectionString = "Server=db-wayfinder-project-kh-do-user-10968464-0.b.db.ondigitalocean.com;Port=25060;Database=wayfinderprojectdb;Uid=doadmin;Pwd=AVNS_xv81gEYQ8__nzgXxJT9;SslMode=required;"; //Environment.GetEnvironmentVariable("ConnectionString");
 var connection = new MySqlConnection(connectionString);
 connection.Open();
 

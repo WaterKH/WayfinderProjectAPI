@@ -20,6 +20,7 @@
   <ItemGroup>
     <None Remove="Components\Common\Tooltip.razor~RFfdb528.TMP" />
     <None Remove="Data\DTOs\ScriptLineDto.cs~RF21264c9d.TMP" />
+    <None Remove="Data\Models\DailyCutscene.cs~RF103f945b.TMP" />
     <None Remove="Data\WayfinderProject.db" />
     <None Remove="Pages\Index.razor~RF1edb7af7.TMP" />
     <None Remove="Pages\Index.razor~RF1ef9fdd1.TMP" />

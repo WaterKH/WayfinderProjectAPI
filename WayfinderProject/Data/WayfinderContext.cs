@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
-using WayfinderProject.Data.Models;
-using WayfinderProjectAPI.Data.Models;
-
-namespace WayfinderProjectAPI.Data
+﻿namespace WayfinderProjectAPI.Data
 {
     public class WayfinderContext : IdentityDbContext<WayfinderProjectUser>
     {
@@ -36,5 +30,7 @@ namespace WayfinderProjectAPI.Data
         public DbSet<Script> Script { get; set; } = null!;
 
         public DbSet<JJCharacter> JJCharacters { get; set; } = null!;
+
+        public DbSet<DailyCutscene> DailyCutscenes { get; set; } = null!;
     }
 }
