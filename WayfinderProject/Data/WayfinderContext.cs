@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
 using WayfinderProject.Data.Models;
 using WayfinderProjectAPI.Data.Models;
 
@@ -22,6 +21,10 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<Script>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             modelBuilder.Entity<JJCharacter>().Property(p => p.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<DailyCutscene>().Property(p => p.Id).ValueGeneratedOnAdd();
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Area> Areas { get; set; } = null!;
@@ -33,5 +36,7 @@ namespace WayfinderProjectAPI.Data
         public DbSet<Script> Script { get; set; } = null!;
 
         public DbSet<JJCharacter> JJCharacters { get; set; } = null!;
+
+        public DbSet<DailyCutscene> DailyCutscenes { get; set; } = null!;
     }
 }

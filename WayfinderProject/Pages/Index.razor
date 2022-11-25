@@ -39,6 +39,48 @@
                 </div>
             </div>
         </div>
+
+        <hr />
+
+        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <div class="wayfinder-title">
+                    <strong><span style="color: #522aff;">Cutscene of the Day</span></strong>
+                </div>
+
+                <div class="wayfinder-alt-description">
+                    <strong>
+                        Discover a brand new daily cutscene by visiting The Wayfinder Project everyday!
+                    </strong>
+                </div>
+
+                <br />
+
+                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyCutscene())" @onclick:stopPropagation>Daily Cutscene</button>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <div class="wayfinder-title">
+                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Cutscene</span> <span style="color: #5499fc;">Generator</span></strong>
+                </div>
+
+                <div class="wayfinder-alt-description">
+                    <strong>
+                        Can't decide which scene you want to find? Let us choose for you by selecting a random scene!
+                    </strong>
+                </div>
+
+                <br />
+
+                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomCutscene())" @onclick:stopPropagation>Random Cutscene</button>
+            </div>
+
+            <div class="col-md-1"></div>
+        </div>
     </div>
 </div>
 
@@ -93,7 +135,7 @@ else if (this.SceneDtos.Count > 0)
             <TableRow Scene="@Scene" MainTable="@MainTable" />
         </RowTemplate>
         <ExpandedRowTemplate>
-            <TableExpandedRow SceneDtos="@this.SceneDtos" Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateSharedLink())" />
+            <TableExpandedRow SceneDtos="@this.SceneDtos" Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
         </ExpandedRowTemplate>
     </Table>
 }
@@ -395,7 +437,7 @@ else if (this.SceneDtos.Count > 0)
         this.MusicSearch.selected = new List<string>();
 
         this.Loading = false;
-        
+
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
@@ -471,7 +513,7 @@ else if (this.SceneDtos.Count > 0)
         await this.Search();
     }
 
-    public async Task GenerateSharedLink()
+    public async Task GenerateShareLink()
     {
         await InvokeAsync(() =>
         {
@@ -607,11 +649,67 @@ else if (this.SceneDtos.Count > 0)
         {
             //this.failed = true;
         }
-        
+
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
         });
 
         return optionUpdated;
+    }
+
+    public async void NavigateToDailyCutscene()
+    {
+        try
+        {
+            var dateCode = DateTime.Now.ToString("yyyyMMdd");
+            var sceneId = this.context.DailyCutscenes.FirstOrDefault(cutscene => cutscene.DateCode == dateCode).SceneId;
+            var scene = this.context.Scenes
+                .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
+                .FirstOrDefault(s => s.Id == sceneId);
+
+            var dailyLink = $"{NavigationManager.BaseUri}?";
+
+            dailyLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
+            dailyLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
+            dailyLink += $"game={scene.Game.Id}&";
+            dailyLink += string.Join("&", scene.Music.Select(x => $"music={x.Id}")) + "&";
+            dailyLink += $"scene={scene.Id}&";
+            dailyLink += string.Join("&", scene.Worlds.Select(x => $"world={x.Id}")) + "&";
+            dailyLink += $"open_row={scene.Id}";
+
+            NavigationManager.NavigateTo(dailyLink, true);
+        }
+        catch (Exception ex)
+        {
+            
+        }
+    }
+
+    public async void NavigateToRandomCutscene()
+    {
+        try
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+            var randomSceneId = random.Next(0, this.context.Scenes.Count());
+            var scene = this.context.Scenes
+                .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
+                .FirstOrDefault(s => s.Id == randomSceneId);
+
+            var randomLink = $"{NavigationManager.BaseUri}?";
+
+            randomLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
+            randomLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
+            randomLink += $"game={scene.Game.Id}&";
+            randomLink += string.Join("&", scene.Music.Select(x => $"music={x.Id}")) + "&";
+            randomLink += $"scene={scene.Id}&";
+            randomLink += string.Join("&", scene.Worlds.Select(x => $"world={x.Id}")) + "&";
+            randomLink += $"open_row={scene.Id}";
+
+            NavigationManager.NavigateTo(randomLink, true);
+        }
+        catch (Exception ex)
+        {
+            
+        }
     }
 }

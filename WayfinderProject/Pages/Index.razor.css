@@ -30,6 +30,12 @@
     margin-top: 25px;
 }
 
+.wayfinder-alt-description {
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 25px;
+}
+
 .wayfinder-search {
     text-align: center;
     margin-left: 80px;
@@ -54,6 +60,21 @@
 }
 
     .wayfinder-search-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    font-size: larger;
+}
+
+    .wayfinder-button:focus {
         outline: none;
         border: none;
     }

@@ -1,9 +1,11 @@
 using Blazored.Modal;
+using Blazored.Toast;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using Quartz;
 using System.Text.Json.Serialization;
-using WayfinderProject.Data;
+using WayfinderProject.Data.Jobs;
 using WayfinderProjectAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,11 +22,33 @@ builder.Services.AddDbContext<WayfinderContext>(options => options.UseMySql(conn
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<BrowserService>();
 builder.Services.AddBlazoredModal();
+builder.Services.AddBlazoredToast();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddQuartz(q =>
+{
+    q.UseMicrosoftDependencyInjectionJobFactory();
+
+    // Create a "key" for the job
+    var jobKey = new JobKey("DailyCutsceneJob");
+
+    // Register the job with the DI container
+    q.AddJob<DailyCutsceneJob>(opts => opts.WithIdentity(jobKey));
+
+    // Create a trigger for the job
+    q.AddTrigger(opts => opts
+        .ForJob(jobKey) // link to the HelloWorldJob
+        .WithIdentity("DailyCutsceneJob-trigger") // give the trigger a unique name
+        .WithCronSchedule("0 0 * * * ?")); // run every day at midnight
+});
+
+builder.Services.AddQuartzHostedService(opt =>
+{
+    opt.WaitForJobsToComplete = true;
+});
 
 var app = builder.Build();
 
