@@ -414,21 +414,19 @@
         "Order": 1,
         "Character": "Axel",
         "Line": "I trust, that really came from Lord Xemnas himself."
-      }
-    ],
-    "Day 23; Silent Companion": [
+      },
       {
-        "Order": 0,
+        "Order": 2,
         "Character": "Roxas",
         "Line": "Hey, Axel?"
       },
       {
-        "Order": 1,
+        "Order": 3,
         "Character": "Saïx",
         "Line": "If you're looking for Axel, he's gone."
       },
       {
-        "Order": 2,
+        "Order": 4,
         "Character": "Roxas",
         "Line": "What do I do with this?"
       }
