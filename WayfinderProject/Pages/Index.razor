@@ -411,7 +411,7 @@ else if (this.SceneDtos.Count > 0)
 
         this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
         this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Games = await context.Games.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Games = await context.Games.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
         this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
         this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
         this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
@@ -447,7 +447,7 @@ else if (this.SceneDtos.Count > 0)
     {
         if (clearString == "Games")
         {
-            this.Games = await context.Games.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Games = await context.Games.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
 
             this.GamesSearch.Selections = this.GamesSearch.results = this.Games;
             this.GamesSearch.selected = new List<string>();
@@ -526,32 +526,32 @@ else if (this.SceneDtos.Count > 0)
 
             if (this.CharactersSearch.selected.Count > 0)
             {
-                shareLink += string.Join("&", this.CharactersSearch.selected.Select(x => $"character={this.context.Characters.FirstOrDefault(y => y.Name == x).Id}")) + "&";
+                shareLink += string.Join("&", this.CharactersSearch.selected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
             }
 
             if (this.AreasSearch.selected.Count > 0)
             {
-                shareLink += string.Join("&", this.AreasSearch.selected.Select(x => $"area={this.context.Areas.FirstOrDefault(y => y.Name == x).Id}")) + "&";
+                shareLink += string.Join("&", this.AreasSearch.selected.Select(x => $"area={this.context.Areas.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
             }
 
             if (this.GamesSearch.selected.Count > 0)
             {
-                shareLink += string.Join("&", this.GamesSearch.selected.Select(x => $"game={this.context.Games.FirstOrDefault(y => y.Name == x).Id}")) + "&";
+                shareLink += string.Join("&", this.GamesSearch.selected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
             }
 
             if (this.MusicSearch.selected.Count > 0)
             {
-                shareLink += string.Join("&", this.MusicSearch.selected.Select(x => $"music={this.context.Music.FirstOrDefault(y => y.Name == x).Id}")) + "&";
+                shareLink += string.Join("&", this.MusicSearch.selected.Select(x => $"music={this.context.Music.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
             }
 
             if (this.ScenesSearch.selected.Count > 0)
             {
-                shareLink += string.Join("&", this.ScenesSearch.selected.Select(x => $"scene={this.context.Scenes.FirstOrDefault(y => y.Name == x).Id}")) + "&";
+                shareLink += string.Join("&", this.ScenesSearch.selected.Select(x => $"scene={this.context.Scenes.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
             }
 
             if (this.WorldsSearch.selected.Count > 0)
             {
-                shareLink += string.Join("&", this.WorldsSearch.selected.Select(x => $"world={this.context.Worlds.FirstOrDefault(y => y.Name == x).Id}")) + "&";
+                shareLink += string.Join("&", this.WorldsSearch.selected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
             }
 
             shareLink += $"open_row={this.MainTable.CurrentExpandedRow}";
@@ -584,7 +584,7 @@ else if (this.SceneDtos.Count > 0)
             {
                 var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
-                this.AreasSearch.selected = this.context.Areas.Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.AreasSearch.selected = this.context.Areas.AsNoTracking().Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
                 this.AreasSearch.CurrentView = "Selections";
 
                 optionUpdated = true;
@@ -594,7 +594,7 @@ else if (this.SceneDtos.Count > 0)
             {
                 var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
 
-                this.CharactersSearch.selected = this.context.Characters.Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.CharactersSearch.selected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
                 this.CharactersSearch.CurrentView = "Selections";
 
                 optionUpdated = true;
@@ -604,7 +604,7 @@ else if (this.SceneDtos.Count > 0)
             {
                 var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-                this.GamesSearch.selected = this.context.Games.Where(x => gameIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.GamesSearch.selected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
                 this.GamesSearch.CurrentView = "Selections";
 
                 optionUpdated = true;
@@ -614,7 +614,7 @@ else if (this.SceneDtos.Count > 0)
             {
                 var musicIds = this.MusicQuery.Select(x => int.Parse(x));
 
-                this.MusicSearch.selected = this.context.Music.Where(x => musicIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.MusicSearch.selected = this.context.Music.AsNoTracking().Where(x => musicIds.Contains(x.Id)).Select(x => x.Name).ToList();
                 this.MusicSearch.CurrentView = "Selections";
 
                 optionUpdated = true;
@@ -624,7 +624,7 @@ else if (this.SceneDtos.Count > 0)
             {
                 var sceneIds = this.SceneQuery.Select(x => int.Parse(x));
 
-                this.ScenesSearch.selected = this.context.Scenes.Where(x => sceneIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.ScenesSearch.selected = this.context.Scenes.AsNoTracking().Where(x => sceneIds.Contains(x.Id)).Select(x => x.Name).ToList();
                 this.ScenesSearch.CurrentView = "Selections";
 
                 optionUpdated = true;
@@ -634,7 +634,7 @@ else if (this.SceneDtos.Count > 0)
             {
                 var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
-                this.WorldsSearch.selected = this.context.Worlds.Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+                this.WorldsSearch.selected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
                 this.WorldsSearch.CurrentView = "Selections";
 
                 optionUpdated = true;
@@ -663,7 +663,7 @@ else if (this.SceneDtos.Count > 0)
         {
             var dateCode = DateTime.Now.ToString("yyyyMMdd");
             var sceneId = this.context.DailyCutscenes.FirstOrDefault(cutscene => cutscene.DateCode == dateCode).SceneId;
-            var scene = this.context.Scenes
+            var scene = this.context.Scenes.AsNoTracking()
                 .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
                 .FirstOrDefault(s => s.Id == sceneId);
 
@@ -691,7 +691,7 @@ else if (this.SceneDtos.Count > 0)
         {
             Random random = new Random((int)DateTime.Now.Ticks);
             var randomSceneId = random.Next(0, this.context.Scenes.Count());
-            var scene = this.context.Scenes
+            var scene = this.context.Scenes.AsNoTracking()
                 .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
                 .FirstOrDefault(s => s.Id == randomSceneId);
 

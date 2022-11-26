@@ -7604,6 +7604,166 @@
         "Characters": [ "Sora", "Donald", "Goofy", "Lingering Will" ],
         "Areas": [ "The Badlands" ],
         "Music": [ "Rage Awakened" ]
+      },
+      {
+        "Name": "Sora Summons Stitch",
+        "Link": "https://www.youtube.com/watch?v=5AlenXoWMvk&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=1",
+        "Worlds": [ ":None:" ],
+        "Characters": [ "Sora", "Stitch" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Peter Pan",
+        "Link": "https://www.youtube.com/watch?v=Bj9tPRwBfiw&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=2",
+        "Worlds": [ ":None:" ],
+        "Characters": [ "Sora", "Peter Pan" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Genie",
+        "Link": "https://www.youtube.com/watch?v=fQVjgSeMLLc&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=3",
+        "Worlds": [ ":None:" ],
+        "Characters": [ "Sora", "Genie" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Chicken Little",
+        "Link": "https://www.youtube.com/watch?v=IjFqcdHCPIw&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=4",
+        "Worlds": [ ":None:" ],
+        "Characters": [ "Sora", "Chicken Little" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Stitch (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=skCa3zSDNsg&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=12",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Stitch" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Peter Pan (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=rz2m1zM7fYU&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=11",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Peter Pan" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Genie (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=HQ_MfRRyLpQ&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=10",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Genie" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Chicken Little (Halloween Town)",
+        "Link": "https://www.youtube.com/watch?v=zhSd20KZd3o&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=9",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Chicken Little" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Stitch (Christmas Town)",
+        "Link": "https://www.youtube.com/watch?v=ec4SbXaPids&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=5",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Stitch" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Peter Pan (Christmas Town)",
+        "Link": "https://www.youtube.com/watch?v=J8vQuRb0mgw&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=6",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Peter Pan" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Genie (Christmas Town)",
+        "Link": "https://www.youtube.com/watch?v=4XwcaYnr-vk&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=7",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Genie" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Chicken Little (Christmas Town)",
+        "Link": "https://www.youtube.com/watch?v=324ZCvN4pTs&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=8",
+        "Worlds": [ "Halloween Town" ],
+        "Characters": [ "Sora", "Chicken Little" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Stitch (Space Paranoids)",
+        "Link": "https://www.youtube.com/watch?v=zsk6G0hlD2Q&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=16",
+        "Worlds": [ "Space Paranoids" ],
+        "Characters": [ "Sora", "Stitch" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Peter Pan (Space Paranoids)",
+        "Link": "https://www.youtube.com/watch?v=22xEU0WyU0M&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=15",
+        "Worlds": [ "Space Paranoids" ],
+        "Characters": [ "Sora", "Peter Pan" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Genie (Space Paranoids)",
+        "Link": "https://www.youtube.com/watch?v=eF0X7TD6udU&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=14",
+        "Worlds": [ "Space Paranoids" ],
+        "Characters": [ "Sora", "Genie" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Chicken Little (Space Paranoids)",
+        "Link": "https://www.youtube.com/watch?v=c3ic6kcqkKA&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=13",
+        "Worlds": [ "Space Paranoids" ],
+        "Characters": [ "Sora", "Chicken Little" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Stitch (Timeless River)",
+        "Link": "https://www.youtube.com/watch?v=T_aRcJIdCqU&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=17",
+        "Worlds": [ "Timeless River" ],
+        "Characters": [ "Sora", "Stitch" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Peter Pan (Timeless River)",
+        "Link": "https://www.youtube.com/watch?v=QDlJQDVB84g&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=20",
+        "Worlds": [ "Timeless River" ],
+        "Characters": [ "Sora", "Peter Pan" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Genie (Timeless River)",
+        "Link": "https://www.youtube.com/watch?v=deGx66KHIkk&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=18",
+        "Worlds": [ "Timeless River" ],
+        "Characters": [ "Sora", "Genie" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Sora Summons Chicken Little (Timeless River)",
+        "Link": "https://www.youtube.com/watch?v=N5C3_QSc_J4&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=19",
+        "Worlds": [ "Timeless River" ],
+        "Characters": [ "Sora", "Chicken Little" ],
+        "Areas": [ ":None:" ],
+        "Music": [ ":None:" ]
       }
     ],
     "Kingdom Hearts 358/2 Days": [

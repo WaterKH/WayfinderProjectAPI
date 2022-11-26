@@ -43,10 +43,17 @@
                                         @for (int i = 0; i < this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name).Music.Count; ++i)
                                         {
                                             var currentScene = this.SceneDtos.FirstOrDefault(x => x.Game.Name == Scene.Game.Name && x.Name == Scene.Name);
-                                            <a href="@currentScene.Music.ToList()[i].Link" target="_blank">@currentScene.Music.ToList()[i].Name</a>
-                                            if (i < currentScene.Music.Count - 1)
+                                            @if (@currentScene.Music.ToList()[i].Name != ":None:")
                                             {
-                                                <div>,&ensp;</div>
+                                                <a href="@currentScene.Music.ToList()[i].Link" target="_blank">@currentScene.Music.ToList()[i].Name</a>
+                                                if (i < currentScene.Music.Count - 1)
+                                                {
+                                                    <div>,&ensp;</div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                @currentScene.Music.ToList()[i].Name
                                             }
                                         }
                                     </div>
