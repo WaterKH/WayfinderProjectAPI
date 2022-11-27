@@ -7617,7 +7617,7 @@
         "Name": "Sora Summons Peter Pan",
         "Link": "https://www.youtube.com/watch?v=Bj9tPRwBfiw&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=2",
         "Worlds": [ ":None:" ],
-        "Characters": [ "Sora", "Peter Pan" ],
+        "Characters": [ "Sora", "Peter Pan", "Tinker Bell" ],
         "Areas": [ ":None:" ],
         "Music": [ ":None:" ]
       },
@@ -7649,7 +7649,7 @@
         "Name": "Sora Summons Peter Pan (Halloween Town)",
         "Link": "https://www.youtube.com/watch?v=rz2m1zM7fYU&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=11",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Peter Pan" ],
+        "Characters": [ "Sora", "Peter Pan", "Tinker Bell" ],
         "Areas": [ ":None:" ],
         "Music": [ ":None:" ]
       },
@@ -7681,7 +7681,7 @@
         "Name": "Sora Summons Peter Pan (Christmas Town)",
         "Link": "https://www.youtube.com/watch?v=J8vQuRb0mgw&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=6",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Peter Pan" ],
+        "Characters": [ "Sora", "Peter Pan", "Tinker Bell" ],
         "Areas": [ ":None:" ],
         "Music": [ ":None:" ]
       },
@@ -7713,7 +7713,7 @@
         "Name": "Sora Summons Peter Pan (Space Paranoids)",
         "Link": "https://www.youtube.com/watch?v=22xEU0WyU0M&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=15",
         "Worlds": [ "Space Paranoids" ],
-        "Characters": [ "Sora", "Peter Pan" ],
+        "Characters": [ "Sora", "Peter Pan", "Tinker Bell" ],
         "Areas": [ ":None:" ],
         "Music": [ ":None:" ]
       },
@@ -7745,7 +7745,7 @@
         "Name": "Sora Summons Peter Pan (Timeless River)",
         "Link": "https://www.youtube.com/watch?v=QDlJQDVB84g&list=PLHCDfd9aWfBNZJaqOpzKOlTD8wbjOyHYv&index=20",
         "Worlds": [ "Timeless River" ],
-        "Characters": [ "Sora", "Peter Pan" ],
+        "Characters": [ "Sora", "Peter Pan", "Tinker Bell" ],
         "Areas": [ ":None:" ],
         "Music": [ ":None:" ]
       },
