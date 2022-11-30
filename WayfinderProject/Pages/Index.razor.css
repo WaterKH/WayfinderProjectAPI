@@ -4,6 +4,7 @@
 }
 
 .wayfinder-parallax {
+    border-radius: 35px;
     padding: 20px;
     background-image: url(/images/WFP_logo_INVIS.png);
     background-attachment: fixed;
