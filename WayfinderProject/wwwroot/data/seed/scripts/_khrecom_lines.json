@@ -3595,47 +3595,45 @@
       {
         "Order": 1,
         "Character": "Ansem the Wise",
-        "Line": "It seems to me that you are intent on resisting the darkness. All right."
-      }
-    ],
-    "Then see it for yourself.": [
-      {
-        "Order": 0,
-        "Character": "Riku",
-        "Line": "Huh?"
-      },
-      {
-        "Order": 1,
-        "Character": "Ansem the Wise",
-        "Line": "This is a card crafted from your memory. Advance through the world it creates and soon, you will understand... Chasing after light is not the way. It will not give you distance from the darkness. There is no running from the darkness."
+        "Line": "It seems to me that you are intent on resisting the darkness. All right. Then see it for yourself."
       },
       {
         "Order": 2,
         "Character": "Riku",
-        "Line": "Don't worry, I'm not running. Give it. I'll enter the world and in the end, if I haven't given in to the darkness... Then I win."
+        "Line": "Huh?"
       },
       {
         "Order": 3,
         "Character": "Ansem the Wise",
-        "Line": "I have one more gift for you."
+        "Line": "This is a card crafted from your memory. Advance through the world it creates and soon, you will understand... Chasing after light is not the way. It will not give you distance from the darkness. There is no running from the darkness."
       },
       {
         "Order": 4,
         "Character": "Riku",
-        "Line": "What'd you do?!"
+        "Line": "Don't worry, I'm not running. Give it. I'll enter the world and in the end, if I haven't given in to the darkness... Then I win."
       },
       {
         "Order": 5,
         "Character": "Ansem the Wise",
-        "Line": "I simply tempered the darkness that yet remains in your heart."
+        "Line": "I have one more gift for you."
       },
       {
         "Order": 6,
         "Character": "Riku",
-        "Line": "You still think that I'd rely on darkness?"
+        "Line": "What'd you do?!"
       },
       {
         "Order": 7,
+        "Character": "Ansem the Wise",
+        "Line": "I simply tempered the darkness that yet remains in your heart."
+      },
+      {
+        "Order": 8,
+        "Character": "Riku",
+        "Line": "You still think that I'd rely on darkness?"
+      },
+      {
+        "Order": 9,
         "Character": "Ansem the Wise",
         "Line": "To use it or not is your choice. I'll be waiting, Riku... for you to sense it and yield to the darkness in your heart!"
       }

@@ -23,6 +23,8 @@ namespace WayfinderProjectAPI.Data
 
             modelBuilder.Entity<JJCharacter>().Property(p => p.Id).ValueGeneratedOnAdd();
 
+            modelBuilder.Entity<DailyCutscene>().Property(p => p.Id).ValueGeneratedOnAdd();
+
             base.OnModelCreating(modelBuilder);
         }
 

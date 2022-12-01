@@ -1,10 +1,23 @@
+using Blazored.Modal;
+using Blazored.Toast;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System.Text.Json.Serialization;
+using WayfinderProject.Areas.Identity;
+using WayfinderProject.Data;
+using WayfinderProject.Data.Models;
+using WayfinderProjectAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 // Add DataBase
-var connectionString = "Server=db-wayfinder-project-kh-do-user-10968464-0.b.db.ondigitalocean.com;Port=25060;Database=wayfinderprojectdb;Uid=doadmin;Pwd=AVNS_xv81gEYQ8__nzgXxJT9;SslMode=required;"; //Environment.GetEnvironmentVariable("ConnectionString");
+var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
 var connection = new MySqlConnection(connectionString);
 connection.Open();
 
@@ -26,26 +39,26 @@ builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuth
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
-builder.Services.AddAuthentication()
-   //.AddGoogle(options =>
-   //{
-   //    options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
-   //    options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
-   //})
-   //.AddTwitter(twitterOptions =>
-   //{
-   //    twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterAuthId");
-   //    twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterAuthSecret");
-   //    twitterOptions.RetrieveUserDetails = true;
-   //})
-   .AddOAuth("GitHub", "GitHub", githubOptions =>
-   {
-       githubOptions.ClientId = Environment.GetEnvironmentVariable("GitHubAuthId");
-       githubOptions.ClientSecret = Environment.GetEnvironmentVariable("GitHubAuthSecret");
-       githubOptions.CallbackPath = "/";
-       githubOptions.AuthorizationEndpoint = "/";
-       githubOptions.TokenEndpoint = "/";
-   });
+//builder.Services.AddAuthentication()
+//.AddGoogle(options =>
+//{
+//    options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
+//    options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
+//})
+//.AddTwitter(twitterOptions =>
+//{
+//    twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterAuthId");
+//    twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterAuthSecret");
+//    twitterOptions.RetrieveUserDetails = true;
+//})
+//.AddOAuth("GitHub", "GitHub", githubOptions =>
+//{
+//    githubOptions.ClientId = Environment.GetEnvironmentVariable("GitHubAuthId");
+//    githubOptions.ClientSecret = Environment.GetEnvironmentVariable("GitHubAuthSecret");
+//    githubOptions.CallbackPath = "/";
+//    githubOptions.AuthorizationEndpoint = "/";
+//    githubOptions.TokenEndpoint = "/";
+//});
 
 var app = builder.Build();
 
