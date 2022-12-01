@@ -1,4 +1,9 @@
-﻿namespace WayfinderProjectAPI.Data
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using WayfinderProject.Data.Models;
+using WayfinderProjectAPI.Data.Models;
+
+namespace WayfinderProjectAPI.Data
 {
     public class WayfinderContext : IdentityDbContext<WayfinderProjectUser>
     {
