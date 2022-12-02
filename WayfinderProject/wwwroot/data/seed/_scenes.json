@@ -949,7 +949,7 @@
         "Name": "Kairi Awakens",
         "Link": "https://www.youtube.com/watch?v=uWRhK8NYTio&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=148",
         "Worlds": [ "Hollow Bastion" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Ansem", "Riku", "Sora's Heartless" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Ansem Seeker of Darkness", "Riku", "Shadow(s)", "Sora's Heartless" ],
         "Areas": [ "Grand Hall" ],
         "Music": [ "HIKARI - Instrumental" ]
       },
@@ -3520,7 +3520,7 @@
       {
         "Name": "As Memories Return",
         "Link": "https://www.youtube.com/watch?v=_bk7VCJdNAc&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=94",
-        "Worlds": [ "Twilight Town" ],
+        "Worlds": [ "Twilight Town", "Simulated Twilight Town" ],
         "Characters": [ "Roxas", "Riku", "Ansem the Wise" ],
         "Areas": [ "Computer Room" ],
         "Music": [ ":None:" ]
