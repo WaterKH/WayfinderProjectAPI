@@ -32,12 +32,12 @@ namespace WayfinderProjectAPI.Data
         public static ScriptDto ToDto(this Script script)
         {
             return new ScriptDto
-                {
-                    Id = script.Id,
-                    SceneName = script.SceneName,
-                    GameName = script.GameName,
-                    Lines = script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
-                };
+            {
+                Id = script.Id,
+                SceneName = script.SceneName,
+                GameName = script.GameName,
+                Lines = script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
+            };
         }
     }
 }

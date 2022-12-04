@@ -16,143 +16,86 @@
 <br/>
 
 <div class="wayfinder-background">
-    <div class="wayfinder-parallax">
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-12" style="align-self: center;">
-                <div class="wayfinder-title">
-                    <img src="/images/wayfinder_project_title.png" />
-                </div>
-
-                <div class="wayfinder-description">
-                    <strong>Search for a <span style="color: #522aff;">Word</span>, <span style="color: #ff7519;">Phrase</span> or <span style="color: #2cce78;">Quote</span>...</strong>
-                </div>
-
-                <div class="wayfinder-search">
-                    <span class="wayfinder-search-icon material-icons">search</span>
-                    <input id="main-search" name="main-search" class="custom-input" onchange="@((ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString(); this.SearchQuotes(e?.Value?.ToString()); })" placeholder="Start Typing..." >
-                    <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
-                </div>
-
-                <div class="wayfinder-sub-description">
-                    <strong>
-                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Scenes</span>, <span style="color: #ea4a4a;">Worlds</span>
-                        , <span style="color: #5499fc;">Areas</span>, <span style="color: #f3b222;">Characters</span> and <span style="color: #a13bfb;">Music</span>.
-                    </strong>
-                </div>
-            </div>
-        </div>
-
-        <hr />
-
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-1"></div>
-
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #522aff;">Cutscene of the Day</span></strong>
-                </div>
-
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Discover a brand new daily cutscene by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WPF_KH on Twitter</a>!
-                    </strong>
-                </div>
-
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyCutscene())" @onclick:stopPropagation>Daily Cutscene</button>
-            </div>
-
-            <div class="col-md-2"></div>
-
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Cutscene</span> <span style="color: #5499fc;">Generator</span></strong>
-                </div>
-
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Can't decide which scene you want to find? Let us choose for you by selecting a random scene!
-                    </strong>
-                </div>
-
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomCutscene())" @onclick:stopPropagation>Random Cutscene</button>
-            </div>
-
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-</div>
-
-<NavBar @ref="WayfinderNavBar" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" CustomStyle="@("padding: 30px 15px 0px 15px;")" StartingOption="@this.CurrentOption" />
-
-<div class="advanced-search-box">
     <div class="row">
-        <div class="col-md-12">
-            <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Selections="this.Games" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
+        <div class="col-md-6" style="align-self: center;">
+            <div class="wayfinder-title">
+                <img src="/images/wayfinder_project_title.png" style="float: left;" />
+            </div>
+        </div>
 
-            <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Selections="this.Scenes" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
-                
-            <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Selections="this.Worlds" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
-                
-            <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Selections="this.Areas" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
-                
-            <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Selections="this.Characters" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
-                
-            <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Selections="this.Music" CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAll(clearString))" />
+        <div class="col-md-6" style="align-self: center;">
+            <div class="wayfinder-description">
+                <span style="text-align: end;">Kingdom Hearts Resource Database</span>
+            </div>
         </div>
     </div>
 </div>
 
-<br />
-<br />
+<div class="row">
+    <div class="col-md-4">
+        <div class="ma-folder">
+            <span class="folder-title">Memory Archive</span>
 
-@if (this.Loading)
-{
-    <div class="row" style="justify-content: center;">
-        <div class="loader col-md-12"></div>
+            <div class="folder-container">
+                <div class="folder-redirect">
+                    <span class="oi oi-chevron-right" style="color: white"></span>
+                </div>
+
+                <div class="folder-image" onclick="@(() => NavigationManager.NavigateTo("/memory_archive", true))">
+                    <img src="/images/WFP_logo.png" style="width: 40vh;" />
+                </div>
+            </div>
+
+            <div class="folder-content">
+                Scour the Memory Archives to find scenes using criteria such as characters or worlds, enjoy the Cutscene of the day 
+                or let us decide for you by selecting a Random Cutscene.
+            </div>
+        </div>
     </div>
-}
-else if (this.SceneDtos.Count > 0)
-{
-    <Table @ref="MainTable" Items="this.SceneDtos" Context="Scene" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" width="25px" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" width="25px" class="header-margins"> <label class="header-label">Scene</label></th>
-            <th><img src="/images/icons/worlds_gray.png" width="25px" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/areas_gray.png" width="25px" class="header-margins"> <label class="header-label">Areas</label></th>
-            <th><img src="/images/icons/characters_gray.png" width="25px" class="header-margins"> <label class="header-label">Characters</label></th>
-            <th><img src="/images/icons/music_gray.png" width="25px" class="header-margins"> <label class="header-label">Music</label></th>
-        </TableHeader>
-        <RowTemplate>
-            <TableRow Scene="@Scene" MainTable="@MainTable" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <TableExpandedRow SceneDtos="@this.SceneDtos" Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </Table>
-}
+
+    @*<div class="col-md-4">
+        <div class="jj-folder">
+            <span class="folder-title">Coming Soon</span>
+
+            <div class="folder-container">
+                <div class="folder-redirect">
+                    <span class="oi oi-chevron-right" style="color: white"></span>
+                </div>
+
+                <div class="folder-image" onclick="@(() => NavigationManager.NavigateTo("/-------", true))">
+                    <img src="/images/jj_logo.png" style="width: 40vh;" />
+                </div>
+            </div>
+
+            <div class="folder-content">
+                Coming Soon.
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="ms-folder">
+            <span class="folder-title">Coming Soon</span>
+
+            <div class="folder-container">
+                <div class="folder-redirect">
+                    <span class="oi oi-chevron-right" style="color: white"></span>
+                </div>
+
+                <div class="folder-image" onclick="@(() => NavigationManager.NavigateTo("/--------", true))">
+                    <img src="/images/--_logo.png" style="width: 40vh;" />
+                </div>
+            </div>
+
+            <div class="folder-content">
+                Coming Soon.
+            </div>
+        </div>
+    </div>*@
+</div>
 
 
 <style>
-.advanced-search-box {
-    margin-top: 10px;
-    padding: 0px 15px 15px 25px;
-    border-radius: 30px;
-    width: 100%;
-    height: auto;
-    background-color: #f1f1f1;
-}
-
 .clickable {
     float: right; 
     font-size: 1rem; 
@@ -170,439 +113,17 @@ else if (this.SceneDtos.Count > 0)
     border-radius: 500px;
     background-color: #bee2ff;
 }
-
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
-@@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 </style>
 
 @code {
-    [CascadingParameter]
-    private Task<AuthenticationState> authenticationStateTask { get; set; }
-
-    public bool Loading { get; set; }
-    public string CurrentOption { get; set; } = "Games";
-    public string CurrentSubOption { get; set; } = "Details";
-
-    public List<string> Areas { get; set; } = new List<string>();
-    public List<string> Characters { get; set; } = new List<string>();
-    public List<string> Games { get; set; } = new List<string>();
-    public List<string> Music { get; set; } = new List<string>();
-    public List<string> Scenes { get; set; } = new List<string>();
-    public List<string> Worlds { get; set; } = new List<string>();
-
-    // Query Parameters
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "area")]
-    public string[]? AreaQuery { get; set; }
-
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "character")]
-    public string[]? CharacterQuery { get; set; }
-
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "game")]
-    public string[]? GameQuery { get; set; }
-
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "music")]
-    public string[]? MusicQuery { get; set; }
-
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "scene")]
-    public string[]? SceneQuery { get; set; }
-
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "world")]
-    public string[]? WorldQuery { get; set; }
-
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "open_row")]
-    public int OpenRow { get; set; } = -1;
-
-
-    private SearchComponent? AreasSearch;
-    private SearchComponent? CharactersSearch;
-    private SearchComponent? GamesSearch;
-    private SearchComponent? MusicSearch;
-    private SearchComponent? ScenesSearch;
-    private SearchComponent? WorldsSearch;
-
-    private Table<SceneDto>? MainTable;
-
-    private bool firstLoad = false;
-    private bool failed = false;
-    private string quoteSearch = "";
-    private List<SceneDto> SceneDtos = new List<SceneDto>();
-    private WayfinderController api;
-
-    private List<string> options = new List<string> { "Games", "Scenes", "Worlds", "Areas", "Characters", "Music" };
-    private NavBar? WayfinderNavBar;
-
-    private bool canDisplayClearAll;
-
     protected override async Task OnInitializedAsync()
     {
-        var authState = await authenticationStateTask;
-
-        if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-        {
-            NavigationManager.NavigateTo("/Identity/Account/Login");
-        }
-
-        this.api = new WayfinderController(null, context);
-
-        try
-        {
-            await this.ResetOptions();
-
-            Thread.Sleep(1000);
-
-            await this.HandleQueryParams();
-        }
-        catch (Exception ex)
-        {
-            // Catch the SqliteException, do not set firstLoad to true
-            this.failed = true;
-
-            await InvokeAsync(() =>
-            {
-                this.StateHasChanged();
-            });
-        }
-
         await base.OnInitializedAsync();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (this.failed)
-        {
-            try
-            {
-                Thread.Sleep(1000);
-
-                await this.ResetOptions();
-
-                Thread.Sleep(1000);
-
-                await this.HandleQueryParams();
-            }
-            catch (Exception ex)
-            {
-                // Catch the SqliteException, do not set firstLoad to true
-            }
-        }
-
         await base.OnAfterRenderAsync(firstRender);
-    }
-
-    public async Task SearchQuotes(string search)
-    {
-        if (search.Length < 3)
-            this.quoteSearch = "";
-        else
-            this.quoteSearch = search;
-
-
-        if (!this.Loading)
-        {
-            await this.Search();
-        }
-    }
-
-    public async Task Search()
-    {
-        this.Loading = true;
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
-
-        var games = this.GamesSearch != null ? string.Join("::", this.GamesSearch.selected) != "" ? string.Join("::", this.GamesSearch.selected) : null : null;
-        var scenes = this.ScenesSearch != null ? string.Join("::", this.ScenesSearch.selected) != "" ? string.Join("::", this.ScenesSearch.selected) : null : null;
-        var worlds = this.WorldsSearch != null ? string.Join("::", this.WorldsSearch.selected) != "" ? string.Join("::", this.WorldsSearch.selected) : null : null;
-        var areas = this.AreasSearch != null ? string.Join("::", this.AreasSearch.selected) != "" ? string.Join("::", this.AreasSearch.selected) : null : null;
-        var characters = this.CharactersSearch != null ? string.Join("::", this.CharactersSearch.selected) != "" ? string.Join("::", this.CharactersSearch.selected) : null : null;
-        var music = this.MusicSearch != null ? string.Join("::", this.MusicSearch.selected) != "" ? string.Join("::", this.MusicSearch.selected) : null : null;
-        var line = this.quoteSearch != "" ? this.quoteSearch : null;
-
-        // TODO Remove this after we add in the pagination limiter?
-        if (games == null && scenes == null && worlds == null && areas == null && characters == null && music == null && line == null)
-        {
-            this.SceneDtos = new List<SceneDto>();
-
-            await Task.Run(async () => await this.ResetOptions());
-
-            this.canDisplayClearAll = false;
-        }
-        else
-        {
-            var authState = await authenticationStateTask;
-            var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
-
-            // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            if (user.ApiCallQuota > 0)
-            {
-                this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
-
-                user.ApiCallQuota -= 1;
-                context.SaveChanges();
-
-                if (user.ApiCallQuota == 2500)
-                {
-                    toastService.ShowInfo("Used half of API Quota (2500/5000).");
-                }
-                else if (user.ApiCallQuota == 500)
-                {
-                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-                }
-                else if (user.ApiCallQuota == 0)
-                {
-                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-                }
-            }
-            else
-            {
-                // TOAST: Out of API Call Quota, resets monthly.
-                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            }
-
-            this.UpdateOptions();
-
-            this.canDisplayClearAll = true;
-        }
-
-        if (MainTable != null)
-        {
-            MainTable.CurrentPage = 1;
-            MainTable.CurrentExpandedRow = -1;
-        }
-
-        this.Loading = false;
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
-    }
-
-    public async Task UpdateCurrentOption(string option)
-    {
-        this.CurrentOption = option;
-
-        await InvokeAsync(() => {
-            this.StateHasChanged();
-        });
-    }
-
-    public async void UpdateOptions()
-    {
-        this.Loading = true;
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
-
-        this.Areas = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.AreasSearch.selected).Distinct().ToList();
-        this.Characters = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.CharactersSearch.selected).Distinct().ToList();
-        this.Games = this.SceneDtos.Select(x => x.Game.Name).Except(this.GamesSearch.selected).Distinct().ToList();
-        this.Music = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.MusicSearch.selected).Distinct().ToList();
-        this.Scenes = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSearch.selected).Distinct().ToList();
-        this.Worlds = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.WorldsSearch.selected).Distinct().ToList();
-
-        this.Areas.Sort();
-        this.Characters.Sort();
-        this.Music.Sort();
-        this.Scenes.Sort();
-        this.Worlds.Sort();
-
-        this.AreasSearch.Selections = this.AreasSearch.results = this.Areas;
-        this.CharactersSearch.Selections = this.CharactersSearch.results = this.Characters;
-        this.GamesSearch.Selections = this.GamesSearch.results = this.Games;
-        this.MusicSearch.Selections = this.MusicSearch.results = this.Music;
-        this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
-        this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
-
-        this.Loading = false;
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
-    }
-
-    public async Task ResetOptions()
-    {
-        this.Loading = true;
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
-
-        this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Games = await context.Games.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
-        this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
-
-        this.Areas.Sort();
-        this.Characters.Sort();
-        this.Music.Sort();
-        this.Scenes.Sort();
-        this.Worlds.Sort();
-
-        this.AreasSearch.Selections = this.AreasSearch.results = this.Areas;
-        this.CharactersSearch.Selections = this.CharactersSearch.results = this.Characters;
-        this.GamesSearch.Selections = this.GamesSearch.results = this.Games;
-        this.MusicSearch.Selections = this.MusicSearch.results = this.Music;
-        this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
-        this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
-
-        this.GamesSearch.selected = new List<string>();
-        this.ScenesSearch.selected = new List<string>();
-        this.WorldsSearch.selected = new List<string>();
-        this.AreasSearch.selected = new List<string>();
-        this.CharactersSearch.selected = new List<string>();
-        this.MusicSearch.selected = new List<string>();
-
-        this.Loading = false;
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
-    }
-
-    public async Task ClearAll(string clearString)
-    {
-        if (clearString == "Games")
-        {
-            this.Games = await context.Games.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
-
-            this.GamesSearch.Selections = this.GamesSearch.results = this.Games;
-            this.GamesSearch.selected = new List<string>();
-            this.GamesSearch.CurrentView = "Options";
-        }
-        else if (clearString == "Scenes")
-        {
-            this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
-            this.Scenes.Sort();
-
-            this.ScenesSearch.Selections = this.ScenesSearch.results = this.Scenes;
-            this.ScenesSearch.selected = new List<string>();
-            this.ScenesSearch.CurrentView = "Options";
-        }
-        else if (clearString == "Worlds")
-        {
-            this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
-            this.Worlds.Sort();
-
-            this.WorldsSearch.Selections = this.WorldsSearch.results = this.Worlds;
-            this.WorldsSearch.selected = new List<string>();
-            this.WorldsSearch.CurrentView = "Options";
-        }
-        else if (clearString == "Areas")
-        {
-            this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
-            this.Areas.Sort();
-
-            this.AreasSearch.Selections = this.AreasSearch.results = this.Areas;
-            this.AreasSearch.selected = new List<string>();
-            this.AreasSearch.CurrentView = "Options";
-        }
-        else if (clearString == "Characters")
-        {
-            this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
-            this.Characters.Sort();
-
-            this.CharactersSearch.Selections = this.CharactersSearch.results = this.Characters;
-            this.CharactersSearch.selected = new List<string>();
-            this.CharactersSearch.CurrentView = "Options";
-        }
-        else if (clearString == "Music")
-        {
-            this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
-            this.Music.Sort();
-
-            this.MusicSearch.Selections = this.MusicSearch.results = this.Music;
-            this.MusicSearch.selected = new List<string>();
-            this.MusicSearch.CurrentView = "Options";
-        }
-        else
-        {
-            await this.ResetOptions();
-
-            this.GamesSearch.CurrentView = "Options";
-            this.ScenesSearch.CurrentView = "Options";
-            this.WorldsSearch.CurrentView = "Options";
-            this.AreasSearch.CurrentView = "Options";
-            this.CharactersSearch.CurrentView = "Options";
-            this.MusicSearch.CurrentView = "Options";
-        }
-
-        await this.Search();
-    }
-
-    public async Task GenerateShareLink()
-    {
-        try
-        {
-            var shareLink = $"{NavigationManager.BaseUri}?";
-
-            if (this.CharactersSearch.selected.Count > 0)
-            {
-                shareLink += string.Join("&", this.CharactersSearch.selected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
-            }
-
-            if (this.AreasSearch.selected.Count > 0)
-            {
-                shareLink += string.Join("&", this.AreasSearch.selected.Select(x => $"area={this.context.Areas.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
-            }
-
-            if (this.GamesSearch.selected.Count > 0)
-            {
-                shareLink += string.Join("&", this.GamesSearch.selected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
-            }
-
-            if (this.MusicSearch.selected.Count > 0)
-            {
-                shareLink += string.Join("&", this.MusicSearch.selected.Select(x => $"music={this.context.Music.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
-            }
-
-            if (this.ScenesSearch.selected.Count > 0)
-            {
-                shareLink += string.Join("&", this.ScenesSearch.selected.Select(x => $"scene={this.context.Scenes.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
-            }
-
-            if (this.WorldsSearch.selected.Count > 0)
-            {
-                shareLink += string.Join("&", this.WorldsSearch.selected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x).Id}")) + "&";
-            }
-
-            shareLink += $"open_row={this.MainTable.CurrentExpandedRow}";
-
-            await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
-            
-            toastService.ShowInfo($"Copied link to '{this.context.Scenes.FirstOrDefault(x => x.Id == this.MainTable.CurrentExpandedRow).Name}' scene.");
-        }
-        catch (Exception ex)
-        {
-            // Catch potential issue when trying to access disposed object
-        }
-
-        await InvokeAsync(() =>
-        {
-            this.StateHasChanged();
-        });
     }
 
     public async Task<bool> HandleQueryParams()
@@ -616,74 +137,11 @@ else if (this.SceneDtos.Count > 0)
 
         try
         {
-            if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
-            {
-                var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
-                this.AreasSearch.selected = this.context.Areas.AsNoTracking().Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-                this.AreasSearch.CurrentView = "Selections";
-
-                optionUpdated = true;
-            }
-
-            if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0)
-            {
-                var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
-
-                this.CharactersSearch.selected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
-                this.CharactersSearch.CurrentView = "Selections";
-
-                optionUpdated = true;
-            }
-
-            if (this.GameQuery != null && this.GameQuery.Count() > 0)
-            {
-                var gameIds = this.GameQuery.Select(x => int.Parse(x));
-
-                this.GamesSearch.selected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-                this.GamesSearch.CurrentView = "Selections";
-
-                optionUpdated = true;
-            }
-
-            if (this.MusicQuery != null && this.MusicQuery.Count() > 0)
-            {
-                var musicIds = this.MusicQuery.Select(x => int.Parse(x));
-
-                this.MusicSearch.selected = this.context.Music.AsNoTracking().Where(x => musicIds.Contains(x.Id)).Select(x => x.Name).ToList();
-                this.MusicSearch.CurrentView = "Selections";
-
-                optionUpdated = true;
-            }
-
-            if (this.SceneQuery != null && this.SceneQuery.Count() > 0)
-            {
-                var sceneIds = this.SceneQuery.Select(x => int.Parse(x));
-
-                this.ScenesSearch.selected = this.context.Scenes.AsNoTracking().Where(x => sceneIds.Contains(x.Id)).Select(x => x.Name).ToList();
-                this.ScenesSearch.CurrentView = "Selections";
-
-                optionUpdated = true;
-            }
-
-            if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
-            {
-                var worldIds = this.WorldQuery.Select(x => int.Parse(x));
-
-                this.WorldsSearch.selected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-                this.WorldsSearch.CurrentView = "Selections";
-
-                optionUpdated = true;
-            }
-
-            if (optionUpdated)
-            {
-                await this.Search();
-            }
         }
         catch(Exception ex)
         {
-            //this.failed = true;
+            
         }
 
         await InvokeAsync(() => { 

@@ -1,0 +1,44 @@
+.wayfinder-sub-nav-bar {
+    display: flex;
+    padding: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: fit-content;
+}
+
+.wayfinder-container {
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    background-color: #ececec;
+    color: #cccccc;
+    padding: 5px;
+    margin: 0px 5px;
+}
+
+.wayfinder-container-active {
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #2e88fb;
+    border-radius: 20px;
+    background-color: #ececec;
+    color: #2e88fb;
+    padding: 5px;
+    margin: 0px 5px;
+}
+
+.wayfinder-option {
+    cursor: pointer;
+    color: #acacac;
+    margin: 0px 20px 0px 10px;
+}
+
+    .wayfinder-option:hover {
+        color: #2e88fb;
+    }
+
+.wayfinder-option-active {
+    cursor: pointer;
+    padding: 0px 20px 0px 10px;
+}

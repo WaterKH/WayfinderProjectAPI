@@ -1,7 +1,10 @@
 ﻿@using Blazored.Toast.Configuration;
+
 @inherits LayoutComponentBase
 
-<PageTitle>WayfinderProject</PageTitle>
+@inject NavigationManager NavigationManager
+
+<PageTitle>The Wayfinder Project</PageTitle>
 
 <BlazoredToasts Position="ToastPosition.BottomRight"
                 Timeout="5"
@@ -15,23 +18,120 @@
             <a href="/"><img src="/images/wayfinder_project_icon.png" alt="The Wayfinder Project" style="position: absolute; left: 50px; top: 12px; width: 28px;"></a>
 
             <div class="links" style="left: 135px; position: absolute; cursor: default;">
-                <a class="wayfinder-link" href="/" style="color: #3c39de;">Home</a>
-                <span class="wayfinder-span" style="color: #68a4ff;">•</span>
-                <a class="wayfinder-link" href="/faq" style="color: #387ee6;">FAQ</a>
+                <a class="wayfinder-link" href="/memory_archive" style="color: #3c39de; font-size: large;">Memory Archive</a>
+                @*<span class="wayfinder-span" style="color: #68a4ff;">•</span>
+                <a class="wayfinder-link" href="/jiminy_journal" style="color: #387ee6;">Jiminy's Journal</a>
                 <span class="wayfinder-span" style="color: #387ee6">•</span>
-                <a class="wayfinder-link" href="/about" style="color: #5067bb">About</a>
+                <a class="wayfinder-link" href="/moogle_shop" style="color: #5067bb">Moogle Shop</a>*@
             </div>
 
-            <a class="wayfinder-link" href="/swagger" target="_blank" style="color: #5067bb;">API Reference</a>
-            <span class="wayfinder-larger-span" style="color: #387ee6;">•</span>
-            <a class="wayfinder-link" href="https://github.com/WaterKH/WayfinderProjectAPI/commits/main" target="_blank" style="color: #387ee6;">Version History</a>
-            <span class="wayfinder-larger-span" style="color: #68a4ff;">•</span>
-            <a class="wayfinder-link" href="https://github.com/WaterKH/WayfinderProjectAPI/issues/new?assignees=WaterKH&labels=bug&template=bug_report.md&title=" target="_blank" style="color: #3c39de;">Report an Issue?</a>
+            <div id="about">
+                <button class="wayfinder-nav-button" onclick="@(() => this.Show("About"))" @onclick:stopPropagation @onclick:preventDefault 
+                    style="color: #3c39de;">About the Project <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span></button>
+
+                <div class="@(this.currentAction == "About" ? "dropdown-container" : "")" onblur="@(() => this.Hide())">
+                    <ul class="dropdown-list @(this.currentAction == "About" ? "is-active" : "")">
+                        <li class="wayfinder-dropdown-item">
+                            <a class="wayfinder-link" href="/about" style="color: #3c39de;">About & History</a>
+                        </li>
+                        <li class="wayfinder-dropdown-item">
+                            <a class="wayfinder-link" href="/faq" style="color: #3c39de;">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <span class="wayfinder-span" style="color: #387ee6;">•</span>
+
+            <div id="resources">
+                <button class="wayfinder-nav-button" onclick="@(() => this.Show("Resources"))" @onclick:stopPropagation @onclick:preventDefault
+                    style="color: #5067bb;">Resources <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span></button>
+
+                <div class="@(this.currentAction == "Resources" ? "dropdown-container" : "")" onblur="@(() => this.Hide())">
+                    <ul class="dropdown-list @(this.currentAction == "Resources" ? "is-active" : "")">
+                        <li class="wayfinder-dropdown-item">
+                            <a class="wayfinder-link" href="https://github.com/WaterKH/WayfinderProjectAPI/issues/new?assignees=WaterKH&labels=bug&template=bug_report.md&title=" target="_blank" style="color: #5067bb;">Report an Issue?</a>
+                        </li>
+                        <li class="wayfinder-dropdown-item">
+                            <a class="wayfinder-link" href="https://github.com/WaterKH/WayfinderProjectAPI/commits/main" target="_blank" style="color: #5067bb;">Version History</a>
+                        </li>
+                        <li class="wayfinder-dropdown-item">
+                            <a class="wayfinder-link" href="/swagger" target="_blank" style="color: #5067bb;">API Reference</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <span style="margin-left: 35px;"></span>
+
+            @if (this.authState == null || this.authState.User.Identity == null || !this.authState.User.Identity.IsAuthenticated)
+            {
+                <div id="account-login">
+                    <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("/Identity/Account/Login", true))">Login</button>
+                </div>
+            }
+            else
+            {
+                <div id="account-logged-in">
+                    <div class="account-container" onclick="@(() => this.Show("Account"))">
+                        <span class="oi oi-person account-icon"></span>
+                    </div>
+
+                    <div class="@(this.currentAction == "Account" ? "dropdown-container" : "")" onblur="@(() => this.Hide())" style="right: 20px;">
+                        <ul class="dropdown-list @(this.currentAction == "Account" ? "is-active" : "")">
+                            <li class="wayfinder-dropdown-item">
+                                <a class="wayfinder-link" href="/Identity/Account/Manage" style="color: #5067bb;">Account</a>
+                            </li>
+                            <li class="wayfinder-dropdown-item">
+                                <a class="wayfinder-link" href="/Identity/Account/Logout" style="color: #5067bb;">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            }
         </div>
 
-        <article class="content px-4" style="padding-top: 0px;">
+        <article class="content content-body px-4" style="padding-top: 0px;">
             @Body
         </article>
+
+        <div class="bottom-row px-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="wayfinder-title">
+                        <img src="/images/wayfinder_project_title.png" style="width: 25%;" />
+                    </div>
+
+                    <div class="wayfinder-contact" style="margin-top: 2px;">
+                        <span>
+                            <strong>twitter:</strong> <a href="https://twitter.com/WFP_KH" target="_blank" style="margin: unset;">@@WFP_KH</a> //
+                            <strong>email:</strong> thewayfinderprojectKH@gmail.com
+                        </span>
+                    </div>
+
+                    <div class="wayfinder-contact" style="margin-top: 5px;">
+                        <span>
+                            <strong>creator:</strong> <a href="https://linktr.ee/RegularPat" target="_blank" style="margin: unset;">RegularPat</a> //
+                            <strong>developer:</strong> <a href="https://linktr.ee/waterkh" target="_blank" style="margin: unset;">waterkh</a> //
+                            <strong>designer:</strong> <a href="https://twitter.com/Kimpchuu" target="_blank" style="margin: unset;">Kimpchuu</a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="text-align: end;">
+                    <div class="wayfinder-info">
+                        <strong>Important Links:</strong>
+                    </div>
+
+                    <div class="wayfinder-link" style="margin-top: 2px;">
+                        <a href="/terms_of_use" target="_blank" style="margin: unset;">Terms of Use</a> // <a href="/privacy_policy" target="_blank" style="margin: unset;">Privacy Policy</a>
+                    </div>
+                    <div class="wayfinder-link" style="margin-top: 5px;">
+                        <a href="https://github.com/WaterKH/WayfinderProjectAPI" target="_blank">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </div>
 
@@ -53,3 +153,28 @@
     cursor: default;
 }
 </style>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    private string currentAction = "";
+    private AuthenticationState authState;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.authState = await authenticationStateTask;
+
+        await base.OnInitializedAsync();
+    }
+
+    public async void Show(string action)
+    {
+        currentAction = (currentAction == action) ? "" : action;
+    }
+
+    public async void Hide()
+    {
+        currentAction = "";
+    }
+}

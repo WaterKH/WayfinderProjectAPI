@@ -1,6 +1,9 @@
 ﻿.wayfinder-background {
     border-radius: 35px;
     background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #f7dfec);
+    margin-bottom: 30px;
+    padding: 50px;
+    width: 100%;
 }
 
 .wayfinder-parallax {
@@ -12,58 +15,14 @@
 }
 
 .wayfinder-title {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 35px;
+    text-align: start;
     font-size: xx-large;
 }
 
 .wayfinder-description {
-    text-align: center;
+    text-align: end;
     font-size: larger;
-    margin-top: 15px;
-    margin-bottom: 40px;
 }
-
-.wayfinder-sub-description {
-    text-align: center;
-    font-size: larger;
-    margin-top: 25px;
-}
-
-.wayfinder-alt-description {
-    text-align: center;
-    font-size: larger;
-    margin-bottom: 25px;
-}
-
-.wayfinder-search {
-    text-align: center;
-    margin-left: 80px;
-}
-
-.wayfinder-search-icon {
-    left: 40px;
-    top: 7px;
-    position: relative;
-    color: #536fe9;
-}
-
-.wayfinder-search-button {
-    padding: 5px 30px;
-    right: 120px;
-    position: relative;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    background: linear-gradient(to right, #155ed9, #2787fd);
-    font-size: small;
-}
-
-    .wayfinder-search-button:focus {
-        outline: none;
-        border: none;
-    }
 
 .wayfinder-button {
     padding: 5px 30px;
@@ -80,92 +39,136 @@
         border: none;
     }
 
-.custom-input {
-    padding: 10px 100px 10px 40px;
-    border-radius: 50px;
-    text-align: left;
-    width: 40%;
-    height: auto;
-    border: 2px solid #2888ff;
-    overflow-wrap: break-word;
+/* Referenced from https://stackoverflow.com/questions/15857006/drawing-a-folder-icon-with-css */
+.ma-folder {
+    width: 80%;
+    height: 550px;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    position: relative;
+    border-radius: 0px 25px 25px 25px;
+    background-color: #3b7aef;
+    padding: 15px;
 }
 
-    .custom-input:focus {
-        outline: none;
-        border: 2px solid #2888ff;
+    .ma-folder:before {
+        z-index: -2;
+        content: '';
+        width: 70%;
+        height: 85px;
+        border-radius: 25px 70px 0 0;
+        background-color: #3b7aef;
+        position: absolute;
+        top: -35px;
+        left: 0px;
     }
 
-
-.header-margins {
-    margin-top: -5px;
-    margin-right: 15px;
+.jj-folder {
+    width: 80%;
+    height: 550px;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    position: relative;
+    border-radius: 0px 25px 25px 25px;
+    background-color: #00c38e;
 }
 
-.header-label {
-    font-size: large;
+    .jj-folder:before {
+        z-index: -2;
+        content: '';
+        width: 70%;
+        height: 85px;
+        border-radius: 25px 70px 0 0;
+        background-color: #00c38e;
+        position: absolute;
+        top: -35px;
+        left: 0px;
+    }
+
+.ms-folder {
+    width: 80%;
+    height: 550px;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    position: relative;
+    border-radius: 0px 25px 25px 25px;
+    background-color: #edad00;
 }
 
-.world-color {
-    color: #ea4a4a;
-    font-weight: 600;
+    .ms-folder:before {
+        z-index: -2;
+        content: '';
+        width: 70%;
+        height: 85px;
+        border-radius: 25px 70px 0 0;
+        background-color: #edad00;
+        position: absolute;
+        top: -35px;
+        left: 0px;
+    }
+
+.folder-title {
+    position: absolute;
+    top: -30px;
+    color: white;
+    margin-left: 25px;
+    font-size: x-large;
+    cursor: default;
 }
 
-.world-display {
-    border: solid 2px #ea4a4a;
-    padding: 5px 8px;
-    border-radius: 7px;
-    background-color: #fdf4f4;
-    color: #ea4a4a;
-    font-weight: 600;
+.folder-container {
+    width: 100%;
+    height: 40vh;
+    padding: 0px 15px 5px 15px;
+    background-color: #ffffffbf;
+    color: #00000000;
+    border-radius: 25px;
+    zoom: 1;
+    overflow: clip;
 }
 
-.area-color {
-    color: #5499fc;
-    font-weight: 600;
+.folder-image {
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    transform: scale(1);
+    cursor: pointer;
+
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
 }
 
-.area-display {
-    border: solid 2px #5499fc;
-    padding: 5px 8px;
-    border-radius: 7px;
-    background-color: #f4f5fd;
-    color: #5499fc;
-    font-weight: 600;
+    .folder-image:hover {
+        background: rgba(0, 0, 0, 0.7);
+        transform: scale(1.25);
+        color: #f1f1f155;
+    }
+
+.folder-content {
+    color: white;
+    padding: 15px 20px 0px 20px;
+    cursor: default;
 }
 
-.character-color {
-    color: #f3b222;
-    font-weight: 600;
+.folder-redirect {
+    border: 2px solid white;
+    border-radius: 50px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    padding-top: 5px;
+    padding-left: 11px;
+    width: 35px;
+    height: 35px;
+    z-index: 5;
+    pointer-events: none;
 }
-
-.character-display {
-    border: solid 2px #f3b222;
-    padding: 5px 8px;
-    border-radius: 7px;
-    background-color: #fdfbf4;
-    color: #f3b222;
-    font-weight: 600;
-}
-
-.music-color {
-    color: #a13bfb;
-    font-weight: 600;
-}
-
-.music-display {
-    border: solid 2px #a13bfb;
-    padding: 5px 8px;
-    border-radius: 7px;
-    background-color: #f4f5fd;
-    color: #a13bfb;
-    font-weight: 600;
-}
-
-
-.a {
-    color: #1a00ff;
-}
-
 
 /* Rounded sliders */
 .slider.round {

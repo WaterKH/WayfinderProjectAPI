@@ -11,7 +11,7 @@ namespace WayfinderProjectAPI.Data.Models
         public int Id { get; set; }
         [Required]
         public int Order { get; set; }
-        [Required] 
+        [Required]
         public string Character { get; set; } = string.Empty;
         [Required]
         public string Line { get; set; } = string.Empty;

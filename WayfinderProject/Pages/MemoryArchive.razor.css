@@ -1,0 +1,202 @@
+﻿.wayfinder-background {
+    border-radius: 35px;
+    background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #f7dfec);
+}
+
+.wayfinder-parallax {
+    border-radius: 35px;
+    padding: 20px;
+    background-image: url(/images/WFP_logo_INVIS.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.wayfinder-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-size: xx-large;
+}
+
+.wayfinder-description {
+    text-align: center;
+    font-size: larger;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.wayfinder-sub-description {
+    text-align: center;
+    font-size: larger;
+    margin-top: 25px;
+}
+
+.wayfinder-alt-description {
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 25px;
+}
+
+.wayfinder-search {
+    text-align: center;
+    margin-left: 80px;
+}
+
+.wayfinder-search-icon {
+    left: 40px;
+    top: 7px;
+    position: relative;
+    color: #536fe9;
+}
+
+.wayfinder-search-button {
+    padding: 5px 30px;
+    right: 120px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    font-size: small;
+}
+
+    .wayfinder-search-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    font-size: larger;
+}
+
+    .wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.custom-input {
+    padding: 10px 100px 10px 40px;
+    border-radius: 50px;
+    text-align: left;
+    width: 40%;
+    height: auto;
+    border: 2px solid #2888ff;
+    overflow-wrap: break-word;
+}
+
+    .custom-input:focus {
+        outline: none;
+        border: 2px solid #2888ff;
+    }
+
+
+.header-margins {
+    margin-top: -5px;
+    margin-right: 15px;
+}
+
+.header-label {
+    font-size: large;
+}
+
+.world-color {
+    color: #ea4a4a;
+    font-weight: 600;
+}
+
+.world-display {
+    border: solid 2px #ea4a4a;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #fdf4f4;
+    color: #ea4a4a;
+    font-weight: 600;
+}
+
+.area-color {
+    color: #5499fc;
+    font-weight: 600;
+}
+
+.area-display {
+    border: solid 2px #5499fc;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #f4f5fd;
+    color: #5499fc;
+    font-weight: 600;
+}
+
+.character-color {
+    color: #f3b222;
+    font-weight: 600;
+}
+
+.character-display {
+    border: solid 2px #f3b222;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #fdfbf4;
+    color: #f3b222;
+    font-weight: 600;
+}
+
+.music-color {
+    color: #a13bfb;
+    font-weight: 600;
+}
+
+.music-display {
+    border: solid 2px #a13bfb;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #f4f5fd;
+    color: #a13bfb;
+    font-weight: 600;
+}
+
+
+.a {
+    color: #1a00ff;
+}
+
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        border-radius: 10px;
+    }

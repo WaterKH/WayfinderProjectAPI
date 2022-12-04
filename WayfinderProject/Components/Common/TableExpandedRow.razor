@@ -4,7 +4,7 @@
     <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
         <div class="row">
             <div class="col-md-5">
-                <NavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" />
+                <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" />
 
                 @if (this.CurrentSubOption == "Details")
                 {
