@@ -30,7 +30,7 @@ namespace WayfinderProjectAPI.Controllers
             if (games != null)
             {
                 var gamesList = games.Split("::").Select(x => x.Trim());
-                
+
                 results = results.Where(x => gamesList.Contains(x.Game.Name));
             }
 
@@ -40,7 +40,7 @@ namespace WayfinderProjectAPI.Controllers
 
                 results = results.Where(x => scenesList.Contains(x.Name));
             }
-            
+
             if (worlds != null)
             {
                 var worldsList = worlds.Split("::").Select(x => x.Trim());
@@ -80,7 +80,7 @@ namespace WayfinderProjectAPI.Controllers
             if (areas != null)
             {
                 var areasList = areas.Split("::").Select(x => x.Trim());
-                
+
                 var resultIds = new List<int>();
                 foreach (var result in results.Include(x => x.Areas).Where(x => x.Areas.Any(y => areasList.Contains(y.Name))))
                 {
@@ -127,16 +127,16 @@ namespace WayfinderProjectAPI.Controllers
 
                         foreach (var scriptLine in result.Script.Lines)
                         {
-                            var tempLine = scriptLine.Line; 
+                            var tempLine = scriptLine.Line;
                             if (!queryString.Any(x => char.IsPunctuation(x)))
                                 tempLine = Regex.Replace(scriptLine.Line, @"[^\w\s]", "");
-                            
+
                             if (tempLine.ToLower().Contains(queryString))
                                 tempResults.Add(result);
                         }
                     }
 
-                    results = results.Where(x => tempResults.Select(y =>  y.Id).Contains(x.Id));
+                    results = results.Where(x => tempResults.Select(y => y.Id).Contains(x.Id));
                 }
                 else
                 {

@@ -47,7 +47,7 @@
             else if (this.CurrentView == "Selections")
             {
                     <div class="search-results">
-                    @if (this.selected.Count > 0)
+                    @if (this.selected != null && this.selected.Count > 0)
                     {
                         <div class="row" style="padding-left: 15px;">
                             @for (int i = 0; i < this.selected.Count; ++i)
@@ -135,7 +135,7 @@
     private string displaySearch = "";
     private bool loaded = true;
 
-    public List<string> selected { get; set; } = new List<string>();
+    public List<string> selected { get; set; }
     public List<string> results = new List<string>();
     public string CurrentView = "Options";
 
@@ -153,7 +153,7 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        if (this.CurrentOption == this.Id)
+        if (this.CurrentOption == this.Id && this.loaded)
         {
             this.loaded = false;
 
@@ -168,7 +168,7 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (this.CurrentOption == this.Id)
+        if (this.CurrentOption == this.Id && !this.loaded)
         {
             var oldLoaded = this.loaded;
             this.loaded = true;

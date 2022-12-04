@@ -1,0 +1,71 @@
+﻿<div class="wayfinder-sub-nav-bar" style="@(CustomStyle)">
+    @foreach (var option in this.Options)
+    {
+        <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(option))">
+            <div class="@((this.CurrentOption == option) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px;">
+                <img src="@this.GetImage(option)" style="width: 15px; vertical-align: unset; margin-right: 10px; margin-top: 3px;" />  @option
+            </div>
+        </div>
+    }
+</div>
+
+<div class="wayfinder-sub-nav-bar-border"></div>
+
+@code {
+    [Parameter] public List<string> Options { get; set; }
+    [Parameter] public string CustomStyle { get; set; }
+    [Parameter] public string StartingOption { get; set; }
+
+    [Parameter] public Action<string> UpdateCurrentOption { get; set; }
+
+    public string CurrentOption { get; set; } = "Games";
+
+    protected override void OnInitialized()
+    {
+        this.CurrentOption = this.StartingOption;
+
+        base.OnInitialized();
+    }
+
+    public async Task Select(string option)
+    {
+        this.CurrentOption = option;
+
+        await Task.Run(() => this.UpdateCurrentOption.Invoke(option));
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+    }
+
+    public string GetImage(string option)
+    {
+        string path = "";
+
+        switch (option)
+        {
+            case "Games":
+                path = "/images/icons/games_gray.png";
+                break;
+            case "Scenes":
+                path = "/images/icons/scenes_gray.png";
+                break;
+            case "Worlds":
+                path = "/images/icons/worlds_gray.png";
+                break;
+            case "Areas":
+                path = "/images/icons/areas_gray.png";
+                break;
+            case "Characters":
+                path = "/images/icons/characters_gray.png";
+                break;
+            case "Music":
+                path = "/images/icons/music_gray.png";
+                break;
+            default:
+                break;
+        }
+
+        return path;
+    }
+}

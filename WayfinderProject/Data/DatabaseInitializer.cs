@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
-using System.Text.Json;
+﻿using System.Text.Json;
 using WayfinderProjectAPI.Data.Models;
 
 namespace WayfinderProjectAPI.Data
@@ -16,32 +14,32 @@ namespace WayfinderProjectAPI.Data
 
             IsInitializing = true;
 
-            context.Database.Migrate();
+            //context.Database.Migrate();
 
             // Load Areas Data into Database
-            CreateAreas(context);
+            //CreateAreas(context);
 
-            // Load Character Data into Database
-            CreateCharacters(context);
+            //// Load Character Data into Database
+            //CreateCharacters(context);
 
-            // Load Game Data into Database
-            CreateGames(context);
+            //// Load Game Data into Database
+            //CreateGames(context);
 
-            // Load Music Data into Database
-            CreateMusic(context);
+            //// Load Music Data into Database
+            //CreateMusic(context);
 
-            // Load World Data into Database
-            CreateWorlds(context);
+            //// Load World Data into Database
+            //CreateWorlds(context);
 
-            // Load Script Data into Database
-            CreateScripts(context);
+            //// Load Script Data into Database
+            //CreateScripts(context);
 
-            // Load Scene Data into Database
-            CreateScenes(context);
+            //// Load Scene Data into Database
+            //CreateScenes(context);
 
             // JJ
             // Character
-            CreateCharactersJJ(context);
+            //CreateCharactersJJ(context);
 
             IsInitializing = false;
         }
@@ -220,15 +218,37 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
+        public class JJCharacterObject
+        {
+            public string Title { get; set; }
+            public string CharacterName { get; set; }
+            public string Description { get; set; } = string.Empty;
+            public string AdditionalInformation { get; set; } = string.Empty;
+        }
         public static void CreateCharactersJJ(WayfinderContext context)
         {
-            //context.JJCharacters.Add(new JJCharacter
-            //{
-            //    Character = context.Characters.FirstOrDefault(x => x.Name == "Sora"),
-            //    Title = "Entry I",
-            //    Description = "Test description",
-            //    AdditionalInformation = "More additional information"
-            //});
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_characters.json"));
+            var allJJCharacters = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
+
+            if (!allJJCharacters!.ContainsKey("Characters"))
+                throw new Exception("No Characters List Found!");
+
+            foreach (var (gameName, characters) in allJJCharacters["Characters"])
+            {
+                foreach (var character in characters)
+                {
+                    context.JJCharacters.Add(new JJCharacter
+                    {
+                        Title = character.Title,
+                        Character = context.Characters.FirstOrDefault(x => x.Name == character.CharacterName),
+                        Description = character.Description,
+                        AdditionalInformation = character.AdditionalInformation,
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName)
+                    });
+                }
+            }
+
+            context.SaveChanges();
         }
     }
 }

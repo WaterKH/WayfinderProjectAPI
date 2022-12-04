@@ -1,11 +1,16 @@
 using Blazored.Modal;
 using Blazored.Toast;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Quartz;
 using System.Text.Json.Serialization;
+using WayfinderProject.Areas.Identity;
+using WayfinderProject.Data;
 using WayfinderProject.Data.Jobs;
+using WayfinderProject.Data.Models;
 using WayfinderProjectAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +32,36 @@ builder.Services.AddBlazoredToast();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDefaultIdentity<WayfinderProjectUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<WayfinderContext>();
+
+builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<WayfinderProjectUser>>();
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+
+//builder.Services.AddAuthentication()
+//.AddGoogle(options =>
+//{
+//    options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
+//    options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
+//})
+//.AddTwitter(twitterOptions =>
+//{
+//    twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterAuthId");
+//    twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterAuthSecret");
+//    twitterOptions.RetrieveUserDetails = true;
+//})
+//.AddOAuth("GitHub", "GitHub", githubOptions =>
+//{
+//    githubOptions.ClientId = Environment.GetEnvironmentVariable("GitHubAuthId");
+//    githubOptions.ClientSecret = Environment.GetEnvironmentVariable("GitHubAuthSecret");
+//    githubOptions.CallbackPath = "/";
+//    githubOptions.AuthorizationEndpoint = "/";
+//    githubOptions.TokenEndpoint = "/";
+//});
+
 
 builder.Services.AddQuartz(q =>
 {
@@ -76,6 +111,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

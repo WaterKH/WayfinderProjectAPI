@@ -1,46 +1,32 @@
 ﻿<div class="wayfinder-nav-bar" style="@(CustomStyle)">
-    @foreach (var option in this.Options)
+    @foreach (var option in this.Categories)
     {
-        <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")">
-            <span class="@((this.CurrentOption == option) ? "wayfinder-option-active" : "wayfinder-option")" @onclick="@(() => this.Select(option))">@option</span>
-        </div>
-    }
-
-    @if (this.AnySelected)
-    {
-        <div class="@((this.CurrentOption == "All") ? "wayfinder-container-active" : "wayfinder-container")" style="margin-left: 25px;">
-            <span class="@((this.CurrentOption == "All") ? "wayfinder-option-active" : "wayfinder-option")" @onclick="@(() => this.Select("All"))">All</span>
+        <div class="@((this.CurrentCategory == option) ? "wayfinder-container-active" : "wayfinder-container")">
+            <span class="@((this.CurrentCategory == option) ? "wayfinder-category-active" : "wayfinder-category")" @onclick="@(() => this.Select(option))">@option</span>
         </div>
     }
 </div>
 
-<div class="wayfinder-nav-bar-border"></div>
-
 @code {
-    [Parameter] public List<string> Options { get; set; }
-    [Parameter] public bool AnySelected { get; set; }
+    [Parameter] public List<string> Categories { get; set; }
     [Parameter] public string CustomStyle { get; set; }
-    [Parameter] public string StartingOption { get; set; }
+    [Parameter] public string StartingCategory { get; set; }
 
-    [Parameter] public Action<string> UpdateCurrentOption { get; set; }
+    [Parameter] public Action<string> UpdateCurrentCategory { get; set; }
 
-    public string CurrentOption { get; set; } = "Games";
+    public string CurrentCategory { get; set; } = "Scenes";
 
     protected override void OnInitialized()
     {
-        this.CurrentOption = this.StartingOption;
+        this.CurrentCategory = this.StartingCategory;
 
         base.OnInitialized();
     }
 
-    public async Task Select(string option)
+    public async Task Select(string category)
     {
-        this.CurrentOption = option;
+        this.CurrentCategory = category;
 
-        await Task.Run(() => this.UpdateCurrentOption.Invoke(option));
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
+        await Task.Run(() => this.UpdateCurrentCategory.Invoke(category));
     }
 }
