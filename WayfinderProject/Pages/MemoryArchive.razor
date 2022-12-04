@@ -723,7 +723,7 @@ else if (this.CurrentCategory == "Interviews")
     #region Generate Share Link Sub-Methods
     private async Task GenerateSceneShareLink()
     {
-        var shareLink = $"{NavigationManager.BaseUri}?";
+        var shareLink = $"{NavigationManager.BaseUri}/memory_archive?";
 
         if (this.CharactersSearch?.selected.Count > 0)
         {
@@ -898,7 +898,7 @@ else if (this.CurrentCategory == "Interviews")
                 .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
                 .FirstOrDefault(s => s.Id == sceneId);
 
-            var dailyLink = $"{NavigationManager.BaseUri}?";
+            var dailyLink = $"{NavigationManager.BaseUri}/memory_archive?";
 
             dailyLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
             dailyLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
@@ -927,7 +927,7 @@ else if (this.CurrentCategory == "Interviews")
                 .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
                 .FirstOrDefault(s => s.Id == randomSceneId);
 
-            var randomLink = $"{NavigationManager.BaseUri}?";
+            var randomLink = $"{NavigationManager.BaseUri}/memory_archive?";
 
             randomLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
             randomLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
