@@ -54,16 +54,17 @@ namespace WayfinderProject.Data.Jobs
                                     INNER JOIN wayfinderprojectdb.Games ON Games.Id = MA_Scene.GameId 
                                     INNER JOIN wayfinderprojectdb.Script ON Script.SceneName = MA_Scene.Name
                                     INNER JOIN wayfinderprojectdb.ScriptLine ON Script.Id = ScriptLine.ScriptId
-                                    WHERE ScriptLine.Line <> 'None' AND LENGTH(ScriptLine.Line) < 278";
+                                    WHERE ScriptLine.Line <> 'None' AND LENGTH(ScriptLine.Line) < 253";
 
                 MySqlCommand sceneCountCommand = new MySqlCommand(sceneCountQuery, connection);
                 int sceneCount = Convert.ToInt32(sceneCountCommand.ExecuteScalar());
 
-                string sceneQuery = $@"SELECT MA_Scene.Id AS SceneId, MA_Scene.Name AS Name, MA_Scene.Link AS Link, Games.Name AS GameName, ScriptLine.Line AS Line FROM wayfinderprojectdb.MA_Scene 
+                string sceneQuery = $@"SELECT MA_Scene.Id AS SceneId, MA_Scene.Name AS Name, MA_Scene.Link AS Link, Games.Name AS GameName, ScriptLine.Line AS Line, ScriptLine.Character AS 'Character'
+                                    FROM wayfinderprojectdb.MA_Scene 
                                     INNER JOIN wayfinderprojectdb.Games ON Games.Id = MA_Scene.GameId 
                                     INNER JOIN wayfinderprojectdb.Script ON Script.SceneName = MA_Scene.Name
                                     INNER JOIN wayfinderprojectdb.ScriptLine ON Script.Id = ScriptLine.ScriptId
-                                    WHERE ScriptLine.Line <> 'None' AND LENGTH(ScriptLine.Line) < 278";
+                                    WHERE ScriptLine.Line <> 'None' AND LENGTH(ScriptLine.Line) < 253";
 
                 MySqlCommand sceneCommand = new MySqlCommand(sceneQuery, connection);
                 MySqlDataReader sceneResult = sceneCommand.ExecuteReader();
@@ -82,6 +83,7 @@ namespace WayfinderProject.Data.Jobs
                     }
 
                     string line = (string)sceneResult["Line"];
+                    string character = (string)sceneResult["Character"];
                     string name = (string)sceneResult["Name"];
                     string gameName = (string)sceneResult["GameName"];
                     string link = (string)sceneResult["Link"];
@@ -89,8 +91,8 @@ namespace WayfinderProject.Data.Jobs
                     randomSceneId = (int)sceneResult["SceneId"];
 
                     // Assemble tweet and subtweet
-                    tweetText = $"\"{line}\"";
-                    subTweetText = $"~\"{name}\" from {gameName}\r\n{link}";
+                    tweetText = $"\"{line}\"~{character}";
+                    subTweetText = $"\"{name}\" from {gameName}\r\n{link}";
 
                     break;
                 }
