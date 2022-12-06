@@ -149,7 +149,7 @@
 
 @code {
     [Parameter] public SceneDto Scene { get; set; }
-    [Parameter] public Table<SceneDto> MainTable { get; set; }
+    [Parameter] public SceneTable<SceneDto> MainTable { get; set; }
 
     private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
 

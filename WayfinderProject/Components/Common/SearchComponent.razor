@@ -8,25 +8,25 @@
                 {
                     <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault>Clear All</button>
                 }
-                <button class="@(this.CurrentView == "Selections" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())">@(this.CurrentView == "Options" ? "Filters" : "Options")</button>
+                <button class="@(this.CurrentView == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())">@(this.CurrentView == "Available" ? "Filters" : "Options")</button>
             </div>
 
 
             <div class="search-bar" style="margin: 10px 0px 30px 0px; margin-left: -45px;">
                 <span class="wayfinder-search-icon material-icons">search</span>
                 <input value="@this.displaySearch" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input"
-                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Options")">
+                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Available")">
             </div>
 
-            @if (this.CurrentView == "Options")
+            @if (this.CurrentView == "Available")
             {
             <div class="search-results">
-                @if (this.results.Count > 0)
+                @if (this.Available.Count > 0)
                 {
                     <div class="row" style="padding-left: 15px;">
-                        @for (int i = 0; i < this.results.Count; ++i)
+                        @for (int i = 0; i < this.Available.Count; ++i)
                         {
-                            var tempResult = this.results[i];
+                            var tempResult = this.Available[i];
                             <div class="col-md-5">
                                 <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="false" SelectValue="@(() => Select(tempResult))" />
                             </div>
@@ -44,15 +44,15 @@
                 }
             </div>
             }
-            else if (this.CurrentView == "Selections")
+            else if (this.CurrentView == "Selected")
             {
                     <div class="search-results">
-                    @if (this.selected != null && this.selected.Count > 0)
+                    @if (this.Selected != null && this.Selected.Count > 0)
                     {
                         <div class="row" style="padding-left: 15px;">
-                            @for (int i = 0; i < this.selected.Count; ++i)
+                            @for (int i = 0; i < this.Selected.Count; ++i)
                             {
-                                var tempResult = this.selected[i];
+                                var tempResult = this.Selected[i];
                                 <div class="col-md-5">
                                     <SearchOption Id="@this.Id" Color="@this.Color" Value="@tempResult" IsSelected="true" SelectValue="@(() => Remove(tempResult))" />
                                 </div>
@@ -121,12 +121,19 @@
     [Parameter] public string Placeholder { get; set; } = "Search for values...";
     [Parameter] public string Color { get; set; } = "#ffffff";
     [Parameter] public bool CanSearch { get; set; } = true;
-    [Parameter] public List<string> Selections { get; set; } = new List<string>();
+
+    [Parameter] public List<string> Initial { get; set; } = new List<string>();
+    [Parameter] public List<string> Available { get; set; } = new List<string>();
+    [Parameter] public List<string> Selected { get; set; } = new List<string>();
+
     [Parameter] public string CurrentOption { get; set; }
     [Parameter] public bool CanShowClearAll { get; set; }
 
     [Parameter] public Func<Task> UpdateSearch { get; set; }
     [Parameter] public Func<string, Task> ClearAllMethod { get; set; }
+    //[Parameter] public Func<Task> SearchCallback { get; set; }
+    //[Parameter] public Func<Task> SelectCallback { get; set; }
+    //[Parameter] public Func<Task> RemoveCallback { get; set; }
 
     [CascadingParameter] public IModalService Modal { get; set; } = default!;
 
@@ -135,9 +142,9 @@
     private string displaySearch = "";
     private bool loaded = true;
 
-    public List<string> selected { get; set; }
-    public List<string> results = new List<string>();
-    public string CurrentView = "Options";
+    //public List<string> available;
+    //public List<string> selected;
+    public string CurrentView = "Available";
 
     private Dictionary<string, string> Colors = new Dictionary<string, string> {
         { "", "" }
@@ -145,9 +152,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        this.Selections.Sort();
-        this.results = this.Selections;
-
         await base.OnInitializedAsync();
     }
 
@@ -187,28 +191,37 @@
         await base.OnAfterRenderAsync(firstRender);
     }
 
+    public async Task SetCurrentView(string view)
+    {
+        this.CurrentView = view;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
     private void Search(string search)
     {
         this.search = search;
-        this.results = new List<string>();
 
         if (string.IsNullOrEmpty(search))
         {
-            this.results = this.Selections;
+            this.Available = this.Initial;
             return;
         }
 
-        foreach (var selection in this.Selections)
+        foreach (var selection in this.Initial)
         {
-            if (this.selected.Contains(selection)) continue;
+            if (this.Selected.Contains(selection)) continue;
 
             if (selection.ToLower().Contains(search.ToLower()))
             {
-                this.results.Add(selection);
+                this.Available.Add(selection);
             }
         }
 
-        this.results.Sort();
+        this.Available.Sort();
     }
 
     private async Task Select(string value)
@@ -216,7 +229,7 @@
         if (!this.CanSearch)
             return;
 
-        this.selected.Add(value);
+        this.Selected.Add(value);
 
         if (!string.IsNullOrEmpty(search))
         {
@@ -224,16 +237,16 @@
         }
         else
         {
-            this.results.Remove(value);
-            this.results.Sort();
+            this.Available.Remove(value);
+            this.Available.Sort();
         }
 
         this.search = string.Empty;
 
         await Task.Run(async () => await this.UpdateSearch.Invoke());
 
-        if (this.results.Count == 0)
-            this.CurrentView = "Selections";
+        if (this.Available.Count == 0)
+            this.CurrentView = "Selected";
 
         await InvokeAsync(() =>
         {
@@ -246,7 +259,7 @@
         if (!this.CanSearch)
             return;
 
-        this.selected.Remove(value);
+        this.Selected.Remove(value);
 
         if (!string.IsNullOrEmpty(search))
         {
@@ -254,16 +267,16 @@
         }
         else
         {
-            this.results.Add(value);
-            this.results.Sort();
+            this.Available.Add(value);
+            this.Available.Sort();
         }
 
         this.search = string.Empty;
 
         await Task.Run(async () => await this.UpdateSearch.Invoke());
 
-        if (this.selected.Count == 0)
-            this.CurrentView = "Options";
+        if (this.Selected.Count == 0)
+            this.CurrentView = "Available";
 
         await InvokeAsync(() =>
         {
@@ -273,13 +286,13 @@
 
     private void ToggleView()
     {
-        if (this.CurrentView == "Options")
+        if (this.CurrentView == "Available")
         {
-            this.CurrentView = "Selections";
+            this.CurrentView = "Selected";
         }
-        else if (this.CurrentView == "Selections")
+        else if (this.CurrentView == "Selected")
         {
-            this.CurrentView = "Options";
+            this.CurrentView = "Available";
         }
     }
 

@@ -1,0 +1,71 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+
+<tr>
+    <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
+        <div class="row">
+            <div class="col-md-5">
+                <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px;">
+                    <div class="row" style="height: 281px;">
+                        <div class="col-md-12">
+                            <div id="share" class="share" @onclick="@(() => this.GenerateShareLink.Invoke())">
+                                <span class="copyable">
+                                    <i class="oi oi-file"></i>
+                                    <label class="share-text"><b>Share Character Entry</b></label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Character Entry Title -->
+
+                        <div class="col-md-12" style="margin-top: 25px;">
+                            <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Character</h3>
+                            <label>@(JJCharacter.Character.Name)</label><br />
+                        </div>
+
+                        <br />
+
+                        <!-- Link to Scenes of Character -->
+
+                        
+                        <!-- Description + Additional Information -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-7">
+                <iframe width="100%" height="563px" src="@(this.firstAppearanceScene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px;"></iframe>
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+@code {
+    [Parameter] public JJCharacterDto JJCharacter {get; set;}
+    [Parameter] public WayfinderProjectAPI.Controllers.WayfinderController API { get; set; }
+
+    [Parameter] public Func<Task> GenerateShareLink { get; set; }
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private SceneDto firstAppearanceScene = new SceneDto();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.firstAppearanceScene = await this.API.GetCharacterFirstAppearance(JJCharacter.Character.Name, JJCharacter.Game.Name);
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}

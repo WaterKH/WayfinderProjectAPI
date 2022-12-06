@@ -65,7 +65,7 @@
                 else if (this.CurrentSubOption == "Dialogue")
                 {
                     <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 523px; overflow-y: auto; margin-top: 10px;">
-                        <Table Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
+                        <SceneTable Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
                             <TableHeader>
                                 <th>Dialogue</th>
                                 <th></th>
@@ -74,7 +74,7 @@
                                 <td><strong>@Line.Character</strong></td>
                                 <td>@Line.Line</td>
                             </RowTemplate>
-                        </Table>
+                        </SceneTable>
                     </div>
                 }
             </div>

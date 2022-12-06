@@ -751,6 +751,500 @@
         "Description": "A female ninja who escaped to Traverse Town when her home world was taken by the Heartless. She stays strong and cheerful in any situation. She works with Leon and Aerith to unravel the secret of the \"key\".",
         "AdditionalInformation": "\"Final Fantasy VII\""
       }
+    ],
+    "Kingdom Hearts Re:Chain of Memories": [
+      {
+        "Title": "Aerith",
+        "CharacterName": "Aerith",
+        "Description": "A young woman who fought the Heartless. Her calm demeanor hides an unbreakable will. Aerith also has a mysterious sense of truth, and is aware that Traverse Town and its inhabitants are a figment of Sora's memory.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Aladdin",
+        "CharacterName": "Aladdin",
+        "Description": "A young man who lives in Agrabah and dreams of meeting Princess Jasmine. Aladdin became Genie's master when he found the magic lamp. At first Aladdin wanted to become a prince and impress Jasmine, but in the end he gave Genie his freedom and decided to show Jasmine his true self.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Alice",
+        "CharacterName": "Alice",
+        "Description": "A curious girl who fell down the rabbit hole into Wonderland. Alice was falsely accused of stealing the Queen of Hearts' memory and put on trial, but we intervened and helped her clear her name.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Ansem",
+        "CharacterName": "Ansem Seeker of Darkness",
+        "Description": "Pursuer of darkness. To open the door to darkness, Ansem used the Heartless to steal countless hearts. He enslaved Riku, but met his demise at Sora's hand. Nonetheless, Ansem's shadow lives on in the depths of Riku's heart.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Ariel",
+        "CharacterName": "Ariel",
+        "Description": "The daughter of King Triton who longs to see the outside world. Worried by Flounder's disappearance, Ariel was cajoled by Ursula into forking over the king's trident. We helped Ariel save Flounder and recover the trident, and she resolved to tell her father the truth.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Axel (SS)",
+        "CharacterName": "Axel",
+        "Description": "A mysterious figure who stands in Sora's path. Hard to read, half the time Axel seems to just be messing around... but for all we know, he's done more thinking than everyone else put together. He knows a lot more than he lets on.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Axel (RR)",
+        "CharacterName": "Axel",
+        "Description": "No. 8 in the Organization. He is a Nobody whose intentions and secrets are hidden from all. Axel has no qualms about exploiting others to suit his needs. He used Sora and Naminé to silence Marluxia and halt his plot against the Organization. Axel claims he and Sora have something in common, but that connection is unclear.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Bambi",
+        "CharacterName": "Bambi",
+        "Description": "A young deer prince whose father is king of the Forest. Sora can call on Bambi for help anytime.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "The Beast",
+        "CharacterName": "Beast",
+        "Description": "A prince transformed into a beast because of his selfishness. Meeting Belle restored humanity to his heart. Though stunned by Belle's cold behavior, his faith in their love never wavered.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Belle",
+        "CharacterName": "Belle",
+        "Description": "A young woman who saw kindness behind the Beast's gruff exterior. Realizing Maleficent sought her heart, Belle acted coldly toward the Beast to keep her heart beyond the witch's reach.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Hook (SS)",
+        "CharacterName": "Captain Hook",
+        "Description": "A pirate who holds a grudge against Peter Pan. Hook kidnapped Wendy to lure Peter out. Normally proud, Hook falls to pieces the moment the crocodile that took his hand shows up.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Hook (RR)",
+        "CharacterName": "Captain Hook",
+        "Description": "A pirate of Neverland. Hook appeared before Riku as a token of the indelible darkness in his heart.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Card of Hearts",
+        "CharacterName": "Card of Heart(s)",
+        "Description": "Guards in the service of the Queen of Hearts. They fear her temper and will do anything she orders.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Card of Spades",
+        "CharacterName": "Card of Spade(s)",
+        "Description": "Guards in the service of the Queen of Hearts. They fear her temper and will do anything she orders.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "The Cheshire Cat",
+        "CharacterName": "Cheshire Cat",
+        "Description": "A mysterious, grinning cat who always talks in riddles. He appears when you least expect it, and disappears whenever he pleases.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Cid",
+        "CharacterName": "Cid",
+        "Description": "A gifted pilot who saved Leon and the others from the Heartless when they were just children. Cid lives in Traverse Town now.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Cloud",
+        "CharacterName": "Cloud",
+        "Description": "A swordsman hired by Hades to take out Hercules. Cloud seeks the true memories he has lost. Were they memories of someone dear to him, or memories of his hazy past?",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "DiZ",
+        "CharacterName": "DiZ",
+        "Description": "Truly an enigma. DiZ appeared before Riku in the guise of Ansem, presenting him with choices regarding the darkness within his heart. It is said he and the king have met.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Donald Duck",
+        "CharacterName": "Donald Duck",
+        "Description": "Court Wizard at Disney Castle who set out with Goofy after the king's disappearance with orders to find the Keyblade Master. His short temper sometimes gets him into trouble, but he is very brave and caring of his loved ones. He would put his life on the line if it meant helping a friend.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Dragon Maleficent",
+        "CharacterName": "Dragon Maleficent",
+        "Description": "Maleficent's dragon form. Her own sorcery mingled with the vast powers of darkness made Maleficent a fearful opponent.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Dr. Finkelstein",
+        "CharacterName": "Dr. Finkelstein",
+        "Description": "The mad scientist of Halloween Town. He's always immersed in his odd experiments. This time Dr. Finkelstein came up with a potion to restore true memories, only to have it guzzled by Oogie Boogie.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Dumbo",
+        "CharacterName": "Dumbo",
+        "Description": "A small elephant born in a circus. The other animals laughed at his big ears, but the courage to fly made Dumbo the star of the circus. If Sora calls, Dumbo will come to the rescue.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Eeyore",
+        "CharacterName": "Eeyore",
+        "Description": "A gloomy donkey whose tail keeps falling off and getting lost. Eeyore is timid and always a little down, and likes to take things slow.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Flounder",
+        "CharacterName": "Flounder",
+        "Description": "A young fish. He's not exactly brave, but Flounder is Ariel's most loyal friend. Ursula kidnapped Flounder as part of her plan to trick Ariel and steal the trident.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Genie",
+        "CharacterName": "Genie",
+        "Description": "Captive of the magic lamp. Genie must grant the lamp's holder three wishes He longs for freedom, but can only get it if someone uses a wish to set him free.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Geppetto",
+        "CharacterName": "Geppetto",
+        "Description": "A gentle and earnest clockmaker who carved Pinocchio from a block of wood. Geppetto was swallowed by Monstro, boat and all, while searching for Pinocchio. The two were reunited inside the giant whale, and escaped with our help.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Goofy",
+        "CharacterName": "Goofy",
+        "Description": "Captain of the Disney Castle Royal Knights. He set out with Donald after the king's disappearance. He is cheerful and calm, and no one is more loyal to the king. Goofy and Sora are especially good friends.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Hades (SS)",
+        "CharacterName": "Hades",
+        "Description": "Ruler of the Underworld. Hades can't stand Hercules. He tricked Cloud into challenging Hercules to the death, but we put an end to his plotting.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Hades (RR)",
+        "CharacterName": "Hades",
+        "Description": "God of the Underworld who seeks to rule over all. Hades appeared before Riku as a token of the indelible darkness in his heart.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Hercules",
+        "CharacterName": "Hercules",
+        "Description": "Son of the god Zeus and Hera, but not a god himself. With godlike strength and a gentle heart, Hercules is a true hero. He has never lost at the Coliseum games.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Iago",
+        "CharacterName": "Iago",
+        "Description": "A cunning and chatty parrot. Iago flies about Agrabah, serving as the evil Jafar's eyes and ears.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Jack Skellington",
+        "CharacterName": "Jack Skellington",
+        "Description": "Halloween Town's master of the macabre. Jack is always looking for new ways to bring the spooks and shivers of Halloween to all.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Jafar",
+        "CharacterName": "Jafar",
+        "Description": "A sorcerer and Agrabah's royal vizier. Jafar stole the magic lamp from Aladdin and, with Genie's power, schemed to become ruler of Agrabah.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Jafar-Genie (SS)",
+        "CharacterName": "Genie Jafar",
+        "Description": "Jafar's genie form. After taking the magic lamp from Aladdin, Jafar wished for the powers of a genie and tried to do us in.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Jafar-Genie (RR)",
+        "CharacterName": "Genie Jafar",
+        "Description": "A sorcerer and also Agrabah's royal vizier, transformed by magic. Jafar appeared before Riku as a token of the indelible darkness in his heart.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Jasmine",
+        "CharacterName": "Jasmine",
+        "Description": "Princess of Agrabah. Jasmine feels cooped up in the palace and longs for the freedom outside its walls.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Jiminy Cricket",
+        "CharacterName": "Jiminy Cricket",
+        "Description": "That's right, me again. I'm keeping a journal of everyone's adventures. I also act as Pinocchio's conscience, so he'll know right from wrong.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Kairi (SS)",
+        "CharacterName": "Kairi",
+        "Description": "Sora's childhood friend. Sora's journey began as a search for Kairi, who disappeared when their island home was swallowed by darkness. Kairi was held captive by the Heartless, but thanks to Sora she and the islands were saved. She waits there for Sora and Riku's return.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Kairi (RR)",
+        "CharacterName": "Kairi",
+        "Description": "Riku and Sora's friend growing up. Kairi vanished when their home islands were devoured by darkness. Riku and Sora both journeyed to find her. Kairi was held captive by the Heartless, but thanks to Sora, she and the islands were saved. She waits there for Sora and Riku's return.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "The King",
+        "CharacterName": "Mickey",
+        "Description": "The king who reigns over Disney Castle. He set off alone to protect his world and all worlds from the dominion of the dark. When Riku fell into the realm of darkness, the king showed him the way, but the two were separated when the door to darkness was closed.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Larxene (SS)",
+        "CharacterName": "Larxene",
+        "Description": "A member of the group that controls Castle Oblivion. Larxene is unfeeling and loves nothing more than to bring other people down. She is on good terms with Axel but still mocks everyone and trusts no one.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Larxene (RR)",
+        "CharacterName": "Larxene",
+        "Description": "No. 12 in the Organization. Larxene conspired with Marluxia to take over the group, and intended to pull Axel in as well. However, her abrasive, unfeeling personality proved her downfall—provoking Sora's anger was a fatal error.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Leon",
+        "CharacterName": "Leon",
+        "Description": "A cool and collected swordsman who wields a gunblade. His real name: Squall Leonhart. Leon once fought with Sora against the Heartless, but the Leon we met in Castle Oblivion is a product of Sora's memory, so he can't remember much of what happened before.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Lexaeus",
+        "CharacterName": "Lexaeus",
+        "Description": "No. 5 in the Organization. A born warrior, Lexaeus effortlessly brandishes a gigantic tomahawk. To counterbalance his rival Marluxia's bid for Sora's power, Lexaeus tried to conquer Riku, but was defeated by Riku's dark powers.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Maleficent (SS)",
+        "CharacterName": "Maleficent",
+        "Description": "A witch who commands the darkness. Sora faced Maleficent and her Heartless once before. She stole Belle's heart to perfect her dark powers, though Belle had seen through her plan.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Maleficent (RR)",
+        "CharacterName": "Maleficent",
+        "Description": "A witch who commands the darkness. Maleficent's charms won over Riku, and she empowered him with darkness. In Castle Oblivion she stood before Riku again, this time as a token of the indelible darkness in his heart.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Marluxia (SS)",
+        "CharacterName": "Marluxia",
+        "Description": "Lord of Castle Oblivion and a member of the Organization. In a move to bring the group under his control, Marluxia used Naminé to overrun Sora's memory and tried to claim the power of the Keyblade.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Marluxia (RR)",
+        "CharacterName": "Marluxia",
+        "Description": "No. 11 in the Organization. Marluxia lured Sora to Castle Oblivion in hopes of using his power to seize the Organization. He ordered Naminé to alter Sora's memories, and fooled Vexen into challenging him. All was going according to plan, but Marluxia's scheme dissolved when Axel set Naminé free. Marluxia was ultimately destroyed by Sora.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "The Moogles",
+        "CharacterName": "Moogle(s)",
+        "Description": "A strange race that seems to pop up just about anywhere. In Castle Oblivion, the moogles run shops where Sora can trade in unwanted cards.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Mushu",
+        "CharacterName": "Mushu",
+        "Description": "Once a guardian dragon of a Chinese family. Due to past mistakes, he lost much of his former power. If Sora calls, Mushu will come to our aid.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Naminé (SS)",
+        "CharacterName": "Naminé",
+        "Description": "A young witch who, under orders from Marluxia, rewrote much of Sora's memory. Because Naminé based the false memories on Sora's feelings toward Kairi, Sora believed he and Naminé had been friends since childhood. But truth be told, the two had never met before Castle Oblivion.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Naminé (RR)",
+        "CharacterName": "Naminé",
+        "Description": "A young witch who can manipulate memories. Under orders from the Organization, Naminé shadowed Kairi and altered Sora's memory. But the forgiveness in Sora's heart moved her to disobey those orders. Now she watches over Sora until the reconstruction of his memories is complete.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Oogie Boogie (SS)",
+        "CharacterName": "Oogie Boogie",
+        "Description": "A villain who's always plotting against Jack. Oogie Boogie stole Dr. Finkelstein's potion thinking it would make him stronger, but it drove him mad with fear instead.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Oogie Boogie (RR)",
+        "CharacterName": "Oogie Boogie",
+        "Description": "A villain who's always causing trouble in Halloween Town. Oogie Boogie appeared before Riku as a token of the indelible darkness in his heart.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Peter Pan",
+        "CharacterName": "Peter Pan",
+        "Description": "A boy who lives in Neverland, where no one grows up. Peter can be stubborn, but deep down he's brave and just. He was upset that Wendy wanted to return to London, but in the end he wished her well.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Philoctetes",
+        "CharacterName": "Philoctetes",
+        "Description": "Trainer of countless heroes, including Hercules. Nowadays Phil runs the Coliseum and manages the games.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Piglet",
+        "CharacterName": "Piglet",
+        "Description": "Pooh's closest friend. Piglet is very shy, and when he's surprised he covers his eyes with his floppy ears.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Pinocchio",
+        "CharacterName": "Pinocchio",
+        "Description": "A wooden puppet Geppetto made, brought to life by the Blue Fairy. To become a real boy, Pinocchio has to learn bravery, kindness, and honesty. He and Geppetto were swallowed by Monstro, but they escaped with a little help from us.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Pluto",
+        "CharacterName": "Pluto",
+        "Description": "The king's faithful dog. The strength of their bond goes beyond master and pet. He had left Disney Castle with Donald and Goofy, but is now on his own. His keen sense of smell might lead us to secrets yet uncovered.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "The Queen of Hearts",
+        "CharacterName": "Queen of Hearts",
+        "Description": "A selfish ruler who commands an army of card soldiers. A Heartless stole the Queen's memory, but she accused Alice and put her on trial.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Rabbit",
+        "CharacterName": "Rabbit",
+        "Description": "A diligent gardener who's always busy with his vegetables. Sometimes Rabbit is a bit short-tempered, especially when Tigger bounces around in his garden.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Riku (SS)",
+        "CharacterName": "Riku",
+        "Description": "Sora's childhood friend. Baited by the darkness and used by Maleficent and Ansem, Riku once fought against Sora. In order to seal the door to darkness, Riku stayed with the king on the other side. His current whereabouts are unknown. Sora journeys in the hopes of finding Riku.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Riku (RR)",
+        "CharacterName": "Riku",
+        "Description": "A boy who was born and raised on a small group of islands. Riku dreamt of seeing other worlds, and so he forsook the islands—only to be seduced by the power of darkness. Enslaved by Ansem, pursuer of darkness, Riku clashed with his childhood friend Sora. But in the end, he was able to regain himself, and together with Sora closed the door to darkness. Still, the dark wounds in Riku's heart have yet to mend.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Riku Replica (SS)",
+        "CharacterName": "Riku Replica",
+        "Description": "A replica of Riku created by Vexen from the real Riku's data. Through Naminé's power he was infused with false memories and made to believe he was the real Riku. The truth has wounded him deeply.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Riku Replica (RR)",
+        "CharacterName": "Riku Replica",
+        "Description": "A replica of Riku created by Vexen from the real Riku's data. Unlike the real Riku, he wields darkness freely, but is burdened by the fact that he is an imitation.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Roo",
+        "CharacterName": "Roo",
+        "Description": "A feisty kangaroo who's full of energy. Little Roo wants to learn to bounce as high as Tigger.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Sally",
+        "CharacterName": "Sally",
+        "Description": "Dr. Finkelstein's helper at the lab. He created her from various odds and ends. Sally is secretly in love with Jack.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Sebastian",
+        "CharacterName": "Sebastian",
+        "Description": "Triton's music director and Ariel's guardian. Sebastian is constantly scolding Ariel for her escapades, but only because he worries for her safety.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Selphie",
+        "CharacterName": "Selphie",
+        "Description": "A perky girl from Sora's islands. Selphie is assertive and tends to leap before she looks. She also has a romantic side.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Simba",
+        "CharacterName": "Simba",
+        "Description": "Successor to his father as ruler of the Pride Lands. Sora need only call and Simba will appear and lend his strength.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Sora (SS)",
+        "CharacterName": "Sora",
+        "Description": "A bright and spirited boy chosen by the Keyblade to battle the Heartless. It was Sora who defeated Ansem, ending his plan to shroud the world in darkness. However, Sora continued his journey, seeking the friends he lost during the struggle.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Sora (RR)",
+        "CharacterName": "Sora",
+        "Description": "Riku's childhood friend, and the hero of light chosen by the Keyblade to stand against the darkness. Riku fought Sora while bridled by darkness, but their friendship proved stronger, and they ultimately worked together to close the door to darkness.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Tidus",
+        "CharacterName": "Tidus",
+        "Description": "A young boy from Sora's islands with a sunny personality and lots of energy. Tidus has no shortage of confidence either, and considers himself a champ at everything.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Tigger",
+        "CharacterName": "Tigger",
+        "Description": "The one and only. Cheerful Tigger loves to bounce all day long. Sometimes his energy is too much for the others, but he always means well.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Tinker Bell",
+        "CharacterName": "Tinker Bell",
+        "Description": "A fairy with a jealous streak, especially when Peter pays attention to other girls.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Ursula (SS)",
+        "CharacterName": "Ursula",
+        "Description": "The sea witch. She once lived in the palace, but was banished for scheming. Ursula deceived Ariel and stole the trident in an attempt to rule all Atlantica.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Ursula (RR)",
+        "CharacterName": "Ursula",
+        "Description": "The sea witch who plotted to rule all of the undersea kingdom Atlantica. Ursula appeared before Riku as a token of the indelible darkness in his heart. Vexen (SS): A man absorbed in his dubious research in Castle Oblivion. Vexen tried to destroy Sora by controlling Riku and pitting the two against each other. When this plan failed, he confronted Sora personally. Vexen (RR): No. 4 in the Organization. He, Lexaeus, and Zexion have been in the group since its inception, and there is no love lost between them and neophytes like Marluxia. After battling Riku, Vexen turned to events unfolding aboveground, but successive failures led to his termination by Axel.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Wakka",
+        "CharacterName": "Wakka",
+        "Description": "A boy from Sora's islands. Despite being the oldest, Wakka is modest and takes good care of his friends.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Wendy",
+        "CharacterName": "Wendy",
+        "Description": "A dreamy English girl. Peter showed her the way to Never Land. Wendy really likes Peter, but decided to return home to London.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "The White Rabbit",
+        "CharacterName": "White Rabbit",
+        "Description": "A loyal retainer of the Queen of Hearts. He always carries out the Queen's orders, no matter what they may be.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Winnie the Pooh",
+        "CharacterName": "Pooh",
+        "Description": "A bear who lives in the base of a tree in the Hundred Acre Wood. Pooh loves to eat—especially honey. He's easygoing, but a little absent-minded.",
+        "AdditionalInformation": ""
+      },
+      {
+        "Title": "Yuffie",
+        "CharacterName": "Yuffie",
+        "Description": "A girl whose cheerful personality belies her painful memories. When she was still young the Heartless robbed her of her home. Never one to sweat the small stuff, Yuffie seems unfazed by her fuddled memory.",
+        "AdditionalInformation": ""
+      }
     ]
   }
 }

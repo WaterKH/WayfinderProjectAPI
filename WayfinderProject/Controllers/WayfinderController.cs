@@ -20,7 +20,7 @@ namespace WayfinderProjectAPI.Controllers
             _context = context;
         }
 
-
+        #region Memory Archive
         [HttpGet("SearchForScenes")]
         public async Task<List<SceneDto>> SearchForScenes([FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
         {
@@ -168,5 +168,94 @@ namespace WayfinderProjectAPI.Controllers
 
             return result.ToDto();
         }
+        #endregion Memory Archive
+
+        #region Jiminy Journal
+        [HttpGet("SearchForCharacterEntries")]
+        public async Task<List<JJCharacterDto>> SearchForCharacterEntries([FromQuery] string? games = null, [FromQuery] string? characterTitles = null, [FromQuery] string? characters = null, [FromQuery] string? information = null)
+        {
+            var results = _context.JJCharacters.AsNoTrackingWithIdentityResolution();
+            var queryString = (information == null ? information : information.Any(x => char.IsPunctuation(x)) ? information : Regex.Replace(information, @"[^\w\s]", ""));
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
+            }
+
+            if (characterTitles != null)
+            {
+                var characterTitlesList = characterTitles.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => characterTitlesList.Contains(x.Title));
+            }
+
+            if (characters != null)
+            {
+                var charactersList = characters.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => charactersList.Contains(x.Character.Name));
+            }
+
+            if (queryString != null)
+            {
+                if (!queryString.Contains("\""))
+                {
+                    queryString = queryString.ToLower();
+
+                    var tempResults = new List<JJCharacter>();
+                    foreach (var result in results)
+                    {
+                        // Description search
+                        var tempDescription = result.Description;
+                        if (!queryString.Any(x => char.IsPunctuation(x)))
+                            tempDescription = Regex.Replace(result.Description, @"[^\w\s]", "");
+
+                        if (tempDescription.ToLower().Contains(queryString))
+                            tempResults.Add(result);
+
+                        // Additional Information search
+                        var tempAdditionalInformation = result.AdditionalInformation;
+                        if (!queryString.Any(x => char.IsPunctuation(x)))
+                            tempAdditionalInformation = Regex.Replace(result.AdditionalInformation, @"[^\w\s]", "");
+
+                        if (tempAdditionalInformation.ToLower().Contains(queryString))
+                            tempResults.Add(result);
+                    }
+
+                    results = results.Where(x => tempResults.Select(y => y.Id).Contains(x.Id));
+                }
+                else
+                {
+                    queryString = queryString.Replace("\"", "");
+
+                    results = results.Where(x => x.Description.Contains(queryString) || x.AdditionalInformation.Contains(queryString));
+                }
+            }
+
+            return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        [HttpGet("GetCharacterFirstAppearance")]
+        public async Task<SceneDto> GetCharacterFirstAppearance([FromQuery] string characterName, [FromQuery] string? games = null)
+        {
+            var results = _context.Scenes.AsNoTrackingWithIdentityResolution().Include(x => x.Characters).Where(x => x.Characters.Any(y => characterName == y.Name));
+
+            if (games != null && results != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
+            }
+
+            if (results == null)
+            {
+                return new SceneDto();
+            }
+
+            return results.OrderBy(x => x.Id).ToDto().FirstOrDefault();
+        }
+        #endregion Jiminy Journal
     }
 }
