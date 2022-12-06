@@ -42,25 +42,17 @@ builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
 //builder.Services.AddAuthentication()
-//.AddGoogle(options =>
-//{
-//    options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
-//    options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
-//})
-//.AddTwitter(twitterOptions =>
-//{
-//    twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterAuthId");
-//    twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterAuthSecret");
-//    twitterOptions.RetrieveUserDetails = true;
-//})
-//.AddOAuth("GitHub", "GitHub", githubOptions =>
-//{
-//    githubOptions.ClientId = Environment.GetEnvironmentVariable("GitHubAuthId");
-//    githubOptions.ClientSecret = Environment.GetEnvironmentVariable("GitHubAuthSecret");
-//    githubOptions.CallbackPath = "/";
-//    githubOptions.AuthorizationEndpoint = "/";
-//    githubOptions.TokenEndpoint = "/";
-//});
+//    .AddGoogle(options =>
+//    {
+//        options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
+//        options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
+//    })
+//    .AddTwitter(twitterOptions =>
+//    {
+//        twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey");
+//        twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterConsumerSecret");
+//        twitterOptions.RetrieveUserDetails = true;
+//    });
 
 
 builder.Services.AddQuartz(q =>
