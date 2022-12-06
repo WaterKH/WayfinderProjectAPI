@@ -55,6 +55,11 @@
     font-weight: 600;
 }
 
+.scene-color {
+    color: #e685da;
+    font-weight: 600;
+}
+
 
 .a {
     color: #1a00ff;
@@ -107,3 +112,18 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+.wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    font-size: larger;
+}
+
+    .wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }

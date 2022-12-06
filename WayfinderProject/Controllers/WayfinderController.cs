@@ -242,16 +242,11 @@ namespace WayfinderProjectAPI.Controllers
         {
             var results = _context.Scenes.AsNoTrackingWithIdentityResolution().Include(x => x.Characters).Where(x => x.Characters.Any(y => characterName == y.Name));
 
-            if (games != null && results != null)
+            if (games != null && results.Count() > 0)
             {
                 var gamesList = games.Split("::").Select(x => x.Trim());
 
                 results = results.Where(x => gamesList.Contains(x.Game.Name));
-            }
-
-            if (results == null)
-            {
-                return new SceneDto();
             }
 
             return results.OrderBy(x => x.Id).ToDto().FirstOrDefault();
