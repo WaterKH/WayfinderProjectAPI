@@ -235,12 +235,18 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, characters) in allJJCharacters["Characters"])
             {
+                if (gameName != "Kingdom Hearts III") continue;
+
                 foreach (var character in characters)
                 {
+                    var c = context.Characters.FirstOrDefault(x => x.Name == character.CharacterName);
+                    if (c == null)
+                        Console.WriteLine();
+
                     context.JJCharacters.Add(new JJCharacter
                     {
                         Title = character.Title,
-                        Character = context.Characters.FirstOrDefault(x => x.Name == character.CharacterName),
+                        Character = c,
                         Description = character.Description,
                         AdditionalInformation = character.AdditionalInformation,
                         Game = context.Games.FirstOrDefault(x => x.Name == gameName)
