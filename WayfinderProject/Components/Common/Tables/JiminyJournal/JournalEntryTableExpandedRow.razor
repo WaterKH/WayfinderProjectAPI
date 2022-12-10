@@ -125,7 +125,7 @@
 
 
             this.memoryArchiveWithoutGameLink = $"{NavigationManager.BaseUri}memory_archive?{string.Join("&", JournalEntry.Characters.Select(character => $"characters={character.Id}"))}&category=Scenes";
-            this.memoryArchiveWithGameLink = $"{NavigationManager.BaseUri}memory_archive?games={JournalEntry.Game.Id}&{string.Join("&", JournalEntry.Characters.Select(character => $"characters={character.Id}"))}&category = Scenes";
+            this.memoryArchiveWithGameLink = $"{NavigationManager.BaseUri}memory_archive?game={JournalEntry.Game.Id}&{string.Join("&", JournalEntry.Characters.Select(character => $"character={character.Id}"))}&category=Scenes";
         }
 
         base.OnInitialized();
