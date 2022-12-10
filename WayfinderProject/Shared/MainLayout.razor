@@ -19,9 +19,9 @@
 
             <div class="links" style="left: 135px; position: absolute; cursor: default;">
                 <a class="wayfinder-link" href="/memory_archive" style="color: #3c39de; font-size: large;">Memory Archive</a>
-                @*<span class="wayfinder-span" style="color: #68a4ff;">•</span>
-                <a class="wayfinder-link" href="/jiminy_journal" style="color: #387ee6;">Jiminy's Journal</a>
-                <span class="wayfinder-span" style="color: #387ee6">•</span>
+                <span class="wayfinder-span" style="color: #68a4ff;">•</span>
+                <a class="wayfinder-link" href="/jiminy_journal" style="color: #387ee6; font-size: large;">Jiminy's Journal</a>
+                @*<span class="wayfinder-span" style="color: #387ee6">•</span>
                 <a class="wayfinder-link" href="/moogle_shop" style="color: #5067bb">Moogle Shop</a>*@
             </div>
 
@@ -111,9 +111,10 @@
 
                     <div class="wayfinder-contact" style="margin-top: 5px;">
                         <span>
-                            <strong>creator:</strong> <a href="https://linktr.ee/RegularPat" target="_blank" style="margin: unset;">RegularPat</a> //
-                            <strong>developer:</strong> <a href="https://linktr.ee/waterkh" target="_blank" style="margin: unset;">waterkh</a> //
-                            <strong>designer:</strong> <a href="https://twitter.com/Kimpchuu" target="_blank" style="margin: unset;">Kimpchuu</a>
+                            creator: <a href="https://linktr.ee/RegularPat" target="_blank" style="margin: unset;">RegularPat</a> //
+                            developer: <a href="https://linktr.ee/waterkh" target="_blank" style="margin: unset;">waterkh</a> //
+                            designer: <a href="https://twitter.com/Kimpchuu" target="_blank" style="margin: unset;">Kimpchuu</a> //
+                            illustrator: <a href="https://twitter.com/cabletownart" target="_blank" style="margin: unset;">PJ</a>
                         </span>
                     </div>
                 </div>
@@ -156,24 +157,27 @@
 
 @code {
     [CascadingParameter]
-    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    private Task<AuthenticationState>? authenticationStateTask { get; set; }
 
     private string currentAction = "";
-    private AuthenticationState authState;
+    private AuthenticationState? authState;
 
     protected override async Task OnInitializedAsync()
     {
-        this.authState = await authenticationStateTask;
+        if (this.authenticationStateTask != null)
+        {
+            this.authState = await authenticationStateTask;
+        }
 
         await base.OnInitializedAsync();
     }
 
-    public async void Show(string action)
+    public void Show(string action)
     {
         currentAction = (currentAction == action) ? "" : action;
     }
 
-    public async void Hide()
+    public void Hide()
     {
         currentAction = "";
     }

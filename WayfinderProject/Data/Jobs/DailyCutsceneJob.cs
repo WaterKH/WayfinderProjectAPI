@@ -32,7 +32,7 @@ namespace WayfinderProject.Data.Jobs
             MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
             MySqlDataReader selectResult = selectCommand.ExecuteReader();
 
-            DailyCutscene dailyCutscene = null;
+            DailyCutscene? dailyCutscene = null;
             while (selectResult.Read())
             {
                 dailyCutscene = new DailyCutscene
@@ -104,10 +104,10 @@ namespace WayfinderProject.Data.Jobs
                 insertCommand.ExecuteReader();
 
                 // Send out daily tweet
-                string consumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey");
-                string consumerSecret = Environment.GetEnvironmentVariable("TwitterConsumerSecret");
-                string accessKey = Environment.GetEnvironmentVariable("TwitterAccessKey");
-                string accessSecret = Environment.GetEnvironmentVariable("TwitterAccessSecret");
+                string consumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey") ?? string.Empty;
+                string consumerSecret = Environment.GetEnvironmentVariable("TwitterConsumerSecret") ?? string.Empty;
+                string accessKey = Environment.GetEnvironmentVariable("TwitterAccessKey") ?? string.Empty;
+                string accessSecret = Environment.GetEnvironmentVariable("TwitterAccessSecret") ?? string.Empty;
 
                 TwitterClient userClient = new TwitterClient(consumerKey, consumerSecret, accessKey, accessSecret);
 

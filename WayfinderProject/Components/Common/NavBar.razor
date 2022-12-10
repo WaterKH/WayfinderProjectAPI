@@ -1,32 +1,35 @@
 ﻿<div class="wayfinder-nav-bar" style="@(CustomStyle)">
     @foreach (var option in this.Categories)
     {
-        <div class="@((this.CurrentCategory == option) ? "wayfinder-container-active" : "wayfinder-container")">
-            <span class="@((this.CurrentCategory == option) ? "wayfinder-category-active" : "wayfinder-category")" @onclick="@(() => this.Select(option))">@option</span>
+        <div class="@((this.CurrentCategory == option) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(option))">
+            <span class="@((this.CurrentCategory == option) ? "wayfinder-category-active" : "wayfinder-category")">@option</span>
         </div>
     }
 </div>
 
 @code {
-    [Parameter] public List<string> Categories { get; set; }
-    [Parameter] public string CustomStyle { get; set; }
-    [Parameter] public string StartingCategory { get; set; }
+    [Parameter] public List<string> Categories { get; set; } = new List<string>();
+    [Parameter] public string CustomStyle { get; set; } = string.Empty;
+    [Parameter] public string CurrentCategory { get; set; } = string.Empty;
+    [Parameter] public bool Loading { get; set; }
 
-    [Parameter] public Action<string> UpdateCurrentCategory { get; set; }
+    [Parameter] public Action<string>? UpdateCurrentCategory { get; set; }
 
-    public string CurrentCategory { get; set; } = "Scenes";
+    //public string CurrentCategory { get; set; } = "Scenes";
 
     protected override void OnInitialized()
     {
-        this.CurrentCategory = this.StartingCategory;
+        //this.CurrentCategory = this.Category;
 
         base.OnInitialized();
     }
 
     public async Task Select(string category)
     {
+        if (this.Loading) return;
+
         this.CurrentCategory = category;
 
-        await Task.Run(() => this.UpdateCurrentCategory.Invoke(category));
+        await Task.Run(() => { if (this.UpdateCurrentCategory != null) { this.UpdateCurrentCategory.Invoke(category); } });
     }
 }

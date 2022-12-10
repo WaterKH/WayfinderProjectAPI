@@ -1,0 +1,129 @@
+﻿
+.world-color {
+    color: #ea4a4a;
+    font-weight: 600;
+}
+
+.world-display {
+    border: solid 2px #ea4a4a;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #fdf4f4;
+    color: #ea4a4a;
+    font-weight: 600;
+}
+
+.area-color {
+    color: #5499fc;
+    font-weight: 600;
+}
+
+.area-display {
+    border: solid 2px #5499fc;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #f4f5fd;
+    color: #5499fc;
+    font-weight: 600;
+}
+
+.character-color {
+    color: #f3b222;
+    font-weight: 600;
+}
+
+.character-display {
+    border: solid 2px #f3b222;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #fdfbf4;
+    color: #f3b222;
+    font-weight: 600;
+}
+
+.music-color {
+    color: #a13bfb;
+    font-weight: 600;
+}
+
+.music-display {
+    border: solid 2px #a13bfb;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #f4f5fd;
+    color: #a13bfb;
+    font-weight: 600;
+}
+
+.scene-color {
+    color: #e685da;
+    font-weight: 600;
+}
+
+
+.a {
+    color: #1a00ff;
+}
+
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        border-radius: 10px;
+    }
+
+
+.share {
+    cursor: pointer;
+    color: #4d84ff;
+    font-size: larger;
+    float: right;
+}
+
+.share-text {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    font-size: larger;
+}
+
+    .wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }

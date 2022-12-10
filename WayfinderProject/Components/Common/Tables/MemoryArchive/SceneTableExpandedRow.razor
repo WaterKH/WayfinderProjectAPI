@@ -1,0 +1,117 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+
+<tr>
+    <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
+        <div class="row">
+            <div class="col-md-5">
+                <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" />
+
+                @if (this.CurrentSubOption == "Details")
+                {
+                    <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                        <div class="row" style="height: 281px;">
+                            <div class="col-md-6">
+                                <h3 class="world-color"><img src="/images/icons/worlds.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
+                                <label>@(string.Join(", ", this.Scene.Worlds.Select(x => x.Name)))</label><br />
+                            </div>
+
+                            <div class="col-md-6">
+                                <div id="share" class="share" @onclick="@(() => { if (this.GenerateShareLink != null) { this.GenerateShareLink.Invoke(); } })">
+                                    <span class="copyable">
+                                        <i class="oi oi-file"></i>
+                                        <label class="share-text"><b>Share Scene</b></label>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <div class="col-md-12" style="margin-top: 25px;">
+                                <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
+                                <label>@(string.Join(", ", this.Scene.Characters.Select(x => x.Name)))</label><br />
+                            </div>
+
+                            <div class="col-md-12" style="margin-top: 25px;">
+                                <h3 class="area-color"><img src="/images/icons/areas.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Areas</h3>
+                                <label>@(string.Join(", ", this.Scene.Areas.Select(x => x.Name)))</label><br />
+                            </div>
+
+                            <div class="col-md-12" style="margin-top: 25px;">
+                                <h3 class="music-color"><img src="/images/icons/music.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Music</h3>
+                                <div style="display: inline-flex;">
+                                    @for (int i = 0; i < this.Scene.Music.Count; ++i)
+                                    {
+                                        @if (this.Scene.Music.ToList()[i].Name != ":None:")
+                                        {
+                                            <a href="@this.Scene.Music.ToList()[i].Link" target="_blank">@this.Scene.Music.ToList()[i].Name</a>
+                                            if (i < this.Scene.Music.Count - 1)
+                                            {
+                                                <div>,&ensp;</div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            @this.Scene.Music.ToList()[i].Name
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (this.CurrentSubOption == "Dialogue")
+                {
+                    <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 523px; overflow-y: auto; margin-top: 10px;">
+                        <SceneTable Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
+                            <TableHeader>
+                                <th>Dialogue</th>
+                                <th></th>
+                            </TableHeader>
+                            <RowTemplate>
+                                <td><strong>@Line.Character</strong></td>
+                                <td>@Line.Line</td>
+                            </RowTemplate>
+                        </SceneTable>
+                    </div>
+                }
+            </div>
+
+
+            <div class="col-md-7">
+                <iframe src="@(Scene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px; width: 100%; height: 563px;"></iframe>
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+@code {
+    //[Parameter] public List<SceneDto> SceneDtos { get; set; } = new List<SceneDto>();
+    [Parameter] public SceneDto Scene { get; set; } = new SceneDto();
+    [Parameter] public WayfinderProjectAPI.Controllers.WayfinderController? API { get; set; }
+
+    [Parameter] public Func<Task>? GenerateShareLink { get; set; }
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (this.API != null)
+        {
+            this.Scene.Script = await this.API.GetScript(Scene.Game.Name, Scene.Name);
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}

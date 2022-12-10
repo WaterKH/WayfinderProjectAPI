@@ -14,7 +14,10 @@ namespace WayfinderProjectAPI.Data.Models
         [Required]
         public string Name { get; set; } = string.Empty;
 
+
         [AllowNull]
         public virtual ICollection<Scene> Scenes { get; set; }
+        [AllowNull]
+        public virtual ICollection<JournalEntry> JournalEntries { get; set; }
     }
 }

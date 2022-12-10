@@ -34,6 +34,21 @@ namespace WayfinderProject.Migrations
                     b.ToTable("AreaScene");
                 });
 
+            modelBuilder.Entity("CharacterJournalEntry", b =>
+                {
+                    b.Property<int>("CharactersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("JournalEntriesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CharactersId", "JournalEntriesId");
+
+                    b.HasIndex("JournalEntriesId");
+
+                    b.ToTable("CharacterJournalEntry");
+                });
+
             modelBuilder.Entity("CharacterScene", b =>
                 {
                     b.Property<int>("CharactersId")
@@ -47,6 +62,21 @@ namespace WayfinderProject.Migrations
                     b.HasIndex("ScenesId");
 
                     b.ToTable("CharacterScene");
+                });
+
+            modelBuilder.Entity("JournalEntryWorld", b =>
+                {
+                    b.Property<int>("JournalEntriesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorldsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("JournalEntriesId", "WorldsId");
+
+                    b.HasIndex("WorldsId");
+
+                    b.ToTable("JournalEntryWorld");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -211,6 +241,47 @@ namespace WayfinderProject.Migrations
                     b.ToTable("SceneWorld");
                 });
 
+            modelBuilder.Entity("WayfinderProject.Data.Models.DailyCutscene", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("DateCode")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("SceneId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "DateCode" }, "Index_DateCode");
+
+                    b.ToTable("DailyCutscenes");
+                });
+
+            modelBuilder.Entity("WayfinderProject.Data.Models.DailyJournalEntry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("DateCode")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("EntryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "DateCode" }, "Index_DateCode")
+                        .HasDatabaseName("Index_DateCode1");
+
+                    b.ToTable("DailyJournalEntries");
+                });
+
             modelBuilder.Entity("WayfinderProject.Data.Models.WayfinderProjectUser", b =>
                 {
                     b.Property<string>("Id")
@@ -329,7 +400,7 @@ namespace WayfinderProject.Migrations
                     b.ToTable("Games");
                 });
 
-            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JJCharacter", b =>
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JournalEntry", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -339,8 +410,9 @@ namespace WayfinderProject.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("CharacterId")
-                        .HasColumnType("int");
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -355,11 +427,9 @@ namespace WayfinderProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CharacterId");
-
                     b.HasIndex("GameId");
 
-                    b.ToTable("JJ_Character");
+                    b.ToTable("JJ_Entry");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Music", b =>
@@ -498,6 +568,21 @@ namespace WayfinderProject.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("CharacterJournalEntry", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Character", null)
+                        .WithMany()
+                        .HasForeignKey("CharactersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WayfinderProjectAPI.Data.Models.JournalEntry", null)
+                        .WithMany()
+                        .HasForeignKey("JournalEntriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CharacterScene", b =>
                 {
                     b.HasOne("WayfinderProjectAPI.Data.Models.Character", null)
@@ -509,6 +594,21 @@ namespace WayfinderProject.Migrations
                     b.HasOne("WayfinderProjectAPI.Data.Models.Scene", null)
                         .WithMany()
                         .HasForeignKey("ScenesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("JournalEntryWorld", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.JournalEntry", null)
+                        .WithMany()
+                        .HasForeignKey("JournalEntriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WayfinderProjectAPI.Data.Models.World", null)
+                        .WithMany()
+                        .HasForeignKey("WorldsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -594,21 +694,13 @@ namespace WayfinderProject.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JJCharacter", b =>
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.JournalEntry", b =>
                 {
-                    b.HasOne("WayfinderProjectAPI.Data.Models.Character", "Character")
-                        .WithMany()
-                        .HasForeignKey("CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("WayfinderProjectAPI.Data.Models.Game", "Game")
-                        .WithMany()
+                        .WithMany("JournalEntries")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Character");
 
                     b.Navigation("Game");
                 });
@@ -645,6 +737,8 @@ namespace WayfinderProject.Migrations
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Game", b =>
                 {
+                    b.Navigation("JournalEntries");
+
                     b.Navigation("Scenes");
                 });
 

@@ -42,41 +42,39 @@ builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
 //builder.Services.AddAuthentication()
-//.AddGoogle(options =>
-//{
-//    options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
-//    options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
-//})
-//.AddTwitter(twitterOptions =>
-//{
-//    twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterAuthId");
-//    twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterAuthSecret");
-//    twitterOptions.RetrieveUserDetails = true;
-//})
-//.AddOAuth("GitHub", "GitHub", githubOptions =>
-//{
-//    githubOptions.ClientId = Environment.GetEnvironmentVariable("GitHubAuthId");
-//    githubOptions.ClientSecret = Environment.GetEnvironmentVariable("GitHubAuthSecret");
-//    githubOptions.CallbackPath = "/";
-//    githubOptions.AuthorizationEndpoint = "/";
-//    githubOptions.TokenEndpoint = "/";
-//});
+//    .AddGoogle(options =>
+//    {
+//        options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
+//        options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
+//    })
+//    .AddTwitter(twitterOptions =>
+//    {
+//        twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey");
+//        twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterConsumerSecret");
+//        twitterOptions.RetrieveUserDetails = true;
+//    });
 
 
 builder.Services.AddQuartz(q =>
 {
     q.UseMicrosoftDependencyInjectionJobFactory();
 
-    // Create a "key" for the job
-    var jobKey = new JobKey("DailyCutsceneJob");
+    // Cutscene Daily Job
+    var cutsceneJobKey = new JobKey("DailyCutsceneJob");
+    q.AddJob<DailyCutsceneJob>(opts => opts.WithIdentity(cutsceneJobKey));
 
-    // Register the job with the DI container
-    q.AddJob<DailyCutsceneJob>(opts => opts.WithIdentity(jobKey));
-
-    // Create a trigger for the job
     q.AddTrigger(opts => opts
-        .ForJob(jobKey) // link to the HelloWorldJob
-        .WithIdentity("DailyCutsceneJob-trigger") // give the trigger a unique name
+        .ForJob(cutsceneJobKey)
+        .WithIdentity("DailyCutsceneJob-trigger")
+        .WithCronSchedule("0 0 * * * ?")); // run every day at midnight
+
+    // Entry Daily Job
+    var entryJobKey = new JobKey("DailyEntryJob");
+    q.AddJob<DailyEntryJob>(opts => opts.WithIdentity(entryJobKey));
+
+    q.AddTrigger(opts => opts
+        .ForJob(entryJobKey)
+        .WithIdentity("DailyEntryJob-trigger")
         .WithCronSchedule("0 0 * * * ?")); // run every day at midnight
 });
 
@@ -114,11 +112,8 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapRazorPages();
-    endpoints.MapControllers();
-});
+app.MapRazorPages();
+app.MapControllers();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");

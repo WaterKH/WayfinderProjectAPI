@@ -8,11 +8,13 @@
 }
 
 .wayfinder-container {
+    cursor: pointer;
     text-align: center;
     padding: 5px;
 }
 
 .wayfinder-container-active {
+    cursor: pointer;
     color: white;
     border: none;
     border-radius: 20px;

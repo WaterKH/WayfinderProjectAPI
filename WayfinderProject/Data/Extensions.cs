@@ -5,6 +5,7 @@ namespace WayfinderProjectAPI.Data
 {
     public static class Extensions
     {
+        #region Memory Archive
         public static IQueryable<SceneDto> ToDto(this IQueryable<Scene> scenes)
         {
             return scenes
@@ -39,5 +40,24 @@ namespace WayfinderProjectAPI.Data
                 Lines = script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
             };
         }
+        #endregion Memory Archive
+
+        #region Jiminy Journal
+        public static IQueryable<JournalEntryDto> ToDto(this IQueryable<JournalEntry> scenes)
+        {
+            return scenes
+                .Select(x => new JournalEntryDto
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Description = x.Description,
+                    AdditionalInformation = x.AdditionalInformation,
+                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name },
+                    Characters = x.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Worlds = x.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Category = x.Category
+                });
+        }
+        #endregion Jiminy Journal
     }
 }

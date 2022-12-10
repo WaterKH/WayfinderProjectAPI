@@ -41,6 +41,7 @@
 }
 
 .header-margins {
+    width: 25px;
     margin-top: -5px;
     margin-right: 15px;
 }

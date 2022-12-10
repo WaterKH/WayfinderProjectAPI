@@ -6,7 +6,7 @@ namespace WayfinderProject.Data.Models
     public class DailyCutscene
     {
         public int Id { get; set; }
-        public string DateCode { get; set; }
+        public string DateCode { get; set; } = string.Empty;
         public int SceneId { get; set; }
     }
 }

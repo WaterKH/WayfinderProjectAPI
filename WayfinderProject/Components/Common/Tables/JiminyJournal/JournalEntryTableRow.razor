@@ -1,0 +1,112 @@
+﻿@using WayfinderProject.Components.Common
+@using WayfinderProject.Data
+@using WayfinderProject.Data.Models
+@using WayfinderProjectAPI.Data.DTOs
+
+
+<td style="vertical-align: middle;">
+    @if (this.MainTable != null)
+    {
+        if (this.MainTable.CurrentExpandedRow == this.JournalEntry.Id)
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(JournalEntry.Id))">
+                <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+        else
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(JournalEntry.Id))">
+                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@JournalEntry.Game.Name</span>
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@JournalEntry.Title</span>
+</td>
+<td style="vertical-align: middle;">
+    @if (JournalEntry.Worlds.Count > 2)
+    {
+        <div style="margin-left: -5px; height: 38px;">
+            <Tooltip Text="@(string.Join(", ", JournalEntry.Worlds.Select(x => x.Name)))">
+                <div class="world-display">
+                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                </div>
+            </Tooltip>
+        </div>
+    }
+    else
+    {
+        if (JournalEntry.Worlds.Count > 0 && JournalEntry.Worlds.First().Name != ":None:")
+        {
+            <div style="display: inline-flex" class="@(JournalEntry.Worlds.Count == 2 ? "world-display" : "")">
+                @for (int i = 0; i < JournalEntry.Worlds.Count; ++i)
+                {
+                    <span class="world-color">@JournalEntry.Worlds.ToList()[i].Name</span>
+                    if (i < JournalEntry.Worlds.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    @if (JournalEntry.Characters.Count > 2)
+    {
+        <div style="margin-left: -5px; height: 38px;">
+            <Tooltip Text="@(string.Join(", ", JournalEntry.Characters.Select(x => x.Name)))">
+                <div class="character-display">
+                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                </div>
+            </Tooltip>
+        </div>
+    }
+    else
+    {
+        if (JournalEntry.Characters.Count > 0 && JournalEntry.Characters.First().Name != ":None:")
+        {
+            <div style="display: inline-flex" class="@(JournalEntry.Characters.Count == 2 ? "character-display" : "")">
+                @for (int i = 0; i < JournalEntry.Characters.Count; ++i)
+                {
+                    <span class="character-color">@JournalEntry.Characters.ToList()[i].Name</span>
+                    if (i < JournalEntry.Characters.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@JournalEntry.AdditionalInformation</span>
+</td>
+
+<style>
+.clickable {
+    float: right;
+    font-size: 1rem;
+    color: #3e79a7;
+    margin-top: 3px;
+    cursor: pointer;
+}
+</style>
+
+@code {
+    [Parameter] public JournalEntryDto JournalEntry { get; set; } = new JournalEntryDto();
+    [Parameter] public JournalEntryTable<JournalEntryDto>? MainTable { get; set; }
+
+    private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        //this.BrowserDimension = await BrowserService.GetDimensions();
+
+        await base.OnParametersSetAsync();
+    }
+}

@@ -5,17 +5,20 @@
 
 
 <td style="vertical-align: middle;">
-    @if (MainTable.CurrentExpandedRow == Scene.Id)
+    @if (this.MainTable != null)
     {
-        <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))">
-            <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
-        </div>
-    }
-    else
-    {
-        <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))">
-            <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
-        </div>
+        if (this.MainTable.CurrentExpandedRow == Scene.Id)
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))">
+                <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+        else
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))">
+                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
     }
 </td>
 <td style="vertical-align: middle;">
@@ -148,8 +151,8 @@
 </style>
 
 @code {
-    [Parameter] public SceneDto Scene { get; set; }
-    [Parameter] public Table<SceneDto> MainTable { get; set; }
+    [Parameter] public SceneDto Scene { get; set; } = new SceneDto();
+    [Parameter] public SceneTable<SceneDto>? MainTable { get; set; }
 
     private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
 

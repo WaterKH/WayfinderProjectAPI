@@ -42,38 +42,39 @@
                 </div>
 
                 <div class="folder-image" onclick="@(() => NavigationManager.NavigateTo("/memory_archive", true))">
-                    <img src="/images/WFP_logo.png" style="width: 40vh;" />
+                    <img src="/images/MA.png" style="width: 40vh;" />
                 </div>
             </div>
 
             <div class="folder-content">
-                Scour the Memory Archives to find scenes using criteria such as characters or worlds, enjoy the Cutscene of the day 
+                Scour the Memory Archives to find scenes using criteria such as characters or worlds, enjoy the Cutscene of the Day 
                 or let us decide for you by selecting a Random Cutscene.
             </div>
         </div>
     </div>
 
-    @*<div class="col-md-4">
+    <div class="col-md-4">
         <div class="jj-folder">
-            <span class="folder-title">Coming Soon</span>
+            <span class="folder-title">Jiminy's Journal</span>
 
             <div class="folder-container">
                 <div class="folder-redirect">
                     <span class="oi oi-chevron-right" style="color: white"></span>
                 </div>
 
-                <div class="folder-image" onclick="@(() => NavigationManager.NavigateTo("/-------", true))">
-                    <img src="/images/jj_logo.png" style="width: 40vh;" />
+                <div class="folder-image" onclick="@(() => NavigationManager.NavigateTo("/jiminy_journal", true))">
+                    <img src="/images/JJ.png" style="width: 40vh;" />
                 </div>
             </div>
 
             <div class="folder-content">
-                Coming Soon.
+                Dive into Jiminy's Journal to find all the information stored about characters and more, stay up-to-date with the 
+                Entry of the Day or study up on something random by letting Jiminy select a Random Entry.
             </div>
         </div>
     </div>
 
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <div class="ms-folder">
             <span class="folder-title">Coming Soon</span>
 
@@ -139,9 +140,9 @@
         {
 
         }
-        catch(Exception ex)
+        catch(Exception)
         {
-            
+
         }
 
         await InvokeAsync(() => { 
@@ -151,15 +152,20 @@
         return optionUpdated;
     }
 
-    public async void NavigateToDailyCutscene()
+    public void NavigateToDailyCutscene()
     {
         try
         {
             var dateCode = DateTime.Now.ToString("yyyyMMdd");
-            var sceneId = this.context.DailyCutscenes.FirstOrDefault(cutscene => cutscene.DateCode == dateCode).SceneId;
+            var sceneId = this.context.DailyCutscenes.First(cutscene => cutscene.DateCode == dateCode).SceneId;
             var scene = this.context.Scenes.AsNoTracking()
                 .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
                 .FirstOrDefault(s => s.Id == sceneId);
+
+            if (scene == null)
+            {
+                return;
+            }
 
             var dailyLink = $"{NavigationManager.BaseUri}?";
 
@@ -173,13 +179,13 @@
 
             NavigationManager.NavigateTo(dailyLink, true);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            
+
         }
     }
 
-    public async void NavigateToRandomCutscene()
+    public void NavigateToRandomCutscene()
     {
         try
         {
@@ -188,6 +194,11 @@
             var scene = this.context.Scenes.AsNoTracking()
                 .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
                 .FirstOrDefault(s => s.Id == randomSceneId);
+
+            if (scene == null)
+            {
+                return;
+            }
 
             var randomLink = $"{NavigationManager.BaseUri}?";
 
@@ -201,7 +212,7 @@
 
             NavigationManager.NavigateTo(randomLink, true);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             
         }

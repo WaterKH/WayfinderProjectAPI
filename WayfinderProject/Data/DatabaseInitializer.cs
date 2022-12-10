@@ -39,7 +39,16 @@ namespace WayfinderProjectAPI.Data
 
             // JJ
             // Character
-            //CreateCharactersJJ(context);
+            //CreateCharacterEntries(context);
+
+            // Story
+            //CreateStoryEntries(context);
+
+            // Enemy
+            //CreateEnemiesEntries(context);
+
+            // Report
+            //CreateReportEntries(context);
 
             IsInitializing = false;
         }
@@ -171,12 +180,12 @@ namespace WayfinderProjectAPI.Data
 
         class SceneObject
         {
-            public string Name { get; set; }
-            public string Link { get; set; }
-            public List<string> Worlds { get; set; }
-            public List<string> Characters { get; set; }
-            public List<string> Areas { get; set; }
-            public List<string> Music { get; set; }
+            public string Name { get; set; } = string.Empty;
+            public string Link { get; set; } = string.Empty;
+            public List<string> Worlds { get; set; } = new List<string>();
+            public List<string> Characters { get; set; } = new List<string>();
+            public List<string> Areas { get; set; } = new List<string>();
+            public List<string> Music { get; set; } = new List<string>();
         }
 
         public static void CreateScenes(WayfinderContext context)
@@ -218,14 +227,17 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
+
+        #region Jiminy's Journal
         public class JJCharacterObject
         {
-            public string Title { get; set; }
-            public string CharacterName { get; set; }
+            public string Title { get; set; } = string.Empty;
+            public List<string> Characters { get; set; } = new List<string>();
+            public List<string> Worlds { get; set; } = new List<string>();
             public string Description { get; set; } = string.Empty;
             public string AdditionalInformation { get; set; } = string.Empty;
         }
-        public static void CreateCharactersJJ(WayfinderContext context)
+        public static void CreateCharacterEntries(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_characters.json"));
             var allJJCharacters = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
@@ -235,20 +247,147 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, characters) in allJJCharacters["Characters"])
             {
+                if (gameName != "Kingdom Hearts") continue;
+
                 foreach (var character in characters)
                 {
-                    context.JJCharacters.Add(new JJCharacter
+                    var tempCharacters = context.Characters.Where(x => character.Characters.Contains(x.Name)).ToList();
+                    if (!tempCharacters.Any())
+                        Console.WriteLine();
+
+                    var tempWorlds = context.Worlds.Where(x => character.Worlds.Contains(x.Name)).ToList();
+                    if (!tempWorlds.Any())
+                        Console.WriteLine();
+
+                    context.JournalEntries.Add(new JournalEntry
                     {
                         Title = character.Title,
-                        Character = context.Characters.FirstOrDefault(x => x.Name == character.CharacterName),
+                        Characters = tempCharacters,
+                        Worlds = tempWorlds,
                         Description = character.Description,
                         AdditionalInformation = character.AdditionalInformation,
-                        Game = context.Games.FirstOrDefault(x => x.Name == gameName)
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                        Category = "Character"
                     });
                 }
             }
 
             context.SaveChanges();
         }
+
+        public static void CreateStoryEntries(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_story.json"));
+            var allJJStoryEntries = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
+
+            if (!allJJStoryEntries!.ContainsKey("Story"))
+                throw new Exception("No Story List Found!");
+
+            foreach (var (gameName, storyEntries) in allJJStoryEntries["Story"])
+            {
+                if (gameName != "Kingdom Hearts") continue;
+
+                foreach (var storyEntry in storyEntries)
+                {
+                    var tempCharacters = context.Characters.Where(x => storyEntry.Characters.Contains(x.Name)).ToList();
+                    if (!tempCharacters.Any())
+                        Console.WriteLine();
+
+                    var tempWorlds = context.Worlds.Where(x => storyEntry.Worlds.Contains(x.Name)).ToList();
+                    if (!tempWorlds.Any())
+                        Console.WriteLine();
+
+                    context.JournalEntries.Add(new JournalEntry
+                    {
+                        Title = storyEntry.Title,
+                        Characters = tempCharacters,
+                        Worlds = tempWorlds,
+                        Description = storyEntry.Description,
+                        AdditionalInformation = storyEntry.AdditionalInformation,
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                        Category = "Story"
+                    });
+                }
+            }
+
+            context.SaveChanges();
+        }
+
+        public static void CreateEnemiesEntries(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_enemies.json"));
+            var allJJEnemiesEntries = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
+
+            if (!allJJEnemiesEntries!.ContainsKey("Enemies"))
+                throw new Exception("No Enemy List Found!");
+
+            foreach (var (gameName, enemyEntries) in allJJEnemiesEntries["Enemies"])
+            {
+                if (gameName != "Kingdom Hearts") continue;
+
+                foreach (var enemyEntry in enemyEntries)
+                {
+                    var tempCharacters = context.Characters.Where(x => enemyEntry.Characters.Contains(x.Name)).ToList();
+                    if (tempCharacters.Count() != enemyEntry.Characters.Count())
+                        Console.WriteLine();
+
+                    var tempWorlds = context.Worlds.Where(x => enemyEntry.Worlds.Contains(x.Name)).ToList();
+                    if (tempWorlds.Count() != enemyEntry.Worlds.Count())
+                        Console.WriteLine();
+
+                    context.JournalEntries.Add(new JournalEntry
+                    {
+                        Title = enemyEntry.Title,
+                        Characters = tempCharacters,
+                        Worlds = tempWorlds,
+                        Description = enemyEntry.Description,
+                        AdditionalInformation = enemyEntry.AdditionalInformation,
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                        Category = "Enemy"
+                    });
+                }
+            }
+
+            context.SaveChanges();
+        }
+
+        public static void CreateReportEntries(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_reports.json"));
+            var allJJReportEntries = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
+
+            if (!allJJReportEntries!.ContainsKey("Reports"))
+                throw new Exception("No Report List Found!");
+
+            foreach (var (gameName, reportEntries) in allJJReportEntries["Reports"])
+            {
+                if (gameName != "Kingdom Hearts") continue;
+
+                foreach (var enemyEntry in reportEntries)
+                {
+                    var tempCharacters = context.Characters.Where(x => enemyEntry.Characters.Contains(x.Name)).ToList();
+                    if (tempCharacters.Count() != enemyEntry.Characters.Count())
+                        Console.WriteLine();
+
+                    var tempWorlds = context.Worlds.Where(x => enemyEntry.Worlds.Contains(x.Name)).ToList();
+                    if (tempWorlds.Count() != enemyEntry.Worlds.Count())
+                        Console.WriteLine();
+
+                    context.JournalEntries.Add(new JournalEntry
+                    {
+                        Title = enemyEntry.Title,
+                        Characters = tempCharacters,
+                        Worlds = tempWorlds,
+                        Description = enemyEntry.Description,
+                        AdditionalInformation = enemyEntry.AdditionalInformation,
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                        Category = "Report"
+                    });
+                }
+            }
+
+            context.SaveChanges();
+        }
+        #endregion Jiminy's Journal
     }
 }

@@ -6,14 +6,6 @@
     width: 100%;
 }
 
-.wayfinder-parallax {
-    border-radius: 35px;
-    padding: 20px;
-    background-image: url(/images/WFP_logo_INVIS.png);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
 .wayfinder-title {
     text-align: start;
     font-size: xx-large;
@@ -73,6 +65,7 @@
     position: relative;
     border-radius: 0px 25px 25px 25px;
     background-color: #00c38e;
+    padding: 15px;
 }
 
     .jj-folder:before {
@@ -96,6 +89,7 @@
     position: relative;
     border-radius: 0px 25px 25px 25px;
     background-color: #edad00;
+    padding: 15px;
 }
 
     .ms-folder:before {

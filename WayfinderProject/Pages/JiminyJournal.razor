@@ -1,0 +1,2015 @@
+﻿@page "/jiminy_journal"
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+@inject NavigationManager NavigationManager
+
+@inject IJSRuntime JS
+@inject IToastService toastService
+
+
+@using Microsoft.EntityFrameworkCore
+@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+<PageTitle>The Wayfinder Project - Jiminy's Journal</PageTitle>
+
+<br/>
+<br/>
+
+<div class="wayfinder-background">
+    <div class="wayfinder-parallax">
+        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+            <div class="col-md-12" style="align-self: center;">
+                <div class="wayfinder-title">
+                    <img src="/images/wayfinder_project_title.png" />
+                </div>
+
+                <div class="wayfinder-description">
+                    <strong>Search for a <span style="color: #522aff;">Word</span> or <span style="color: #ff7519;">Phrase</span>...</strong>
+                </div>
+
+                <div class="wayfinder-search">
+                    <span class="wayfinder-search-icon material-icons">search</span>
+                    <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+                    <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
+                </div>
+
+                <div class="wayfinder-sub-description">
+                    <strong>
+                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Entries</span>, <span style="color: #ea4a4a;">Worlds</span> or <span style="color: #ea4a4a;">Characters</span>.
+                    </strong>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <div class="wayfinder-title">
+                    <strong><span style="color: #522aff;">Daily Journal Entry</span></strong>
+                </div>
+
+                <div class="wayfinder-alt-description">
+                    <strong>
+                        Discover a brand new daily journal entry by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WPF_KH on Twitter</a>!
+                    </strong>
+                </div>
+
+                <br />
+
+                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyJournalEntry())" @onclick:stopPropagation>Daily Journal Entry</button>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <div class="wayfinder-title">
+                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Entry</span> <span style="color: #5499fc;">Generator</span></strong>
+                </div>
+
+                <div class="wayfinder-alt-description">
+                    <strong>
+                        Can't decide which entry you want to find? Let us choose for you by selecting a random journal entry!
+                    </strong>
+                </div>
+
+                <br />
+
+                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomJournalEntry())" @onclick:stopPropagation>Random Journal Entry</button>
+            </div>
+
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+
+<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+<SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
+
+<!-- TODO Probably want to convert this SearchComponent into something better - Keep track of selections and available outside of the component -->
+@if (this.CurrentCategory == "Story")
+{
+    <div id="story-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="StoryGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.StoryGames" Selected="this.StoryGamesSelected" Available="this.StoryGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="StoryEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.StoryEntries" Selected="this.StoryEntriesSelected" Available="this.StoryEntriesAvailable"
+                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="StoryCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.StoryCharacters" Selected="this.StoryCharactersSelected" Available="this.StoryCharactersAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="StoryWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.StoryWorlds" Selected="this.StoryWorldsSelected" Available="this.StoryWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+else if (this.CurrentCategory == "Characters")
+{
+    <div id="characters-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="CharacterGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.CharacterGames" Selected="this.CharacterGamesSelected" Available="this.CharacterGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="CharacterEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.CharacterEntries" Selected="this.CharacterEntriesSelected" Available="this.CharacterEntriesAvailable"
+                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="CharacterCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.CharacterCharacters" Selected="this.CharacterCharactersSelected" Available="this.CharacterCharactersAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="CharacterWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.CharacterWorlds" Selected="this.CharacterWorldsSelected" Available="this.CharacterWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>    
+}
+else if (this.CurrentCategory == "Enemies")
+{
+    <div id="enemies-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="EnemyGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.EnemyGames" Selected="this.EnemyGamesSelected" Available="this.EnemyGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="EnemyEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.EnemyEntries" Selected="this.EnemyEntriesSelected" Available="this.EnemyEntriesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="EnemyCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.EnemyCharacters" Selected="this.EnemyCharactersSelected" Available="this.EnemyCharactersAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="EnemyWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.EnemyWorlds" Selected="this.EnemyWorldsSelected" Available="this.EnemyWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+else if (this.CurrentCategory == "Reports")
+{
+    <div id="reports-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="ReportGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.ReportGames" Selected="this.ReportGamesSelected" Available="this.ReportGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="ReportEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.ReportEntries" Selected="this.ReportEntriesSelected" Available="this.ReportEntriesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="ReportCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.ReportCharacters" Selected="this.ReportCharactersSelected" Available="this.ReportCharactersAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="ReportWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.ReportWorlds" Selected="this.ReportWorldsSelected" Available="this.ReportWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+<br />
+
+@if (this.Loading)
+{
+    <div class="row" style="justify-content: center;">
+        <div class="loader col-md-12"></div>
+    </div>
+}
+else if (this.CurrentCategory == "Story" && this.JJStoryDtos.Count > 0)
+{
+    <JournalEntryTable @ref="MainStoryTable" Items="this.JJStoryDtos" Context="Story" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <JournalEntryTableExpandedRow JournalEntry="@Story" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </JournalEntryTable>
+}
+else if (this.CurrentCategory == "Reports" && this.JJReportDtos.Count > 0)
+{
+    <JournalEntryTable @ref="MainReportTable" Items="this.JJReportDtos" Context="Report" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <JournalEntryTableExpandedRow JournalEntry="@Report" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </JournalEntryTable>
+}
+else if (this.CurrentCategory == "Characters" && this.JJCharacterDtos.Count > 0)
+{
+    <JournalEntryTable @ref="MainCharacterTable" Items="this.JJCharacterDtos" Context="Character" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <JournalEntryTableExpandedRow JournalEntry="@Character" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </JournalEntryTable>
+}
+else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
+{
+    <JournalEntryTable @ref="MainEnemyTable" Items="this.JJEnemyDtos" Context="Enemy" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <JournalEntryTableExpandedRow JournalEntry="@Enemy" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </JournalEntryTable>
+}
+
+<span style="margin-bottom: 50px;"></span>
+
+
+<style>
+.advanced-search-box {
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+
+.clickable {
+    float: right; 
+    font-size: 1rem; 
+    color: #3e79a7; 
+    margin-top: 3px; 
+    cursor: pointer;
+}
+
+.icon {
+    font-size: .8rem;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 4px 5px;
+    border-radius: 500px;
+    background-color: #bee2ff;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationStateTask { get; set; }
+
+    public bool Loading { get; set; }
+    public string CurrentCategory { get; set; } = "Story";
+    public string CurrentOption { get; set; } = "Games";
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private string informationSearch = "";
+    private WayfinderController? api;
+
+    #region Query Parameters
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "entry")]
+    public string[]? EntryTitleQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "character")]
+    public string[]? CharacterQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "world")]
+    public string[]? WorldQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "game")]
+    public string[]? GameQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "open_row")]
+    public int OpenRow { get; set; } = -1;
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "category")]
+    public string? CategoryQuery { get; set; }
+    #endregion Query Parameters
+
+    private List<string> categories = new List<string> { "Story", "Reports", "Characters", "Enemies", "Collectibles" };
+    private NavBar? WayfinderNavBar;
+
+    private List<string> options = new List<string> { "Entries", "Games", "Worlds", "Characters" };
+    private SubNavBar? WayfinderSubNavBar;
+
+    private bool canDisplayClearAll;
+
+    #region Journal Character Entry Variables
+    private List<JournalEntryDto> JJCharacterDtos = new List<JournalEntryDto>();
+
+    public List<string> CharacterEntries { get; set; } = new List<string>();
+    public List<string> CharacterWorlds { get; set; } = new List<string>();
+    public List<string> CharacterCharacters { get; set; } = new List<string>();
+    public List<string> CharacterGames { get; set; } = new List<string>();
+
+    #region Character Search Variables
+    private SearchComponent? CharacterEntriesSearch;
+    private List<string> CharacterEntriesSelected = new List<string>();
+    private List<string> CharacterEntriesAvailable = new List<string>();
+
+    private SearchComponent? CharacterCharactersSearch;
+    private List<string> CharacterCharactersSelected = new List<string>();
+    private List<string> CharacterCharactersAvailable = new List<string>();
+
+    private SearchComponent? CharacterWorldsSearch;
+    private List<string> CharacterWorldsSelected = new List<string>();
+    private List<string> CharacterWorldsAvailable = new List<string>();
+
+    private SearchComponent? CharacterGamesSearch;
+    private List<string> CharacterGamesSelected = new List<string>();
+    private List<string> CharacterGamesAvailable = new List<string>();
+    #endregion Character Search Variables
+
+    private JournalEntryTable<JournalEntryDto>? MainCharacterTable;
+    #endregion Journal Character Entry Variables
+
+    #region Journal Story Entry Variables
+    private List<JournalEntryDto> JJStoryDtos = new List<JournalEntryDto>();
+
+    public List<string> StoryEntries { get; set; } = new List<string>();
+    public List<string> StoryWorlds { get; set; } = new List<string>();
+    public List<string> StoryCharacters { get; set; } = new List<string>();
+    public List<string> StoryGames { get; set; } = new List<string>();
+
+    #region Story Search Variables
+    private SearchComponent? StoryEntriesSearch;
+    private List<string> StoryEntriesSelected = new List<string>();
+    private List<string> StoryEntriesAvailable = new List<string>();
+
+    private SearchComponent? StoryCharactersSearch;
+    private List<string> StoryCharactersSelected = new List<string>();
+    private List<string> StoryCharactersAvailable = new List<string>();
+
+    private SearchComponent? StoryWorldsSearch;
+    private List<string> StoryWorldsSelected = new List<string>();
+    private List<string> StoryWorldsAvailable = new List<string>();
+
+    private SearchComponent? StoryGamesSearch;
+    private List<string> StoryGamesSelected = new List<string>();
+    private List<string> StoryGamesAvailable = new List<string>();
+    #endregion Story Search Variables
+
+    private JournalEntryTable<JournalEntryDto>? MainStoryTable;
+    #endregion Journal Story Entry Variables
+
+    #region Journal Enemy Entry Variables
+    private List<JournalEntryDto> JJEnemyDtos = new List<JournalEntryDto>();
+
+    public List<string> EnemyEntries { get; set; } = new List<string>();
+    public List<string> EnemyWorlds { get; set; } = new List<string>();
+    public List<string> EnemyCharacters { get; set; } = new List<string>();
+    public List<string> EnemyGames { get; set; } = new List<string>();
+
+    #region Enemy Search Variables
+    private SearchComponent? EnemyEntriesSearch;
+    private List<string> EnemyEntriesSelected = new List<string>();
+    private List<string> EnemyEntriesAvailable = new List<string>();
+
+    private SearchComponent? EnemyCharactersSearch;
+    private List<string> EnemyCharactersSelected = new List<string>();
+    private List<string> EnemyCharactersAvailable = new List<string>();
+
+    private SearchComponent? EnemyWorldsSearch;
+    private List<string> EnemyWorldsSelected = new List<string>();
+    private List<string> EnemyWorldsAvailable = new List<string>();
+
+    private SearchComponent? EnemyGamesSearch;
+    private List<string> EnemyGamesSelected = new List<string>();
+    private List<string> EnemyGamesAvailable = new List<string>();
+    #endregion Enemy Search Variables
+
+    private JournalEntryTable<JournalEntryDto>? MainEnemyTable;
+    #endregion Journal Enemy Entry Variables
+
+
+    #region Journal Report Entry Variables
+    private List<JournalEntryDto> JJReportDtos = new List<JournalEntryDto>();
+
+    public List<string> ReportEntries { get; set; } = new List<string>();
+    public List<string> ReportWorlds { get; set; } = new List<string>();
+    public List<string> ReportCharacters { get; set; } = new List<string>();
+    public List<string> ReportGames { get; set; } = new List<string>();
+
+    #region Report Search Variables
+    private SearchComponent? ReportEntriesSearch;
+    private List<string> ReportEntriesSelected = new List<string>();
+    private List<string> ReportEntriesAvailable = new List<string>();
+
+    private SearchComponent? ReportCharactersSearch;
+    private List<string> ReportCharactersSelected = new List<string>();
+    private List<string> ReportCharactersAvailable = new List<string>();
+
+    private SearchComponent? ReportWorldsSearch;
+    private List<string> ReportWorldsSelected = new List<string>();
+    private List<string> ReportWorldsAvailable = new List<string>();
+
+    private SearchComponent? ReportGamesSearch;
+    private List<string> ReportGamesSelected = new List<string>();
+    private List<string> ReportGamesAvailable = new List<string>();
+    #endregion Report Search Variables
+
+    private JournalEntryTable<JournalEntryDto>? MainReportTable;
+    #endregion Journal Report Entry Variables
+    //private Table<TrailerDto>? MainTrailerTable;
+    //private Table<InterviewDto>? MainInterviewTable;
+
+
+    private bool failed = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (authenticationStateTask != null)
+        {
+            var authState = await authenticationStateTask;
+
+            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            //{
+            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            //}
+        }
+
+        this.api = new WayfinderController(context);
+
+        await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                await this.ResetOptions();
+
+                Thread.Sleep(1000);
+
+                await this.HandleQueryParams();
+            }
+            catch (Exception)
+            {
+                // Catch the SqliteException, do not set firstLoad to true
+                this.failed = true;
+
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+        }
+
+        if (this.failed)
+        {
+            try
+            {
+                Thread.Sleep(1000);
+
+                await this.ResetOptions();
+
+                Thread.Sleep(1000);
+
+                await this.HandleQueryParams();
+            }
+            catch (Exception)
+            {
+                // Catch the SqliteException, do not set firstLoad to true
+            }
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public async Task UpdateCurrentCategory(string category)
+    {
+        if (this.Loading) return;
+
+        this.CurrentCategory = category;
+
+        if (this.CurrentCategory == "Story")
+        {
+            this.options = new List<string> { "Entries", "Games", "Worlds", "Characters" };
+        }
+        else if (this.CurrentCategory == "Reports")
+        {
+            this.options = new List<string> { "Entries", "Games", "Worlds", "Characters" };
+        }
+        else if (this.CurrentCategory == "Characters")
+        {
+            this.options = new List<string> { "Entries", "Games", "Worlds", "Characters" };
+        }
+        else if (this.CurrentCategory == "Enemies")
+        {
+            this.options = new List<string> { "Entries", "Games", "Worlds", "Characters" };
+        }
+        else if (this.CurrentCategory == "Collectibles")
+        {
+            this.options = new List<string>();
+        }
+
+        await this.Search();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task UpdateCurrentOption(string option)
+    {
+        this.CurrentOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SearchInformation(string search)
+    {
+        if (search.Length < 3)
+            this.informationSearch = "";
+        else
+            this.informationSearch = search;
+
+
+        if (!this.Loading)
+        {
+            await this.Search();
+        }
+    }
+
+    public async Task Search()
+    {
+        this.Loading = true;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        if (this.CurrentCategory == "Story")
+        {
+            await this.SearchStoryEntries();
+        }
+        else if (this.CurrentCategory == "Reports")
+        {
+            await this.SearchReportEntries();
+        }
+        else if (this.CurrentCategory == "Characters")
+        {
+            await this.SearchCharacterEntries();
+        }
+        else if (this.CurrentCategory == "Enemies")
+        {
+            await this.SearchEnemyEntries();
+        }
+        else if (this.CurrentCategory == "Collectibles")
+        {
+            //await this.SearchCollectibleEntries();
+        }
+
+        this.Loading = false;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+    }
+
+    #region Sub-Search Methods
+    private async Task SearchStoryEntries()
+    {
+        var games = this.StoryGamesSearch != null ? string.Join("::", this.StoryGamesSelected) != "" ? string.Join("::", this.StoryGamesSelected) : null : null;
+        var storyEntries = this.StoryEntriesSearch != null ? string.Join("::", this.StoryEntriesSelected) != "" ? string.Join("::", this.StoryEntriesSelected) : null : null;
+        var worlds = this.StoryWorldsSearch != null ? string.Join("::", this.StoryWorldsSelected) != "" ? string.Join("::", this.StoryWorldsSelected) : null : null;
+        var characters = this.StoryCharactersSearch != null ? string.Join("::", this.StoryCharactersSelected) != "" ? string.Join("::", this.StoryCharactersSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (games == null && storyEntries == null && worlds == null && characters == null && information == null)
+        {
+            this.JJStoryDtos = new List<JournalEntryDto>();
+
+            await Task.Run(async () => await this.ResetStoryEntryOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.JJStoryDtos = await this.api.SearchForJournalEntries(games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateStoryEntryOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainStoryTable != null)
+        {
+            MainStoryTable.SetCurrentPage(1);
+            MainStoryTable.CurrentExpandedRow = -1;
+        }
+    }
+
+    private async Task SearchReportEntries()
+    {
+        var games = this.ReportGamesSearch != null ? string.Join("::", this.ReportGamesSelected) != "" ? string.Join("::", this.ReportGamesSelected) : null : null;
+        var reportEntries = this.ReportEntriesSearch != null ? string.Join("::", this.ReportEntriesSelected) != "" ? string.Join("::", this.ReportEntriesSelected) : null : null;
+        var worlds = this.ReportWorldsSearch != null ? string.Join("::", this.ReportWorldsSelected) != "" ? string.Join("::", this.ReportWorldsSelected) : null : null;
+        var characters = this.ReportCharactersSearch != null ? string.Join("::", this.ReportCharactersSelected) != "" ? string.Join("::", this.ReportCharactersSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (games == null && reportEntries == null && worlds == null && characters == null && information == null)
+        {
+            this.JJReportDtos = new List<JournalEntryDto>();
+
+            await Task.Run(async () => await this.ResetReportEntryOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.JJReportDtos = await this.api.SearchForJournalEntries(games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateReportEntryOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainReportTable != null)
+        {
+            MainReportTable.SetCurrentPage(1);
+            MainReportTable.CurrentExpandedRow = -1;
+        }
+    }
+
+    private async Task SearchCharacterEntries()
+    {
+        var games = this.CharacterGamesSearch != null ? string.Join("::", this.CharacterGamesSelected) != "" ? string.Join("::", this.CharacterGamesSelected) : null : null;
+        var characterEntries = this.CharacterEntriesSearch != null ? string.Join("::", this.CharacterEntriesSelected) != "" ? string.Join("::", this.CharacterEntriesSelected) : null : null;
+        var worlds = this.CharacterWorldsSearch != null ? string.Join("::", this.CharacterWorldsSelected) != "" ? string.Join("::", this.CharacterWorldsSelected) : null : null;
+        var characters = this.CharacterCharactersSearch != null ? string.Join("::", this.CharacterCharactersSelected) != "" ? string.Join("::", this.CharacterCharactersSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (games == null && characterEntries == null && worlds == null && characters == null && information == null)
+        {
+            this.JJCharacterDtos = new List<JournalEntryDto>();
+
+            await Task.Run(async () => await this.ResetCharacterEntryOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.JJCharacterDtos = await this.api.SearchForJournalEntries(games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateCharacterEntryOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainCharacterTable != null)
+        {
+            MainCharacterTable.SetCurrentPage(1);
+            MainCharacterTable.CurrentExpandedRow = -1;
+        }
+    }
+
+    private async Task SearchEnemyEntries()
+    {
+        var games = this.EnemyGamesSearch != null ? string.Join("::", this.EnemyGamesSelected) != "" ? string.Join("::", this.EnemyGamesSelected) : null : null;
+        var enemyEntries = this.EnemyEntriesSearch != null ? string.Join("::", this.EnemyEntriesSelected) != "" ? string.Join("::", this.EnemyEntriesSelected) : null : null;
+        var worlds = this.EnemyWorldsSearch != null ? string.Join("::", this.EnemyWorldsSelected) != "" ? string.Join("::", this.EnemyWorldsSelected) : null : null;
+        var characters = this.EnemyCharactersSearch != null ? string.Join("::", this.EnemyCharactersSelected) != "" ? string.Join("::", this.EnemyCharactersSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (games == null && enemyEntries == null && worlds == null && characters == null && information == null)
+        {
+            this.JJEnemyDtos = new List<JournalEntryDto>();
+
+            await Task.Run(async () => await this.ResetEnemyEntryOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.JJEnemyDtos = await this.api.SearchForJournalEntries(games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateEnemyEntryOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainEnemyTable != null)
+        {
+            MainEnemyTable.SetCurrentPage(1);
+            MainEnemyTable.CurrentExpandedRow = -1;
+        }
+    }
+
+    private async Task SearchCollectibleEntries()
+    {
+        var games = string.Empty; //this.CharacterGamesSearch != null ? string.Join("::", this.CharacterGamesSelected) != "" ? string.Join("::", this.CharacterGamesSelected) : null : null;
+        var collectiblesEntries = string.Empty; //this.CharacterEntriesSearch != null ? string.Join("::", this.CharacterEntriesSelected) != "" ? string.Join("::", this.CharacterEntriesSelected) : null : null;
+        var worlds = string.Empty; //this.CharacterWorldsSearch != null ? string.Join("::", this.CharacterWorldsSelected) != "" ? string.Join("::", this.CharacterWorldsSelected) : null : null;
+        var characters = string.Empty; //this.CharacterCharactersSearch != null ? string.Join("::", this.CharacterCharactersSelected) != "" ? string.Join("::", this.CharacterCharactersSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        if (games == null && collectiblesEntries == null && worlds == null && characters == null && information == null)
+        {
+            //this.JJCharacterDtos = new List<JournalEntryDto>();
+
+            await Task.Run(async () => await this.ResetCollectibleEntryOptions());
+
+            this.canDisplayClearAll = false;
+        }
+    }
+    #endregion Sub-Search Methods
+
+    public void UpdateOptions()
+    {
+        if (this.CurrentCategory == "Story")
+        {
+            this.UpdateStoryEntryOptions();
+        }
+        else if (this.CurrentCategory == "Reports")
+        {
+            this.UpdateReportEntryOptions();
+        }
+        else if (this.CurrentCategory == "Characters")
+        {
+            this.UpdateCharacterEntryOptions();
+        }
+        else if (this.CurrentCategory == "Enemies")
+        {
+            this.UpdateEnemyEntryOptions();
+        }
+        else if (this.CurrentCategory == "Collectibles")
+        {
+            this.UpdateCollectibleEntryOptions();
+        }
+    }
+
+    #region Sub-Option Methods
+    private void UpdateStoryEntryOptions()
+    {
+        this.StoryEntriesAvailable = this.JJStoryDtos.Select(y => y.Title).Except(this.StoryEntriesSelected).Distinct().ToList();
+        this.StoryWorldsAvailable = this.JJStoryDtos.SelectMany(x => x.Worlds).Select(x => x.Name).Except(this.StoryWorldsSelected).Distinct().ToList();
+        this.StoryCharactersAvailable = this.JJStoryDtos.SelectMany(x => x.Characters).Select(x => x.Name).Except(this.StoryCharactersSelected).Distinct().ToList();
+        this.StoryGamesAvailable = this.JJStoryDtos.Select(x => x.Game.Name).Except(this.StoryGamesSelected).Distinct().ToList();
+
+        this.StoryEntriesAvailable.Sort();
+        this.StoryWorldsAvailable.Sort();
+        this.StoryCharactersAvailable.Sort();
+    }
+
+    private void UpdateReportEntryOptions()
+    {
+        this.ReportEntriesAvailable = this.JJReportDtos.Select(y => y.Title).Except(this.ReportEntriesSelected).Distinct().ToList();
+        this.ReportWorldsAvailable = this.JJReportDtos.SelectMany(x => x.Worlds).Select(x => x.Name).Except(this.ReportWorldsSelected).Distinct().ToList();
+        this.ReportCharactersAvailable = this.JJReportDtos.SelectMany(x => x.Characters).Select(x => x.Name).Except(this.ReportCharactersSelected).Distinct().ToList();
+        this.ReportGamesAvailable = this.JJReportDtos.Select(x => x.Game.Name).Except(this.ReportGamesSelected).Distinct().ToList();
+
+        this.ReportEntriesAvailable.Sort();
+        this.ReportWorldsAvailable.Sort();
+        this.ReportCharactersAvailable.Sort();
+    }
+
+    private void UpdateCharacterEntryOptions()
+    {
+        this.CharacterEntriesAvailable = this.JJCharacterDtos.Select(y => y.Title).Except(this.CharacterEntriesSelected).Distinct().ToList();
+        this.CharacterWorldsAvailable = this.JJCharacterDtos.SelectMany(x => x.Worlds).Select(x => x.Name).Except(this.CharacterWorldsSelected).Distinct().ToList();
+        this.CharacterCharactersAvailable = this.JJCharacterDtos.SelectMany(x => x.Characters).Select(x => x.Name).Except(this.CharacterCharactersSelected).Distinct().ToList();
+        this.CharacterGamesAvailable = this.JJCharacterDtos.Select(x => x.Game.Name).Except(this.CharacterGamesSelected).Distinct().ToList();
+
+        this.CharacterEntriesAvailable.Sort();
+        this.CharacterWorldsAvailable.Sort();
+        this.CharacterCharactersAvailable.Sort();
+    }
+
+    private void UpdateEnemyEntryOptions()
+    {
+        this.EnemyEntriesAvailable = this.JJReportDtos.Select(y => y.Title).Except(this.EnemyEntriesSelected).Distinct().ToList();
+        this.EnemyWorldsAvailable = this.JJReportDtos.SelectMany(x => x.Worlds).Select(x => x.Name).Except(this.EnemyWorldsSelected).Distinct().ToList();
+        this.EnemyCharactersAvailable = this.JJReportDtos.SelectMany(x => x.Characters).Select(x => x.Name).Except(this.EnemyCharactersSelected).Distinct().ToList();
+        this.EnemyGamesAvailable = this.JJReportDtos.Select(x => x.Game.Name).Except(this.EnemyGamesSelected).Distinct().ToList();
+
+        this.EnemyEntriesAvailable.Sort();
+        this.EnemyWorldsAvailable.Sort();
+        this.EnemyCharactersAvailable.Sort();
+    }
+
+    private void UpdateCollectibleEntryOptions() { }
+    #endregion Sub-Option Methods
+
+    public async Task ResetOptions()
+    {
+        this.Loading = true;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        if (this.CurrentCategory == "Story")
+        {
+            await this.ResetStoryEntryOptions();
+        }
+        else if (this.CurrentCategory == "Reports")
+        {
+            await this.ResetReportEntryOptions();
+        }
+        else if (this.CurrentCategory == "Characters")
+        {
+            await this.ResetCharacterEntryOptions();
+        }
+        else if (this.CurrentCategory == "Enemies")
+        {
+            await this.ResetEnemyEntryOptions();
+        }
+        else if (this.CurrentCategory == "Collectibles")
+        {
+            await this.ResetCollectibleEntryOptions();
+        }
+
+        this.Loading = false;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+    }
+
+    #region Sub-ResetOption Methods
+    private async Task ResetStoryEntryOptions()
+    {
+        this.StoryEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").Select(x => x.Title).ToListAsync();
+        this.StoryWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.StoryCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.StoryGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+        this.StoryEntriesAvailable = this.StoryEntries;
+        this.StoryWorldsAvailable = this.StoryWorlds;
+        this.StoryCharactersAvailable = this.StoryCharacters;
+        this.StoryGamesAvailable = this.StoryGames;
+
+        this.StoryEntriesAvailable.Sort();
+        this.StoryWorldsAvailable.Sort();
+        this.StoryCharactersAvailable.Sort();
+
+        this.StoryEntriesSelected = new List<string>();
+        this.StoryWorldsSelected = new List<string>();
+        this.StoryCharactersSelected = new List<string>();
+        this.StoryGamesSelected = new List<string>();
+
+        if (this.StoryEntriesSearch != null)
+            await this.StoryEntriesSearch.SetCurrentView("Available");
+
+        if (this.StoryWorldsSearch != null)
+            await this.StoryWorldsSearch.SetCurrentView("Available");
+
+        if (this.StoryCharactersSearch != null)
+            await this.StoryCharactersSearch.SetCurrentView("Available");
+
+        if (this.StoryGamesSearch != null)
+            await this.StoryGamesSearch.SetCurrentView("Available");
+    }
+
+    private async Task ResetReportEntryOptions()
+    {
+        this.ReportEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").Select(x => x.Title).ToListAsync();
+        this.ReportWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.ReportCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.ReportGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+        this.ReportEntriesAvailable = this.ReportEntries;
+        this.ReportWorldsAvailable = this.ReportWorlds;
+        this.ReportCharactersAvailable = this.ReportCharacters;
+        this.ReportGamesAvailable = this.ReportGames;
+
+        this.ReportEntriesAvailable.Sort();
+        this.ReportWorldsAvailable.Sort();
+        this.ReportCharactersAvailable.Sort();
+
+        this.ReportEntriesSelected = new List<string>();
+        this.ReportWorldsSelected = new List<string>();
+        this.ReportCharactersSelected = new List<string>();
+        this.ReportGamesSelected = new List<string>();
+
+        if (this.StoryEntriesSearch != null)
+            await this.StoryEntriesSearch.SetCurrentView("Available");
+
+        if (this.StoryWorldsSearch != null)
+            await this.StoryWorldsSearch.SetCurrentView("Available");
+
+        if (this.StoryCharactersSearch != null)
+            await this.StoryCharactersSearch.SetCurrentView("Available");
+
+        if (this.StoryGamesSearch != null)
+            await this.StoryGamesSearch.SetCurrentView("Available");
+
+    }
+
+    private async Task ResetCharacterEntryOptions()
+    {
+        this.CharacterEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").Select(x => x.Title).ToListAsync();
+        this.CharacterWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.CharacterCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.CharacterGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+        this.CharacterEntriesAvailable = this.CharacterEntries;
+        this.CharacterWorldsAvailable = this.CharacterWorlds;
+        this.CharacterCharactersAvailable = this.CharacterCharacters;
+        this.CharacterGamesAvailable = this.CharacterGames;
+
+        this.CharacterEntriesAvailable.Sort();
+        this.CharacterWorldsAvailable.Sort();
+        this.CharacterCharactersAvailable.Sort();
+
+        this.CharacterEntriesSelected = new List<string>();
+        this.CharacterWorldsSelected = new List<string>();
+        this.CharacterCharactersSelected = new List<string>();
+        this.CharacterGamesSelected = new List<string>();
+
+
+        if (this.CharacterEntriesSearch != null)
+            await this.CharacterEntriesSearch.SetCurrentView("Available");
+
+        if (this.CharacterWorldsSearch != null)
+            await this.CharacterWorldsSearch.SetCurrentView("Available");
+
+        if (this.CharacterCharactersSearch != null)
+            await this.CharacterCharactersSearch.SetCurrentView("Available");
+
+        if (this.CharacterGamesSearch != null)
+            await this.CharacterGamesSearch.SetCurrentView("Available");
+    }
+
+    private async Task ResetEnemyEntryOptions()
+    {
+        this.EnemyEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").Select(x => x.Title).ToListAsync();
+        this.EnemyWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.EnemyCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.EnemyGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+        this.EnemyEntriesAvailable = this.EnemyEntries;
+        this.EnemyWorldsAvailable = this.EnemyWorlds;
+        this.EnemyCharactersAvailable = this.EnemyCharacters;
+        this.EnemyGamesAvailable = this.EnemyGames;
+
+        this.EnemyEntriesAvailable.Sort();
+        this.EnemyWorldsAvailable.Sort();
+        this.EnemyCharactersAvailable.Sort();
+
+        this.EnemyEntriesSelected = new List<string>();
+        this.EnemyWorldsSelected = new List<string>();
+        this.EnemyCharactersSelected = new List<string>();
+        this.EnemyGamesSelected = new List<string>();
+
+        if (this.EnemyEntriesSearch != null)
+            await this.EnemyEntriesSearch.SetCurrentView("Available");
+
+        if (this.EnemyWorldsSearch != null)
+            await this.EnemyWorldsSearch.SetCurrentView("Available");
+
+        if (this.EnemyCharactersSearch != null)
+            await this.EnemyCharactersSearch.SetCurrentView("Available");
+
+        if (this.EnemyGamesSearch != null)
+            await this.EnemyGamesSearch.SetCurrentView("Available");
+    }
+
+    private async Task ResetCollectibleEntryOptions()
+    {
+        this.CharacterWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        this.CharacterCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
+        //this.CharacterGames = await context.Games.AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Id).Select(x => x.Name).Distinct().ToListAsync();
+    }
+    #endregion Sub-ResetOption Methods
+
+    public async Task ClearAllOptions(string clearString)
+    {
+        if (this.CurrentCategory == "Story")
+        {
+            await this.ClearAllStoryEntryOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Reports")
+        {
+            await this.ClearAllReportEntryOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Characters")
+        {
+            await this.ClearAllCharacterEntryOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Enemies")
+        {
+            await this.ClearAllEnemyEntryOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Collectibles")
+        {
+            await this.ClearAllCollectibleEntryOptions(clearString);
+        }
+
+        await this.Search();
+    }
+
+    #region Clear All Sub-Methods
+    private async Task ClearAllStoryEntryOptions(string clearString)
+    {
+        if (clearString == "Entries")
+        {
+            this.StoryEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").Select(x => x.Title).ToListAsync();
+            this.StoryEntries.Sort();
+
+            this.StoryEntriesAvailable = this.StoryEntries;
+            this.StoryEntriesSelected = new List<string>();
+
+            if (this.StoryEntriesSearch != null)
+            {
+                await this.StoryEntriesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.StoryWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.StoryWorlds.Sort();
+
+            this.StoryWorldsAvailable = this.StoryWorlds;
+            this.StoryWorldsSelected = new List<string>();
+
+            if (this.StoryWorldsSearch != null)
+            {
+                await this.StoryWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Characters")
+        {
+            this.StoryCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.StoryCharacters.Sort();
+
+            this.StoryCharactersAvailable = this.StoryCharacters;
+            this.StoryCharactersSelected = new List<string>();
+
+            if (this.StoryCharactersSearch != null)
+            {
+                await this.StoryCharactersSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.StoryGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.StoryGamesAvailable = this.StoryGames;
+            this.StoryGamesSelected = new List<string>();
+
+            if (this.StoryGamesSearch != null)
+            {
+                await this.StoryGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllReportEntryOptions(string clearString)
+    {
+        if (clearString == "Entries")
+        {
+            this.ReportEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").Select(x => x.Title).ToListAsync();
+            this.ReportEntries.Sort();
+
+            this.ReportEntriesAvailable = this.ReportEntries;
+            this.ReportEntriesSelected = new List<string>();
+
+            if (this.ReportEntriesSearch != null)
+            {
+                await this.ReportEntriesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.ReportWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.ReportWorlds.Sort();
+
+            this.ReportWorldsAvailable = this.ReportWorlds;
+            this.ReportWorldsSelected = new List<string>();
+
+            if (this.ReportWorldsSearch != null)
+            {
+                await this.ReportWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Characters")
+        {
+            this.ReportCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.ReportCharacters.Sort();
+
+            this.ReportCharactersAvailable = this.ReportCharacters;
+            this.ReportCharactersSelected = new List<string>();
+
+            if (this.StoryCharactersSearch != null)
+            {
+                await this.StoryCharactersSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.ReportGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.ReportGamesAvailable = this.ReportGames;
+            this.ReportGamesSelected = new List<string>();
+
+            if (this.ReportGamesSearch != null)
+            {
+                await this.ReportGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllCharacterEntryOptions(string clearString)
+    {
+        if (clearString == "Entries")
+        {
+            this.CharacterEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").Select(x => x.Title).ToListAsync();
+            this.CharacterEntries.Sort();
+
+            this.CharacterEntriesAvailable = this.CharacterEntries;
+            this.CharacterEntriesSelected = new List<string>();
+
+            if (this.CharacterEntriesSearch != null)
+            {
+                await this.CharacterEntriesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.CharacterWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.CharacterWorlds.Sort();
+
+            this.CharacterWorldsAvailable = this.CharacterWorlds;
+            this.CharacterWorldsSelected = new List<string>();
+
+            if (this.CharacterWorldsSearch != null)
+            {
+                await this.CharacterWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Characters")
+        {
+            this.CharacterCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.CharacterCharacters.Sort();
+
+            this.CharacterCharactersAvailable = this.CharacterCharacters;
+            this.CharacterCharactersSelected = new List<string>();
+
+            if (this.CharacterCharactersSearch != null)
+            {
+                await this.CharacterCharactersSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.CharacterGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.CharacterGamesAvailable = this.CharacterGames;
+            this.CharacterGamesSelected = new List<string>();
+
+            if (this.CharacterGamesSearch != null)
+            {
+                await this.CharacterGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllEnemyEntryOptions(string clearString)
+    {
+        if (clearString == "Entries")
+        {
+            this.EnemyEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").Select(x => x.Title).ToListAsync();
+            this.EnemyEntries.Sort();
+
+            this.EnemyEntriesAvailable = this.EnemyEntries;
+            this.EnemyEntriesSelected = new List<string>();
+
+            if (this.EnemyEntriesSearch != null)
+            {
+                await this.EnemyEntriesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.EnemyWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.EnemyWorlds.Sort();
+
+            this.EnemyWorldsAvailable = this.EnemyWorlds;
+            this.EnemyWorldsSelected = new List<string>();
+
+            if (this.EnemyWorldsSearch != null)
+            {
+                await this.EnemyWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Characters")
+        {
+            this.EnemyCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
+            this.EnemyCharacters.Sort();
+
+            this.EnemyCharactersAvailable = this.EnemyCharacters;
+            this.EnemyCharactersSelected = new List<string>();
+
+            if (this.EnemyCharactersSearch != null)
+            {
+                await this.EnemyCharactersSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.EnemyGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.EnemyGamesAvailable = this.EnemyGames;
+            this.EnemyGamesSelected = new List<string>();
+
+            if (this.EnemyGamesSearch != null)
+            {
+                await this.EnemyGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllCollectibleEntryOptions(string clearString)
+    {
+        await this.ResetOptions();
+    }
+    #endregion Clear All Sub-Methods
+
+    public async Task GenerateShareLink()
+    {
+        try
+        {
+            if (this.CurrentCategory == "Story")
+            {
+                await this.GenerateStoryEntryShareLink();
+            }
+            else if (this.CurrentCategory == "Reports")
+            {
+                await this.GenerateReportEntryShareLink();
+            }
+            else if (this.CurrentCategory == "Characters")
+            {
+                await this.GenerateCharacterEntryShareLink();
+            }
+            else if (this.CurrentCategory == "Enemies")
+            {
+                await this.GenerateEnemyEntryShareLink();
+            }
+            else if (this.CurrentCategory == "Collectibles")
+            {
+                await this.GenerateCollectibleEntryShareLink();
+            }
+        }
+        catch (Exception)
+        {
+            // Catch potential issue when trying to access disposed object
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    #region Generate Share Link Sub-Methods
+    private async Task GenerateStoryEntryShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+
+        if (this.StoryEntriesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.StoryEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+        }
+
+        if (this.StoryWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.StoryWorldsSelected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.StoryCharactersSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.StoryCharactersSelected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.StoryGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.StoryGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=Story&";
+        shareLink += $"open_row={this.MainStoryTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainStoryTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainStoryTable.CurrentExpandedRow)?.Title}' entry.");
+        }
+    }
+
+    private async Task GenerateReportEntryShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+
+        if (this.ReportEntriesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.ReportEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+        }
+
+        if (this.ReportWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.ReportWorldsSelected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.ReportCharactersSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.ReportCharactersSelected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.ReportGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.StoryGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=Reports&";
+        shareLink += $"open_row={this.MainReportTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainReportTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainReportTable.CurrentExpandedRow)?.Title}' entry.");
+        }
+    }
+
+    private async Task GenerateCharacterEntryShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+
+        if (this.CharacterEntriesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.CharacterEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+        }
+
+        if (this.CharacterWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.CharacterWorldsSelected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.CharacterCharactersSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.CharacterCharactersSelected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.CharacterGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.CharacterGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=Characters&";
+        shareLink += $"open_row={this.MainCharacterTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainCharacterTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainCharacterTable.CurrentExpandedRow)?.Title}' entry.");
+        }
+    }
+
+    private async Task GenerateEnemyEntryShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+
+        if (this.EnemyEntriesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.EnemyEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+        }
+
+        if (this.EnemyWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.EnemyWorldsSelected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.EnemyCharactersSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.EnemyCharactersSelected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.EnemyGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.EnemyGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=Enemies&";
+        shareLink += $"open_row={this.MainEnemyTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainEnemyTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainEnemyTable.CurrentExpandedRow)?.Title}' entry.");
+        }
+    }
+
+    private async Task GenerateCollectibleEntryShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+    }
+    #endregion Generate Share Link Sub-Methods
+
+    public async Task<bool> HandleQueryParams()
+    {
+        var optionUpdated = false;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        try
+        {
+            if (this.CategoryQuery != null)
+            {
+                switch (this.CategoryQuery)
+                {
+                    case "Story":
+                        this.CurrentCategory = "Story";
+                        break;
+                    case "Report":
+                        this.CurrentCategory = "Reports";
+                        break;
+                    case "Character":
+                        this.CurrentCategory = "Characters";
+                        break;
+                    case "Enemy":
+                        this.CurrentCategory = "Enemies";
+                        break;
+                    default:
+                        this.CurrentCategory = this.CategoryQuery;
+                        break;
+                }
+                
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+
+            if (this.CurrentCategory == "Story")
+            {
+                optionUpdated = await this.HandleStoryEntryQueryParams();
+            }
+            else if (this.CurrentCategory == "Reports")
+            {
+                optionUpdated = await this.HandleReportEntryQueryParams();
+            }
+            else if (this.CurrentCategory == "Characters")
+            {
+                optionUpdated = await this.HandleCharacterEntryQueryParams();
+            }
+            else if (this.CurrentCategory == "Enemies")
+            {
+                optionUpdated = await this.HandleEnemyEntryQueryParams();
+            }
+            else if (this.CurrentCategory == "Collectibles")
+            {
+                optionUpdated = this.HandleCollectibleEntryQueryParams();
+            }
+
+            if (optionUpdated)
+            {
+                await this.Search();
+            }
+        }
+        catch(Exception)
+        {
+            //this.failed = true;
+        }
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        return optionUpdated;
+    }
+
+    #region Handle Query Params Sub-Methods
+    private async Task<bool> HandleStoryEntryQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.StoryEntriesSearch != null)
+        {
+            var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
+
+            this.StoryEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
+            await this.StoryEntriesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.StoryWorldsSearch != null)
+        {
+            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.StoryWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.StoryWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.StoryCharactersSearch != null)
+        {
+            var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
+
+            this.StoryCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.StoryCharactersSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.StoryGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+            this.StoryGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.StoryGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+
+    private async Task<bool> HandleReportEntryQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.ReportEntriesSearch != null)
+        {
+            var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
+
+            this.ReportEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
+            await this.ReportEntriesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.ReportWorldsSearch != null)
+        {
+            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.ReportWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.ReportWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.ReportCharactersSearch != null)
+        {
+            var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
+
+            this.ReportCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.ReportCharactersSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.ReportGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+            this.ReportGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.ReportGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+
+    private async Task<bool> HandleCharacterEntryQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.CharacterEntriesSearch != null)
+        {
+            var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
+
+            this.CharacterEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
+            await this.CharacterEntriesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.CharacterWorldsSearch != null)
+        {
+            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.CharacterWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.CharacterWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.CharacterCharactersSearch != null)
+        {
+            var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
+
+            this.CharacterCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.CharacterCharactersSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.CharacterGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+            this.CharacterGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.CharacterGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+
+    private async Task<bool> HandleEnemyEntryQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.EnemyEntriesSearch != null)
+        {
+            var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
+
+            this.EnemyEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
+            await this.EnemyEntriesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.EnemyWorldsSearch != null)
+        {
+            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.EnemyWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.EnemyWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.EnemyCharactersSearch != null)
+        {
+            var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
+
+            this.EnemyCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.EnemyCharactersSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.EnemyGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+            this.EnemyGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.EnemyGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+
+    private bool HandleCollectibleEntryQueryParams() { return false; }
+    #endregion Handle Query Params Sub-Methods
+
+    #region Scene Specific Methods
+    public void NavigateToDailyJournalEntry()
+    {
+        try
+        {
+            var dateCode = DateTime.Now.ToString("yyyyMMdd");
+            var entryId = this.context.DailyJournalEntries.FirstOrDefault(entry => entry.DateCode == dateCode)?.EntryId;
+            var journalEntry = this.context.JournalEntries.AsNoTracking()
+                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
+                .FirstOrDefault(j => j.Id == entryId);
+
+            if (journalEntry == null)
+            {
+                return;
+            }
+
+            var dailyLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+
+            dailyLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
+            dailyLink += $"game={journalEntry.Game.Id}&";
+            dailyLink += $"entry={journalEntry.Id}&";
+            dailyLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
+            dailyLink += $"category={journalEntry.Category}&";
+            dailyLink += $"open_row={journalEntry.Id}";
+
+            NavigationManager.NavigateTo(dailyLink, true);
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+
+    public void NavigateToRandomJournalEntry()
+    {
+        try
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+            var randomEntryId = random.Next(0, this.context.JournalEntries.Count());
+            var journalEntry = this.context.JournalEntries.AsNoTracking()
+                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
+                .FirstOrDefault(j => j.Id == randomEntryId);
+                
+            if (journalEntry == null)
+            {
+                return;
+            }
+
+            var randomLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+
+            randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
+            randomLink += $"game={journalEntry.Game.Id}&";
+            randomLink += $"entry={journalEntry.Id}&";
+            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&"; 
+            randomLink += $"category={journalEntry.Category}&";
+            randomLink += $"open_row={journalEntry.Id}";
+
+            NavigationManager.NavigateTo(randomLink, true);
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+    #endregion Scene Specific Methods
+
+
+    #region Search Helpers
+    private void Search(string search, ref List<string> initialValues, ref List<string> selected, ref List<string> available)
+    {
+        available = new List<string>();
+
+        if (string.IsNullOrEmpty(search))
+        {
+            available = initialValues;
+            return;
+        }
+
+        foreach (var value in initialValues)
+        {
+            if (selected.Contains(value)) continue;
+
+            if (value.ToLower().Contains(search.ToLower()))
+            {
+                available.Add(value);
+            }
+        }
+
+        available.Sort();
+    }
+
+    private void Select(string value, ref List<string> selected, ref List<string> available)
+    {
+        selected.Add(value);
+        available.Remove(value);
+
+        selected.Sort();
+
+        this.Search().Wait();
+    }
+
+    private void Remove(string value, ref List<string> selected, ref List<string> available)
+    {
+        available.Add(value);
+        selected.Remove(value);
+
+        available.Sort();
+
+        this.Search().Wait();
+    }
+    #endregion Search Helpers
+}

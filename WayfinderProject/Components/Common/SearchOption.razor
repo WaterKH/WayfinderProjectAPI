@@ -1,5 +1,4 @@
-﻿@using Data.Models;
-@inject IJSRuntime JS
+﻿@inject IJSRuntime JS
 
 
 <div class="@(this.IsSelected ? "search-option-selected" : "search-option")" @onclick="@(() => this.SelectValue.InvokeAsync(this.Value))">
@@ -41,12 +40,12 @@
 </style>
 
 @code {
-    [Parameter] public string Id { get; set; }
-    [Parameter] public string Color { get; set; }
-    [Parameter] public string Value { get; set; }
+    [Parameter] public string Id { get; set; } = string.Empty;
+    [Parameter] public string Color { get; set; } = string.Empty;
+    [Parameter] public string Value { get; set; } = string.Empty;
     [Parameter] public bool IsSelected { get; set; }
-    [Parameter] public string Image { get; set; }
-    [Parameter] public string CustomStyle { get; set; }
+    [Parameter] public string Image { get; set; } = string.Empty;
+    [Parameter] public string CustomStyle { get; set; } = string.Empty;
 
     [Parameter] public EventCallback<string> SelectValue { get; set; }
 

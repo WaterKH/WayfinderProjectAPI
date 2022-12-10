@@ -1,22 +1,37 @@
 ﻿<div class="wayfinder-sub-nav-bar" style="@(CustomStyle)">
-    @foreach (var option in this.Options)
+    @if (!string.IsNullOrEmpty(this.FocusOption))
     {
-        <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(option))">
-            <div class="@((this.CurrentOption == option) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px;">
-                <img src="@this.GetImage(option)" style="width: 15px; vertical-align: unset; margin-right: 10px; margin-top: 3px;" />  @option
+        <div class="@((this.CurrentOption == this.FocusOption) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(this.FocusOption))" style="margin-right: 25px;">
+            <div class="@((this.CurrentOption == this.FocusOption) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px; ">
+                <img src="@this.GetImage(this.FocusOption)" style="width: 15px; vertical-align: unset; margin-right: 10px; margin-top: 3px;" />  @this.FocusOption
             </div>
         </div>
+
+        <span style="width: 2px; border: 1px solid #ececec; margin-right: 25px;"></span>
+    }
+
+    @foreach (var option in this.Options)
+    {
+        @if (option != this.FocusOption)
+        {
+            <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(option))">
+                <div class="@((this.CurrentOption == option) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px;">
+                    <img src="@this.GetImage(option)" style="width: 15px; vertical-align: unset; margin-right: 10px; margin-top: 3px;" />  @option
+                </div>
+            </div>
+        }
     }
 </div>
 
 <div class="wayfinder-sub-nav-bar-border"></div>
 
 @code {
-    [Parameter] public List<string> Options { get; set; }
-    [Parameter] public string CustomStyle { get; set; }
-    [Parameter] public string StartingOption { get; set; }
+    [Parameter] public List<string> Options { get; set; } = new List<string>();
+    [Parameter] public string CustomStyle { get; set; } = string.Empty;
+    [Parameter] public string StartingOption { get; set; } = string.Empty;
+    [Parameter] public string FocusOption { get; set; } = string.Empty;
 
-    [Parameter] public Action<string> UpdateCurrentOption { get; set; }
+    [Parameter] public Action<string>? UpdateCurrentOption { get; set; }
 
     public string CurrentOption { get; set; } = "Games";
 
@@ -31,7 +46,7 @@
     {
         this.CurrentOption = option;
 
-        await Task.Run(() => this.UpdateCurrentOption.Invoke(option));
+        await Task.Run(() => { if (this.UpdateCurrentOption != null) { this.UpdateCurrentOption.Invoke(option); } });
 
         await InvokeAsync(() => { 
             this.StateHasChanged(); 
@@ -44,11 +59,13 @@
 
         switch (option)
         {
+            case "Scenes":
+            case "Entries":
+                path = "/images/icons/scenes_gray.png";
+                break;
+
             case "Games":
                 path = "/images/icons/games_gray.png";
-                break;
-            case "Scenes":
-                path = "/images/icons/scenes_gray.png";
                 break;
             case "Worlds":
                 path = "/images/icons/worlds_gray.png";
