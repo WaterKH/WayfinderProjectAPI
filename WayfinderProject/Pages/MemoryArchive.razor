@@ -87,7 +87,7 @@
 </div>
 
 
-<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" StartingCategory="@this.CurrentCategory" Loading="@this.Loading" />
+<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
 <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
 
 <!-- TODO Probably want to convert this SearchComponent into something better - Keep track of selections and available outside of the component -->
@@ -650,13 +650,13 @@ else if (this.CurrentCategory == "Interviews")
         this.AreasSelected = new List<string>();
         this.CharactersSelected = new List<string>();
         this.MusicSelected = new List<string>();
-        
+
         if (this.GamesSearch != null)
             await this.GamesSearch.SetCurrentView("Available");
 
         if (this.ScenesSearch != null)
             await this.ScenesSearch.SetCurrentView("Available");
-        
+
         if (this.WorldsSearch != null)
             await this.WorldsSearch.SetCurrentView("Available");
 
@@ -906,6 +906,30 @@ else if (this.CurrentCategory == "Interviews")
 
         try
         {
+            if (this.CategoryQuery != null)
+            {
+                switch (this.CategoryQuery)
+                {
+                    case "Cutscsene":
+                        this.CurrentCategory = "Cutscenes";
+                        break;
+                    case "Trailer":
+                        this.CurrentCategory = "Trailers";
+                        break;
+                    case "Interview":
+                        this.CurrentCategory = "Interviews";
+                        break;
+                    default:
+                        this.CurrentCategory = this.CategoryQuery;
+                        break;
+                }
+
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+
             if (this.CurrentCategory == "Cutscenes")
             {
                 optionUpdated = await this.HandleSceneQueryParams();

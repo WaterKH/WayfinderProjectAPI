@@ -35,7 +35,7 @@
 
                 <div class="wayfinder-sub-description">
                     <strong>
-                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Entries</span> or <span style="color: #ea4a4a;">Characters</span>.
+                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Entries</span>, <span style="color: #ea4a4a;">Worlds</span> or <span style="color: #ea4a4a;">Characters</span>.
                     </strong>
                 </div>
             </div>
@@ -71,7 +71,7 @@
 
                 <div class="wayfinder-alt-description">
                     <strong>
-                        Can't decide which scene you want to find? Let us choose for you by selecting a random journal entry!
+                        Can't decide which entry you want to find? Let us choose for you by selecting a random journal entry!
                     </strong>
                 </div>
 
@@ -86,7 +86,7 @@
 </div>
 
 
-<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" StartingCategory="@this.CurrentCategory" Loading="@this.Loading" />
+<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
 <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
 
 <!-- TODO Probably want to convert this SearchComponent into something better - Keep track of selections and available outside of the component -->
@@ -333,7 +333,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     #region Query Parameters
     [Parameter]
-    [SupplyParameterFromQuery(Name = "entry_title")]
+    [SupplyParameterFromQuery(Name = "entry")]
     public string[]? EntryTitleQuery { get; set; }
 
     [Parameter]
@@ -1491,7 +1491,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.StoryEntriesSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.StoryEntriesSelected.Select(x => $"character_title={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.StoryEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
         }
 
         if (this.StoryWorldsSelected.Count > 0)
@@ -1526,7 +1526,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.ReportEntriesSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.ReportEntriesSelected.Select(x => $"character_title={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.ReportEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
         }
 
         if (this.ReportWorldsSelected.Count > 0)
@@ -1561,7 +1561,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.CharacterEntriesSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.CharacterEntriesSelected.Select(x => $"character_title={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.CharacterEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
         }
 
         if (this.CharacterWorldsSelected.Count > 0)
@@ -1596,7 +1596,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.EnemyEntriesSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.EnemyEntriesSelected.Select(x => $"character_title={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.EnemyEntriesSelected.Select(x => $"entry={this.context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").FirstOrDefault(y => y.Title == x)?.Id}")) + "&";
         }
 
         if (this.EnemyWorldsSelected.Count > 0)
@@ -1644,6 +1644,33 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         try
         {
+            if (this.CategoryQuery != null)
+            {
+                switch (this.CategoryQuery)
+                {
+                    case "Story":
+                        this.CurrentCategory = "Story";
+                        break;
+                    case "Report":
+                        this.CurrentCategory = "Reports";
+                        break;
+                    case "Character":
+                        this.CurrentCategory = "Characters";
+                        break;
+                    case "Enemy":
+                        this.CurrentCategory = "Enemies";
+                        break;
+                    default:
+                        this.CurrentCategory = this.CategoryQuery;
+                        break;
+                }
+                
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+
             if (this.CurrentCategory == "Story")
             {
                 optionUpdated = await this.HandleStoryEntryQueryParams();
@@ -1727,11 +1754,6 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             optionUpdated = true;
         }
 
-        if (this.CategoryQuery != null)
-        {
-            this.CurrentCategory = this.CategoryQuery;
-        }
-
         return optionUpdated;
     }
 
@@ -1777,11 +1799,6 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             await this.ReportGamesSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
-        }
-
-        if (this.CategoryQuery != null)
-        {
-            this.CurrentCategory = this.CategoryQuery;
         }
 
         return optionUpdated;
@@ -1831,11 +1848,6 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             optionUpdated = true;
         }
 
-        if (this.CategoryQuery != null)
-        {
-            this.CurrentCategory = this.CategoryQuery;
-        }
-
         return optionUpdated;
     }
 
@@ -1883,11 +1895,6 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             optionUpdated = true;
         }
 
-        if (this.CategoryQuery != null)
-        {
-            this.CurrentCategory = this.CategoryQuery;
-        }
-
         return optionUpdated;
     }
 
@@ -1900,23 +1907,26 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         try
         {
             var dateCode = DateTime.Now.ToString("yyyyMMdd");
-            //var jjCharacterId = this.context.DailyJournalEntries.FirstOrDefault(character => character.DateCode == dateCode)?.SceneId;
-            //var jjCharacter = this.context.JJCharacters.AsNoTracking()
-            //    .Include(c => c.Character).Include(c => c.Game)
-            //    .FirstOrDefault(c => c.Id == jjCharacterId);
+            var entryId = this.context.DailyJournalEntries.FirstOrDefault(entry => entry.DateCode == dateCode)?.EntryId;
+            var journalEntry = this.context.JournalEntries.AsNoTracking()
+                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
+                .FirstOrDefault(j => j.Id == entryId);
 
-            //var dailyLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+            if (journalEntry == null)
+            {
+                return;
+            }
 
-            //dailyLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
-            //dailyLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
-            //dailyLink += $"game={scene.Game.Id}&";
-            //dailyLink += string.Join("&", scene.Music.Select(x => $"music={x.Id}")) + "&";
-            //dailyLink += $"scene={scene.Id}&";
-            //dailyLink += string.Join("&", scene.Worlds.Select(x => $"world={x.Id}")) + "&";
-            //dailyLink += "category=Characters&";
-            //dailyLink += $"open_row={scene.Id}";
+            var dailyLink = $"{NavigationManager.BaseUri}jiminy_journal?";
 
-            //NavigationManager.NavigateTo(dailyLink, true);
+            dailyLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
+            dailyLink += $"game={journalEntry.Game.Id}&";
+            dailyLink += $"entry={journalEntry.Id}&";
+            dailyLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
+            dailyLink += $"category={journalEntry.Category}&";
+            dailyLink += $"open_row={journalEntry.Id}";
+
+            NavigationManager.NavigateTo(dailyLink, true);
         }
         catch (Exception)
         {
@@ -1929,23 +1939,26 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         try
         {
             Random random = new Random((int)DateTime.Now.Ticks);
-            //var randomSceneId = random.Next(0, this.context.Scenes.Count());
-            //var scene = this.context.Scenes.AsNoTracking()
-            //    .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
-            //    .FirstOrDefault(s => s.Id == randomSceneId);
+            var randomEntryId = random.Next(0, this.context.JournalEntries.Count());
+            var journalEntry = this.context.JournalEntries.AsNoTracking()
+                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
+                .FirstOrDefault(j => j.Id == randomEntryId);
+                
+            if (journalEntry == null)
+            {
+                return;
+            }
 
-            //var randomLink = $"{NavigationManager.BaseUri}memory_archive?";
+            var randomLink = $"{NavigationManager.BaseUri}jiminy_journal?";
 
-            //randomLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
-            //randomLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
-            //randomLink += $"game={scene.Game.Id}&";
-            //randomLink += string.Join("&", scene.Music.Select(x => $"music={x.Id}")) + "&";
-            //randomLink += $"scene={scene.Id}&";
-            //randomLink += string.Join("&", scene.Worlds.Select(x => $"world={x.Id}")) + "&"; 
-            //randomLink += "category=Scenes&";
-            //randomLink += $"open_row={scene.Id}";
+            randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
+            randomLink += $"game={journalEntry.Game.Id}&";
+            randomLink += $"entry={journalEntry.Id}&";
+            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&"; 
+            randomLink += $"category={journalEntry.Category}&";
+            randomLink += $"open_row={journalEntry.Id}";
 
-            //NavigationManager.NavigateTo(randomLink, true);
+            NavigationManager.NavigateTo(randomLink, true);
         }
         catch (Exception)
         {

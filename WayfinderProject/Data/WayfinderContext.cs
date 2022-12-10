@@ -24,6 +24,7 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<JournalEntry>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             modelBuilder.Entity<DailyCutscene>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<DailyJournalEntry>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             base.OnModelCreating(modelBuilder);
         }
@@ -39,5 +40,6 @@ namespace WayfinderProjectAPI.Data
         public DbSet<JournalEntry> JournalEntries { get; set; } = null!;
 
         public DbSet<DailyCutscene> DailyCutscenes { get; set; } = null!;
+        public DbSet<DailyJournalEntry> DailyJournalEntries { get; set; } = null!;
     }
 }

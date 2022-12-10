@@ -10,16 +10,16 @@
 @code {
     [Parameter] public List<string> Categories { get; set; } = new List<string>();
     [Parameter] public string CustomStyle { get; set; } = string.Empty;
-    [Parameter] public string StartingCategory { get; set; } = string.Empty;
+    [Parameter] public string CurrentCategory { get; set; } = string.Empty;
     [Parameter] public bool Loading { get; set; }
 
     [Parameter] public Action<string>? UpdateCurrentCategory { get; set; }
 
-    public string CurrentCategory { get; set; } = "Scenes";
+    //public string CurrentCategory { get; set; } = "Scenes";
 
     protected override void OnInitialized()
     {
-        this.CurrentCategory = this.StartingCategory;
+        //this.CurrentCategory = this.Category;
 
         base.OnInitialized();
     }
