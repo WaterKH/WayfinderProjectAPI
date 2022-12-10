@@ -520,14 +520,37 @@
       {
         "Order": 10,
         "Character": "Eraqus",
-        "Line": "You must know, I care for you like my own son. If I could have my way, I would name you Master in a second. But, how can I, when you are so obsessed with power? Terra, you mustn't be afraid of losing. Fear leads to obsession with power, and obsession beckons the "
-      }
-    ],
-    "darkness. You must never forget.": [
+        "Line": "You must know, I care for you like my own son. If I could have my way, I would name you Master in a second. But, how can I, when you are so obsessed with power? Terra, you mustn't be afraid of losing. Fear leads to obsession with power, and obsession beckons the darkness. You must never forget."
+      },
       {
-        "Order": 0,
+        "Order": 11,
         "Character": "Terra",
         "Line": "Thank you, Master. I swear... I will not fail you again."
+      },
+      {
+        "Order": 12,
+        "Character": "Aqua",
+        "Line": "Master, I'd best be on my way."
+      },
+      {
+        "Order": 13,
+        "Character": "Eraqus",
+        "Line": "Wait, Aqua. Before you depart, I have one other... Well, call it a request, of the utmost priority."
+      },
+      {
+        "Order": 14,
+        "Character": "Aqua",
+        "Line": "Yes?"
+      },
+      {
+        "Order": 15,
+        "Character": "Eraqus",
+        "Line": "I told Terra this could be a second chance to show the Mark of Mastery... and I meant it. However, that flicker of darkness he displayed during the examination- I can sense it runs very deep. If he were to- If those powers were to prove too much for him to handle, I want you to bring him back to me at once. It's for his own good. I could not bear to lose any of you to the darkness."
+      },
+      {
+        "Order": 16,
+        "Character": "Aqua",
+        "Line": "Of course. I would never let that happen. I promise you I will bring Terra back. Only this time, you'll see he has what it takes to be a Master. He's not as weak as you think."
       }
     ],
     "The Masked Boy": [
@@ -570,31 +593,6 @@
         "Order": 7,
         "Character": "Ventus",
         "Line": "Terra!"
-      },
-      {
-        "Order": 8,
-        "Character": "Aqua",
-        "Line": "Master, I'd best be on my way."
-      },
-      {
-        "Order": 9,
-        "Character": "Eraqus",
-        "Line": "Wait, Aqua. Before you depart, I have one other... Well, call it a request, of the utmost priority."
-      },
-      {
-        "Order": 10,
-        "Character": "Aqua",
-        "Line": "Yes?"
-      },
-      {
-        "Order": 11,
-        "Character": "Eraqus",
-        "Line": "I told Terra this could be a second chance to show the Mark of Mastery... and I meant it. However, that flicker of darkness he displayed during the examination- I can sense it runs very deep. If he were to- If those powers were to prove too much for him to handle, I want you to bring him back to me at once. It's for his own good. I could not bear to lose any of you to the darkness."
-      },
-      {
-        "Order": 12,
-        "Character": "Aqua",
-        "Line": "Of course. I would never let that happen. I promise you I will bring Terra back. Only this time, you'll see he has what it takes to be a Master. He's not as weak as you think."
       }
     ],
     "Departure (Terra)": [
