@@ -43,17 +43,19 @@ namespace WayfinderProjectAPI.Data
         #endregion Memory Archive
 
         #region Jiminy Journal
-        public static IQueryable<JJCharacterDto> ToDto(this IQueryable<JJCharacter> scenes)
+        public static IQueryable<JournalEntryDto> ToDto(this IQueryable<JournalEntry> scenes)
         {
             return scenes
-                .Select(x => new JJCharacterDto
+                .Select(x => new JournalEntryDto
                 {
                     Id = x.Id,
                     Title = x.Title,
                     Description = x.Description,
                     AdditionalInformation = x.AdditionalInformation,
                     Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name },
-                    Character = new CharacterDto { Id = x.Id, Name = x.Character.Name }
+                    Characters = x.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Worlds = x.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Category = x.Category
                 });
         }
         #endregion Jiminy Journal

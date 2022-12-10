@@ -15,7 +15,7 @@
 
                 if (ExpandedRowTemplate is not null)
                 {
-                    var character = ((JJCharacterDto)Convert.ChangeType(item, typeof(JJCharacterDto)));
+                    var character = ((JournalEntryDto)Convert.ChangeType(item, typeof(JournalEntryDto)));
                     if (this.CurrentExpandedRow == character.Id)
                     {
                         @ExpandedRowTemplate(character)
@@ -45,7 +45,7 @@
     public RenderFragment<TItem>? RowTemplate { get; set; }
 
     [Parameter]
-    public RenderFragment<JJCharacterDto>? ExpandedRowTemplate { get; set; }
+    public RenderFragment<JournalEntryDto>? ExpandedRowTemplate { get; set; }
 
     [Parameter, AllowNull]
     public IReadOnlyList<TItem> Items { get; set; }

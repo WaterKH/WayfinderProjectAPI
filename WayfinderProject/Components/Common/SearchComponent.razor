@@ -15,7 +15,7 @@
             <div class="search-bar" style="margin: 10px 0px 30px 0px; margin-left: -45px;">
                 <span class="wayfinder-search-icon material-icons">search</span>
                 <input value="@this.displaySearch" id="@($"{this.Id}-search")" name="@($"{this.Id}-search")" class="custom-input"
-                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString()))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Available")">
+                    oninput="@((ChangeEventArgs e) => this.Search(e?.Value?.ToString() ?? string.Empty))" placeholder="@this.Placeholder" disabled="@(this.CurrentView != "Available")">
             </div>
 
             @if (this.CurrentView == "Available")
@@ -117,7 +117,7 @@
     }
 </style>
 @code {
-    [Parameter] public string Id { get; set; }
+    [Parameter] public string Id { get; set; } = string.Empty;
     [Parameter] public string Placeholder { get; set; } = "Search for values...";
     [Parameter] public string Color { get; set; } = "#ffffff";
     [Parameter] public bool CanSearch { get; set; } = true;
@@ -126,11 +126,11 @@
     [Parameter] public List<string> Available { get; set; } = new List<string>();
     [Parameter] public List<string> Selected { get; set; } = new List<string>();
 
-    [Parameter] public string CurrentOption { get; set; }
+    [Parameter] public string CurrentOption { get; set; } = string.Empty;
     [Parameter] public bool CanShowClearAll { get; set; }
 
-    [Parameter] public Func<Task> UpdateSearch { get; set; }
-    [Parameter] public Func<string, Task> ClearAllMethod { get; set; }
+    [Parameter] public Func<Task>? UpdateSearch { get; set; }
+    [Parameter] public Func<string, Task>? ClearAllMethod { get; set; }
     //[Parameter] public Func<Task> SearchCallback { get; set; }
     //[Parameter] public Func<Task> SelectCallback { get; set; }
     //[Parameter] public Func<Task> RemoveCallback { get; set; }
@@ -204,6 +204,7 @@
     private void Search(string search)
     {
         this.search = search;
+        this.Available = new List<string>();
 
         if (string.IsNullOrEmpty(search))
         {
@@ -221,7 +222,7 @@
             }
         }
 
-        this.Available.Sort();
+        //this.Available.Sort();
     }
 
     private async Task Select(string value)
@@ -243,7 +244,10 @@
 
         this.search = string.Empty;
 
-        await Task.Run(async () => await this.UpdateSearch.Invoke());
+        if (this.UpdateSearch != null)
+        {
+            await Task.Run(async () => await this.UpdateSearch.Invoke());
+        }
 
         if (this.Available.Count == 0)
             this.CurrentView = "Selected";
@@ -273,7 +277,10 @@
 
         this.search = string.Empty;
 
-        await Task.Run(async () => await this.UpdateSearch.Invoke());
+        if (this.UpdateSearch != null)
+        {
+            await Task.Run(async () => await this.UpdateSearch.Invoke());
+        }
 
         if (this.Selected.Count == 0)
             this.CurrentView = "Available";
@@ -299,7 +306,11 @@
     private void DisplayClearAllModal()
     {
         var parameters = new ModalParameters();
-        parameters.Add("ClearAllSubMethod", ClearAllMethod);
+        
+        if (this.ClearAllMethod != null)
+        {
+            parameters.Add("ClearAllSubMethod", ClearAllMethod);
+        }
 
         var options = new ModalOptions { Class = "modal-custom" };
 

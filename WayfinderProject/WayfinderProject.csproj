@@ -59,9 +59,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\data\seed\jj\_characters.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="wwwroot\data\seed\scripts\_kh1_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -139,7 +136,6 @@
   <ItemGroup>
     <Folder Include="Data\DTOs\Jimminy%27sJournal\" />
     <Folder Include="Data\DTOs\MoogleShop\" />
-    <Folder Include="Data\Models\JiminyJournal\" />
     <Folder Include="Data\Models\MoogleShop\" />
     <Folder Include="Data\Models\MemoryArchive\" />
     <Folder Include="wwwroot\data\seed\ms\" />

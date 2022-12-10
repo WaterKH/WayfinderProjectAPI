@@ -1,887 +1,96 @@
 {
-  "Characters": {
+  "Reports": {
     "Kingdom Hearts": [
       {
-        "Title": "99 Puppies",
-        "Characters": [ "Dalmation(s)", "Pongo", "Perdita" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "Pongo and Perdita's puppies. When they work together, they can be tough to beat. Ever since their world was destroyed by the darkness, they've been trying to get back together again.",
-        "AdditionalInformation": "They were first spotted on-screen in \"101 Dalmatians\" (1961)."
+        "Title": "Ansem's Report 1",
+        "Characters": [ "Ansem the Wise", "Genie Jafar" ],
+        "Worlds": [ "Radiant Garden", "Agrabah" ],
+        "Description": "Much of my life has been dedicated to the pursuit of knowledge. That knowledge has guarded this world well. Not a soul doubts that. I am blessed with people's smiles and respect. But though I am called a sage, there are things I do not understand. I believe darkness sleeps in every heart, no matter how pure. Given the chance, the smallest drop can spread and swallow the heart. I have witnessed it many times. Darkness... Darkness of the heart. How is it born? How does it come to affect us so? As ruler of this world, I must find the answers. I must find them before the world is lost to those taken by the darkness.",
+        "AdditionalInformation": "Obtained after defeating Jafar (Genie)."
       },
       {
-        "Title": "Abu",
-        "Characters": [ "Abu", "Aladdin" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "Aladdin's faithful furry sidekick. Abu's size and ability make him valuable in tight spots. He's got a weakness for jewels and treasure, and when he's around them he can't think of anything else.",
-        "AdditionalInformation": "He was all monkey-business in \"Aladdin\" (1992)."
+        "Title": "Ansem's Report 2",
+        "Characters": [ "Terra-Xehanort", "Shadow(s)", "Aerith" ],
+        "Worlds": [ "Radiant Garden", "Hollow Bastion" ],
+        "Description": "It is my duty to expose what this darkness really is. I shall conduct the following experiments: Extract the darkness from a person's heart. Cultivate darkness in a pure heart. Both suppress and amplify the darkness within. The experiments caused the test subjects' hearts to collapse, including those of the most stalwart. How fragile our hearts are! My treatment produced no signs of recovery. I confined those who had completely lost their hearts beneath the castle. Some time later, I went below and was greeted by the strangest sight. Creatures that seemed born of darkness... What are they? Are they truly sentient beings? Could they be the shadows of those who lost their hearts in my experiments?",
+        "AdditionalInformation": "Obtained after speaking with Aerith in the Library."
       },
       {
-        "Title": "Aerith",
-        "Characters": [ "Aerith", "Leon", "Yuffie" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "She lost her home to the Heartless at a very young age. Beneath her gentle disposition lies a strong will and a firm sense of duty. Many are naturally drawn to her. Aerith works with Leon and Yuffie to learn more about the Heartless and the \"key\".",
-        "AdditionalInformation": "\"Final Fantasy VII\""
+        "Title": "Ansem's Report 3",
+        "Characters": [ "Terra-Xehanort", "Shadow(s)", "Ursula" ],
+        "Worlds": [ "Radiant Garden", "Atlantica" ],
+        "Description": "The shadows that crawl beneath the castle... Are they the people who lost their hearts, or incarnations of darkness? Or something entirely beyond my imagination? All my knowledge has provided no answer. One thing I am sure of is that they are entirely devoid of emotion. Perhaps further study will unlock the mysteries of the heart. Fortunately, there is no shortage of test samples. They are multiplying underground even as I write this report. They still need a name. Those who lack hearts... I will call them the Heartless.",
+        "AdditionalInformation": "Obtained after defeating Ursula's second form."
       },
       {
-        "Title": "Aladdin I",
-        "Characters": [ "Aladdin", "Jasmine", "Genie" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "A young man living in the desert city of Agrabah. He fell in love with princess Jasmine, but he's afraid to tell her about his humble background. He found the legendary lamp and released Genie, who is now his partner.",
-        "AdditionalInformation": "He first stole our hearts in \"Aladdin\" (1992)."
+        "Title": "Ansem's Report 4",
+        "Characters": [ "Terra-Xehanort", "Aerith" ],
+        "Worlds": [ "Radiant Garden", "Hollow Bastion" ],
+        "Description": "The Heartless appear in groups, and are multiplying rapidly. I've provided them both living and nonliving samples. They've responded only to the living. They seem to multiply after absorbing something from the living creatures. Their prey vanishes without a trace. I believe the Heartless are taking hearts. They are born from those who've lost their hearts, and thrive on hearts seized from others. The hearts taken by the Heartless become Heartless themselves. Though I lack proof, I am confident in this hypothesis. I must also study their behavioral principles. Though they lack emotions, they do seem to have some intelligence. How to communicate with them? It's just occurred to me: Could they be the darkness in people's hearts?",
+        "AdditionalInformation": "Obtained after speaking with Aerith in the Library."
       },
       {
-        "Title": "Aladdin II",
-        "Characters": [ "Aladdin", "Sora", "Jafar", "Genie", "Jasmine" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "A young man living in Agrabah. He helped Sora defeat Jafar and used his last wish to release Genie from the lamp. Aladdin asked Sora and friends to help save Jasmine, who has been abducted.",
-        "AdditionalInformation": "He stole the scene in \"Aladdin\" (1992)."
+        "Title": "Ansem's Report 5",
+        "Characters": [ "Terra-Xehanort", "Maleficent" ],
+        "Worlds": [ "Radiant Garden", "Hollow Bastion" ],
+        "Description": "To study the Heartless behavior, I picked one out for observation. It wiggled its antennae and, as if sensing a target, headed deep into the castle. In the deepest part of the castle, its antennae began vibrating, as if searching for something. Suddenly, a strange door appeared. I'd never known of its existence. It had a large keyhole, but didn't seem to be locked. So I opened the door. What I saw on the other side mystified me. What was that powerful mass of energy? That night I observed a great meteor shower in the sky. Could it be related to the door that I have opened?",
+        "AdditionalInformation": "Obtained after defeating Maleficent."
       },
       {
-        "Title": "Alice I",
-        "Characters": [ "Alice", "Queen of Hearts" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "A girl who fell down a rabbit hole into Wonderland. She often daydreams and is naturally curious. Falsely accused of trying to steal the queen's heart, she was given an unfair trial and falsely convicted.",
-        "AdditionalInformation": "She fell down the rabbit hole in \"Alice in Wonderland\" (1951)."
+        "Title": "Ansem's Report 6",
+        "Characters": [ "Terra-Xehanort", "Aerith" ],
+        "Worlds": [ "Radiant Garden", "Hollow Bastion" ],
+        "Description": "A massive core of energy lay beyond the door sought by the Heartless. It may be the ultimate goal of the Heartless. But what is that energy? I have devised a hypothesis, based upon my observations of the Heartless. The Heartless feed on other's hearts, and they yearn for that energy core. That thing beyond the door must be a heart, too--the heart of this world. There is no proof, but, having felt that immense energy, I am certain. That was the heart of the world. The Heartless are trying to take hearts not only from all living creatures, but from the planet itself. But what do they mean to do with the heart of the world?",
+        "AdditionalInformation": "Obtained after speaking with Aerith in the Library."
       },
       {
-        "Title": "Alice II",
-        "Characters": [ "Alice", "Queen of Hearts", "Sora" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "Fell down a rabbit hole into Wonderland. Arrested on suspicion of trying to steal the queen's heart. Sora and his friends proved her innocence, but the Heartless captured her as part of their plan to open the final Keyhole.",
-        "AdditionalInformation": "She fell down the rabbit hole in \"Alice in Wonderland\" (1951)"
+        "Title": "Ansem's Report 7",
+        "Characters": [ "Terra-Xehanort", "Oogie Boogie" ],
+        "Worlds": [ "Radiant Garden", "Halloween Town" ],
+        "Description": "I am studying material from the meteors that rained down that fateful night. What a find! The material is foreign to our world. It is elastic to the touch, and when two pieces are combined, they bond easily. None of the records even mention such a substance. Was it introduced to this world when I opened the door? I wonder how many other such materials drift through the atmosphere of this tiny world... I wish I could soar off and find out! Could there be uncharted worlds up there? My curiosity never ceases to grow. But I should stop speaking of such unrealistic dreams. For now, there is no way to venture outside this world. My people and I are all but prisoners of this tiny place.",
+        "AdditionalInformation": "Obtained after defeating Oogie Boogie."
       },
       {
-        "Title": "Ansem I",
-        "Characters": [ "Ansem Seeker of Darkness" ],
-        "Worlds": [ "Hollow Bastion", "Destiny Islands" ],
-        "Description": "A researcher who studied the Heartless and delved into secrets of the worlds. He organized his findings into a single volume known as Ansem's report. When he inexplicably vanished, most of its pages were scattered to the winds.",
-        "AdditionalInformation": ""
+        "Title": "Ansem's Report 8",
+        "Characters": [ "Terra-Xehanort", "Hades" ],
+        "Worlds": [ "Radiant Garden", "Olympus Coliseum" ],
+        "Description": "There is no doubt that the Heartless are deeply connected to the people's hearts. Further study may unravel both their motivations and the mysteries shrouding the heart. As a start, I have built a device that artificially creates Heartless. By recreating the conditions that spawn the Heartless naturally, I should be able to produce them artificially. This device is the culmination of all my research thus far. The machine's test run successfully created a Heartless. This may be a step toward creating a heart from nothing. The artificially and naturally created Heartless showed nearly identical traits. But the two types remain distinct for the purpose of the experiment. So, I will mark the ones that are created artificially.",
+        "AdditionalInformation": "Obtained after defeating Hades."
       },
       {
-        "Title": "Ansem II",
-        "Characters": [ "Ansem Seeker of Darkness", "Riku" ],
-        "Worlds": [ "Hollow Bastion", "Destiny Islands" ],
-        "Description": "As a researcher and ruler of his world, he studied the Heartless and delved into the many secrets of the worlds. While studying the heart and the darkness within it, he was possessed by darkness and ultimately destroyed his own world. He sacrificed his body to attain great power and later possessed Riku's to regain a physical presence. Failure to stop him means the end of all worlds.",
-        "AdditionalInformation": ""
+        "Title": "Ansem's Report 9",
+        "Characters": [ "Terra-Xehanort", "Mickey", "Captain Hook" ],
+        "Worlds": [ "Radiant Garden", "Neverland" ],
+        "Description": "Simply astonishing! Today I had a guest from another world. He is a king, and his vessel is built of the material that composed the meteors. He called the pieces \"gummi blocks\". It seemed that my opening the door has opened a path to interworld travel. We talked for countless hours, but one story in particular caught my interest: that of a key called the \"Keyblade\". The Keyblade is said to hold phenomenal power. One legend says its wielder saved the world, while another says that he wrought chaos and ruin upon it. I must know what this Keyblade is. A key opens doors. It must be connected to the door I have opened.",
+        "AdditionalInformation": "Obtained after defeating Captain Hook."
       },
       {
-        "Title": "Ariel I",
-        "Characters": [ "Ariel", "Triton" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "The youngest daughter of Triton, king of Atlantica. Outgoing and full of curiosity, Ariel hates being cooped up in her father's palace. She dreams of visiting the world on land, where people live.",
-        "AdditionalInformation": "Her voice enchanted us in \"The Little Mermaid\" (1989)."
+        "Title": "Ansem's Report 10",
+        "Characters": [ "Terra-Xehanort", "Aerith" ],
+        "Worlds": [ "Radiant Garden", "Hollow Bastion" ],
+        "Description": "Just as people have hearts, so do worlds. The same can be said of stars in the night sky. And deep within each world lies a door to its heart. The Heartless desire those hearts. Born out of darkness in people's hearts, they seek to return to a greater heart. Yes that's it. The Heartless come from people's hearts, as does the darkness. Is the core of the world's heart the world of the Heartless? I will pursue the answer there and become all knowing. My path is set. I shall seek out the wielder of the Keyblade, and the princesses. My body is too frail for such a journey, but I must do this. I will cast it off and plunge into the depths of darkness.",
+        "AdditionalInformation": "Obtained after speaking with Aerith in the Library."
       },
       {
-        "Title": "Ariel II",
-        "Characters": [ "Ariel", "Triton", "Ursula", "Sora" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "Triton's youngest daughter. Ursula tricked her into helping steal his trident. With help from Sora and the others, all was put right. Still, she'll never stop dreaming of exploring the world outside her father's palace.",
-        "AdditionalInformation": "Her voice enchanted us in \"The Little Mermaid\" (1989)"
+        "Title": "Ansem's Report 11",
+        "Characters": [ "Terra-Xehanort", "Kairi", "Kurt Zisa" ],
+        "Worlds": [ "Radiant Garden", "Agrabah" ],
+        "Description": "Opening the door to a world's heart causes its walls to crumble. These fragments are seen as shooting stars. This explains why these \"gummi blocks\" can travel freely to other worlds. I know the catalyst of this collapse—the appearance of the Heartless. However, it will take time search out the worlds' doors and to retrieve each heart. Furthermore, the doors can be locked using a Keyblade, making the heart forever unattainable. I must take action before the wielder of the key appears in this world. If the princesses and the Keyblade are connected, they should resonate. I've chosen a girl. I don't know if she holds the princesses' powers, but I will find out. She may lead me to the key bearer. I shall set her free and observe.",
+        "AdditionalInformation": "Obtained after defeating Kurt Zisa."
       },
       {
-        "Title": "Aurora",
-        "Characters": [ "Aurora", "Fauna", "Flora", "Merryweather", "Maleficent" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A young woman with a lovely voice. She is loved by three good fairies and cursed by Maleficent. The sorceress captured Aurora to help open the final Keyhole.",
-        "AdditionalInformation": "She had her first encounter with Maleficent in \"Sleeping Beauty\" (1959)."
+        "Title": "Ansem's Report 12",
+        "Characters": [ "Terra-Xehanort", "Sephiroth" ],
+        "Worlds": [ "Radiant Garden", "Olympus Coliseum" ],
+        "Description": "The body is gone; the heart should have returned to the Heartless. And yet, nothing. This one is unlike any other. Its memories remain and it has yet to take the form of a Heartless. A close eye must be kept on the situation. Much is still unknown. To get to the realm of Darkness, one must go through the doors of Kingdom Hearts, the place where the world's hearts connect. Beyond this world is a place in which darkness reigns. (Details shall be archived in a separate report.) There are many worlds in existence, some of which we know nothing about. The world in which we live. The realm of Darkness. The realm of Light. And the world in between. Wherein lies true nirvana?",
+        "AdditionalInformation": "Obtained after defeating Sephiroth."
       },
       {
-        "Title": "Bambi",
-        "Characters": [ "Bambi", "Sora" ],
-        "Worlds": [ ":None:" ],
-        "Description": "A young deer, son of the great stag who rules the forest. He prances around and gives you items. The more foes Sora defeats, the better the items become. The type of items he gives varies depending on the area. Cost: 1 MP",
-        "AdditionalInformation": "The forest prince was born in \"Bambi\" (1942)."
-      },
-      {
-        "Title": "Barrel",
-        "Characters": [ "Barrel", "Lock", "Shock" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "A member of the trio that includes Lock and Shock. He's a little slow, and often ends up as the butt of his partners' pranks and practical jokes.",
-        "AdditionalInformation": "He created havoc in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Beast",
-        "Characters": [ "Beast", "Belle" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A prince who was changed into a hideous beast because of his selfish heart. Belle has helped heal the loneliness he's suffered due to his ugliness. To save Belle, he made his way to Hollow Bastion alone.",
-        "AdditionalInformation": "He was first enchanted by Belle in \"Beauty and the Beast\" (1991)."
-      },
-      {
-        "Title": "Belle",
-        "Characters": [ "Belle", "Beast" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A brave and intelligent young woman who understands the Beast's true nature. She's one of the seven princesses needed to open the final Keyhole. She and the Beast have lost their world to the darkness.",
-        "AdditionalInformation": "She appeared at the Beast's castle for the first time in \"Beauty and the Beast\" (1991)"
-      },
-      {
-        "Title": "Brooms",
-        "Characters": [ "Enchanted Broom(s)" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "Enchanted brooms with a life of their own. They tidy up, maintain the gummi ship, do house repairs, wait on others - just about anything useful.",
-        "AdditionalInformation": "They swept onto the screen in \"Fantasia\" (1940)."
-      },
-      {
-        "Title": "Captain Hook I",
-        "Characters": [ "Captain Hook", "Peter Pan", "The Crocodile" ],
-        "Worlds": [ "Neverland", "Hollow Bastion" ],
-        "Description": "The pirate who is working with the Heartless to pay revenge to Peter Pan, who caused him to lose his left hand. He is as arrogant as a pirate can be, but hides away when the crocodile comes close. With the Heartless' powers, he can travel to many other worlds.",
-        "AdditionalInformation": "He hooked us in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "Captain Hook II",
-        "Characters": [ "Captain Hook", "Peter Pan", "The Crocodile", "Maleficent" ],
-        "Worlds": [ "Neverland", "Hollow Bastion" ],
-        "Description": "The pirate with a grudge against Peter Pan, who caused him to lose his hand to the crocodile. He threw in his lot with Maleficent and the Heartless, but ended up being chased over the horizon by the crocodile.",
-        "AdditionalInformation": "He hooked us in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "Cards (Hearts)",
-        "Characters": [ "Card Soldier(s)", "Queen of Hearts" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "Spear-carrying guards who serve the Queen of Hearts. They fear the short-tempered queen and are careful not to irritate her.",
-        "AdditionalInformation": "Marched onto the scene in \"Alice in Wonderland\" (1951)."
-      },
-      {
-        "Title": "Cards (Spades)",
-        "Characters": [ "Card Soldier(s)", "Queen of Hearts" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "Troops with heavy axes who serve the Queen of Hearts. They fear their short-tempered queen, and are careful not to irritate her.",
-        "AdditionalInformation": "Marched onto the scene in \"Alice in Wonderland\" (1951)."
-      },
-      {
-        "Title": "Carpet",
-        "Characters": [ "Carpet", "Aladdin" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "A magical flying carpet, loyal to Aladdin. Carpet can carry passengers over the vastness of the desert at great speed. The Heartless had Carpet pinned to the floor under a chest.",
-        "AdditionalInformation": "He enchanted us in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Cerberus",
-        "Characters": [ "Cerberus", "Hades", "Hercules", "Sora" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "Guardian of the entrance of the Underworld and Hades's loyal servant. Herc defeated him once, but Hades has brought him back to fight Sora and his friends.",
-        "AdditionalInformation": "He first stood watch for Hades in \"Hercules\" (1997)."
-      },
-      {
-        "Title": "Cheshire Cat",
-        "Characters": [ "Cheshire Cat" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "A mysterious, grinning cat who talks in riddles and can appear and disappear at will. He loves to mislead and confuse.",
-        "AdditionalInformation": "He entered with a big smile in \"Alice in Wonderland\" (1951)."
-      },
-      {
-        "Title": "Chip",
-        "Characters": [ "Chip", "Dale" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "One of the kingdom's specialists. Helps maintain the gummi ship, which can travel to any destination. Chip is more serious and diligent than his easygoing, playful partner, Dale.",
-        "AdditionalInformation": "Chip 'n' Dale's first appearance was in \"Private Pluto\" (1943)."
-      },
-      {
-        "Title": "Cid",
-        "Characters": [ "Cid" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "Owner of an accessory shop in Traverse Town. A highly skilled engineer and a first-rate pilot. When the Heartless invaded his world, he escaped to Traverse Town on a gummi ship he'd built himself. He is an expert on gummi ships.",
-        "AdditionalInformation": "\"Final Fantasy VII\""
-      },
-      {
-        "Title": "Cinderella",
-        "Characters": [ "Cinderella" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A hardworking young girl who's often bullied by her stepmother and stepsisters. She is one of the princesses needed to open the final Keyhole, and was captured by the Heartless. Her world has already been destroyed.",
-        "AdditionalInformation": "Prince Charming first swept her away in \"Cinderella\" (1950)."
-      },
-      {
-        "Title": "Clayton I",
-        "Characters": [ "Clayton", "Jane" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "A veteran hunter. He acts as Jane's guide on her expedition to the jungle. He thinks of animals only as prey, and dreams of the money to be made selling gorillas to zoos back at home.",
-        "AdditionalInformation": "He first set his sights on the apes in \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "Clayton II",
-        "Characters": [ "Clayton", "Jane" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "A veteran hunter, Jane's guide on her expedition to the jungle. He thinks of animals only as prey. His lust for power and the darkness in his heart attracted the Heartless, and they used him for their own evil purposes.",
-        "AdditionalInformation": "He first set his sights on the apes in \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "Cloud",
-        "Characters": [ "Cloud", "Hades" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "A fighter hired by Hades to compete in the Coliseum. Despite his association with Hades, his heart remains untouched by the Heartless. Cloud keeps very much to himself, which makes him something of an enigma. What is he seeking?",
-        "AdditionalInformation": "\"Final Fantasy VII\""
-      },
-      {
-        "Title": "The Crocodile",
-        "Characters": [ "The Crocodile", "Captain Hook" ],
-        "Worlds": [ "Neverland" ],
-        "Description": "A seagoing reptile big enough to swallow a man whole — and he's always hungry! He got a taste of Hook once and never forgot it. Hook can tell when he's near by the sound of the clock ticking away in his stomach.",
-        "AdditionalInformation": "He had a taste for Captain Hook in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "Daisy Duck",
-        "Characters": [ "Daisy", "Donald", "Minnie", "Mickey" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "Donald's sweetheart. She's helping Minnie while the others look for King Mickey. She has Donald under her thumb, and does a good job of keeping him in line.",
-        "AdditionalInformation": "She originally appeared as Daisy in \"Mr. Duck Steps Out\" (1940)."
-      },
-      {
-        "Title": "Dale",
-        "Characters": [ "Dale", "Chip" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "One of the kingdom's specialists. Helps maintain the gummi ship, which can travel to any destination. Compared to the more serious Chip, he takes a happy-go-lucky approach to life.",
-        "AdditionalInformation": "Chip 'n' Dale's first appearance was in \"Private Pluto\" (1943)."
-      },
-      {
-        "Title": "Dewey",
-        "Characters": [ "Dewey", "Huey", "Louie", "Donald" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "One of Donald's three nephews. Always wears a blue cap. Cheerful and easygoing. He works with his brothers in a shop in Traverse Town.",
-        "AdditionalInformation": "Dewey began tormenting his Uncle Donald in \"Donald's Nephews\" (1938)."
-      },
-      {
-        "Title": "Donald Duck I",
-        "Characters": [ "Donald", "Goofy", "Sora", "Mickey" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "Royal Magician. Skilled in magic, but can be short-tempered and stubborn. He set out in the gummi ship with Goofy to find the king. Donald has joined forces with Sora, the key bearer alluded to in the king's letter.",
-        "AdditionalInformation": "Donald made his screen debut in \"The Wise Little Hen\" (1934)."
-      },
-      {
-        "Title": "Donald Duck II",
-        "Characters": [ "Donald", "Sora", "Mickey", "Riku" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "Royal magician. Skilled in magic, but short-tempered and stubborn. Because Mickey said to follow the key bearer, he once left Sora to follow Riku. But friendship soon led him back to Sora.",
-        "AdditionalInformation": "Donald made his screen debut in \"The Wise Little Hen\" (1934)."
-      },
-      {
-        "Title": "Doorknob",
-        "Characters": [ "Doorknob" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "A talking doorknob in the door to Wonderland. To enter, you must turn him—and \"One good turn deserves another,\" as he would say.",
-        "AdditionalInformation": "Doorknob was the only character in \"Alice in Wonderland\" (1951) who didn't first appear in the original story."
-      },
-      {
-        "Title": "Dragon",
-        "Characters": [ "Dragon Maleficent", "Maleficent" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "Maleficent became a huge dragon when the Keyblade released the darkness in her heart. The dragon wielded both Maleficent's power and the terrible forces of darkness.",
-        "AdditionalInformation": "Maleficent's powerful alter ego first appeared in \"Sleeping Beauty\" (1959)."
-      },
-      {
-        "Title": "Dr. Finkelstein",
-        "Characters": [ "Dr. Finkelstein", "Jack Skellington", "Sally" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "The mad scientist who created a \"heart\" to help Jack control the Heartless' dancing. Sally is another of his creations. She helps him around the lab, but she'd much rather spend time with Jack.",
-        "AdditionalInformation": "He created some scares in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Dumbo",
-        "Characters": [ "Dumbo" ],
-        "Worlds": [ ":None:" ],
-        "Description": "A baby circus elephant. He was taunted because of his huge ears, but his talent for flying made him the star of the circus. Ascend with Circle button, descend with Square button. Attack: Splash. Cost: 3 MP.",
-        "AdditionalInformation": "He first flew onto the screen in \"Dumbo\" (1941)."
-      },
-      {
-        "Title": "Eeyore",
-        "Characters": [ "Eeyore" ],
-        "Worlds": [ "100 Acre Wood" ],
-        "Description": "Timid, retiring Eeyore lives in a little house in the roots of a tree. His tail is held on by a tack, but it keeps falling off and getting lost. Now he's wandering the woods, looking for a new home.",
-        "AdditionalInformation": "He reluctantly appeared in \"Winnie the Pooh and the Honey Tree\" (1966)."
-      },
-      {
-        "Title": "Fairy Godmother",
-        "Characters": [ "Fairy Godmother", "Sora" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "A powerful but generous and good-hearted fairy who helps Sora and his friends. Slightly absent-minded, but an expert at magic. She gives Sora and the others lessons in magic as well as advice on their journey.",
-        "AdditionalInformation": "She first appeared as Cinderella's fairy godmother in \"Cinderella\" (1950)."
-      },
-      {
-        "Title": "Flotsam",
-        "Characters": [ "Flotsam", "Ursula", "Jetsam" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "Ursula's lackey, along with Jetsam. An evil moray eel, Flotsam is a smooth talker who loves to deceive. His specialty is using empty promises to lure unsuspecting mermen and mermaids into Ursula's clutches.",
-        "AdditionalInformation": "He ran interference for Ursula in \"The Little Mermaid\" (1989)."
-      },
-      {
-        "Title": "Flounder",
-        "Characters": [ "Flounder", "Ariel" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "Ariel's trusted friend. Flounder will do anything for her. He's small and not exactly brave, but he'll never leave Ariel's side, even when it means facing danger.",
-        "AdditionalInformation": "He appeared in \"The Little Mermaid\" (1989)."
-      },
-      {
-        "Title": "Genie I",
-        "Characters": [ "Genie", "Aladdin" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "The wacky spirit of the lamp. He spent centuries cooped up in the lamp till Aladdin found him. He must grant three wishes to whoever controls the lamp, even if they are evil.",
-        "AdditionalInformation": "He granted our wish by appearing in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Genie II",
-        "Characters": [ "Genie", "Aladdin", "Sora", "Jasmine" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "The spirit of the magic lamp, who has been freed by Aladdin with his third wish. Genie has joined forces with Sora and friends to rescue Jasmine from captivity. He will attack all locked-on targets with Showtime. Cost: 2 MP",
-        "AdditionalInformation": "He granted our wish by appearing in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Geppetto I",
-        "Characters": [ "Geppetto", "Pinocchio", "Monstro" ],
-        "Worlds": [ "Monstro" ],
-        "Description": "The kind, gentle clock maker. All his skill went into making Pinocchio. When the little puppet disappeared, Geppetto set out to find him, but he and his tiny boat were swallowed by Monstro, the whale.",
-        "AdditionalInformation": "He provided shelter in \"Pinocchio\" (1940)."
-      },
-      {
-        "Title": "Geppetto II",
-        "Characters": [ "Geppetto", "Pinocchio", "Monstro", "Sora" ],
-        "Worlds": [ "Monstro", "Traverse Town" ],
-        "Description": "The kind, gentle clock maker. Sora and friends helped him escape from Monstro's belly. These days he's living in Traverse Town and looking forward to the day Pinocchio becomes a real boy.",
-        "AdditionalInformation": "He provided shelter in \"Pinocchio\" (1940)."
-      },
-      {
-        "Title": "Goofy I",
-        "Characters": [ "Goofy", "Mickey", "Donald", "Sora" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "Captain of the royal knights. He avoids fighting whenever possible. Mickey's most loyal subject. He set out in the gummi ship with Donald to find King Mickey. He has joined forces with Sora, obeying Mickey's command to follow the key bearer.",
-        "AdditionalInformation": "Goofy made his first screen appearance in \"Mickey's Revue\" (1932)."
-      },
-      {
-        "Title": "Goofy II",
-        "Characters": [ "Goofy", "Mickey", "Riku", "Sora" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "Captain of the royal knights. He avoids fighting whenever possible. Mickey's most loyal subject. Because Mickey said to follow the key bearer, he once left Sora to follow Riku. But friendship soon led him back to Sora.",
-        "AdditionalInformation": "Goofy made his first screen appearance in \"Mickey's Revue\" (1932)."
-      },
-      {
-        "Title": "Hades I",
-        "Characters": [ "Hades", "Hercules", "Sora", "Cloud" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "Lord of the Underworld. He's using the Heartless to try and take over the world. To get Hercules and Sora out of the way, he sent Cloud to fight them in the Coliseum.",
-        "AdditionalInformation": "He heated things up in \"Hercules\" (1997)."
-      },
-      {
-        "Title": "Hades II",
-        "Characters": [ "Hades", "Hercules", "Sora" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "Lord of the Underworld. He's using the Heartless to try to take over the world. Hades wants Herc and Sora out of the way, but all his schemes against Sora and the others seem to end in failure.",
-        "AdditionalInformation": "He heated things up in \"Hercules\" (1997)."
-      },
-      {
-        "Title": "Hercules",
-        "Characters": [ "Hercules", "Zeus" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "A legendary hero with godlike strength. He's the son of the gods Zeus and Hera, but not a god himself. The people regard Hercules as a true hero.",
-        "AdditionalInformation": "He went from \"zero to hero\" in \"Hercules\" (1997)."
-      },
-      {
-        "Title": "Huey",
-        "Characters": [ "Huey", "Donald", "Dewey", "Louie" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "One of Donald's three nephews. Huey is the leader, and he keeps playful Dewey and laid-back Louie in line. You can spot Huey by his trademark red cap.",
-        "AdditionalInformation": "Huey began tormenting his Uncle Donald in \"Donald's Nephews\" (1938)."
-      },
-      {
-        "Title": "Iago",
-        "Characters": [ "Iago", "Jafar" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "Jafar's cunning, crotchety parrot. He's Jafar's eyes and ears as he flies around Agrabah, spying on his master's enemies. Iago takes after Jafar, with a penchant for intrigue and evil.",
-        "AdditionalInformation": "He squawked around in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Ice Titan",
-        "Characters": [ "Ice Titan", "Hercules", "Hades" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "Defeated once by Hercules, he received new powers from Hades and resurfaced. His body is made of large blocks of seemingly impregnable ice. But the ice shaping his face is quite fragile. Naturally, he is weak against fire.",
-        "AdditionalInformation": "He shook the scene in \"Hercules\" (1997)."
-      },
-      {
-        "Title": "Jack Skellington",
-        "Characters": [ "Jack Skellington" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "The pumpkin king. He loves to scare people out of their wits. Headstrong, confident, and likes grand gestures. Now he's working night and day to make this year's Halloween festival the greatest ever.",
-        "AdditionalInformation": "He scared up some fun in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Jafar I",
-        "Characters": [ "Jafar" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "The royal vizier of Agrabah. Jafar is unprincipled and ruthless in pursuit of his aims. Now he's using the Heartless to try to take over the city.",
-        "AdditionalInformation": "He played the villain in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Jafar II",
-        "Characters": [ "Jafar", "Maleficent", "Genie Jafar", "Sora" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "The vizier of Agrabah. He joined forces with Maleficent and tried to control the Heartless. He gained control of the lamp and became a powerful genie, but was defeated by Sora and his friends.",
-        "AdditionalInformation": "He played the villain in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Jafar-Genie",
-        "Characters": [ "Genie Jafar" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "With his last wish he became an all-powerful Genie himself, but he forgot that all genies share the same fate: To serve whoever controls their lamp. In the end, his lamp became his prison.",
-        "AdditionalInformation": "He played the villain in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Jane Porter",
-        "Characters": [ "Jane", "Clayton", "Tarzan" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "A naturalist who's in the jungle with Clayton, her guide, to study gorillas. She met Tarzan in the jungle and is gradually teaching him about human ways. She's courageous and will face any danger for her research.",
-        "AdditionalInformation": "Exploring the jungle, she encountered \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "Jasmine I",
-        "Characters": [ "Jasmine", "Aladdin", "Jafar" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "The strong-willed princess of Agrabah. Jasmine longs for the freedom of life outside the palace. She's in love with Aladdin, but doesn't know his real identity. She left the palace to seek Aladdin's help against Jafar.",
-        "AdditionalInformation": "She appeared in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Jasmine II",
-        "Characters": [ "Jasmine", "Aladdin", "Jafar" ],
-        "Worlds": [ "Agrabah" ],
-        "Description": "Spirited princess of Agrabah. Longing for a life of freedom, she slipped away from the palace and encountered Aladdin, who she quickly grew fond of. As one of the princesses with the power to open the Keyhole, she was abducted by Jafar and the Heartless.",
-        "AdditionalInformation": "She appeared in \"Aladdin\" (1992)."
-      },
-      {
-        "Title": "Jetsam",
-        "Characters": [ "Jetsam", "Ursula", "Flotsam" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "Ursula's lackey, along with Flotsam. An evil moray eel, Jetsam is a smooth talker who loves to deceive. His specialty is using empty promises to lure unsuspecting mermen and mermaids into Ursula's clutches.",
-        "AdditionalInformation": "He ran interference for Ursula in \"The Little Mermaid\" (1989)."
-      },
-      {
-        "Title": "Jiminy Cricket",
-        "Characters": [ "Jiminy", "Pinocchio" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "That's me! The cricket who keeps Pinocchio to the straight and narrow. I'm along on the quest as the royal chronicler.",
-        "AdditionalInformation": "Look for me in \"Pinocchio\" (1940)."
-      },
-      {
-        "Title": "Kairi I",
-        "Characters": [ "Kairi", "Sora", "Riku" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "Islander. Kairi, Sora, and Riku were best friends. They built a raft to sail out and see new worlds. The three were separated when a mysterious force struck the Destiny Islands. Thus did Sora's search for Kairi begin.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Kairi II",
-        "Characters": [ "Kairi", "Sora", "Riku", "Sora's Heartless" ],
-        "Worlds": [ "Destiny Islands", "Hollow Bastion" ],
-        "Description": "Kairi, Sora, and Riku always hung out together. When their island vanished, Kairi lost her heart. It turned out that it was hidden within Sora's. As one of the princesses with the power to unlock the secret Keyhole, Kairi restored Sora's heart when he was turned into a Heartless.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Kala",
-        "Characters": [ "Kala", "Tarzan" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "The gorilla who found Tarzan in the jungle. She has always helped and defended him, even when he was scorned by the others. Kala is not happy about Tarzan's contact with people, but she knows it's important to him.",
-        "AdditionalInformation": "She was second banana in \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "Kerchak",
-        "Characters": [ "Kerchak", "Tarzan", "Kala" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "Boss of the gorilla pack. He was against letting Tarzan join the group, but Kala's resolve won him over. Kerchak worries that Tarzan's contact with people will bring danger to the gorilla community.",
-        "AdditionalInformation": "He established himself as leader of the pack in \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "King Triton",
-        "Characters": [ "King Triton", "Ariel" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "King of Atlantica, who is backed by the power of his trident. He has forbidden Ariel to have any contact with outsiders, which only led to her yearn to grow even stronger.",
-        "AdditionalInformation": "He ruled the seas in \"The Little Mermaid\" (1989)."
-      },
-      {
-        "Title": "Leon",
-        "Characters": [ "Leon", "Mickey" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "A swordsman who wields the Gunblade. His real name: Squall Leonhart. He escaped to Traverse Town when the Heartless raided his home world. To part with his old self, a man who had been helpless to stop them, he changed his name. Since meeting the king, who has been so vigilant against the Heartless, Leon has sought the truth behind the \"key\".",
-        "AdditionalInformation": "\"Final Fantasy VIII\""
-      },
-      {
-        "Title": "Lock",
-        "Characters": [ "Lock", "Shock", "Barrel", "Oogie Boogie" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "The ringleader of the trio that includes Shock and Barrel. Their walking bathtub helps them get around while they commit all kinds of mischief. They sometimes help Oogie, but they're not really fond of him.",
-        "AdditionalInformation": "He created havoc in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Louie",
-        "Characters": [ "Louie", "Donald", "Huey", "Dewey" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "One of Donald's three nephews. Works with his brothers in a shop in Traverse Town. Gentle and carefree, but notices a lot of things others miss. To find him, look for a green cap.",
-        "AdditionalInformation": "Louie began tormenting his Uncle Donald in \"Donald's Nephews\" (1938)."
-      },
-      {
-        "Title": "Maleficent I",
-        "Characters": [ "Maleficent" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A sorceress of awesome power. She controls the Heartless, and is said to have destroyed many worlds. No one knows what her true intentions are.",
-        "AdditionalInformation": "She first appeared to curse Aurora in \"Sleeping Beauty\" (1959)."
-      },
-      {
-        "Title": "Maleficent II",
-        "Characters": [ "Maleficent", "Riku" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A sorceress of awesome power. She leads the villains who seek to harness the power of the Heartless. She has also tricked Riku into joining her and is using him as part of her evil plans.",
-        "AdditionalInformation": "She first appeared to curse Aurora in \"Sleeping Beauty\" (1959)."
-      },
-      {
-        "Title": "The Mayor",
-        "Characters": [ "The Mayor", "Jack Skellington" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "The two-faced mayor of Halloween Town. He switches from his happy face to his sad face depending on his mood, which changes constantly. He's working with Jack to make this year's festival the best ever.",
-        "AdditionalInformation": "He appeared in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Merlin",
-        "Characters": [ "Merlin", "Sora" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "A great sorcerer living on the outskirts of Traverse Town. Merlin's wisdom and magic powers rank second to none, and he teaches Sora and his friends about magic. He has a mysterious bag that can hold anything, no matter how large.",
-        "AdditionalInformation": "Merlin first tutored Arthur in how to be king in \"The Sword in the Stone\" (1963)."
-      },
-      {
-        "Title": "Mickey Mouse",
-        "Characters": [ "Mickey", "Donald", "Goofy" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "King of Disney Castle. He set out to learn more about the darkness, and left instructions for Donald and Goofy to find and follow the key bearer. No one knows where King Mickey is now, but they are determined to find him.",
-        "AdditionalInformation": "He made his debut in \"Steamboat Willie\" (1928)."
-      },
-      {
-        "Title": "Minnie Mouse",
-        "Characters": [ "Minnie", "Mickey", "Jiminy", "Donald", "Goofy", "Jiminy" ],
-        "Worlds": [ "Disney Castle" ],
-        "Description": "Queen of Disney Castle, ruling in Mickey's absence. I, Jiminy Cricket, am accompanying Donald and Goofy as the royal chronicler at her request. Queen Minnie is more concerned than anyone about the king's disappearance.",
-        "AdditionalInformation": "Minnie made her screen debut in \"Steamboat Willie\" (1928)."
-      },
-      {
-        "Title": "Moogles",
-        "Characters": [ "Moogle(s)" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "Escaped to Traverse Town when the Heartless invaded their home. They know how to combine various items to form new ones.",
-        "AdditionalInformation": "Many \"Final Fantasies\"."
-      },
-      {
-        "Title": "Mr. Smee",
-        "Characters": [ "Mr. Smee", "Captain Hook" ],
-        "Worlds": [ "Neverland" ],
-        "Description": "Hook's first mate. He lives to take orders from Hook, but he's as slow-witted as Hook is obnoxious.",
-        "AdditionalInformation": "He appeared in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "Mushu",
-        "Characters": [ "Mushu" ],
-        "Worlds": [ ":None:" ],
-        "Description": "One of the guardian spirits of an ancient clan. He was banished by the other guardians because of his foolish ways. Though small, he has the power of a great dragon. Press X Button for Fire Breath attack. Cost: 3 MP",
-        "AdditionalInformation": "This ancient dragon heated things up in \"Mulan\" (1998)."
-      },
-      {
-        "Title": "Oogie Boogie I",
-        "Characters": [ "Oogie Boogie", "Jack Skellington", "Dr. Finkelstein", "Lock", "Shock", "Barrel" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "This evil bag of bugs wants Jack out of town so he can take over. To further his plot, he's after the heart Dr. Finkelstein created, and he's sent Lock, Shock and Barrel to steal it.",
-        "AdditionalInformation": "He came apart at the seams in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Oogie Boogie II",
-        "Characters": [ "Oogie Boogie", "Dr. Finkelstein" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "The villain who tried to take over Halloween Town. The heart he stole from Dr. Finkelstein attracted the Heartless, and the result was his doom.",
-        "AdditionalInformation": "He came apart at the seams in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Owl",
-        "Characters": [ "Owl" ],
-        "Worlds": [ "100 Acre Wood" ],
-        "Description": "The wisest resident of the Hundred Acre Wood. Whenever anyone has a question he can't answer, he asks the Owl... though Owl isn't always right! Owl likes to talk, but sometimes he puts his listeners to sleep.",
-        "AdditionalInformation": "He showed us the wisdom of his ways in \"Winnie the Pooh and the Honey Tree\" (1966)."
-      },
-      {
-        "Title": "Perdita",
-        "Characters": [ "Perdita", "Pongo", "Dalmation(s)" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "A beautiful dalmatian. With her partner Pongo, she takes care of 99 dalmatian puppies. Perdita will brave any danger to protect her spotted charges.",
-        "AdditionalInformation": "Perdita was first spotted on-screen in \"101 Dalmatians\" (1961)."
-      },
-      {
-        "Title": "Peter Pan",
-        "Characters": [ "Peter Pan", "Wendy" ],
-        "Worlds": [ "Neverland" ],
-        "Description": "The flying boy from Neverland, where no one ever grows up. He can be stubborn, but he's also fearless and has a strong sense of justice. He snuck on board Hook's ship to rescue Wendy, who was kidnapped.",
-        "AdditionalInformation": "He led the Lost Boys in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "Philoctetes",
-        "Characters": [ "Phil", "Hercules" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "Phil the satyr is a veteran trainer of heroes and Herc's mentor. These days he's very busy running the Coliseum and choosing competitors suitable for the games.",
-        "AdditionalInformation": "He came out of retirement in \"Hercules\" (1997)."
-      },
-      {
-        "Title": "Piglet",
-        "Characters": [ "Piglet", "Pooh" ],
-        "Worlds": [ "100 Acre Wood" ],
-        "Description": "Pooh's best friend in the Hundred Acre Wood. Tiny, timid Piglet is startled by just about anything. When that happens, he covers his eyes with his floppy ears.",
-        "AdditionalInformation": "He appeared on a \"windsday\" in \"Winnie the Pooh and the Blustery Day\" (1968)."
-      },
-      {
-        "Title": "Pinocchio I",
-        "Characters": [ "Pinocchio", "Geppetto", "Blue Fairy", "Jiminy" ],
-        "Worlds": [ "Monstro" ],
-        "Description": "He was crafted by Geppetto. The Blue Fairy brought him to life to answer Geppetto's prayers for a son. He must learn courage, kindness, and honesty to prove he's worthy to be a real boy. It's my job to keep him out of trouble.",
-        "AdditionalInformation": "There were no strings to hold him down in Pinocchio (1940)."
-      },
-      {
-        "Title": "Pinocchio II",
-        "Characters": [ "Pinocchio", "Geppetto", "Blue Fairy" ],
-        "Worlds": [ "Monstro", "Traverse Town" ],
-        "Description": "Crafted by Geppetto and brought to life by the Blue Fairy. He'd have lost his heart to the Heartless if I hadn't come to the rescue. Now he's living in Traverse Town with Geppetto and working hard to become a real boy.",
-        "AdditionalInformation": "There were no strings to hold him down in Pinocchio (1940)."
-      },
-      {
-        "Title": "Pluto",
-        "Characters": [ "Pluto", "Mickey" ],
-        "Worlds": [ "Disney Castle", "Traverse Town" ],
-        "Description": "Mickey's faithful dog. Pluto is more than a pet. He and Mickey are bound by strong ties of loyalty. Pluto set out with the others to find his master. Will that famous nose of his lead him to Mickey?",
-        "AdditionalInformation": "Pluto originally appeared in \"The Chain Gang\" (1930)."
-      },
-      {
-        "Title": "Pongo",
-        "Characters": [ "Pongo", "Perdita", "Dalmation(s)" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "A brave and intelligent dalmatian. With his mate Perdita, he looks after 99 dalmatian puppies. Quick-witted Pongo is an expert at escaping from tight spots.",
-        "AdditionalInformation": "Pongo was first spotted on-screen in \"101 Dalmatians\" (1961)."
-      },
-      {
-        "Title": "Queen of Hearts",
-        "Characters": [ "Queen of Hearts", "Card Solider(s)", "Alice" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "A queen of Wonderland who lives in a castle with decks and decks of card soldiers. Selfish and short-tempered, she beheads anyone who crosses her. She thinks Alice tried to steal her heart.",
-        "AdditionalInformation": "She struck terror in our hearts in \"Alice in Wonderland\" (1951)."
-      },
-      {
-        "Title": "Rabbit",
-        "Characters": [ "Rabbit", "Tigger" ],
-        "Worlds": [ "100 Acre Wood" ],
-        "Description": "Rabbit is an earnest, hardworking member of the Hundred Acre Wood community. He keeps to himself, but lends a hand when others need him. He's not always comfortable around the exuberant Tigger.",
-        "AdditionalInformation": "He appeared in \"Winnie the Pooh and the Honey Tree\" (1966)."
-      },
-      {
-        "Title": "Riku I",
-        "Characters": [ "Riku", "Sora", "Kairi" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "Islander. A self-confident youth always competing with Sora. He hated the monotony of island life and built a raft with Sora and Kairi to explore the outside world. Riku seems to have vanished along with the Destiny Islands.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Riku II",
-        "Characters": [ "Riku", "Sora", "Kairi", "Maleficent" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "Islander. A self-confident youth always competing with Sora. When the Destiny Islands vanished, so did he. By the time Riku reappeared, Sora had already found new friends, so Riku didn't rejoin him. Riku is willing to go to any length to save Kairi - even join forces with Maleficent.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Riku III",
-        "Characters": [ "Riku" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "Riku gained immense power through the forces of darkness. But ordinary humans are no match for the darkness, and it is gradually consuming his heart.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Riku IV",
-        "Characters": [ "Riku", "Kairi", "Maleficent", "Sora", "Ansem Seeker of Darkness" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "When Kairi lost her heart, Riku allied himself with Maleficent to save her. Riku was actually the rightful master of the Keyblade, but once he chose darkness over light, the weapon chose Sora instead. Ansem exploited Riku's weakness of heart and possessed him.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Rock Titan",
-        "Characters": [ "Rock Titan", "Hercules", "Hades" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "Immortal giant in the form of a stone crag. He has two heads, but can only think with one at a time. Defeated once by Hercules, he's now on the loose again, courtesy of Hades.",
-        "AdditionalInformation": "He shook the scene in \"Hercules\" (1997)."
-      },
-      {
-        "Title": "Roo",
-        "Characters": [ "Roo", "Tigger" ],
-        "Worlds": [ "100 Acre Wood" ],
-        "Description": "Roo dreams of bouncing as well as Tigger someday. He's mischievous, energetic, and fearless, but grows uneasy when Tigger is not around.",
-        "AdditionalInformation": "He hopped onto the screen in \"Winnie the Pooh and the Honey Tree\" (1966)."
-      },
-      {
-        "Title": "Sabor",
-        "Characters": [ "Sabor", "Tarzan" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "A leopard feared by all who live in the jungle, and an enemy of Tarzan and the gorillas. Sabor is a cunning hunter who targets the weak and helpless.",
-        "AdditionalInformation": "He stalked onto the scene in \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "Sally",
-        "Characters": [ "Sally", "Dr. Finkelstein", "Jack Skellington" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "Dr. Finkelstein's creation. She's patched together from parts that sometimes come off and move about on their own. She loves Jack and tries to steer him in the right direction, though it doesn't always work.",
-        "AdditionalInformation": "She appeared in \"Tim Burton's The Nightmare Before Christmas\"."
-      },
-      {
-        "Title": "Sebastian",
-        "Characters": [ "Sebastian", "King Triton", "Ariel" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "Triton's concert master, a musical genius. The little crab is also responsible for keeping an eye on Ariel to ensure her safety. Whenever she leaves the palace, he's on pins and needles.",
-        "AdditionalInformation": "He conducted himself in \"The Little Mermaid\" (1989)."
-      },
-      {
-        "Title": "Selphie",
-        "Characters": [ "Selphie" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "A spunky girl who lived on the Destiny Islands. She is rather impulsive, and quite the romanticist. Nobody knows what happened to her after her island disappeared.",
-        "AdditionalInformation": "\"Final Fantasy VIII\""
-      },
-      {
-        "Title": "Sephiroth",
-        "Characters": [ "Sephiroth", "Sora", "Cloud" ],
-        "Worlds": [ "Olympus Coliseum" ],
-        "Description": "Once known as the greatest of swordsmen, his whereabouts have been unknown for some time. He challenged Sora to a one-on-one duel. No one knows why he has suddenly returned. Apparently, he and Cloud have crossed paths before.",
-        "AdditionalInformation": "\"Final Fantasy VII\""
-      },
-      {
-        "Title": "Shock",
-        "Characters": [ "Shock", "Lock", "Barrel", "Oogie Boogie" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "Along with Lock and Barrel, she's part of Oogie Boogie's plot to take over Halloween Town. Shock is the most cunning member of the trio. She keeps her cool when the other two are losing it.",
-        "AdditionalInformation": "She created havoc in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
-      },
-      {
-        "Title": "Simba",
-        "Characters": [ "Simba" ],
-        "Worlds": [ ":None:" ],
-        "Description": "The leader of the pride. He rules over the other animals of the Pride Lands, his savanna kingdom. Hold down the X button to charge up his power. When the command changes to Proud Roar release the button to unleash the attack. Hold the button down longer for more power. Cost: 2 MP",
-        "AdditionalInformation": "He roared onto the scene in \"The Lion King\" (1994)."
-      },
-      {
-        "Title": "Snow White",
-        "Characters": [ "Snow White" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A beautiful princess, gentle and pure as snow. She is one of the princesses needed to open the final Keyhole, and was captured by the Heartless. Her world has already been swallowed by the darkness.",
-        "AdditionalInformation": "The fair-skinned princess first appeared in \"Snow White and the Seven Dwarfs\" (1937)."
-      },
-      {
-        "Title": "Sora I",
-        "Characters": [ "Sora", "Kairi" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "A spirited youth. He was cast into an unknown world when a swarm of Heartless raided his island. He battles the Heartless with a mysterious weapon called the Keyblade as he searches for his friend Kairi.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Sora III",
-        "Characters": [ "Sora", "Riku", "Kairi", "Ansem Seeker of Darkness" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "The one who fights the Heartless. Upon reclaiming the Keyblade from his rival, Riku, Sora sacrificed his heart to free Kairi and became a Heartless. Kairi's deep feelings for Sora restored him. Now he must confront Ansem, the seeker of darkness.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Tarzan",
-        "Characters": [ "Tarzan", "Kala", "Jane" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "A young man raised from infancy by gorillas. His gorilla \"mother\" is Kala. Tarzan spoke only the language of the apes until he met Jane. Since then he's learning to speak English at an astonishing rate.",
-        "AdditionalInformation": "He swung onto the screen in \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "Terk",
-        "Characters": [ "Terk", "Tarzan" ],
-        "Worlds": [ "Deep Jungle" ],
-        "Description": "A young female gorilla, and Tarzan's close friend. She is protective of the other young gorillas and acts as their leader. Unlike the other gorillas, her curiosity about humans is greater than her fear of them.",
-        "AdditionalInformation": "She was up to some monkey business in \"Tarzan\" (1999)."
-      },
-      {
-        "Title": "Tigger",
-        "Characters": [ "Tigger" ],
-        "Worlds": [ "100 Acre Wood" ],
-        "Description": "Tigger loves to bounce more than anything. Sometimes his bouncing gets out of hand, but he doesn't mean any harm. Beneath that happy-go-lucky exterior beats a sensitive, gentle heart.",
-        "AdditionalInformation": "He bounced onto the scene in \"Winnie the Pooh and the Blustery Day\" (1968)."
-      },
-      {
-        "Title": "Tidus",
-        "Characters": [ "Tidus" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "A cheerful, self-confident boy who lived on the Destiny Islands. He considers himself a champ at everything. Nobody knows what happened to him after his island disappeared.",
-        "AdditionalInformation": "\"Final Fantasy X\""
-      },
-      {
-        "Title": "Tinker Bell I",
-        "Characters": [ "Tinker Bell", "Peter Pan" ],
-        "Worlds": [ "Neverland" ],
-        "Description": "The little pixie of Neverland. She's Peter Pan's loyal partner, but she has a short fuse, and she's very jealous of any girl who gets near Peter. With a little of her pixie dust, you can fly... if you believe.",
-        "AdditionalInformation": "She made us believe in fairies in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "Tinker Bell II",
-        "Characters": [ "Tinker Bell", "Peter Pan", "Sora" ],
-        "Worlds": [ "Neverland" ],
-        "Description": "The little pixie from Neverland. Peter Pan asked her to accompany Sora and friends on their quest, but she's anxious to see Peter. She can restore party's HP, and prevents Sora from being defeated, though only once. Cost: 3 MP.",
-        "AdditionalInformation": "She made us believe in fairies in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "Ursula I",
-        "Characters": [ "Ursula", "King Triton" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "An evil sea witch living in a vast cave far from the palace. Has the power to grant wishes, but in return demands a heavy sacrifice. She's trying to oust Triton and take over Atlantica.",
-        "AdditionalInformation": "She appeared in \"The Little Mermaid\" (1989)."
-      },
-      {
-        "Title": "Ursula II",
-        "Characters": [ "Ursula", "Ariel", "Sora", "Donald", "Goofy" ],
-        "Worlds": [ "Atlantica" ],
-        "Description": "She deceived Ariel and stole the trident to take over Atlantica. Using its power, she became an enormous monster and battled Sora, Goofy and Donald.",
-        "AdditionalInformation": "She appeared in \"The Little Mermaid\" (1989)."
-      },
-      {
-        "Title": "Wakka",
-        "Characters": [ "Wakka", "Tidus", "Selphie" ],
-        "Worlds": [ "Destiny Islands" ],
-        "Description": "A boy who lived on the Destiny Islands. He looks out for Tidus and Selphie like a big brother. Nobody knows what happened to him after his island disappeared.",
-        "AdditionalInformation": "\"Final Fantasy X\""
-      },
-      {
-        "Title": "Wendy",
-        "Characters": [ "Wendy", "Peter Pan", "Captain Hook" ],
-        "Worlds": [ "Neverland" ],
-        "Description": "A dreamy girl whose wish to visit Neverland came true. Peter Pan showed her the way, but she got caught up in Hook's vendetta against Peter, and was kidnapped by Hook.",
-        "AdditionalInformation": "She watched over the Lost Boys in \"Peter Pan\" (1953)."
-      },
-      {
-        "Title": "White Rabbit",
-        "Characters": [ "White Rabbit", "Queen of Hearts", "Sora" ],
-        "Worlds": [ "Wonderland" ],
-        "Description": "Loyal servant to the Queen of Hearts. He led Sora and his friends to the Queen of Hearts' castle.",
-        "AdditionalInformation": "He wasn't late for his appearance in \"Alice in Wonderland\" (1951)."
-      },
-      {
-        "Title": "Winnie the Pooh",
-        "Characters": [ "Pooh" ],
-        "Worlds": [ "100 Acre Wood" ],
-        "Description": "A little bear living in the Hundred Acre Wood. His favorite food is honey. Being a Bear of Very Little Brain, he's a bit absent-minded. Sometimes he even forgets what it was he was trying to remember.",
-        "AdditionalInformation": "He warmed up the screen in \"Winnie the Pooh and the Honey Tree\" (1966)."
-      },
-      {
-        "Title": "?",
-        "Characters": [ "Xemnas" ],
-        "Worlds": [ "Hollow Bastion" ],
-        "Description": "A mysterious figure who appeared in Hollow Bastion.",
-        "AdditionalInformation": ""
-      },
-      {
-        "Title": "Yuffie",
-        "Characters": [ "Yuffie", "Leon", "Aerith" ],
-        "Worlds": [ "Traverse Town" ],
-        "Description": "A female ninja who escaped to Traverse Town when her home world was taken by the Heartless. She stays strong and cheerful in any situation. She works with Leon and Aerith to unravel the secret of the \"key\".",
-        "AdditionalInformation": "\"Final Fantasy VII\""
-      },
-      {
-        "Title": "Zero",
-        "Characters": [ "Zero", "Jack Skellington" ],
-        "Worlds": [ "Halloween Town" ],
-        "Description": "Jack's ghost dog. He comes out of his grave whenever Jack calls. He's very loyal to his master and loves it when Jack plays with him.",
-        "AdditionalInformation": "He loyally followed Jack in \"Tim Burton's The Nightmare Before Christmas\" (1993)."
+        "Title": "Ansem's Report 13",
+        "Characters": [ "Terra-Xehanort", "Xemnas" ],
+        "Worlds": [ "Radiant Garden", "Hollow Bastion" ],
+        "Description": "Where does the body go when it separates from the heart? If the soul remains within the body, is it still considered to be deceased? When the heart returns to the Heartless, the physical form disappears. But that is merely true in this world. Perhaps the body exists in another form in another world. If that is the case, then it is possible for one to exist in two worlds. A being that is neither darkness nor light; belonging nowhere; abandoned by its heart; a mere shell of its former self. The relation between the heart and body is complex. However, I am certain that if your self exists here, then by definition, the other cannot truly \"exist.\" The other, the one which does not exist, shall be dubbed, \"Nobody.\"",
+        "AdditionalInformation": "Obtained after defeating the Unknown."
       }
     ],
     "Kingdom Hearts Re:Chain of Memories": [

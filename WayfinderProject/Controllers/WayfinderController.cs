@@ -11,12 +11,12 @@ namespace WayfinderProjectAPI.Controllers
     [Route("api/[controller]")]
     public class WayfinderController : ControllerBase
     {
-        private readonly ILogger<WayfinderController> _logger;
+        //private readonly ILogger<WayfinderController> _logger;
         private readonly WayfinderContext _context;
 
-        public WayfinderController(ILogger<WayfinderController> logger, WayfinderContext context)
+        public WayfinderController(WayfinderContext context)
         {
-            _logger = logger;
+            //_logger = logger;
             _context = context;
         }
 
@@ -171,10 +171,10 @@ namespace WayfinderProjectAPI.Controllers
         #endregion Memory Archive
 
         #region Jiminy Journal
-        [HttpGet("SearchForCharacterEntries")]
-        public async Task<List<JJCharacterDto>> SearchForCharacterEntries([FromQuery] string? games = null, [FromQuery] string? characterTitles = null, [FromQuery] string? characters = null, [FromQuery] string? information = null)
+        [HttpGet("SearchForJournalEntries")]
+        public async Task<List<JournalEntryDto>> SearchForJournalEntries([FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
         {
-            var results = _context.JJCharacters.AsNoTrackingWithIdentityResolution();
+            var results = _context.JournalEntries.AsNoTrackingWithIdentityResolution().Where(x => x.Category == category);
             var queryString = (information == null ? information : information.Any(x => char.IsPunctuation(x)) ? information : Regex.Replace(information, @"[^\w\s]", ""));
 
             if (games != null)
@@ -184,18 +184,47 @@ namespace WayfinderProjectAPI.Controllers
                 results = results.Where(x => gamesList.Contains(x.Game.Name));
             }
 
-            if (characterTitles != null)
+            if (entries != null)
             {
-                var characterTitlesList = characterTitles.Split("::").Select(x => x.Trim());
+                var titlesList = entries.Split("::").Select(x => x.Trim());
 
-                results = results.Where(x => characterTitlesList.Contains(x.Title));
+                results = results.Where(x => titlesList.Contains(x.Title));
             }
 
             if (characters != null)
             {
                 var charactersList = characters.Split("::").Select(x => x.Trim());
 
-                results = results.Where(x => charactersList.Contains(x.Character.Name));
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))))
+                {
+                    if (result == null || result.Characters == null) continue;
+
+                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (worlds != null)
+            {
+                var worldsList = worlds.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))))
+                {
+                    if (result == null || result.Worlds == null) continue;
+
+                    if (worldsList.All(x => result.Worlds.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
             }
 
             if (queryString != null)
@@ -204,7 +233,7 @@ namespace WayfinderProjectAPI.Controllers
                 {
                     queryString = queryString.ToLower();
 
-                    var tempResults = new List<JJCharacter>();
+                    var tempResults = new List<JournalEntry>();
                     foreach (var result in results)
                     {
                         // Description search
@@ -237,19 +266,85 @@ namespace WayfinderProjectAPI.Controllers
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
 
-        [HttpGet("GetCharacterFirstAppearance")]
-        public async Task<SceneDto> GetCharacterFirstAppearance([FromQuery] string characterName, [FromQuery] string? games = null)
+        [HttpGet("GetCharactersFirstAppearance")]
+        public async Task<SceneDto?> GetCharactersFirstAppearance([FromQuery] string characterNames, [FromQuery] string? games = null)
         {
-            var results = _context.Scenes.AsNoTrackingWithIdentityResolution().Include(x => x.Characters).Where(x => x.Characters.Any(y => characterName == y.Name));
+            var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
 
-            if (games != null && results.Count() > 0)
+            if (characterNames != null)
+            {
+                var charactersList = characterNames.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))))
+                {
+                    if (result == null || result.Characters == null) continue;
+
+                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (games != null)
             {
                 var gamesList = games.Split("::").Select(x => x.Trim());
 
                 results = results.Where(x => gamesList.Contains(x.Game.Name));
             }
 
-            return results.OrderBy(x => x.Id).ToDto().FirstOrDefault();
+            if (results == null)
+            {
+                return null;
+            }
+
+            var returnResults = await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+
+            return returnResults.FirstOrDefault();
+        }
+
+
+        [HttpGet("GetWorldsFirstAppearance")]
+        public async Task<SceneDto?> GetWorldsFirstAppearance([FromQuery] string worldNames, [FromQuery] string? games = null)
+        {
+            var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
+
+            if (worldNames != null)
+            {
+                var worldsList = worldNames.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))))
+                {
+                    if (result == null || result.Worlds == null) continue;
+
+                    if (worldsList.All(x => result.Worlds.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
+            }
+
+            if (results == null)
+            {
+                return null;
+            }
+
+            var returnResults = await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+
+            return returnResults.FirstOrDefault();
         }
         #endregion Jiminy Journal
     }

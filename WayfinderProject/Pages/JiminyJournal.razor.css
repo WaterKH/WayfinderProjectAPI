@@ -6,8 +6,9 @@
 .wayfinder-parallax {
     border-radius: 35px;
     padding: 20px;
-    background-image: url(/images/WFP_logo_INVIS.png);
+    background-image: url(/images/JJ_invisible.png);
     background-attachment: fixed;
+    background-position: left;
     background-repeat: no-repeat;
 }
 
@@ -97,6 +98,7 @@
 
 
 .header-margins {
+    width: 25px;
     margin-top: -5px;
     margin-right: 15px;
 }
