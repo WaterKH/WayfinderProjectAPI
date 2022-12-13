@@ -58,7 +58,7 @@ namespace WayfinderProject.Data.Jobs
 
                 string journalEntryQuery = $@"SELECT JJ_Entry.Id AS EntryId, JJ_Entry.Title AS Title, JJ_Entry.Description AS Description, JJ_Entry.Category AS Category, Games.Name AS GameName
                                     FROM wayfinderprojectdb.JJ_Entry 
-                                    INNER JOIN wayfinderprojectdb.Games ON Games.Id = MA_Scene.GameId";
+                                    INNER JOIN wayfinderprojectdb.Games ON Games.Id = JJ_Entry.GameId";
 
                 MySqlCommand journalEntryCommand = new MySqlCommand(journalEntryQuery, connection);
                 MySqlDataReader journalEntryResult = journalEntryCommand.ExecuteReader();
