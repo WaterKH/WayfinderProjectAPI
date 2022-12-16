@@ -63,11 +63,19 @@ namespace WayfinderProject.Data.Jobs
                 MySqlCommand journalEntryCommand = new MySqlCommand(journalEntryQuery, connection);
                 MySqlDataReader journalEntryResult = journalEntryCommand.ExecuteReader();
 
+                int randomEntry = random.Next(0, journalEntryCount);
+                int counter = 0;
                 int randomEntryId = 0;
                 string tweetText = string.Empty;
                 string subTweetText = string.Empty;
                 while (journalEntryResult.Read())
                 {
+                    if (counter != randomEntry)
+                    {
+                        counter += 1;
+                        continue;
+                    }
+
                     string title = (string)journalEntryResult["Title"];
                     string description = (string)journalEntryResult["Description"];
                     string category = (string)journalEntryResult["Category"];
