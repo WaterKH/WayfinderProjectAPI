@@ -819,42 +819,40 @@
       {
         "Order": 15,
         "Character": "Maleficent",
-        "Line": "Here it is... Just what I've waited for. To think that all he spoke of was and will "
-      }
-    ],
-    "be true.": [
+        "Line": "Here it is... Just what I've waited for. To think that all he spoke of was and will be true."
+      },
       {
-        "Order": 0,
+        "Order": 16,
         "Character": "Terra",
         "Line": "What? How did I- What did I do? What did YOU do?"
       },
       {
-        "Order": 1,
+        "Order": 17,
         "Character": "Maleficent",
         "Line": "You speak as if I pulled some invisible strings. No, you couldn't be further from the truth, child. I simply whispered to the darkness you already held inside."
       },
       {
-        "Order": 2,
+        "Order": 18,
         "Character": "Terra",
         "Line": "How could I do this? Ven?"
       },
       {
-        "Order": 3,
+        "Order": 19,
         "Character": "Maleficent",
         "Line": "Yes... Now, you want to know where Xehanort went. Well, that I cannot answer. He disappeared into the darkness. But now I know the Keyblade is necessary to gather hearts. Join me. Collect six more hearts of pure light. Then we will rule all the worlds together."
       },
       {
-        "Order": 4,
+        "Order": 20,
         "Character": "Terra",
         "Line": "You seem to be mixed up. I'm a peacekeeper, not a tyrant!"
       },
       {
-        "Order": 5,
+        "Order": 21,
         "Character": "Maleficent",
         "Line": "Hmm... For a peacekeeper, you're off to an exceptionally poor start. Remember this- the darkness in your heart cannot be held back by force or strength. Now... my work here is done, as is yours. Wasn't there someone you needed to chase?"
       },
       {
-        "Order": 6,
+        "Order": 22,
         "Character": "Terra",
         "Line": "Wait! The Unversed... They're going to bring down the castle. I have to do something!"
       }

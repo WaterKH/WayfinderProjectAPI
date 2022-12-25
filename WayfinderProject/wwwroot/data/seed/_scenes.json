@@ -1957,7 +1957,7 @@
       },
       {
         "Name": "Even After We Grow Up",
-        "Link": "https://youtu.be/0SsUb46E0Xs?t=4185",
+        "Link": "https://www.youtube.com/watch?v=PNRsn91-xyY&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=72",
         "Worlds": [ "Neverland" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Wendy", "Peter Pan", "Tinker Bell", "Moogle(s)" ],
         "Areas": [ "Deck" ],
@@ -1965,7 +1965,7 @@
       },
       {
         "Name": "Fighting Friends",
-        "Link": "https://youtu.be/0SsUb46E0Xs?t=4185",
+        "Link": "https://www.youtube.com/watch?v=XA91kMAnc30&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=73",
         "Worlds": [ "Castle Oblivion" ],
         "Characters": [ "Riku Replica", "Sora", "Young Sora", "Young Riku" ],
         "Areas": [ "Floor 8 Exit" ],
@@ -2345,7 +2345,7 @@
         "Worlds": [ "Castle Oblivion" ],
         "Characters": [ "Sora", "Donald", "Goofy" ],
         "Areas": [ "Castle Oblivion" ],
-        "Music": [ "Castle Oblivion" ]
+        "Music": [ "The 13th Floor" ]
       },
       {
         "Name": "The Sneaking Shadow",
@@ -6275,7 +6275,7 @@
         "Worlds": [ "The Land of Dragons" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Mulan", "Rapid Thruster(s)", "Riku" ],
         "Areas": [ "Summit" ],
-        "Music": [ ":None:" ]
+        "Music": [ "The 13th Struggle" ]
       },
       {
         "Name": "A Bad Feeling",
@@ -10786,7 +10786,7 @@
         "Music": [ "Night in the Dark Dream" ]
       },
       {
-        "Name": "Where the Darkness Storms",
+        "Name": "When the Darkness Storms",
         "Link": "https://www.youtube.com/watch?v=QQ1M6nd7jBI&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=269",
         "Worlds": [ "Dark World" ],
         "Characters": [ "Aqua", "Dark Hide" ],
