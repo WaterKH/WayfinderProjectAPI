@@ -84,7 +84,7 @@ namespace WayfinderProject.Data.Jobs
                     randomEntryId = (int)journalEntryResult["EntryId"];
 
                     // Assemble tweet and subtweet
-                    if (tweetText.Length > 275)
+                    if (description.Length > 275)
                     {
                         tweetText = $"\"{description[..275]}\"...";
                     }
