@@ -22,6 +22,9 @@ namespace WayfinderProjectAPI.Data
             //// Load Character Data into Database
             //CreateCharacters(context);
 
+            // Character Locations
+            //CreateEnemyLocations(context);
+
             //// Load Game Data into Database
             //CreateGames(context);
 
@@ -49,6 +52,13 @@ namespace WayfinderProjectAPI.Data
 
             // Report
             //CreateReportEntries(context);
+
+            // MS
+            // Inventory
+            //CreateInventory(context);
+
+            // Recipes
+            //CreateRecipes(context);
 
             IsInitializing = false;
         }
@@ -389,5 +399,193 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
         #endregion Jiminy's Journal
+
+        #region Moogle Shop
+
+        public class MSInventoryObject
+        {
+            public string Name { get; set; } = string.Empty;
+            public string Category { get; set; } = string.Empty;
+            public string Description { get; set; } = string.Empty;
+            public string AdditionalInformation { get; set; } = string.Empty;
+            public int Cost { get; set; } = 0;
+            public string Currency { get; set; } = string.Empty;
+            public List<MSEnemyDropObject> EnemyDrops { get; set; } = new();
+        }
+
+        public class MSEnemyDropObject
+        {
+            public string EnemyName { get; set; } = string.Empty;
+            public float DropRate { get; set; } = 0.0f;
+            public string AdditionalInformation { get; set; } = string.Empty;
+        }
+        public static void CreateInventory(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ms/_ms_inventory.json"));
+            var allMSInventory = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<MSInventoryObject>>>>(streamReader.ReadToEnd());
+
+            if (!allMSInventory!.ContainsKey("Inventory"))
+                throw new Exception("No Inventory List Found!");
+
+            foreach (var (gameName, inventory) in allMSInventory["Inventory"])
+            {
+                if (gameName != "Kingdom Hearts") continue;
+
+                foreach (var item in inventory)
+                {
+                    var tempItem = context.Inventory.FirstOrDefault(x => x.Name == item.Name && x.Game.Name == gameName);
+                    if (tempItem != null)
+                        continue;
+
+                    var drops = new List<EnemyDrop>();
+                    foreach (var drop in item.EnemyDrops)
+                    {
+                        var tempCharacter = context.Characters.Where(x => drop.EnemyName == x.Name).FirstOrDefault();
+                        if (tempCharacter == null)
+                            Console.WriteLine();
+
+                        var enemyDrop = new EnemyDrop
+                        {
+                            DropRate = drop.DropRate,
+                            AdditionalInformation = drop.AdditionalInformation,
+                            CharacterLocations = tempCharacter?.CharacterLocations?.ToList() ?? new List<CharacterLocation>()
+                        };
+
+                        drops.Add(enemyDrop);
+                    }
+
+                    context.Inventory.Add(new Inventory
+                    {
+                        Name = item.Name,
+                        Category = item.Category,
+                        Description = item.Description,
+                        AdditionalInformation = item.AdditionalInformation,
+                        Cost = item.Cost,
+                        Currency = item.Currency,
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                        EnemyDrops = drops
+                    });
+                }
+            }
+
+            context.SaveChanges();
+        }
+
+        public class MSRecipeObject
+        {
+            public string Name { get; set; } = string.Empty;
+            public string Category { get; set; } = string.Empty;
+            public string UnlockConditionDescription { get; set; } = string.Empty;
+            public Dictionary<string, int> MaterialsNeeded { get; set; } = new();
+        }
+        public static void CreateRecipes(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ms/_ms_recipes.json"));
+            var allMSRecipes = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<MSRecipeObject>>>>(streamReader.ReadToEnd());
+
+            if (!allMSRecipes!.ContainsKey("Recipes"))
+                throw new Exception("No Recipe List Found!");
+
+            foreach (var (gameName, recipes) in allMSRecipes["Recipes"])
+            {
+                if (gameName != "Kingdom Hearts") continue;
+
+                foreach (var recipe in recipes)
+                {
+                    var tempRecipe = context.Recipes.FirstOrDefault(x => x.Name == recipe.Name && x.Game.Name == gameName);
+                    if (tempRecipe != null)
+                        continue;
+
+                    var recipeMaterials = new List<RecipeMaterial>();
+                    foreach (var (name, amount) in recipe.MaterialsNeeded)
+                    {
+                        var tempItem = context.Inventory.FirstOrDefault(x => name == x.Name);
+                        if (tempItem == null)
+                        {
+                            Console.WriteLine();
+                            continue;
+                        }
+
+                        recipeMaterials.Add(new RecipeMaterial
+                        {
+                            Inventory = tempItem,
+                            Amount = amount
+                        });
+                    }
+
+                    context.Recipes.Add(new Recipe
+                    {
+                        Name = recipe.Name,
+                        Category = recipe.Category,
+                        UnlockConditionDescription = recipe.UnlockConditionDescription,
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                        RecipeMaterials = recipeMaterials
+                    });
+                }
+            }
+
+            context.SaveChanges();
+        }
+        #endregion Moogle Shop
+
+        #region Misc
+
+        public class MSMiscEnemyObject
+        {
+            public string CharacterName { get; set; } = string.Empty;
+            public Dictionary<string, List<string>> WorldWithAreas { get; set; } = new Dictionary<string, List<string>>();
+        }
+        public static void CreateEnemyLocations(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_misc/enemy_locations/_kh1_enemy_locations.json"));
+            var allMSEnemyLocations = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<MSMiscEnemyObject>>>>(streamReader.ReadToEnd());
+
+            if (!allMSEnemyLocations!.ContainsKey("EnemyLocations"))
+                throw new Exception("No Enemy Location List Found!");
+
+            foreach (var (gameName, locations) in allMSEnemyLocations["EnemyLocations"])
+            {
+                if (gameName != "Kingdom Hearts") continue;
+
+                foreach (var location in locations)
+                {
+                    var character = context.Characters.FirstOrDefault(x => x.Name == location.CharacterName);
+                    if (character == null)
+                    {
+                        Console.WriteLine();
+                        continue;
+                    }
+
+                    var tempLocation = context.CharacterLocations.FirstOrDefault(x => x.Character.Id == character.Id && x.Game.Name == gameName);
+                    if (tempLocation != null)
+                        continue;
+
+                    var characterLocations = new List<CharacterLocation>();
+                    foreach (var (worldName, areaNames) in location.WorldWithAreas)
+                    {
+                        var worlds = context.Worlds.Where(x => worldName == x.Name);
+                        if (worlds == null)
+                            Console.WriteLine();
+
+                        var areas = context.Areas.Where(x => areaNames.Contains(x.Name));
+
+                        var characterLocation = new CharacterLocation
+                        {
+                            Character = character,
+                            Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                            Worlds = worlds?.ToList(),
+                            Areas = areas?.ToList()
+                        };
+
+                        characterLocations.Add(characterLocation);
+                    }
+
+                    character.CharacterLocations = characterLocations;
+                }
+            }
+
+            context.SaveChanges();
+        }
+        #endregion Misc
     }
 }
