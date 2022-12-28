@@ -1,0 +1,152 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+
+@inject NavigationManager NavigationManager
+
+<tr>
+    <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
+        <div class="row">
+            <div class="col-md-5">
+                <div style="height: 563px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                    @if (this.Recipe != null)
+                    {
+                        <div class="row" style="height: 281px;">
+                            <div class="col-md-6">
+                                <h3>@(Recipe.Name)</h3>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div id="share" class="share" @onclick="@(() => { if (this.GenerateShareLink != null) { this.GenerateShareLink.Invoke(); } })">
+                                    <span class="copyable">
+                                        <i class="oi oi-file"></i>
+                                        <label class="share-text"><b>Share Recipe Record</b></label>
+                                        <br />
+                                    </span>
+                                </div>
+                            </div>
+
+                            @if (!string.IsNullOrEmpty(Recipe.UnlockConditionDescription))
+                            {
+                                <div class="col-md-12" style="margin-top: 15px;">
+                                    <label>@(Recipe.UnlockConditionDescription)</label><br />
+                                </div>
+                            }
+
+                            @if (this.Recipe.RecipeMaterials.Count > 0)
+                            {
+                                <div class="row" style="height: 281px;">
+                                    <div class="col-md-12" style="margin-top: 35px;">
+                                        <h3>Recipe Materials & Information</h3>
+                                    </div>
+
+                                    @foreach (var material in this.Recipe.RecipeMaterials)
+                                    {
+                                        <div class="col-md-12" style="margin-top: 20px;">
+                                            <h3><strong>@(material.Inventory.Name)</strong> x@(material.Amount)</h3>
+                                        </div>
+
+                                        var previousName = string.Empty;
+                                        var previousInfo = string.Empty;
+                                        @foreach (var drop in material.Inventory.EnemyDrops)
+                                        {
+                                            if (previousName != drop.CharacterLocation.Character.Name)
+                                            {
+                                                <div class="col-md-12" style="margin-left: 5px; margin-top: 15px;">
+                                                    <label style="font-size: larger"><strong class="character-color">@(drop.CharacterLocation.Character.Name.Split("(")[0])</strong>: @(drop.DropRate.ToString(".0"))% (Drop Rate)</label><br />
+                                                </div>
+
+                                                previousName = drop.CharacterLocation.Character.Name;
+                                            }
+
+                                            if (previousInfo != drop.AdditionalInformation)
+                                            {
+                                                if (!string.IsNullOrEmpty(drop.AdditionalInformation))
+                                                {
+                                                    <div class="col-md-12" style="margin-left: 10px; margin-top: 5px;">
+                                                        <label>@(drop.AdditionalInformation)</label><br />
+                                                    </div>
+                                                }
+
+                                                previousInfo = drop.AdditionalInformation;
+                                            }
+
+                                            <div class="col-md-12" style="margin-left: 25px; margin-top: 5px;">
+                                                <label><span class="world-color">@drop.CharacterLocation.World.Name</span> - <span class="area-color">@(string.Join(", ", drop.CharacterLocation.Areas.Select(x => x.Name)))</span></label><br />
+                                            </div>
+                                        }
+                                    }
+                                    
+                                    <div style="height: 25px;"></div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+
+            <div class="col-md-7">
+                <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
+                    <label>No scene appearance found in the Memory Archive for this recipe tutorial in this game.</label>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+@code {
+    [Parameter] public RecipeDto? Recipe { get; set; }
+    [Parameter] public WayfinderProjectAPI.Controllers.WayfinderController? API { get; set; }
+
+    [Parameter] public Func<Task>? GenerateShareLink { get; set; }
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+    //private SceneDto? firstAppearanceScene = new SceneDto();
+    //private bool loadingFirstAppearance = true;
+    //private string memoryArchiveWithoutGameLink = string.Empty;
+    //private string memoryArchiveWithGameLink = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        if (this.Recipe != null)
+        {
+            Task.Run(async () =>
+            {
+                //if (this.Recipe.Category == "Story" && this.API != null)
+                //{
+                //    string worldName = Recipe.Worlds.FirstOrDefault()?.Name ?? string.Empty;
+                //    this.firstAppearanceScene = await this.API.GetWorldsFirstAppearance(worldName, Recipe.Game.Name);
+                //}
+                //else if (this.Recipe.Category == "Character" && this.API != null)
+                //{
+                //    string characterName = Recipe.Characters.FirstOrDefault()?.Name ?? string.Empty;
+                //    this.firstAppearanceScene = await this.API.GetCharactersFirstAppearance(characterName, Recipe.Game.Name);
+                //}
+
+                //this.loadingFirstAppearance = false;
+
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            });
+
+
+            //this.memoryArchiveWithoutGameLink = $"{NavigationManager.BaseUri}memory_archive?{string.Join("&", Recipe.Characters.Select(character => $"characters={character.Id}"))}&category=Scenes";
+            //this.memoryArchiveWithGameLink = $"{NavigationManager.BaseUri}memory_archive?game={Recipe.Game.Id}&{string.Join("&", Recipe.Characters.Select(character => $"character={character.Id}"))}&category=Scenes";
+        }
+
+        base.OnInitialized();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}

@@ -1,0 +1,2159 @@
+{
+  "Inventory": {
+    "Kingdom Hearts": [
+      {
+        "Name": "Protect Chain",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 300,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Soldier",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Protera Chain",
+        "Category": "Accessory",
+        "Description": "Raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 800,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Large Body",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Bouncywild",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Powerwild",
+            "DropRate": 0.5,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Bandit",
+            "DropRate": 0.5,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Green Requiem",
+            "DropRate": 0.5,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Protega Chain",
+        "Category": "Accessory",
+        "Description": "Significantly raises (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 2800,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Fire Ring",
+        "Category": "Accessory",
+        "Description": "Reduces fire damage by 20% and slightly raises (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 450,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Fira Ring",
+        "Category": "Accessory",
+        "Description": "Reduces fire damage by 20% and raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 1200,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Red Nocturne",
+            "DropRate": 0.5,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Firaga Ring",
+        "Category": "Accessory",
+        "Description": "Reduces fire damage by 20% and significantly increases (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 4000,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Fat Bandit",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Firagun Band",
+        "Category": "Accessory",
+        "Description": "Reduces fire damage by 20%, and raises (+2) Strength and (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 8000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Blizzard Ring",
+        "Category": "Accessory",
+        "Description": "Reduces ice damage by 20% and slightly raises (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 450,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Blizzara Ring",
+        "Category": "Accessory",
+        "Description": "Reduces ice damage by 20% and raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 1200,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Blue Rhapsody",
+            "DropRate": 0.5,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Blizzaga Ring",
+        "Category": "Accessory",
+        "Description": "Reduces ice damage by 20% and significantly increases (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 4000,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Sea Neon",
+            "DropRate": 0.2,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Sheltering Zone",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Blizzagun Band",
+        "Category": "Accessory",
+        "Description": "Reduces ice damage by 20%, and raises (+2) Strength and (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 8000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Thunder Ring",
+        "Category": "Accessory",
+        "Description": "Reduces lightning damage by 20% and slightly raises (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 450,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Thundara Ring",
+        "Category": "Accessory",
+        "Description": "Reduces lightning damage by 20% and raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 1200,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Yellow Opera",
+            "DropRate": 0.5,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Thundaga Ring",
+        "Category": "Accessory",
+        "Description": "Reduces lightning damage by 20% and significantly increases (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 4000,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Aquatank",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Screwdiver",
+            "DropRate": 0.2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Thundagun Band",
+        "Category": "Accessory",
+        "Description": "Reduces lightning damage by 20%, and raises (+2) Strength and (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 8000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Element Ring",
+        "Category": "Accessory",
+        "Description": "Reduces fire, ice, and lightning damage by 20% and raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 4800,
+        "Currency": "Munny",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Battleship",
+            "DropRate": 2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Three Stars",
+        "Category": "Accessory",
+        "Description": "Reduces fire, ice, and lightning damage by 20% and significantly raises (+4) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Obsidian Ring",
+        "Category": "Accessory",
+        "Description": "Reduces dark damage by 20%, and slightly raises (+1) Strength.",
+        "AdditionalInformation": "",
+        "Cost": 1000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Chaos Ring",
+        "Category": "Accessory",
+        "Description": "Reduces dark damage by 20% and slightly raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 1800,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Dark Ring",
+        "Category": "Accessory",
+        "Description": "Reduces dark damage by 20% and slightly raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Ability Stud",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+2) max AP.",
+        "AdditionalInformation": "",
+        "Cost": 600,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Guard Earring",
+        "Category": "Accessory",
+        "Description": "Raises (+3) max AP and (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Master Earring",
+        "Category": "Accessory",
+        "Description": "Raises (+4) max AP and (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Power Chain",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+1) Strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Golem Chain",
+        "Category": "Accessory",
+        "Description": "Raises (+3) Strength and (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Titan Chain",
+        "Category": "Accessory",
+        "Description": "Significantly raises (+4) Strength and (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Energy Bangle",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+3) max HP and (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Angel Bangle",
+        "Category": "Accessory",
+        "Description": "Raises (+6) max HP and (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Gaia Bangle",
+        "Category": "Accessory",
+        "Description": "Significantly raises (+9) max HP and (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Magic Armlet",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+1) max MP. Also enhances magic and summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Rune Armlet",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+1) max MP and (+2) Defense. Also enhances magic and summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Atlas Armlet",
+        "Category": "Accessory",
+        "Description": "Raises (+2) max MP and (+2) Defense. Also significantly enhances magic and summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Brave Warrior",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+3) max HP and (+1) Strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Ifrit's Horn",
+        "Category": "Accessory",
+        "Description": "Reduces fire damage by 20% and raises (+1) max AP and (+1) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Trickmaster",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Inferno Band",
+        "Category": "Accessory",
+        "Description": "Reduces fire and dark damage by 20%. Also raises (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Cerberus",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "White Fang",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+1) Strength, (+1) Defense, and (+1) max AP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Sabor",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Ray of Light",
+        "Category": "Accessory",
+        "Description": "Slightly raises (+3) max HP and (+1) MP. Also enhances magic and summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Pot Centipede",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Holy Circlet",
+        "Category": "Accessory",
+        "Description": "Reduces fire, ice, and lightning damage by 20%. Also raises (+3) max AP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Oogie Boogie",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Raven’s Claw",
+        "Category": "Accessory",
+        "Description": "Reduces dark damage by 20%. Also raises (+2) Strength and (+2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Shadow Sora",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Omega Arts",
+        "Category": "Accessory",
+        "Description": "Raises (+3) max HP, (+3) Strength, and (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Behemoth",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Moogle Badge",
+        "Category": "Accessory",
+        "Description": "Raises (+6) max HP, (+1) max MP, and (+1) max AP. Also enhances magic and summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Cosmic Arts",
+        "Category": "Accessory",
+        "Description": "Greatly raises (+9) max HP, (+2) max MP, and (+2) max AP. Also enhances magic and summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Heartguard",
+        "Category": "Accessory",
+        "Description": "Raises (+3) max HP and (+4) Defense, and reduces dark damage by 20%.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Crystal Crown",
+        "Category": "Accessory",
+        "Description": "Raises (+6) max HP, (+1) max MP, (+3) max AP, (+2) Strength, and (+2) Defense. Also enhances Magic and Summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Ribbon",
+        "Category": "Accessory",
+        "Description": "Reduces all elemental damage by 20% and raises (+3) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Royal Crown",
+        "Category": "Accessory",
+        "Description": "Reduces fire, ice, and lightning damage by 20%. Raises (+2) max MP, but reduces (-3) Strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Prime Cap",
+        "Category": "Accessory",
+        "Description": "Greatly reduces (-5) Strength, but greatly increases (+5) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Pink Agaricus",
+            "DropRate": 100,
+            "AdditionalInformation": "If hit over 100 times."
+          }
+        ]
+      },
+      {
+        "Name": "Shiva Belt",
+        "Category": "Accessory",
+        "Description": "Reduces ice damage by 40%, and raises (+2) max MP. Also enhances magic and summon power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Ramuh Belt",
+        "Category": "Accessory",
+        "Description": "Reduces lightning damage by 40%, and raises (+2) max AP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Ifrit Belt",
+        "Category": "Accessory",
+        "Description": "Reduces fire damage by 40%, and raises (+3) Strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "EXP Earring",
+        "Category": "Accessory",
+        "Description": "Increases experience obtained by 20%.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "EXP Ring",
+        "Category": "Accessory",
+        "Description": "Increases experience obtained by 20% and slightly raises (+1) max MP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "EXP Bracelet",
+        "Category": "Accessory",
+        "Description": "Increases experience obtained by 30%, but reduces (-2) Strength and (-2) Defense.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "EXP Necklace",
+        "Category": "Accessory",
+        "Description": "Increases experience obtained by 30%, and slightly raises (+2) max AP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Xemnas",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Potion",
+        "Category": "Item",
+        "Description": "Restores 30 HP of one character.",
+        "AdditionalInformation": "",
+        "Cost": 60,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Hi-Potion",
+        "Category": "Item",
+        "Description": "Restores 60 HP of one character.",
+        "AdditionalInformation": "",
+        "Cost": 150,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mega-Potion",
+        "Category": "Item",
+        "Description": "Restores 30 HP of each party member.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Ether",
+        "Category": "Item",
+        "Description": "Restores 3 MP of one character.",
+        "AdditionalInformation": "",
+        "Cost": 100,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mega-Ether",
+        "Category": "Item",
+        "Description": "Restores 3 MP of each party member.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Elixir",
+        "Category": "Item",
+        "Description": "Fully restores a character’s HP and MP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Defender",
+            "DropRate": 0,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Wyvern",
+            "DropRate": 0,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Megalixir",
+        "Category": "Item",
+        "Description": "Fully restores the party’s HP and MP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Rare Truffle",
+            "DropRate": 100,
+            "AdditionalInformation": "If hit over 100 times."
+          }
+        ]
+      },
+      {
+        "Name": "Tent",
+        "Category": "Item",
+        "Description": "Fully restores the party’s HP.",
+        "AdditionalInformation": "",
+        "Cost": 250,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Camping Set",
+        "Category": "Item",
+        "Description": "Restores all HP and 3 MP of each party member.",
+        "AdditionalInformation": "",
+        "Cost": 500,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Cottage",
+        "Category": "Item",
+        "Description": "Fully restores the party’s HP and MP.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Power Up",
+        "Category": "Item",
+        "Description": "Raises Strength by 1.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Defense Up",
+        "Category": "Item",
+        "Description": "Raises Defense by 1.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "AP Up",
+        "Category": "Item",
+        "Description": "Raises max AP by 1.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Blaze Shard",
+        "Category": "Synthesis Material",
+        "Description": "A gem shard containing essence of fire.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Red Nocturne",
+            "DropRate": 6,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 100,
+            "AdditionalInformation": "If the third spell is Fire."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Traverse Town and after the second/third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Blazing Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with fire.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Chimera",
+            "DropRate": 35,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Chimera",
+            "DropRate": 20,
+            "AdditionalInformation": "When 6 heads are knocked back"
+          },
+          {
+            "EnemyName": "Chimera",
+            "DropRate": 40,
+            "AdditionalInformation": "When 9  heads are knocked back"
+          }
+        ]
+      },
+      {
+        "Name": "Blaze Gem",
+        "Category": "Synthesis Material",
+        "Description": "A gem containing essence of fire.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Bandit",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Fat Bandit",
+            "DropRate": 8,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": "If the third spell is Fire."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 40,
+            "AdditionalInformation": "If all three spells are Fire."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Traverse Town and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Frost Shard",
+        "Category": "Synthesis Material",
+        "Description": "A gem shard containing essence of ice.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Blue Rhapsody",
+            "DropRate": 12,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 100,
+            "AdditionalInformation": "If the third spell is Blizzard."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Wonderland and after the second/third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Frost Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with ice.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Grand Ghost",
+            "DropRate": 100,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Grand Ghost",
+            "DropRate": 5,
+            "AdditionalInformation": "When using a Mega-Potion"
+          },
+          {
+            "EnemyName": "Grand Ghost",
+            "DropRate": 10,
+            "AdditionalInformation": "When using a Mega-Ether"
+          },
+          {
+            "EnemyName": "Grand Ghost",
+            "DropRate": 35,
+            "AdditionalInformation": "When using an Elixir"
+          },
+          {
+            "EnemyName": "Grand Ghost",
+            "DropRate": 100,
+            "AdditionalInformation": "When using a Megalixir"
+          },
+          {
+            "EnemyName": "Grand Ghost",
+            "DropRate": 20,
+            "AdditionalInformation": "(2nd Drop) When using a Megalixir"
+          }
+        ]
+      },
+      {
+        "Name": "Frost Gem",
+        "Category": "Synthesis Material",
+        "Description": "A gem containing essence of ice.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Sea Neon",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Sheltering Zone",
+            "DropRate": 8,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": "If the third spell is Blizzard."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 40,
+            "AdditionalInformation": "If all three spells are Blizzard."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Wonderland and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Thunder Shard",
+        "Category": "Synthesis Material",
+        "Description": "A gem shard containing essence of thunder.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Yellow Opera",
+            "DropRate": 8,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 100,
+            "AdditionalInformation": "If the third spell is Thunder."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Deep Jungle and after the second/third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Lightning Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with lightning.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Black Ballade",
+            "DropRate": 10,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Black Ballade",
+            "DropRate": 100,
+            "AdditionalInformation": "If correct enemy is hit 4 times"
+          }
+        ]
+      },
+      {
+        "Name": "Thunder Gem",
+        "Category": "Synthesis Material",
+        "Description": "A gem containing essence of thunder.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Aquatank",
+            "DropRate": 8,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Screwdiver",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": "If the third spell is Thunder."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 40,
+            "AdditionalInformation": "If all three spells are Thunder."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Deep Jungle and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Lucid Shard",
+        "Category": "Synthesis Material",
+        "Description": "A gem shard containing essence of emptiness.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Shadow",
+            "DropRate": 6,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 100,
+            "AdditionalInformation": "If the third spell is Gravity."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Monstro and after the second/third time gauge is filled."
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 10,
+            "AdditionalInformation": "If first time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 20,
+            "AdditionalInformation": "If second time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 35,
+            "AdditionalInformation": "If third time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 50,
+            "AdditionalInformation": "If fourth time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 100,
+            "AdditionalInformation": "If fifth, sixth or seventh time defeated"
+          }
+        ]
+      },
+      {
+        "Name": "Lucid Gem",
+        "Category": "Synthesis Material",
+        "Description": "A gem containing essence of emptiness.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Gargoyle",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Wight Knight",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": "If the third spell is Gravity."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 40,
+            "AdditionalInformation": "If all three spells are Gravity."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Monstro and after the third time gauge is filled."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 10,
+            "AdditionalInformation": "If summoned in Monstro and after the second time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Lucid Crystal",
+        "Category": "Synthesis Material",
+        "Description": "Crystallized essence of emptiness.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Darkball",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 10,
+            "AdditionalInformation": "If summoned in Monstro and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Power Shard",
+        "Category": "Synthesis Material",
+        "Description": "A gem shard containing essence of strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Bouncywild",
+            "DropRate": 12,
+            "AdditionalInformation": "If defeated without a banana peel."
+          },
+          {
+            "EnemyName": "Bouncywild",
+            "DropRate": 24,
+            "AdditionalInformation": "If defeated with a banana peel."
+          },
+          {
+            "EnemyName": "Powerwild",
+            "DropRate": 8,
+            "AdditionalInformation": "If defeated without a banana peel."
+          },
+          {
+            "EnemyName": "Powerwild",
+            "DropRate": 16,
+            "AdditionalInformation": "If defeated with a banana peel."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 100,
+            "AdditionalInformation": "If the third spell is Stop."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Halloween Town and after the second/third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Power Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with power.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Sniperwild",
+            "DropRate": 35,
+            "AdditionalInformation": "If the sixth enemy is defeated"
+          },
+          {
+            "EnemyName": "Sniperwild",
+            "DropRate": 50,
+            "AdditionalInformation": "If the twelfth enemy is defeated"
+          },
+          {
+            "EnemyName": "Sniperwild",
+            "DropRate": 60,
+            "AdditionalInformation": "If the eighteenth enemy is defeated"
+          },
+          {
+            "EnemyName": "Sniperwild",
+            "DropRate": 100,
+            "AdditionalInformation": "If the twenty-fourth and thirtieth enemy is defeated"
+          }
+        ]
+      },
+      {
+        "Name": "Power Gem",
+        "Category": "Synthesis Material",
+        "Description": "A gem containing essence of strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Air Pirate",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Battleship",
+            "DropRate": 8,
+            "AdditionalInformation": "If defeated without destroying their mast."
+          },
+          {
+            "EnemyName": "Battleship",
+            "DropRate": 16,
+            "AdditionalInformation": "If defeated with destroying their mast."
+          },
+          {
+            "EnemyName": "Pirate",
+            "DropRate": 4,
+            "AdditionalInformation": "If defeated with a banana peel."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": "If the third spell is Stop."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 40,
+            "AdditionalInformation": "If all three spells are Stop."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in Halloween Town and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Power Crystal",
+        "Category": "Synthesis Material",
+        "Description": "Crystallized essence of spirit and strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Wyvern",
+            "DropRate": 2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Energy Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with energy.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Stealth Soldier",
+            "DropRate": 35,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Spirit Shard",
+        "Category": "Synthesis Material",
+        "Description": "A gem shard containing essence of fighting spirit.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Large Body",
+            "DropRate": 12,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Soldier",
+            "DropRate": 8,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 100,
+            "AdditionalInformation": "If the third spell is Aero."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 40,
+            "AdditionalInformation": "If summoned in Neverland and after the second time gauge is filled."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 60,
+            "AdditionalInformation": "If summoned in Neverland and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Fury Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with fury.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 10,
+            "AdditionalInformation": "If first time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 20,
+            "AdditionalInformation": "If second time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 35,
+            "AdditionalInformation": "If third time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 50,
+            "AdditionalInformation": "If fourth time defeated"
+          },
+          {
+            "EnemyName": "Gigas Shadow",
+            "DropRate": 100,
+            "AdditionalInformation": "If fifth, sixth or seventh time defeated"
+          }
+        ]
+      },
+      {
+        "Name": "Spirit Gem",
+        "Category": "Synthesis Material",
+        "Description": "A gem containing essence of fighting spirit.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Air Soldier",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": "If the third spell is Aero."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 40,
+            "AdditionalInformation": "If all three spells are Aero."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 30,
+            "AdditionalInformation": "If summoned in Neverland and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Bright Shard",
+        "Category": "Synthesis Material",
+        "Description": "A gem shard containing essence of vitality.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Green Requiem",
+            "DropRate": 10,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 100,
+            "AdditionalInformation": "If the third spell is Cure."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 40,
+            "AdditionalInformation": "If summoned in Agrabah and after the second time gauge is filled."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 60,
+            "AdditionalInformation": "If summoned in Agrabah and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Bright Gem",
+        "Category": "Synthesis Material",
+        "Description": "A gem containing essence of vitality.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Search Ghost",
+            "DropRate": 4,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": "If the third spell is Cure."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 40,
+            "AdditionalInformation": "If all three spells are Cure."
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 30,
+            "AdditionalInformation": "If summoned in Agrabah and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Bright Crystal",
+        "Category": "Synthesis Material",
+        "Description": "Crystalized essence of vitality.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Defender",
+            "DropRate": 2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Dazzling Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with light.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Jet Balloon",
+            "DropRate": 2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Shiny Crystal",
+        "Category": "Synthesis Material",
+        "Description": "A crystal bursting with the essence of three elements.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Wizard",
+            "DropRate": 2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Mythril Shard",
+        "Category": "Synthesis Material",
+        "Description": "A mineral shard containing rare metal.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Barrel Spider",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Arch Behemoth",
+            "DropRate": 20,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Pot Scorpion",
+            "DropRate": 20,
+            "AdditionalInformation": "After breaking all 11 pots"
+          },
+          {
+            "EnemyName": "Pot Spider",
+            "DropRate": 1,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 20,
+            "AdditionalInformation": "If summoned in End of the World and after the second/third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Mythril",
+        "Category": "Synthesis Material",
+        "Description": "An extremely rare metal ore.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Bambi",
+            "DropRate": 10,
+            "AdditionalInformation": "If summoned in End of the World and after the third time gauge is filled."
+          }
+        ]
+      },
+      {
+        "Name": "Mythril Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone born from a rare ore.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Pot Scorpion",
+            "DropRate": 10,
+            "AdditionalInformation": "After eleventh pot destroyed"
+          },
+          {
+            "EnemyName": "Pot Scorpion",
+            "DropRate": 20,
+            "AdditionalInformation": "If less than 11 pots are broken"
+          },
+          {
+            "EnemyName": "Pot Scorpion",
+            "DropRate": 35,
+            "AdditionalInformation": "After breaking all 11 pots"
+          }
+        ]
+      },
+      {
+        "Name": "Mystery Goo",
+        "Category": "Synthesis Material",
+        "Description": "Droplet of a crystalized, mysterious substance.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Rare Truffle",
+            "DropRate": 10,
+            "AdditionalInformation": "If juggled 10 times."
+          },
+          {
+            "EnemyName": "Rare Truffle",
+            "DropRate": 40,
+            "AdditionalInformation": "If juggled 50 times."
+          },
+          {
+            "EnemyName": "Rare Truffle",
+            "DropRate": 100,
+            "AdditionalInformation": "If juggled 100 times."
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 10,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "White Mushroom",
+            "DropRate": 20,
+            "AdditionalInformation": "If any spell is cast three times."
+          },
+          {
+            "EnemyName": "Black Fungus",
+            "DropRate": 20,
+            "AdditionalInformation": "If defeated with a combo finisher."
+          }
+        ]
+      },
+      {
+        "Name": "Serenity Power",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious crystal filled with feelings of gratification.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Pink Agaricus",
+            "DropRate": 10,
+            "AdditionalInformation": "If hit 40 times."
+          },
+          {
+            "EnemyName": "Pink Agaricus",
+            "DropRate": 20,
+            "AdditionalInformation": "If hit 70 times."
+          },
+          {
+            "EnemyName": "Pink Agaricus",
+            "DropRate": 100,
+            "AdditionalInformation": "If hit 100 times."
+          }
+        ]
+      },
+      {
+        "Name": "Gale",
+        "Category": "Synthesis Material",
+        "Description": "A howling gale frozen in crystal form.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Angel Star",
+            "DropRate": 6,
+            "AdditionalInformation": ""
+          },
+          {
+            "EnemyName": "Invisible",
+            "DropRate": 6,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Stormy Stone",
+        "Category": "Synthesis Material",
+        "Description": "A mysterious stone filled with wind.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Neoshadow",
+            "DropRate": 2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Orichalcum",
+        "Category": "Synthesis Material",
+        "Description": "A rare and most valuable ore.",
+        "AdditionalInformation": "",
+        "Cost": 5000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Dark Matter",
+        "Category": "Synthesis Material",
+        "Description": "A rare ore found once in a blue moon.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Wooden Sword",
+        "Category": "Keyblade",
+        "Description": "A toy sword made of wood.",
+        "AdditionalInformation": "Default weapon on Destiny Islands, also temporarily granted by Riku at Hollow Bastion.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Kingdom Key",
+        "Category": "Keyblade",
+        "Description": "The keychain attached draws out the Keyblade's true form and power.",
+        "AdditionalInformation": "Speak to Riku while the Heartless are attacking Destiny Islands.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Jungle King",
+        "Category": "Keyblade",
+        "Description": "Has a long reach, but seldom deals critical blows.",
+        "AdditionalInformation": "Lock the Keyhole in Deep Jungle.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Three Wishes",
+        "Category": "Keyblade",
+        "Description": "A powerful weapon that is difficult to deflect.",
+        "AdditionalInformation": "Lock the Keyhole in Agrabah.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Wishing Star",
+        "Category": "Keyblade",
+        "Description": "Has a short reach, but always finishes up a combo attack with a powerful critical blow.",
+        "AdditionalInformation": "Chest in Geppetto's House.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Spellbinder",
+        "Category": "Keyblade",
+        "Description": "Raises max MP by 2, and significantly enhances magic and summon power.",
+        "AdditionalInformation": "Speak to Merlin after acquiring all seven first-level magic spells.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Crabclaw",
+        "Category": "Keyblade",
+        "Description": "Raises max MP by 1, and enhances magic and summon power. Also deals good physical damage.",
+        "AdditionalInformation": "Lock the Keyhole in Atlantica.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Pumpkinhead",
+        "Category": "Keyblade",
+        "Description": "Has a long reach and the ability to deal a string of critical blows.",
+        "AdditionalInformation": "Lock the Keyhole in Halloween Town.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Fairy Harp",
+        "Category": "Keyblade",
+        "Description": "Raises max MP by 1, and enhances magic and summon power. Sometimes deals powerful critical blows.",
+        "AdditionalInformation": "Lock the Keyhole in Neverland.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Metal Chocobo",
+        "Category": "Keyblade",
+        "Description": "Possesses incredible power and reach, but reduces max MP by 1. Rarely deals critical blows.",
+        "AdditionalInformation": "Defeat Cloud in the Hercules Cup.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Olympia",
+        "Category": "Keyblade",
+        "Description": "A powerful weapon that is difficult to deflect. Capable of inflicting mighty critical blows.",
+        "AdditionalInformation": "Chest in the Coliseum's lobby after completing the Phil, Pegasus, and Hercules Cups.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Lady Luck",
+        "Category": "Keyblade",
+        "Description": "Raises max MP by 2, and significantly enhances magic and summon power. Also inflicts good physical damage.",
+        "AdditionalInformation": "White Trinity mark in the Wonderland's Lotus Forest.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Oblivion",
+        "Category": "Keyblade",
+        "Description": "Possesses colossal power, but reduces max MP by 1.",
+        "AdditionalInformation": "Chest in Hollow Bastion's Grand Hall.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Divine Rose",
+        "Category": "Keyblade",
+        "Description": "A powerful weapon that is difficult to deflect. Capable of dealing a string of critical blows.",
+        "AdditionalInformation": "After sealing Hollow Bastion's Keyhole, talk to Belle in the library.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Oathkeeper",
+        "Category": "Keyblade",
+        "Description": "Raises max MP by 1, and enhances magic and summon power. Capable of dealing a string of critical blows.",
+        "AdditionalInformation": "Talk to Kairi in Traverse Town's secret waterway after rescuing her.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Lionheart",
+        "Category": "Keyblade",
+        "Description": "Raises max MP by 1, and enhances magic and summon power. Also deals great physical damage.",
+        "AdditionalInformation": "Defeat Leon and Cloud in the Hades Cup.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Diamond Dust",
+        "Category": "Keyblade",
+        "Description": "Greatly enhances magic and summon power. Raises max MP by 3.",
+        "AdditionalInformation": "Complete the Gold Match.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "One-Winged Angel",
+        "Category": "Keyblade",
+        "Description": "Has little power, but sometimes deals extremely powerful critical blows. Reduces max MP by 2.",
+        "AdditionalInformation": "Complete the Platinum Match.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Ultima Weapon",
+        "Category": "Keyblade",
+        "Description": "The ultimate Keyblade. Raises max MP by 2, and possesses maximum power and attributes.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mage's Staff",
+        "Category": "Staff",
+        "Description": "A staff that heightens magic power.",
+        "AdditionalInformation": "Default weapon.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Morning Star",
+        "Category": "Staff",
+        "Description": "A staff that heightens magic power. Can also be used for physical attacks.",
+        "AdditionalInformation": "After defeating Guard Armor.",
+        "Cost": 300,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Warhammer",
+        "Category": "Staff",
+        "Description": "A hammer made for combat. Reduces max MP by 1.",
+        "AdditionalInformation": "After defeating Guard Armor.",
+        "Cost": 450,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Shooting Star",
+        "Category": "Staff",
+        "Description": "A staff that heightens magic power. Also fairly good for physical attacks.",
+        "AdditionalInformation": "After sealing Agrabah's Keyhole.",
+        "Cost": 800,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Magus Staff",
+        "Category": "Staff",
+        "Description": "A mystical staff brimming with power. Raises max MP by 1.",
+        "AdditionalInformation": "After sealing Agrabah's Keyhole.",
+        "Cost": 1200,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Silver Mallet",
+        "Category": "Staff",
+        "Description": "A powerful hammer made for combat. Reduces max MP by 1.",
+        "AdditionalInformation": "After sealing Agrabah's Keyhole.",
+        "Cost": 1200,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Wisdom Staff",
+        "Category": "Staff",
+        "Description": "A mystical staff brimming with power. Raises max MP by 1. Also fairly good for physical attacks.",
+        "AdditionalInformation": "After rescuing Kairi.",
+        "Cost": 4000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Grand Mallet",
+        "Category": "Staff",
+        "Description": "A tremendously powerful hammer made for combat. Reduces max MP by 1.",
+        "AdditionalInformation": "After rescuing Kairi.",
+        "Cost": 4000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Wizard's Relic",
+        "Category": "Staff",
+        "Description": "An enormously powerful staff sometimes left behind by Wizards. Raises max MP by 2.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Wizard",
+            "DropRate": 0.2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Lord Fortune",
+        "Category": "Staff",
+        "Description": "A staff strong in both physical and magical power. Raises max MP by 1.",
+        "AdditionalInformation": "Speak with the Fairy Godmother after obtaining all Summons.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Violetta",
+        "Category": "Staff",
+        "Description": "A rod that sometimes inflicts massive damage. Reduces max MP by 1.",
+        "AdditionalInformation": "White Trinity mark at the Coliseum gates.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Dream Rod",
+        "Category": "Staff",
+        "Description": "A mysterious rod holding unknown power. Raises max MP by 2.",
+        "AdditionalInformation": "Speak to Merlin after acquiring all seven third-level magic spells.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Save the Queen",
+        "Category": "Staff",
+        "Description": "A staff of immense magical and physical power. Raises max MP by 2.",
+        "AdditionalInformation": "Complete the Hades Cup solo.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Meteor Strike",
+        "Category": "Staff",
+        "Description": "The most powerful staff. Sometimes deals critical blows.",
+        "AdditionalInformation": "Chest at the End of the World's giant crevasse.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Fantasista",
+        "Category": "Staff",
+        "Description": "A staff that focuses solely on magic. Raises max MP by 3.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Knight’s Shield",
+        "Category": "Shield",
+        "Description": "A standard-issue knight's shield.",
+        "AdditionalInformation": "Default weapon.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Smasher",
+        "Category": "Shield",
+        "Description": "A shield made for attack rather than defense. Small and easy to handle.",
+        "AdditionalInformation": "After defeating Guard Armor.",
+        "Cost": 450,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Stout Shield",
+        "Category": "Shield",
+        "Description": "A large shield better suited for defense than offense. Effective against various forms of attack.",
+        "AdditionalInformation": "After defeating Guard Armor.",
+        "Cost": 450,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mythril Shield",
+        "Category": "Shield",
+        "Description": "A shield that strikes a fine balance between attack and defense.",
+        "AdditionalInformation": "After sealing Agrabah's Keyhole.",
+        "Cost": 800,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Gigas Fist",
+        "Category": "Shield",
+        "Description": "A small, powerful shield made for attack rather than defense.",
+        "AdditionalInformation": "After sealing Agrabah's Keyhole.",
+        "Cost": 1200,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Golem Shield",
+        "Category": "Shield",
+        "Description": "A large shield best suited for defense. Also an effective assault weapon.",
+        "AdditionalInformation": "After sealing Agrabah's Keyhole.",
+        "Cost": 1200,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Onyx Shield",
+        "Category": "Shield",
+        "Description": "A well-balanced and effective shield for both attack and defense.",
+        "AdditionalInformation": "After rescuing Kairi.",
+        "Cost": 2800,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Adamant Shield",
+        "Category": "Shield",
+        "Description": "A large shield best suited for defense. Effective against various attacks, and also a powerful assault weapon.",
+        "AdditionalInformation": "After rescuing Kairi.",
+        "Cost": 4000,
+        "Currency": "Munny",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Dream Shield",
+        "Category": "Shield",
+        "Description": "A shield to protect loved ones. Raises max MP by 2.",
+        "AdditionalInformation": "Speak to Merlin after acquiring all seven spell arts from the White Mushrooms.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Herc's Shield",
+        "Category": "Shield",
+        "Description": "A shield with enormous power sealed within. Made for attacking.",
+        "AdditionalInformation": "Complete the Hercules Cup.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Defender",
+        "Category": "Shield",
+        "Description": "A rugged shield sometimes left behind by Defenders. Raises max MP by 1.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": [
+          {
+            "EnemyName": "Defender",
+            "DropRate": 0.2,
+            "AdditionalInformation": ""
+          }
+        ]
+      },
+      {
+        "Name": "Genji Shield",
+        "Category": "Shield",
+        "Description": "A shield of surpassing offensive and defensive strength.",
+        "AdditionalInformation": "Defeat Yuffie in the Hades Cup.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Save the King",
+        "Category": "Shield",
+        "Description": "The most powerful shield. Raises max MP by 2.",
+        "AdditionalInformation": "Complete the Hades Cup’s time trial.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mighty Shield",
+        "Category": "Shield",
+        "Description": "The most powerful shield. Small, but effective.",
+        "AdditionalInformation": "Chest at the End of the World's world terminus.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Seven Elements",
+        "Category": "Shield",
+        "Description": "A shield that focuses solely on magic. Raises max MP by 3.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      }
+    ],
+    "Kingdom Hearts Re:Chain of Memories": [
+      
+    ],
+    "Kingdom Hearts II": [
+      
+    ],
+    "Kingdom Hearts 358/2 Days": [
+      
+    ],
+    "Kingdom Hearts Birth By Sleep": [
+      
+    ],
+    "Kingdom Hearts Re:Coded": [
+      
+    ],
+    "Kingdom Hearts Dream Drop Distance": [
+      
+    ],
+    "Kingdom Hearts χ Back Cover": [
+      
+    ],
+    "Kingdom Hearts III": [
+      
+    ]
+  }
+}

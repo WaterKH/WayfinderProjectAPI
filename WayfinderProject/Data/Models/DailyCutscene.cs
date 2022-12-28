@@ -8,5 +8,6 @@ namespace WayfinderProject.Data.Models
         public int Id { get; set; }
         public string DateCode { get; set; } = string.Empty;
         public int SceneId { get; set; }
+        public bool HasTweeted { get; set; }
     }
 }

@@ -1726,9 +1726,9 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.StoryWorldsSearch != null)
         {
-            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
-            this.StoryWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            this.StoryWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
             await this.StoryWorldsSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
@@ -1773,9 +1773,9 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.ReportWorldsSearch != null)
         {
-            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
-            this.ReportWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            this.ReportWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
             await this.ReportWorldsSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
@@ -1820,9 +1820,9 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.CharacterWorldsSearch != null)
         {
-            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
-            this.CharacterWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            this.CharacterWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
             await this.CharacterWorldsSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
@@ -1867,9 +1867,9 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.EnemyWorldsSearch != null)
         {
-            var WorldIds = this.WorldQuery.Select(x => int.Parse(x));
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
-            this.EnemyWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => WorldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            this.EnemyWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
             await this.EnemyWorldsSearch.SetCurrentView("Selected");
 
             optionUpdated = true;

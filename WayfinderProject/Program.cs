@@ -59,6 +59,15 @@ builder.Services.AddQuartz(q =>
 {
     q.UseMicrosoftDependencyInjectionJobFactory();
 
+    // Creation Daily Job
+    var creationJobKey = new JobKey("DailyCreationJob");
+    q.AddJob<DailyCreationJob>(opts => opts.WithIdentity(creationJobKey));
+
+    q.AddTrigger(opts => opts
+        .ForJob(creationJobKey)
+        .WithIdentity("DailyCreationJob-trigger")
+        .WithCronSchedule("0 0 * * * ?")); // run every day at midnight
+
     // Cutscene Daily Job
     var cutsceneJobKey = new JobKey("DailyCutsceneJob");
     q.AddJob<DailyCutsceneJob>(opts => opts.WithIdentity(cutsceneJobKey));
@@ -66,7 +75,7 @@ builder.Services.AddQuartz(q =>
     q.AddTrigger(opts => opts
         .ForJob(cutsceneJobKey)
         .WithIdentity("DailyCutsceneJob-trigger")
-        .WithCronSchedule("0 0 * * * ?")); // run every day at midnight
+        .WithCronSchedule("0 1 * * * ?")); // run every day at 1am
 
     // Entry Daily Job
     var entryJobKey = new JobKey("DailyEntryJob");
@@ -75,7 +84,16 @@ builder.Services.AddQuartz(q =>
     q.AddTrigger(opts => opts
         .ForJob(entryJobKey)
         .WithIdentity("DailyEntryJob-trigger")
-        .WithCronSchedule("0 0 * * * ?")); // run every day at midnight
+        .WithCronSchedule("0 21 * * * ?")); // run every day at 9pm
+
+    // Moogle Record Daily Job
+    var moogleRecordJobKey = new JobKey("DailyMoogleRecordJob");
+    q.AddJob<DailyMoogleRecordJob>(opts => opts.WithIdentity(moogleRecordJobKey));
+
+    q.AddTrigger(opts => opts
+        .ForJob(moogleRecordJobKey)
+        .WithIdentity("DailyMoogleRecordJob-trigger")
+        .WithCronSchedule("0 5 * * * ?")); // run every day at 5am
 });
 
 builder.Services.AddQuartzHostedService(opt =>

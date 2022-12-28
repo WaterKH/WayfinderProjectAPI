@@ -16,5 +16,8 @@ namespace WayfinderProjectAPI.Data.Models
 
         [AllowNull]
         public virtual ICollection<Scene> Scenes { get; set; }
+
+        [AllowNull]
+        public virtual ICollection<CharacterLocation> CharacterLocations { get; set; }
     }
 }

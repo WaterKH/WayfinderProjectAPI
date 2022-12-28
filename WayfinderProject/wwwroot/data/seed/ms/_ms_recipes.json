@@ -1,0 +1,379 @@
+{
+  "Recipes": {
+    "Kingdom Hearts": [
+      {
+        "Name": "Mega-Potion",
+        "Category": "Item",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Spirit Shard": 1,
+          "Power Shard": 1,
+          "Mythril Shard": 4
+        }
+      },
+      {
+        "Name": "Cottage",
+        "Category": "Item",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Lucid Shard": 1,
+          "Bright Shard": 1
+        }
+      },
+      {
+        "Name": "Mega-Ether",
+        "Category": "Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 2 by synthesizing 3 items.",
+        "MaterialsNeeded": {
+          "Blaze Shard": 1,
+          "Frost Shard": 1,
+          "Thunder Shard": 1,
+          "Mythril": 2
+        }
+      },
+      {
+        "Name": "AP Up",
+        "Category": "Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 3 by synthesizing 9 items.",
+        "MaterialsNeeded": {
+          "Blaze Gem": 2,
+          "Frost Gem": 2,
+          "Thunder Gem": 2,
+          "Mythril": 4
+        }
+      },
+      {
+        "Name": "Elixir",
+        "Category": "Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 4 by synthesizing 15 items.",
+        "MaterialsNeeded": {
+          "Power Crystal": 1,
+          "Shiny Crystal": 1,
+          "Bright Crystal": 2,
+          "Orichalcum": 3
+        }
+      },
+      {
+        "Name": "Defense Up",
+        "Category": "Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 4 by synthesizing 15 items.",
+        "MaterialsNeeded": {
+          "Lucid Shard": 3,
+          "Bright Shard": 3,
+          "Bright Gem": 2,
+          "Power Crystal": 1,
+          "Orichalcum": 5
+        }
+      },
+      {
+        "Name": "Megalixir",
+        "Category": "Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 5 by synthesizing 21 items.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 5,
+          "Lucid Crystal": 3,
+          "Gale": 2,
+          "Dark Matter": 1
+        }
+      },
+      {
+        "Name": "Power Up",
+        "Category": "Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 5 by synthesizing 21 items.",
+        "MaterialsNeeded": {
+          "Spirit Shard": 5,
+          "Spirit Gem": 3,
+          "Power Shard": 5,
+          "Power Gem": 3,
+          "Dark Matter": 1
+        }
+      },
+      {
+        "Name": "Energy Bangle",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Spirit Shard": 2,
+          "Bright Shard": 1
+        }
+      },
+      {
+        "Name": "Power Chain",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Power Shard": 2,
+          "Lucid Shard": 1
+        }
+      },
+      {
+        "Name": "Magic Armlet",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Blaze Shard": 3,
+          "Frost Shard": 3,
+          "Thunder Shard": 3
+        }
+      },
+      {
+        "Name": "EXP Earring",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Fury Stone": 1,
+          "Power Stone": 1,
+          "Mythril Stone": 1,
+          "Serenity Power": 1,
+          "Dark Matter": 3
+        }
+      },
+      {
+        "Name": "Guard Earring",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 2 by synthesizing 3 items.",
+        "MaterialsNeeded": {
+          "Bright Shard": 3,
+          "Frost Shard": 1,
+          "Mythril Shard": 3
+        }
+      },
+      {
+        "Name": "Angel Bangle",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 2 by synthesizing 3 items.",
+        "MaterialsNeeded": {
+          "Thunder Shard": 3,
+          "Bright Gem": 1
+        }
+      },
+      {
+        "Name": "Golem Chain",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 2 by synthesizing 3 items.",
+        "MaterialsNeeded": {
+          "Blaze Shard": 3,
+          "Spirit Gem": 1
+        }
+      },
+      {
+        "Name": "Rune Armlet",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 2 by synthesizing 3 items.",
+        "MaterialsNeeded": {
+          "Blaze Gem": 3,
+          "Frost Gem": 3,
+          "Thunder Gem": 3
+        }
+      },
+      {
+        "Name": "Moogle Badge",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 2 by synthesizing 3 items.",
+        "MaterialsNeeded": {
+          "Blazing Stone": 1,
+          "Frost Stone": 1,
+          "Lightning Stone": 1,
+          "Mythril": 5,
+          "Orichalcum": 3
+        }
+      },
+      {
+        "Name": "Dark Ring",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 3 by synthesizing 9 items.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 2,
+          "Bright Gem": 2
+        }
+      },
+      {
+        "Name": "Master Earring",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 3 by synthesizing 9 items.",
+        "MaterialsNeeded": {
+          "Spirit Shard": 5,
+          "Spirit Gem": 3,
+          "Fury Stone": 1
+        }
+      },
+      {
+        "Name": "Gaia Bangle",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 3 by synthesizing 9 items.",
+        "MaterialsNeeded": {
+          "Lucid Shard": 5,
+          "Lucid Gem": 3,
+          "Lightning Stone": 1
+        }
+      },
+      {
+        "Name": "Titan Chain",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 3 by synthesizing 9 items.",
+        "MaterialsNeeded": {
+          "Power Shard": 5,
+          "Power Gem": 3,
+          "Power Stone": 1
+        }
+      },
+      {
+        "Name": "Heartguard",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 4 by synthesizing 15 items.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 3,
+          "Lucid Crystal": 1,
+          "Bright Crystal": 1
+        }
+      },
+      {
+        "Name": "Three Stars",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 4 by synthesizing 15 items.",
+        "MaterialsNeeded": {
+          "Power Gem": 5,
+          "Mystery Goo": 3,
+          "Shiny Crystal": 1
+        }
+      },
+      {
+        "Name": "Atlas Armlet",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 4 by synthesizing 15 items.",
+        "MaterialsNeeded": {
+          "Blaze Shard": 5,
+          "Frost Shard": 5,
+          "Thunder Shard": 5,
+          "Mystery Goo": 1,
+          "Dark Matter": 3
+        }
+      },
+      {
+        "Name": "Crystal Crown",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 4 by synthesizing 15 items.",
+        "MaterialsNeeded": {
+          "Lucid Shard": 5,
+          "Power Crystal": 1,
+          "Shiny Crystal": 1,
+          "Blazing Stone": 3,
+          "Frost Stone": 3
+        }
+      },
+      {
+        "Name": "Cosmic Arts",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 5 by synthesizing 21 items.",
+        "MaterialsNeeded": {
+          "Bright Shard": 5,
+          "Bright Gem": 3,
+          "Bright Crystal": 1,
+          "Mythril Stone": 3
+        }
+      },
+      {
+        "Name": "EXP Bracelet",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 5 by synthesizing 21 items.",
+        "MaterialsNeeded": {
+          "Energy Stone": 1,
+          "Dazzling Stone": 1,
+          "Stormy Stone": 1,
+          "Orichalcum": 8,
+          "Dark Matter": 3
+        }
+      },
+      {
+        "Name": "Ribbon",
+        "Category": "Accessory",
+        "UnlockConditionDescription": "Unlock Synthesis Set 5 by synthesizing 21 items.",
+        "MaterialsNeeded": {
+          "Blaze Gem": 3,
+          "Frost Gem": 5,
+          "Thunder Gem": 5,
+          "Gale": 1,
+          "Serenity Power": 3
+        }
+      },
+      {
+        "Name": "Mythril",
+        "Category": "Synthesis Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 3 by synthesizing 9 items.",
+        "MaterialsNeeded": {
+          "Mythril Shard": 5,
+          "Mythril Stone": 1,
+          "Mystery Goo": 1
+        }
+      },
+      {
+        "Name": "Dark Matter",
+        "Category": "Synthesis Item",
+        "UnlockConditionDescription": "Unlock Synthesis Set 5 by synthesizing 21 items.",
+        "MaterialsNeeded": {
+          "Lucid Shard": 9,
+          "Gale": 1,
+          "Mythril": 2
+        }
+      },
+      {
+        "Name": "Fantasista",
+        "Category": "Staff",
+        "UnlockConditionDescription": "Unlock Synthesis Set 6 by synthesizing 30 items.",
+        "MaterialsNeeded": {
+          "Fury Stone": 3,
+          "Power Stone": 3,
+          "Mythril Stone": 3,
+          "Energy Stone": 5
+        }
+      },
+      {
+        "Name": "Seven Elements",
+        "Category": "Shield",
+        "UnlockConditionDescription": "Unlock Synthesis Set 6 by synthesizing 30 items.",
+        "MaterialsNeeded": {
+          "Blazing Stone": 3,
+          "Frost Stone": 3,
+          "Lightning Stone": 3,
+          "Dazzling Stone": 5
+        }
+      },
+      {
+        "Name": "Ultima Weapon",
+        "Category": "Keyblade",
+        "UnlockConditionDescription": "Unlock Synthesis Set 6 by synthesizing 30 items.",
+        "MaterialsNeeded": {
+          "Thunder Gem": 5,
+          "Mystery Goo": 5,
+          "Serenity Power": 3,
+          "Stormy Stone": 3,
+          "Dark Matter": 3
+        }
+      }
+    ],
+    "Kingdom Hearts Re:Chain of Memories": [
+      
+    ],
+    "Kingdom Hearts II": [
+      
+    ],
+    "Kingdom Hearts 358/2 Days": [
+      
+    ],
+    "Kingdom Hearts Birth By Sleep": [
+      
+    ],
+    "Kingdom Hearts Re:Coded": [
+      
+    ],
+    "Kingdom Hearts Dream Drop Distance": [
+      
+    ],
+    "Kingdom Hearts χ Back Cover": [
+      
+    ],
+    "Kingdom Hearts III": [
+      
+    ]
+  }
+}

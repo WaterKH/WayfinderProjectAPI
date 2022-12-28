@@ -10,22 +10,7 @@
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Remove="wwwroot\data\seed\jj\_jj_characters.json~RF30d0f2c.TMP" />
-    <Content Remove="wwwroot\data\seed\scripts\_kh0_2_lines.json~RF26577320.TMP" />
-    <Content Remove="wwwroot\data\seed\scripts\_khux_lines.json~RF21f1c183.TMP" />
-    <Content Remove="wwwroot\data\seed\_games.json~RF108e4fa1.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Components\Common\Tooltip.razor~RFfdb528.TMP" />
-    <None Remove="Data\DTOs\ScriptLineDto.cs~RF21264c9d.TMP" />
-    <None Remove="Data\Models\DailyCutscene.cs~RF103f945b.TMP" />
-    <None Remove="Data\WayfinderProject.db" />
-    <None Remove="Pages\Index.razor~RF1edb7af7.TMP" />
-    <None Remove="Pages\Index.razor~RF1ef9fdd1.TMP" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Blazored.Modal" Version="7.1.0" />
     <PackageReference Include="Blazored.Toast" Version="3.2.2" />
@@ -131,14 +116,6 @@
     <Content Update="wwwroot\images\WFP_logo_INVIS.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\DTOs\Jimminy%27sJournal\" />
-    <Folder Include="Data\DTOs\MoogleShop\" />
-    <Folder Include="Data\Models\MoogleShop\" />
-    <Folder Include="Data\Models\MemoryArchive\" />
-    <Folder Include="wwwroot\data\seed\ms\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4seed_4_3areas_1json__JsonSchema="https://appliedengdesign.github.io/cnccodes-json-schema/draft/2022-07/schema" wwwroot_4data_4seed_4scripts_4_3kh3_3lines_1json__JsonSchema="r" /></VisualStudio></ProjectExtensions>

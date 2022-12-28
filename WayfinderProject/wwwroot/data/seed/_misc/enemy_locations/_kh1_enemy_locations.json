@@ -1,0 +1,989 @@
+{
+  "EnemyLocations": {
+    "Kingdom Hearts": [
+      {
+        "CharacterName": "Air Pirate(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Monstro": [
+            "Bowels",
+            "Chamber 2",
+            "Chamber 6",
+            "Stomach",
+            "Throat"
+          ],
+          "Neverland": [
+            "Deck"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Air Soldier(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Gizmo Shop",
+            "Third District"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Agrabah": [
+            "Alley",
+            "Desert"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Angel Star(s)",
+        "WorldWithAreas": {
+          "End of the World": [
+            ""
+          ],
+          "Olympus Coliseum": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Aquatank(s)",
+        "WorldWithAreas": {
+          "Atlantica": [
+            "Undersea Valley",
+            "Triton’s Palace",
+            "Undersea Cavern",
+            "Undersea Gorge"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Arch Behemoth(s)",
+        "WorldWithAreas": {
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Bandit(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Agrabah": [
+            "Alley",
+            "Bazaar",
+            "Desert"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Barrel Spider(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Monstro": [
+            "Bowels",
+            "Chamber 2",
+            "Chamber 5",
+            "Chamber 6"
+          ],
+          "Neverland": [
+            "Hold"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Battleship(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Neverland": [
+            "Deck"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Behemoth(s)",
+        "WorldWithAreas": {
+          "Hollow Bastion": [
+            ""
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Black Ballade(s)",
+        "WorldWithAreas": {
+          "Deep Jungle": [
+            "Bamboo Thicket"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Black Fungus(i)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Agrabah": [
+            "Bazaar"
+          ],
+          "Halloween Town": [
+            "Moonlight Hill"
+          ],
+          "Hollow Bastion": [
+            "Dungeon"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Blue Rhapsody(ies)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Alleyway",
+            "Green Room",
+            "Hallway",
+            "Second District",
+            "Third District"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Bouncywild(s)",
+        "WorldWithAreas": {
+          "Deep Jungle": [
+            "Bamboo Thicket",
+            "Camp",
+            "Cliff",
+            "Tree House"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Chimera(s)",
+        "WorldWithAreas": {
+          "Halloween Town": [
+            "Manor Ruins"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Darkball(s)",
+        "WorldWithAreas": {
+          "Hollow Bastion": [
+            "Castle Gates",
+            "Dungeon",
+            "Entrance Hall",
+            "Great Crest",
+            "High Tower",
+            "Lift Stop"
+          ],
+          "Traverse Town": [
+            "Alleyway",
+            "Gizmo Shop",
+            "Red Room",
+            "Second District",
+            "Third District"
+          ],
+          "Wonderland": [
+            "Bizarre Room",
+            "Lotus Forest",
+            "Rabbit Hole"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Deep Jungle": [
+            "Bamboo Thicket",
+            "Tree House"
+          ],
+          "Agrabah": [
+            "Alley",
+            "Bazaar",
+            "Bottomless Hall",
+            "Entrance",
+            "Hall",
+            "Palace Gates",
+            "Plaza",
+            "Treasure Room"
+          ],
+          "Monstro": [
+            "Bowels",
+            "Chamber 1",
+            "Chamber 2",
+            "Chamber 3",
+            "Chamber 5",
+            "Chamber 6",
+            "Throat"
+          ],
+          "Atlantica": [
+            "Undersea Valley",
+            "Below Deck",
+            "Calm Depths",
+            "Den of Tides",
+            "Sunken Ship",
+            "Tidal Abyss",
+            "Triton’s Palace",
+            "Undersea Cavern",
+            "Undersea Gorge"
+          ],
+          "Halloween Town": [
+            "Manor Ruins",
+            "Moonlight Hill"
+          ],
+          "Neverland": [
+            "Cabin",
+            "Captain’s Cabin",
+            "Freezer",
+            "Hold",
+            "Deck"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Darkside(s)",
+        "WorldWithAreas": {
+          "Dive to the Heart": [
+            ""
+          ],
+          "Destiny Islands": [
+            ""
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Defender(s)",
+        "WorldWithAreas": {
+          "Hollow Bastion": [
+            "Base Level",
+            "Castle Gates",
+            "Dungeon",
+            "Entrance Hall",
+            "Great Crest",
+            "High Tower",
+            "Lift Stop",
+            "Waterway"
+          ],
+          "Traverse Town": [
+            "Gizmo Shop",
+            "Hallway",
+            "Third District"
+          ],
+          "Wonderland": [
+            "Bizarre Room",
+            "Rabbit Hole"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Destroyed Behemoth(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Fat Bandit(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Agrabah": [
+            "Bottomless Hall",
+            "Desert"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Gargoyle(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Halloween Town": [
+            "Bridge",
+            "Graveyard",
+            "Moonlight Hill"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Gigas Shadow(s)",
+        "WorldWithAreas": {
+          "Wonderland": [
+            "Bizarre Room"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Grand Ghost(s)",
+        "WorldWithAreas": {
+          "Monstro": [
+            "Stomach"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Green Requiem(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Alleyway",
+            "Gizmo Shop",
+            "Second District"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Agrabah": [
+            "Hall",
+            "Main Street",
+            "Palace Gates"
+          ],
+          "Monstro": [
+            "Chamber 1",
+            "Chamber 2",
+            "Chamber 3",
+            "Chamber 5",
+            "Chamber 6",
+            "Throat;"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Guard Armor",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Second District"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Invisible(s)",
+        "WorldWithAreas": {
+          "End of the World": [
+            ""
+          ],
+          "Olympus Coliseum": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Jet Balloon(s)",
+        "WorldWithAreas": {
+          "Neverland": [
+            "Deck"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Kurt Zisa",
+        "WorldWithAreas": {
+          "Agrabah": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Large Body(ies)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Gizmo Shop",
+            "Second District"
+          ],
+          "Wonderland": [
+            "Bizarre Room",
+            "Lotus Forest",
+            "Rabbit Hole"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Monstro": [
+            "Bowels",
+            "Chamber 3",
+            "Chamber 5",
+            "Chamber 6",
+            "Stomach;"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Neoshadow(s)",
+        "WorldWithAreas": {
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Opposite Armor",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Second District"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Parasite Cage",
+        "WorldWithAreas": {
+          "Monstro": [
+            "Stomach"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Phantom",
+        "WorldWithAreas": {
+          "Neverland": [
+            "Clocktower"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Pink Agaricus(i)",
+        "WorldWithAreas": {
+          "Deep Jungle": [
+            "Tree House"
+          ],
+          "Atlantica": [
+            "Undersea Cavern"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Pirate(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Neverland": [
+            "Cabin",
+            "Captain’s Cabin",
+            "Freezer",
+            "Galley",
+            "Hold",
+            "Deck"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Pot Centipede",
+        "WorldWithAreas": {
+          "Agrabah": [
+            "Main Street",
+            "Palace Gates",
+            "Plaza"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Pot Scorpion(s)",
+        "WorldWithAreas": {
+          "Agrabah": [
+            "Palace Gates"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Pot Spider(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Agrabah": [
+            "Alley",
+            "Bazaar",
+            "Bottomless Hall",
+            "Main Street",
+            "Palace Gates",
+            "Plaza"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Powerwild(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Deep Jungle": [
+            "Bamboo Thicket",
+            "Camp",
+            "Cliff",
+            "Climbing Trees",
+            "Tree House"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Rare Truffle(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Monstro": [
+            "Throat"
+          ],
+          "Halloween Town": [
+            "Bridge"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Red Armor",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Red Nocturne(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Alleyway",
+            "Hallway",
+            "Red Room",
+            "Second District",
+            "Third District"
+          ],
+          "Wonderland": [
+            "Bizarre Room",
+            "Lotus Forest",
+            "Rabbit Hole"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Screwdiver(s)",
+        "WorldWithAreas": {
+          "Atlantica": [
+            "Undersea Valley",
+            "Below Deck",
+            "Triton’s Palace",
+            "Undersea Cavern",
+            "Undersea Gorge"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Sea Neon(s)",
+        "WorldWithAreas": {
+          "Atlantica": [
+            "Undersea Valley",
+            "Calm Depths",
+            "Triton’s Palace",
+            "Undersea Garden"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Search Ghost(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Monstro": [
+            "Bowels",
+            "Chamber 1",
+            "Chamber 3",
+            "Chamber 5",
+            "Throat"
+          ],
+          "Atlantica": [
+            "Undersea Valley",
+            "Den of Tides",
+            "Sunken Ship",
+            "Triton’s Palace"
+          ],
+          "Traverse Town": [
+            "Alleyway",
+            "Gizmo Shop",
+            "Green Room",
+            "Second District"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Shadow(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Third District"
+          ],
+          "Wonderland": [
+            "Bizarre Room",
+            "Lotus Forest",
+            "Rabbit Hole"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Deep Jungle": [
+            "Bamboo Thicket",
+            "Camp",
+            "Cliff"
+          ],
+          "Agrabah": [
+            "Alley",
+            "Bottomless Hall",
+            "Hall",
+            "Plaza",
+            "Treasure Room"
+          ],
+          "Monstro": [
+            "Bowels",
+            "Chamber 1",
+            "Chamber 2",
+            "Chamber 3",
+            "Chamber 5"
+          ],
+          "Halloween Town": [
+            "Moonlight Hill"
+          ],
+          "Neverland": [
+            "Cabin",
+            "Captain’s Cabin",
+            "Freezer",
+            "Galley",
+            "Deck"
+          ],
+          "Hollow Bastion": [
+            "Castle Gates",
+            "Entrance Hall",
+            "Great Crest",
+            "High Tower",
+            "Lift Stop"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Sheltering Zone(s)",
+        "WorldWithAreas": {
+          "Atlantica": [
+            "Undersea Valley",
+            "Calm Depths",
+            "Sunken Ship",
+            "Tidal Abyss",
+            "Triton’s Palace"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Sneak Army(ies)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Sniperwild(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Second District"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Soldier(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Third District"
+          ],
+          "Wonderland": [
+            "Bizarre Room",
+            "Lotus Forest",
+            "Rabbit Hole"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Stealth Sneak(s)",
+        "WorldWithAreas": {
+          "Deep Jungle": [
+            "Cliff"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Stealth Soldier(s)",
+        "WorldWithAreas": {
+          "Hollow Bastion": [
+            "Entrance Hall"
+          ]
+        }
+      },
+      {
+        "CharacterName": "Trickmaster",
+        "WorldWithAreas": {
+          "Wonderland": [
+            "Bizarre Room"
+          ]
+        }
+      },
+      {
+        "CharacterName": "White Mushroom(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Red Room"
+          ],
+          "Wonderland": [
+            "Lotus Forest"
+          ],
+          "Deep Jungle": [
+            "Camp"
+          ],
+          "Agrabah": [
+            "Palace Gates"
+          ],
+          "Atlantica": [
+            "Below Deck",
+            "Undersea Cavern"
+          ],
+          "Halloween Town": [
+            "Graveyard"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Wight Knight(s)",
+        "WorldWithAreas": {
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Halloween Town": [
+            "Moonlight Hill",
+            "Graveyard",
+            "Manor Ruins",
+            "Moonlight Hill"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Wizard(s)",
+        "WorldWithAreas": {
+          "Hollow Bastion": [
+            "Base Level",
+            "Entrance Hall",
+            "Great Crest",
+            "High Tower",
+            "Lift Stop",
+            "Waterway"
+          ],
+          "Traverse Town": [
+            "Alleyway",
+            "Gizmo Shop",
+            "Hallway"
+          ],
+          "Wonderland": [
+            "Bizarre Room",
+            "Lotus Forest",
+            "Rabbit Hole"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Deep Jungle": [
+            "Bamboo Thicket",
+            "Camp"
+          ],
+          "Agrabah": [
+            "Alley",
+            "Entrance",
+            "Hall",
+            "Main Street",
+            "Palace Gates",
+            "Treasure Room"
+          ],
+          "Halloween Town": [
+            "Bridge",
+            "Graveyard",
+            "Manor Ruins"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Wyvern(s)",
+        "WorldWithAreas": {
+          "Hollow Bastion": [
+            "Base Level",
+            "Castle Gates",
+            "Entrance Hall",
+            "Great Crest",
+            "High Tower"
+          ],
+          "Traverse Town": [
+            "Gizmo Shop",
+            "Second District"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Deep Jungle": [
+            "Camp",
+            "Cliff",
+            "Tree House"
+          ],
+          "Agrabah": [
+            "Bottomless Hall",
+            "Desert"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      },
+      {
+        "CharacterName": "Yellow Opera(s)",
+        "WorldWithAreas": {
+          "Traverse Town": [
+            "Alleyway",
+            "Gizmo Shop",
+            "Hallway",
+            "Second District"
+          ],
+          "Olympus Coliseum": [
+            ""
+          ],
+          "Agrabah": [
+            "Hall",
+            "Main Street",
+            "Palace Gates"
+          ],
+          "Monstro": [
+            "Chamber 1",
+            "Chamber 2",
+            "Chamber 3",
+            "Chamber 5",
+            "Chamber 6"
+          ],
+          "End of the World": [
+            ""
+          ]
+        }
+      }
+    ],
+    "Kingdom Hearts Re:Chain of Memories": [
+      
+    ],
+    "Kingdom Hearts II": [
+      
+    ],
+    "Kingdom Hearts 358/2 Days": [
+      
+    ],
+    "Kingdom Hearts Birth By Sleep": [
+      
+    ],
+    "Kingdom Hearts Re:Coded": [
+      
+    ],
+    "Kingdom Hearts Dream Drop Distance": [
+      
+    ],
+    "Kingdom Hearts χ Back Cover": [
+      
+    ],
+    "Kingdom Hearts III": [
+      
+    ]
+  }
+}

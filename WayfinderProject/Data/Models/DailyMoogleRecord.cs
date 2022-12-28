@@ -3,11 +3,11 @@
 namespace WayfinderProject.Data.Models
 {
     [Index(nameof(DateCode), Name = "Index_DateCode")]
-    public class DailyJournalEntry
+    public class DailyMoogleRecord
     {
         public int Id { get; set; }
         public string DateCode { get; set; } = string.Empty;
-        public int EntryId { get; set; }
+        public int RecordId { get; set; }
         public bool HasTweeted { get; set; }
     }
 }

@@ -7,11 +7,11 @@ using WayfinderProject.Data.Models;
 namespace WayfinderProject.Data.Jobs
 {
     [DisallowConcurrentExecution]
-    public class DailyEntryJob : IJob
+    public class DailyMoogleRecordJob : IJob
     {
-        private readonly ILogger<DailyEntryJob> _logger;
+        private readonly ILogger<DailyMoogleRecordJob> _logger;
 
-        public DailyEntryJob(ILogger<DailyEntryJob> logger)
+        public DailyMoogleRecordJob(ILogger<DailyMoogleRecordJob> logger)
         {
             _logger = logger;
         }
@@ -27,19 +27,19 @@ namespace WayfinderProject.Data.Jobs
             var connection = new MySqlConnection(connectionString);
             connection.Open();
 
-            string selectQuery = $"SELECT * FROM wayfinderprojectdb.DailyJournalEntries WHERE DateCode = {dateCode}";
+            string selectQuery = $"SELECT * FROM wayfinderprojectdb.DailyMoogleRecords WHERE DateCode = {dateCode}";
 
             MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
             MySqlDataReader selectResult = selectCommand.ExecuteReader();
 
-            DailyJournalEntry? dailyJournalEntry = null;
+            DailyMoogleRecord? dailyMoogleRecord = null;
             while (selectResult.Read())
             {
-                dailyJournalEntry = new DailyJournalEntry
+                dailyMoogleRecord = new DailyMoogleRecord
                 {
                     Id = (int)selectResult["Id"],
                     DateCode = (string)selectResult["DateCode"],
-                    EntryId = (int)selectResult["EntryId"],
+                    RecordId = (int)selectResult["RecordId"],
                     HasTweeted = (bool)selectResult["HasTweeted"]
                 };
 
@@ -48,29 +48,29 @@ namespace WayfinderProject.Data.Jobs
             selectResult.Close();
 
             // Only create a daily tweet if don't already have one
-            if (dailyJournalEntry != null && !dailyJournalEntry.HasTweeted)
+            if (dailyMoogleRecord != null && !dailyMoogleRecord.HasTweeted)
             {
                 // Get random daily scene
-                string journalEntryCountQuery = $@"SELECT COUNT(*) AS RowCount FROM wayfinderprojectdb.JJ_Entry
-                                            INNER JOIN wayfinderprojectdb.Games ON Games.Id = JJ_Entry.GameId
-                                            WHERE JJ_Entry.Id = {dailyJournalEntry.EntryId}";
+                string moogleRecordCountQuery = $@"SELECT COUNT(*) AS RowCount FROM wayfinderprojectdb.MS_Inventory 
+                                    INNER JOIN wayfinderprojectdb.Games ON Games.Id = MS_Inventory.GameId
+                                    WHERE MS_Inventory.Id = {dailyMoogleRecord.RecordId}";
 
-                MySqlCommand journalEntryCountCommand = new MySqlCommand(journalEntryCountQuery, connection);
-                int journalEntryCount = Convert.ToInt32(journalEntryCountCommand.ExecuteScalar());
+                MySqlCommand moogleRecordCountCommand = new MySqlCommand(moogleRecordCountQuery, connection);
+                int moogleRecordCount = Convert.ToInt32(moogleRecordCountCommand.ExecuteScalar());
 
-                string journalEntryQuery = $@"SELECT JJ_Entry.Id AS EntryId, JJ_Entry.Title AS Title, JJ_Entry.Description AS Description, JJ_Entry.Category AS Category, Games.Name AS GameName
-                                    FROM wayfinderprojectdb.JJ_Entry 
-                                    INNER JOIN wayfinderprojectdb.Games ON Games.Id = JJ_Entry.GameId
-                                    WHERE JJ_Entry.Id = {dailyJournalEntry.EntryId}";
+                string moogleRecordQuery = $@"SELECT MS_Inventory.Id AS RecordId, MS_Inventory.Name AS Name, MS_Inventory.Description AS Description, MS_Inventory.Category AS Category, Games.Name AS GameName
+                                    FROM wayfinderprojectdb.MS_Inventory 
+                                    INNER JOIN wayfinderprojectdb.Games ON Games.Id = MS_Inventory.GameId
+                                    WHERE MS_Inventory.Id = {dailyMoogleRecord.RecordId}";
 
-                MySqlCommand journalEntryCommand = new MySqlCommand(journalEntryQuery, connection);
-                MySqlDataReader journalEntryResult = journalEntryCommand.ExecuteReader();
+                MySqlCommand moogleRecordCommand = new MySqlCommand(moogleRecordQuery, connection);
+                MySqlDataReader moogleRecordResult = moogleRecordCommand.ExecuteReader();
 
-                int randomEntry = random.Next(0, journalEntryCount);
+                int randomEntry = random.Next(0, moogleRecordCount);
                 int counter = 0;
                 string tweetText = string.Empty;
                 string subTweetText = string.Empty;
-                while (journalEntryResult.Read())
+                while (moogleRecordResult.Read())
                 {
                     if (counter != randomEntry)
                     {
@@ -78,25 +78,25 @@ namespace WayfinderProject.Data.Jobs
                         continue;
                     }
 
-                    string title = (string)journalEntryResult["Title"];
-                    string description = (string)journalEntryResult["Description"];
-                    string category = (string)journalEntryResult["Category"];
-                    string gameName = (string)journalEntryResult["GameName"];
+                    string name = (string)moogleRecordResult["Name"];
+                    string description = (string)moogleRecordResult["Description"];
+                    string category = (string)moogleRecordResult["Category"];
+                    string gameName = (string)moogleRecordResult["GameName"];
 
                     // Assemble tweet and subtweet
                     if (description.Length > 275)
                     {
-                        tweetText = $"\"{description[..275]}\"...";
+                        tweetText = $"\"{description[..275]}...\"";
                     }
                     else
                     {
-                        tweetText = $"\"{description}\"";
+                        tweetText = $"{name}, kupo!\r\n\r\n\"{description}\"";
                     }
-                    subTweetText = $"\"{title}\" from {gameName}\r\nRead more here: https://wayfinderprojectkh.com/jiminy_journal?entry={dailyJournalEntry.EntryId}&category={category}&open_row={dailyJournalEntry.EntryId}";
+                    subTweetText = $"\"{name}\" from {gameName}\r\nRead more here: https://wayfinderprojectkh.com/moogle_shop?record={dailyMoogleRecord.RecordId}&category={category}&open_row={dailyMoogleRecord.RecordId}";
 
                     break;
                 }
-                journalEntryResult.Close();
+                moogleRecordResult.Close();
 
                 // Send out daily tweet
                 string consumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey") ?? string.Empty;
@@ -117,7 +117,7 @@ namespace WayfinderProject.Data.Jobs
                 };
                 var subTweet = userClient.Tweets.PublishTweetAsync(parameters).Result;
 
-                string updateQuery = $"UPDATE wayfinderprojectdb.DailyJournalEntries Set HasTweeted = 1 WHERE EntryId = {dailyJournalEntry.EntryId}";
+                string updateQuery = $"UPDATE wayfinderprojectdb.DailyMoogleRecords Set HasTweeted = 1 WHERE SceneId = {dailyMoogleRecord.RecordId}";
 
                 MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection);
                 updateCommand.ExecuteReader();

@@ -1,0 +1,71 @@
+﻿@using WayfinderProject.Components.Common
+@using WayfinderProject.Data
+@using WayfinderProject.Data.Models
+@using WayfinderProjectAPI.Data.DTOs
+
+
+<td style="vertical-align: middle;">
+    @if (this.MainTable != null)
+    {
+        if (this.MainTable.CurrentExpandedRow == this.Recipe.Id)
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Recipe.Id))">
+                <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+        else
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Recipe.Id))">
+                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@Recipe.Game.Name</span>
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@Recipe.Name</span>
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@Recipe.Category</span>
+</td>
+<td style="vertical-align: middle;">
+    @if (Recipe.RecipeMaterials.Count > 0)
+    {
+        <div style="display: inline-flex">
+            @for (int i = 0; i < Recipe.RecipeMaterials.Count; ++i)
+            {
+                <span>@(Recipe.RecipeMaterials[i].Inventory.Name) <strong>x@(Recipe.RecipeMaterials[i].Amount)</strong></span>
+                if (i < Recipe.RecipeMaterials.Count - 1)
+                {
+                    <div>,&nbsp;</div>
+                }
+            }
+        </div>
+    }
+</td>
+
+<style>
+.clickable {
+    float: right;
+    font-size: 1rem;
+    color: #3e79a7;
+    margin-top: 3px;
+    cursor: pointer;
+}
+</style>
+
+@code {
+    [Parameter] public RecipeDto Recipe { get; set; } = new RecipeDto();
+    [Parameter] public RecipeTable<RecipeDto>? MainTable { get; set; }
+
+    private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        //this.BrowserDimension = await BrowserService.GetDimensions();
+
+        await base.OnParametersSetAsync();
+    }
+}

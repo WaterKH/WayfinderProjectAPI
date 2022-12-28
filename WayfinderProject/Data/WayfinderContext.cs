@@ -23,8 +23,15 @@ namespace WayfinderProjectAPI.Data
 
             modelBuilder.Entity<JournalEntry>().Property(p => p.Id).ValueGeneratedOnAdd();
 
+            modelBuilder.Entity<Recipe>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Inventory>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<EnemyDrop>().Property(p => p.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<CharacterLocation>().Property(p => p.Id).ValueGeneratedOnAdd();
+
             modelBuilder.Entity<DailyCutscene>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<DailyJournalEntry>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<DailyMoogleRecord>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             base.OnModelCreating(modelBuilder);
         }
@@ -39,7 +46,14 @@ namespace WayfinderProjectAPI.Data
 
         public DbSet<JournalEntry> JournalEntries { get; set; } = null!;
 
+        public DbSet<Recipe> Recipes { get; set; } = null!;
+        public DbSet<Inventory> Inventory { get; set; } = null!;
+        public DbSet<EnemyDrop> EnemyDrops { get; set; } = null!;
+
+        public DbSet<CharacterLocation> CharacterLocations { get; set; } = null!;
+
         public DbSet<DailyCutscene> DailyCutscenes { get; set; } = null!;
         public DbSet<DailyJournalEntry> DailyJournalEntries { get; set; } = null!;
+        public DbSet<DailyMoogleRecord> DailyMoogleRecords { get; set; } = null!;
     }
 }

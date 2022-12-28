@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WayfinderProjectAPI.Data;
 
@@ -10,29 +11,16 @@ using WayfinderProjectAPI.Data;
 namespace WayfinderProject.Migrations
 {
     [DbContext(typeof(WayfinderContext))]
-    partial class WayfinderContextModelSnapshot : ModelSnapshot
+    [Migration("20221226052536_InitialMoogleShop")]
+    partial class InitialMoogleShop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("AreaCharacterLocation", b =>
-                {
-                    b.Property<int>("AreasId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CharacterLocationsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AreasId", "CharacterLocationsId");
-
-                    b.HasIndex("CharacterLocationsId");
-
-                    b.ToTable("AreaCharacterLocation");
-                });
 
             modelBuilder.Entity("AreaScene", b =>
                 {
@@ -266,9 +254,6 @@ namespace WayfinderProject.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<bool>("HasTweeted")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<int>("SceneId")
                         .HasColumnType("int");
 
@@ -292,39 +277,12 @@ namespace WayfinderProject.Migrations
                     b.Property<int>("EntryId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("HasTweeted")
-                        .HasColumnType("tinyint(1)");
-
                     b.HasKey("Id");
 
                     b.HasIndex(new[] { "DateCode" }, "Index_DateCode")
                         .HasDatabaseName("Index_DateCode1");
 
                     b.ToTable("DailyJournalEntries");
-                });
-
-            modelBuilder.Entity("WayfinderProject.Data.Models.DailyMoogleRecord", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("DateCode")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<bool>("HasTweeted")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("RecordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex(new[] { "DateCode" }, "Index_DateCode")
-                        .HasDatabaseName("Index_DateCode2");
-
-                    b.ToTable("DailyMoogleRecords");
                 });
 
             modelBuilder.Entity("WayfinderProject.Data.Models.WayfinderProjectUser", b =>
@@ -400,11 +358,16 @@ namespace WayfinderProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("CharacterLocationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CharacterLocationId");
 
                     b.HasIndex(new[] { "Name" }, "Index_AreaName");
 
@@ -437,19 +400,19 @@ namespace WayfinderProject.Migrations
                     b.Property<int>("CharacterId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GameId")
+                    b.Property<int?>("EnemyDropId")
                         .HasColumnType("int");
 
-                    b.Property<int>("WorldId")
+                    b.Property<int>("GameId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CharacterId");
 
-                    b.HasIndex("GameId");
+                    b.HasIndex("EnemyDropId");
 
-                    b.HasIndex("WorldId");
+                    b.HasIndex("GameId");
 
                     b.ToTable("CharacterLocations");
                 });
@@ -464,9 +427,6 @@ namespace WayfinderProject.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("CharacterLocationId")
-                        .HasColumnType("int");
-
                     b.Property<float>("DropRate")
                         .HasColumnType("float");
 
@@ -474,8 +434,6 @@ namespace WayfinderProject.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CharacterLocationId");
 
                     b.HasIndex("InventoryId");
 
@@ -732,30 +690,20 @@ namespace WayfinderProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("CharacterLocationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CharacterLocationId");
+
                     b.HasIndex(new[] { "Name" }, "Index_WorldName");
 
                     b.ToTable("Worlds");
-                });
-
-            modelBuilder.Entity("AreaCharacterLocation", b =>
-                {
-                    b.HasOne("WayfinderProjectAPI.Data.Models.Area", null)
-                        .WithMany()
-                        .HasForeignKey("AreasId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WayfinderProjectAPI.Data.Models.CharacterLocation", null)
-                        .WithMany()
-                        .HasForeignKey("CharacterLocationsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("AreaScene", b =>
@@ -899,6 +847,13 @@ namespace WayfinderProject.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Area", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.CharacterLocation", null)
+                        .WithMany("Areas")
+                        .HasForeignKey("CharacterLocationId");
+                });
+
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.CharacterLocation", b =>
                 {
                     b.HasOne("WayfinderProjectAPI.Data.Models.Character", "Character")
@@ -907,40 +862,28 @@ namespace WayfinderProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("WayfinderProjectAPI.Data.Models.EnemyDrop", null)
+                        .WithMany("CharacterLocations")
+                        .HasForeignKey("EnemyDropId");
+
                     b.HasOne("WayfinderProjectAPI.Data.Models.Game", "Game")
                         .WithMany()
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WayfinderProjectAPI.Data.Models.World", "World")
-                        .WithMany("CharacterLocations")
-                        .HasForeignKey("WorldId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Character");
 
                     b.Navigation("Game");
-
-                    b.Navigation("World");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.EnemyDrop", b =>
                 {
-                    b.HasOne("WayfinderProjectAPI.Data.Models.CharacterLocation", "CharacterLocation")
-                        .WithMany()
-                        .HasForeignKey("CharacterLocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("WayfinderProjectAPI.Data.Models.Inventory", "Inventory")
                         .WithMany("EnemyDrops")
                         .HasForeignKey("InventoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("CharacterLocation");
 
                     b.Navigation("Inventory");
                 });
@@ -1023,7 +966,26 @@ namespace WayfinderProject.Migrations
                     b.Navigation("Script");
                 });
 
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.World", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.CharacterLocation", null)
+                        .WithMany("Worlds")
+                        .HasForeignKey("CharacterLocationId");
+                });
+
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Character", b =>
+                {
+                    b.Navigation("CharacterLocations");
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.CharacterLocation", b =>
+                {
+                    b.Navigation("Areas");
+
+                    b.Navigation("Worlds");
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.EnemyDrop", b =>
                 {
                     b.Navigation("CharacterLocations");
                 });
@@ -1050,11 +1012,6 @@ namespace WayfinderProject.Migrations
                     b.Navigation("Lines");
 
                     b.Navigation("Scenes");
-                });
-
-            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.World", b =>
-                {
-                    b.Navigation("CharacterLocations");
                 });
 #pragma warning restore 612, 618
         }
