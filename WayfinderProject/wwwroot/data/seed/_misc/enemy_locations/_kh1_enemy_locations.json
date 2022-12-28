@@ -15,7 +15,7 @@
             "Throat"
           ],
           "Neverland": [
-            "Pirate Ship"
+            "Deck"
           ]
         }
       },
@@ -55,7 +55,7 @@
           "Atlantica": [
             "Undersea Valley",
             "Triton’s Palace",
-            "Undersea Cave",
+            "Undersea Cavern",
             "Undersea Gorge"
           ],
           "End of the World": [
@@ -114,7 +114,7 @@
             ""
           ],
           "Neverland": [
-            "Pirate Ship"
+            "Deck"
           ]
         }
       },
@@ -251,7 +251,7 @@
             "Sunken Ship",
             "Tidal Abyss",
             "Triton’s Palace",
-            "Undersea Cave",
+            "Undersea Cavern",
             "Undersea Gorge"
           ],
           "Halloween Town": [
@@ -263,7 +263,7 @@
             "Captain’s Cabin",
             "Freezer",
             "Hold",
-            "Pirate Ship"
+            "Deck"
           ],
           "End of the World": [
             ""
@@ -421,7 +421,7 @@
         "CharacterName": "Jet Balloon(s)",
         "WorldWithAreas": {
           "Neverland": [
-            "Pirate Ship"
+            "Deck"
           ]
         }
       },
@@ -502,7 +502,7 @@
             "Tree House"
           ],
           "Atlantica": [
-            "Undersea Cave"
+            "Undersea Cavern"
           ]
         }
       },
@@ -518,7 +518,7 @@
             "Freezer",
             "Galley",
             "Hold",
-            "Pirate Ship"
+            "Deck"
           ],
           "End of the World": [
             ""
@@ -629,7 +629,7 @@
             "Undersea Valley",
             "Below Deck",
             "Triton’s Palace",
-            "Undersea Cave",
+            "Undersea Cavern",
             "Undersea Gorge"
           ],
           "End of the World": [
@@ -719,7 +719,7 @@
             "Captain’s Cabin",
             "Freezer",
             "Galley",
-            "Pirate Ship"
+            "Deck"
           ],
           "Hollow Bastion": [
             "Castle Gates",
@@ -824,7 +824,7 @@
           ],
           "Atlantica": [
             "Below Deck",
-            "Undersea Cave"
+            "Undersea Cavern"
           ],
           "Halloween Town": [
             "Graveyard"

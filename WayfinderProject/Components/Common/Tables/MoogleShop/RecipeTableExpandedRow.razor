@@ -26,30 +26,58 @@
 
                             @if (!string.IsNullOrEmpty(Recipe.UnlockConditionDescription))
                             {
-                                <div class="col-md-12" style="margin-top: 25px;">
+                                <div class="col-md-12" style="margin-top: 15px;">
                                     <label>@(Recipe.UnlockConditionDescription)</label><br />
                                 </div>
                             }
 
-                            TODO Add materials and amounts
-                            @*<div class="col-md-12" style="margin-top: 25px;">
-                                <h3 class="world-color"><img src="/images/icons/worlds.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
-                                <label>@(string.Join(", ", this.Recipe.Worlds.Select(x => x.Name)))</label><br />
-                            </div>
+                            @if (this.Recipe.RecipeMaterials.Count > 0)
+                            {
+                                <div class="row" style="height: 281px;">
+                                    <div class="col-md-12" style="margin-top: 35px;">
+                                        <h3>Recipe Materials & Information</h3>
+                                    </div>
 
-                            <div class="col-md-12" style="margin-top: 25px;">
-                                <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
-                                <label>@(string.Join(", ", this.Recipe.Characters.Select(x => x.Name)))</label><br />
-                            </div>*@
+                                    @foreach (var material in this.Recipe.RecipeMaterials)
+                                    {
+                                        <div class="col-md-12" style="margin-top: 20px;">
+                                            <h3><strong>@(material.Inventory.Name)</strong> x@(material.Amount)</h3>
+                                        </div>
 
-                            <br />
+                                        var previousName = string.Empty;
+                                        var previousInfo = string.Empty;
+                                        @foreach (var drop in material.Inventory.EnemyDrops)
+                                        {
+                                            if (previousName != drop.CharacterLocation.Character.Name)
+                                            {
+                                                <div class="col-md-12" style="margin-left: 5px; margin-top: 15px;">
+                                                    <label style="font-size: larger"><strong class="character-color">@(drop.CharacterLocation.Character.Name.Split("(")[0])</strong>: @(drop.DropRate.ToString(".0"))% (Drop Rate)</label><br />
+                                                </div>
 
-                            <div class="col-md-12" style="margin-top: 25px;">
-                                <h3 class="scene-color">Memory Archive Scenes</h3>
+                                                previousName = drop.CharacterLocation.Character.Name;
+                                            }
 
-                                @*<button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo(this.memoryArchiveWithGameLink))" style="margin-right: 15px; margin-bottom: 15px;">Scenes By Game</button>
-                                <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo(this.memoryArchiveWithoutGameLink))">All Character Scenes</button>*@
-                            </div>
+                                            if (previousInfo != drop.AdditionalInformation)
+                                            {
+                                                if (!string.IsNullOrEmpty(drop.AdditionalInformation))
+                                                {
+                                                    <div class="col-md-12" style="margin-left: 10px; margin-top: 5px;">
+                                                        <label>@(drop.AdditionalInformation)</label><br />
+                                                    </div>
+                                                }
+
+                                                previousInfo = drop.AdditionalInformation;
+                                            }
+
+                                            <div class="col-md-12" style="margin-left: 25px; margin-top: 5px;">
+                                                <label><span class="world-color">@drop.CharacterLocation.World.Name</span> - <span class="area-color">@(string.Join(", ", drop.CharacterLocation.Areas.Select(x => x.Name)))</span></label><br />
+                                            </div>
+                                        }
+                                    }
+                                    
+                                    <div style="height: 25px;"></div>
+                                </div>
+                            }
                         </div>
                     }
                 </div>
@@ -57,25 +85,9 @@
 
 
             <div class="col-md-7">
-                @*@if (this.loadingFirstAppearance)
-                {
-                    <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
-                        
-                    </div>
-                }
-                else
-                {
-                    if (this.firstAppearanceScene != null)
-                    {
-                        <iframe src="@(this.firstAppearanceScene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px; width: 100%; height: 536px;"></iframe>
-                    }
-                    else
-                    {
-                        <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
-                            <label>No scene appearance found in the Memory Archive for this character in this game.</label>
-                        </div>
-                    }
-                }*@
+                <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
+                    <label>No scene appearance found in the Memory Archive for this recipe tutorial in this game.</label>
+                </div>
             </div>
         </div>
     </td>

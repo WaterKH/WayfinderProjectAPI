@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WayfinderProjectAPI.Data;
 
@@ -10,9 +11,11 @@ using WayfinderProjectAPI.Data;
 namespace WayfinderProject.Migrations
 {
     [DbContext(typeof(WayfinderContext))]
-    partial class WayfinderContextModelSnapshot : ModelSnapshot
+    [Migration("20221228040326_UpdateDaily")]
+    partial class UpdateDaily
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -301,30 +304,6 @@ namespace WayfinderProject.Migrations
                         .HasDatabaseName("Index_DateCode1");
 
                     b.ToTable("DailyJournalEntries");
-                });
-
-            modelBuilder.Entity("WayfinderProject.Data.Models.DailyMoogleRecord", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("DateCode")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<bool>("HasTweeted")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("RecordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex(new[] { "DateCode" }, "Index_DateCode")
-                        .HasDatabaseName("Index_DateCode2");
-
-                    b.ToTable("DailyMoogleRecords");
                 });
 
             modelBuilder.Entity("WayfinderProject.Data.Models.WayfinderProjectUser", b =>

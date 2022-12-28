@@ -39,7 +39,8 @@ namespace WayfinderProject.Data.Jobs
                 {
                     Id = (int)selectResult["Id"],
                     DateCode = (string)selectResult["DateCode"],
-                    SceneId = (int)selectResult["SceneId"]
+                    SceneId = (int)selectResult["SceneId"],
+                    HasTweeted = (bool)selectResult["HasTweeted"]
                 };
 
                 break;
@@ -47,14 +48,14 @@ namespace WayfinderProject.Data.Jobs
             selectResult.Close();
 
             // Only create a daily tweet if don't already have one
-            if (dailyCutscene == null)
+            if (dailyCutscene != null && !dailyCutscene.HasTweeted)
             {
                 // Get random daily scene
                 string sceneCountQuery = $@"SELECT COUNT(*) AS RowCount FROM wayfinderprojectdb.MA_Scene 
                                     INNER JOIN wayfinderprojectdb.Games ON Games.Id = MA_Scene.GameId 
                                     INNER JOIN wayfinderprojectdb.Script ON Script.SceneName = MA_Scene.Name
                                     INNER JOIN wayfinderprojectdb.ScriptLine ON Script.Id = ScriptLine.ScriptId
-                                    WHERE ScriptLine.Line <> 'None' AND LENGTH(ScriptLine.Line) < 253";
+                                    WHERE MA_Scene.Id = {dailyCutscene.SceneId}";
 
                 MySqlCommand sceneCountCommand = new MySqlCommand(sceneCountQuery, connection);
                 int sceneCount = Convert.ToInt32(sceneCountCommand.ExecuteScalar());
@@ -64,13 +65,12 @@ namespace WayfinderProject.Data.Jobs
                                     INNER JOIN wayfinderprojectdb.Games ON Games.Id = MA_Scene.GameId 
                                     INNER JOIN wayfinderprojectdb.Script ON Script.SceneName = MA_Scene.Name
                                     INNER JOIN wayfinderprojectdb.ScriptLine ON Script.Id = ScriptLine.ScriptId
-                                    WHERE ScriptLine.Line <> 'None' AND LENGTH(ScriptLine.Line) < 253";
+                                    WHERE MA_Scene.Id = {dailyCutscene.SceneId}";
 
                 MySqlCommand sceneCommand = new MySqlCommand(sceneQuery, connection);
                 MySqlDataReader sceneResult = sceneCommand.ExecuteReader();
 
                 int randomSceneDialogue = random.Next(0, sceneCount);
-                int randomSceneId = 0;
                 int counter = 0;
                 string tweetText = string.Empty;
                 string subTweetText = string.Empty;
@@ -88,8 +88,6 @@ namespace WayfinderProject.Data.Jobs
                     string gameName = (string)sceneResult["GameName"];
                     string link = (string)sceneResult["Link"];
 
-                    randomSceneId = (int)sceneResult["SceneId"];
-
                     // Assemble tweet and subtweet
                     tweetText = $"\"{line}\"~{character}";
                     subTweetText = $"\"{name}\" from {gameName}\r\n{link}";
@@ -97,11 +95,6 @@ namespace WayfinderProject.Data.Jobs
                     break;
                 }
                 sceneResult.Close();
-
-                string insertQuery = $"INSERT INTO wayfinderprojectdb.DailyCutscenes (DateCode, SceneId) VALUES ({dateCode}, {randomSceneId})";
-
-                MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection);
-                insertCommand.ExecuteReader();
 
                 // Send out daily tweet
                 string consumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey") ?? string.Empty;
@@ -121,6 +114,11 @@ namespace WayfinderProject.Data.Jobs
                     Text = subTweetText
                 };
                 var subTweet = userClient.Tweets.PublishTweetAsync(parameters).Result;
+
+                string updateQuery = $"UPDATE wayfinderprojectdb.DailyCutscenes Set HasTweeted = 1 WHERE SceneId = {dailyCutscene.SceneId}";
+
+                MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection);
+                updateCommand.ExecuteReader();
             }
 
             connection.Close();

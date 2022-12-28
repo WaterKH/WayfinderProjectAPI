@@ -24,36 +24,63 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12" style="margin-top: 25px;">
+                            @if (Inventory.Cost != 0)
+                            {
+                                <div class="col-md-12" style="margin-top: 25px;">
+                                    <label style="font-size: large"><strong>Cost</strong></label>
+                                    <label>@(Inventory.Cost) @(Inventory.Currency)</label><br />
+                                </div>
+                            }
+
+                            <div class="col-md-12" style="margin-top: 15px;">
                                 <label>@(Inventory.Description)</label><br />
                             </div>
 
                             @if (!string.IsNullOrEmpty(Inventory.AdditionalInformation))
                             {
-                                <div class="col-md-12" style="margin-top: 25px;">
+                                <div class="col-md-12" style="margin-top: 10px;">
                                     <label>@(Inventory.AdditionalInformation)</label><br />
                                 </div>
                             }
 
-                            TODO - Get Enemy, Drop Rates and Locations
-                            @*<div class="col-md-12" style="margin-top: 25px;">
-                                <h3 class="world-color"><img src="/images/icons/worlds.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
-                                <label>@(string.Join(", ", this.Inventory.EnemyDrops.Select(x => x.)))</label><br />
-                            </div>
+                            @if (this.Inventory.EnemyDrops.Count > 0)
+                            {
+                                <div class="row" style="height: 281px;">
+                                    <div class="col-md-6" style="margin-top: 25px;">
+                                        <h3>Enemy Drop Rates</h3>
+                                    </div>
 
-                            <div class="col-md-12" style="margin-top: 25px;">
-                                <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
-                                <label>@(string.Join(", ", this.JournalEntry.Characters.Select(x => x.Name)))</label><br />
-                            </div>*@
+                                    @foreach (var drop in this.Inventory.EnemyDrops)
+                                    {
+                                        if (previousName != drop.CharacterLocation.Character.Name)
+                                        {
+                                            <div class="col-md-12" style="margin-left: 5px; margin-top: 15px;">
+                                                <label style="font-size: larger"><strong class="character-color">@(drop.CharacterLocation.Character.Name.Split("(")[0])</strong>: @(drop.DropRate.ToString(".0"))% (Drop Rate)</label><br />
+                                            </div>
 
-                            <br />
+                                            previousName = drop.CharacterLocation.Character.Name;
+                                        }
 
-                            <div class="col-md-12" style="margin-top: 25px;">
-                                <h3 class="scene-color">Memory Archive Scenes</h3>
+                                        if (previousInfo != drop.AdditionalInformation)
+                                        {
+                                            if (!string.IsNullOrEmpty(drop.AdditionalInformation))
+                                            {
+                                            <div class="col-md-12" style="margin-left: 10px; margin-top: 5px;">
+                                                <label>@(drop.AdditionalInformation)</label><br />
+                                            </div>
+                                            }
 
-                                @*<button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo(this.memoryArchiveWithGameLink))" style="margin-right: 15px; margin-bottom: 15px;">Scenes By Game</button>
-                                <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo(this.memoryArchiveWithoutGameLink))">All Character Scenes</button>*@
-                            </div>
+                                            previousInfo = drop.AdditionalInformation;
+                                        }
+
+                                        <div class="col-md-12" style="margin-left: 25px; margin-top: 5px;">
+                                            <label><span class="world-color">@drop.CharacterLocation.World.Name</span> - <span class="area-color">@(string.Join(", ", drop.CharacterLocation.Areas.Select(x => x.Name)))</span></label><br />
+                                        </div>
+                                    }
+
+                                    <div style="height: 25px;"></div>
+                                </div>
+                            }
                         </div>
                     }
                 </div>
@@ -61,25 +88,9 @@
 
 
             <div class="col-md-7">
-                @*@if (this.loadingFirstAppearance)
-                {
-                    <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
-                        
-                    </div>
-                }
-                else
-                {
-                    if (this.firstAppearanceScene != null)
-                    {
-                        <iframe src="@(this.firstAppearanceScene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px; width: 100%; height: 536px;"></iframe>
-                    }
-                    else
-                    {
-                        <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
-                            <label>No scene appearance found in the Memory Archive for this character in this game.</label>
-                        </div>
-                    }
-                }*@
+                <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
+                    <label>No scene appearance found in the Memory Archive for this inventory showcase in this game.</label>
+                </div>
             </div>
         </div>
     </td>
@@ -93,6 +104,9 @@
     [Parameter] public Func<Task>? GenerateShareLink { get; set; }
 
     public string CurrentSubOption { get; set; } = "Details";
+
+    private string previousName = string.Empty;
+    private string previousInfo = string.Empty;
 
     //private SceneDto? firstAppearanceScene = new SceneDto();
     //private bool loadingFirstAppearance = true;

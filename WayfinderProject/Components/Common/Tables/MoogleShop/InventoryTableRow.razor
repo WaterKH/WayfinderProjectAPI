@@ -34,6 +34,14 @@
     }
     else
     {
+        if (!string.IsNullOrEmpty(Inventory.AdditionalInformation))
+        {
+            <span style="font-weight: 600;">@(Inventory.AdditionalInformation)</span>
+        }
+        else
+        {
+            <span style="font-weight: 600;">Synthesis, Treasures or Other</span>
+        }
     }
 </td>
 <td style="vertical-align: middle;">
@@ -68,7 +76,7 @@
     @if (Inventory.EnemyDrops.Count > 2)
     {
             <div style="margin-left: -5px; height: 38px;">
-                <Tooltip Text="@(string.Join(", ", Inventory.EnemyDrops.Select(x => x.CharacterLocation.World.Name)))">
+            <Tooltip Text="@(string.Join(", ", Inventory.EnemyDrops.Select(x => x.CharacterLocation.World.Name).Distinct()))">
                     <div class="world-display">
                         Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
                     </div>
@@ -79,16 +87,13 @@
     {
         if (Inventory.EnemyDrops.Count > 0)
         {
-            <div style="display: inline-flex" class="@(Inventory.EnemyDrops.Count == 2 ? "world-display" : "")">
-                @for (int i = 0; i < Inventory.EnemyDrops.Count; ++i)
+            <div style="display: inline-flex" class="@(Inventory.EnemyDrops.Select(x => x.CharacterLocation?.World.Name).Distinct().Count() == 2 ? "world-display" : "")">
+                @for (int i = 0; i < Inventory.EnemyDrops.Select(x => x.CharacterLocation?.World.Name).Distinct().Count(); ++i)
                 {
-                    if (Inventory.EnemyDrops[i].CharacterLocation != null)
+                    <span class="world-color">@Inventory.EnemyDrops.Select(x => x.CharacterLocation?.World.Name).Distinct().ToList()[i]</span>
+                    if (i < Inventory.EnemyDrops.Select(x => x.CharacterLocation?.World.Name).Distinct().Count() - 1)
                     {
-                        <span class="world-color">@Inventory.EnemyDrops[i].CharacterLocation.World.Name</span>
-                        if (i < Inventory.EnemyDrops.Count - 1)
-                        {
-                            <div>,&nbsp;</div>
-                        }
+                        <div>,&nbsp;</div>
                     }
                 }
             </div>
@@ -99,7 +104,7 @@
     @if (Inventory.EnemyDrops.Count > 2)
     {
         <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Inventory.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => x.Name)))">
+            <Tooltip Text="@(string.Join(", ", Inventory.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => x.Name).Distinct()))">
                 <div class="area-display">
                     Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
                 </div>
@@ -110,15 +115,15 @@
     {
         if (Inventory.EnemyDrops.Count > 0)
         {
-            <div style="display: inline-flex" class="@(Inventory.EnemyDrops.Count == 2 ? "area-display" : "")">
-                @for (int i = 0; i < Inventory.EnemyDrops.Count; ++i)
+            <div style="display: inline-flex" class="@(Inventory.EnemyDrops.SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().Count() == 2 ? "area-display" : "")">
+                @for (int i = 0; i < Inventory.EnemyDrops.SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().Count(); ++i)
                 {
                     if (Inventory.EnemyDrops[i].CharacterLocation != null)
                     {
-                        for (int j = 0; j < Inventory.EnemyDrops[i].CharacterLocation.Areas.Count; ++j)
+                        for (int j = 0; j < Inventory.EnemyDrops[i].CharacterLocation.Areas.Select(x => x.Name).Distinct().Count(); ++j)
                         {
-                            <span class="area-color">@Inventory.EnemyDrops[i].CharacterLocation.Areas[j].Name</span>
-                            if (i < Inventory.EnemyDrops[i].CharacterLocation.Areas.Count - 1)
+                            <span class="area-color">@Inventory.EnemyDrops[i].CharacterLocation.Areas.Select(x => x.Name).Distinct().ToList()[j]</span>
+                            if (i < Inventory.EnemyDrops[i].CharacterLocation.Areas.Select(x => x.Name).Distinct().Count() - 1)
                             {
                                 <div>,&nbsp;</div>
                             }
