@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using WayfinderProjectAPI.Data.Models;
 
 namespace WayfinderProjectAPI.Data
@@ -55,10 +56,11 @@ namespace WayfinderProjectAPI.Data
 
             // MS
             // Inventory
-            //CreateInventory(context);
+            CreateInventory(context);
 
             // Recipes
             //CreateRecipes(context);
+
 
             IsInitializing = false;
         }
@@ -434,37 +436,45 @@ namespace WayfinderProjectAPI.Data
                 foreach (var item in inventory)
                 {
                     var tempItem = context.Inventory.FirstOrDefault(x => x.Name == item.Name && x.Game.Name == gameName);
-                    if (tempItem != null)
+                    if (tempItem == null)
                         continue;
 
                     var drops = new List<EnemyDrop>();
                     foreach (var drop in item.EnemyDrops)
                     {
-                        var tempCharacter = context.Characters.Where(x => drop.EnemyName == x.Name).FirstOrDefault();
+                        var tempCharacter = context.Characters.AsTracking().Include(x => x.CharacterLocations).Where(x => x.Name.Contains(drop.EnemyName)).FirstOrDefault();
                         if (tempCharacter == null)
-                            Console.WriteLine();
-
-                        var enemyDrop = new EnemyDrop
                         {
-                            DropRate = drop.DropRate,
-                            AdditionalInformation = drop.AdditionalInformation,
-                            CharacterLocations = tempCharacter?.CharacterLocations?.ToList() ?? new List<CharacterLocation>()
-                        };
+                            Console.WriteLine();
+                            continue;
+                        }
 
-                        drops.Add(enemyDrop);
+                        foreach (var characterLocation in tempCharacter.CharacterLocations)
+                        {
+                            var tempDrop = new EnemyDrop
+                            {
+                                DropRate = drop.DropRate,
+                                AdditionalInformation = drop.AdditionalInformation,
+                                Inventory = tempItem,
+                                CharacterLocation = characterLocation
+                            };
+
+                            drops.Add(tempDrop);
+                        }
                     }
 
-                    context.Inventory.Add(new Inventory
-                    {
-                        Name = item.Name,
-                        Category = item.Category,
-                        Description = item.Description,
-                        AdditionalInformation = item.AdditionalInformation,
-                        Cost = item.Cost,
-                        Currency = item.Currency,
-                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
-                        EnemyDrops = drops
-                    });
+                    tempItem.EnemyDrops = drops;
+                    //context.Inventory.Add(new Inventory
+                    //{
+                    //    Name = item.Name,
+                    //    Category = item.Category,
+                    //    Description = item.Description,
+                    //    AdditionalInformation = item.AdditionalInformation,
+                    //    Cost = item.Cost,
+                    //    Currency = item.Currency,
+                    //    Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                    //    EnemyDrops = drops
+                    //});
                 }
             }
 
@@ -563,8 +573,8 @@ namespace WayfinderProjectAPI.Data
                     var characterLocations = new List<CharacterLocation>();
                     foreach (var (worldName, areaNames) in location.WorldWithAreas)
                     {
-                        var worlds = context.Worlds.Where(x => worldName == x.Name);
-                        if (worlds == null)
+                        var world = context.Worlds.First(x => worldName == x.Name);
+                        if (world == null)
                             Console.WriteLine();
 
                         var areas = context.Areas.Where(x => areaNames.Contains(x.Name));
@@ -573,8 +583,8 @@ namespace WayfinderProjectAPI.Data
                         {
                             Character = character,
                             Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
-                            Worlds = worlds?.ToList(),
-                            Areas = areas?.ToList()
+                            World = world,
+                            Areas = areas.ToList()
                         };
 
                         characterLocations.Add(characterLocation);

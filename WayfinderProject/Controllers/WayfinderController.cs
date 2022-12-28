@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 using WayfinderProjectAPI.Data;
@@ -347,5 +348,229 @@ namespace WayfinderProjectAPI.Controllers
             return returnResults.FirstOrDefault();
         }
         #endregion Jiminy Journal
+
+        #region Moogle Shop
+        [HttpGet("GetRecipes")]
+        public async Task<List<RecipeDto>> GetRecipes([FromQuery] string? games = null, [FromQuery] string? recipes = null, [FromQuery] string? synthMaterials = null, [FromQuery] string? description = null, [FromQuery] string? categories = null)
+        {
+            var results = _context.Recipes.AsNoTrackingWithIdentityResolution();
+            var queryString = (description == null ? description : description.Any(x => char.IsPunctuation(x)) ? description : Regex.Replace(description, @"[^\w\s]", ""));
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
+            }
+
+            if (recipes != null)
+            {
+                var recipeNamesList = recipes.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => recipeNamesList.Contains(x.Name));
+            }
+
+            if (categories != null)
+            {
+                var categoryList = categories.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => categoryList.Contains(x.Category));
+            }
+
+            if (synthMaterials != null)
+            {
+                var synthList = synthMaterials.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.RecipeMaterials).Where(x => x.RecipeMaterials.Any(y => synthList.Contains(y.Inventory.Name))))
+                {
+                    if (result == null || result.RecipeMaterials == null) continue;
+
+                    if (synthList.All(x => result.RecipeMaterials.Select(y => y.Inventory.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (queryString != null)
+            {
+                if (!queryString.Contains("\""))
+                {
+                    queryString = queryString.ToLower();
+
+                    var tempResults = new List<Recipe>();
+                    foreach (var result in results)
+                    {
+                        // Unlock Description search
+                        var tempUnlockDescription = result.UnlockConditionDescription;
+                        if (!queryString.Any(x => char.IsPunctuation(x)))
+                            tempUnlockDescription = Regex.Replace(result.UnlockConditionDescription, @"[^\w\s]", "");
+
+                        if (tempUnlockDescription.ToLower().Contains(queryString))
+                            tempResults.Add(result);
+
+                        // Inventory Description search
+                        foreach (var material in result.RecipeMaterials)
+                        {
+                            // Description search
+                            var tempDescription = material.Inventory.Description;
+                            if (!queryString.Any(x => char.IsPunctuation(x)))
+                                tempDescription = Regex.Replace(material.Inventory.Description, @"[^\w\s]", "");
+
+                            if (tempDescription.ToLower().Contains(queryString))
+                                tempResults.Add(result);
+
+                            // Additional Information search
+                            var tempAdditionalInformation = material.Inventory.AdditionalInformation;
+                            if (!queryString.Any(x => char.IsPunctuation(x)))
+                                tempAdditionalInformation = Regex.Replace(material.Inventory.AdditionalInformation, @"[^\w\s]", "");
+
+                            if (tempAdditionalInformation.ToLower().Contains(queryString))
+                                tempResults.Add(result);
+                        }
+                    }
+
+                    results = results.Where(x => tempResults.Select(y => y.Id).Contains(x.Id));
+                }
+                else
+                {
+                    queryString = queryString.Replace("\"", "");
+
+                    results = results.Where(x => x.UnlockConditionDescription.Contains(queryString) || x.RecipeMaterials.Any(x => x.Inventory.Description.Contains(queryString)) || x.RecipeMaterials.Any(x => x.Inventory.AdditionalInformation.Contains(queryString)));
+                }
+            }
+
+            return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        [HttpGet("GetInventory")]
+        public async Task<List<InventoryDto>> GetInventory([FromQuery] string? games = null, [FromQuery] string? items = null, [FromQuery] string? enemies = null, [FromQuery] string? worlds = null, [FromQuery] string? areas = null, [FromQuery] string? description = null, [FromQuery] string? category = null)
+        {
+            IQueryable<Inventory> results;
+            if (category == "Weapon")
+            {
+                results = _context.Inventory.AsNoTrackingWithIdentityResolution().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield");
+            }
+            else if (category == "Accessories & Armor")
+            {
+                results = _context.Inventory.AsNoTrackingWithIdentityResolution().Where(x => x.Category == "Accessory" || x.Category == "Armor");
+            }
+            else
+            {
+                results = _context.Inventory.AsNoTrackingWithIdentityResolution().Where(x => x.Category == category);
+            }
+
+            var queryString = (description == null ? description : description.Any(x => char.IsPunctuation(x)) ? description : Regex.Replace(description, @"[^\w\s]", ""));
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
+            }
+
+            if (items != null)
+            {
+                var inventoryList = items.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => inventoryList.Contains(x.Name));
+            }
+
+            if (enemies != null)
+            {
+                var enemiesList = enemies.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => enemiesList.Contains(y.CharacterLocation.Character.Name))))
+                {
+                    if (result == null || result.EnemyDrops == null) continue;
+
+                    if (enemiesList.All(x => result.EnemyDrops.Select(y => y.CharacterLocation.Character.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (worlds != null)
+            {
+                var worldsList = worlds.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => worldsList.Contains(y.CharacterLocation.World.Name))))
+                {
+                    if (result == null || result.EnemyDrops == null) continue;
+
+                    if (worldsList.All(x => result.EnemyDrops.Select(y => y.CharacterLocation.World.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (areas != null)
+            {
+                var areasList = areas.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => y.CharacterLocation.Areas.Any(z => areasList.Contains(z.Name)))))
+                {
+                    if (result == null || result.EnemyDrops == null) continue;
+
+                    if (areasList.All(x => result.EnemyDrops.Select(y => y.CharacterLocation).SelectMany(y => y.Areas).Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (queryString != null)
+            {
+                if (!queryString.Contains("\""))
+                {
+                    queryString = queryString.ToLower();
+
+                    var tempResults = new List<Inventory>();
+                    foreach (var result in results)
+                    {
+                        // Description search
+                        var tempDescription = result.Description;
+                        if (!queryString.Any(x => char.IsPunctuation(x)))
+                            tempDescription = Regex.Replace(result.Description, @"[^\w\s]", "");
+
+                        if (tempDescription.ToLower().Contains(queryString))
+                            tempResults.Add(result);
+
+                        // Additional Information search
+                        var tempAdditionalInformation = result.AdditionalInformation;
+                        if (!queryString.Any(x => char.IsPunctuation(x)))
+                            tempAdditionalInformation = Regex.Replace(result.AdditionalInformation, @"[^\w\s]", "");
+
+                        if (tempAdditionalInformation.ToLower().Contains(queryString))
+                            tempResults.Add(result);
+                    }
+
+                    results = results.Where(x => tempResults.Select(y => y.Id).Contains(x.Id));
+                }
+                else
+                {
+                    queryString = queryString.Replace("\"", "");
+
+                    results = results.Where(x => x.Description.Contains(queryString) || x.AdditionalInformation.Contains(queryString));
+                }
+            }
+
+            return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+        #endregion Moogle Shop
     }
 }

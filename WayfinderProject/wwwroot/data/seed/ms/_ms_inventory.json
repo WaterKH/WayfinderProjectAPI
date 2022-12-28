@@ -30,7 +30,7 @@
             "AdditionalInformation": ""
           },
           {
-            "EnemyName": "Boncywild",
+            "EnemyName": "Bouncywild",
             "DropRate": 1,
             "AdditionalInformation": ""
           },
@@ -451,7 +451,7 @@
         "Currency": "",
         "EnemyDrops": [
           {
-            "EnemyName": "Oogie Boogie ",
+            "EnemyName": "Oogie Boogie",
             "DropRate": 100,
             "AdditionalInformation": ""
           }
@@ -466,7 +466,7 @@
         "Currency": "",
         "EnemyDrops": [
           {
-            "EnemyName": "Anti-Sora",
+            "EnemyName": "Shadow Sora",
             "DropRate": 100,
             "AdditionalInformation": ""
           }

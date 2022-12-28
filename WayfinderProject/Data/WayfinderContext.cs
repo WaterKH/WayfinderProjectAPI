@@ -25,6 +25,7 @@ namespace WayfinderProjectAPI.Data
 
             modelBuilder.Entity<Recipe>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Inventory>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<EnemyDrop>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             modelBuilder.Entity<CharacterLocation>().Property(p => p.Id).ValueGeneratedOnAdd();
 
@@ -46,6 +47,7 @@ namespace WayfinderProjectAPI.Data
 
         public DbSet<Recipe> Recipes { get; set; } = null!;
         public DbSet<Inventory> Inventory { get; set; } = null!;
+        public DbSet<EnemyDrop> EnemyDrops { get; set; } = null!;
 
         public DbSet<CharacterLocation> CharacterLocations { get; set; } = null!;
 

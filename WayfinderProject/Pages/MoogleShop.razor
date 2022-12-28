@@ -1,0 +1,2527 @@
+﻿@page "/moogle_shop"
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+@inject NavigationManager NavigationManager
+
+@inject IJSRuntime JS
+@inject IToastService toastService
+
+
+@using Microsoft.EntityFrameworkCore
+@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+<PageTitle>The Wayfinder Project - Jiminy's Journal</PageTitle>
+
+<br/>
+<br/>
+
+<div class="wayfinder-background">
+    <div class="wayfinder-parallax">
+        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+            <div class="col-md-12" style="align-self: center;">
+                <div class="wayfinder-title">
+                    <img src="/images/wayfinder_project_title.png" />
+                </div>
+
+                <div class="wayfinder-description">
+                    <strong>Search for a <span style="color: #522aff;">Word</span> or <span style="color: #ff7519;">Phrase</span>...</strong>
+                </div>
+
+                <div class="wayfinder-search">
+                    <span class="wayfinder-search-icon material-icons">search</span>
+                    <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+                    <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
+                </div>
+
+                <div class="wayfinder-sub-description">
+                    <strong>
+                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Inventory</span>, <span style="color: #ea4a4a;">Worlds</span> or <span style="color: #ea4a4a;">Characters</span>.
+                    </strong>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <div class="wayfinder-title">
+                    <strong><span style="color: #522aff;">Daily Moogle Record</span></strong>
+                </div>
+
+                <div class="wayfinder-alt-description">
+                    <strong>
+                        Discover a brand new daily moogle record by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WPF_KH on Twitter</a>!
+                    </strong>
+                </div>
+
+                <br />
+
+                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyMoogleRecord())" @onclick:stopPropagation>Daily Moogle Record</button>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-4" style="text-align: center;">
+                <div class="wayfinder-title">
+                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Record</span> <span style="color: #5499fc;">Generator</span></strong>
+                </div>
+
+                <div class="wayfinder-alt-description">
+                    <strong>
+                        Can't decide which entry you want to find? Let us choose for you by selecting a random moogle record!
+                    </strong>
+                </div>
+
+                <br />
+
+                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomMoogleRecord())" @onclick:stopPropagation>Random Moogle Record</button>
+            </div>
+
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+
+<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+<SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
+
+@if (this.CurrentCategory == "Recipes")
+{
+    <div id="recipe-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="RecipesSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.Recipes" Selected="this.RecipesSelected" Available="this.RecipesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="RecipeGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.RecipeGames" Selected="this.RecipeGamesSelected" Available="this.RecipeGamesAvailable"
+                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="RecipeCategoriesSearch" Id="Categories" Placeholder="Start Typing..." Color="#f3b222" Initial="this.RecipeCategories" Selected="this.RecipeCategoriesSelected" Available="this.RecipeCategoriesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="RecipeMaterialsSearch" Id="Materials" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.RecipeMaterials" Selected="this.RecipeMaterialsSelected" Available="this.RecipeMaterialsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+else if (this.CurrentCategory == "Items")
+{
+    <div id="item-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="InventoryItemsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryItems" Selected="this.InventoryItemsSelected" Available="this.InventoryItemsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryItemGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryItemGames" Selected="this.InventoryItemGamesSelected" Available="this.InventoryItemGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryItemEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryItemEnemies" Selected="this.InventoryItemEnemiesSelected" Available="this.InventoryItemEnemiesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryItemWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryItemWorlds" Selected="this.InventoryItemWorldsSelected" Available="this.InventoryItemWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryItemAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryItemAreas" Selected="this.InventoryItemAreasSelected" Available="this.InventoryItemAreasAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+else if (this.CurrentCategory == "Weapons")
+{
+    <div id="weapon-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="InventoryWeaponsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryWeapons" Selected="this.InventoryWeaponsSelected" Available="this.InventoryWeaponsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryWeaponGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryWeaponGames" Selected="this.InventoryWeaponGamesSelected" Available="this.InventoryWeaponGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryWeaponEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryWeaponEnemies" Selected="this.InventoryWeaponEnemiesSelected" Available="this.InventoryWeaponEnemiesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryWeaponWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryWeaponWorlds" Selected="this.InventoryWeaponWorldsSelected" Available="this.InventoryWeaponWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryWeaponAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryWeaponAreas" Selected="this.InventoryWeaponAreasSelected" Available="this.InventoryWeaponAreasAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+else if (this.CurrentCategory == "Accessories & Armor")
+{
+    <div id="accessory-armor-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="InventoryAccessoryArmorsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryAccessoryArmors" Selected="this.InventoryAccessoryArmorsSelected" Available="this.InventoryAccessoryArmorsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryAccessoryArmorGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryAccessoryArmorGames" Selected="this.InventoryAccessoryArmorGamesSelected" Available="this.InventoryAccessoryArmorGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryAccessoryArmorEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryAccessoryArmorEnemies" Selected="this.InventoryAccessoryArmorEnemiesSelected" Available="this.InventoryAccessoryArmorEnemiesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryAccessoryArmorWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryAccessoryArmorWorlds" Selected="this.InventoryAccessoryArmorWorldsSelected" Available="this.InventoryAccessoryArmorWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryAccessoryArmorAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryAccessoryArmorAreas" Selected="this.InventoryAccessoryArmorAreasSelected" Available="this.InventoryAccessoryArmorAreasAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+else if (this.CurrentCategory == "Synthesis Materials")
+{
+    <div id="material-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="InventoryMaterialsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryMaterials" Selected="this.InventoryMaterialsSelected" Available="this.InventoryMaterialsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryMaterialGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryMaterialGames" Selected="this.InventoryMaterialGamesSelected" Available="this.InventoryMaterialGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryMaterialEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryMaterialEnemies" Selected="this.InventoryMaterialEnemiesSelected" Available="this.InventoryMaterialEnemiesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryMaterialWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryMaterialWorlds" Selected="this.InventoryMaterialWorldsSelected" Available="this.InventoryMaterialWorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InventoryMaterialAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryMaterialAreas" Selected="this.InventoryMaterialAreasSelected" Available="this.InventoryMaterialAreasAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+<br />
+
+@if (this.Loading)
+{
+    <div class="row" style="justify-content: center;">
+        <div class="loader col-md-12"></div>
+    </div>
+}
+else if (this.CurrentCategory == "Recipes" && this.MSRecipeDtos.Count > 0)
+{
+    <RecipeTable @ref="MainRecipeTable" Items="this.MSRecipeDtos" Context="Recipe" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Category</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Materials</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <RecipeTableExpandedRow Recipe="@Recipe" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </RecipeTable>
+}
+else if (this.CurrentCategory == "Items" && this.MSInventoryItemDtos.Count > 0)
+{
+    <InventoryTable @ref="MainInventoryItemTable" Items="this.MSInventoryItemDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </InventoryTable>
+}
+else if (this.CurrentCategory == "Weapons" && this.MSInventoryWeaponDtos.Count > 0)
+{
+    <InventoryTable @ref="MainInventoryWeaponTable" Items="this.MSInventoryWeaponDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+            <th><img src="/images/icons/_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </InventoryTable>
+}
+else if (this.CurrentCategory == "Accessories & Armor" && this.MSInventoryAccessoryArmorDtos.Count > 0)
+{
+    <InventoryTable @ref="MainInventoryAccessoryArmorTable" Items="this.MSInventoryAccessoryArmorDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+            <th><img src="/images/icons/_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </InventoryTable>
+}
+else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMaterialDtos.Count > 0)
+{
+    <InventoryTable @ref="MainInventoryMaterialTable" Items="this.MSInventoryMaterialDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+            <th><img src="/images/icons/_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+            <th></th>
+        </TableHeader>
+        <RowTemplate>
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </InventoryTable>
+}
+
+<span style="margin-bottom: 50px;"></span>
+
+
+<style>
+.advanced-search-box {
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+
+.clickable {
+    float: right; 
+    font-size: 1rem; 
+    color: #3e79a7; 
+    margin-top: 3px; 
+    cursor: pointer;
+}
+
+.icon {
+    font-size: .8rem;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 4px 5px;
+    border-radius: 500px;
+    background-color: #bee2ff;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationStateTask { get; set; }
+
+    public bool Loading { get; set; }
+    public string CurrentCategory { get; set; } = "Recipes";
+    public string CurrentOption { get; set; } = "Games";
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private string informationSearch = "";
+    private WayfinderController? api;
+
+    #region Query Parameters
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "record")]
+    public string[]? RecordQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "area")]
+    public string[]? AreaQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "world")]
+    public string[]? WorldQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "game")]
+    public string[]? GameQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "enemy")]
+    public string[]? EnemyQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "recipe_category")]
+    public string[]? RecipeCategoryQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "material")]
+    public string[]? RecipeMaterialQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "open_row")]
+    public int OpenRow { get; set; } = -1;
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "category")]
+    public string? CategoryQuery { get; set; }
+    #endregion Query Parameters
+
+    private List<string> categories = new List<string> { "Recipes", "Items", "Weapons", "Accessories & Armor", "Synthesis Materials" };
+    private NavBar? WayfinderNavBar;
+
+    private List<string> options = new List<string> { "Records", "Games", "Categories", "Synthesis Materials" };
+    private SubNavBar? WayfinderSubNavBar;
+
+    private bool canDisplayClearAll;
+
+    #region Moogle Shop Recipe Variables
+    private List<RecipeDto> MSRecipeDtos = new List<RecipeDto>();
+
+    public List<string> Recipes { get; set; } = new List<string>();
+    public List<string> RecipeGames { get; set; } = new List<string>();
+    public List<string> RecipeCategories { get; set; } = new List<string>();
+    public List<string> RecipeMaterials { get; set; } = new List<string>();
+
+    #region Recipe Search Variables
+    private SearchComponent? RecipesSearch;
+    private List<string> RecipesSelected = new List<string>();
+    private List<string> RecipesAvailable = new List<string>();
+
+    private SearchComponent? RecipeGamesSearch;
+    private List<string> RecipeGamesSelected = new List<string>();
+    private List<string> RecipeGamesAvailable = new List<string>();
+
+    private SearchComponent? RecipeCategoriesSearch;
+    private List<string> RecipeCategoriesSelected = new List<string>();
+    private List<string> RecipeCategoriesAvailable = new List<string>();
+
+    private SearchComponent? RecipeMaterialsSearch;
+    private List<string> RecipeMaterialsSelected = new List<string>();
+    private List<string> RecipeMaterialsAvailable = new List<string>();
+    #endregion Recipe Search Variables
+
+    private RecipeTable<RecipeDto>? MainRecipeTable;
+    #endregion Moogle Shop Recipe Variables
+
+    #region Moogle Shop Inventory Item Variables
+    private List<InventoryDto> MSInventoryItemDtos = new List<InventoryDto>();
+
+    public List<string> InventoryItems { get; set; } = new List<string>();
+    public List<string> InventoryItemGames { get; set; } = new List<string>();
+    public List<string> InventoryItemCategories { get; set; } = new List<string>();
+    public List<string> InventoryItemEnemies { get; set; } = new List<string>();
+    public List<string> InventoryItemWorlds { get; set; } = new List<string>();
+    public List<string> InventoryItemAreas { get; set; } = new List<string>();
+
+    #region Inventory Search Variables
+    private SearchComponent? InventoryItemsSearch;
+    private List<string> InventoryItemsSelected = new List<string>();
+    private List<string> InventoryItemsAvailable = new List<string>();
+
+    private SearchComponent? InventoryItemGamesSearch;
+    private List<string> InventoryItemGamesSelected = new List<string>();
+    private List<string> InventoryItemGamesAvailable = new List<string>();
+
+    //private SearchComponent? InventoryItemCategoriesSearch;
+    //private List<string> InventoryItemCategoriesSelected = new List<string>();
+    //private List<string> InventoryItemCategoriesAvailable = new List<string>();
+
+    private SearchComponent? InventoryItemEnemiesSearch;
+    private List<string> InventoryItemEnemiesSelected = new List<string>();
+    private List<string> InventoryItemEnemiesAvailable = new List<string>();
+
+    private SearchComponent? InventoryItemWorldsSearch;
+    private List<string> InventoryItemWorldsSelected = new List<string>();
+    private List<string> InventoryItemWorldsAvailable = new List<string>();
+
+    private SearchComponent? InventoryItemAreasSearch;
+    private List<string> InventoryItemAreasSelected = new List<string>();
+    private List<string> InventoryItemAreasAvailable = new List<string>();
+    #endregion Inventory Search Variables
+
+    private InventoryTable<InventoryDto>? MainInventoryItemTable;
+    #endregion Moogle Shop Inventory Item Variables
+
+
+    #region Moogle Shop Inventory Weapon Variables
+    private List<InventoryDto> MSInventoryWeaponDtos = new List<InventoryDto>();
+
+    public List<string> InventoryWeapons { get; set; } = new List<string>();
+    public List<string> InventoryWeaponGames { get; set; } = new List<string>();
+    public List<string> InventoryWeaponCategories { get; set; } = new List<string>();
+    public List<string> InventoryWeaponEnemies { get; set; } = new List<string>();
+    public List<string> InventoryWeaponWorlds { get; set; } = new List<string>();
+    public List<string> InventoryWeaponAreas { get; set; } = new List<string>();
+
+    #region Inventory Weapon Search Variables
+    private SearchComponent? InventoryWeaponsSearch;
+    private List<string> InventoryWeaponsSelected = new List<string>();
+    private List<string> InventoryWeaponsAvailable = new List<string>();
+
+    private SearchComponent? InventoryWeaponGamesSearch;
+    private List<string> InventoryWeaponGamesSelected = new List<string>();
+    private List<string> InventoryWeaponGamesAvailable = new List<string>();
+
+    //private SearchComponent? InventoryWeaponCategoriesSearch;
+    //private List<string> InventoryWeaponCategoriesSelected = new List<string>();
+    //private List<string> InventoryWeaponCategoriesAvailable = new List<string>();
+
+    private SearchComponent? InventoryWeaponEnemiesSearch;
+    private List<string> InventoryWeaponEnemiesSelected = new List<string>();
+    private List<string> InventoryWeaponEnemiesAvailable = new List<string>();
+
+    private SearchComponent? InventoryWeaponWorldsSearch;
+    private List<string> InventoryWeaponWorldsSelected = new List<string>();
+    private List<string> InventoryWeaponWorldsAvailable = new List<string>();
+
+    private SearchComponent? InventoryWeaponAreasSearch;
+    private List<string> InventoryWeaponAreasSelected = new List<string>();
+    private List<string> InventoryWeaponAreasAvailable = new List<string>();
+    #endregion Inventory Weapon Search Variables
+
+    private InventoryTable<InventoryDto>? MainInventoryWeaponTable;
+    #endregion Moogle Shop Inventory Weapon Variables
+
+
+    #region Moogle Shop Inventory Accessory Armor Variables
+    private List<InventoryDto> MSInventoryAccessoryArmorDtos = new List<InventoryDto>();
+
+    public List<string> InventoryAccessoryArmors { get; set; } = new List<string>();
+    public List<string> InventoryAccessoryArmorGames { get; set; } = new List<string>();
+    public List<string> InventoryAccessoryArmorCategories { get; set; } = new List<string>();
+    public List<string> InventoryAccessoryArmorEnemies { get; set; } = new List<string>();
+    public List<string> InventoryAccessoryArmorWorlds { get; set; } = new List<string>();
+    public List<string> InventoryAccessoryArmorAreas { get; set; } = new List<string>();
+
+    #region Inventory Accessory Armor Search Variables
+    private SearchComponent? InventoryAccessoryArmorsSearch;
+    private List<string> InventoryAccessoryArmorsSelected = new List<string>();
+    private List<string> InventoryAccessoryArmorsAvailable = new List<string>();
+
+    private SearchComponent? InventoryAccessoryArmorGamesSearch;
+    private List<string> InventoryAccessoryArmorGamesSelected = new List<string>();
+    private List<string> InventoryAccessoryArmorGamesAvailable = new List<string>();
+
+    private SearchComponent? InventoryAccessoryArmorEnemiesSearch;
+    private List<string> InventoryAccessoryArmorEnemiesSelected = new List<string>();
+    private List<string> InventoryAccessoryArmorEnemiesAvailable = new List<string>();
+
+    private SearchComponent? InventoryAccessoryArmorWorldsSearch;
+    private List<string> InventoryAccessoryArmorWorldsSelected = new List<string>();
+    private List<string> InventoryAccessoryArmorWorldsAvailable = new List<string>();
+
+    private SearchComponent? InventoryAccessoryArmorAreasSearch;
+    private List<string> InventoryAccessoryArmorAreasSelected = new List<string>();
+    private List<string> InventoryAccessoryArmorAreasAvailable = new List<string>();
+    #endregion Inventory Accessory Armor Search Variables
+
+    private InventoryTable<InventoryDto>? MainInventoryAccessoryArmorTable;
+    #endregion Moogle Shop Inventory Accessory Armor Variables
+
+
+    #region Moogle Shop Inventory Material Variables
+    private List<InventoryDto> MSInventoryMaterialDtos = new List<InventoryDto>();
+
+    public List<string> InventoryMaterials { get; set; } = new List<string>();
+    public List<string> InventoryMaterialGames { get; set; } = new List<string>();
+    public List<string> InventoryMaterialCategories { get; set; } = new List<string>();
+    public List<string> InventoryMaterialEnemies { get; set; } = new List<string>();
+    public List<string> InventoryMaterialWorlds { get; set; } = new List<string>();
+    public List<string> InventoryMaterialAreas { get; set; } = new List<string>();
+
+    #region Inventory Material Search Variables
+    private SearchComponent? InventoryMaterialsSearch;
+    private List<string> InventoryMaterialsSelected = new List<string>();
+    private List<string> InventoryMaterialsAvailable = new List<string>();
+
+    private SearchComponent? InventoryMaterialGamesSearch;
+    private List<string> InventoryMaterialGamesSelected = new List<string>();
+    private List<string> InventoryMaterialGamesAvailable = new List<string>();
+
+    private SearchComponent? InventoryMaterialEnemiesSearch;
+    private List<string> InventoryMaterialEnemiesSelected = new List<string>();
+    private List<string> InventoryMaterialEnemiesAvailable = new List<string>();
+
+    private SearchComponent? InventoryMaterialWorldsSearch;
+    private List<string> InventoryMaterialWorldsSelected = new List<string>();
+    private List<string> InventoryMaterialWorldsAvailable = new List<string>();
+
+    private SearchComponent? InventoryMaterialAreasSearch;
+    private List<string> InventoryMaterialAreasSelected = new List<string>();
+    private List<string> InventoryMaterialAreasAvailable = new List<string>();
+    #endregion Inventory Material Search Variables
+
+    private InventoryTable<InventoryDto>? MainInventoryMaterialTable;
+    #endregion Moogle Shop Inventory Material Variables
+
+    private bool failed = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (authenticationStateTask != null)
+        {
+            var authState = await authenticationStateTask;
+
+            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            //{
+            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            //}
+        }
+
+        this.api = new WayfinderController(context);
+
+        await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                await this.ResetOptions();
+
+                Thread.Sleep(1000);
+
+                await this.HandleQueryParams();
+            }
+            catch (Exception)
+            {
+                // Catch the SqliteException, do not set firstLoad to true
+                this.failed = true;
+
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+        }
+
+        if (this.failed)
+        {
+            try
+            {
+                Thread.Sleep(1000);
+
+                await this.ResetOptions();
+
+                Thread.Sleep(1000);
+
+                await this.HandleQueryParams();
+            }
+            catch (Exception)
+            {
+                // Catch the SqliteException, do not set firstLoad to true
+            }
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public async Task UpdateCurrentCategory(string category)
+    {
+        if (this.Loading) return;
+
+        this.CurrentCategory = category;
+
+        if (this.CurrentCategory == "Recipes")
+        {
+            this.options = new List<string> { "Records", "Games", "Categories", "Synthesis Materials" };
+        }
+        else if (this.CurrentCategory == "Items")
+        {
+            this.options = new List<string> { "Records", "Games", "Enemies", "Worlds", "Areas" };
+        }
+        else if (this.CurrentCategory == "Weapons")
+        {
+            this.options = new List<string> { "Records", "Games", "Enemies", "Worlds", "Areas" };
+        }
+        else if (this.CurrentCategory == "Accessories & Armor")
+        {
+            this.options = new List<string> { "Records", "Games", "Enemies", "Worlds", "Areas" };
+        }
+        else if (this.CurrentCategory == "Synthesis Materials")
+        {
+            this.options = new List<string> { "Records", "Games", "Enemies", "Worlds", "Areas" };
+        }
+
+        await this.Search();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task UpdateCurrentOption(string option)
+    {
+        this.CurrentOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SearchInformation(string search)
+    {
+        if (search.Length < 3)
+            this.informationSearch = "";
+        else
+            this.informationSearch = search;
+
+
+        if (!this.Loading)
+        {
+            await this.Search();
+        }
+    }
+
+    public async Task Search()
+    {
+        this.Loading = true;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        if (this.CurrentCategory == "Recipes")
+        {
+            await this.SearchRecipes();
+        }
+        else if (this.CurrentCategory == "Items")
+        {
+            await this.SearchInventoryItems();
+        }
+        else if (this.CurrentCategory == "Weapons")
+        {
+            await this.SearchInventoryWeapons();
+        }
+        else if (this.CurrentCategory == "Accessories & Armor")
+        {
+            await this.SearchInventoryAccessoriesArmors();
+        }
+        else if (this.CurrentCategory == "Synthesis Materials")
+        {
+            await this.SearchInventorySynthesisMaterials();
+        }
+
+        this.Loading = false;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+    }
+
+    #region Sub-Search Methods
+    private async Task SearchRecipes()
+    {
+        var recipes = this.RecipesSearch != null ? string.Join("::", this.RecipesSelected) != "" ? string.Join("::", this.RecipesSelected) : null : null;
+        var games = this.RecipeGamesSearch != null ? string.Join("::", this.RecipeGamesSelected) != "" ? string.Join("::", this.RecipeGamesSelected) : null : null;
+        var categories = this.RecipeCategoriesSearch != null ? string.Join("::", this.RecipeCategoriesSelected) != "" ? string.Join("::", this.RecipeCategoriesSelected) : null : null;
+        var synthesisMaterials = this.RecipeMaterialsSearch != null ? string.Join("::", this.RecipeMaterialsSelected) != "" ? string.Join("::", this.RecipeMaterialsSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (recipes == null && games == null && categories == null && synthesisMaterials == null && information == null)
+        {
+            this.MSRecipeDtos = new List<RecipeDto>();
+
+            await Task.Run(async () => await this.ResetRecipeOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.MSRecipeDtos = await this.api.GetRecipes(games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateRecipeOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainRecipeTable != null)
+        {
+            MainRecipeTable.SetCurrentPage(1);
+            MainRecipeTable.CurrentExpandedRow = -1;
+        }
+    }
+
+    private async Task SearchInventoryItems()
+    {
+        var inventory = this.InventoryItemsSearch != null ? string.Join("::", this.InventoryItemsSelected) != "" ? string.Join("::", this.InventoryItemsSelected) : null : null;
+        var games = this.InventoryItemGamesSearch != null ? string.Join("::", this.InventoryItemGamesSelected) != "" ? string.Join("::", this.InventoryItemGamesSelected) : null : null;
+        //var categories = this.InventoryItemCategoriesSearch != null ? string.Join("::", this.InventoryItemCategoriesSelected) != "" ? string.Join("::", this.InventoryItemCategoriesSelected) : null : null;
+        var enemies = this.InventoryItemEnemiesSearch != null ? string.Join("::", this.InventoryItemEnemiesSelected) != "" ? string.Join("::", this.InventoryItemEnemiesSelected) : null : null;
+        var worlds = this.InventoryItemWorldsSearch != null ? string.Join("::", this.InventoryItemWorldsSelected) != "" ? string.Join("::", this.InventoryItemWorldsSelected) : null : null;
+        var areas = this.InventoryItemAreasSearch != null ? string.Join("::", this.InventoryItemAreasSelected) != "" ? string.Join("::", this.InventoryItemAreasSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (inventory == null && games == null && enemies == null && worlds == null && areas == null && information == null)
+        {
+            this.MSInventoryItemDtos = new List<InventoryDto>();
+
+            await Task.Run(async () => await this.ResetInventoryItemOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.MSInventoryItemDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateInventoryItemOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainInventoryItemTable != null)
+        {
+            MainInventoryItemTable.SetCurrentPage(1);
+            MainInventoryItemTable.CurrentExpandedRow = -1;
+        }
+    }
+
+
+    private async Task SearchInventoryWeapons()
+    {
+        var inventory = this.InventoryWeaponsSearch != null ? string.Join("::", this.InventoryWeaponsSelected) != "" ? string.Join("::", this.InventoryWeaponsSelected) : null : null;
+        var games = this.InventoryWeaponGamesSearch != null ? string.Join("::", this.InventoryWeaponGamesSelected) != "" ? string.Join("::", this.InventoryWeaponGamesSelected) : null : null;
+        //var categories = this.InventoryWeaponCategoriesSearch != null ? string.Join("::", this.InventoryWeaponCategoriesSelected) != "" ? string.Join("::", this.InventoryWeaponCategoriesSelected) : null : null;
+        var enemies = this.InventoryWeaponEnemiesSearch != null ? string.Join("::", this.InventoryWeaponEnemiesSelected) != "" ? string.Join("::", this.InventoryWeaponEnemiesSelected) : null : null;
+        var worlds = this.InventoryWeaponWorldsSearch != null ? string.Join("::", this.InventoryWeaponWorldsSelected) != "" ? string.Join("::", this.InventoryWeaponWorldsSelected) : null : null;
+        var areas = this.InventoryWeaponAreasSearch != null ? string.Join("::", this.InventoryWeaponAreasSelected) != "" ? string.Join("::", this.InventoryWeaponAreasSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (inventory == null && games == null && enemies == null && worlds == null && areas == null && information == null)
+        {
+            this.MSInventoryWeaponDtos = new List<InventoryDto>();
+
+            await Task.Run(async () => await this.ResetInventoryWeaponOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.MSInventoryWeaponDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateInventoryWeaponOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainInventoryWeaponTable != null)
+        {
+            MainInventoryWeaponTable.SetCurrentPage(1);
+            MainInventoryWeaponTable.CurrentExpandedRow = -1;
+        }
+    }
+
+
+    private async Task SearchInventoryAccessoriesArmors()
+    {
+        var inventory = this.InventoryAccessoryArmorsSearch != null ? string.Join("::", this.InventoryAccessoryArmorsSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorsSelected) : null : null;
+        var games = this.InventoryAccessoryArmorGamesSearch != null ? string.Join("::", this.InventoryAccessoryArmorGamesSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorGamesSelected) : null : null;
+        var enemies = this.InventoryAccessoryArmorEnemiesSearch != null ? string.Join("::", this.InventoryAccessoryArmorEnemiesSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorEnemiesSelected) : null : null;
+        var worlds = this.InventoryAccessoryArmorWorldsSearch != null ? string.Join("::", this.InventoryAccessoryArmorWorldsSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorWorldsSelected) : null : null;
+        var areas = this.InventoryAccessoryArmorAreasSearch != null ? string.Join("::", this.InventoryAccessoryArmorAreasSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorAreasSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (inventory == null && games == null && enemies == null && worlds == null && areas == null && information == null)
+        {
+            this.MSInventoryAccessoryArmorDtos = new List<InventoryDto>();
+
+            await Task.Run(async () => await this.ResetInventoryAccessoryArmorOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateInventoryAccessoryArmorOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainInventoryAccessoryArmorTable != null)
+        {
+            MainInventoryAccessoryArmorTable.SetCurrentPage(1);
+            MainInventoryAccessoryArmorTable.CurrentExpandedRow = -1;
+        }
+    }
+
+
+    private async Task SearchInventorySynthesisMaterials()
+    {
+        var inventory = this.InventoryMaterialsSearch != null ? string.Join("::", this.InventoryMaterialsSelected) != "" ? string.Join("::", this.InventoryMaterialsSelected) : null : null;
+        var games = this.InventoryMaterialGamesSearch != null ? string.Join("::", this.InventoryMaterialGamesSelected) != "" ? string.Join("::", this.InventoryMaterialGamesSelected) : null : null;
+        var enemies = this.InventoryMaterialEnemiesSearch != null ? string.Join("::", this.InventoryMaterialEnemiesSelected) != "" ? string.Join("::", this.InventoryMaterialEnemiesSelected) : null : null;
+        var worlds = this.InventoryMaterialWorldsSearch != null ? string.Join("::", this.InventoryMaterialWorldsSelected) != "" ? string.Join("::", this.InventoryMaterialWorldsSelected) : null : null;
+        var areas = this.InventoryMaterialAreasSearch != null ? string.Join("::", this.InventoryMaterialAreasSelected) != "" ? string.Join("::", this.InventoryMaterialAreasSelected) : null : null;
+        var information = this.informationSearch != "" ? this.informationSearch : null;
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (inventory == null && games == null && enemies == null && worlds == null && areas == null && information == null)
+        {
+            this.MSInventoryMaterialDtos = new List<InventoryDto>();
+
+            await Task.Run(async () => await this.ResetInventoryMaterialOptions());
+
+            this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.MSInventoryMaterialDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateInventoryMaterialOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainInventoryMaterialTable != null)
+        {
+            MainInventoryMaterialTable.SetCurrentPage(1);
+            MainInventoryMaterialTable.CurrentExpandedRow = -1;
+        }
+    }
+    #endregion Sub-Search Methods
+
+    public void UpdateOptions()
+    {
+        if (this.CurrentCategory == "Recipes")
+        {
+            this.UpdateRecipeOptions();
+        }
+        else if (this.CurrentCategory == "Items")
+        {
+            this.UpdateInventoryItemOptions();
+        }
+        else if (this.CurrentCategory == "Weapons")
+        {
+            this.UpdateInventoryWeaponOptions();
+        }
+        else if (this.CurrentCategory == "Accessories & Armor")
+        {
+            this.UpdateInventoryAccessoryArmorOptions();
+        }
+        else if (this.CurrentCategory == "Synthesis Materials")
+        {
+            this.UpdateInventoryMaterialOptions();
+        }
+    }
+
+    #region Sub-Option Methods
+    private void UpdateRecipeOptions()
+    {
+        this.RecipesAvailable = this.MSRecipeDtos.Select(y => y.Name).Except(this.RecipesSelected).Distinct().ToList();
+        this.RecipeGamesAvailable = this.MSRecipeDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.RecipeGamesSelected).Distinct().ToList();
+        this.RecipeCategories = this.MSRecipeDtos.Select(x => x.Category).Except(this.RecipeCategoriesSelected).Distinct().ToList();
+        this.RecipeMaterialsAvailable = this.MSRecipeDtos.SelectMany(x => x.RecipeMaterials).Select(x => x.Inventory.Name).Except(this.RecipeMaterialsSelected).Distinct().ToList();
+
+        this.RecipesAvailable.Sort();
+        this.RecipeCategoriesAvailable.Sort();
+        this.RecipeMaterialsAvailable.Sort();
+    }
+
+    private void UpdateInventoryItemOptions()
+    {
+        this.InventoryItemsAvailable = this.MSInventoryItemDtos.Select(y => y.Name).Except(this.InventoryItemsSelected).Distinct().ToList();
+        this.InventoryItemGamesAvailable = this.MSInventoryItemDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryItemGamesSelected).Distinct().ToList();
+        //this.InventoryItemCategoriesAvailable = this.MSInventoryItemDtos.Select(x => x.Category).Except(this.InventoryItemCategoriesSelected).Distinct().ToList();
+        this.InventoryItemEnemiesAvailable = this.MSInventoryItemDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryItemEnemiesSelected).Distinct().ToList();
+        this.InventoryItemWorldsAvailable = this.MSInventoryItemDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryItemWorldsSelected).Distinct().ToList();
+        this.InventoryItemAreasAvailable = this.MSInventoryItemDtos.SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Except(this.InventoryItemAreasSelected).Distinct().ToList();
+
+        this.InventoryItemsAvailable.Sort();
+        //this.InventoryItemCategoriesAvailable.Sort();
+        this.InventoryItemEnemiesAvailable.Sort();
+        this.InventoryItemWorldsAvailable.Sort();
+        this.InventoryItemAreasAvailable.Sort();
+    }
+
+    private void UpdateInventoryWeaponOptions()
+    {
+        this.InventoryWeaponsAvailable = this.MSInventoryWeaponDtos.Select(y => y.Name).Except(this.InventoryWeaponsSelected).Distinct().ToList();
+        this.InventoryWeaponGamesAvailable = this.MSInventoryWeaponDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryWeaponGamesSelected).Distinct().ToList();
+        //this.InventoryWeaponCategoriesAvailable = this.MSInventoryWeaponDtos.Select(x => x.Category).Except(this.InventoryWeaponCategoriesSelected).Distinct().ToList();
+        this.InventoryWeaponEnemiesAvailable = this.MSInventoryWeaponDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryWeaponEnemiesSelected).Distinct().ToList();
+        this.InventoryWeaponWorldsAvailable = this.MSInventoryWeaponDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryWeaponWorldsSelected).Distinct().ToList();
+        this.InventoryWeaponAreasAvailable = this.MSInventoryWeaponDtos.SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Except(this.InventoryWeaponAreasSelected).Distinct().ToList();
+
+        this.InventoryWeaponsAvailable.Sort();
+        //this.InventoryWeaponCategoriesAvailable.Sort();
+        this.InventoryWeaponEnemiesAvailable.Sort();
+        this.InventoryWeaponWorldsAvailable.Sort();
+        this.InventoryWeaponAreasAvailable.Sort();
+    }
+
+    private void UpdateInventoryAccessoryArmorOptions()
+    {
+        this.InventoryAccessoryArmorsAvailable = this.MSInventoryAccessoryArmorDtos.Select(y => y.Name).Except(this.InventoryAccessoryArmorsSelected).Distinct().ToList();
+        this.InventoryAccessoryArmorGamesAvailable = this.MSInventoryAccessoryArmorDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryAccessoryArmorGamesSelected).Distinct().ToList();
+        this.InventoryAccessoryArmorEnemiesAvailable = this.MSInventoryAccessoryArmorDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryAccessoryArmorEnemiesSelected).Distinct().ToList();
+        this.InventoryAccessoryArmorWorldsAvailable = this.MSInventoryAccessoryArmorDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryAccessoryArmorWorldsSelected).Distinct().ToList();
+        this.InventoryAccessoryArmorAreasAvailable = this.MSInventoryAccessoryArmorDtos.SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Except(this.InventoryAccessoryArmorAreasSelected).Distinct().ToList();
+
+        this.InventoryAccessoryArmorsAvailable.Sort();
+        this.InventoryAccessoryArmorEnemiesAvailable.Sort();
+        this.InventoryAccessoryArmorWorldsAvailable.Sort();
+        this.InventoryAccessoryArmorAreasAvailable.Sort();
+    }
+
+    private void UpdateInventoryMaterialOptions()
+    {
+        this.InventoryMaterialsAvailable = this.MSInventoryMaterialDtos.Select(y => y.Name).Except(this.InventoryMaterialsSelected).Distinct().ToList();
+        this.InventoryMaterialGamesAvailable = this.MSInventoryMaterialDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryMaterialGamesSelected).Distinct().ToList();
+        this.InventoryMaterialEnemiesAvailable = this.MSInventoryMaterialDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryMaterialEnemiesSelected).Distinct().ToList();
+        this.InventoryMaterialWorldsAvailable = this.MSInventoryMaterialDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryMaterialWorldsSelected).Distinct().ToList();
+        this.InventoryMaterialAreasAvailable = this.MSInventoryMaterialDtos.SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Except(this.InventoryMaterialAreasSelected).Distinct().ToList();
+
+        this.InventoryMaterialsAvailable.Sort();
+        this.InventoryMaterialEnemiesAvailable.Sort();
+        this.InventoryMaterialWorldsAvailable.Sort();
+        this.InventoryMaterialAreasAvailable.Sort();
+    }
+    #endregion Sub-Option Methods
+
+    public async Task ResetOptions()
+    {
+        this.Loading = true;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        if (this.CurrentCategory == "Recipes")
+        {
+            await this.ResetRecipeOptions();
+        }
+        else if (this.CurrentCategory == "Items")
+        {
+            await this.ResetInventoryItemOptions();
+        }
+        else if (this.CurrentCategory == "Weapons")
+        {
+            await this.ResetInventoryWeaponOptions();
+        }
+        else if (this.CurrentCategory == "Accessories & Armor")
+        {
+            await this.ResetInventoryAccessoryArmorOptions();
+        }
+        else if (this.CurrentCategory == "Synthesis Materials")
+        {
+            await this.ResetInventoryMaterialOptions();
+        }
+
+        this.Loading = false;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+    }
+
+    #region Sub-ResetOption Methods
+    private async Task ResetRecipeOptions()
+    {
+        this.Recipes = await context.Recipes.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.RecipeGames = await context.Recipes.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.RecipeCategories = await context.Recipes.AsNoTracking().Select(x => x.Category).Distinct().ToListAsync();
+        this.RecipeMaterials = await context.Recipes.AsNoTracking().SelectMany(x => x.RecipeMaterials).Select(x => x.Inventory.Name).Distinct().ToListAsync();
+
+        this.RecipesAvailable = this.Recipes;
+        this.RecipeGamesAvailable = this.RecipeGames;
+        this.RecipeCategoriesAvailable = this.RecipeCategories;
+        this.RecipeMaterialsAvailable = this.RecipeMaterials;
+
+        this.RecipesAvailable.Sort();
+        this.RecipeCategoriesAvailable.Sort();
+        this.RecipeMaterialsAvailable.Sort();
+
+        this.RecipesSelected = new List<string>();
+        this.RecipeGamesSelected = new List<string>();
+        this.RecipeCategoriesSelected = new List<string>();
+        this.RecipeMaterialsSelected = new List<string>();
+
+        if (this.RecipesSearch != null)
+            await this.RecipesSearch.SetCurrentView("Available");
+
+        if (this.RecipeGamesSearch != null)
+            await this.RecipeGamesSearch.SetCurrentView("Available");
+
+        if (this.RecipeCategoriesSearch != null)
+            await this.RecipeCategoriesSearch.SetCurrentView("Available");
+
+        if (this.RecipeMaterialsSearch != null)
+            await this.RecipeMaterialsSearch.SetCurrentView("Available");
+    }
+
+    private async Task ResetInventoryItemOptions()
+    {
+        this.InventoryItems = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Name).ToListAsync();
+        this.InventoryItemGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        //this.InventoryItemCategories = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Category).Distinct().ToListAsync();
+        this.InventoryItemEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+        this.InventoryItemWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+        this.InventoryItemAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+
+        this.InventoryItemsAvailable = this.InventoryItems;
+        this.InventoryItemGamesAvailable = this.InventoryItemGames;
+        this.InventoryItemEnemiesAvailable = this.InventoryItemEnemies;
+        this.InventoryItemWorldsAvailable = this.InventoryItemWorlds;
+        this.InventoryItemAreasAvailable = this.InventoryItemAreas;
+
+        this.InventoryItemsAvailable.Sort();
+        this.InventoryItemGamesAvailable.Sort();
+        this.InventoryItemEnemiesAvailable.Sort();
+        this.InventoryItemWorldsAvailable.Sort();
+        this.InventoryItemAreasAvailable.Sort();
+
+        this.InventoryItemsSelected = new List<string>();
+        this.InventoryItemGamesSelected = new List<string>();
+        this.InventoryItemEnemiesSelected = new List<string>();
+        this.InventoryItemWorldsSelected = new List<string>();
+        this.InventoryItemAreasSelected = new List<string>();
+
+        if (this.InventoryItemsSearch != null)
+            await this.InventoryItemsSearch.SetCurrentView("Available");
+
+        if (this.InventoryItemGamesSearch != null)
+            await this.InventoryItemGamesSearch.SetCurrentView("Available");
+
+        if (this.InventoryItemEnemiesSearch != null)
+            await this.InventoryItemEnemiesSearch.SetCurrentView("Available");
+
+        if (this.InventoryItemWorldsSearch != null)
+            await this.InventoryItemWorldsSearch.SetCurrentView("Available");
+
+        if (this.InventoryItemAreasSearch != null)
+            await this.InventoryItemAreasSearch.SetCurrentView("Available");
+    }
+
+    private async Task ResetInventoryWeaponOptions()
+    {
+        this.InventoryWeapons = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").Select(x => x.Name).ToListAsync();
+        this.InventoryWeaponGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.InventoryWeaponEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+        this.InventoryWeaponWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+        this.InventoryWeaponAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+
+        this.InventoryWeaponsAvailable = this.InventoryWeapons;
+        this.InventoryWeaponGamesAvailable = this.InventoryWeaponGames;
+        this.InventoryWeaponEnemiesAvailable = this.InventoryWeaponEnemies;
+        this.InventoryWeaponWorldsAvailable = this.InventoryWeaponWorlds;
+        this.InventoryWeaponAreasAvailable = this.InventoryWeaponAreas;
+
+        this.InventoryWeaponsAvailable.Sort();
+        this.InventoryWeaponGamesAvailable.Sort();
+        this.InventoryWeaponEnemiesAvailable.Sort();
+        this.InventoryWeaponWorldsAvailable.Sort();
+        this.InventoryWeaponAreasAvailable.Sort();
+
+        this.InventoryWeaponsSelected = new List<string>();
+        this.InventoryWeaponGamesSelected = new List<string>();
+        this.InventoryWeaponEnemiesSelected = new List<string>();
+        this.InventoryWeaponWorldsSelected = new List<string>();
+        this.InventoryWeaponAreasSelected = new List<string>();
+
+        if (this.InventoryWeaponsSearch != null)
+            await this.InventoryWeaponsSearch.SetCurrentView("Available");
+
+        if (this.InventoryWeaponGamesSearch != null)
+            await this.InventoryWeaponGamesSearch.SetCurrentView("Available");
+
+        if (this.InventoryWeaponEnemiesSearch != null)
+            await this.InventoryWeaponEnemiesSearch.SetCurrentView("Available");
+
+        if (this.InventoryWeaponWorldsSearch != null)
+            await this.InventoryWeaponWorldsSearch.SetCurrentView("Available");
+
+        if (this.InventoryWeaponAreasSearch != null)
+            await this.InventoryWeaponAreasSearch.SetCurrentView("Available");
+    }
+
+    private async Task ResetInventoryAccessoryArmorOptions()
+    {
+        this.InventoryAccessoryArmors = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").Select(x => x.Name).ToListAsync();
+        this.InventoryAccessoryArmorGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.InventoryAccessoryArmorEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+        this.InventoryAccessoryArmorWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+        this.InventoryAccessoryArmorAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+
+        this.InventoryAccessoryArmorsAvailable = this.InventoryAccessoryArmors;
+        this.InventoryAccessoryArmorGamesAvailable = this.InventoryAccessoryArmorGames;
+        this.InventoryAccessoryArmorEnemiesAvailable = this.InventoryAccessoryArmorEnemies;
+        this.InventoryAccessoryArmorWorldsAvailable = this.InventoryAccessoryArmorWorlds;
+        this.InventoryAccessoryArmorAreasAvailable = this.InventoryAccessoryArmorAreas;
+
+        this.InventoryAccessoryArmorsAvailable.Sort();
+        this.InventoryAccessoryArmorGamesAvailable.Sort();
+        this.InventoryAccessoryArmorEnemiesAvailable.Sort();
+        this.InventoryAccessoryArmorWorldsAvailable.Sort();
+        this.InventoryAccessoryArmorAreasAvailable.Sort();
+
+        this.InventoryAccessoryArmorsSelected = new List<string>();
+        this.InventoryAccessoryArmorGamesSelected = new List<string>();
+        this.InventoryAccessoryArmorEnemiesSelected = new List<string>();
+        this.InventoryAccessoryArmorWorldsSelected = new List<string>();
+        this.InventoryAccessoryArmorAreasSelected = new List<string>();
+
+        if (this.InventoryAccessoryArmorsSearch != null)
+            await this.InventoryAccessoryArmorsSearch.SetCurrentView("Available");
+
+        if (this.InventoryAccessoryArmorGamesSearch != null)
+            await this.InventoryAccessoryArmorGamesSearch.SetCurrentView("Available");
+
+        if (this.InventoryAccessoryArmorEnemiesSearch != null)
+            await this.InventoryAccessoryArmorEnemiesSearch.SetCurrentView("Available");
+
+        if (this.InventoryAccessoryArmorWorldsSearch != null)
+            await this.InventoryAccessoryArmorWorldsSearch.SetCurrentView("Available");
+
+        if (this.InventoryAccessoryArmorAreasSearch != null)
+            await this.InventoryAccessoryArmorAreasSearch.SetCurrentView("Available");
+    }
+
+    private async Task ResetInventoryMaterialOptions()
+    {
+        this.InventoryMaterials = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").Select(x => x.Name).ToListAsync();
+        this.InventoryMaterialGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.InventoryMaterialEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+        this.InventoryMaterialWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+        this.InventoryMaterialAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+
+        this.InventoryMaterialsAvailable = this.InventoryMaterials;
+        this.InventoryMaterialGamesAvailable = this.InventoryMaterialGames;
+        this.InventoryMaterialEnemiesAvailable = this.InventoryMaterialEnemies;
+        this.InventoryMaterialWorldsAvailable = this.InventoryMaterialWorlds;
+        this.InventoryMaterialAreasAvailable = this.InventoryMaterialAreas;
+
+        this.InventoryMaterialsAvailable.Sort();
+        this.InventoryMaterialGamesAvailable.Sort();
+        this.InventoryMaterialEnemiesAvailable.Sort();
+        this.InventoryMaterialWorldsAvailable.Sort();
+        this.InventoryMaterialAreasAvailable.Sort();
+
+        this.InventoryMaterialsSelected = new List<string>();
+        this.InventoryMaterialGamesSelected = new List<string>();
+        this.InventoryMaterialEnemiesSelected = new List<string>();
+        this.InventoryMaterialWorldsSelected = new List<string>();
+        this.InventoryMaterialAreasSelected = new List<string>();
+
+        if (this.InventoryMaterialsSearch != null)
+            await this.InventoryMaterialsSearch.SetCurrentView("Available");
+
+        if (this.InventoryMaterialGamesSearch != null)
+            await this.InventoryMaterialGamesSearch.SetCurrentView("Available");
+
+        if (this.InventoryMaterialEnemiesSearch != null)
+            await this.InventoryMaterialEnemiesSearch.SetCurrentView("Available");
+
+        if (this.InventoryMaterialWorldsSearch != null)
+            await this.InventoryMaterialWorldsSearch.SetCurrentView("Available");
+
+        if (this.InventoryMaterialAreasSearch != null)
+            await this.InventoryMaterialAreasSearch.SetCurrentView("Available");
+    }
+    #endregion Sub-ResetOption Methods
+
+    public async Task ClearAllOptions(string clearString)
+    {
+        if (this.CurrentCategory == "Recipes")
+        {
+            await this.ClearAllRecipeOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Items")
+        {
+            await this.ClearAllInventoryItemOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Weapons")
+        {
+            await this.ClearAllInventoryWeaponOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Accessories & Armor")
+        {
+            await this.ClearAllInventoryAccessoryArmorOptions(clearString);
+        }
+        else if (this.CurrentCategory == "Synthesis Materials")
+        {
+            await this.ClearAllInventoryMaterialOptions(clearString);
+        }
+
+        await this.Search();
+    }
+
+    #region Clear All Sub-Methods
+    private async Task ClearAllRecipeOptions(string clearString)
+    {
+        if (clearString == "Records")
+        {
+            this.Recipes = await context.Recipes.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Recipes.Sort();
+
+            this.RecipesAvailable = this.Recipes;
+            this.RecipesSelected = new List<string>();
+
+            if (this.RecipesSearch != null)
+            {
+                await this.RecipesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.RecipeGames = await context.Recipes.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.RecipeGames.Sort();
+
+            this.RecipeGamesAvailable = this.RecipeGames;
+            this.RecipeGamesSelected = new List<string>();
+
+            if (this.RecipeGamesSearch != null)
+            {
+                await this.RecipeGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Categories")
+        {
+            this.RecipeCategories = await context.Recipes.AsNoTracking().Select(x => x.Category).Distinct().ToListAsync();
+            this.RecipeCategories.Sort();
+
+            this.RecipeCategoriesAvailable = this.RecipeCategories;
+            this.RecipeCategoriesSelected = new List<string>();
+
+            if (this.RecipeCategoriesSearch != null)
+            {
+                await this.RecipeCategoriesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Synthesis Materials")
+        {
+            this.RecipeMaterials = await context.Recipes.AsNoTracking().SelectMany(x => x.RecipeMaterials).Select(x => x.Inventory.Name).Distinct().ToListAsync();
+
+            this.RecipeMaterialsAvailable = this.RecipeMaterials;
+            this.RecipeMaterialsSelected = new List<string>();
+
+            if (this.RecipeMaterialsSearch != null)
+            {
+                await this.RecipeMaterialsSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllInventoryItemOptions(string clearString)
+    {
+        if (clearString == "Records")
+        {
+            this.InventoryItems = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Name).ToListAsync();
+            this.InventoryItems.Sort();
+
+            this.InventoryItemsAvailable = this.InventoryItems;
+            this.InventoryItemsSelected = new List<string>();
+
+            if (this.InventoryItemsSearch != null)
+            {
+                await this.InventoryItemsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.InventoryItemGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.InventoryItemGamesAvailable = this.InventoryItemGames;
+            this.InventoryItemGamesSelected = new List<string>();
+
+            if (this.InventoryItemGamesSearch != null)
+            {
+                await this.InventoryItemGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Enemies")
+        {
+            this.InventoryItemEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+            this.InventoryItemEnemies.Sort();
+
+            this.InventoryItemEnemiesAvailable = this.InventoryItemEnemies;
+            this.InventoryItemEnemiesSelected = new List<string>();
+
+            if (this.InventoryItemEnemiesSearch != null)
+            {
+                await this.InventoryItemEnemiesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.InventoryItemWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+            this.InventoryItemWorlds.Sort();
+
+            this.InventoryItemWorldsAvailable = this.InventoryItemWorlds;
+            this.InventoryItemWorldsSelected = new List<string>();
+
+            if (this.InventoryItemWorldsSearch != null)
+            {
+                await this.InventoryItemWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Areas")
+        {
+            this.InventoryItemAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+            this.InventoryItemAreas.Sort();
+
+            this.InventoryItemAreasAvailable = this.InventoryItemAreas;
+            this.InventoryItemAreasSelected = new List<string>();
+
+            if (this.InventoryItemAreasSearch != null)
+            {
+                await this.InventoryItemAreasSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllInventoryWeaponOptions(string clearString)
+    {
+        if (clearString == "Records")
+        {
+            this.InventoryWeapons = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").Select(x => x.Name).ToListAsync();
+            this.InventoryWeapons.Sort();
+
+            this.InventoryWeaponsAvailable = this.InventoryWeapons;
+            this.InventoryWeaponsSelected = new List<string>();
+
+            if (this.InventoryWeaponsSearch != null)
+            {
+                await this.InventoryWeaponsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.InventoryWeaponGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.InventoryWeaponGamesAvailable = this.InventoryWeaponGames;
+            this.InventoryWeaponGamesSelected = new List<string>();
+
+            if (this.InventoryWeaponGamesSearch != null)
+            {
+                await this.InventoryWeaponGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Enemies")
+        {
+            this.InventoryWeaponEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+            this.InventoryWeaponEnemies.Sort();
+
+            this.InventoryWeaponEnemiesAvailable = this.InventoryWeaponEnemies;
+            this.InventoryWeaponEnemiesSelected = new List<string>();
+
+            if (this.InventoryWeaponEnemiesSearch != null)
+            {
+                await this.InventoryWeaponEnemiesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.InventoryWeaponWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+            this.InventoryWeaponWorlds.Sort();
+
+            this.InventoryWeaponWorldsAvailable = this.InventoryWeaponWorlds;
+            this.InventoryWeaponWorldsSelected = new List<string>();
+
+            if (this.InventoryWeaponWorldsSearch != null)
+            {
+                await this.InventoryWeaponWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Areas")
+        {
+            this.InventoryWeaponAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+            this.InventoryWeaponAreas.Sort();
+
+            this.InventoryWeaponAreasAvailable = this.InventoryWeaponAreas;
+            this.InventoryWeaponAreasSelected = new List<string>();
+
+            if (this.InventoryWeaponAreasSearch != null)
+            {
+                await this.InventoryWeaponAreasSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllInventoryAccessoryArmorOptions(string clearString)
+    {
+        if (clearString == "Records")
+        {
+            this.InventoryAccessoryArmors = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").Select(x => x.Name).ToListAsync();
+            this.InventoryAccessoryArmors.Sort();
+
+            this.InventoryAccessoryArmorsAvailable = this.InventoryAccessoryArmors;
+            this.InventoryAccessoryArmorsSelected = new List<string>();
+
+            if (this.InventoryAccessoryArmorsSearch != null)
+            {
+                await this.InventoryAccessoryArmorsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.InventoryAccessoryArmorGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.InventoryAccessoryArmorGamesAvailable = this.InventoryAccessoryArmorGames;
+            this.InventoryAccessoryArmorGamesSelected = new List<string>();
+
+            if (this.InventoryAccessoryArmorGamesSearch != null)
+            {
+                await this.InventoryAccessoryArmorGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Enemies")
+        {
+            this.InventoryAccessoryArmorEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+            this.InventoryAccessoryArmorEnemies.Sort();
+
+            this.InventoryAccessoryArmorEnemiesAvailable = this.InventoryAccessoryArmorEnemies;
+            this.InventoryAccessoryArmorEnemiesSelected = new List<string>();
+
+            if (this.InventoryAccessoryArmorEnemiesSearch != null)
+            {
+                await this.InventoryAccessoryArmorEnemiesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.InventoryAccessoryArmorWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+            this.InventoryAccessoryArmorWorlds.Sort();
+
+            this.InventoryAccessoryArmorWorldsAvailable = this.InventoryAccessoryArmorWorlds;
+            this.InventoryAccessoryArmorWorldsSelected = new List<string>();
+
+            if (this.InventoryAccessoryArmorWorldsSearch != null)
+            {
+                await this.InventoryAccessoryArmorWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Areas")
+        {
+            this.InventoryAccessoryArmorAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+            this.InventoryAccessoryArmorAreas.Sort();
+
+            this.InventoryAccessoryArmorAreasAvailable = this.InventoryAccessoryArmorAreas;
+            this.InventoryAccessoryArmorAreasSelected = new List<string>();
+
+            if (this.InventoryAccessoryArmorAreasSearch != null)
+            {
+                await this.InventoryAccessoryArmorAreasSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    private async Task ClearAllInventoryMaterialOptions(string clearString)
+    {
+        if (clearString == "Records")
+        {
+            this.InventoryMaterials = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").Select(x => x.Name).ToListAsync();
+            this.InventoryMaterials.Sort();
+
+            this.InventoryMaterialsAvailable = this.InventoryMaterials;
+            this.InventoryMaterialsSelected = new List<string>();
+
+            if (this.InventoryMaterialsSearch != null)
+            {
+                await this.InventoryMaterialsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.InventoryMaterialGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+
+            this.InventoryMaterialGamesAvailable = this.InventoryMaterialGames;
+            this.InventoryMaterialGamesSelected = new List<string>();
+
+            if (this.InventoryMaterialGamesSearch != null)
+            {
+                await this.InventoryMaterialGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Enemies")
+        {
+            this.InventoryMaterialEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
+            this.InventoryMaterialEnemies.Sort();
+
+            this.InventoryMaterialEnemiesAvailable = this.InventoryMaterialEnemies;
+            this.InventoryMaterialEnemiesSelected = new List<string>();
+
+            if (this.InventoryMaterialEnemiesSearch != null)
+            {
+                await this.InventoryMaterialEnemiesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Worlds")
+        {
+            this.InventoryMaterialWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
+            this.InventoryMaterialWorlds.Sort();
+
+            this.InventoryMaterialWorldsAvailable = this.InventoryMaterialWorlds;
+            this.InventoryMaterialWorldsSelected = new List<string>();
+
+            if (this.InventoryMaterialWorldsSearch != null)
+            {
+                await this.InventoryMaterialWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Areas")
+        {
+            this.InventoryMaterialAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
+            this.InventoryMaterialAreas.Sort();
+
+            this.InventoryMaterialAreasAvailable = this.InventoryMaterialAreas;
+            this.InventoryMaterialAreasSelected = new List<string>();
+
+            if (this.InventoryMaterialAreasSearch != null)
+            {
+                await this.InventoryMaterialAreasSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+    #endregion Clear All Sub-Methods
+
+    public async Task GenerateShareLink()
+    {
+        try
+        {
+            if (this.CurrentCategory == "Recipes")
+            {
+                await this.GenerateRecipeShareLink();
+            }
+            else if (this.CurrentCategory == "Items")
+            {
+                await this.GenerateInventoryItemShareLink();
+            }
+            else if (this.CurrentCategory == "Weapons")
+            {
+                await this.GenerateInventoryWeaponShareLink();
+            }
+            else if (this.CurrentCategory == "Accessories & Armor")
+            {
+                await this.GenerateInventoryAccessoryArmorShareLink();
+            }
+            else if (this.CurrentCategory == "Synthesis Materials")
+            {
+                await this.GenerateInventoryMaterialShareLink();
+            }
+        }
+        catch (Exception)
+        {
+            // Catch potential issue when trying to access disposed object
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    #region Generate Share Link Sub-Methods
+    private async Task GenerateRecipeShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+
+        if (this.RecipesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.RecipesSelected.Select(x => $"record={this.context.Recipes.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.RecipeGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.RecipeGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.RecipeCategoriesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.RecipeCategoriesSelected.Select(x => $"category={this.context.Recipes.AsNoTracking().FirstOrDefault(y => y.Category == x)?.Id}")) + "&";
+        }
+
+        if (this.RecipeMaterialsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.RecipeMaterialsSelected.Select(x => $"material={this.context.Recipes.AsNoTracking().SelectMany(y => y.RecipeMaterials).FirstOrDefault(y => y.Inventory.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += $"open_row={this.MainRecipeTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainRecipeTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.Recipes.FirstOrDefault(x => x.Id == this.MainRecipeTable.CurrentExpandedRow)?.Name}' record.");
+        }
+    }
+
+    private async Task GenerateInventoryItemShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+
+        if (this.InventoryItemsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryItemsSelected.Select(x => $"record={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryItemGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryItemGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryItemEnemiesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryItemEnemiesSelected.Select(x => $"enemy={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.Character.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryItemWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryItemWorldsSelected.Select(x => $"world={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.World.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryItemAreasSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryItemAreasSelected.Select(x => $"area={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=Items&";
+        shareLink += $"open_row={this.MainInventoryItemTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainInventoryItemTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Item").FirstOrDefault(x => x.Id == this.MainInventoryItemTable.CurrentExpandedRow)?.Name}' record.");
+        }
+    }
+
+    private async Task GenerateInventoryWeaponShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+
+        if (this.InventoryWeaponsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryWeaponsSelected.Select(x => $"record={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryWeaponGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryWeaponGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryWeaponEnemiesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryWeaponEnemiesSelected.Select(x => $"enemy={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.Character.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryWeaponWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryWeaponWorldsSelected.Select(x => $"world={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.World.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryWeaponAreasSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryWeaponAreasSelected.Select(x => $"area={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=Weapons&";
+        shareLink += $"open_row={this.MainInventoryWeaponTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainInventoryWeaponTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").FirstOrDefault(x => x.Id == this.MainInventoryWeaponTable.CurrentExpandedRow)?.Name}' record.");
+        }
+    }
+    
+    private async Task GenerateInventoryAccessoryArmorShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+
+        if (this.InventoryAccessoryArmorsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryAccessoryArmorsSelected.Select(x => $"record={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryAccessoryArmorGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryAccessoryArmorGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryAccessoryArmorEnemiesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryAccessoryArmorEnemiesSelected.Select(x => $"enemy={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.Character.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryAccessoryArmorWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryAccessoryArmorWorldsSelected.Select(x => $"world={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.World.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryAccessoryArmorAreasSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryAccessoryArmorAreasSelected.Select(x => $"area={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=AccessoryArmor&";
+        shareLink += $"open_row={this.MainInventoryAccessoryArmorTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainInventoryAccessoryArmorTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Accessory" || x.Category == "Armor").FirstOrDefault(x => x.Id == this.MainInventoryAccessoryArmorTable.CurrentExpandedRow)?.Name}' record.");
+        }
+    }
+
+    private async Task GenerateInventoryMaterialShareLink()
+    {
+        var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+
+        if (this.InventoryMaterialsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryMaterialsSelected.Select(x => $"record={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryMaterialGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryMaterialGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryMaterialEnemiesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryMaterialEnemiesSelected.Select(x => $"enemy={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.Character.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryMaterialWorldsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryMaterialWorldsSelected.Select(x => $"world={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).FirstOrDefault(y => y.CharacterLocation.World.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InventoryMaterialAreasSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InventoryMaterialAreasSelected.Select(x => $"area={this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=SynthesisMaterial&";
+        shareLink += $"open_row={this.MainInventoryMaterialTable?.CurrentExpandedRow}";
+
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainInventoryMaterialTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Synthesis Material").FirstOrDefault(x => x.Id == this.MainInventoryMaterialTable.CurrentExpandedRow)?.Name}' record.");
+        }
+    }
+    #endregion Generate Share Link Sub-Methods
+
+    public async Task<bool> HandleQueryParams()
+    {
+        var optionUpdated = false;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        try
+        {
+            if (this.CategoryQuery != null)
+            {
+                switch (this.CategoryQuery)
+                {
+                    case "Recipes":
+                        this.CurrentCategory = "Recipes";
+                        break;
+                    case "Items":
+                        this.CurrentCategory = "Items";
+                        break;
+                    case "Weapons":
+                        this.CurrentCategory = "Weapons";
+                        break;
+                    case "AccessoryArmor":
+                        this.CurrentCategory = "Accessories & Armor";
+                        break;
+                    case "SynthesisMaterial":
+                        this.CurrentCategory = "Synthesis Materials";
+                        break;
+                    default:
+                        this.CurrentCategory = this.CategoryQuery;
+                        break;
+                }
+                
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+
+            if (this.CurrentCategory == "Recipes")
+            {
+                optionUpdated = await this.HandleRecipeQueryParams();
+            }
+            else if (this.CurrentCategory == "Items")
+            {
+                optionUpdated = await this.HandleInventoryItemQueryParams();
+            }
+            else if (this.CurrentCategory == "Weapons")
+            {
+                optionUpdated = await this.HandleInventoryWeaponQueryParams();
+            }
+            else if (this.CurrentCategory == "Accessories & Armor")
+            {
+                optionUpdated = await this.HandleInventoryAccessoryArmorQueryParams();
+            }
+            else if (this.CurrentCategory == "Synthesis Materials")
+            {
+                optionUpdated = await this.HandleInventoryMaterialQueryParams();
+            }
+
+            if (optionUpdated)
+            {
+                await this.Search();
+            }
+        }
+        catch(Exception)
+        {
+            //this.failed = true;
+        }
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        return optionUpdated;
+    }
+
+    #region Handle Query Params Sub-Methods
+    private async Task<bool> HandleRecipeQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.RecipesSearch != null)
+        {
+            var recipeIds = this.RecordQuery.Select(x => int.Parse(x));
+
+            this.RecipesSelected = this.context.Recipes.AsNoTracking().Where(x => recipeIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.RecipesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.RecipeGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+            this.RecipeGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.RecipeGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.RecipeCategoryQuery != null && this.RecipeCategoryQuery.Count() > 0 && this.RecipeCategoriesSearch != null)
+        {
+            this.RecipeCategoriesSelected = this.context.Recipes.AsNoTracking().Where(x => this.RecipeCategoryQuery.Contains(x.Category)).Select(x => x.Category).ToList();
+            await this.RecipeCategoriesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.RecipeMaterialQuery != null && this.RecipeMaterialQuery.Count() > 0 && this.RecipeMaterialsSearch != null)
+        {
+            var materialIds = this.RecipeMaterialQuery.Select(x => int.Parse(x));
+
+            this.RecipeMaterialsSelected = this.context.Recipes.AsNoTracking().SelectMany(x => x.RecipeMaterials).Where(x => materialIds.Contains(x.Id)).Select(x => x.Inventory.Name).ToList();
+            await this.RecipeMaterialsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+
+    private async Task<bool> HandleInventoryItemQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryItemsSearch != null)
+        {
+            var recordIds = this.RecordQuery.Select(x => int.Parse(x));
+
+            this.InventoryItemsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryItemsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryItemGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+            
+            this.InventoryItemGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.InventoryItemGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryItemEnemiesSearch != null)
+        {
+            var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
+
+            this.InventoryItemEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
+            await this.InventoryItemEnemiesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryItemWorldsSearch != null)
+        {
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.InventoryItemWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
+            await this.InventoryItemWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+        
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryItemAreasSearch != null)
+        {
+            var areaIds = this.AreaQuery.Select(x => int.Parse(x));
+
+            this.InventoryItemAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryItemAreasSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+    
+    private async Task<bool> HandleInventoryWeaponQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryWeaponsSearch != null)
+        {
+            var recordIds = this.RecordQuery.Select(x => int.Parse(x));
+
+            this.InventoryWeaponsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryWeaponsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryWeaponGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+            
+            this.InventoryWeaponGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.InventoryWeaponGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryWeaponEnemiesSearch != null)
+        {
+            var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
+
+            this.InventoryWeaponEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
+            await this.InventoryWeaponEnemiesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryWeaponWorldsSearch != null)
+        {
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.InventoryWeaponWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
+            await this.InventoryWeaponWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+        
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryWeaponAreasSearch != null)
+        {
+            var areaIds = this.AreaQuery.Select(x => int.Parse(x));
+
+            this.InventoryWeaponAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryWeaponAreasSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+    
+    private async Task<bool> HandleInventoryAccessoryArmorQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryAccessoryArmorsSearch != null)
+        {
+            var recordIds = this.RecordQuery.Select(x => int.Parse(x));
+
+            this.InventoryAccessoryArmorsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryAccessoryArmorsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryAccessoryArmorGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+            
+            this.InventoryAccessoryArmorGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.InventoryAccessoryArmorGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryAccessoryArmorEnemiesSearch != null)
+        {
+            var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
+
+            this.InventoryAccessoryArmorEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
+            await this.InventoryAccessoryArmorEnemiesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryAccessoryArmorWorldsSearch != null)
+        {
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.InventoryAccessoryArmorWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
+            await this.InventoryAccessoryArmorWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+        
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryAccessoryArmorAreasSearch != null)
+        {
+            var areaIds = this.AreaQuery.Select(x => int.Parse(x));
+
+            this.InventoryAccessoryArmorAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryAccessoryArmorAreasSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+
+    private async Task<bool> HandleInventoryMaterialQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryMaterialsSearch != null)
+        {
+            var recordIds = this.RecordQuery.Select(x => int.Parse(x));
+
+            this.InventoryMaterialsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryMaterialsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryMaterialGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+            this.InventoryMaterialGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.InventoryMaterialGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryMaterialEnemiesSearch != null)
+        {
+            var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
+
+            this.InventoryMaterialEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
+            await this.InventoryMaterialEnemiesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryMaterialWorldsSearch != null)
+        {
+            var worldIds = this.WorldQuery.Select(x => int.Parse(x));
+
+            this.InventoryMaterialWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
+            await this.InventoryMaterialWorldsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryMaterialAreasSearch != null)
+        {
+            var areaIds = this.AreaQuery.Select(x => int.Parse(x));
+
+            this.InventoryMaterialAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InventoryMaterialAreasSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
+    #endregion Handle Query Params Sub-Methods
+
+    #region Scene Specific Methods
+    public void NavigateToDailyMoogleRecord()
+    {
+        try
+        {
+            var dateCode = DateTime.Now.ToString("yyyyMMdd");
+            var entryId = this.context.DailyJournalEntries.FirstOrDefault(entry => entry.DateCode == dateCode)?.EntryId;
+            var journalEntry = this.context.JournalEntries.AsNoTracking()
+                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
+                .FirstOrDefault(j => j.Id == entryId);
+
+            if (journalEntry == null)
+            {
+                return;
+            }
+
+            var dailyLink = $"{NavigationManager.BaseUri}moogle_shop?";
+
+            dailyLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
+            dailyLink += $"game={journalEntry.Game.Id}&";
+            dailyLink += $"entry={journalEntry.Id}&";
+            dailyLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
+            dailyLink += $"category={journalEntry.Category}&";
+            dailyLink += $"open_row={journalEntry.Id}";
+
+            NavigationManager.NavigateTo(dailyLink, true);
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+
+    public void NavigateToRandomMoogleRecord()
+    {
+        try
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+            var randomEntryId = random.Next(0, this.context.JournalEntries.Count());
+            var journalEntry = this.context.JournalEntries.AsNoTracking()
+                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
+                .FirstOrDefault(j => j.Id == randomEntryId);
+                
+            if (journalEntry == null)
+            {
+                return;
+            }
+
+            var randomLink = $"{NavigationManager.BaseUri}moogle_shop?";
+
+            randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
+            randomLink += $"game={journalEntry.Game.Id}&";
+            randomLink += $"entry={journalEntry.Id}&";
+            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&"; 
+            randomLink += $"category={journalEntry.Category}&";
+            randomLink += $"open_row={journalEntry.Id}";
+
+            NavigationManager.NavigateTo(randomLink, true);
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+    #endregion Scene Specific Methods
+
+
+    #region Search Helpers
+    private void Search(string search, ref List<string> initialValues, ref List<string> selected, ref List<string> available)
+    {
+        available = new List<string>();
+
+        if (string.IsNullOrEmpty(search))
+        {
+            available = initialValues;
+            return;
+        }
+
+        foreach (var value in initialValues)
+        {
+            if (selected.Contains(value)) continue;
+
+            if (value.ToLower().Contains(search.ToLower()))
+            {
+                available.Add(value);
+            }
+        }
+
+        available.Sort();
+    }
+
+    private void Select(string value, ref List<string> selected, ref List<string> available)
+    {
+        selected.Add(value);
+        available.Remove(value);
+
+        selected.Sort();
+
+        this.Search().Wait();
+    }
+
+    private void Remove(string value, ref List<string> selected, ref List<string> available)
+    {
+        available.Add(value);
+        selected.Remove(value);
+
+        available.Sort();
+
+        this.Search().Wait();
+    }
+    #endregion Search Helpers
+}

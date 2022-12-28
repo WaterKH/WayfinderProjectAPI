@@ -16,7 +16,7 @@ namespace WayfinderProjectAPI.Data.Models
 
 
         [Required]
-        public virtual List<CharacterLocation> CharacterLocations { get; set; } = new();
+        public virtual CharacterLocation CharacterLocation { get; set; } = new();
         [Required]
         public virtual Inventory Inventory { get; set; } = new();
     }

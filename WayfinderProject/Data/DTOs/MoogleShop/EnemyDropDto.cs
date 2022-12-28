@@ -7,7 +7,7 @@
         public string AdditionalInformation { get; set; } = string.Empty;
 
 
-        public virtual List<CharacterLocationDto> CharacterLocations { get; set; } = new();
+        public virtual CharacterLocationDto CharacterLocation { get; set; } = new();
         public virtual InventoryDto Inventory { get; set; } = new();
     }
 }

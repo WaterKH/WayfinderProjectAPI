@@ -16,8 +16,8 @@ namespace WayfinderProjectAPI.Data.Models
         public virtual Game Game { get; set; } = new();
 
         [AllowNull]
-        public virtual ICollection<World> Worlds { get; set; }
+        public virtual World World { get; set; }
         [AllowNull]
-        public virtual ICollection<Area> Areas { get; set; }
+        public virtual List<Area> Areas { get; set; }
     }
 }

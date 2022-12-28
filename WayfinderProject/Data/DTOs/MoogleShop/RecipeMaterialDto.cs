@@ -9,7 +9,6 @@
 
 
         public virtual GameDto Game { get; set; } = new();
-        public virtual List<InventoryDto> MaterialsNeeded { get; set; } = new();
-        public virtual List<int> AmountPerMaterial { get; set; } = new();
+        public virtual List<RecipeMaterialDto> RecipeMaterials { get; set; } = new();
     }
 }

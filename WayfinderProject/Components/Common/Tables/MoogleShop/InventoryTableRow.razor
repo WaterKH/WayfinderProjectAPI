@@ -1,0 +1,155 @@
+﻿@using WayfinderProject.Components.Common
+@using WayfinderProject.Data
+@using WayfinderProject.Data.Models
+@using WayfinderProjectAPI.Data.DTOs
+
+
+<td style="vertical-align: middle;">
+    @if (this.MainTable != null)
+    {
+        if (this.MainTable.CurrentExpandedRow == this.Inventory.Id)
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Inventory.Id))">
+                <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+        else
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Inventory.Id))">
+                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@Inventory.Game.Name</span>
+</td>
+<td style="vertical-align: middle;">
+    <span style="font-weight: 600;">@Inventory.Name</span>
+</td>
+<td style="vertical-align: middle;">
+    @if (Inventory.Cost > 0)
+    {
+        <span style="font-weight: 600;">@(Inventory.Cost) @(Inventory.Currency)</span>
+    }
+    else
+    {
+    }
+</td>
+<td style="vertical-align: middle;">
+    @if (Inventory.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).Distinct().Count() > 2)
+    {
+        <div style="margin-left: -5px; height: 38px;">
+            <Tooltip Text="@(string.Join(", ", Inventory.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).Distinct()))">
+                <div class="character-display">
+                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                </div>
+            </Tooltip>
+        </div>
+    }
+    else
+    {
+        if (Inventory.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).Distinct().Count() > 0)
+        {
+            <div style="display: inline-flex" class="@(Inventory.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).Distinct().Count() == 2 ? "character-display" : "")">
+                @for (int i = 0; i < Inventory.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).Distinct().Count(); ++i)
+                {
+                    <span class="character-color">@Inventory.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).Distinct().ToList()[i]</span>
+                    if (i < Inventory.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).Distinct().Count() - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    @if (Inventory.EnemyDrops.Count > 2)
+    {
+            <div style="margin-left: -5px; height: 38px;">
+                <Tooltip Text="@(string.Join(", ", Inventory.EnemyDrops.Select(x => x.CharacterLocation.World.Name)))">
+                    <div class="world-display">
+                        Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                    </div>
+                </Tooltip>
+            </div>
+    }
+    else
+    {
+        if (Inventory.EnemyDrops.Count > 0)
+        {
+            <div style="display: inline-flex" class="@(Inventory.EnemyDrops.Count == 2 ? "world-display" : "")">
+                @for (int i = 0; i < Inventory.EnemyDrops.Count; ++i)
+                {
+                    if (Inventory.EnemyDrops[i].CharacterLocation != null)
+                    {
+                        <span class="world-color">@Inventory.EnemyDrops[i].CharacterLocation.World.Name</span>
+                        if (i < Inventory.EnemyDrops.Count - 1)
+                        {
+                            <div>,&nbsp;</div>
+                        }
+                    }
+                }
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    @if (Inventory.EnemyDrops.Count > 2)
+    {
+        <div style="margin-left: -5px; height: 38px;">
+            <Tooltip Text="@(string.Join(", ", Inventory.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => x.Name)))">
+                <div class="area-display">
+                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                </div>
+            </Tooltip>
+        </div>
+    }
+    else
+    {
+        if (Inventory.EnemyDrops.Count > 0)
+        {
+            <div style="display: inline-flex" class="@(Inventory.EnemyDrops.Count == 2 ? "area-display" : "")">
+                @for (int i = 0; i < Inventory.EnemyDrops.Count; ++i)
+                {
+                    if (Inventory.EnemyDrops[i].CharacterLocation != null)
+                    {
+                        for (int j = 0; j < Inventory.EnemyDrops[i].CharacterLocation.Areas.Count; ++j)
+                        {
+                            <span class="area-color">@Inventory.EnemyDrops[i].CharacterLocation.Areas[j].Name</span>
+                            if (i < Inventory.EnemyDrops[i].CharacterLocation.Areas.Count - 1)
+                            {
+                                <div>,&nbsp;</div>
+                            }
+                        }
+                    }
+                }
+            </div>
+        }
+    }
+</td>
+
+<style>
+.clickable {
+    float: right;
+    font-size: 1rem;
+    color: #3e79a7;
+    margin-top: 3px;
+    cursor: pointer;
+}
+</style>
+
+@code {
+    [Parameter] public InventoryDto Inventory { get; set; } = new InventoryDto();
+    [Parameter] public InventoryTable<InventoryDto>? MainTable { get; set; }
+
+    private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        //this.BrowserDimension = await BrowserService.GetDimensions();
+
+        await base.OnParametersSetAsync();
+    }
+}

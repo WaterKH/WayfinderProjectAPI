@@ -7,7 +7,7 @@
 
         public GameDto Game { get; set; } = new GameDto();
         public CharacterDto Character { get; set; } = new CharacterDto();
-        public List<WorldDto> Worlds { get; set; } = new List<WorldDto>();
+        public WorldDto World { get; set; } = new WorldDto();
         public List<AreaDto> Areas { get; set; } = new List<AreaDto>();
     }
 }
