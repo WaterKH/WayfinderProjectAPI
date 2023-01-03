@@ -86,11 +86,14 @@ namespace WayfinderProject.Data.Jobs
                     // Assemble tweet and subtweet
                     if (description.Length > 275)
                     {
-                        tweetText = $"\"{description[..275]}...\"";
+                        var temp = description[..275];
+                        temp = temp[..temp.LastIndexOf(' ')].Trim();
+
+                        tweetText = $"{temp}...";
                     }
                     else
                     {
-                        tweetText = $"{name}, kupo!\r\n\r\n\"{description}\"";
+                        tweetText = $"{name}, kupo!\r\n\r\n{description}";
                     }
                     subTweetText = $"\"{name}\" from {gameName}\r\nRead more here: https://wayfinderprojectkh.com/moogle_shop?record={dailyMoogleRecord.RecordId}&category={category}&open_row={dailyMoogleRecord.RecordId}";
 

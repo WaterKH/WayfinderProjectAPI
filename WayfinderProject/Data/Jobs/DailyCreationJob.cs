@@ -152,11 +152,11 @@ namespace WayfinderProject.Data.Jobs
 
                 MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection);
                 insertCommand.ExecuteReader();
-                #endregion Journal
             }
+            #endregion Journal
 
             #region Shop
-            string selectShopQuery = $"SELECT * FROM wayfinderprojectdb.DailyJournalEntries WHERE DateCode = {dateCode}";
+            string selectShopQuery = $"SELECT * FROM wayfinderprojectdb.DailyMoogleRecords WHERE DateCode = {dateCode}";
 
             MySqlCommand selectShopCommand = new MySqlCommand(selectShopQuery, connection);
             MySqlDataReader selectShopResult = selectShopCommand.ExecuteReader();
@@ -210,10 +210,10 @@ namespace WayfinderProject.Data.Jobs
 
                 MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection);
                 insertCommand.ExecuteReader();
-                #endregion Shop
 
                 connection.Close();
             }
+            #endregion Shop
 
             return Task.CompletedTask;
         }
