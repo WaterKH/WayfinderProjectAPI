@@ -120,7 +120,7 @@ namespace WayfinderProject.Data.Jobs
                 };
                 var subTweet = userClient.Tweets.PublishTweetAsync(parameters).Result;
 
-                string updateQuery = $"UPDATE wayfinderprojectdb.DailyMoogleRecords Set HasTweeted = 1 WHERE SceneId = {dailyMoogleRecord.RecordId}";
+                string updateQuery = $"UPDATE wayfinderprojectdb.DailyMoogleRecords Set HasTweeted = 1 WHERE RecordId = {dailyMoogleRecord.RecordId}";
 
                 MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection);
                 updateCommand.ExecuteReader();
