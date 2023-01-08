@@ -25,6 +25,17 @@
                 <a class="wayfinder-link" href="/moogle_shop" style="color: #5067bb; font-size: large;">Moogle Shop</a>
             </div>
 
+
+            <div id="support">
+                <a class="wayfinder-button" href="/support" style="text-decoration: none; background: linear-gradient(to right, #ff91cf, #ff4fb2);">
+                    <img src="/images/icons/ability.png" class="header-margins">
+                    Support Us!
+                    <img src="/images/icons/ability.png" class="header-margins-alt">
+                </a>
+            </div>
+
+            <span class="wayfinder-span" style="color: #387ee6;">•</span>
+
             <div id="about">
                 <button class="wayfinder-nav-button" onclick="@(() => this.Show("About"))" @onclick:stopPropagation @onclick:preventDefault 
                     style="color: #3c39de;">About the Project <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span></button>
@@ -41,7 +52,7 @@
                 </div>
             </div>
 
-            <span class="wayfinder-span" style="color: #387ee6;">•</span>
+            <span class="wayfinder-span" style="color: #68a4ff;">•</span>
 
             <div id="resources">
                 <button class="wayfinder-nav-button" onclick="@(() => this.Show("Resources"))" @onclick:stopPropagation @onclick:preventDefault
@@ -152,6 +163,17 @@
     margin-left: 40px;
     margin-right: 40px;
     cursor: default;
+}
+
+.header-margins {
+    width: 20px;
+    margin-top: -5px;
+    margin-right: 5px;
+}
+.header-margins-alt {
+    width: 20px;
+    margin-top: -5px;
+    margin-left: 5px;
 }
 </style>
 

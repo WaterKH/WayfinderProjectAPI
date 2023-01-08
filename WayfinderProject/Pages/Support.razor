@@ -1,0 +1,141 @@
+﻿@page "/support"
+
+@using Patreon.Net
+@using Patreon.Net.Models
+
+<PageTitle>The Wayfinder Project - Support</PageTitle>
+
+<div class="wayfinder-background">
+    <div class="row" style="width: 100%; margin: 0px">
+        <div class="col-md-12" style="padding: 40px 110px;">
+            <div class="wayfinder-title">
+                <img src="/images/wayfinder_project_title.png" />
+            </div>
+
+            <div class="wayfinder-description">
+                <strong>How to Support The Wayfinder Project and Current Patreon Supporters</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="support" style="padding: 0px 80px">
+    <div class="row">
+        <div class="col-md-6">
+            <p style="margin-bottom: 0px;">
+                <span class="wayfinder-header" style="color: #1b31ff; margin-bottom: 0px;">Support The Wayfinder Project?</span>
+            </p>
+
+            <iconify-icon class="wayfinder-info" icon="bi:info" />
+            <p style="margin-top: -10px;">
+                The Wayfinder Project will always be free and available to everyone. However, your support can help us pay to maintain the website. Currently, we pay out of pocket on a 
+                monthly basis to keep the website running, but the cost could be covered by as few as 30 or so patrons donating $1 a month. Any extra money received would go towards upgrading 
+                our servers, which would in turn provide a smoother and more user-friendly experience on the website. Please consider showing your 
+                <a href="https://www.patreon.com/thewayfinderproject"><strong>support through Patreon</strong></a>.
+            </p>
+            <p>
+                If you would rather a one-time donation, please <a href="https://ko-fi.com/thewayfinderproject"><strong>support through Ko-Fi</strong></a>. Any amount helps with supporting
+                this free resource for fans and content creators to use.
+            </p>
+            <p>
+                <strong>Financial support is not required!</strong> Just by sharing - either by following, retweeting and engaing with The Wayfinder Project Twitter account
+                or copying links to scenes, entries or records and showing your friends - is supporting the project.
+            </p>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-5" style="text-align: center">
+            <h3>Patreon Supporters</h3>
+
+            <hr />
+            @if (this.supporters.Count > 0)
+            {
+                foreach (var supporter in this.supporters)
+                {
+                    <label>@supporter</label>
+                }
+
+                <label><strong>Join the list by <a href="https://www.patreon.com/thewayfinderproject">supporting on Patreon</a>!</strong></label>
+            }
+            else
+            {
+                <label><strong>Become the first by <a href="https://www.patreon.com/thewayfinderproject">supporting on Patreon</a>!</strong></label>
+            }
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            border-radius: 10px;
+        }
+
+
+</style>
+
+@code {
+    private List<string> supporters { get; set; } = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.supporters = new List<string>();
+
+        try
+        {
+            var accessToken = Environment.GetEnvironmentVariable("PatreonAccessToken");
+            var refreshToken = Environment.GetEnvironmentVariable("PatreonRefreshToken");
+            var clientId = Environment.GetEnvironmentVariable("PatreonClientId");
+
+            PatreonClient client = new PatreonClient(accessToken, refreshToken, clientId);
+
+            var members = await client.GetCampaignMembersAsync("9502137");
+
+            await foreach (var resource in members)
+            {
+                if (resource.PatronStatus == Member.PatronStatusValue.ActivePatron)
+                {
+                    this.supporters.Add($"{resource.FullName}{(resource.PledgeRelationshipStart.HasValue ? $" - {resource.PledgeRelationshipStart.Value}" : "")}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+
+        await base.OnInitializedAsync();
+    }
+}
