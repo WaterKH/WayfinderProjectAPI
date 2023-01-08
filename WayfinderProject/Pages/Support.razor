@@ -53,14 +53,14 @@
             {
                 foreach (var supporter in this.supporters)
                 {
-                    <label>@supporter</label>
+                    <p><strong>@supporter.Key</strong> - Patron since <strong>@supporter.Value</strong></p>
                 }
 
-                <label><strong>Join the list by <a href="https://www.patreon.com/thewayfinderproject">supporting on Patreon</a>!</strong></label>
+                <p style="margin-top: 40px;"><strong>Join the list by <a href="https://www.patreon.com/thewayfinderproject">supporting on Patreon</a>!</strong></p>
             }
             else
             {
-                <label><strong>Become the first by <a href="https://www.patreon.com/thewayfinderproject">supporting on Patreon</a>!</strong></label>
+                <p><strong>Become the first by <a href="https://www.patreon.com/thewayfinderproject">supporting on Patreon</a>!</strong></p>
             }
         </div>
     </div>
@@ -107,11 +107,11 @@
 </style>
 
 @code {
-    private List<string> supporters { get; set; } = new List<string>();
+    private Dictionary<string, string> supporters { get; set; } = new Dictionary<string, string>();
 
     protected override async Task OnInitializedAsync()
     {
-        this.supporters = new List<string>();
+        this.supporters = new Dictionary<string, string>();
 
         try
         {
@@ -127,7 +127,13 @@
             {
                 if (resource.PatronStatus == Member.PatronStatusValue.ActivePatron)
                 {
-                    this.supporters.Add($"{resource.FullName}{(resource.PledgeRelationshipStart.HasValue ? $" - {resource.PledgeRelationshipStart.Value}" : "")}");
+                    var startDate = "Unknown";
+                    if (resource.PledgeRelationshipStart.HasValue)
+                    {
+                        startDate = resource.PledgeRelationshipStart.Value.ToString().Split(" ")[0];
+                    }
+                
+                    this.supporters.Add(resource.FullName, startDate);
                 }
             }
         }
