@@ -169,6 +169,121 @@ namespace WayfinderProjectAPI.Controllers
 
             return result.ToDto();
         }
+
+        [HttpGet("GetInterviews")]
+        public async Task<List<InterviewDto>> GetInterviews([FromQuery] string? interviews = null, [FromQuery] string? games = null, [FromQuery] string? participants = null, [FromQuery] string? providers = null, [FromQuery] string? translators = null, [FromQuery] string? line = null)
+        {
+            var results = _context.Interviews.AsNoTrackingWithIdentityResolution();
+            var queryString = (line == null ? line : line.Any(x => char.IsPunctuation(x)) ? line : Regex.Replace(line, @"[^\w\s]", ""));
+
+            if (interviews != null)
+            {
+                var scenesList = interviews.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => scenesList.Contains(x.Name));
+            }
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Games).Where(x => x.Games.Any(y => gamesList.Contains(y.Name))))
+                {
+                    if (result == null || result.Games == null) continue;
+
+                    if (gamesList.All(x => result.Games.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (participants != null)
+            {
+                var participantsList = participants.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Participants).Where(x => x.Participants.Any(y => participantsList.Contains(y.Name))))
+                {
+                    if (result == null || result.Participants == null) continue;
+
+                    if (participantsList.All(x => result.Participants.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (providers != null)
+            {
+                var providersList = providers.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => providersList.Contains(x.Provider.Name));
+            }
+
+            if (translators != null)
+            {
+                var translatorsList = translators.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => translatorsList.Contains(x.Translator.Name));
+            }
+
+            if (queryString != null)
+            {
+                if (!queryString.Contains("\""))
+                {
+                    queryString = queryString.ToLower();
+
+                    var tempResults = new List<Interview>();
+                    foreach (var result in results.Include(x => x.Conversation))
+                    {
+                        if (result.Conversation == null)
+                            continue;
+
+                        foreach (var conversationLine in result.Conversation)
+                        {
+                            var tempLine = conversationLine.Line;
+                            if (!queryString.Any(x => char.IsPunctuation(x)))
+                                tempLine = Regex.Replace(conversationLine.Line, @"[^\w\s]", "");
+
+                            if (tempLine.ToLower().Contains(queryString))
+                                tempResults.Add(result);
+                        }
+                    }
+
+                    results = results.Where(x => tempResults.Select(y => y.Id).Contains(x.Id));
+                }
+                else
+                {
+                    queryString = queryString.Replace("\"", "");
+
+                    results = results.Where(x => x.Conversation.ToList().Any(y => y.Line.Contains(queryString)));
+                }
+            }
+
+            return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        [HttpGet("GetInterviewConversation")]
+        public async Task<List<InterviewLineDto>> GetInterviewConversation([FromQuery] string name, [FromQuery] string providerName, [FromQuery] string translatorName)
+        {
+            var result = await _context.Interviews.AsNoTrackingWithIdentityResolution().Include(x => x.Conversation).Where(x => x.Name == name && x.Provider.Name == providerName && x.Translator.Name == translatorName).SelectMany(x => x.Conversation).ToListAsync();
+
+            if (result == null)
+            {
+                return new List<InterviewLineDto>
+                {
+                    new InterviewLineDto { Line = "None", Speaker = "None" }
+                };
+            }
+
+            return result.ToDto().ToList();
+        }
         #endregion Memory Archive
 
         #region Jiminy Journal

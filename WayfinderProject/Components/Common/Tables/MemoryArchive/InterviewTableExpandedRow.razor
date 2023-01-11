@@ -1,0 +1,90 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+
+<tr>
+    <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
+        <div class="row">
+            <div class="col-md-5">
+                <div style="height: 523px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                    <div class="row" style="height: 281px;">
+                        <div class="col-md-6">
+                            <h3 class="scene-color">@Interview.Name</h3>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div id="share" class="share" @onclick="@(() => { if (this.GenerateShareLink != null) { this.GenerateShareLink.Invoke(); } })">
+                                <span class="copyable">
+                                    <i class="oi oi-file"></i>
+                                    <label class="share-text"><b>Share Interview</b></label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <br />
+                        
+                        <div class="col-md-6" style="margin-top: 45px;">
+                            <h3 class="game-color"><img src="/images/icons/games_gray.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Games</h3>
+                            <label>@(string.Join(", ", this.Interview.Games.Select(x => x.Name)))</label><br />
+                        </div>
+
+                        <div class="col-md-12" style="margin-top: 25px;">
+                            <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Participants</h3>
+                            <label>@(string.Join(", ", this.Interview.Participants.Select(x => x.Name)))</label><br />
+                        </div>
+
+                        <div class="col-md-12" style="margin-top: 45px;">
+                            <label><strong>Provided by <a href="@this.Interview.Provider.Link">@(this.Interview.Provider.Name)</a></strong>: @this.Interview.Provider.Description</label><br />
+                            <label><strong>Translated by <a href="@this.Interview.Translator.Link">@(this.Interview.Translator.Name)</a></strong>: @this.Interview.Translator.Description</label><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-7">
+                <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 523px; overflow-y: auto;">
+                    <InterviewTable Items="Interview.Conversation.ToList()" Context="Line" CurrentPage="1">
+                        <TableHeader>
+                            <th>Dialogue</th>
+                            <th></th>
+                        </TableHeader>
+                        <RowTemplate>
+                            <td><strong>@Line.Speaker</strong></td>
+                            <td>@Line.Line</td>
+                        </RowTemplate>
+                    </InterviewTable>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+@code {
+    [Parameter] public InterviewDto Interview { get; set; } = new InterviewDto();
+    [Parameter] public WayfinderProjectAPI.Controllers.WayfinderController? API { get; set; }
+
+    [Parameter] public Func<Task>? GenerateShareLink { get; set; }
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (this.API != null)
+        {
+            this.Interview.Conversation = await this.API.GetInterviewConversation(Interview.Name, Interview.Provider.Name, Interview.Translator.Name);
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}

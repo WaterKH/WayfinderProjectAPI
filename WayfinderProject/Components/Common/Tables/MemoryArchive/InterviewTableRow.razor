@@ -1,0 +1,112 @@
+﻿@using WayfinderProject.Components.Common
+@using WayfinderProject.Data
+@using WayfinderProject.Data.Models
+@using WayfinderProjectAPI.Data.DTOs
+
+
+<td style="vertical-align: middle;">
+    @if (this.MainTable != null)
+    {
+        if (this.MainTable.CurrentExpandedRow == Interview.Id)
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Interview.Id))">
+                <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+        else
+        {
+            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Interview.Id))">
+                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    <a style="font-weight: 600; color: #1a00ff;" href="@Interview.Link" target="_blank">@Interview.Name</a>
+</td>
+<td style="vertical-align: middle;">
+    @if (Interview.Games.Count > 2)
+    {
+        <div style="margin-left: -5px; height: 38px;">
+            <Tooltip Text="@(string.Join(", ", Interview.Games.Select(x => x.Name)))">
+                <div class="game-display">
+                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                </div>
+            </Tooltip>
+        </div>
+    }
+    else
+    {
+        if (Interview.Games.Count > 0 && Interview.Games.First().Name != ":None:")
+        {
+            <div style="display: inline-flex" class="@(Interview.Games.Count == 2 ? "game-display" : "")">
+                @for (int i = 0; i < Interview.Games.Count; ++i)
+                {
+                    <span class="game-color">@Interview.Games.ToList()[i].Name</span>
+                    if (i < Interview.Games.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    @if (Interview.Participants.Count > 2)
+    {
+        <div style="margin-left: -5px; height: 38px;">
+            <Tooltip Text="@(string.Join(", ", Interview.Participants.Select(x => x.Name)))">
+                <div class="character-display">
+                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+                </div>
+            </Tooltip>
+        </div>
+    }
+    else
+    {
+        if (Interview.Participants.Count > 0 && Interview.Participants.First().Name != ":None:")
+        {
+            <div style="display: inline-flex" class="@(Interview.Participants.Count == 2 ? "character-display" : "")">
+                @for (int i = 0; i < Interview.Participants.Count; ++i)
+                {
+                    <span class="character-color">@Interview.Participants.ToList()[i].Name</span>
+                    if (i < Interview.Participants.Count - 1)
+                    {
+                        <div>,&nbsp;</div>
+                    }
+                }
+            </div>
+        }
+    }
+</td>
+<td style="vertical-align: middle;">
+    <a style="font-weight: 600; color: #1a00ff;" href="@Interview.Provider.Link" target="_blank">@Interview.Provider.Name</a>
+</td>
+<td style="vertical-align: middle;">
+    <a style="font-weight: 600; color: #1a00ff;" href="@Interview.Translator.Link" target="_blank">@Interview.Translator.Name</a>
+</td>
+
+<style>
+.clickable {
+    float: right;
+    font-size: 1rem;
+    color: #3e79a7;
+    margin-top: 3px;
+    cursor: pointer;
+}
+</style>
+
+@code {
+    [Parameter] public InterviewDto Interview { get; set; } = new InterviewDto();
+    [Parameter] public InterviewTable<InterviewDto>? MainTable { get; set; }
+
+    private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        //this.BrowserDimension = await BrowserService.GetDimensions();
+
+        await base.OnParametersSetAsync();
+    }
+}

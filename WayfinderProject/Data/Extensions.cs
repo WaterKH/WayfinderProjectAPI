@@ -40,6 +40,33 @@ namespace WayfinderProjectAPI.Data
                 Lines = script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
             };
         }
+
+        public static IQueryable<InterviewDto> ToDto(this IQueryable<Interview> interviews)
+        {
+            return interviews
+                .Select(x => new InterviewDto
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    ReleaseDate = x.ReleaseDate,
+                    Link = x.Link,
+                    Games = x.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Participants = x.Participants.Select(y => new PersonDto { Id = y.Id, Name = y.Name, Description = y.Description, Link = y.Link }).ToList(),
+                    Provider = new ProviderDto { Id = x.Provider.Id, Name = x.Provider.Name, Description = x.Provider.Description, Link = x.Provider.Link },
+                    Translator = new PersonDto { Id = x.Translator.Id, Name = x.Translator.Name, Description = x.Translator.Description, Link = x.Translator.Link }
+                });
+        }
+
+        public static IEnumerable<InterviewLineDto> ToDto(this List<InterviewLine> conversation)
+        {
+            return conversation.Select(x => new InterviewLineDto
+            {
+                Id = x.Id,
+                Order = x.Order,
+                Speaker = x.Speaker,
+                Line = x.Line
+            });
+        }
         #endregion Memory Archive
 
         #region Jiminy Journal
