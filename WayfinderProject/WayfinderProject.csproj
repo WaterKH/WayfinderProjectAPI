@@ -49,6 +49,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\data\seed\ma\_kh1_interviews.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\data\seed\scripts\_kh1_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

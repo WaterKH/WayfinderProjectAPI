@@ -18,6 +18,8 @@ namespace WayfinderProjectAPI.Data.Models
         public string Link { get; set; } = string.Empty;
         [AllowNull]
         public DateTime ReleaseDate { get; set; }
+        [AllowNull]
+        public string AdditionalLink { get; set; } // Usually used for Videos
 
 
         [AllowNull]

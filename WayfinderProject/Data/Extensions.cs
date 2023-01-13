@@ -48,8 +48,9 @@ namespace WayfinderProjectAPI.Data
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    ReleaseDate = x.ReleaseDate,
                     Link = x.Link,
+                    ReleaseDate = x.ReleaseDate,
+                    AdditionalLink = x.AdditionalLink,
                     Games = x.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name }).ToList(),
                     Participants = x.Participants.Select(y => new PersonDto { Id = y.Id, Name = y.Name, Description = y.Description, Link = y.Link }).ToList(),
                     Provider = new ProviderDto { Id = x.Provider.Id, Name = x.Provider.Name, Description = x.Provider.Description, Link = x.Provider.Link },

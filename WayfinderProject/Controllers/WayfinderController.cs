@@ -278,7 +278,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 return new List<InterviewLineDto>
                 {
-                    new InterviewLineDto { Line = "None", Speaker = "None" }
+                    new InterviewLineDto { Line = "Unavailable at this time.", Speaker = "None" }
                 };
             }
 

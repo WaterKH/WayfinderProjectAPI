@@ -4,8 +4,9 @@
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public DateTime ReleaseDate { get; set; }
         public string Link { get; set; } = string.Empty;
+        public DateTime ReleaseDate { get; set; }
+        public string AdditionalLink { get; set; } = string.Empty;
 
 
         public ICollection<InterviewLineDto> Conversation { get; set; } = new List<InterviewLineDto>();
