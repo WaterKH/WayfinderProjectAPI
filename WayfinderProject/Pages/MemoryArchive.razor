@@ -90,36 +90,98 @@
 <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
 <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
 
-<!-- TODO Probably want to convert this SearchComponent into something better - Keep track of selections and available outside of the component -->
-<div id="scenes-search" class="advanced-search-box" style="@(this.CurrentCategory == "Cutscenes" ? "display: block;" : "display: none;")">
-    <div class="row">
-        <div class="col-md-12">
-            <SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.Games" Selected="this.GamesSelected" Available="this.GamesAvailable" 
+@if (this.CurrentCategory == "Cutscenes")
+{
+    <div id="scenes-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="SceneGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.SceneGames" Selected="this.SceneGamesSelected" Available="this.SceneGamesAvailable" 
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-            <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable" 
+                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable" 
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-            <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.Worlds" Selected="this.WorldsSelected" Available="this.WorldsAvailable"
+                <SearchComponent @ref="SceneWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.SceneWorlds" Selected="this.SceneWorldsSelected" Available="this.SceneWorldsAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-            <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.Areas" Selected="this.AreasSelected" Available="this.AreasAvailable"
+                <SearchComponent @ref="SceneAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.SceneAreas" Selected="this.SceneAreasSelected" Available="this.SceneAreasAvailable"
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-            <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.Characters" Selected="this.CharactersSelected" Available="this.CharactersAvailable"
+                <SearchComponent @ref="SceneCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.SceneCharacters" Selected="this.SceneCharactersSelected" Available="this.SceneCharactersAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-            <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.Music" Selected="this.MusicSelected" Available="this.MusicAvailable"
+                <SearchComponent @ref="SceneMusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.SceneMusic" Selected="this.SceneMusicSelected" Available="this.SceneMusicAvailable"
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
         </div>
     </div>
-</div>
+}
+else if (this.CurrentCategory == "Trailers")
+{
+    <div id="scenes-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                @*<SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.Games" Selected="this.GamesSelected" Available="this.GamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.Worlds" Selected="this.WorldsSelected" Available="this.WorldsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.Areas" Selected="this.AreasSelected" Available="this.AreasAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.Characters" Selected="this.CharactersSelected" Available="this.CharactersAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.Music" Selected="this.MusicSelected" Available="this.MusicAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />*@
+            </div>
+        </div>
+    </div>
+}
+else if (this.CurrentCategory == "Interviews")
+{
+    <div id="scenes-search" class="advanced-search-box">
+        <div class="row">
+            <div class="col-md-12">
+                <SearchComponent @ref="InterviewsSearch" Id="Interviews" Placeholder="Start Typing..." Color="#e685da" Initial="this.Interviews" Selected="this.InterviewsSelected" Available="this.InterviewsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InterviewGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InterviewGames" Selected="this.InterviewGamesSelected" Available="this.InterviewGamesAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                             
+                <SearchComponent @ref="InterviewParticipantsSearch" Id="Participants" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InterviewParticipants" Selected="this.InterviewParticipantsSelected" Available="this.InterviewParticipantsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InterviewProvidersSearch" Id="Providers" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InterviewProviders" Selected="this.InterviewProvidersSelected" Available="this.InterviewProvidersAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                <SearchComponent @ref="InterviewTranslatorsSearch" Id="Translators" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InterviewTranslators" Selected="this.InterviewTranslatorsSelected" Available="this.InterviewTranslatorsAvailable"
+                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            </div>
+        </div>
+    </div>
+}
 
 <br />
 <br />
@@ -154,9 +216,24 @@ else if (this.CurrentCategory == "Trailers")
 {
     
 }
-else if (this.CurrentCategory == "Interviews")
+else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 {
-    
+    <InterviewTable @ref="MainInterviewTable" Items="this.InterviewDtos" Context="Interview" OpenRowQuery="this.OpenRow">
+        <TableHeader>
+            <th style="text-align: left;"></th>
+            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Interview</label></th>
+            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Games</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Participants</label></th>
+            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Provider</label></th>
+            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Translator</label></th>
+        </TableHeader>
+        <RowTemplate>
+            <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" />
+        </RowTemplate>
+        <ExpandedRowTemplate>
+            <InterviewTableExpandedRow Interview="@Interview" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+        </ExpandedRowTemplate>
+    </InterviewTable>
 }
 
 <span style="margin-bottom: 50px;"></span>
@@ -243,6 +320,22 @@ else if (this.CurrentCategory == "Interviews")
     public string[]? WorldQuery { get; set; }
 
     [Parameter]
+    [SupplyParameterFromQuery(Name = "interview")]
+    public string[]? InterviewQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "participant")]
+    public string[]? ParticipantQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "provider")]
+    public string[]? ProviderQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "translator")]
+    public string[]? TranslatorQuery { get; set; }
+
+    [Parameter]
     [SupplyParameterFromQuery(Name = "open_row")]
     public int OpenRow { get; set; } = -1;
 
@@ -262,44 +355,78 @@ else if (this.CurrentCategory == "Interviews")
     #region Scene Variables
     private List<SceneDto> SceneDtos = new List<SceneDto>();
 
-    public List<string> Areas { get; set; } = new List<string>();
-    public List<string> Characters { get; set; } = new List<string>();
-    public List<string> Games { get; set; } = new List<string>();
-    public List<string> Music { get; set; } = new List<string>();
+    public List<string> SceneAreas { get; set; } = new List<string>();
+    public List<string> SceneCharacters { get; set; } = new List<string>();
+    public List<string> SceneGames { get; set; } = new List<string>();
+    public List<string> SceneMusic { get; set; } = new List<string>();
     public List<string> Scenes { get; set; } = new List<string>();
-    public List<string> Worlds { get; set; } = new List<string>();
+    public List<string> SceneWorlds { get; set; } = new List<string>();
 
 
     #region Scecne Search Variables
-    private SearchComponent? AreasSearch;
-    private List<string> AreasSelected = new List<string>();
-    private List<string> AreasAvailable = new List<string>();
+    private SearchComponent? SceneAreasSearch;
+    private List<string> SceneAreasSelected = new List<string>();
+    private List<string> SceneAreasAvailable = new List<string>();
 
-    private SearchComponent? CharactersSearch;
-    private List<string> CharactersSelected = new List<string>();
-    private List<string> CharactersAvailable = new List<string>();
+    private SearchComponent? SceneCharactersSearch;
+    private List<string> SceneCharactersSelected = new List<string>();
+    private List<string> SceneCharactersAvailable = new List<string>();
 
-    private SearchComponent? GamesSearch;
-    private List<string> GamesSelected = new List<string>();
-    private List<string> GamesAvailable = new List<string>();
+    private SearchComponent? SceneGamesSearch;
+    private List<string> SceneGamesSelected = new List<string>();
+    private List<string> SceneGamesAvailable = new List<string>();
 
-    private SearchComponent? MusicSearch;
-    private List<string> MusicSelected = new List<string>();
-    private List<string> MusicAvailable = new List<string>();
+    private SearchComponent? SceneMusicSearch;
+    private List<string> SceneMusicSelected = new List<string>();
+    private List<string> SceneMusicAvailable = new List<string>();
 
     private SearchComponent? ScenesSearch;
     private List<string> ScenesSelected = new List<string>();
     private List<string> ScenesAvailable = new List<string>();
 
-    private SearchComponent? WorldsSearch;
-    private List<string> WorldsSelected = new List<string>();
-    private List<string> WorldsAvailable = new List<string>();
+    private SearchComponent? SceneWorldsSearch;
+    private List<string> SceneWorldsSelected = new List<string>();
+    private List<string> SceneWorldsAvailable = new List<string>();
     #endregion Scene Search Variables
 
     private SceneTable<SceneDto>? MainSceneTable;
     #endregion Scene Variables
+
+    #region Interview Variables
+    private List<InterviewDto> InterviewDtos = new List<InterviewDto>();
+
+    public List<string> Interviews { get; set; } = new List<string>();
+    public List<string> InterviewGames { get; set; } = new List<string>();
+    public List<string> InterviewParticipants { get; set; } = new List<string>();
+    public List<string> InterviewProviders { get; set; } = new List<string>();
+    public List<string> InterviewTranslators { get; set; } = new List<string>();
+
+
+    #region Interview Search Variables
+    private SearchComponent? InterviewsSearch;
+    private List<string> InterviewsSelected = new List<string>();
+    private List<string> InterviewsAvailable = new List<string>();
+
+    private SearchComponent? InterviewGamesSearch;
+    private List<string> InterviewGamesSelected = new List<string>();
+    private List<string> InterviewGamesAvailable = new List<string>();
+
+    private SearchComponent? InterviewParticipantsSearch;
+    private List<string> InterviewParticipantsSelected = new List<string>();
+    private List<string> InterviewParticipantsAvailable = new List<string>();
+
+    private SearchComponent? InterviewProvidersSearch;
+    private List<string> InterviewProvidersSelected = new List<string>();
+    private List<string> InterviewProvidersAvailable = new List<string>();
+
+    private SearchComponent? InterviewTranslatorsSearch;
+    private List<string> InterviewTranslatorsSelected = new List<string>();
+    private List<string> InterviewTranslatorsAvailable = new List<string>();
+    #endregion Interview Search Variables
+
+    private InterviewTable<InterviewDto>? MainInterviewTable;
+    #endregion Interview Variables
     //private Table<TrailerDto>? MainTrailerTable;
-    //private Table<InterviewDto>? MainInterviewTable;
 
 
     private bool failed = false;
@@ -368,6 +495,8 @@ else if (this.CurrentCategory == "Interviews")
 
     public async Task UpdateCurrentCategory(string category)
     {
+        if (this.Loading) return;
+
         this.CurrentCategory = category;
 
         if (this.CurrentCategory == "Cutscenes")
@@ -380,8 +509,10 @@ else if (this.CurrentCategory == "Interviews")
         }
         else if (this.CurrentCategory == "Interviews")
         {
-            this.options = new List<string>();
+            this.options = new List<string> { "Interviews", "Games", "Participants", "Providers", "Translators" };
         }
+        
+        await this.Search();
 
         await InvokeAsync(() =>
         {
@@ -427,7 +558,7 @@ else if (this.CurrentCategory == "Interviews")
         }
         else if (this.CurrentCategory == "Trailers")
         {
-            await this.SearchTrailers();
+            this.SearchTrailers();
         }
         else if (this.CurrentCategory == "Interviews")
         {
@@ -444,12 +575,12 @@ else if (this.CurrentCategory == "Interviews")
     #region Sub-Search Methods
     private async Task SearchScenes()
     {
-        var games = this.GamesSearch != null ? string.Join("::", this.GamesSelected) != "" ? string.Join("::", this.GamesSelected) : null : null;
+        var games = this.SceneGamesSearch != null ? string.Join("::", this.SceneGamesSelected) != "" ? string.Join("::", this.SceneGamesSelected) : null : null;
         var scenes = this.ScenesSearch != null ? string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null : null;
-        var worlds = this.WorldsSearch != null ? string.Join("::", this.WorldsSelected) != "" ? string.Join("::", this.WorldsSelected) : null : null;
-        var areas = this.AreasSearch != null ? string.Join("::", this.AreasSelected) != "" ? string.Join("::", this.AreasSelected) : null : null;
-        var characters = this.CharactersSearch != null ? string.Join("::", this.CharactersSelected) != "" ? string.Join("::", this.CharactersSelected) : null : null;
-        var music = this.MusicSearch != null ? string.Join("::", this.MusicSelected) != "" ? string.Join("::", this.MusicSelected) : null : null;
+        var worlds = this.SceneWorldsSearch != null ? string.Join("::", this.SceneWorldsSelected) != "" ? string.Join("::", this.SceneWorldsSelected) : null : null;
+        var areas = this.SceneAreasSearch != null ? string.Join("::", this.SceneAreasSelected) != "" ? string.Join("::", this.SceneAreasSelected) : null : null;
+        var characters = this.SceneCharactersSearch != null ? string.Join("::", this.SceneCharactersSelected) != "" ? string.Join("::", this.SceneCharactersSelected) : null : null;
+        var music = this.SceneMusicSearch != null ? string.Join("::", this.SceneMusicSelected) != "" ? string.Join("::", this.SceneMusicSelected) : null : null;
         var line = this.quoteSearch != "" ? this.quoteSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -508,49 +639,93 @@ else if (this.CurrentCategory == "Interviews")
         }
     }
 
-    private async Task SearchTrailers()
+    private void SearchTrailers()
     {
         // Include game, worlds, areas, characters, music
 
-        var games = this.GamesSearch != null ? string.Join("::", this.GamesSelected) != "" ? string.Join("::", this.GamesSelected) : null : null;
-        var trailers = string.Empty; //this.ScenesSearch != null ? string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null : null;
-        var worlds = this.WorldsSearch != null ? string.Join("::", this.WorldsSelected) != "" ? string.Join("::", this.WorldsSelected) : null : null;
-        var areas = this.AreasSearch != null ? string.Join("::", this.AreasSelected) != "" ? string.Join("::", this.AreasSelected) : null : null;
-        var characters = this.CharactersSearch != null ? string.Join("::", this.CharactersSelected) != "" ? string.Join("::", this.CharactersSelected) : null : null;
-        var music = this.MusicSearch != null ? string.Join("::", this.MusicSelected) != "" ? string.Join("::", this.MusicSelected) : null : null;
-        var line = this.quoteSearch != "" ? this.quoteSearch : null;
+        //var games = this.GamesSearch != null ? string.Join("::", this.GamesSelected) != "" ? string.Join("::", this.GamesSelected) : null : null;
+        //var trailers = string.Empty; //this.ScenesSearch != null ? string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null : null;
+        //var worlds = this.WorldsSearch != null ? string.Join("::", this.WorldsSelected) != "" ? string.Join("::", this.WorldsSelected) : null : null;
+        //var areas = this.AreasSearch != null ? string.Join("::", this.AreasSelected) != "" ? string.Join("::", this.AreasSelected) : null : null;
+        //var characters = this.CharactersSearch != null ? string.Join("::", this.CharactersSelected) != "" ? string.Join("::", this.CharactersSelected) : null : null;
+        //var music = this.MusicSearch != null ? string.Join("::", this.MusicSelected) != "" ? string.Join("::", this.MusicSelected) : null : null;
+        //var line = this.quoteSearch != "" ? this.quoteSearch : null;
 
-        // TODO Remove this after we add in the pagination limiter?
-        if (games == null && trailers == null && worlds == null && areas == null && characters == null && music == null && line == null)
-        {
-            //this.SceneDtos = new List<SceneDto>();
+        //// TODO Remove this after we add in the pagination limiter?
+        //if (games == null && trailers == null && worlds == null && areas == null && characters == null && music == null && line == null)
+        //{
+        //    //this.SceneDtos = new List<SceneDto>();
 
-            await Task.Run(async () => await this.ResetTrailerOptions());
+        //    await Task.Run(async () => await this.ResetTrailerOptions());
 
-            this.canDisplayClearAll = false;
-        }
+        //    this.canDisplayClearAll = false;
+        //}
     }
 
     private async Task SearchInterviews()
     {
         // Include translators, interviewers, interviewees, date, link, game
 
-        var games = this.GamesSearch != null ? string.Join("::", this.GamesSelected) != "" ? string.Join("::", this.GamesSelected) : null : null;
-        var interviews = string.Empty; //this.ScenesSearch != null ? string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null : null;
-        var worlds = this.WorldsSearch != null ? string.Join("::", this.WorldsSelected) != "" ? string.Join("::", this.WorldsSelected) : null : null;
-        var areas = this.AreasSearch != null ? string.Join("::", this.AreasSelected) != "" ? string.Join("::", this.AreasSelected) : null : null;
-        var characters = this.CharactersSearch != null ? string.Join("::", this.CharactersSelected) != "" ? string.Join("::", this.CharactersSelected) : null : null;
-        var music = this.MusicSearch != null ? string.Join("::", this.MusicSelected) != "" ? string.Join("::", this.MusicSelected) : null : null;
+        var interviews = this.InterviewsSearch != null ? string.Join("::", this.InterviewsSelected) != "" ? string.Join("::", this.InterviewsSelected) : null : null;
+        var games = this.InterviewGamesSearch != null ? string.Join("::", this.InterviewGamesSelected) != "" ? string.Join("::", this.InterviewGamesSelected) : null : null;
+        var participants = this.InterviewParticipantsSearch != null ? string.Join("::", this.InterviewParticipantsSelected) != "" ? string.Join("::", this.InterviewParticipantsSelected) : null : null;
+        var providers = this.InterviewProvidersSearch != null ? string.Join("::", this.InterviewProvidersSelected) != "" ? string.Join("::", this.InterviewProvidersSelected) : null : null;
+        var translators = this.InterviewTranslatorsSearch != null ? string.Join("::", this.InterviewTranslatorsSelected) != "" ? string.Join("::", this.InterviewTranslatorsSelected) : null : null;
         var line = this.quoteSearch != "" ? this.quoteSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
-        if (games == null && interviews == null && worlds == null && areas == null && characters == null && music == null && line == null)
+        if (interviews == null && games == null && participants == null && providers == null && translators == null && line == null)
         {
-            //this.SceneDtos = new List<SceneDto>();
+            this.InterviewDtos = new List<InterviewDto>();
 
             await Task.Run(async () => await this.ResetInterviewOptions());
 
             this.canDisplayClearAll = false;
+        }
+        else if (this.authenticationStateTask != null && this.api != null)
+        {
+            var authState = await this.authenticationStateTask;
+            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+            this.InterviewDtos = await this.api.GetInterviews(interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
+
+            // Maybe use the above to only call the search function we want to based on what's filled out and not null
+            //if (user.ApiCallQuota > 0)
+            //{
+            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+            //    user.ApiCallQuota -= 1;
+            //    context.SaveChanges();
+
+            //    if (user.ApiCallQuota == 2500)
+            //    {
+            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+            //    }
+            //    else if (user.ApiCallQuota == 500)
+            //    {
+            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+            //    }
+            //    else if (user.ApiCallQuota == 0)
+            //    {
+            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+            //    }
+            //}
+            //else
+            //{
+            //    // TOAST: Out of API Call Quota, resets monthly.
+            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+            //}
+
+            this.UpdateInterviewOptions();
+
+
+            this.canDisplayClearAll = true;
+        }
+
+        if (MainInterviewTable != null)
+        {
+            MainInterviewTable.SetCurrentPage(1);
+            MainInterviewTable.CurrentExpandedRow = -1;
         }
     }
     #endregion Sub-Search Methods
@@ -574,18 +749,18 @@ else if (this.CurrentCategory == "Interviews")
     #region Sub-Option Methods
     private void UpdateSceneOptions()
     {
-        this.AreasAvailable = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.AreasSelected).Distinct().ToList();
-        this.CharactersAvailable = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.CharactersSelected).Distinct().ToList();
-        this.GamesAvailable = this.SceneDtos.Select(x => x.Game.Name).Except(this.GamesSelected).Distinct().ToList();
-        this.MusicAvailable = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.MusicSelected).Distinct().ToList();
+        this.SceneAreasAvailable = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.SceneAreasSelected).Distinct().ToList();
+        this.SceneCharactersAvailable = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.SceneCharactersSelected).Distinct().ToList();
+        this.SceneGamesAvailable = this.SceneDtos.Select(x => x.Game.Name).Except(this.SceneGamesSelected).Distinct().ToList();
+        this.SceneMusicAvailable = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.SceneMusicSelected).Distinct().ToList();
         this.ScenesAvailable = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSelected).Distinct().ToList();
-        this.WorldsAvailable = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.WorldsSelected).Distinct().ToList();
+        this.SceneWorldsAvailable = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.SceneWorldsSelected).Distinct().ToList();
 
-        this.AreasAvailable.Sort();
-        this.CharactersAvailable.Sort();
-        this.MusicAvailable.Sort();
+        this.SceneAreasAvailable.Sort();
+        this.SceneCharactersAvailable.Sort();
+        this.SceneMusicAvailable.Sort();
         this.ScenesAvailable.Sort();
-        this.WorldsAvailable.Sort();
+        this.SceneWorldsAvailable.Sort();
     }
 
     private void UpdateTrailerOptions() { }
@@ -607,7 +782,7 @@ else if (this.CurrentCategory == "Interviews")
         }
         else if (this.CurrentCategory == "Trailers")
         {
-            await this.ResetTrailerOptions();
+            this.ResetTrailerOptions();
         }
         else if (this.CurrentCategory == "Interviews")
         {
@@ -624,70 +799,101 @@ else if (this.CurrentCategory == "Interviews")
     #region Sub-ResetOption Methods
     private async Task ResetSceneOptions()
     {
-        this.Areas = await context.Areas.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
-        this.Characters = await context.Characters.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
-        this.Games = await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
-        this.Music = await context.Music.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+        this.SceneAreas = await context.Areas.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+        this.SceneCharacters = await context.Characters.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+        this.SceneGames = await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
+        this.SceneMusic = await context.Music.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
         this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Worlds = await context.Worlds.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+        this.SceneWorlds = await context.Worlds.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
 
-        this.AreasAvailable = this.Areas;
-        this.CharactersAvailable = this.Characters;
-        this.GamesAvailable = this.Games;
-        this.MusicAvailable = this.Music;
+        this.SceneAreasAvailable = this.SceneAreas;
+        this.SceneCharactersAvailable = this.SceneCharacters;
+        this.SceneGamesAvailable = this.SceneGames;
+        this.SceneMusicAvailable = this.SceneMusic;
         this.ScenesAvailable = this.Scenes;
-        this.WorldsAvailable = this.Worlds;
+        this.SceneWorldsAvailable = this.SceneWorlds;
 
-        this.AreasAvailable.Sort();
-        this.CharactersAvailable.Sort();
-        this.MusicAvailable.Sort();
+        this.SceneAreasAvailable.Sort();
+        this.SceneCharactersAvailable.Sort();
+        this.SceneMusicAvailable.Sort();
         this.ScenesAvailable.Sort();
-        this.WorldsAvailable.Sort();
+        this.SceneWorldsAvailable.Sort();
 
-        this.GamesSelected = new List<string>();
+        this.SceneGamesSelected = new List<string>();
         this.ScenesSelected = new List<string>();
-        this.WorldsSelected = new List<string>();
-        this.AreasSelected = new List<string>();
-        this.CharactersSelected = new List<string>();
-        this.MusicSelected = new List<string>();
+        this.SceneWorldsSelected = new List<string>();
+        this.SceneAreasSelected = new List<string>();
+        this.SceneCharactersSelected = new List<string>();
+        this.SceneMusicSelected = new List<string>();
 
-        if (this.GamesSearch != null)
-            await this.GamesSearch.SetCurrentView("Available");
+        if (this.SceneGamesSearch != null)
+            await this.SceneGamesSearch.SetCurrentView("Available");
 
         if (this.ScenesSearch != null)
             await this.ScenesSearch.SetCurrentView("Available");
 
-        if (this.WorldsSearch != null)
-            await this.WorldsSearch.SetCurrentView("Available");
+        if (this.SceneWorldsSearch != null)
+            await this.SceneWorldsSearch.SetCurrentView("Available");
 
-        if (this.AreasSearch != null)
-            await this.AreasSearch.SetCurrentView("Available");
+        if (this.SceneAreasSearch != null)
+            await this.SceneAreasSearch.SetCurrentView("Available");
 
-        if (this.CharactersSearch != null)
-            await this.CharactersSearch.SetCurrentView("Available");
+        if (this.SceneCharactersSearch != null)
+            await this.SceneCharactersSearch.SetCurrentView("Available");
 
-        if (this.MusicSearch != null)
-            await this.MusicSearch.SetCurrentView("Available");
+        if (this.SceneMusicSearch != null)
+            await this.SceneMusicSearch.SetCurrentView("Available");
     }
 
-    private async Task ResetTrailerOptions()
+    private void ResetTrailerOptions()
     {
-        this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Games = await context.Games.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
-        this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
+        //this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
+        //this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
+        //this.Games = await context.Games.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
+        //this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
+        //this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
+        //this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
     }
 
     private async Task ResetInterviewOptions()
     {
-        this.Areas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Characters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Games = await context.Games.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
-        this.Music = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
-        this.Worlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Interviews = await context.Interviews.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.InterviewGames = await context.Interviews.AsNoTracking().SelectMany(x => x.Games).Select(x => x.Name).Distinct().ToListAsync();
+        this.InterviewParticipants = await context.Interviews.AsNoTracking().SelectMany(x => x.Participants).Select(x => x.Name).Distinct().ToListAsync();
+        this.InterviewProviders = await context.Interviews.AsNoTracking().Select(x => x.Provider.Name).Distinct().ToListAsync();
+        this.InterviewTranslators = await context.Interviews.AsNoTracking().Select(x => x.Translator.Name).Distinct().ToListAsync();
+
+        this.InterviewsAvailable = this.Interviews;
+        this.InterviewGamesAvailable = this.InterviewGames;
+        this.InterviewParticipantsAvailable = this.InterviewParticipants;
+        this.InterviewProvidersAvailable = this.InterviewProviders;
+        this.InterviewTranslatorsAvailable = this.InterviewTranslators;
+
+        this.InterviewsAvailable.Sort();
+        this.InterviewParticipantsAvailable.Sort();
+        this.InterviewProvidersAvailable.Sort();
+        this.InterviewTranslatorsAvailable.Sort();
+
+        this.InterviewsSelected = new List<string>();
+        this.InterviewGamesSelected = new List<string>();
+        this.InterviewParticipantsSelected = new List<string>();
+        this.InterviewProvidersSelected = new List<string>();
+        this.InterviewTranslatorsSelected = new List<string>();
+
+        if (this.InterviewsSearch != null)
+            await this.InterviewsSearch.SetCurrentView("Available");
+
+        if (this.InterviewGamesSearch != null)
+            await this.InterviewGamesSearch.SetCurrentView("Available");
+
+        if (this.InterviewParticipantsSearch != null)
+            await this.InterviewParticipantsSearch.SetCurrentView("Available");
+
+        if (this.InterviewProvidersSearch != null)
+            await this.InterviewProvidersSearch.SetCurrentView("Available");
+
+        if (this.InterviewTranslatorsSearch != null)
+            await this.InterviewTranslatorsSearch.SetCurrentView("Available");
     }
     #endregion Sub-ResetOption Methods
 
@@ -714,14 +920,14 @@ else if (this.CurrentCategory == "Interviews")
     {
         if (clearString == "Games")
         {
-            this.Games = await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
+            this.SceneGames = await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
 
-            this.GamesAvailable = this.Games;
-            this.GamesSelected = new List<string>();
+            this.SceneGamesAvailable = this.SceneGames;
+            this.SceneGamesSelected = new List<string>();
 
-            if (this.GamesSearch != null)
+            if (this.SceneGamesSearch != null)
             {
-                await this.GamesSearch.SetCurrentView("Available");
+                await this.SceneGamesSearch.SetCurrentView("Available");
             }
         }
         else if (clearString == "Scenes")
@@ -739,54 +945,54 @@ else if (this.CurrentCategory == "Interviews")
         }
         else if (clearString == "Worlds")
         {
-            this.Worlds = await context.Worlds.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
-            this.Worlds.Sort();
+            this.SceneWorlds = await context.Worlds.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+            this.SceneWorlds.Sort();
 
-            this.WorldsAvailable = this.Worlds;
-            this.WorldsSelected = new List<string>();
+            this.SceneWorldsAvailable = this.SceneWorlds;
+            this.SceneWorldsSelected = new List<string>();
 
-            if (this.WorldsSearch != null)
+            if (this.SceneWorldsSearch != null)
             {
-                await this.WorldsSearch.SetCurrentView("Available");
+                await this.SceneWorldsSearch.SetCurrentView("Available");
             }
         }
         else if (clearString == "Areas")
         {
-            this.Areas = await context.Areas.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
-            this.Areas.Sort();
+            this.SceneAreas = await context.Areas.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+            this.SceneAreas.Sort();
 
-            this.AreasAvailable = this.Areas;
-            this.AreasSelected = new List<string>();
+            this.SceneAreasAvailable = this.SceneAreas;
+            this.SceneAreasSelected = new List<string>();
 
-            if (this.AreasSearch != null)
+            if (this.SceneAreasSearch != null)
             {
-                await this.AreasSearch.SetCurrentView("Available");
+                await this.SceneAreasSearch.SetCurrentView("Available");
             }
         }
         else if (clearString == "Characters")
         {
-            this.Characters = await context.Characters.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
-            this.Characters.Sort();
+            this.SceneCharacters = await context.Characters.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+            this.SceneCharacters.Sort();
 
-            this.CharactersAvailable = this.Characters;
-            this.CharactersSelected = new List<string>();
+            this.SceneCharactersAvailable = this.SceneCharacters;
+            this.SceneCharactersSelected = new List<string>();
 
-            if (this.CharactersSearch != null)
+            if (this.SceneCharactersSearch != null)
             {
-                await this.CharactersSearch.SetCurrentView("Available");
+                await this.SceneCharactersSearch.SetCurrentView("Available");
             }
         }
         else if (clearString == "Music")
         {
-            this.Music = await context.Music.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
-            this.Music.Sort();
+            this.SceneMusic = await context.Music.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).ToListAsync();
+            this.SceneMusic.Sort();
 
-            this.MusicAvailable = this.Music;
-            this.MusicSelected = new List<string>();
+            this.SceneMusicAvailable = this.SceneMusic;
+            this.SceneMusicSelected = new List<string>();
 
-            if (this.MusicSearch != null)
+            if (this.SceneMusicSearch != null)
             {
-                await this.MusicSearch.SetCurrentView("Available");
+                await this.SceneMusicSearch.SetCurrentView("Available");
             }
         }
         else
@@ -802,7 +1008,74 @@ else if (this.CurrentCategory == "Interviews")
 
     private async Task ClearAllInterviewOptions(string clearString) 
     { 
-        await this.ResetOptions();
+        if (clearString == "Interviews")
+        {
+            this.Interviews = await context.Interviews.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.Interviews.Sort();
+
+            this.InterviewsAvailable = this.Interviews;
+            this.InterviewsSelected = new List<string>();
+
+            if (this.InterviewsSearch != null)
+            {
+                await this.InterviewsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Games")
+        {
+            this.InterviewGames = await context.Interviews.AsNoTracking().SelectMany(x => x.Games).Select(x => x.Name).ToListAsync();
+
+            this.InterviewGamesAvailable = this.InterviewGames;
+            this.InterviewGamesSelected = new List<string>();
+
+            if (this.InterviewGamesSearch != null)
+            {
+                await this.InterviewGamesSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Participants")
+        {
+            this.InterviewParticipants = await context.Interviews.AsNoTracking().SelectMany(x => x.Participants).Select(x => x.Name).Distinct().ToListAsync();
+            this.InterviewParticipants.Sort();
+
+            this.InterviewParticipantsAvailable = this.InterviewParticipants;
+            this.InterviewParticipantsSelected = new List<string>();
+
+            if (this.InterviewParticipantsSearch != null)
+            {
+                await this.InterviewParticipantsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Providers")
+        {
+            this.InterviewProviders = await context.Interviews.AsNoTracking().Select(x => x.Provider.Name).Distinct().ToListAsync();
+            this.InterviewProviders.Sort();
+
+            this.InterviewProvidersAvailable = this.InterviewProviders;
+            this.InterviewProvidersSelected = new List<string>();
+
+            if (this.InterviewProvidersSearch != null)
+            {
+                await this.InterviewProvidersSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Translators")
+        {
+            this.InterviewTranslators = await context.Interviews.AsNoTracking().Select(x => x.Translator.Name).Distinct().ToListAsync();
+            this.InterviewTranslators.Sort();
+
+            this.InterviewTranslatorsAvailable = this.InterviewTranslators;
+            this.InterviewTranslatorsSelected = new List<string>();
+
+            if (this.InterviewTranslatorsSearch != null)
+            {
+                await this.InterviewTranslatorsSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
     }
     #endregion Clear All Sub-Methods
 
@@ -839,24 +1112,24 @@ else if (this.CurrentCategory == "Interviews")
     {
         var shareLink = $"{NavigationManager.BaseUri}memory_archive?";
 
-        if (this.CharactersSelected.Count > 0)
+        if (this.SceneCharactersSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.CharactersSelected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.SceneCharactersSelected.Select(x => $"character={this.context.Characters.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
         }
 
-        if (this.AreasSelected.Count > 0)
+        if (this.SceneAreasSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.AreasSelected.Select(x => $"area={this.context.Areas.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.SceneAreasSelected.Select(x => $"area={this.context.Areas.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
         }
 
-        if (this.GamesSelected.Count > 0)
+        if (this.SceneGamesSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.GamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.SceneGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
         }
 
-        if (this.MusicSelected.Count > 0)
+        if (this.SceneMusicSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.MusicSelected.Select(x => $"music={this.context.Music.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.SceneMusicSelected.Select(x => $"music={this.context.Music.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
         }
 
         if (this.ScenesSelected.Count > 0)
@@ -864,9 +1137,9 @@ else if (this.CurrentCategory == "Interviews")
             shareLink += string.Join("&", this.ScenesSelected.Select(x => $"scene={this.context.Scenes.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
         }
 
-        if (this.WorldsSelected.Count > 0)
+        if (this.SceneWorldsSelected.Count > 0)
         {
-            shareLink += string.Join("&", this.WorldsSelected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+            shareLink += string.Join("&", this.SceneWorldsSelected.Select(x => $"world={this.context.Worlds.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
         }
 
         shareLink += "category=Scenes&";
@@ -891,7 +1164,40 @@ else if (this.CurrentCategory == "Interviews")
     {
         var shareLink = $"{NavigationManager.BaseUri}memory_archive?";
 
+        if (this.InterviewsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InterviewsSelected.Select(x => $"interview={this.context.Interviews.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InterviewGamesSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InterviewGamesSelected.Select(x => $"game={this.context.Games.AsNoTracking().FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InterviewParticipantsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InterviewParticipantsSelected.Select(x => $"participant={this.context.Interviews.AsNoTracking().SelectMany(y => y.Participants).FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InterviewProvidersSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InterviewProvidersSelected.Select(x => $"provider={this.context.Interviews.AsNoTracking().Select(x => x.Provider).FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        if (this.InterviewTranslatorsSelected.Count > 0)
+        {
+            shareLink += string.Join("&", this.InterviewTranslatorsSelected.Select(x => $"translator={this.context.Interviews.AsNoTracking().Select(x => x.Translator).FirstOrDefault(y => y.Name == x)?.Id}")) + "&";
+        }
+
+        shareLink += "category=Interviews&";
+        shareLink += $"open_row={this.MainInterviewTable?.CurrentExpandedRow}";
+
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
+
+        if (this.MainInterviewTable != null)
+        {
+            toastService.ShowInfo($"Copied link to '{this.context.Interviews.FirstOrDefault(x => x.Id == this.MainInterviewTable.CurrentExpandedRow)?.Name}' interview.");
+        }
     }
     #endregion Generate Share Link Sub-Methods
 
@@ -916,7 +1222,7 @@ else if (this.CurrentCategory == "Interviews")
                     case "Trailer":
                         this.CurrentCategory = "Trailers";
                         break;
-                    case "Interview":
+                    case "Interviews":
                         this.CurrentCategory = "Interviews";
                         break;
                     default:
@@ -940,7 +1246,7 @@ else if (this.CurrentCategory == "Interviews")
             }
             else if (this.CurrentCategory == "Interviews")
             {
-                optionUpdated = this.HandleInterviewQueryParams();
+                optionUpdated = await this.HandleInterviewQueryParams();
             }
 
             if (optionUpdated)
@@ -965,42 +1271,42 @@ else if (this.CurrentCategory == "Interviews")
     {
         var optionUpdated = false;
 
-        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.AreasSearch != null)
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.SceneAreasSearch != null)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
-            this.AreasSelected = this.context.Areas.AsNoTracking().Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.AreasSearch.SetCurrentView("Selected");
+            this.SceneAreasSelected = this.context.Areas.AsNoTracking().Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.SceneAreasSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
         }
 
-        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.CharactersSearch != null)
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.SceneCharactersSearch != null)
         {
             var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
 
-            this.CharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.CharactersSearch.SetCurrentView("Selected");
+            this.SceneCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.SceneCharactersSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.GamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.SceneGamesSearch != null)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.GamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.GamesSearch.SetCurrentView("Selected");
+            this.SceneGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.SceneGamesSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
         }
 
-        if (this.MusicQuery != null && this.MusicQuery.Count() > 0 && this.MusicSearch != null)
+        if (this.MusicQuery != null && this.MusicQuery.Count() > 0 && this.SceneMusicSearch != null)
         {
             var musicIds = this.MusicQuery.Select(x => int.Parse(x));
 
-            this.MusicSelected = this.context.Music.AsNoTracking().Where(x => musicIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.MusicSearch.SetCurrentView("Selected");
+            this.SceneMusicSelected = this.context.Music.AsNoTracking().Where(x => musicIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.SceneMusicSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
         }
@@ -1015,12 +1321,12 @@ else if (this.CurrentCategory == "Interviews")
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.WorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.SceneWorldsSearch != null)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
-            this.WorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.WorldsSearch.SetCurrentView("Selected");
+            this.SceneWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.SceneWorldsSearch.SetCurrentView("Selected");
 
             optionUpdated = true;
         }
@@ -1030,7 +1336,62 @@ else if (this.CurrentCategory == "Interviews")
 
     private bool HandleTrailerQueryParams() { return false; }
 
-    private bool HandleInterviewQueryParams() { return false; }
+    private async Task<bool> HandleInterviewQueryParams()
+    {
+        var optionUpdated = false;
+
+        if (this.InterviewQuery != null && this.InterviewQuery.Count() > 0 && this.InterviewsSearch != null)
+        {
+            var interviewIds = this.InterviewQuery.Select(x => int.Parse(x));
+
+            this.InterviewsSelected = this.context.Interviews.AsNoTracking().Where(x => interviewIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InterviewsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InterviewGamesSearch != null)
+        {
+            var gameIds = this.GameQuery.Select(x => int.Parse(x));
+
+            this.InterviewGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            await this.InterviewGamesSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+        
+        if (this.ParticipantQuery != null && this.ParticipantQuery.Count() > 0 && this.InterviewParticipantsSearch != null)
+        {
+            var participantIds = this.ParticipantQuery.Select(x => int.Parse(x));
+
+            this.InterviewParticipantsSelected = this.context.Interviews.AsNoTracking().SelectMany(x => x.Participants).Where(x => participantIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InterviewParticipantsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.ProviderQuery != null && this.ProviderQuery.Count() > 0 && this.InterviewProvidersSearch != null)
+        {
+            var providerIds = this.ProviderQuery.Select(x => int.Parse(x));
+
+            this.InterviewProvidersSelected = this.context.Interviews.AsNoTracking().Select(x => x.Provider).Where(x => providerIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InterviewProvidersSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        if (this.TranslatorQuery != null && this.TranslatorQuery.Count() > 0 && this.InterviewTranslatorsSearch != null)
+        {
+            var translatorIds = this.TranslatorQuery.Select(x => int.Parse(x));
+
+            this.InterviewTranslatorsSelected = this.context.Interviews.AsNoTracking().Select(x => x.Translator).Where(x => translatorIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            await this.InterviewTranslatorsSearch.SetCurrentView("Selected");
+
+            optionUpdated = true;
+        }
+
+        return optionUpdated;
+    }
     #endregion Handle Query Params Sub-Methods
 
     #region Scene Specific Methods

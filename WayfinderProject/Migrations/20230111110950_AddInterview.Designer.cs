@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WayfinderProjectAPI.Data;
 
@@ -10,9 +11,11 @@ using WayfinderProjectAPI.Data;
 namespace WayfinderProject.Migrations
 {
     [DbContext(typeof(WayfinderContext))]
-    partial class WayfinderContextModelSnapshot : ModelSnapshot
+    [Migration("20230111110950_AddInterview")]
+    partial class AddInterview
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,21 +80,6 @@ namespace WayfinderProject.Migrations
                     b.HasIndex("ScenesId");
 
                     b.ToTable("CharacterScene");
-                });
-
-            modelBuilder.Entity("GameInterview", b =>
-                {
-                    b.Property<int>("GamesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("InterviewsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GamesId", "InterviewsId");
-
-                    b.HasIndex("InterviewsId");
-
-                    b.ToTable("GameInterview");
                 });
 
             modelBuilder.Entity("InterviewParticipant", b =>
@@ -518,11 +506,16 @@ namespace WayfinderProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("InterviewId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("InterviewId");
 
                     b.HasIndex(new[] { "Name" }, "Index_GameName");
 
@@ -534,10 +527,6 @@ namespace WayfinderProject.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    b.Property<string>("AdditionalLink")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Link")
                         .IsRequired()
@@ -973,21 +962,6 @@ namespace WayfinderProject.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("GameInterview", b =>
-                {
-                    b.HasOne("WayfinderProjectAPI.Data.Models.Game", null)
-                        .WithMany()
-                        .HasForeignKey("GamesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WayfinderProjectAPI.Data.Models.Interview", null)
-                        .WithMany()
-                        .HasForeignKey("InterviewsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("InterviewParticipant", b =>
                 {
                     b.HasOne("WayfinderProjectAPI.Data.Models.Interview", null)
@@ -1145,6 +1119,13 @@ namespace WayfinderProject.Migrations
                     b.Navigation("Inventory");
                 });
 
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Game", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Interview", null)
+                        .WithMany("Games")
+                        .HasForeignKey("InterviewId");
+                });
+
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Interview", b =>
                 {
                     b.HasOne("WayfinderProjectAPI.Data.Models.Provider", "Provider")
@@ -1268,6 +1249,8 @@ namespace WayfinderProject.Migrations
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Interview", b =>
                 {
                     b.Navigation("Conversation");
+
+                    b.Navigation("Games");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Inventory", b =>

@@ -17,6 +17,7 @@ namespace WayfinderProjectAPI.Data
 
             //context.Database.Migrate();
 
+            // MA
             // Load Areas Data into Database
             //CreateAreas(context);
 
@@ -41,6 +42,9 @@ namespace WayfinderProjectAPI.Data
             //// Load Scene Data into Database
             //CreateScenes(context);
 
+            // Load Interviews
+            CreateInterviews(context);
+
             // JJ
             // Character
             //CreateCharacterEntries(context);
@@ -56,7 +60,7 @@ namespace WayfinderProjectAPI.Data
 
             // MS
             // Inventory
-            CreateInventory(context);
+            //CreateInventory(context);
 
             // Recipes
             //CreateRecipes(context);
@@ -65,6 +69,7 @@ namespace WayfinderProjectAPI.Data
             IsInitializing = false;
         }
 
+        #region Memory Archive
         public static void CreateAreas(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_areas.json"));
@@ -238,6 +243,93 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+
+        class InterviewObject
+        {
+            public string Name { get; set; } = string.Empty;
+            public string Link { get; set; } = string.Empty;
+            public DateTime ReleaseDate { get; set; }
+            public string AdditionalLink { get; set; } = string.Empty;
+
+            public List<InterviewLineObject> Conversation { get; set; } = new List<InterviewLineObject>();
+            public List<string> GameNames { get; set; } = new List<string>();
+            public List<string> Participants { get; set; } = new List<string>();
+            public string Provider { get; set; } = string.Empty;
+            public string Translator { get; set; } = string.Empty;
+        }
+        class InterviewLineObject
+        {
+            public int Order { get; set; }
+            public string Speaker { get; set; } = string.Empty;
+            public string Line { get; set; } = string.Empty;
+        }
+        public static void CreateInterviews(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/_kh1_interviews.json"));
+            var allInterviews = JsonSerializer.Deserialize<Dictionary<string, List<InterviewObject>>>(streamReader.ReadToEnd());
+
+            if (!allInterviews!.ContainsKey("Interviews"))
+                throw new Exception("No Interviews List Found!");
+
+            foreach (var interview in allInterviews["Interviews"])
+            {
+                var games = context.Games.Where(x => interview.GameNames.Contains(x.Name));
+                var conversation = interview.Conversation.Select(x => new InterviewLine { Speaker = x.Speaker, Line = x.Line, Order = x.Order });
+
+                var participants = new List<Participant>();
+                interview.Participants.ForEach(x =>
+                {
+                    var participant = context.Participants.FirstOrDefault(y => y.Name == x);
+
+                    if (participant == null)
+                    {
+                        context.Participants.Add(new Participant { Name = x });
+                        context.SaveChanges();
+
+                        participant = context.Participants.First(y => y.Name == x);
+                    }
+
+                    participants.Add(participant);
+                });
+
+                var provider = context.Providers.FirstOrDefault(x => x.Name == interview.Provider);
+                if (provider == null)
+                {
+                    context.Providers.Add(new Provider { Name = interview.Provider });
+                    context.SaveChanges();
+
+                    provider = context.Providers.First(x => x.Name == interview.Provider);
+                }
+
+                var translator = context.Translators.FirstOrDefault(x => x.Name == interview.Translator);
+                if (translator == null)
+                {
+                    context.Translators.Add(new Translator { Name = interview.Translator });
+                    context.SaveChanges();
+
+                    translator = context.Translators.First(x => x.Name == interview.Translator);
+                }
+
+
+                context.Interviews.Add(new Interview
+                {
+                    Name = interview.Name,
+                    Link = interview.Link,
+                    ReleaseDate = interview.ReleaseDate,
+                    AdditionalLink = interview.AdditionalLink,
+
+                    Conversation = conversation.ToList(),
+                    Games = games.ToList(),
+                    Participants = participants,
+                    Provider = provider,
+                    Translator = translator
+                });
+
+            }
+
+            context.SaveChanges();
+        }
+        #endregion Memory Archive
 
 
         #region Jiminy's Journal
