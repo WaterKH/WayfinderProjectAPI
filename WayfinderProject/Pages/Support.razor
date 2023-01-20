@@ -136,6 +136,8 @@
                     this.supporters.Add(resource.FullName, startDate);
                 }
             }
+
+            this.supporters = this.supporters.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
         }
         catch (Exception ex)
         {
