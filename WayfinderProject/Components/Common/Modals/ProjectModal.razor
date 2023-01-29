@@ -1,0 +1,85 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+@inject NavigationManager NavigationManager
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        @foreach (var project in projects)
+        {
+            bool tempContains = this.ContainsProjectRecord(project.Name);
+            <div class="col-md-4" style="text-align: center;">
+                <h2 style="word-break: break-all; margin-bottom: 15px;">@project.Name</h2>
+
+                <button class="@(tempContains ? "remove-project-button" : "add-project-button")" onclick="@(async () => await this.CreateDeleteProjectRecord(project.Name))">@(tempContains ? "Remove from Project" : "Add to Project")</button>
+                <button class="project-button" onclick="@(() => NavigationManager.NavigateTo("/Projects", true))">Go To Project</button>
+            </div>
+        }
+    </div>
+
+    <div class="row" style="margin-top: 100px;">
+        <div class="col-md-12" style="text-align: center;">
+            <input maxlength="50" class="custom-input" @bind="@this.projectName" @oninput="@((input) => { if (input.Value != null) { this.projectName = (string)input.Value; } })">
+            <button class="wayfinder-button" onclick="@(async () => await this.CreateProject(projectName))">Create Project</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+@code {
+    [Parameter] public string AccountId { get; set; } = string.Empty;
+    [Parameter] public string Type { get; set; } = string.Empty;
+    [Parameter] public string Category { get; set; } = string.Empty;
+    [Parameter] public int SpecificRecordId { get; set; }
+    [Parameter] public WayfinderController API { get; set; } = default!;
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    private List<ProjectDto> projects = new();
+    private string projectName = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.projects = await this.API.GetProjects(this.AccountId, true);
+
+        await base.OnInitializedAsync();
+    }
+
+    public bool ContainsProjectRecord(string name)
+    {
+        return this.projects.First(x => x.Name == name).ProjectRecords.Exists(x => this.Type == x.Type && this.Category == x.Category && x.SpecificRecordId == this.SpecificRecordId);
+    }
+
+    public async Task CreateProject(string name)
+    {
+        await this.API.InsertProject(this.AccountId, name, string.Empty);
+
+        this.projects = await this.API.GetProjects(this.AccountId, true);
+
+        this.projectName = string.Empty;
+    }
+
+    public async Task DeleteProject(string name)
+    {
+        await this.API.RemoveProject(this.AccountId, name);
+
+        this.projects = await this.API.GetProjects(this.AccountId, true);
+
+        await BlazoredModal.CancelAsync();
+    }
+
+    public async Task CreateDeleteProjectRecord(string name)
+    {
+        await this.API.InsertRemoveProjectRecord(this.AccountId, name, this.Type, this.Category, this.SpecificRecordId);
+
+        this.projects = await this.API.GetProjects(this.AccountId, true);
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}

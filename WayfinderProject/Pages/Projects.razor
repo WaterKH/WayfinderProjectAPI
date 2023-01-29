@@ -1,0 +1,579 @@
+﻿@page "/projects"
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+@inject NavigationManager NavigationManager
+
+@inject IJSRuntime JS
+@inject IToastService toastService
+
+
+@using Microsoft.EntityFrameworkCore
+@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+@using WayfinderProjectAPI.Data;
+
+<PageTitle>The Wayfinder Project - Projects</PageTitle>
+
+<div class="wayfinder-background">
+    <div class="row" style="width: 100%; margin: 0px">
+        <div class="col-md-12" style="padding: 40px 110px;">
+            <div class="wayfinder-title">
+                <img src="/images/wayfinder_project_title.png" />
+            </div>
+
+            <div class="wayfinder-description">
+                <strong>Projects</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" style="text-align: center;">
+        <input maxlength="50" class="custom-input" @bind="@this.name" @oninput="@((input) => { if (input.Value != null) { this.name = (string)input.Value; } })">
+        <button class="wayfinder-button" onclick="@(async () => await this.CreateProject(this.name))">Create Project</button>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <NavBar @ref="WayfinderProjectNavBar" Categories="this.projects" UpdateCurrentCategory="@(async (string project) => await UpdateCurrentProject(project))" CurrentCategory="@this.CurrentProject" Loading="@this.Loading" />
+    </div>
+
+    <div class="col-md-2">
+        <button onclick="@(async () => await this.EditProject())" class="btn wayfinder-outlined-button" style="margin-left: 15px;">Edit Current Project</button>
+    </div>
+</div>
+
+<hr />
+
+
+@if (!string.IsNullOrEmpty(this.CurrentProject))
+{
+    <NavBar @ref="WayfinderNavBar" Categories="this.types" UpdateCurrentCategory="@(async (string type) => await UpdateCurrentType(type))" CurrentCategory="@this.CurrentType" Loading="@this.Loading" />
+
+    @if (!string.IsNullOrEmpty(this.CurrentType))
+    {
+        <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.categories.FirstOrDefault()" Options="this.categories" UpdateCurrentOption="@(async (string category) => await UpdateCurrentCategory(category))" StartingOption="@this.CurrentCategory" />
+    }
+}
+
+<br />
+<br />
+
+@if (this.Loading)
+{
+    <div class="row" style="justify-content: center;">
+        <div class="loader col-md-12"></div>
+    </div>
+}
+else if (this.CurrentType == "Memory Archive")
+{
+    if (this.CurrentCategory == "Scenes" && this.SceneDtos.Count > 0)
+    {
+        <SceneTable @ref="MainSceneTable" Items="this.SceneDtos" Context="Scene" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Scene</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Scene.Id))"
+                       Notes="@this.GetNotes(Scene.Id)" NotesCallbackMethod="@(() => this.EditNotes(Scene.Id, this.GetNotes(Scene.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <SceneTableExpandedRow Scene="@Scene" API="@this.api" />
+            </ExpandedRowTemplate>
+        </SceneTable>
+    }
+    else if (this.CurrentCategory == "Trailers")
+    {
+    
+    }
+    else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
+    {
+        <InterviewTable @ref="MainInterviewTable" Items="this.InterviewDtos" Context="Interview" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Interview</label></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Games</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Interview.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InterviewTableExpandedRow Interview="@Interview" API="@this.api" />
+            </ExpandedRowTemplate>
+        </InterviewTable>
+    }
+}
+
+<span style="margin-bottom: 50px;"></span>
+
+
+<style>
+.advanced-search-box {
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+
+.clickable {
+    float: right; 
+    font-size: 1rem; 
+    color: #3e79a7; 
+    margin-top: 3px; 
+    cursor: pointer;
+}
+
+.icon {
+    font-size: .8rem;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 4px 5px;
+    border-radius: 500px;
+    background-color: #bee2ff;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationStateTask { get; set; }
+
+    public bool Loading { get; set; }
+    public string CurrentProject { get; set; } = "";
+    public string CurrentType { get; set; } = "";
+    public string CurrentCategory { get; set; } = "";
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private WayfinderController? api;
+
+    #region Query Parameters
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "project")]
+    public int ProjectId { get; set; } = -1;
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "category")]
+    public string? CategoryQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "type")]
+    public string? TypeQuery { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "open_row")]
+    public int OpenRow { get; set; } = -1;
+    #endregion Query Parameters
+
+    private List<SceneDto> SceneDtos = new List<SceneDto>();
+    private SceneTable<SceneDto>? MainSceneTable;
+
+    private List<InterviewDto> InterviewDtos = new List<InterviewDto>();
+    private InterviewTable<InterviewDto>? MainInterviewTable;
+
+    private List<string> projects = new List<string>();
+    private NavBar? WayfinderProjectNavBar;
+
+    private List<string> types = new List<string> { "Memory Archive", "Jiminy's Journal", "Moogle Shop" };
+    private NavBar? WayfinderNavBar;
+
+    private List<string> categories = new List<string> { "Scenes", "Trailers", "Interviews" };
+    private SubNavBar? WayfinderSubNavBar;
+
+    public List<ProjectDto> ProjectDtos { get; set; } = new List<ProjectDto>();
+
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    private bool failed = false;
+    private string name = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (authenticationStateTask != null)
+        {
+            var authState = await authenticationStateTask;
+
+            if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            {
+                NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
+        }
+
+        this.api = new WayfinderController(context);
+
+        await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                await this.LoadProjects();
+
+                await this.HandleQueryParams();
+            }
+            catch (Exception)
+            {
+                // Catch the SqliteException, do not set firstLoad to true
+                this.failed = true;
+
+                await InvokeAsync(() =>
+                {
+                    this.StateHasChanged();
+                });
+            }
+        }
+
+        if (this.failed)
+        {
+            try
+            {
+                Thread.Sleep(1000);
+
+                await this.LoadProjects();
+
+                await this.HandleQueryParams();
+            }
+            catch (Exception)
+            {
+                // Catch the SqliteException, do not set firstLoad to true
+            }
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public async Task UpdateCurrentProject(string project)
+    {
+        this.CurrentProject = project;
+
+        this.HideProjects();
+
+        this.CurrentType = "Memory Archive";
+        await this.UpdateCurrentType("Memory Archive");
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task UpdateCurrentType(string type)
+    {
+        if (this.Loading) return;
+
+        this.CurrentType = type;
+
+        if (this.CurrentType == "Memory Archive")
+        {
+            this.categories = new List<string> { "Scenes", "Trailers", "Interviews" };
+        }
+        else if (this.CurrentType == "Jiminy's Journal")
+        {
+            this.categories = new List<string> { "Story", "Reports", "Characters", "Enemies", "Collectibles" };
+        }
+        else if (this.CurrentType == "Moogle Shop")
+        {
+            this.categories = new List<string> { "Recipes", "Items", "Weapons", "Accessories & Armor", "Synthesis Materials" };
+        }
+
+        this.CurrentCategory = this.categories.First();
+        await this.UpdateCurrentCategory(this.CurrentCategory);
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task UpdateCurrentCategory(string category)
+    {
+        this.CurrentCategory = category;
+
+        await this.ShowProjectsForCategory();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task LoadProjects()
+    {
+        if (this.authenticationStateTask == null || this.api == null || this.Loading) return;
+
+        var authState = await this.authenticationStateTask;
+
+        WayfinderProjectUser user = new();
+        if (authState.User.Identity != null)
+        {
+            user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+        }
+
+        this.ProjectDtos = await this.api.GetProjects(user.Id, true);
+        this.projects = this.ProjectDtos.Select(x => x.Name).ToList();
+
+        this.CurrentProject = this.projects.FirstOrDefault() ?? string.Empty;
+        await this.UpdateCurrentProject(this.CurrentProject);
+
+        await this.ShowProjectsForCategory();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public string GetNotes(int id)
+    {
+        var projectDto = this.ProjectDtos.FirstOrDefault(x => x.Name == this.CurrentProject);
+
+        if (projectDto == null) 
+            return string.Empty;
+
+        var record = projectDto.ProjectRecords.FirstOrDefault(x => x.SpecificRecordId == id);
+
+        if (record == null) 
+            return string.Empty;
+
+        return record.Notes;
+    }
+
+    public async Task EditNotes(int id, string notes)
+    {
+        if (this.authenticationStateTask == null || this.api == null || this.Loading) return;
+
+        var authState = await this.authenticationStateTask;
+
+        WayfinderProjectUser user = new();
+        if (authState.User.Identity != null)
+        {
+            user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+        }
+        
+        var parameters = new ModalParameters();
+
+        parameters.Add("AccountId", user.Id);
+        parameters.Add("ProjectName", this.CurrentProject);
+        parameters.Add("Type", this.CurrentType);
+        parameters.Add("Category", this.CurrentCategory);
+        parameters.Add("SpecificRecordId", id);
+        parameters.Add("Notes", notes);
+        parameters.Add("API", this.api);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        var temp = Modal.Show<EditProjectRecordModal>("Edit Project Record", parameters, options);
+        await temp.Result;
+
+        this.ProjectDtos = await this.api.GetProjects(user.Id, true);
+        await this.ShowProjectsForCategory();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task ShowProjectsForCategory()
+    {
+        if (this.authenticationStateTask == null || this.api == null || this.Loading) return;
+
+        this.Loading = true;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        var authState = await this.authenticationStateTask;
+
+        WayfinderProjectUser user = new();
+        if (authState.User.Identity != null)
+        {
+            user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+        }
+
+        this.HideProjects();
+
+        var records = (await this.api.GetProjectRecords(user.Id, this.CurrentProject)).Where(x => x.Category == this.CurrentCategory && x.Type == this.CurrentType).Select(x => x.SpecificRecordId);
+
+        if (this.CurrentType == "Memory Archive")
+        {
+            if (this.CurrentCategory == "Scenes")
+            {
+                this.SceneDtos = await this.context.Scenes.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Interviews")
+            {
+                this.InterviewDtos = await this.context.Interviews.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+        }
+
+        this.Loading = false;
+        
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public void HideProjects()
+    {
+        this.SceneDtos = new List<SceneDto>();
+        this.InterviewDtos = new List<InterviewDto>();
+    }
+
+    public async Task DeleteProjectRecord(int id)
+    {
+        if (this.authenticationStateTask == null || this.api == null || this.Loading) return;
+
+        var authState = await this.authenticationStateTask;
+
+        WayfinderProjectUser user = new();
+        if (authState.User.Identity != null)
+        {
+            user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+        }
+
+        await this.api.InsertRemoveProjectRecord(user.Id, this.CurrentProject, this.CurrentType, this.CurrentCategory, id);
+
+        await this.ShowProjectsForCategory();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task DeleteProject(string name)
+    {
+        if (this.authenticationStateTask == null || this.api == null || this.Loading) return;
+
+        var authState = await this.authenticationStateTask;
+
+        WayfinderProjectUser user = new();
+        if (authState.User.Identity != null)
+        {
+            user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+        }
+
+        foreach (var projectRecord in this.ProjectDtos.Where(x => x.Name == name))
+        {
+            await this.api.InsertRemoveProjectRecord(user.Id, this.CurrentProject, this.CurrentType, this.CurrentCategory, projectRecord.Id);
+        }
+
+        await this.api.RemoveProject(user.Id, name);
+
+        await this.ShowProjectsForCategory();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task CreateProject(string projectName)
+    {
+        if (this.authenticationStateTask == null || this.api == null || this.Loading) return;
+
+        var authState = await this.authenticationStateTask;
+
+        WayfinderProjectUser user = new();
+        if (authState.User.Identity != null)
+        {
+            user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+        }
+
+        await this.api.InsertProject(user.Id, projectName, string.Empty);
+
+        this.projects = (await this.api.GetProjects(user.Id)).Select(x => x.Name).ToList();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task EditProject()
+    {
+        if (this.authenticationStateTask == null || this.api == null || this.Loading) return;
+
+        var authState = await this.authenticationStateTask;
+
+        WayfinderProjectUser user = new();
+        if (authState.User.Identity != null)
+        {
+            user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+        }
+
+        var parameters = new ModalParameters();
+
+        parameters.Add("AccountId", user.Id);
+        parameters.Add("ProjectName", this.CurrentProject);
+        parameters.Add("API", this.api);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        var temp = Modal.Show<EditProjectModal>("Edit Project", parameters, options);
+        await temp.Result;
+
+        this.projects = (await this.api.GetProjects(user.Id)).Select(x => x.Name).ToList();
+
+        await this.ShowProjectsForCategory();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task<bool> HandleQueryParams()
+    {
+        var optionUpdated = false;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        try
+        {
+            
+        }
+        catch(Exception)
+        {
+            //this.failed = true;
+        }
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        return optionUpdated;
+    }
+}

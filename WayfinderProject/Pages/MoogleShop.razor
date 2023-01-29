@@ -30,12 +30,14 @@
                 <div class="wayfinder-search">
                     <span class="wayfinder-search-icon material-icons">search</span>
                     <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+                    <span class="wayfinder-general-icon material-icons" style="right: 195px;">settings</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 185px;">history</span>
                     <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
                 </div>
 
                 <div class="wayfinder-sub-description">
                     <strong>
-                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Inventory</span>, <span style="color: #ea4a4a;">Worlds</span> or <span style="color: #ea4a4a;">Characters</span>.
+                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Records</span>, <span style="color: #ea4a4a;">Categories</span> or <span style="color: #f3b222;">Synthesis Materials</span>.
                     </strong>
                 </div>
             </div>
@@ -803,9 +805,14 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
 
-            this.MSRecipeDtos = await this.api.GetRecipes(games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            this.MSRecipeDtos = await this.api.GetRecipes(accountId: user.Id, games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)
@@ -869,9 +876,14 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-            this.MSInventoryItemDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
+            this.MSInventoryItemDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)
@@ -936,9 +948,14 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
 
-            this.MSInventoryWeaponDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            this.MSInventoryWeaponDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)
@@ -1002,9 +1019,14 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-            this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
+            this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)
@@ -1068,9 +1090,14 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-            this.MSInventoryMaterialDtos = await this.api.GetInventory(games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
+            this.MSInventoryMaterialDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)

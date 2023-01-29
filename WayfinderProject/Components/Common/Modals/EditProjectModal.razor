@@ -1,0 +1,75 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+@inject NavigationManager NavigationManager
+
+<div class="simple-form clear-modal">
+    @if (this.IsCreating)
+    {
+        <p>To create a project, type in a name and select the Create Project button.</p>
+
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12" style="text-align: center;">
+                <input maxlength="50" class="custom-input" @bind="@this.name" @oninput="@((input) => { if (input.Value != null) { this.name = (string)input.Value; } })">
+                <button class="wayfinder-button" onclick="@(async () => await this.CreateProject(this.name))">Create Project</button>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>To rename a project, select a different name and select the Rename Project button.</p>
+
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12" style="text-align: center;">
+                <input maxlength="50" class="custom-input" @bind="@this.name" @oninput="@((input) => { if (input.Value != null) { this.name = (string)input.Value; } })">
+                <button class="wayfinder-button" onclick="@(async () => await this.RenameProject(this.name))">Rename Project</button>
+            </div>
+        </div>
+    }
+
+    <hr />
+
+    <button onclick="@(async () => await DeleteProject())" class="btn remove-project-button" style="margin-left: 15px;">Delete Project</button>
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+@code {
+    [Parameter] public string AccountId { get; set; } = string.Empty;
+    [Parameter] public string ProjectName { get; set; } = string.Empty;
+    [Parameter] public bool IsCreating { get; set; }
+    [Parameter] public WayfinderController API { get; set; } = default!;
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    private string name;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.name = this.ProjectName;
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task DeleteProject()
+    {
+        await this.API.RemoveProject(this.AccountId, this.ProjectName);
+    }
+
+    public async Task RenameProject(string name)
+    {
+        if (name.Length > 0)
+        {
+            await this.API.RenameProject(this.AccountId, this.ProjectName, name);
+        }
+    }
+
+    public async Task CreateProject(string name)
+    {
+        if (name.Length > 0)
+        {
+            await this.API.InsertProject(this.AccountId, name, string.Empty);
+
+            this.IsCreating = false;
+        }
+    }
+}

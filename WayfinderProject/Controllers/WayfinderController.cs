@@ -22,10 +22,22 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         #region Memory Archive
-        [HttpGet("SearchForScenes")]
-        public async Task<List<SceneDto>> SearchForScenes([FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
+        [HttpGet("GetScenes")]
+        public async Task<List<SceneDto>> GetScenes([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
         {
+            var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
+            if (settings == null)
+            {
+                settings = new SearchSettings { AccountId = accountId };
+
+                _context.SearchSettings.Add(settings);
+                _context.SaveChanges();
+            }
+
             var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
+
+            // See if we search for favourites
+
             var queryString = (line == null ? line : line.Any(x => char.IsPunctuation(x)) ? line : Regex.Replace(line, @"[^\w\s]", ""));
 
             if (games != null)
@@ -60,24 +72,6 @@ namespace WayfinderProjectAPI.Controllers
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
 
-            if (characters != null)
-            {
-                var charactersList = characters.Split("::").Select(x => x.Trim());
-
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))))
-                {
-                    if (result == null || result.Characters == null) continue;
-
-                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
-
-                results = results.Where(x => resultIds.Contains(x.Id));
-            }
-
             if (areas != null)
             {
                 var areasList = areas.Split("::").Select(x => x.Trim());
@@ -88,6 +82,24 @@ namespace WayfinderProjectAPI.Controllers
                     if (result == null || result.Areas == null) continue;
 
                     if (areasList.All(x => result.Areas.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (characters != null)
+            {
+                var charactersList = characters.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))))
+                {
+                    if (result == null || result.Characters == null) continue;
+
+                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
                     {
                         resultIds.Add(result.Id);
                     }
@@ -145,9 +157,63 @@ namespace WayfinderProjectAPI.Controllers
 
                     results = results.Where(x => x.Script.Lines.ToList().Any(y => y.Line.Contains(queryString)));
                 }
+
+                if (settings.MainSearchEverything)
+                {
+                    results = this.MainSearchQueryScenes(queryString, results);
+                }
+            }
+
+            // Add to search history
+            if (settings.TrackHistory)
+            {
+                this.InsertSearchHistory(accountId, "Memory Archive", "Scenes",
+                    queryString ?? string.Empty, scenes ?? string.Empty,
+                    games ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty, characters ?? string.Empty, music ?? string.Empty);
             }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        private IQueryable<Scene> MainSearchQueryScenes(string queryString, IQueryable<Scene> scenes)
+        {
+            // Combine our incoming scenes with what we find with the straight query search
+            var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
+
+            var resultIds = results
+                .Where(x =>
+                    x.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Game.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Areas.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Characters.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Music.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Worlds.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))
+                ).Select(x => x.Id).ToList();
+
+            //var resultIds = new List<int>();
+            //foreach (var result in results.Include(x => x.Areas).Where(x => x.Areas.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
+            //{
+            //    resultIds.Add(result.Id);
+            //}
+
+            //foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
+            //{
+            //    resultIds.Add(result.Id);
+            //}
+
+            //foreach (var result in results.Include(x => x.Music).Where(x => x.Music.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
+            //{
+            //    resultIds.Add(result.Id);
+            //}
+
+            //foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
+            //{
+            //    resultIds.Add(result.Id);
+            //}
+
+            var allIds = scenes.Select(x => x.Id).ToList().Union(resultIds);
+
+            return results.Where(x => allIds.Contains(x.Id));
         }
 
         [HttpGet("GetScript")]
@@ -171,8 +237,17 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpGet("GetInterviews")]
-        public async Task<List<InterviewDto>> GetInterviews([FromQuery] string? interviews = null, [FromQuery] string? games = null, [FromQuery] string? participants = null, [FromQuery] string? providers = null, [FromQuery] string? translators = null, [FromQuery] string? line = null)
+        public async Task<List<InterviewDto>> GetInterviews([FromQuery] string accountId, [FromQuery] string? interviews = null, [FromQuery] string? games = null, [FromQuery] string? participants = null, [FromQuery] string? providers = null, [FromQuery] string? translators = null, [FromQuery] string? line = null)
         {
+            var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
+            if (settings == null)
+            {
+                settings = new SearchSettings { AccountId = accountId };
+
+                _context.SearchSettings.Add(settings);
+                _context.SaveChanges();
+            }
+
             var results = _context.Interviews.AsNoTrackingWithIdentityResolution();
             var queryString = (line == null ? line : line.Any(x => char.IsPunctuation(x)) ? line : Regex.Replace(line, @"[^\w\s]", ""));
 
@@ -266,6 +341,14 @@ namespace WayfinderProjectAPI.Controllers
                 }
             }
 
+            // Add to search history
+            if (settings.TrackHistory)
+            {
+                this.InsertSearchHistory(accountId, "Memory Archive", "Interviews",
+                    queryString ?? string.Empty, interviews ?? string.Empty,
+                    games ?? string.Empty, participants ?? string.Empty, providers ?? string.Empty, translators ?? string.Empty);
+            }
+
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
 
@@ -288,23 +371,23 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Jiminy Journal
         [HttpGet("SearchForJournalEntries")]
-        public async Task<List<JournalEntryDto>> SearchForJournalEntries([FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
+        public async Task<List<JournalEntryDto>> SearchForJournalEntries([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
         {
             var results = _context.JournalEntries.AsNoTrackingWithIdentityResolution().Where(x => x.Category == category);
             var queryString = (information == null ? information : information.Any(x => char.IsPunctuation(x)) ? information : Regex.Replace(information, @"[^\w\s]", ""));
-
-            if (games != null)
-            {
-                var gamesList = games.Split("::").Select(x => x.Trim());
-
-                results = results.Where(x => gamesList.Contains(x.Game.Name));
-            }
 
             if (entries != null)
             {
                 var titlesList = entries.Split("::").Select(x => x.Trim());
 
                 results = results.Where(x => titlesList.Contains(x.Title));
+            }
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
             }
 
             if (characters != null)
@@ -378,6 +461,11 @@ namespace WayfinderProjectAPI.Controllers
                     results = results.Where(x => x.Description.Contains(queryString) || x.AdditionalInformation.Contains(queryString));
                 }
             }
+
+            // Add to search history
+            this.InsertSearchHistory(accountId, "Jiminy's Journal", category ?? "Journal Entry",
+                queryString ?? string.Empty, entries ?? string.Empty,
+                games ?? string.Empty, characters ?? string.Empty, worlds ?? string.Empty);
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
@@ -466,23 +554,23 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Moogle Shop
         [HttpGet("GetRecipes")]
-        public async Task<List<RecipeDto>> GetRecipes([FromQuery] string? games = null, [FromQuery] string? recipes = null, [FromQuery] string? synthMaterials = null, [FromQuery] string? description = null, [FromQuery] string? categories = null)
+        public async Task<List<RecipeDto>> GetRecipes([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? recipes = null, [FromQuery] string? synthMaterials = null, [FromQuery] string? description = null, [FromQuery] string? categories = null)
         {
             var results = _context.Recipes.AsNoTrackingWithIdentityResolution();
             var queryString = (description == null ? description : description.Any(x => char.IsPunctuation(x)) ? description : Regex.Replace(description, @"[^\w\s]", ""));
-
-            if (games != null)
-            {
-                var gamesList = games.Split("::").Select(x => x.Trim());
-
-                results = results.Where(x => gamesList.Contains(x.Game.Name));
-            }
 
             if (recipes != null)
             {
                 var recipeNamesList = recipes.Split("::").Select(x => x.Trim());
 
                 results = results.Where(x => recipeNamesList.Contains(x.Name));
+            }
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
             }
 
             if (categories != null)
@@ -558,11 +646,16 @@ namespace WayfinderProjectAPI.Controllers
                 }
             }
 
+            // Add to search history
+            this.InsertSearchHistory(accountId, "Moogle Shop", "Recipes",
+                queryString ?? string.Empty, recipes ?? string.Empty,
+                games ?? string.Empty, categories ?? string.Empty, synthMaterials ?? string.Empty);
+
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
 
         [HttpGet("GetInventory")]
-        public async Task<List<InventoryDto>> GetInventory([FromQuery] string? games = null, [FromQuery] string? items = null, [FromQuery] string? enemies = null, [FromQuery] string? worlds = null, [FromQuery] string? areas = null, [FromQuery] string? description = null, [FromQuery] string? category = null)
+        public async Task<List<InventoryDto>> GetInventory([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? items = null, [FromQuery] string? enemies = null, [FromQuery] string? worlds = null, [FromQuery] string? areas = null, [FromQuery] string? description = null, [FromQuery] string? category = null)
         {
             IQueryable<Inventory> results;
             if (category == "Weapon")
@@ -580,18 +673,18 @@ namespace WayfinderProjectAPI.Controllers
 
             var queryString = (description == null ? description : description.Any(x => char.IsPunctuation(x)) ? description : Regex.Replace(description, @"[^\w\s]", ""));
 
-            if (games != null)
-            {
-                var gamesList = games.Split("::").Select(x => x.Trim());
-
-                results = results.Where(x => gamesList.Contains(x.Game.Name));
-            }
-
             if (items != null)
             {
                 var inventoryList = items.Split("::").Select(x => x.Trim());
 
                 results = results.Where(x => inventoryList.Contains(x.Name));
+            }
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
             }
 
             if (enemies != null)
@@ -684,8 +777,279 @@ namespace WayfinderProjectAPI.Controllers
                 }
             }
 
+            // Add to search history
+            this.InsertSearchHistory(accountId, "Moogle Shop", category ?? "Moogle Record",
+                queryString ?? string.Empty, items ?? string.Empty,
+                games ?? string.Empty, enemies ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty);
+
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
         #endregion Moogle Shop
+
+        #region Search History And Settings
+        [HttpGet("GetSearchHistory")]
+        public async Task<List<SearchHistoryDto>> GetSearchHistory(string accountId)
+        {
+            return await this._context.SearchHistory.Where(x => x.AccountId == accountId).ToDto().ToListAsync();
+        }
+
+        [HttpGet("GetSearchHistoryWithType")]
+        public async Task<List<SearchHistoryDto>> GetSearchHistory(string accountId, string type)
+        {
+            return await this._context.SearchHistory.Where(x => x.AccountId == accountId && x.Type == type).ToDto().ToListAsync();
+        }
+
+        [HttpPost("InsertSearchHistory")]
+        private void InsertSearchHistory(string accountId, string type, string category, string textSearch, string specificSearch,
+                                         string param1 = "", string param2 = "", string param3 = "", string param4 = "", string param5 = "", string param6 = "", string param7 = "")
+        {
+            Data.Models.SearchHistory historyObject = new()
+            {
+                AccountId = accountId,
+                Type = type,
+                Category = category,
+                TextSearch = textSearch,
+                SpecificSearch = specificSearch,
+                Param1Search = param1,
+                Param2Search = param2,
+                Param3Search = param3,
+                Param4Search = param4,
+                Param5Search = param5,
+                Param6Search = param6,
+                Param7Search = param7,
+                CreatedDate = DateTime.Now
+            };
+
+            this._context.SearchHistory.Add(historyObject);
+
+            this._context.SaveChanges();
+        }
+
+        [HttpGet("GetSearchSettings")]
+        public async Task<SearchSettingsDto> GetSearchSettings(string accountId)
+        {
+            var settings = await this._context.SearchSettings.FirstOrDefaultAsync(x => x.AccountId == accountId);
+
+            if (settings == null)
+            {
+                return new SearchSettingsDto();
+            }
+
+            return settings.ToDto();
+        }
+
+        [HttpPost("SaveSearchSettings")]
+        public async Task SaveSearchSettings(string accountId, bool autoSearch, bool autoExpandFirstResult, bool mainSearchEverything, bool trackHistory)
+        {
+            var settings = await this._context.SearchSettings.FirstOrDefaultAsync(x => x.AccountId == accountId);
+
+            if (settings != null)
+            {
+                settings.AutoSearch = autoSearch;
+                settings.AutoExpandFirstResult = autoExpandFirstResult;
+                settings.MainSearchEverything = mainSearchEverything;
+                settings.TrackHistory = trackHistory;
+            }
+            else
+            {
+                this._context.SearchSettings.Add(new SearchSettings
+                {
+                    AccountId = accountId,
+                    AutoSearch = autoSearch,
+                    AutoExpandFirstResult = autoExpandFirstResult,
+                    MainSearchEverything = mainSearchEverything,
+                    TrackHistory = trackHistory
+                });
+            }
+
+            this._context.SaveChanges();
+        }
+        #endregion Search History And Settings
+
+        #region Favourites and Projects
+        [HttpGet("GetFavourites")]
+        public async Task<List<FavoriteDto>> GetFavourites(string accountId)
+        {
+            var favourites = this._context.Favorites.Where(x => x.AccountId == accountId);
+
+            if (favourites.Count() == 0)
+                return new List<FavoriteDto>();
+
+            return await favourites.ToDto().ToListAsync();
+        }
+
+        [HttpGet("GetFavouritesWithType")]
+        public async Task<List<FavoriteDto>> GetFavourites(string accountId, string type)
+        {
+            var favourites = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == type);
+
+            if (favourites.Count() == 0)
+                return new List<FavoriteDto>();
+
+            return await favourites.ToDto().ToListAsync();
+        }
+
+        [HttpGet("GetFavouritesWithTypeAndCategory")]
+        public async Task<List<FavoriteDto>> GetFavourites(string accountId, string type, string category)
+        {
+            var favourites = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == type && x.Category == category);
+
+            if (favourites.Count() == 0)
+                return new List<FavoriteDto>();
+
+            return await favourites.ToDto().ToListAsync();
+        }
+
+        [HttpPost("InsertRemoveFavourite")]
+        public async Task InsertRemoveFavourite(string accountId, string type, string category, int specificRecordId)
+        {
+            Favorite favoriteObject = new()
+            {
+                AccountId = accountId,
+                Type = type,
+                Category = category,
+                SpecificRecordId = specificRecordId,
+                CreatedDate = DateTime.Now
+            };
+
+            Favorite? matchFavorite = await this._context.Favorites
+                .FirstOrDefaultAsync(x => x.AccountId == favoriteObject.AccountId && x.Type == favoriteObject.Type && x.Category == favoriteObject.Category && x.SpecificRecordId == favoriteObject.SpecificRecordId);
+
+            if (matchFavorite != null)
+            {
+                this._context.Favorites.Remove(matchFavorite);
+            }
+            else
+            {
+                this._context.Favorites.Add(favoriteObject);
+            }
+
+            this._context.SaveChanges();
+        }
+
+        [HttpGet("GetProjects")]
+        public async Task<List<ProjectDto>> GetProjects(string accountId, bool includeProjectRecords = false)
+        {
+            if (includeProjectRecords)
+            {
+                return await this._context.Projects.Include(x => x.ProjectRecords).Where(x => x.AccountId == accountId).ToDto().ToListAsync();
+            }
+
+            return await this._context.Projects.Where(x => x.AccountId == accountId).ToDto().ToListAsync();
+        }
+
+        [HttpPost("InsertProject")]
+        public async Task InsertProject(string accountId, string name, string description)
+        {
+            var project = await this._context.Projects.FirstOrDefaultAsync(x => x.AccountId == accountId && x.Name == name);
+
+            if (project == null)
+            {
+                if (name.Length > 50)
+                {
+                    name = name[..50];
+                }
+
+                this._context.Projects.Add(new Data.Models.Project
+                {
+                    AccountId = accountId,
+                    Name = name,
+                    Description = description,
+                    CreatedDate = DateTime.Now
+                });
+
+                this._context.SaveChanges();
+            }
+
+        }
+
+        [HttpDelete("RemoveProject")]
+        public async Task RemoveProject(string accountId, string name)
+        {
+            var project = await this._context.Projects.FirstOrDefaultAsync(x => x.AccountId == accountId && x.Name == name);
+
+            if (project != null)
+            {
+                this._context.Projects.Remove(project);
+
+                this._context.SaveChanges();
+            }
+        }
+
+        [HttpPost("RenameProject")]
+        public async Task RenameProject(string accountId, string originalName, string name)
+        {
+            var project = await this._context.Projects.FirstOrDefaultAsync(x => x.AccountId == accountId && x.Name == name);
+
+            if (project != null)
+            {
+                this._context.Projects.Remove(project);
+
+                this._context.SaveChanges();
+            }
+        }
+
+        [HttpGet("GetProjectRecords")]
+        public async Task<List<ProjectRecordDto>> GetProjectRecords(string accountId, string name)
+        {
+            try
+            {
+                return await this._context.Projects.Where(x => x.AccountId == accountId && x.Name == name).ToDto().SelectMany(x => x.ProjectRecords).ToListAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+
+                return null!;
+            }
+        }
+
+        [HttpPost("InsertRemoveProjectRecord")]
+        public async Task InsertRemoveProjectRecord(string accountId, string name, string type, string category, int specificRecordId)
+        {
+            var project = await this._context.Projects.Include(x => x.ProjectRecords).FirstOrDefaultAsync(x => x.AccountId == accountId && x.Name == name);
+
+            if (project != null)
+            {
+                var projectRecord = project.ProjectRecords.FirstOrDefault(x => x.Type == type && x.Category == category && x.SpecificRecordId == specificRecordId);
+
+                if (projectRecord != null)
+                {
+                    project.ProjectRecords.Remove(projectRecord);
+                }
+                else
+                {
+                    project.ProjectRecords.Add(new ProjectRecord
+                    {
+                        CreatedDate = DateTime.Now,
+                        Type = type,
+                        Category = category,
+                        SpecificRecordId = specificRecordId,
+                        Project = project
+                    });
+                }
+
+                this._context.SaveChanges();
+            }
+        }
+
+        [HttpPost("EditProjectRecordNotes")]
+        public async Task EditProjectRecordNotes(string accountId, string name, string type, string category, int specificRecordId, string value)
+        {
+            var project = await this._context.Projects.Include(x => x.ProjectRecords).FirstOrDefaultAsync(x => x.AccountId == accountId && x.Name == name);
+
+            if (project != null)
+            {
+                var projectRecord = project.ProjectRecords.FirstOrDefault(x => x.Type == type && x.Category == category && x.SpecificRecordId == specificRecordId);
+
+                if (projectRecord != null)
+                {
+                    projectRecord.Notes = value;
+
+                    this._context.SaveChanges();
+                }
+            }
+        }
+        #endregion Favorites And Projects
     }
 }

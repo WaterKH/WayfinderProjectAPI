@@ -1,18 +1,21 @@
-﻿<div class="collapsable @(Collapsed ? "collapsable-full" : "collapsable-half")" style="">
+﻿@using WayfinderProjectAPI.Data.DTOs
+
+<div class="collapsable @(Collapsed ? "collapsable-full" : "collapsable-half")" style="background: @this.Color">
     <div class="title" @onclick="@(() => Toggle())">
         <div class="row">
             <div class="col-md-4">
-                <b style="font-size: 1.5rem;">@Title</b>
+                <b style="font-size: 1.25rem">@Title</b>
+                <b style="font-size: 1.25rem; position: absolute; right: 200px;">@Date</b>
             </div>
             <div class="col-md-7"></div>
             <div class="col-md-1">
                 @if (Collapsed)
                 {
-                    <span class="oi oi-chevron-top mr-1" style="float: right; font-size: 1.7rem; color: #8D8D8D;"></span>
+                    <span class="oi oi-chevron-top mr-1" style="float: right; font-size: 1.7rem; color: black;"></span>
                 }
                 else
                 {
-                    <span class="oi oi-chevron-bottom mr-1" style="float: right; font-size: 1.7rem; color: #8D8D8D;"></span>
+                    <span class="oi oi-chevron-bottom mr-1" style="float: right; font-size: 1.7rem; color: black;"></span>
                 }
             </div>
         </div>
@@ -29,10 +32,15 @@
 @code {
     [Parameter] public RenderFragment? ChildContent { get; set; }
     [Parameter] public bool Collapsed { get; set; } = false;
+    [Parameter] public bool SetCollapse { get; set; } = false;
     [Parameter] public string Title { get; set; } = string.Empty;
+    [Parameter] public string Date { get; set; } = string.Empty;
+    [Parameter] public string Color { get; set; } = string.Empty;
 
     private void Toggle()
     {
         this.Collapsed = !this.Collapsed;
     }
+
+
 }

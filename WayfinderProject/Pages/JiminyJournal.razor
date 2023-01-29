@@ -30,6 +30,8 @@
                 <div class="wayfinder-search">
                     <span class="wayfinder-search-icon material-icons">search</span>
                     <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+                    <span class="wayfinder-general-icon material-icons" style="right: 195px;">settings</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 185px;">history</span>
                     <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
                 </div>
 
@@ -665,9 +667,14 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-            this.JJStoryDtos = await this.api.SearchForJournalEntries(games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
+            this.JJStoryDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)
@@ -729,9 +736,14 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-            this.JJReportDtos = await this.api.SearchForJournalEntries(games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
+            this.JJReportDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)
@@ -793,9 +805,14 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
 
-            this.JJCharacterDtos = await this.api.SearchForJournalEntries(games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            this.JJCharacterDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)
@@ -857,9 +874,14 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-            this.JJEnemyDtos = await this.api.SearchForJournalEntries(games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
+            this.JJEnemyDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
 
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
             //if (user.ApiCallQuota > 0)

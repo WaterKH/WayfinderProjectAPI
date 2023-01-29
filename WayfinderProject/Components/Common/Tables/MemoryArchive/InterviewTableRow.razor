@@ -86,6 +86,28 @@
 <td style="vertical-align: middle;">
     <a style="font-weight: 600; color: #1a00ff;" href="@Interview.Translator.Link" target="_blank">@Interview.Translator.Name</a>
 </td>
+@if (!this.ProjectView)
+{
+<td>
+    @if (this.IsFavorite)
+    {
+        <iconify-icon icon="ic:baseline-star" class="favorite-icon-active" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+    else
+    {
+        <iconify-icon icon="ic:baseline-star-outline" class="favorite-icon-inactive" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+
+    @if (this.IsProject)
+    {
+        <iconify-icon icon="material-symbols:folder-rounded" class="project-icon-active" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+    else
+    {
+        <iconify-icon icon="material-symbols:folder-outline-rounded" class="project-icon-inactive" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+</td>
+}
 
 <style>
 .clickable {
@@ -95,13 +117,69 @@
     margin-top: 3px;
     cursor: pointer;
 }
+
+.favorite-icon-inactive {
+    font-size: x-large;
+    margin-top: 5px;
+    width: 30px;
+    color: #b4b4b4ab;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+    .favorite-icon-inactive:hover {
+        color: #e7c009;
+    }
+
+.favorite-icon-active {
+    font-size: x-large;
+    margin-top: 5px;
+    width: 30px;
+    color: #e7c009;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+    .favorite-icon-active:hover {
+        color: #b4b4b4ab;
+    }
+
+.project-icon-inactive {
+    font-size: x-large;
+    margin-top: 5px;
+    color: #b4b4b4ab;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+    .favorite-icon-inactive:hover {
+        color: #c76ce9;
+    }
+
+.project-icon-active {
+    font-size: x-large;
+    margin-top: 5px;
+    color: #c76ce9;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+
+    .project-icon-active:hover {
+        color: #b4b4b4ab;
+    }
 </style>
 
 @code {
     [Parameter] public InterviewDto Interview { get; set; } = new InterviewDto();
     [Parameter] public InterviewTable<InterviewDto>? MainTable { get; set; }
+    [Parameter] public bool IsFavorite { get; set; }
+    [Parameter] public bool IsProject { get; set; }
+    [Parameter] public bool ProjectView { get; set; }
+    [Parameter] public EventCallback FavoriteCallbackMethod { get; set; } = default!;
+    [Parameter] public EventCallback ProjectCallbackMethod { get; set; } = default!;
 
-    private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
+    //private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
 
     protected override async Task OnParametersSetAsync()
     {

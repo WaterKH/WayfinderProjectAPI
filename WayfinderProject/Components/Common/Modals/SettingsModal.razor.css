@@ -1,0 +1,32 @@
+.active-wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+}
+
+    .active-wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.inactive-wayfinder-button {
+    padding: 5px 30px;
+    color: black;
+    border: 1px solid #2787fd;
+    border-radius: 20px;
+    background: #f1f1f1;
+    text-align: center;
+    transition: background ease-in-out .3s;
+}
+
+    .inactive-wayfinder-button:focus {
+        outline: none;
+    }
+
+    .inactive-wayfinder-button:hover {
+        background: #dceaff;
+    }

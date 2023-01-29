@@ -16,7 +16,7 @@ namespace WayfinderProject.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("AreaCharacterLocation", b =>
@@ -512,6 +512,37 @@ namespace WayfinderProject.Migrations
                     b.ToTable("MS_EnemyDrop");
                 });
 
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Favorite", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AccountId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("SpecificRecordId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "AccountId" }, "Index_FavoriteAccountId");
+
+                    b.ToTable("Favorites");
+                });
+
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Game", b =>
                 {
                     b.Property<int>("Id")
@@ -711,6 +742,68 @@ namespace WayfinderProject.Migrations
                     b.ToTable("Participants");
                 });
 
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Project", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AccountId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "AccountId" }, "Index_ProjectAccountId");
+
+                    b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.ProjectRecord", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SpecificRecordId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectRecords");
+                });
+
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Provider", b =>
                 {
                     b.Property<int>("Id")
@@ -869,6 +962,105 @@ namespace WayfinderProject.Migrations
                     b.HasIndex("ScriptId");
 
                     b.ToTable("ScriptLine");
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.SearchHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AccountId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Param1Search")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Param2Search")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Param3Search")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Param4Search")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Param5Search")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Param6Search")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Param7Search")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SpecificSearch")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TextSearch")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "AccountId" }, "Index_HistoryAccountId");
+
+                    b.ToTable("SearchHistory");
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.SearchSettings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AccountId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("AutoExpandFirstResult")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("AutoSearch")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("FavouriteSearch")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("MainSearchEverything")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ProjectSearch")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("TrackHistory")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex(new[] { "AccountId" }, "Index_SettingsAccountId");
+
+                    b.ToTable("SearchSettings");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Translator", b =>
@@ -1197,6 +1389,17 @@ namespace WayfinderProject.Migrations
                     b.Navigation("Game");
                 });
 
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.ProjectRecord", b =>
+                {
+                    b.HasOne("WayfinderProjectAPI.Data.Models.Project", "Project")
+                        .WithMany("ProjectRecords")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Recipe", b =>
                 {
                     b.HasOne("WayfinderProjectAPI.Data.Models.Game", "Game")
@@ -1273,6 +1476,11 @@ namespace WayfinderProject.Migrations
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Inventory", b =>
                 {
                     b.Navigation("EnemyDrops");
+                });
+
+            modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Project", b =>
+                {
+                    b.Navigation("ProjectRecords");
                 });
 
             modelBuilder.Entity("WayfinderProjectAPI.Data.Models.Provider", b =>

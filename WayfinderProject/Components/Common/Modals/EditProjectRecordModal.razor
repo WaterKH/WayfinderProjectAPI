@@ -1,0 +1,55 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+@inject NavigationManager NavigationManager
+
+<div class="simple-form clear-modal">
+    <p>To update your notes on a scene for your project, type or update the text below and then select the Update Notes button.</p>
+
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-12" style="text-align: center;">
+            <input maxlength="500" class="custom-input" @bind="@this.notes" @oninput="@((input) => { if (input.Value != null) { this.notes = (string)input.Value; } })">
+            <button class="wayfinder-button" onclick="@(async () => await this.EditNotes(this.notes))">Update Notes</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(async () => await this.DeleteProjectRecord())" class="btn remove-project-button" style="margin-left: 15px;">Remove Project Record</button>
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+@code {
+    [Parameter] public string AccountId { get; set; } = string.Empty;
+    [Parameter] public string ProjectName { get; set; } = string.Empty;
+    [Parameter] public string Type { get; set; } = string.Empty;
+    [Parameter] public string Category { get; set; } = string.Empty;
+    [Parameter] public int SpecificRecordId { get; set; }
+    [Parameter] public string Notes { get; set; } = string.Empty;
+    [Parameter] public WayfinderController API { get; set; } = default!;
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    private string notes  = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.notes = this.Notes;
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task DeleteProjectRecord()
+    {
+        await this.API.InsertRemoveProjectRecord(this.AccountId, this.ProjectName, this.Type, this.Category, this.SpecificRecordId);
+
+        await BlazoredModal.CancelAsync();
+    }
+
+    public async Task EditNotes(string value)
+    {
+        await this.API.EditProjectRecordNotes(this.AccountId, this.ProjectName, this.Type, this.Category, this.SpecificRecordId, value);
+
+        await BlazoredModal.CancelAsync();
+    }
+}

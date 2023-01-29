@@ -1,0 +1,26 @@
+﻿@if (!string.IsNullOrEmpty(this.Value))
+{
+    <div class="col-md-12">
+        <label><strong>@this.DisplayLabel(this.Type, this.Category, this.ParamNumber)</strong>: </label>
+        @foreach (var searchValue in this.Value.Split("::"))
+        {
+            <div class="history-bubble" style="background-color: @this.Color">@searchValue</div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter] public string Color { get; set; } = string.Empty;
+    [Parameter] public string Value { get; set; } = string.Empty;
+    [Parameter] public string Type { get; set; } = string.Empty;
+    [Parameter] public string Category { get; set; } = string.Empty;
+    [Parameter] public int ParamNumber { get; set; }
+
+    [Parameter] public Func<string, string, int, string> DisplayLabel { get; set; } = default!;
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

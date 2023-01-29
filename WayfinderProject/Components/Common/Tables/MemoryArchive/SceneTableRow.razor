@@ -3,6 +3,7 @@
 @using WayfinderProject.Data.Models
 @using WayfinderProjectAPI.Data.DTOs
 
+@inject WayfinderProjectAPI.Data.WayfinderContext context
 
 <td style="vertical-align: middle;">
     @if (this.MainTable != null)
@@ -26,7 +27,9 @@
 </td>
 <td style="vertical-align: middle;">
     <a style="font-weight: 600; color: #1a00ff;" href="@Scene.Link" target="_blank">@Scene.Name</a>
-</td>
+</td
+@if (!this.ProjectView)
+{
 <td style="vertical-align: middle;">
     @if (Scene.Worlds.Count > 2)
     {
@@ -112,10 +115,10 @@
     }
 </td>
 <td style="vertical-align: middle;">
-    @if (Scene.Music.Count > 2)
+    @if (Scene.Music.Count > 1)
     {
         <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Scene.Music.Select(x => x.Name)))">
+            <Tooltip Text="@(string.Join(", ", Scene.Music.Select(x => x.Name)))" Margin="@("-200px")">
                 <div class="music-display">
                     Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
                 </div>
@@ -139,6 +142,38 @@
         }
     }
 </td>
+<td>
+    @if (this.IsFavorite)
+    {
+        <iconify-icon icon="ic:baseline-star" class="favorite-icon-active" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+    else
+    {
+        <iconify-icon icon="ic:baseline-star-outline" class="favorite-icon-inactive" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+
+    
+    @if (this.IsProject)
+    {
+        <iconify-icon icon="material-symbols:folder-rounded" class="project-icon-active" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+    else
+    {
+        <iconify-icon icon="material-symbols:folder-outline-rounded" class="project-icon-inactive" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+    }
+    
+</td>
+}
+else
+{
+<td style="width: 70%; vertical-align: middle;">
+    <label>@this.Notes</label>
+</td>
+<td>
+    <iconify-icon icon="material-symbols:edit" class="project-icon-inactive" style="color: grey;" onclick="@(async () => await this.NotesCallbackMethod.InvokeAsync())"></iconify-icon>
+    <iconify-icon icon="material-symbols:delete" class="project-icon-inactive" style="color: #d70e0e;" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+</td>
+}
 
 <style>
 .clickable {
@@ -148,18 +183,76 @@
     margin-top: 3px;
     cursor: pointer;
 }
+
+.favorite-icon-inactive {
+    font-size: x-large;
+    margin-top: 5px;
+    width: 30px;
+    color: #b4b4b4ab;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+    .favorite-icon-inactive:hover {
+        color: #e7c009;
+    }
+
+.favorite-icon-active {
+    font-size: x-large;
+    margin-top: 5px;
+    width: 30px;
+    color: #e7c009;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+    .favorite-icon-active:hover {
+        color: #b4b4b4ab;
+    }
+
+.project-icon-inactive {
+    font-size: x-large;
+    margin-top: 5px;
+    color: #b4b4b4ab;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+    .project-icon-inactive:hover {
+        color: #c76ce9;
+    }
+
+.project-icon-active {
+    font-size: x-large;
+    margin-top: 5px;
+    color: #c76ce9;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+
+    .project-icon-active:hover {
+        color: #b4b4b4ab;
+    }
 </style>
 
 @code {
     [Parameter] public SceneDto Scene { get; set; } = new SceneDto();
     [Parameter] public SceneTable<SceneDto>? MainTable { get; set; }
+    [Parameter] public bool ProjectView { get; set; }
+    [Parameter] public bool IsFavorite { get; set; }
+    [Parameter] public bool IsProject { get; set; }
+    [Parameter] public string Notes { get; set; } = string.Empty;
+    [Parameter] public EventCallback FavoriteCallbackMethod { get; set; } = default!;
+    [Parameter] public EventCallback ProjectCallbackMethod { get; set; } = default!;
+    [Parameter] public EventCallback NotesCallbackMethod { get; set; } = default!;
 
-    private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
+    //private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
 
     protected override async Task OnParametersSetAsync()
     {
         //this.BrowserDimension = await BrowserService.GetDimensions();
-
+        
         await base.OnParametersSetAsync();
     }
 }

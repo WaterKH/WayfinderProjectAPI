@@ -42,6 +42,13 @@
         base.OnInitialized();
     }
 
+    protected override void OnParametersSet()
+    {
+        this.CurrentOption = this.StartingOption;
+
+        base.OnInitialized();
+    }
+
     public async Task Select(string option)
     {
         this.CurrentOption = option;

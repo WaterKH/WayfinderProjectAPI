@@ -39,7 +39,7 @@
             </p>
             <p>
                 <strong>Financial support is not required!</strong> Just by sharing - either by following, retweeting and engaing with The Wayfinder Project Twitter account
-                or copying links to scenes, entries or records and showing your friends - is supporting the project.
+                or copying links to scenes, entries or records and showing your friends - you are supporting the project.
             </p>
         </div>
 
@@ -136,6 +136,8 @@
                     this.supporters.Add(resource.FullName, startDate);
                 }
             }
+
+            this.supporters = this.supporters.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
         }
         catch (Exception ex)
         {

@@ -39,6 +39,13 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<DailyJournalEntry>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<DailyMoogleRecord>().Property(p => p.Id).ValueGeneratedOnAdd();
 
+            modelBuilder.Entity<SearchHistory>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<SearchSettings>().Property(p => p.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Favorite>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Project>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<ProjectRecord>().Property(p => p.Id).ValueGeneratedOnAdd();
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -67,5 +74,12 @@ namespace WayfinderProjectAPI.Data
         public DbSet<DailyCutscene> DailyCutscenes { get; set; } = null!;
         public DbSet<DailyJournalEntry> DailyJournalEntries { get; set; } = null!;
         public DbSet<DailyMoogleRecord> DailyMoogleRecords { get; set; } = null!;
+
+        public DbSet<SearchHistory> SearchHistory { get; set; } = null!;
+        public DbSet<SearchSettings> SearchSettings { get; set; } = null!;
+
+        public DbSet<Favorite> Favorites { get; set; } = null!;
+        public DbSet<Project> Projects { get; set; } = null!;
+        public DbSet<ProjectRecord> ProjectRecords { get; set; } = null!;
     }
 }

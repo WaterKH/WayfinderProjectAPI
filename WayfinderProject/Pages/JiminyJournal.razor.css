@@ -50,9 +50,17 @@
     color: #536fe9;
 }
 
+.wayfinder-general-icon {
+    position: relative;
+    top: 7px;
+    padding-right: 5px;
+    color: #155ed9;
+    cursor: pointer;
+}
+
 .wayfinder-search-button {
     padding: 5px 30px;
-    right: 120px;
+    right: 180px;
     position: relative;
     color: white;
     border: none;
