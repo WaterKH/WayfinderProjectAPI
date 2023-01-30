@@ -453,11 +453,12 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     private InterviewTable<InterviewDto>? MainInterviewTable;
     #endregion Interview Variables
-    
+
     [CascadingParameter] public IModalService Modal { get; set; } = default!;
 
     private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();
     private List<FavoriteDto> Favourites = new List<FavoriteDto>();
+    private SearchSettingsDto SearchSettings = default!;
 
     private bool failed = false;
 
@@ -499,6 +500,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
                     this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
                 }
             }
             catch (Exception)
@@ -537,6 +539,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
                     this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
                 }
             }
             catch (Exception)
@@ -595,11 +598,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
         if (!this.Loading)
         {
-            await this.Search();
+            await this.Search(true);
         }
     }
 
-    public async Task Search()
+    public async Task Search(bool allowSearch = false)
     {
         this.Loading = true;
 
@@ -609,15 +612,15 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
         if (this.CurrentCategory == "Cutscenes")
         {
-            await this.SearchScenes();
+            await this.SearchScenes(allowSearch);
         }
         else if (this.CurrentCategory == "Trailers")
         {
-            this.SearchTrailers();
+            this.SearchTrailers(allowSearch);
         }
         else if (this.CurrentCategory == "Interviews")
         {
-            await this.SearchInterviews();
+            await this.SearchInterviews(allowSearch);
         }
 
         this.Loading = false;
@@ -628,7 +631,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     }
 
     #region Sub-Search Methods
-    private async Task SearchScenes()
+    private async Task SearchScenes(bool allowSearch = false)
     {
         var games = this.SceneGamesSearch != null ? string.Join("::", this.SceneGamesSelected) != "" ? string.Join("::", this.SceneGamesSelected) : null : null;
         var scenes = this.ScenesSearch != null ? string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null : null;
@@ -649,43 +652,45 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            var authState = await this.authenticationStateTask;
-
-            WayfinderProjectUser user = new();
-            if (authState.User.Identity != null)
+            if (this.SearchSettings.AutoSearch || allowSearch)
             {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                var authState = await this.authenticationStateTask;
+
+                WayfinderProjectUser user = new();
+                if (authState.User.Identity != null)
+                {
+                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                }
+
+                // Maybe use the above to only call the search function we want to based on what's filled out and not null
+                if (user.ApiCallQuota > 0)
+                {
+                    this.SceneDtos = await this.api.GetScenes(accountId: user.Id, games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+
+                    user.ApiCallQuota -= 1;
+                    context.SaveChanges();
+
+                    if (user.ApiCallQuota == 2500)
+                    {
+                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                    }
+                    else if (user.ApiCallQuota == 500)
+                    {
+                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                    }
+                    else if (user.ApiCallQuota == 0)
+                    {
+                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                    }
+                }
+                else
+                {
+                    // TOAST: Out of API Call Quota, resets monthly.
+                    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
             }
 
-            // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            if (user.ApiCallQuota > 0)
-            {
-                this.SceneDtos = await this.api.GetScenes(accountId: user.Id, games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
-
-                user.ApiCallQuota -= 1;
-                context.SaveChanges();
-
-                if (user.ApiCallQuota == 2500)
-                {
-                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                }
-                else if (user.ApiCallQuota == 500)
-                {
-                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                }
-                else if (user.ApiCallQuota == 0)
-                {
-                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                }
-            }
-            else
-            {
-                // TOAST: Out of API Call Quota, resets monthly.
-                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
-            }
-
-            this.UpdateSceneOptions();
-
+            this.UpdateSceneOptions((this.SearchSettings.AutoSearch || allowSearch));
 
             this.canDisplayClearAll = true;
         }
@@ -694,10 +699,15 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             MainSceneTable.SetCurrentPage(1);
             MainSceneTable.CurrentExpandedRow = -1;
+
+            if (this.SearchSettings.AutoExpandFirstResult)
+            {
+                this.MainSceneTable.CurrentExpandedRow = this.SceneDtos.FirstOrDefault()?.Id ?? -1;
+            }
         }
     }
 
-    private void SearchTrailers()
+    private void SearchTrailers(bool allowSearch = false)
     {
         // Include game, worlds, areas, characters, music
 
@@ -720,7 +730,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         //}
     }
 
-    private async Task SearchInterviews()
+    private async Task SearchInterviews(bool allowSearch = false)
     {
         // Include translators, interviewers, interviewees, date, link, game
 
@@ -742,41 +752,44 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            var authState = await this.authenticationStateTask;
-
-            WayfinderProjectUser user = new();
-            if (authState.User.Identity != null)
+            if (this.SearchSettings.AutoSearch || allowSearch)
             {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                var authState = await this.authenticationStateTask;
+
+                WayfinderProjectUser user = new();
+                if (authState.User.Identity != null)
+                {
+                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                }
+
+                if (user.ApiCallQuota > 0)
+                {
+                    this.InterviewDtos = await this.api.GetInterviews(accountId: user.Id, interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
+
+                    user.ApiCallQuota -= 1;
+                    context.SaveChanges();
+
+                    if (user.ApiCallQuota == 2500)
+                    {
+                        toastService.ShowInfo("Used half of API Quota (2500/5000).");
+                    }
+                    else if (user.ApiCallQuota == 500)
+                    {
+                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+                    }
+                    else if (user.ApiCallQuota == 0)
+                    {
+                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+                    }
+                }
+                else
+                {
+                    // TOAST: Out of API Call Quota, resets monthly.
+                    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+                }
             }
 
-            if (user.ApiCallQuota > 0)
-            {
-                this.InterviewDtos = await this.api.GetInterviews(accountId: user.Id, interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
-
-                user.ApiCallQuota -= 1;
-                context.SaveChanges();
-
-                if (user.ApiCallQuota == 2500)
-                {
-                    toastService.ShowInfo("Used half of API Quota (2500/5000).");
-                }
-                else if (user.ApiCallQuota == 500)
-                {
-                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-                }
-                else if (user.ApiCallQuota == 0)
-                {
-                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-                }
-            }
-            else
-            {
-                // TOAST: Out of API Call Quota, resets monthly.
-                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            }
-
-            this.UpdateInterviewOptions();
+            this.UpdateInterviewOptions((this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -786,6 +799,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             MainInterviewTable.SetCurrentPage(1);
             MainInterviewTable.CurrentExpandedRow = -1;
+
+            if (this.SearchSettings.AutoExpandFirstResult)
+            {
+                this.MainInterviewTable.CurrentExpandedRow = this.InterviewDtos.FirstOrDefault()?.Id ?? -1;
+            }
         }
     }
     #endregion Sub-Search Methods
@@ -794,27 +812,39 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (this.CurrentCategory == "Cutscenes")
         {
-            this.UpdateSceneOptions();
+            this.UpdateSceneOptions(this.SearchSettings.AutoSearch);
         }
         else if (this.CurrentCategory == "Trailers")
         {
-            this.UpdateTrailerOptions();
+            this.UpdateTrailerOptions(this.SearchSettings.AutoSearch);
         }
         else if (this.CurrentCategory == "Interviews")
         {
-            this.UpdateInterviewOptions();
+            this.UpdateInterviewOptions(this.SearchSettings.AutoSearch);
         }
     }
 
     #region Sub-Option Methods
-    private void UpdateSceneOptions()
+    private void UpdateSceneOptions(bool allowSearch = true)
     {
-        this.SceneAreasAvailable = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.SceneAreasSelected).Distinct().ToList();
-        this.SceneCharactersAvailable = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.SceneCharactersSelected).Distinct().ToList();
-        this.SceneGamesAvailable = this.SceneDtos.Select(x => x.Game.Name).Except(this.SceneGamesSelected).Distinct().ToList();
-        this.SceneMusicAvailable = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.SceneMusicSelected).Distinct().ToList();
-        this.ScenesAvailable = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSelected).Distinct().ToList();
-        this.SceneWorldsAvailable = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.SceneWorldsSelected).Distinct().ToList();
+        if (allowSearch)
+        {
+            this.SceneAreasAvailable = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.SceneAreasSelected).Distinct().ToList();
+            this.SceneCharactersAvailable = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.SceneCharactersSelected).Distinct().ToList();
+            this.SceneGamesAvailable = this.SceneDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
+            this.SceneMusicAvailable = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.SceneMusicSelected).Distinct().ToList();
+            this.ScenesAvailable = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSelected).Distinct().ToList();
+            this.SceneWorldsAvailable = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.SceneWorldsSelected).Distinct().ToList();
+        }
+        else
+        {
+            this.SceneAreasAvailable = this.SceneAreas.Except(this.SceneAreasSelected).Distinct().ToList();
+            this.SceneCharactersAvailable = this.SceneCharacters.Except(this.SceneCharactersSelected).Distinct().ToList();
+            this.SceneGamesAvailable = this.SceneGames.Except(this.SceneGamesSelected).Distinct().ToList();
+            this.SceneMusicAvailable = this.SceneMusic.Except(this.SceneMusicSelected).Distinct().ToList();
+            this.ScenesAvailable = this.Scenes.Except(this.ScenesSelected).Distinct().ToList();
+            this.SceneWorldsAvailable = this.SceneWorlds.Except(this.SceneWorldsSelected).Distinct().ToList();
+        }
 
         this.SceneAreasAvailable.Sort();
         this.SceneCharactersAvailable.Sort();
@@ -823,9 +853,32 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         this.SceneWorldsAvailable.Sort();
     }
 
-    private void UpdateTrailerOptions() { }
+    private void UpdateTrailerOptions(bool allowSearch = true) { }
 
-    private void UpdateInterviewOptions() { }
+    private void UpdateInterviewOptions(bool allowSearch = true)
+    {
+        if (allowSearch)
+        {
+            this.InterviewGamesAvailable = this.InterviewDtos.SelectMany(x => x.Games).OrderBy(x => x.Id).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
+            this.InterviewsAvailable = this.InterviewDtos.Select(x => x.Name).Except(this.InterviewsSelected).Distinct().ToList();
+            this.InterviewParticipantsAvailable = this.InterviewDtos.SelectMany(x => x.Participants).Select(y => y.Name).Except(this.InterviewParticipantsSelected).Distinct().ToList();
+            this.InterviewProvidersAvailable = this.InterviewDtos.Select(y => y.Provider.Name).Except(this.InterviewProvidersSelected).Distinct().ToList();
+            this.InterviewTranslatorsAvailable = this.InterviewDtos.Select(y => y.Translator.Name).Except(this.InterviewTranslatorsSelected).Distinct().ToList();
+        }
+        else
+        {
+            this.InterviewGamesAvailable = this.InterviewGames.Except(this.SceneGamesSelected).Distinct().ToList();
+            this.InterviewsAvailable = this.Interviews.Except(this.InterviewsSelected).Distinct().ToList();
+            this.InterviewParticipantsAvailable = this.InterviewParticipants.Except(this.InterviewParticipantsSelected).Distinct().ToList();
+            this.InterviewProvidersAvailable = this.InterviewProviders.Except(this.InterviewProvidersSelected).Distinct().ToList();
+            this.InterviewTranslatorsAvailable = this.InterviewTranslators.Except(this.InterviewTranslatorsSelected).Distinct().ToList();
+        }
+
+        this.InterviewsAvailable.Sort();
+        this.InterviewParticipantsAvailable.Sort();
+        this.InterviewProvidersAvailable.Sort();
+        this.InterviewTranslatorsAvailable.Sort();
+    }
     #endregion Sub-Option Methods
 
     public async Task ResetOptions()
@@ -1406,7 +1459,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     private async Task<bool> HandleInterviewQueryParams()
     {
         var optionUpdated = false;
-        
+
         if (this.TextQuery != null && this.TextQuery.Count() > 0)
         {
             this.quoteSearch = this.TextQuery.First();
@@ -1556,7 +1609,10 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
             var options = new ModalOptions { Class = "modal-custom" };
 
-            Modal.Show<SettingsModal>("Search Settings", parameters, options);
+            var temp = Modal.Show<SettingsModal>("Search Settings", parameters, options);
+            await temp.Result;
+
+            this.SearchSettings = await this.api.GetSearchSettings(user.Id);
         }
     }
 

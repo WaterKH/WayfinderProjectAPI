@@ -38,9 +38,9 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-top: 35px;">
         <div class="col-md-3" style="text-align: center;">
-            <button class="@(this.searchSettings.FavouriteSearch ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("FavouriteSearch"))" disabled>Favourites Search</button>
+            <button class="@(this.searchSettings.FavouriteSearch ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("FavouriteSearch"))">Favourites Search</button>
         </div>
 
         <div class="col-md-3" style="text-align: center;">
@@ -86,7 +86,7 @@
     {
         if (this.API != null)
         {
-            await this.API.SaveSearchSettings(this.AccountId, this.searchSettings.AutoSearch, this.searchSettings.AutoExpandFirstResult, this.searchSettings.MainSearchEverything, this.searchSettings.TrackHistory);
+            await this.API.SaveSearchSettings(this.AccountId, this.searchSettings.AutoSearch, this.searchSettings.AutoExpandFirstResult, this.searchSettings.MainSearchEverything, this.searchSettings.TrackHistory, this.searchSettings.FavouriteSearch, this.searchSettings.ProjectSearch);
         }
     }
 

@@ -14,9 +14,9 @@ namespace WayfinderProjectAPI.Data.Models
         public string AccountId { get; set; } = string.Empty;
 
         [Required]
-        public bool AutoSearch { get; set; } = false;
+        public bool AutoSearch { get; set; } = true;
         [Required]
-        public bool AutoExpandFirstResult { get; set; } = true;
+        public bool AutoExpandFirstResult { get; set; } = false;
         [Required]
         public bool MainSearchEverything { get; set; } = false;
         [Required]

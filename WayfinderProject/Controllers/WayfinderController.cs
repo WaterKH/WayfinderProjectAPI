@@ -172,6 +172,9 @@ namespace WayfinderProjectAPI.Controllers
                     games ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty, characters ?? string.Empty, music ?? string.Empty);
             }
 
+            // Check for Favourites and Projects
+            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
 
@@ -214,6 +217,33 @@ namespace WayfinderProjectAPI.Controllers
             var allIds = scenes.Select(x => x.Id).ToList().Union(resultIds);
 
             return results.Where(x => allIds.Contains(x.Id));
+        }
+
+        private IQueryable<Scene> GetFavouritesProjectsSearchResults(string accountId, SearchSettings settings, IQueryable<Scene> results)
+        {
+            if (settings.FavouriteSearch && settings.ProjectSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Memory Archive" && x.Category == "Scenes").Select(x => x.SpecificRecordId);
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Memory Archive" && x.Category == "Scenes").Select(x => x.SpecificRecordId);
+
+                var combinedIds = favouriteIds.Union(projectRecordIds);
+
+                results = results.Where(x => combinedIds.Contains(x.Id));
+            }
+            else if (settings.FavouriteSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Memory Archive" && x.Category == "Scenes").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => favouriteIds.Contains(x.Id));
+            }
+            else if (settings.ProjectSearch)
+            {
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Memory Archive" && x.Category == "Scenes").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => projectRecordIds.Contains(x.Id));
+            }
+
+            return results;
         }
 
         [HttpGet("GetScript")]
@@ -339,6 +369,11 @@ namespace WayfinderProjectAPI.Controllers
 
                     results = results.Where(x => x.Conversation.ToList().Any(y => y.Line.Contains(queryString)));
                 }
+
+                if (settings.MainSearchEverything)
+                {
+                    results = this.MainSearchQueryInterviews(queryString, results);
+                }
             }
 
             // Add to search history
@@ -349,7 +384,56 @@ namespace WayfinderProjectAPI.Controllers
                     games ?? string.Empty, participants ?? string.Empty, providers ?? string.Empty, translators ?? string.Empty);
             }
 
+            // Check for Favourites and Projects
+            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        private IQueryable<Interview> MainSearchQueryInterviews(string queryString, IQueryable<Interview> interviews)
+        {
+            // Combine our incoming scenes with what we find with the straight query search
+            var results = _context.Interviews.AsNoTrackingWithIdentityResolution();
+
+            var resultIds = results
+                .Where(x =>
+                    x.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Games.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Participants.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Provider.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Translator.Name.ToLower().Contains(queryString.ToLower())
+                ).Select(x => x.Id).ToList();
+
+            var allIds = interviews.Select(x => x.Id).ToList().Union(resultIds);
+
+            return results.Where(x => allIds.Contains(x.Id));
+        }
+
+        private IQueryable<Interview> GetFavouritesProjectsSearchResults(string accountId, SearchSettings settings, IQueryable<Interview> results)
+        {
+            if (settings.FavouriteSearch && settings.ProjectSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Memory Archive" && x.Category == "Interviews").Select(x => x.SpecificRecordId);
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Memory Archive" && x.Category == "Interviews").Select(x => x.SpecificRecordId);
+
+                var combinedIds = favouriteIds.Union(projectRecordIds);
+
+                results = results.Where(x => combinedIds.Contains(x.Id));
+            }
+            else if (settings.FavouriteSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Memory Archive" && x.Category == "Interviews").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => favouriteIds.Contains(x.Id));
+            }
+            else if (settings.ProjectSearch)
+            {
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Memory Archive" && x.Category == "Interviews").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => projectRecordIds.Contains(x.Id));
+            }
+
+            return results;
         }
 
         [HttpGet("GetInterviewConversation")]
@@ -373,6 +457,15 @@ namespace WayfinderProjectAPI.Controllers
         [HttpGet("SearchForJournalEntries")]
         public async Task<List<JournalEntryDto>> SearchForJournalEntries([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
         {
+            var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
+            if (settings == null)
+            {
+                settings = new SearchSettings { AccountId = accountId };
+
+                _context.SearchSettings.Add(settings);
+                _context.SaveChanges();
+            }
+
             var results = _context.JournalEntries.AsNoTrackingWithIdentityResolution().Where(x => x.Category == category);
             var queryString = (information == null ? information : information.Any(x => char.IsPunctuation(x)) ? information : Regex.Replace(information, @"[^\w\s]", ""));
 
@@ -460,14 +553,71 @@ namespace WayfinderProjectAPI.Controllers
 
                     results = results.Where(x => x.Description.Contains(queryString) || x.AdditionalInformation.Contains(queryString));
                 }
+
+                if (settings.MainSearchEverything)
+                {
+                    results = this.MainSearchQueryJournalEntries(queryString, results);
+                }
             }
 
             // Add to search history
-            this.InsertSearchHistory(accountId, "Jiminy's Journal", category ?? "Journal Entry",
-                queryString ?? string.Empty, entries ?? string.Empty,
-                games ?? string.Empty, characters ?? string.Empty, worlds ?? string.Empty);
+            if (settings.TrackHistory)
+            {
+                this.InsertSearchHistory(accountId, "Jiminy's Journal", category ?? "Journal Entry",
+                    queryString ?? string.Empty, entries ?? string.Empty,
+                    games ?? string.Empty, characters ?? string.Empty, worlds ?? string.Empty);
+            }
+
+            // Check for Favourites and Projects
+            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        private IQueryable<JournalEntry> MainSearchQueryJournalEntries(string queryString, IQueryable<JournalEntry> entries)
+        {
+            // Combine our incoming scenes with what we find with the straight query search
+            var results = _context.JournalEntries.AsNoTrackingWithIdentityResolution();
+
+            var resultIds = results
+                .Where(x =>
+                    x.Title.ToLower().Contains(queryString.ToLower()) ||
+                    x.Game.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Characters.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Worlds.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Category.ToLower().Contains(queryString.ToLower())
+                ).Select(x => x.Id).ToList();
+
+            var allIds = entries.Select(x => x.Id).ToList().Union(resultIds);
+
+            return results.Where(x => allIds.Contains(x.Id));
+        }
+
+        private IQueryable<JournalEntry> GetFavouritesProjectsSearchResults(string accountId, SearchSettings settings, IQueryable<JournalEntry> results)
+        {
+            if (settings.FavouriteSearch && settings.ProjectSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Jiminy's Journal").Select(x => x.SpecificRecordId);
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Jiminy's Journal").Select(x => x.SpecificRecordId);
+
+                var combinedIds = favouriteIds.Union(projectRecordIds);
+
+                results = results.Where(x => combinedIds.Contains(x.Id));
+            }
+            else if (settings.FavouriteSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Jiminy's Journal").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => favouriteIds.Contains(x.Id));
+            }
+            else if (settings.ProjectSearch)
+            {
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Jiminy's Journal").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => projectRecordIds.Contains(x.Id));
+            }
+
+            return results;
         }
 
         [HttpGet("GetCharactersFirstAppearance")]
@@ -556,6 +706,15 @@ namespace WayfinderProjectAPI.Controllers
         [HttpGet("GetRecipes")]
         public async Task<List<RecipeDto>> GetRecipes([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? recipes = null, [FromQuery] string? synthMaterials = null, [FromQuery] string? description = null, [FromQuery] string? categories = null)
         {
+            var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
+            if (settings == null)
+            {
+                settings = new SearchSettings { AccountId = accountId };
+
+                _context.SearchSettings.Add(settings);
+                _context.SaveChanges();
+            }
+
             var results = _context.Recipes.AsNoTrackingWithIdentityResolution();
             var queryString = (description == null ? description : description.Any(x => char.IsPunctuation(x)) ? description : Regex.Replace(description, @"[^\w\s]", ""));
 
@@ -644,19 +803,84 @@ namespace WayfinderProjectAPI.Controllers
 
                     results = results.Where(x => x.UnlockConditionDescription.Contains(queryString) || x.RecipeMaterials.Any(x => x.Inventory.Description.Contains(queryString)) || x.RecipeMaterials.Any(x => x.Inventory.AdditionalInformation.Contains(queryString)));
                 }
+
+                if (settings.MainSearchEverything)
+                {
+                    results = this.MainSearchQueryRecipes(queryString, results);
+                }
             }
 
             // Add to search history
-            this.InsertSearchHistory(accountId, "Moogle Shop", "Recipes",
-                queryString ?? string.Empty, recipes ?? string.Empty,
-                games ?? string.Empty, categories ?? string.Empty, synthMaterials ?? string.Empty);
+            if (settings.TrackHistory)
+            {
+                this.InsertSearchHistory(accountId, "Moogle Shop", "Recipes",
+                    queryString ?? string.Empty, recipes ?? string.Empty,
+                    games ?? string.Empty, categories ?? string.Empty, synthMaterials ?? string.Empty);
+            }
+
+            // Check for Favourites and Projects
+            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        private IQueryable<Recipe> MainSearchQueryRecipes(string queryString, IQueryable<Recipe> recipes)
+        {
+            // Combine our incoming scenes with what we find with the straight query search
+            var results = _context.Recipes.AsNoTrackingWithIdentityResolution();
+
+            var resultIds = results
+                .Where(x =>
+                    x.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Game.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.RecipeMaterials.Any(y => y.Inventory.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Category.ToLower().Contains(queryString.ToLower())
+                ).Select(x => x.Id).ToList();
+
+            var allIds = recipes.Select(x => x.Id).ToList().Union(resultIds);
+
+            return results.Where(x => allIds.Contains(x.Id));
+        }
+
+        private IQueryable<Recipe> GetFavouritesProjectsSearchResults(string accountId, SearchSettings settings, IQueryable<Recipe> results)
+        {
+            if (settings.FavouriteSearch && settings.ProjectSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Moogle Shop" && x.Category == "Recipes").Select(x => x.SpecificRecordId);
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Moogle Shop" && x.Category == "Recipes").Select(x => x.SpecificRecordId);
+
+                var combinedIds = favouriteIds.Union(projectRecordIds);
+
+                results = results.Where(x => combinedIds.Contains(x.Id));
+            }
+            else if (settings.FavouriteSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Moogle Shop" && x.Category == "Recipes").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => favouriteIds.Contains(x.Id));
+            }
+            else if (settings.ProjectSearch)
+            {
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Moogle Shop" && x.Category == "Recipes").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => projectRecordIds.Contains(x.Id));
+            }
+
+            return results;
         }
 
         [HttpGet("GetInventory")]
         public async Task<List<InventoryDto>> GetInventory([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? items = null, [FromQuery] string? enemies = null, [FromQuery] string? worlds = null, [FromQuery] string? areas = null, [FromQuery] string? description = null, [FromQuery] string? category = null)
         {
+            var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
+            if (settings == null)
+            {
+                settings = new SearchSettings { AccountId = accountId };
+
+                _context.SearchSettings.Add(settings);
+                _context.SaveChanges();
+            }
+
             IQueryable<Inventory> results;
             if (category == "Weapon")
             {
@@ -775,14 +999,70 @@ namespace WayfinderProjectAPI.Controllers
 
                     results = results.Where(x => x.Description.Contains(queryString) || x.AdditionalInformation.Contains(queryString));
                 }
+
+                if (settings.MainSearchEverything)
+                {
+                    results = this.MainSearchQueryInventory(queryString, results);
+                }
             }
 
             // Add to search history
-            this.InsertSearchHistory(accountId, "Moogle Shop", category ?? "Moogle Record",
-                queryString ?? string.Empty, items ?? string.Empty,
-                games ?? string.Empty, enemies ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty);
+            if (settings.TrackHistory)
+            {
+                this.InsertSearchHistory(accountId, "Moogle Shop", category ?? "Moogle Record",
+                    queryString ?? string.Empty, items ?? string.Empty,
+                    games ?? string.Empty, enemies ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty);
+            }
+
+            // Check for Favourites and Projects
+            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        private IQueryable<Inventory> MainSearchQueryInventory(string queryString, IQueryable<Inventory> inventory)
+        {
+            // Combine our incoming scenes with what we find with the straight query search
+            var results = _context.Inventory.AsNoTrackingWithIdentityResolution();
+
+            var resultIds = results
+                .Where(x =>
+                    x.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Game.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.EnemyDrops.Any(y => y.CharacterLocation.Character.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Category.ToLower().Contains(queryString.ToLower())
+                ).Select(x => x.Id).ToList();
+
+            var allIds = inventory.Select(x => x.Id).ToList().Union(resultIds);
+
+            return results.Where(x => allIds.Contains(x.Id));
+        }
+
+        private IQueryable<Inventory> GetFavouritesProjectsSearchResults(string accountId, SearchSettings settings, IQueryable<Inventory> results)
+        {
+            if (settings.FavouriteSearch && settings.ProjectSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Moogle Shop" && x.Category != "Recipes").Select(x => x.SpecificRecordId);
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Moogle Shop" && x.Category != "Recipes").Select(x => x.SpecificRecordId);
+
+                var combinedIds = favouriteIds.Union(projectRecordIds);
+
+                results = results.Where(x => combinedIds.Contains(x.Id));
+            }
+            else if (settings.FavouriteSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Moogle Shop" && x.Category != "Recipes").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => favouriteIds.Contains(x.Id));
+            }
+            else if (settings.ProjectSearch)
+            {
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Moogle Shop" && x.Category != "Recipes").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => projectRecordIds.Contains(x.Id));
+            }
+
+            return results;
         }
         #endregion Moogle Shop
 
@@ -839,7 +1119,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("SaveSearchSettings")]
-        public async Task SaveSearchSettings(string accountId, bool autoSearch, bool autoExpandFirstResult, bool mainSearchEverything, bool trackHistory)
+        public async Task SaveSearchSettings(string accountId, bool autoSearch, bool autoExpandFirstResult, bool mainSearchEverything, bool trackHistory, bool favourites, bool projects)
         {
             var settings = await this._context.SearchSettings.FirstOrDefaultAsync(x => x.AccountId == accountId);
 
@@ -849,6 +1129,8 @@ namespace WayfinderProjectAPI.Controllers
                 settings.AutoExpandFirstResult = autoExpandFirstResult;
                 settings.MainSearchEverything = mainSearchEverything;
                 settings.TrackHistory = trackHistory;
+                settings.FavouriteSearch = favourites;
+                settings.ProjectSearch = projects;
             }
             else
             {
@@ -858,7 +1140,9 @@ namespace WayfinderProjectAPI.Controllers
                     AutoSearch = autoSearch,
                     AutoExpandFirstResult = autoExpandFirstResult,
                     MainSearchEverything = mainSearchEverything,
-                    TrackHistory = trackHistory
+                    TrackHistory = trackHistory,
+                    FavouriteSearch = favourites,
+                    ProjectSearch = projects
                 });
             }
 
