@@ -30,8 +30,8 @@
                 <div class="wayfinder-search">
                     <span class="wayfinder-search-icon material-icons">search</span>
                     <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
-                    <span class="wayfinder-general-icon material-icons" style="right: 195px;">settings</span>
-                    <span class="wayfinder-general-icon material-icons" style="right: 185px;">history</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
                     <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
                 </div>
 
@@ -88,7 +88,22 @@
 </div>
 
 
-<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+<div style="display: inline-flex;">
+    <div style="width: 100%;">
+
+        <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+
+    </div>
+
+    <div class="wayfinder-search-alt">
+        <span class="wayfinder-search-icon material-icons">search</span>
+        <input id="main-search" name="main-search" class="custom-input" value="@this.informationSearch" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+        <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
+    </div>
+</div>
+
 <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
 
 @if (this.CurrentCategory == "Recipes")
@@ -96,11 +111,11 @@
     <div id="recipe-search" class="advanced-search-box">
         <div class="row">
             <div class="col-md-12">
-                <SearchComponent @ref="RecipesSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.Recipes" Selected="this.RecipesSelected" Available="this.RecipesAvailable"
+                <SearchComponent @ref="RecipesSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.Recipes" Selected="this.RecipesSelected" Available="this.RecipesAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="RecipeGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.RecipeGames" Selected="this.RecipeGamesSelected" Available="this.RecipeGamesAvailable"
+                <SearchComponent @ref="RecipeGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.RecipeGames" Selected="this.RecipeGamesSelected" Available="this.RecipeGamesAvailable"
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
@@ -120,11 +135,11 @@ else if (this.CurrentCategory == "Items")
     <div id="item-search" class="advanced-search-box">
         <div class="row">
             <div class="col-md-12">
-                <SearchComponent @ref="InventoryItemsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryItems" Selected="this.InventoryItemsSelected" Available="this.InventoryItemsAvailable"
+                <SearchComponent @ref="InventoryItemsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryItems" Selected="this.InventoryItemsSelected" Available="this.InventoryItemsAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryItemGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryItemGames" Selected="this.InventoryItemGamesSelected" Available="this.InventoryItemGamesAvailable"
+                <SearchComponent @ref="InventoryItemGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryItemGames" Selected="this.InventoryItemGamesSelected" Available="this.InventoryItemGamesAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
@@ -148,11 +163,11 @@ else if (this.CurrentCategory == "Weapons")
     <div id="weapon-search" class="advanced-search-box">
         <div class="row">
             <div class="col-md-12">
-                <SearchComponent @ref="InventoryWeaponsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryWeapons" Selected="this.InventoryWeaponsSelected" Available="this.InventoryWeaponsAvailable"
+                <SearchComponent @ref="InventoryWeaponsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryWeapons" Selected="this.InventoryWeaponsSelected" Available="this.InventoryWeaponsAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryWeaponGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryWeaponGames" Selected="this.InventoryWeaponGamesSelected" Available="this.InventoryWeaponGamesAvailable"
+                <SearchComponent @ref="InventoryWeaponGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryWeaponGames" Selected="this.InventoryWeaponGamesSelected" Available="this.InventoryWeaponGamesAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
@@ -176,11 +191,11 @@ else if (this.CurrentCategory == "Accessories & Armor")
     <div id="accessory-armor-search" class="advanced-search-box">
         <div class="row">
             <div class="col-md-12">
-                <SearchComponent @ref="InventoryAccessoryArmorsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryAccessoryArmors" Selected="this.InventoryAccessoryArmorsSelected" Available="this.InventoryAccessoryArmorsAvailable"
+                <SearchComponent @ref="InventoryAccessoryArmorsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryAccessoryArmors" Selected="this.InventoryAccessoryArmorsSelected" Available="this.InventoryAccessoryArmorsAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryAccessoryArmorGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryAccessoryArmorGames" Selected="this.InventoryAccessoryArmorGamesSelected" Available="this.InventoryAccessoryArmorGamesAvailable"
+                <SearchComponent @ref="InventoryAccessoryArmorGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryAccessoryArmorGames" Selected="this.InventoryAccessoryArmorGamesSelected" Available="this.InventoryAccessoryArmorGamesAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
@@ -204,11 +219,11 @@ else if (this.CurrentCategory == "Synthesis Materials")
     <div id="material-search" class="advanced-search-box">
         <div class="row">
             <div class="col-md-12">
-                <SearchComponent @ref="InventoryMaterialsSearch" Id="Records" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryMaterials" Selected="this.InventoryMaterialsSelected" Available="this.InventoryMaterialsAvailable"
+                <SearchComponent @ref="InventoryMaterialsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryMaterials" Selected="this.InventoryMaterialsSelected" Available="this.InventoryMaterialsAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryMaterialGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryMaterialGames" Selected="this.InventoryMaterialGamesSelected" Available="this.InventoryMaterialGamesAvailable"
+                <SearchComponent @ref="InventoryMaterialGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryMaterialGames" Selected="this.InventoryMaterialGamesSelected" Available="this.InventoryMaterialGamesAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                              UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
@@ -247,9 +262,12 @@ else if (this.CurrentCategory == "Recipes" && this.MSRecipeDtos.Count > 0)
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Category</label></th>
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Materials</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" />
+            <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Recipes", Recipe.Id))" IsFavorite="@(this.IsFavoriteForUser("Recipes", Recipe.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Recipes", Recipe.Id))" IsProject="@(this.IsProjectForUser("Recipes", Recipe.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <RecipeTableExpandedRow Recipe="@Recipe" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -268,9 +286,12 @@ else if (this.CurrentCategory == "Items" && this.MSInventoryItemDtos.Count > 0)
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" />
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Items", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Items", Inventory.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Items", Inventory.Id))" IsProject="@(this.IsProjectForUser("Items", Inventory.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -289,9 +310,12 @@ else if (this.CurrentCategory == "Weapons" && this.MSInventoryWeaponDtos.Count >
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" />
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Weapons", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Weapons", Inventory.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Weapons", Inventory.Id))" IsProject="@(this.IsProjectForUser("Weapons", Inventory.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -310,9 +334,12 @@ else if (this.CurrentCategory == "Accessories & Armor" && this.MSInventoryAccess
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" />
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Accessories & Armor", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Accessories & Armor", Inventory.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Accessories & Armor", Inventory.Id))" IsProject="@(this.IsProjectForUser("Accessories & Armor", Inventory.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -331,9 +358,12 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" />
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Synthesis Materials", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Synthesis Materials", Inventory.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Synthesis Materials", Inventory.Id))" IsProject="@(this.IsProjectForUser("Synthesis Materials", Inventory.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -625,6 +655,11 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private InventoryTable<InventoryDto>? MainInventoryMaterialTable;
     #endregion Moogle Shop Inventory Material Variables
 
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();
+    private List<FavoriteDto> Favourites = new List<FavoriteDto>();
+
     private bool failed = false;
 
     protected override async Task OnInitializedAsync()
@@ -633,10 +668,10 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         {
             var authState = await authenticationStateTask;
 
-            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-            //{
-            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
-            //}
+            if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            {
+                NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
         }
 
         this.api = new WayfinderController(context);
@@ -651,9 +686,6 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             try
             {
                 await this.ResetOptions();
-
-                Thread.Sleep(1000);
-
                 await this.HandleQueryParams();
             }
             catch (Exception)
@@ -812,34 +844,32 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.MSRecipeDtos = await this.api.GetRecipes(accountId: user.Id, games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.MSRecipeDtos = await this.api.GetRecipes(accountId: user.Id, games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateRecipeOptions();
 
@@ -876,41 +906,39 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            
+
             WayfinderProjectUser user = new();
             if (authState.User.Identity != null)
             {
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.MSInventoryItemDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.MSInventoryItemDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateInventoryItemOptions();
 
@@ -955,34 +983,32 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.MSInventoryWeaponDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.MSInventoryWeaponDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateInventoryWeaponOptions();
 
@@ -1019,41 +1045,39 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            
+
             WayfinderProjectUser user = new();
             if (authState.User.Identity != null)
             {
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateInventoryAccessoryArmorOptions();
 
@@ -1090,41 +1114,39 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            
+
             WayfinderProjectUser user = new();
             if (authState.User.Identity != null)
             {
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.MSInventoryMaterialDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.MSInventoryMaterialDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateInventoryMaterialOptions();
 
@@ -2004,7 +2026,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").FirstOrDefault(x => x.Id == this.MainInventoryWeaponTable.CurrentExpandedRow)?.Name}' record.");
         }
     }
-    
+
     private async Task GenerateInventoryAccessoryArmorShareLink()
     {
         var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
@@ -2120,7 +2142,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                         this.CurrentCategory = this.CategoryQuery;
                         break;
                 }
-                
+
                 await InvokeAsync(() =>
                 {
                     this.StateHasChanged();
@@ -2228,7 +2250,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryItemGamesSearch != null)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
-            
+
             this.InventoryItemGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
             await this.InventoryItemGamesSearch.SetCurrentView("Selected");
 
@@ -2254,7 +2276,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
             optionUpdated = true;
         }
-        
+
         if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryItemAreasSearch != null)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
@@ -2267,7 +2289,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
         return optionUpdated;
     }
-    
+
     private async Task<bool> HandleInventoryWeaponQueryParams()
     {
         var optionUpdated = false;
@@ -2285,7 +2307,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryWeaponGamesSearch != null)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
-            
+
             this.InventoryWeaponGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
             await this.InventoryWeaponGamesSearch.SetCurrentView("Selected");
 
@@ -2311,7 +2333,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
             optionUpdated = true;
         }
-        
+
         if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryWeaponAreasSearch != null)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
@@ -2324,7 +2346,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
         return optionUpdated;
     }
-    
+
     private async Task<bool> HandleInventoryAccessoryArmorQueryParams()
     {
         var optionUpdated = false;
@@ -2342,7 +2364,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryAccessoryArmorGamesSearch != null)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
-            
+
             this.InventoryAccessoryArmorGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
             await this.InventoryAccessoryArmorGamesSearch.SetCurrentView("Selected");
 
@@ -2368,7 +2390,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
             optionUpdated = true;
         }
-        
+
         if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryAccessoryArmorAreasSearch != null)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
@@ -2440,7 +2462,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     }
     #endregion Handle Query Params Sub-Methods
 
-    #region Scene Specific Methods
+    #region Record Specific Methods
     public void NavigateToDailyMoogleRecord()
     {
         try
@@ -2462,7 +2484,28 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             dailyLink += $"game={journalEntry.Game.Id}&";
             dailyLink += $"entry={journalEntry.Id}&";
             dailyLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
-            dailyLink += $"category={journalEntry.Category}&";
+
+            var category = string.Empty;
+            switch (journalEntry.Category)
+            {
+                case "Item":
+                    category = "Items";
+                    break;
+                case "Keyblade":
+                case "Staff":
+                case "Shield":
+                    category = "Weapons";
+                    break;
+                case "Accessory":
+                case "Armor":
+                    category = "Accesories & Armor";
+                    break;
+                case "Synthesis Material":
+                    category = "Synthesis Materials";
+                    break;
+            }
+
+            dailyLink += $"category={category}&";
             dailyLink += $"open_row={journalEntry.Id}";
 
             NavigationManager.NavigateTo(dailyLink, true);
@@ -2482,7 +2525,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             var journalEntry = this.context.JournalEntries.AsNoTracking()
                 .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
                 .FirstOrDefault(j => j.Id == randomEntryId);
-                
+
             if (journalEntry == null)
             {
                 return;
@@ -2493,8 +2536,29 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
             randomLink += $"game={journalEntry.Game.Id}&";
             randomLink += $"entry={journalEntry.Id}&";
-            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&"; 
-            randomLink += $"category={journalEntry.Category}&";
+            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
+
+            var category = string.Empty;
+            switch (journalEntry.Category)
+            {
+                case "Item":
+                    category = "Items";
+                    break;
+                case "Keyblade":
+                case "Staff":
+                case "Shield":
+                    category = "Weapons";
+                    break;
+                case "Accessory":
+                case "Armor":
+                    category = "Accesories & Armor";
+                    break;
+                case "Synthesis Material":
+                    category = "Synthesis Materials";
+                    break;
+            }
+
+            randomLink += $"category={category}&";
             randomLink += $"open_row={journalEntry.Id}";
 
             NavigationManager.NavigateTo(randomLink, true);
@@ -2504,51 +2568,115 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
         }
     }
-    #endregion Scene Specific Methods
-
-
-    #region Search Helpers
-    private void Search(string search, ref List<string> initialValues, ref List<string> selected, ref List<string> available)
+    
+    public async Task OpenSettings()
     {
-        available = new List<string>();
-
-        if (string.IsNullOrEmpty(search))
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
         {
-            available = initialValues;
-            return;
-        }
+            var authState = await this.authenticationStateTask;
 
-        foreach (var value in initialValues)
-        {
-            if (selected.Contains(value)) continue;
-
-            if (value.ToLower().Contains(search.ToLower()))
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
             {
-                available.Add(value);
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
+
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            Modal.Show<SettingsModal>("Search Settings", parameters, options);
         }
-
-        available.Sort();
     }
 
-    private void Select(string value, ref List<string> selected, ref List<string> available)
+    public async Task OpenHistory()
     {
-        selected.Add(value);
-        available.Remove(value);
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
 
-        selected.Sort();
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-        this.Search().Wait();
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+                                                                                                                                                                                                                            parameters.Add("Type", "Moogle Shop");
+            parameters.Add("Context", this.context);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            Modal.Show<HistoryModal>("Search History", parameters, options);
+        }
     }
 
-    private void Remove(string value, ref List<string> selected, ref List<string> available)
+    public async Task SetFavorite(string category, int specificRecordId)
     {
-        available.Add(value);
-        selected.Remove(value);
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
 
-        available.Sort();
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-        this.Search().Wait();
+            await this.api.InsertRemoveFavourite(user.Id, "Moogle Shop", category, specificRecordId);
+
+            this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
     }
-    #endregion Search Helpers
+
+    public bool IsFavoriteForUser(string category, int specificRecordId)
+    {
+        return this.Favourites.Exists(x => x.Type == "Moogle Shop" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+
+    public async Task OpenProjectModal(string category, int specificRecordId)
+    {
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("Type", "Moogle Shop");
+            parameters.Add("Category", category);
+            parameters.Add("SpecificRecordId", specificRecordId);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            var temp = Modal.Show<ProjectModal>($"Projects - {category}", parameters, options);
+            await temp.Result;
+
+            this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+        }
+    }
+
+    public bool IsProjectForUser(string category, int specificRecordId)
+    {
+        return this.ProjectRecords.Exists(x => x.Type == "Moogle Shop" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+    #endregion Record Specific Methods
 }

@@ -30,8 +30,8 @@
                 <div class="wayfinder-search">
                     <span class="wayfinder-search-icon material-icons">search</span>
                     <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
-                    <span class="wayfinder-general-icon material-icons" style="right: 195px;">settings</span>
-                    <span class="wayfinder-general-icon material-icons" style="right: 185px;">history</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
                     <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
                 </div>
 
@@ -88,7 +88,22 @@
 </div>
 
 
-<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+<div style="display: inline-flex;">
+    <div class="">
+
+        <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+
+    </div>
+
+    <div class="wayfinder-search-alt">
+        <span class="wayfinder-search-icon material-icons">search</span>
+        <input id="main-search" name="main-search" class="custom-input" value="@this.informationSearch" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+        <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))">Search</button>
+    </div>
+</div>
+
 <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
 
 <!-- TODO Probably want to convert this SearchComponent into something better - Keep track of selections and available outside of the component -->
@@ -208,9 +223,12 @@ else if (this.CurrentCategory == "Story" && this.JJStoryDtos.Count > 0)
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" />
+            <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Story", Story.Id))" IsFavorite="@(this.IsFavoriteForUser("Story", Story.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Story", Story.Id))" IsProject="@(this.IsProjectForUser("Story", Story.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <JournalEntryTableExpandedRow JournalEntry="@Story" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -227,9 +245,12 @@ else if (this.CurrentCategory == "Reports" && this.JJReportDtos.Count > 0)
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" />
+            <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Reports", Report.Id))" IsFavorite="@(this.IsFavoriteForUser("Reports", Report.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Reports", Report.Id))" IsProject="@(this.IsProjectForUser("Reports", Report.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <JournalEntryTableExpandedRow JournalEntry="@Report" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -246,9 +267,12 @@ else if (this.CurrentCategory == "Characters" && this.JJCharacterDtos.Count > 0)
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" />
+            <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Characters", Character.Id))" IsFavorite="@(this.IsFavoriteForUser("Characters", Character.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Characters", Character.Id))" IsProject="@(this.IsProjectForUser("Characters", Character.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <JournalEntryTableExpandedRow JournalEntry="@Character" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -265,9 +289,12 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
             <th></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable" />
+            <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable"
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Enemies", Enemy.Id))" IsFavorite="@(this.IsFavoriteForUser("Enemies", Enemy.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Enemies", Enemy.Id))" IsProject="@(this.IsProjectForUser("Enemies", Enemy.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <JournalEntryTableExpandedRow JournalEntry="@Enemy" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -359,7 +386,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     public string? CategoryQuery { get; set; }
     #endregion Query Parameters
 
-    private List<string> categories = new List<string> { "Story", "Reports", "Characters", "Enemies", "Collectibles" };
+    private List<string> categories = new List<string> { "Story", "Reports", "Characters", "Enemies" };//, "Collectibles" };
     private NavBar? WayfinderNavBar;
 
     private List<string> options = new List<string> { "Entries", "Games", "Worlds", "Characters" };
@@ -483,9 +510,11 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private JournalEntryTable<JournalEntryDto>? MainReportTable;
     #endregion Journal Report Entry Variables
-    //private Table<TrailerDto>? MainTrailerTable;
-    //private Table<InterviewDto>? MainInterviewTable;
 
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();
+    private List<FavoriteDto> Favourites = new List<FavoriteDto>();
 
     private bool failed = false;
 
@@ -495,10 +524,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         {
             var authState = await authenticationStateTask;
 
-            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-            //{
-            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
-            //}
+            if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            {
+                NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
         }
 
         this.api = new WayfinderController(context);
@@ -513,9 +542,6 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             try
             {
                 await this.ResetOptions();
-
-                Thread.Sleep(1000);
-
                 await this.HandleQueryParams();
             }
             catch (Exception)
@@ -667,41 +693,39 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            
+
             WayfinderProjectUser user = new();
             if (authState.User.Identity != null)
             {
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.JJStoryDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.JJStoryDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateStoryEntryOptions();
 
@@ -736,41 +760,39 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            
+
             WayfinderProjectUser user = new();
             if (authState.User.Identity != null)
             {
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.JJReportDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.JJReportDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateReportEntryOptions();
 
@@ -812,34 +834,32 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.JJCharacterDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.JJCharacterDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateCharacterEntryOptions();
 
@@ -874,41 +894,39 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         else if (this.authenticationStateTask != null && this.api != null)
         {
             var authState = await authenticationStateTask;
-            
+
             WayfinderProjectUser user = new();
             if (authState.User.Identity != null)
             {
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            this.JJEnemyDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
-
             // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+            if (user.ApiCallQuota > 0)
+            {
+                this.JJEnemyDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                user.ApiCallQuota -= 1;
+                context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                if (user.ApiCallQuota == 2500)
+                {
+                    toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                }
+                else if (user.ApiCallQuota == 500)
+                {
+                    toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+                else if (user.ApiCallQuota == 0)
+                {
+                    toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
+            else
+            {
+                // TOAST: Out of API Call Quota, resets monthly.
+                toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+            }
 
             this.UpdateEnemyEntryOptions();
 
@@ -1686,7 +1704,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                         this.CurrentCategory = this.CategoryQuery;
                         break;
                 }
-                
+
                 await InvokeAsync(() =>
                 {
                     this.StateHasChanged();
@@ -1923,7 +1941,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     private bool HandleCollectibleEntryQueryParams() { return false; }
     #endregion Handle Query Params Sub-Methods
 
-    #region Scene Specific Methods
+    #region Journal Specific Methods
     public void NavigateToDailyJournalEntry()
     {
         try
@@ -1945,7 +1963,25 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             dailyLink += $"game={journalEntry.Game.Id}&";
             dailyLink += $"entry={journalEntry.Id}&";
             dailyLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
-            dailyLink += $"category={journalEntry.Category}&";
+
+            var category = string.Empty;
+            switch (journalEntry.Category)
+            {
+                case "Story":
+                    category = journalEntry.Category;
+                    break;
+                case "Report":
+                    category = "Reports";
+                    break;
+                case "Character":
+                    category = "Characters";
+                    break;
+                case "Enemy":
+                    category = "Enemies";
+                    break;
+            }
+
+            dailyLink += $"category={category}&";
             dailyLink += $"open_row={journalEntry.Id}";
 
             NavigationManager.NavigateTo(dailyLink, true);
@@ -1976,8 +2012,26 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
             randomLink += $"game={journalEntry.Game.Id}&";
             randomLink += $"entry={journalEntry.Id}&";
-            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&"; 
-            randomLink += $"category={journalEntry.Category}&";
+            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
+            
+            var category = string.Empty;
+            switch (journalEntry.Category)
+            {
+                case "Story":
+                    category = journalEntry.Category;
+                    break;
+                case "Report":
+                    category = "Reports";
+                    break;
+                case "Character":
+                    category = "Characters";
+                    break;
+                case "Enemy":
+                    category = "Enemies";
+                    break;
+            }
+
+            randomLink += $"category={category}&";
             randomLink += $"open_row={journalEntry.Id}";
 
             NavigationManager.NavigateTo(randomLink, true);
@@ -1987,51 +2041,115 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
         }
     }
-    #endregion Scene Specific Methods
 
-
-    #region Search Helpers
-    private void Search(string search, ref List<string> initialValues, ref List<string> selected, ref List<string> available)
+    public async Task OpenSettings()
     {
-        available = new List<string>();
-
-        if (string.IsNullOrEmpty(search))
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
         {
-            available = initialValues;
-            return;
-        }
+            var authState = await this.authenticationStateTask;
 
-        foreach (var value in initialValues)
-        {
-            if (selected.Contains(value)) continue;
-
-            if (value.ToLower().Contains(search.ToLower()))
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
             {
-                available.Add(value);
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
+
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            Modal.Show<SettingsModal>("Search Settings", parameters, options);
         }
-
-        available.Sort();
     }
 
-    private void Select(string value, ref List<string> selected, ref List<string> available)
+    public async Task OpenHistory()
     {
-        selected.Add(value);
-        available.Remove(value);
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
 
-        selected.Sort();
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-        this.Search().Wait();
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("Type", "Jiminy's Journal");
+            parameters.Add("Context", this.context);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            Modal.Show<HistoryModal>("Search History", parameters, options);
+        }
     }
 
-    private void Remove(string value, ref List<string> selected, ref List<string> available)
+    public async Task SetFavorite(string category, int specificRecordId)
     {
-        available.Add(value);
-        selected.Remove(value);
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
 
-        available.Sort();
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
 
-        this.Search().Wait();
+            await this.api.InsertRemoveFavourite(user.Id, "Jiminy's Journal", category, specificRecordId);
+
+            this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
     }
-    #endregion Search Helpers
+
+    public bool IsFavoriteForUser(string category, int specificRecordId)
+    {
+        return this.Favourites.Exists(x => x.Type == "Jiminy's Journal" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+
+    public async Task OpenProjectModal(string category, int specificRecordId)
+    {
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("Type", "Jiminy's Journal");
+            parameters.Add("Category", category);
+            parameters.Add("SpecificRecordId", specificRecordId);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            var temp = Modal.Show<ProjectModal>($"Projects - {category}", parameters, options);
+            await temp.Result;
+
+            this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+        }
+    }
+
+    public bool IsProjectForUser(string category, int specificRecordId)
+    {
+        return this.ProjectRecords.Exists(x => x.Type == "Jiminy's Journal" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+    #endregion Journal Specific Methods
 }

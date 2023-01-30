@@ -371,7 +371,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     public string? CategoryQuery { get; set; }
     #endregion Query Parameters
 
-    private List<string> categories = new List<string> { "Cutscenes", "Trailers", "Interviews" };
+    private List<string> categories = new List<string> { "Cutscenes", "Interviews" }; //"Trailers",
     private NavBar? WayfinderNavBar;
 
     private List<string> options = new List<string> { "Scenes", "Games", "Worlds", "Areas", "Characters", "Music" };
@@ -453,8 +453,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     private InterviewTable<InterviewDto>? MainInterviewTable;
     #endregion Interview Variables
-    //private Table<TrailerDto>? MainTrailerTable;
-
+    
     [CascadingParameter] public IModalService Modal { get; set; } = default!;
 
     private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();

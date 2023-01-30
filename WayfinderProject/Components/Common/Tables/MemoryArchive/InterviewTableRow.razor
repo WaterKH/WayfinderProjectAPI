@@ -52,6 +52,8 @@
         }
     }
 </td>
+@if (!this.ProjectView)
+{
 <td style="vertical-align: middle;">
     @if (Interview.Participants.Count > 2)
     {
@@ -86,8 +88,6 @@
 <td style="vertical-align: middle;">
     <a style="font-weight: 600; color: #1a00ff;" href="@Interview.Translator.Link" target="_blank">@Interview.Translator.Name</a>
 </td>
-@if (!this.ProjectView)
-{
 <td>
     @if (this.IsFavorite)
     {
@@ -106,6 +106,16 @@
     {
         <iconify-icon icon="material-symbols:folder-outline-rounded" class="project-icon-inactive" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
     }
+</td>
+}
+else
+{
+<td style="width: 70%; vertical-align: middle;">
+    <label>@this.Notes</label>
+</td>
+<td>
+    <iconify-icon icon="material-symbols:edit" class="project-icon-inactive" style="color: grey;" onclick="@(async () => await this.NotesCallbackMethod.InvokeAsync())"></iconify-icon>
+    <iconify-icon icon="material-symbols:delete" class="project-icon-inactive" style="color: #d70e0e;" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
 </td>
 }
 
@@ -152,7 +162,7 @@
     transition: color ease-in-out .4s;
 }
 
-    .favorite-icon-inactive:hover {
+    .project-icon-inactive:hover {
         color: #c76ce9;
     }
 
@@ -176,8 +186,10 @@
     [Parameter] public bool IsFavorite { get; set; }
     [Parameter] public bool IsProject { get; set; }
     [Parameter] public bool ProjectView { get; set; }
+    [Parameter] public string Notes { get; set; } = string.Empty;
     [Parameter] public EventCallback FavoriteCallbackMethod { get; set; } = default!;
     [Parameter] public EventCallback ProjectCallbackMethod { get; set; } = default!;
+    [Parameter] public EventCallback NotesCallbackMethod { get; set; } = default!;
 
     //private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();
 

@@ -43,6 +43,12 @@
     margin-left: 80px;
 }
 
+.wayfinder-search-alt {
+    text-align: right;
+    margin-top: 20px;
+    width: 100%;
+}
+
 .wayfinder-search-icon {
     left: 40px;
     top: 7px;

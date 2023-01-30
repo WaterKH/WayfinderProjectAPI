@@ -39,7 +39,7 @@
         <NavBar @ref="WayfinderProjectNavBar" Categories="this.projects" UpdateCurrentCategory="@(async (string project) => await UpdateCurrentProject(project))" CurrentCategory="@this.CurrentProject" Loading="@this.Loading" />
     </div>
 
-    <div class="col-md-2">
+    <div class="col-md-2" style="align-self: end;">
         <button onclick="@(async () => await this.EditProject())" class="btn wayfinder-outlined-button" style="margin-left: 15px;">Edit Current Project</button>
     </div>
 </div>
@@ -53,7 +53,7 @@
 
     @if (!string.IsNullOrEmpty(this.CurrentType))
     {
-        <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.categories.FirstOrDefault()" Options="this.categories" UpdateCurrentOption="@(async (string category) => await UpdateCurrentCategory(category))" StartingOption="@this.CurrentCategory" />
+        <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.categories.FirstOrDefault()" Options="this.categories" UpdateCurrentOption="@(async (string category) => await UpdateCurrentCategory(category))" StartingOption="@this.CurrentCategory" IsFocusEnabled="false" DisplayIcons="false" />
     }
 }
 
@@ -102,13 +102,194 @@ else if (this.CurrentType == "Memory Archive")
                 <th style="text-align: right;"></th>
             </TableHeader>
             <RowTemplate>
-                <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Interview.Id))" />
+                <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Interview.Id))"
+                        Notes="@this.GetNotes(Interview.Id)" NotesCallbackMethod="@(() => this.EditNotes(Interview.Id, this.GetNotes(Interview.Id)))" />
             </RowTemplate>
             <ExpandedRowTemplate>
                 <InterviewTableExpandedRow Interview="@Interview" API="@this.api" />
             </ExpandedRowTemplate>
         </InterviewTable>
     }
+}
+else if (this.CurrentType == "Jiminy's Journal")
+{
+    if (this.CurrentCategory == "Story" && this.JJStoryDtos.Count > 0)
+    {
+        <JournalEntryTable @ref="MainStoryTable" Items="this.JJStoryDtos" Context="Story">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Story.Id))"
+                              Notes="@this.GetNotes(Story.Id)" NotesCallbackMethod="@(() => this.EditNotes(Story.Id, this.GetNotes(Story.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Story" API="@this.api" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+    else if (this.CurrentCategory == "Reports" && this.JJReportDtos.Count > 0)
+    {
+        <JournalEntryTable @ref="MainReportTable" Items="this.JJReportDtos" Context="Report">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Report.Id))"
+                              Notes="@this.GetNotes(Report.Id)" NotesCallbackMethod="@(() => this.EditNotes(Report.Id, this.GetNotes(Report.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Report" API="@this.api" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+    else if (this.CurrentCategory == "Characters" && this.JJCharacterDtos.Count > 0)
+    {
+        <JournalEntryTable @ref="MainCharacterTable" Items="this.JJCharacterDtos" Context="Character">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Character.Id))"
+                              Notes="@this.GetNotes(Character.Id)" NotesCallbackMethod="@(() => this.EditNotes(Character.Id, this.GetNotes(Character.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Character" API="@this.api" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+    else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
+    {
+        <JournalEntryTable @ref="MainEnemyTable" Items="this.JJEnemyDtos" Context="Enemy">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Enemy.Id))"
+                              Notes="@this.GetNotes(Enemy.Id)" NotesCallbackMethod="@(() => this.EditNotes(Enemy.Id, this.GetNotes(Enemy.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Enemy" API="@this.api" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+}
+else if (this.CurrentType == "Moogle Shop")
+{
+    if (this.CurrentCategory == "Recipes" && this.MSRecipeDtos.Count > 0)
+    {
+        <RecipeTable @ref="MainRecipeTable" Items="this.MSRecipeDtos" Context="Recipe">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Recipe.Id))"
+                        Notes="@this.GetNotes(Recipe.Id)" NotesCallbackMethod="@(() => this.EditNotes(Recipe.Id, this.GetNotes(Recipe.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <RecipeTableExpandedRow Recipe="@Recipe" API="@this.api" />
+            </ExpandedRowTemplate>
+        </RecipeTable>
+    }
+    else if (this.CurrentCategory == "Items" && this.MSInventoryItemDtos.Count > 0)
+    {
+        <InventoryTable @ref="MainInventoryItemTable" Items="this.MSInventoryItemDtos" Context="Inventory">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Inventory.Id))"
+                           Notes="@this.GetNotes(Inventory.Id)" NotesCallbackMethod="@(() => this.EditNotes(Inventory.Id, this.GetNotes(Inventory.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+    else if (this.CurrentCategory == "Weapons" && this.MSInventoryWeaponDtos.Count > 0)
+    {
+        <InventoryTable @ref="MainInventoryWeaponTable" Items="this.MSInventoryWeaponDtos" Context="Inventory">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Inventory.Id))"
+                           Notes="@this.GetNotes(Inventory.Id)" NotesCallbackMethod="@(() => this.EditNotes(Inventory.Id, this.GetNotes(Inventory.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+    else if (this.CurrentCategory == "Accessories & Armor" && this.MSInventoryAccessoryArmorDtos.Count > 0)
+    {
+        <InventoryTable @ref="MainInventoryAccessoryArmorTable" Items="this.MSInventoryAccessoryArmorDtos" Context="Inventory">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Inventory.Id))"
+                           Notes="@this.GetNotes(Inventory.Id)" NotesCallbackMethod="@(() => this.EditNotes(Inventory.Id, this.GetNotes(Inventory.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+    else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMaterialDtos.Count > 0)
+    {
+        <InventoryTable @ref="MainInventoryMaterialTable" Items="this.MSInventoryMaterialDtos" Context="Inventory">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Inventory.Id))"
+                           Notes="@this.GetNotes(Inventory.Id)" NotesCallbackMethod="@(() => this.EditNotes(Inventory.Id, this.GetNotes(Inventory.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+
 }
 
 <span style="margin-bottom: 50px;"></span>
@@ -187,11 +368,44 @@ else if (this.CurrentType == "Memory Archive")
     public int OpenRow { get; set; } = -1;
     #endregion Query Parameters
 
+    #region Scene Variables
     private List<SceneDto> SceneDtos = new List<SceneDto>();
     private SceneTable<SceneDto>? MainSceneTable;
 
     private List<InterviewDto> InterviewDtos = new List<InterviewDto>();
     private InterviewTable<InterviewDto>? MainInterviewTable;
+    #endregion Scene Variables
+
+    #region Entry Variables
+    private List<JournalEntryDto> JJStoryDtos = new List<JournalEntryDto>();
+    private JournalEntryTable<JournalEntryDto>? MainStoryTable;
+
+    private List<JournalEntryDto> JJReportDtos = new List<JournalEntryDto>();
+    private JournalEntryTable<JournalEntryDto>? MainReportTable;
+    
+    private List<JournalEntryDto> JJCharacterDtos = new List<JournalEntryDto>();
+    private JournalEntryTable<JournalEntryDto>? MainCharacterTable;
+
+    private List<JournalEntryDto> JJEnemyDtos = new List<JournalEntryDto>();
+    private JournalEntryTable<JournalEntryDto>? MainEnemyTable;
+    #endregion Entry Variables
+    
+    #region Record Variables
+    private List<RecipeDto> MSRecipeDtos = new List<RecipeDto>();
+    private RecipeTable<RecipeDto>? MainRecipeTable;
+
+    private List<InventoryDto> MSInventoryItemDtos = new List<InventoryDto>();
+    private InventoryTable<InventoryDto>? MainInventoryItemTable;
+    
+    private List<InventoryDto> MSInventoryWeaponDtos = new List<InventoryDto>();
+    private InventoryTable<InventoryDto>? MainInventoryWeaponTable;
+    
+    private List<InventoryDto> MSInventoryAccessoryArmorDtos = new List<InventoryDto>();
+    private InventoryTable<InventoryDto>? MainInventoryAccessoryArmorTable;
+
+    private List<InventoryDto> MSInventoryMaterialDtos = new List<InventoryDto>();
+    private InventoryTable<InventoryDto>? MainInventoryMaterialTable;
+    #endregion Record Variables
 
     private List<string> projects = new List<string>();
     private NavBar? WayfinderProjectNavBar;
@@ -199,7 +413,7 @@ else if (this.CurrentType == "Memory Archive")
     private List<string> types = new List<string> { "Memory Archive", "Jiminy's Journal", "Moogle Shop" };
     private NavBar? WayfinderNavBar;
 
-    private List<string> categories = new List<string> { "Scenes", "Trailers", "Interviews" };
+    private List<string> categories = new List<string> { "Scenes", "Interviews" }; // "Trailers",
     private SubNavBar? WayfinderSubNavBar;
 
     public List<ProjectDto> ProjectDtos { get; set; } = new List<ProjectDto>();
@@ -233,7 +447,6 @@ else if (this.CurrentType == "Memory Archive")
             try
             {
                 await this.LoadProjects();
-
                 await this.HandleQueryParams();
             }
             catch (Exception)
@@ -290,12 +503,12 @@ else if (this.CurrentType == "Memory Archive")
 
         if (this.CurrentType == "Memory Archive")
         {
-            this.categories = new List<string> { "Scenes", "Trailers", "Interviews" };
+            this.categories = new List<string> { "Scenes", "Interviews" }; // "Trailers",
         }
         else if (this.CurrentType == "Jiminy's Journal")
         {
-            this.categories = new List<string> { "Story", "Reports", "Characters", "Enemies", "Collectibles" };
-        }
+            this.categories = new List<string> { "Story", "Reports", "Characters", "Enemies" }; //, "Collectibles" };
+    }
         else if (this.CurrentType == "Moogle Shop")
         {
             this.categories = new List<string> { "Recipes", "Items", "Weapons", "Accessories & Armor", "Synthesis Materials" };
@@ -431,6 +644,48 @@ else if (this.CurrentType == "Memory Archive")
             else if (this.CurrentCategory == "Interviews")
             {
                 this.InterviewDtos = await this.context.Interviews.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+        }
+        else if (this.CurrentType == "Jiminy's Journal")
+        {
+            if (this.CurrentCategory == "Story")
+            {
+                this.JJStoryDtos = await this.context.JournalEntries.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Reports")
+            {
+                this.JJReportDtos = await this.context.JournalEntries.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Characters")
+            {
+                this.JJCharacterDtos = await this.context.JournalEntries.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Enemies")
+            {
+                this.JJEnemyDtos = await this.context.JournalEntries.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+        }
+        else if (this.CurrentType == "Moogle Shop")
+        {
+            if (this.CurrentCategory == "Recipes")
+            {
+                this.MSRecipeDtos = await this.context.Recipes.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Items")
+            {
+                this.MSInventoryItemDtos = await this.context.Inventory.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Weapons")
+            {
+                this.MSInventoryWeaponDtos = await this.context.Inventory.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Accessories & Armor")
+            {
+                this.MSInventoryAccessoryArmorDtos = await this.context.Inventory.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Synthesis Materials")
+            {
+                this.MSInventoryMaterialDtos = await this.context.Inventory.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
             }
         }
 

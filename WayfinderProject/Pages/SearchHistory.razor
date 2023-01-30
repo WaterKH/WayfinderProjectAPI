@@ -201,48 +201,74 @@
                 randomLink += string.Join("&", this.context.Participants.Where(x => participants.Contains(x.Name)).Select(x => $"participant={x.Id}")) + "&";
                 randomLink += string.Join("&", this.context.Providers.Where(x => providers.Contains(x.Name)).Select(x => $"provider={x.Id}")) + "&";
                 randomLink += string.Join("&", this.context.Translators.Where(x => translators.Contains(x.Name)).Select(x => $"translator={x.Id}")) + "&";
-                randomLink += "category=Interviews&";
+                randomLink += "category=Interviews";
             }
         }
         else if (history.Type == "Jiminy's Journal")
         {
-            var journalEntry = this.context.JournalEntries.AsNoTracking()
-                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
-                .FirstOrDefault(j => j.Id == int.Parse(history.SpecificSearch));
+            randomLink += "jiminy_journal?";
+            randomLink += $"text={history.TextSearch}&";
 
-            if (journalEntry == null)
-            {
-                return;
-            }
+            var records = history.SpecificSearch.Split("::");
+            var games = history.Param1Search.Split("::");
+            var characters = history.Param2Search.Split("::");
+            var worlds = history.Param3Search.Split("::");
 
-            randomLink += $"jiminy_journal?";
-
-            randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
-            randomLink += $"game={journalEntry.Game.Id}&";
-            randomLink += $"entry={journalEntry.Id}&";
-            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&"; 
-            randomLink += $"category={journalEntry.Category}&";
-            randomLink += $"open_row={journalEntry.Id}";
+            randomLink += string.Join("&", this.context.JournalEntries.Where(x => records.Contains(x.Title)).Select(x => $"entry={x.Id}")) + "&";
+            randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+            randomLink += string.Join("&", this.context.Characters.Where(x => characters.Contains(x.Name)).Select(x => $"character={x.Id}")) + "&";
+            randomLink += string.Join("&", this.context.Worlds.Where(x => worlds.Contains(x.Name)).Select(x => $"world={x.Id}")) + "&";
+            randomLink += $"category={history.Category}";
         }
         else if (history.Type == "Moogle Shop")
         {
-            var journalEntry = this.context.JournalEntries.AsNoTracking()
-                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
-                .FirstOrDefault(j => j.Id == int.Parse(history.SpecificSearch));
+            randomLink += "moogle_shop?";
+            randomLink += $"text={history.TextSearch}&";
 
-            if (journalEntry == null)
+            if (history.Category == "Recipes")
             {
-                return;
+                var records = history.SpecificSearch.Split("::");
+                var games = history.Param1Search.Split("::");
+                var categories = history.Param2Search.Split("::");
+                var synthesisMaterials = history.Param3Search.Split("::");
+
+                randomLink += string.Join("&", this.context.Recipes.Where(x => records.Contains(x.Name)).Select(x => $"record={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Recipes.Where(x => categories.Contains(x.Category)).Select(x => $"recipe_category={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Inventory.Where(x => synthesisMaterials.Contains(x.Name)).Select(x => $"material={x.Id}")) + "&";
+                randomLink += $"category={history.Category}";
             }
+            else
+            {
+                var records = history.SpecificSearch.Split("::");
+                var games = history.Param1Search.Split("::");
+                var enemies = history.Param2Search.Split("::");
+                var worlds = history.Param3Search.Split("::");
+                var areas = history.Param3Search.Split("::");
 
-            randomLink += $"moogle_shop?";
+                randomLink += string.Join("&", this.context.Inventory.Where(x => records.Contains(x.Name)).Select(x => $"record={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Characters.Where(x => enemies.Contains(x.Name)).Select(x => $"enemy={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Worlds.Where(x => worlds.Contains(x.Name)).Select(x => $"world={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Areas.Where(x => areas.Contains(x.Name)).Select(x => $"area={x.Id}")) + "&";
 
-            randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
-            randomLink += $"game={journalEntry.Game.Id}&";
-            randomLink += $"entry={journalEntry.Id}&";
-            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
-            randomLink += $"category={journalEntry.Category}&";
-            randomLink += $"open_row={journalEntry.Id}";
+                var category = string.Empty;
+                switch (history.Category)
+                {
+                    case "Items":
+                    case "Weapons":
+                        category = history.Category;
+                        break;
+                    case "Accessories & Armor":
+                        category = "AccesoryArmor";
+                        break;
+                    case "Synthesis Materials":
+                        category = "SynthesisMaterial";
+                        break;
+                }
+
+                randomLink += $"category={category}";
+            }
         }
 
         NavigationManager.NavigateTo(randomLink, true);
