@@ -7,6 +7,8 @@
 
 
 @using Microsoft.EntityFrameworkCore
+@using WayfinderProject.Data
+@using WayfinderProjectAPI.Data
 @using WayfinderProjectAPI.Data.DTOs
 @using WayfinderProjectAPI.Controllers
 
@@ -431,6 +433,10 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     #region Query Parameters
     [Parameter]
+    [SupplyParameterFromQuery(Name = "text")]
+    public string[]? TextQuery { get; set; }
+
+    [Parameter]
     [SupplyParameterFromQuery(Name = "record")]
     public string[]? RecordQuery { get; set; }
 
@@ -663,6 +669,9 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private bool failed = false;
 
+    private bool isPatron;
+    private int favouriteCount = 200;
+
     protected override async Task OnInitializedAsync()
     {
         if (authenticationStateTask != null)
@@ -672,6 +681,30 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
             {
                 NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
+
+            // Set Patron Status
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                {
+                    var patreonService = new PatreonService(new HttpClient());
+
+                    try
+                    {
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                    catch (Exception)
+                    {
+                        await patreonService.RefreshToken(context, user.Id);
+
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                }
+
+                this.favouriteCount = this.isPatron ? 650 : 200;
             }
         }
 
@@ -878,24 +911,27 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.MSRecipeDtos = await this.api.GetRecipes(accountId: user.Id, games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -955,24 +991,27 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.MSInventoryItemDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -1033,24 +1072,27 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.MSInventoryWeaponDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -1110,24 +1152,27 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -1187,24 +1232,27 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.MSInventoryMaterialDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -2318,6 +2366,13 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleRecipeQueryParams()
     {
         var optionUpdated = false;
+        
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
 
         if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.RecipesSearch != null)
         {
@@ -2363,6 +2418,13 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleInventoryItemQueryParams()
     {
         var optionUpdated = false;
+        
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
 
         if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryItemsSearch != null)
         {
@@ -2420,6 +2482,13 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleInventoryWeaponQueryParams()
     {
         var optionUpdated = false;
+        
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
 
         if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryWeaponsSearch != null)
         {
@@ -2477,6 +2546,13 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleInventoryAccessoryArmorQueryParams()
     {
         var optionUpdated = false;
+        
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
 
         if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryAccessoryArmorsSearch != null)
         {
@@ -2534,6 +2610,13 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleInventoryMaterialQueryParams()
     {
         var optionUpdated = false;
+
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
 
         if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryMaterialsSearch != null)
         {
@@ -2759,9 +2842,26 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            await this.api.InsertRemoveFavourite(user.Id, "Moogle Shop", category, specificRecordId);
+            if (this.Favourites.Select(x => x.SpecificRecordId).Any(x => x == specificRecordId))
+            {
+                await this.api.InsertRemoveFavourite(user.Id, "Moogle Shop", category, specificRecordId);
 
-            this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
+                this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
+            }
+            else
+            {
+                if (this.context.Favorites.Where(x => x.AccountId == user.Id).ToList().Count < favouriteCount)
+                {
+                    await this.api.InsertRemoveFavourite(user.Id, "Moogle Shop", category, specificRecordId);
+
+                    this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
+                }
+                else
+                {
+                    var additionalInfo = this.isPatron ? " Become a Patron to increase this to 650." : string.Empty;
+                    toastService.ShowError($"Reached max Favourite Quota ({this.favouriteCount}/{this.favouriteCount}).{additionalInfo}");
+                }
+            }
 
             await InvokeAsync(() =>
             {

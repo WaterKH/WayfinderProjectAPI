@@ -7,6 +7,8 @@
 
 
 @using Microsoft.EntityFrameworkCore
+@using WayfinderProject.Data
+@using WayfinderProjectAPI.Data
 @using WayfinderProjectAPI.Data.DTOs
 @using WayfinderProjectAPI.Controllers
 
@@ -462,6 +464,9 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     private bool failed = false;
 
+    private bool isPatron;
+    private int favouriteCount = 200;
+
     protected override async Task OnInitializedAsync()
     {
         if (authenticationStateTask != null)
@@ -471,6 +476,30 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
             {
                 NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
+
+            // Set Patron Status
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                {
+                    var patreonService = new PatreonService(new HttpClient());
+
+                    try
+                    {
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                    catch (Exception)
+                    {
+                        await patreonService.RefreshToken(context, user.Id);
+
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                }
+
+                this.favouriteCount = this.isPatron ? 650 : 200;
             }
         }
 
@@ -663,24 +692,27 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.SceneDtos = await this.api.GetScenes(accountId: user.Id, games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -762,24 +794,27 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.InterviewDtos = await this.api.GetInterviews(accountId: user.Id, interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000).");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+                        }
                     }
                 }
                 else
@@ -1653,9 +1688,26 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            await this.api.InsertRemoveFavourite(user.Id, "Memory Archive", category, specificRecordId);
+            if (this.Favourites.Select(x => x.SpecificRecordId).Any(x => x == specificRecordId))
+            {
+                await this.api.InsertRemoveFavourite(user.Id, "Memory Archive", category, specificRecordId);
 
-            this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+            }
+            else
+            {
+                if (this.context.Favorites.Where(x => x.AccountId == user.Id).ToList().Count < favouriteCount)
+                {
+                    await this.api.InsertRemoveFavourite(user.Id, "Memory Archive", category, specificRecordId);
+
+                    this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                }
+                else
+                {
+                    var additionalInfo = this.isPatron ? " Become a Patron to increase this to 650." : string.Empty;
+                    toastService.ShowError($"Reached max Favourite Quota ({this.favouriteCount}/{this.favouriteCount}).{additionalInfo}");
+                }
+            }
 
             await InvokeAsync(() =>
             {

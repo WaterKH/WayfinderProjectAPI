@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WayfinderProjectAPI.Data;
 
@@ -10,9 +11,11 @@ using WayfinderProjectAPI.Data;
 namespace WayfinderProject.Migrations
 {
     [DbContext(typeof(WayfinderContext))]
-    partial class WayfinderContextModelSnapshot : ModelSnapshot
+    [Migration("20230130095328_UpdateAccountUser")]
+    partial class UpdateAccountUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -396,11 +399,7 @@ namespace WayfinderProject.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("PatreonAccessToken")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("PatreonRefreshToken")
+                    b.Property<string>("PatreonUserId")
                         .IsRequired()
                         .HasColumnType("longtext");
 

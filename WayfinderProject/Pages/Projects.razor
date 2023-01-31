@@ -7,6 +7,7 @@
 
 
 @using Microsoft.EntityFrameworkCore
+@using WayfinderProject.Data
 @using WayfinderProjectAPI.Data.DTOs
 @using WayfinderProjectAPI.Controllers
 @using WayfinderProjectAPI.Data;
@@ -382,24 +383,24 @@ else if (this.CurrentType == "Moogle Shop")
 
     private List<JournalEntryDto> JJReportDtos = new List<JournalEntryDto>();
     private JournalEntryTable<JournalEntryDto>? MainReportTable;
-    
+
     private List<JournalEntryDto> JJCharacterDtos = new List<JournalEntryDto>();
     private JournalEntryTable<JournalEntryDto>? MainCharacterTable;
 
     private List<JournalEntryDto> JJEnemyDtos = new List<JournalEntryDto>();
     private JournalEntryTable<JournalEntryDto>? MainEnemyTable;
     #endregion Entry Variables
-    
+
     #region Record Variables
     private List<RecipeDto> MSRecipeDtos = new List<RecipeDto>();
     private RecipeTable<RecipeDto>? MainRecipeTable;
 
     private List<InventoryDto> MSInventoryItemDtos = new List<InventoryDto>();
     private InventoryTable<InventoryDto>? MainInventoryItemTable;
-    
+
     private List<InventoryDto> MSInventoryWeaponDtos = new List<InventoryDto>();
     private InventoryTable<InventoryDto>? MainInventoryWeaponTable;
-    
+
     private List<InventoryDto> MSInventoryAccessoryArmorDtos = new List<InventoryDto>();
     private InventoryTable<InventoryDto>? MainInventoryAccessoryArmorTable;
 
@@ -423,6 +424,8 @@ else if (this.CurrentType == "Moogle Shop")
     private bool failed = false;
     private string name = string.Empty;
 
+    private bool isPatron;
+
     protected override async Task OnInitializedAsync()
     {
         if (authenticationStateTask != null)
@@ -432,6 +435,28 @@ else if (this.CurrentType == "Moogle Shop")
             if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
             {
                 NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
+
+            // Set Patron Status
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                {
+                    var patreonService = new PatreonService(new HttpClient());
+
+                    try
+                    {
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                    catch (Exception)
+                    {
+                        await patreonService.RefreshToken(context, user.Id);
+
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                }
             }
         }
 

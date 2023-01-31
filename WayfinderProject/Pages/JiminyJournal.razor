@@ -7,6 +7,8 @@
 
 
 @using Microsoft.EntityFrameworkCore
+@using WayfinderProject.Data
+@using WayfinderProjectAPI.Data
 @using WayfinderProjectAPI.Data.DTOs
 @using WayfinderProjectAPI.Controllers
 
@@ -362,6 +364,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     #region Query Parameters
     [Parameter]
+    [SupplyParameterFromQuery(Name = "text")]
+    public string[]? TextQuery { get; set; }
+
+    [Parameter]
     [SupplyParameterFromQuery(Name = "entry")]
     public string[]? EntryTitleQuery { get; set; }
 
@@ -519,6 +525,9 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private bool failed = false;
 
+    private bool isPatron;
+    private int favouriteCount = 200;
+
     protected override async Task OnInitializedAsync()
     {
         if (authenticationStateTask != null)
@@ -528,6 +537,30 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
             {
                 NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
+
+            // Set Patron Status
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                {
+                    var patreonService = new PatreonService(new HttpClient());
+
+                    try
+                    {
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                    catch (Exception)
+                    {
+                        await patreonService.RefreshToken(context, user.Id);
+
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                }
+
+                this.favouriteCount = this.isPatron ? 650 : 200;
             }
         }
 
@@ -734,24 +767,27 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.JJStoryDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -809,24 +845,27 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.JJReportDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -884,24 +923,27 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.JJCharacterDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -959,24 +1001,27 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0)
+                if (user.ApiCallQuota > 0 || this.isPatron)
                 {
                     this.JJEnemyDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
 
-                    user.ApiCallQuota -= 1;
-                    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-                    if (user.ApiCallQuota == 2500)
-                    {
-                        toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
-                    }
-                    else if (user.ApiCallQuota == 500)
-                    {
-                        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
-                    }
-                    else if (user.ApiCallQuota == 0)
-                    {
-                        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
                     }
                 }
                 else
@@ -1857,6 +1902,13 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     {
         var optionUpdated = false;
 
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
+
         if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.StoryEntriesSearch != null)
         {
             var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
@@ -1904,6 +1956,13 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     {
         var optionUpdated = false;
 
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
+
         if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.ReportEntriesSearch != null)
         {
             var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
@@ -1950,6 +2009,13 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     private async Task<bool> HandleCharacterEntryQueryParams()
     {
         var optionUpdated = false;
+        
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
 
         if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.CharacterEntriesSearch != null)
         {
@@ -1997,6 +2063,13 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     private async Task<bool> HandleEnemyEntryQueryParams()
     {
         var optionUpdated = false;
+
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.informationSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
 
         if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.EnemyEntriesSearch != null)
         {
@@ -2208,9 +2281,26 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
             }
 
-            await this.api.InsertRemoveFavourite(user.Id, "Jiminy's Journal", category, specificRecordId);
+            if (this.Favourites.Select(x => x.SpecificRecordId).Any(x => x == specificRecordId))
+            {
+                await this.api.InsertRemoveFavourite(user.Id, "Jiminy's Journal", category, specificRecordId);
 
-            this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
+                this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
+            }
+            else
+            {
+                if (this.context.Favorites.Where(x => x.AccountId == user.Id).ToList().Count < favouriteCount)
+                {
+                    await this.api.InsertRemoveFavourite(user.Id, "Jiminy's Journal", category, specificRecordId);
+
+                    this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
+                }
+                else
+                {
+                    var additionalInfo = this.isPatron ? " Become a Patron to increase this to 650." : string.Empty;
+                    toastService.ShowError($"Reached max Favourite Quota ({this.favouriteCount}/{this.favouriteCount}).{additionalInfo}");
+                }
+            }
 
             await InvokeAsync(() =>
             {

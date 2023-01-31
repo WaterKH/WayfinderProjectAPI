@@ -1083,26 +1083,29 @@ namespace WayfinderProjectAPI.Controllers
         private void InsertSearchHistory(string accountId, string type, string category, string textSearch, string specificSearch,
                                          string param1 = "", string param2 = "", string param3 = "", string param4 = "", string param5 = "", string param6 = "", string param7 = "")
         {
-            Data.Models.SearchHistory historyObject = new()
+            if (this._context.SearchHistory.Count() < 250)
             {
-                AccountId = accountId,
-                Type = type,
-                Category = category,
-                TextSearch = textSearch,
-                SpecificSearch = specificSearch,
-                Param1Search = param1,
-                Param2Search = param2,
-                Param3Search = param3,
-                Param4Search = param4,
-                Param5Search = param5,
-                Param6Search = param6,
-                Param7Search = param7,
-                CreatedDate = DateTime.Now
-            };
+                Data.Models.SearchHistory historyObject = new()
+                {
+                    AccountId = accountId,
+                    Type = type,
+                    Category = category,
+                    TextSearch = textSearch,
+                    SpecificSearch = specificSearch,
+                    Param1Search = param1,
+                    Param2Search = param2,
+                    Param3Search = param3,
+                    Param4Search = param4,
+                    Param5Search = param5,
+                    Param6Search = param6,
+                    Param7Search = param7,
+                    CreatedDate = DateTime.Now
+                };
 
-            this._context.SearchHistory.Add(historyObject);
+                this._context.SearchHistory.Add(historyObject);
 
-            this._context.SaveChanges();
+                this._context.SaveChanges();
+            }
         }
 
         [HttpGet("GetSearchSettings")]

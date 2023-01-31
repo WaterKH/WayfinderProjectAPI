@@ -1,8 +1,10 @@
 ﻿@using Blazored.Toast.Configuration;
+@using WayfinderProject.Data
 
 @inherits LayoutComponentBase
 
 @inject NavigationManager NavigationManager
+@inject WayfinderProjectAPI.Data.WayfinderContext context
 
 <PageTitle>The Wayfinder Project</PageTitle>
 
@@ -95,6 +97,16 @@
                         <ul class="dropdown-list @(this.currentAction == "Account" ? "is-active" : "")">
                             <li class="wayfinder-dropdown-item">
                                 <a class="wayfinder-link" href="/Identity/Account/Manage" style="color: #5067bb;">Manage Account</a>
+                            </li>
+                            <li class="wayfinder-dropdown-item">
+                                @if (this.isPatron)
+                                {
+                                    <button class="wayfinder-patreon-button" @onclick="@(() => this.UnlinkPatreon())">Unlink Patreon</button>
+                                }
+                                else
+                                {
+                                    <button class="wayfinder-patreon-button" @onclick="@(() => this.LinkPatreon())">Link Patreon</button>
+                                }
                             </li>
                             <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
                                 <a class="wayfinder-link" href="/Projects" style="color: #5067bb;">Projects</a>
@@ -233,11 +245,34 @@
     private string currentAction = "";
     private AuthenticationState? authState;
 
+    private bool isPatron;
+
     protected override async Task OnInitializedAsync()
     {
         if (this.authenticationStateTask != null)
         {
             this.authState = await authenticationStateTask;
+
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                {
+                    var patreonService = new PatreonService(new HttpClient());
+
+                    try
+                    {
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                    catch (Exception)
+                    {
+                        await patreonService.RefreshToken(context, user.Id);
+
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                }
+            }
         }
 
         await base.OnInitializedAsync();
@@ -263,5 +298,30 @@
         {
             this.StateHasChanged();
         });
+    }
+
+    public void LinkPatreon()
+    {
+        var clientId = Environment.GetEnvironmentVariable("PatreonClientId");
+
+        NavigationManager.NavigateTo($"https://www.patreon.com/oauth2/authorize?response_type=code&client_id={clientId}&redirect_uri=https://localhost:49153/&scope=identity campaigns.members campaigns.members.address");
+    }
+
+    public async Task UnlinkPatreon()
+    {
+        if (this.authenticationStateTask != null)
+        {
+            this.authState = await authenticationStateTask;
+
+            if (this.authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                user.PatreonAccessToken = string.Empty;
+                user.PatreonRefreshToken = string.Empty;
+
+                context.SaveChanges();
+            }
+        }
     }
 }

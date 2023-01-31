@@ -83,7 +83,7 @@
         await base.OnInitializedAsync();
     }
 
-    public async Task ReSearch(SearchHistoryDto history)
+    public void ReSearch(SearchHistoryDto history)
     {
         var randomLink = $"{NavigationManager.BaseUri}";
 

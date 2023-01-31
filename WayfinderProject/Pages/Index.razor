@@ -1,14 +1,17 @@
 ﻿@page "/"
 @inject WayfinderProjectAPI.Data.WayfinderContext context
 @inject NavigationManager NavigationManager
+@inject HttpClient HttpClient
 
 @inject IJSRuntime JS
 @inject IToastService toastService
 
 
 @using Microsoft.EntityFrameworkCore
+@using WayfinderProject.Data
 @using WayfinderProjectAPI.Data.DTOs
 @using WayfinderProjectAPI.Controllers
+@using System.Net.Http.Headers
 
 <PageTitle>The Wayfinder Project</PageTitle>
 
@@ -118,104 +121,38 @@
 </style>
 
 @code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationStateTask { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "code")]
+    public string? CodeQuery { get; set; }
+
+    public bool IsPatron { get; set; }
+
+    private PatreonService patreonService = default!;
+
     protected override async Task OnInitializedAsync()
     {
+        if (this.CodeQuery != null && authenticationStateTask != null)
+        {
+            this.patreonService = new PatreonService(HttpClient);
+
+            AuthenticationState authState = await authenticationStateTask;
+
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
+            }
+        }
+
         await base.OnInitializedAsync();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-    }
-
-    public async Task<bool> HandleQueryParams()
-    {
-        var optionUpdated = false;
-
-        await InvokeAsync(() =>
-        {
-            this.StateHasChanged();
-        });
-
-        try
-        {
-
-        }
-        catch(Exception)
-        {
-
-        }
-
-        await InvokeAsync(() => { 
-            this.StateHasChanged(); 
-        });
-
-        return optionUpdated;
-    }
-
-    public void NavigateToDailyCutscene()
-    {
-        try
-        {
-            var dateCode = DateTime.Now.ToString("yyyyMMdd");
-            var sceneId = this.context.DailyCutscenes.First(cutscene => cutscene.DateCode == dateCode).SceneId;
-            var scene = this.context.Scenes.AsNoTracking()
-                .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
-                .FirstOrDefault(s => s.Id == sceneId);
-
-            if (scene == null)
-            {
-                return;
-            }
-
-            var dailyLink = $"{NavigationManager.BaseUri}?";
-
-            dailyLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
-            dailyLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
-            dailyLink += $"game={scene.Game.Id}&";
-            dailyLink += string.Join("&", scene.Music.Select(x => $"music={x.Id}")) + "&";
-            dailyLink += $"scene={scene.Id}&";
-            dailyLink += string.Join("&", scene.Worlds.Select(x => $"world={x.Id}")) + "&";
-            dailyLink += $"open_row={scene.Id}";
-
-            NavigationManager.NavigateTo(dailyLink, true);
-        }
-        catch (Exception)
-        {
-
-        }
-    }
-
-    public void NavigateToRandomCutscene()
-    {
-        try
-        {
-            Random random = new Random((int)DateTime.Now.Ticks);
-            var randomSceneId = random.Next(0, this.context.Scenes.Count());
-            var scene = this.context.Scenes.AsNoTracking()
-                .Include(s => s.Characters).Include(s => s.Areas).Include(s => s.Game).Include(s => s.Music).Include(s => s.Worlds)
-                .FirstOrDefault(s => s.Id == randomSceneId);
-
-            if (scene == null)
-            {
-                return;
-            }
-
-            var randomLink = $"{NavigationManager.BaseUri}?";
-
-            randomLink += string.Join("&", scene.Characters.Select(x => $"character={x.Id}")) + "&";
-            randomLink += string.Join("&", scene.Areas.Select(x => $"area={x.Id}")) + "&";
-            randomLink += $"game={scene.Game.Id}&";
-            randomLink += string.Join("&", scene.Music.Select(x => $"music={x.Id}")) + "&";
-            randomLink += $"scene={scene.Id}&";
-            randomLink += string.Join("&", scene.Worlds.Select(x => $"world={x.Id}")) + "&";
-            randomLink += $"open_row={scene.Id}";
-
-            NavigationManager.NavigateTo(randomLink, true);
-        }
-        catch (Exception)
-        {
-            
-        }
     }
 }

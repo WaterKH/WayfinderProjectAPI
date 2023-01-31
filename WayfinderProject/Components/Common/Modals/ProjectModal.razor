@@ -1,7 +1,10 @@
-﻿@using WayfinderProjectAPI.Data.DTOs
+﻿@using WayfinderProject.Data
+@using WayfinderProjectAPI.Data.DTOs
 @using WayfinderProjectAPI.Controllers
 
 @inject NavigationManager NavigationManager
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+@inject IToastService toastService
 
 <div class="simple-form clear-modal">
     <div class="row">
@@ -19,8 +22,20 @@
 
     <div class="row" style="margin-top: 100px;">
         <div class="col-md-12" style="text-align: center;">
-            <input maxlength="50" class="custom-input" @bind="@this.projectName" @oninput="@((input) => { if (input.Value != null) { this.projectName = (string)input.Value; } })">
-            <button class="wayfinder-button" onclick="@(async () => await this.CreateProject(projectName))">Create Project</button>
+            @if (this.projects.Count >= this.projectCount)
+            {
+                <h3>You have reached the max amount of Project Quota (@(this.projectCount)/@(this.projectCount)).</h3>
+                if (!this.isPatron)
+                {
+                    <label>Become a Patron to increase your Project Quota to 20.</label>
+                }
+            }
+            else
+            {
+                <input maxlength="50" class="custom-input" @bind="@this.projectName" @oninput="@((input) => { if (input.Value != null) { this.projectName = (string)input.Value; } })">
+
+                <button class="wayfinder-button" onclick="@(async () => await this.CreateProject(projectName))">Create Project</button>   
+            }
         </div>
     </div>
 
@@ -41,9 +56,34 @@
     private List<ProjectDto> projects = new();
     private string projectName = string.Empty;
 
+    private bool isPatron;
+    private int projectCount = 5;
+    private int projectRecordCount = 100;
+
     protected override async Task OnInitializedAsync()
     {
         this.projects = await this.API.GetProjects(this.AccountId, true);
+
+        WayfinderProjectUser user = this.context.Users.First(x => x.Id == AccountId);
+
+        if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+        {
+            var patreonService = new PatreonService(new HttpClient());
+
+            try
+            {
+                this.isPatron = await patreonService.IsPatron(context, user.Id);
+            }
+            catch (Exception)
+            {
+                await patreonService.RefreshToken(context, user.Id);
+
+                this.isPatron = await patreonService.IsPatron(context, user.Id);
+            }
+        }
+
+        this.projectCount = this.isPatron ? 20 : 5;
+        this.projectRecordCount = this.isPatron ? 500 : 100;
 
         await base.OnInitializedAsync();
     }
@@ -73,9 +113,26 @@
 
     public async Task CreateDeleteProjectRecord(string name)
     {
-        await this.API.InsertRemoveProjectRecord(this.AccountId, name, this.Type, this.Category, this.SpecificRecordId);
+        if (this.ContainsProjectRecord(name))
+        {
+            await this.API.InsertRemoveProjectRecord(this.AccountId, name, this.Type, this.Category, this.SpecificRecordId);
 
-        this.projects = await this.API.GetProjects(this.AccountId, true);
+            this.projects = await this.API.GetProjects(this.AccountId, true);
+        }
+        else
+        {
+            if (this.projects.First(x => x.Name == name).ProjectRecords.Count < this.projectRecordCount)
+            {
+                await this.API.InsertRemoveProjectRecord(this.AccountId, name, this.Type, this.Category, this.SpecificRecordId);
+
+                this.projects = await this.API.GetProjects(this.AccountId, true);
+            }
+            else
+            {
+                var additionalInfo = this.isPatron ? " Become a Patron to increase this to 500." : string.Empty;
+                toastService.ShowError($"Reached max Project Record Quota ({this.projectRecordCount}/{this.projectRecordCount}).{additionalInfo}");
+            }
+        }
 
         await InvokeAsync(() =>
         {

@@ -6,4 +6,6 @@ namespace WayfinderProject.Data.Models;
 public class WayfinderProjectUser : IdentityUser
 {
     public int ApiCallQuota { get; set; } = 5000; // per month
+    public string PatreonAccessToken { get; set; } = string.Empty;
+    public string PatreonRefreshToken { get; set; } = string.Empty;
 }

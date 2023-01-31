@@ -37,6 +37,7 @@ builder.Services.AddDefaultIdentity<WayfinderProjectUser>(options => options.Sig
     .AddEntityFrameworkStores<WayfinderContext>();
 
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<WayfinderProjectUser>>();
+builder.Services.AddScoped(x => new HttpClient() { BaseAddress = new Uri("https://localhost:49153/") });
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
