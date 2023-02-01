@@ -145,7 +145,7 @@
             {
                 WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
 
-                if (user != null)
+                if (user != null && (string.IsNullOrEmpty(user.PatreonAccessToken) || string.IsNullOrEmpty(user.PatreonRefreshToken)))
                 {
                     await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
 
@@ -159,28 +159,6 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (!this.checkedIsPatron)
-        {
-            if (this.CodeQuery != null && authenticationStateTask != null)
-            {
-                this.patreonService = new PatreonService(HttpClient);
-
-                AuthenticationState authState = await authenticationStateTask;
-
-                if (authState.User.Identity != null)
-                {
-                    WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
-
-                    if (user != null)
-                    {
-                        await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
-
-                        this.checkedIsPatron = true;
-                    }
-                }
-            }
-        }
-
         await base.OnAfterRenderAsync(firstRender);
     }
 }

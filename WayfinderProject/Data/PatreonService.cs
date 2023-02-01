@@ -44,16 +44,13 @@ namespace WayfinderProject.Data
                 throw new Exception(httpResponse.ReasonPhrase ?? "");
             }
 
-            if (response != null)
-            {
-                // Save access and refresh token to user
-                var user = context.Users.First(x => x.Id == accountId);
+            // Save access and refresh token to user
+            var user = context.Users.First(x => x.Id == accountId);
 
-                user.PatreonAccessToken = response.access_token;
-                user.PatreonRefreshToken = response.refresh_token;
+            user.PatreonAccessToken = response.access_token;
+            user.PatreonRefreshToken = response.refresh_token;
 
-                context.SaveChanges();
-            }
+            context.SaveChanges();
         }
 
         public async Task<bool> IsPatron(WayfinderContext context, string accountId)
