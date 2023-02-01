@@ -129,6 +129,7 @@
     public string? CodeQuery { get; set; }
 
     public bool IsPatron { get; set; }
+    private bool checkedIsPatron = false;
 
     private PatreonService patreonService = default!;
 
@@ -147,6 +148,8 @@
                 if (user != null)
                 {
                     await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
+
+                    this.checkedIsPatron = true;
                 }
             }
         }
@@ -156,6 +159,28 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if (!this.checkedIsPatron)
+        {
+            if (this.CodeQuery != null && authenticationStateTask != null)
+            {
+                this.patreonService = new PatreonService(HttpClient);
+
+                AuthenticationState authState = await authenticationStateTask;
+
+                if (authState.User.Identity != null)
+                {
+                    WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+                    if (user != null)
+                    {
+                        await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
+
+                        this.checkedIsPatron = true;
+                    }
+                }
+            }
+        }
+
         await base.OnAfterRenderAsync(firstRender);
     }
 }

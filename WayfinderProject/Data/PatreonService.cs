@@ -30,6 +30,16 @@ namespace WayfinderProject.Data
 
             var response = await httpResponse.Content.ReadFromJsonAsync<PatreonTokenResponse>();
 
+            if (!httpResponse.IsSuccessStatusCode || response == null)
+            {
+                if (httpResponse.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    throw new BadHttpRequestException(httpResponse?.ReasonPhrase);
+                }
+
+                throw new Exception();
+            }
+
             if (response != null)
             {
                 // Save access and refresh token to user
