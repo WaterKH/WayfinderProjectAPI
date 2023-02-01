@@ -1,6 +1,7 @@
 using Blazored.Modal;
 using Blazored.Toast;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
@@ -106,6 +107,10 @@ builder.Services.AddQuartzHostedService(opt =>
 {
     opt.WaitForJobsToComplete = true;
 });
+
+builder.Services.AddDataProtection()
+    .SetApplicationName("wayfinder-project")
+    .PersistKeysToFileSystem(new DirectoryInfo("/data-protetion/keys"));
 
 var app = builder.Build();
 
