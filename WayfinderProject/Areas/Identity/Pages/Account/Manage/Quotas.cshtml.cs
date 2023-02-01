@@ -102,6 +102,7 @@ namespace WayfinderProject.Areas.Identity.Pages.Account.Manage
             {
                 this.IsPatron = await patreonService.IsPatron(user);
             }
+            else
             {
                 this.IsPatron = false;
             }

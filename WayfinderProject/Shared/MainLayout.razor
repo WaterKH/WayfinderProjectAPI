@@ -267,14 +267,23 @@
     private AuthenticationState? authState;
 
     private bool isPatron;
+    private bool checkedIsPatron;
 
     protected override async Task OnInitializedAsync()
     {
         if (this.authenticationStateTask != null)
         {
             this.authState = await authenticationStateTask;
+        }
 
-            if (authState.User.Identity != null)
+        await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!this.checkedIsPatron)
+        {
+            if (this.authState.User.Identity != null)
             {
                 WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
 
@@ -292,11 +301,13 @@
 
                         this.isPatron = await patreonService.IsPatron(context, user.Id);
                     }
+
+                    this.checkedIsPatron = true;
                 }
             }
         }
 
-        await base.OnInitializedAsync();
+        await base.OnAfterRenderAsync(firstRender);
     }
 
     public async void Show(string action)

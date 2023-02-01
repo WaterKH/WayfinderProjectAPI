@@ -62,7 +62,7 @@ namespace WayfinderProject.Data
 
         public async Task<bool> IsPatron(WayfinderProjectUser user)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://www.patreon.com/api/oauth2/v2/identity");
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://www.patreon.com/api/oauth2/v2/identity?include=memberships");
 
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", user.PatreonAccessToken);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -88,7 +88,7 @@ namespace WayfinderProject.Data
         {
             var user = context.Users.First(x => x.Id == accountId);
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "www.patreon.com/api/oauth2/token?include=memberships");
+            var request = new HttpRequestMessage(HttpMethod.Post, "www.patreon.com/api/oauth2/token");
             var requestContent = new MultipartFormDataContent
             {
                 { new StringContent("refresh_token"), "grant_type" },
