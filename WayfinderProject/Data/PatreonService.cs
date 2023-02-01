@@ -77,7 +77,7 @@ namespace WayfinderProject.Data
         {
             var user = context.Users.First(x => x.Id == accountId);
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "www.patreon.com/api/oauth2/token");
+            var request = new HttpRequestMessage(HttpMethod.Post, "www.patreon.com/api/oauth2/token?include=memberships");
             var requestContent = new MultipartFormDataContent
             {
                 { new StringContent("refresh_token"), "grant_type" },
