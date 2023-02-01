@@ -70,7 +70,7 @@ namespace WayfinderProject.Data
                 throw new Exception();
             }
 
-            return response.Data.Relationships.Memberships.Data.Any();
+            return response.Data.Relationships?.Memberships.Data.Any() ?? false;
         }
 
         public async Task RefreshToken(WayfinderContext context, string accountId)
