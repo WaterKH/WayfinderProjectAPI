@@ -101,7 +101,7 @@
                             <li class="wayfinder-dropdown-item" style="margin-bottom: 5px;">
                                 @if (this.isPatron)
                                 {
-                                    <button class="patreon-button" @onclick="@(() => this.UnlinkPatreon())">
+                                    <button class="unlink-patreon-button" @onclick="@(() => this.UnlinkPatreon())">
                                         <img src="/images/patreon.png" style="width: 15px;" />
                                         Unlink Patreon
                                     </button>
@@ -257,6 +257,16 @@
     .patreon-button:hover {
         background-color: #e13d47;
     }
+
+
+.unlink-patreon-button {
+    border-radius: 5px;
+    background-color: #f10a17;
+    border: none;
+    padding: 5px 20px;
+    color: white;
+}
+
 </style>
 
 @code {
@@ -274,40 +284,35 @@
         if (this.authenticationStateTask != null)
         {
             this.authState = await authenticationStateTask;
-        }
 
-        await base.OnInitializedAsync();
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (!this.checkedIsPatron)
-        {
-            if (this.authState.User.Identity != null)
+            if (!this.checkedIsPatron)
             {
-                WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
-
-                if (user != null && !string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                if (this.authState.User.Identity != null)
                 {
-                    var patreonService = new PatreonService(new HttpClient());
+                    WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
 
-                    try
+                    if (user != null && !string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
                     {
-                        this.isPatron = await patreonService.IsPatron(context, user.Id);
-                    }
-                    catch (Exception)
-                    {
-                        await patreonService.RefreshToken(context, user.Id);
+                        var patreonService = new PatreonService(new HttpClient());
 
-                        this.isPatron = await patreonService.IsPatron(context, user.Id);
-                    }
+                        try
+                        {
+                            this.isPatron = await patreonService.IsPatron(context, user.Id);
+                        }
+                        catch (Exception)
+                        {
+                            await patreonService.RefreshToken(context, user.Id);
 
-                    this.checkedIsPatron = true;
+                            this.isPatron = await patreonService.IsPatron(context, user.Id);
+                        }
+
+                        this.checkedIsPatron = true;
+                    }
                 }
             }
         }
 
-        await base.OnAfterRenderAsync(firstRender);
+        await base.OnInitializedAsync();
     }
 
     public async void Show(string action)
