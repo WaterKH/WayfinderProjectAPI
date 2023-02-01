@@ -43,6 +43,12 @@
     margin-left: 80px;
 }
 
+.wayfinder-search-alt {
+    text-align: right;
+    margin-top: 20px;
+    width: 100%;
+}
+
 .wayfinder-search-icon {
     left: 40px;
     top: 7px;
@@ -50,9 +56,17 @@
     color: #536fe9;
 }
 
+.wayfinder-general-icon {
+    position: relative;
+    top: 7px;
+    padding-right: 5px;
+    color: #155ed9;
+    cursor: pointer;
+}
+
 .wayfinder-search-button {
     padding: 5px 30px;
-    right: 120px;
+    right: 180px;
     position: relative;
     color: white;
     border: none;
@@ -82,7 +96,7 @@
     }
 
 .custom-input {
-    padding: 10px 100px 10px 40px;
+    padding: 10px 200px 10px 40px;
     border-radius: 50px;
     text-align: left;
     width: 40%;

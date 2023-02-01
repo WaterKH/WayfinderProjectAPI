@@ -1,0 +1,45 @@
+﻿@page
+@model QuotasModel
+@{
+    ViewData["Title"] = "Quotas";
+    ViewData["ActivePage"] = ManageNavPages.Quotas;
+}
+
+<h3>@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="col-md-12">
+
+        <label style="font-size: 15pt; margin-bottom: 15px;">You can view your quotas at anytime here. To increase your limit and remove API Limits, become a Patron and link your account in the User Submenu.</label>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label style="font-size: 13pt;"><strong>API</strong>: @Model.APICount / @Model.APILimit</label>
+            </div>
+
+            <div class="col-md-4">
+                <label style="font-size: 13pt;"><strong>Favourites</strong>: @Model.FavouriteCount / @Model.FavouriteLimit</label>
+            </div>
+
+            <div class="col-md-4">
+                <label style="font-size: 13pt;"><strong>Projects</strong>: @Model.ProjectCount / @Model.ProjectLimit</label>
+            </div>
+        </div>
+
+        <hr />
+
+        <label style="font-size: 15pt; margin-bottom: 10px; border-bottom: 1px solid black;">Project & Project Records</label>
+        <div class="row">
+            @foreach (var record in Model.ProjectRecordCount)
+            {
+                <div class="col-md-4" style="margin-bottom: 15px;">
+                    <label style="font-size: 13pt;"><strong>@record.Key</strong>: @record.Value / @Model.ProjectRecordLimit</label>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

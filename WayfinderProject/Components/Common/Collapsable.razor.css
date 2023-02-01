@@ -2,7 +2,7 @@
     border-radius: 10px 10px 0px 0px;
     /*border: 1px solid #d5d1d1;*/
     border-bottom: unset;
-    padding: 10px 25px 0px 25px;
+    padding: 10px 25px 10px 25px;
     background-color: #F2F2F2;
 }
 
@@ -16,8 +16,9 @@
 .collapsable-panel {
     padding: 40px 30px;
     max-height: 750px;
-    background-color: #F2F2F2;
-    /*border: 1px solid #d5d1d1;*/
+    overflow-y: auto;
+    background-color: #eaeaea;
+    border: 1px solid #d5d1d1;
     border-top: unset;
     border-radius: 0px 0px 10px 10px;
 }

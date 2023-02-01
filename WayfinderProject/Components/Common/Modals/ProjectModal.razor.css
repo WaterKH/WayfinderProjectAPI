@@ -1,0 +1,75 @@
+.wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+}
+
+    .wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.add-project-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #14b51d, #33e261);
+    text-align: center;
+}
+
+    .add-project-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.remove-project-button {
+    padding: 5px 30px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #d91515, #fd2727);
+    text-align: center;
+    transition: background ease-in-out .3s;
+}
+
+    .remove-project-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.project-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+    margin-left: 15px;
+}
+
+    .project-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.custom-input {
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-align: left;
+    width: 40%;
+    height: auto;
+    border: 2px solid #2888ff;
+    overflow-wrap: break-word;
+}
+
+    .custom-input:focus {
+        outline: none;
+        border: 2px solid #2888ff;
+    }

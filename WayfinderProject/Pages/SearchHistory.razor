@@ -1,0 +1,543 @@
+﻿@page "/search_history"
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+@inject NavigationManager NavigationManager
+
+@inject IJSRuntime JS
+@inject IToastService toastService
+
+
+@using Microsoft.EntityFrameworkCore
+@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+@using WayfinderProjectAPI.Data;
+
+<PageTitle>The Wayfinder Project - Search History</PageTitle>
+
+<div class="wayfinder-background">
+    <div class="row" style="width: 100%; margin: 0px">
+        <div class="col-md-12" style="padding: 40px 110px;">
+            <div class="wayfinder-title">
+                <img src="/images/wayfinder_project_title.png" />
+            </div>
+
+            <div class="wayfinder-description">
+                <strong>Search History</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    @foreach (var groupedItems in this.searchHistory.OrderByDescending(x => x.CreatedDate.ToShortDateString()).GroupBy(x => x.CreatedDate.ToShortDateString()))
+    {
+        <h2><span>@groupedItems.First().CreatedDate.ToShortDateString()</span></h2>
+        @foreach (var item in groupedItems)
+        {
+            <div class="col-md-12" style="margin-bottom: 25px;">
+                <Collapsable Title="@item.Category"
+                     Date="@item.CreatedDate.ToString("h:ss tt - MMMM dd, yyyy")"
+                     Color="@(item.Type == "Memory Archive" ? "#3b7aef69" : item.Type == "Jiminy's Journal" ? "#00c38e69" : "#edad0069")">
+
+                    <div class="wayfinder-history-body">
+                        <button class="wayfinder-search-button" onclick="@(() => { if (this.ReSearch != null) { this.ReSearch(item); } })">Re-Search @(item.Category)</button>
+
+                        <hr />
+
+                        <div class="row">
+                            @if (!string.IsNullOrEmpty(item.SpecificSearch))
+                            {
+                                <div class="col-md-12">
+                                    <label><strong>@item.Category</strong>: </label>
+                                    @foreach (var searchValue in item.SpecificSearch.Split("::"))
+                                    {
+                                        <div class="history-bubble" style="background-color: #e685da">@searchValue</div>
+                                    }
+                                </div>
+                            }
+
+                            @if (!string.IsNullOrEmpty(item.TextSearch))
+                            {
+                                <div class="col-md-12">
+                                    <label><strong>Text Search</strong>: </label>
+                                    <label>@item.TextSearch</label>
+                                </div>
+                            }
+
+                            <HistoryList Value="@item.Param1Search" Color="#949dff" Type="@item.Type" Category="@item.Category" ParamNumber="1" DisplayLabel="@this.DisplayLabel" />
+                            <HistoryList Value="@item.Param2Search" Color="#ea4a4a" Type="@item.Type" Category="@item.Category" ParamNumber="2" DisplayLabel="@this.DisplayLabel" />
+                            <HistoryList Value="@item.Param3Search" Color="#5499fc" Type="@item.Type" Category="@item.Category" ParamNumber="3" DisplayLabel="@this.DisplayLabel" />
+                            <HistoryList Value="@item.Param4Search" Color="#f3b222" Type="@item.Type" Category="@item.Category" ParamNumber="4" DisplayLabel="@this.DisplayLabel" />
+                            <HistoryList Value="@item.Param5Search" Color="#a13bfb" Type="@item.Type" Category="@item.Category" ParamNumber="5" DisplayLabel="@this.DisplayLabel" />
+                            <HistoryList Value="@item.Param6Search" Color="#2cce78" Type="@item.Type" Category="@item.Category" ParamNumber="6" DisplayLabel="@this.DisplayLabel" />
+                            <HistoryList Value="@item.Param7Search" Color="#522aff" Type="@item.Type" Category="@item.Category" ParamNumber="7" DisplayLabel="@this.DisplayLabel" />
+                        </div>
+                    </div>
+                </Collapsable>
+            </div>
+        }
+    }
+</div>
+
+
+<style>
+.advanced-search-box {
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+
+.clickable {
+    float: right; 
+    font-size: 1rem; 
+    color: #3e79a7; 
+    margin-top: 3px; 
+    cursor: pointer;
+}
+
+.icon {
+    font-size: .8rem;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 4px 5px;
+    border-radius: 500px;
+    background-color: #bee2ff;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationStateTask { get; set; }
+
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    private WayfinderController? API;
+
+    private List<SearchHistoryDto> searchHistory = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (authenticationStateTask != null)
+        {
+            var authState = await authenticationStateTask;
+
+            if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            {
+                NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
+        }
+
+        this.API = new WayfinderController(context);
+
+        if (this.API != null && authenticationStateTask != null)
+        {
+            var authState = await this.authenticationStateTask;
+
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            this.searchHistory = (await this.API.GetSearchHistory(user.Id)).OrderByDescending(x => x.CreatedDate).ToList();
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public void ReSearch(SearchHistoryDto history)
+    {
+        var randomLink = $"{NavigationManager.BaseUri}";
+
+        if (history.Type == "Memory Archive")
+        {
+            randomLink += "memory_archive?";
+            randomLink += $"text={history.TextSearch}&";
+
+            if (history.Category == "Scenes")
+            {
+                var scenes = history.SpecificSearch.Split("::");
+                var games = history.Param1Search.Split("::");
+                var worlds = history.Param2Search.Split("::");
+                var areas = history.Param3Search.Split("::");
+                var characters = history.Param4Search.Split("::");
+                var music = history.Param5Search.Split("::");
+
+                randomLink += string.Join("&", this.context.Scenes.Where(x => scenes.Contains(x.Name)).Select(x => $"scene={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Worlds.Where(x => worlds.Contains(x.Name)).Select(x => $"world={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Areas.Where(x => areas.Contains(x.Name)).Select(x => $"area={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Characters.Where(x => characters.Contains(x.Name)).Select(x => $"character={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Music.Where(x => music.Contains(x.Name)).Select(x => $"music={x.Id}")) + "&";
+                randomLink += "category=Scenes";
+            }
+            else if (history.Category == "Interviews")
+            {
+                var interviews = history.SpecificSearch.Split("::");
+                var games = history.Param1Search.Split("::");
+                var participants = history.Param2Search.Split("::");
+                var providers = history.Param3Search.Split("::");
+                var translators = history.Param4Search.Split("::");
+
+                randomLink += string.Join("&", this.context.Interviews.Where(x => interviews.Contains(x.Name)).Select(x => $"interview={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Participants.Where(x => participants.Contains(x.Name)).Select(x => $"participant={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Providers.Where(x => providers.Contains(x.Name)).Select(x => $"provider={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Translators.Where(x => translators.Contains(x.Name)).Select(x => $"translator={x.Id}")) + "&";
+                randomLink += "category=Interviews";
+            }
+        }
+        else if (history.Type == "Jiminy's Journal")
+        {
+            randomLink += "jiminy_journal?";
+            randomLink += $"text={history.TextSearch}&";
+
+            var records = history.SpecificSearch.Split("::");
+            var games = history.Param1Search.Split("::");
+            var characters = history.Param2Search.Split("::");
+            var worlds = history.Param3Search.Split("::");
+
+            randomLink += string.Join("&", this.context.JournalEntries.Where(x => records.Contains(x.Title)).Select(x => $"entry={x.Id}")) + "&";
+            randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+            randomLink += string.Join("&", this.context.Characters.Where(x => characters.Contains(x.Name)).Select(x => $"character={x.Id}")) + "&";
+            randomLink += string.Join("&", this.context.Worlds.Where(x => worlds.Contains(x.Name)).Select(x => $"world={x.Id}")) + "&";
+            randomLink += $"category={history.Category}";
+        }
+        else if (history.Type == "Moogle Shop")
+        {
+            randomLink += "moogle_shop?";
+            randomLink += $"text={history.TextSearch}&";
+
+            if (history.Category == "Recipes")
+            {
+                var records = history.SpecificSearch.Split("::");
+                var games = history.Param1Search.Split("::");
+                var categories = history.Param2Search.Split("::");
+                var synthesisMaterials = history.Param3Search.Split("::");
+
+                randomLink += string.Join("&", this.context.Recipes.Where(x => records.Contains(x.Name)).Select(x => $"record={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Recipes.Where(x => categories.Contains(x.Category)).Select(x => $"recipe_category={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Inventory.Where(x => synthesisMaterials.Contains(x.Name)).Select(x => $"material={x.Id}")) + "&";
+                randomLink += $"category={history.Category}";
+            }
+            else
+            {
+                var records = history.SpecificSearch.Split("::");
+                var games = history.Param1Search.Split("::");
+                var enemies = history.Param2Search.Split("::");
+                var worlds = history.Param3Search.Split("::");
+                var areas = history.Param3Search.Split("::");
+
+                randomLink += string.Join("&", this.context.Inventory.Where(x => records.Contains(x.Name)).Select(x => $"record={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Games.Where(x => games.Contains(x.Name)).Select(x => $"game={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Characters.Where(x => enemies.Contains(x.Name)).Select(x => $"enemy={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Worlds.Where(x => worlds.Contains(x.Name)).Select(x => $"world={x.Id}")) + "&";
+                randomLink += string.Join("&", this.context.Areas.Where(x => areas.Contains(x.Name)).Select(x => $"area={x.Id}")) + "&";
+
+                var category = string.Empty;
+                switch (history.Category)
+                {
+                    case "Items":
+                    case "Weapons":
+                        category = history.Category;
+                        break;
+                    case "Accessories & Armor":
+                        category = "AccesoryArmor";
+                        break;
+                    case "Synthesis Materials":
+                        category = "SynthesisMaterial";
+                        break;
+                }
+
+                randomLink += $"category={category}";
+            }
+        }
+
+        NavigationManager.NavigateTo(randomLink, true);
+    }
+
+    public string DisplayLabel(string type, string category, int param)
+    {
+        var displayLabel = "";
+        switch (type)
+        {
+            case "Memory Archive":
+                switch (category)
+                {
+                    case "Scenes":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Worlds";
+                                break;
+                            case 3:
+                                displayLabel = "Areas";
+                                break;
+                            case 4:
+                                displayLabel = "Characters";
+                                break;
+                            case 5:
+                                displayLabel = "Music";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Trailers":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Worlds";
+                                break;
+                            case 3:
+                                displayLabel = "Areas";
+                                break;
+                            case 4:
+                                displayLabel = "Characters";
+                                break;
+                            case 5:
+                                displayLabel = "Music";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Interviews":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Participants";
+                                break;
+                            case 3:
+                                displayLabel = "Providers";
+                                break;
+                            case 4:
+                                displayLabel = "Translators";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+
+                break;
+            case "Jiminy's Journal":
+                switch (category)
+                {
+                    case "Story":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Worlds";
+                                break;
+                            case 3:
+                                displayLabel = "Characters";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Report":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Worlds";
+                                break;
+                            case 3:
+                                displayLabel = "Characters";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Character":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Worlds";
+                                break;
+                            case 3:
+                                displayLabel = "Characters";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Enemy":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Worlds";
+                                break;
+                            case 3:
+                                displayLabel = "Characters";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+
+                break;
+            case "Moogle Shop":
+                switch (category)
+                {
+                    case "Recipes":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Categories";
+                                break;
+                            case 3:
+                                displayLabel = "Synthesis Materials";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Weapon":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Enemies";
+                                break;
+                            case 3:
+                                displayLabel = "Worlds";
+                                break;
+                            case 4:
+                                displayLabel = "Areas";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Accessories & Armor":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Enemies";
+                                break;
+                            case 3:
+                                displayLabel = "Worlds";
+                                break;
+                            case 4:
+                                displayLabel = "Areas";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Item":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Enemies";
+                                break;
+                            case 3:
+                                displayLabel = "Worlds";
+                                break;
+                            case 4:
+                                displayLabel = "Areas";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case "Synthesis Material":
+                        switch (param)
+                        {
+                            case 1:
+                                displayLabel = "Games";
+                                break;
+                            case 2:
+                                displayLabel = "Enemies";
+                                break;
+                            case 3:
+                                displayLabel = "Worlds";
+                                break;
+                            case 4:
+                                displayLabel = "Areas";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+
+                break;
+            default:
+                break;
+        }
+
+        return displayLabel;
+    }
+}

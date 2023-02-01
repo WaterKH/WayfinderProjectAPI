@@ -7,6 +7,8 @@
 
 
 @using Microsoft.EntityFrameworkCore
+@using WayfinderProject.Data
+@using WayfinderProjectAPI.Data
 @using WayfinderProjectAPI.Data.DTOs
 @using WayfinderProjectAPI.Controllers
 
@@ -29,7 +31,9 @@
 
                 <div class="wayfinder-search">
                     <span class="wayfinder-search-icon material-icons">search</span>
-                    <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
+                    <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" @onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
+                    <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
                     <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
                 </div>
 
@@ -87,7 +91,22 @@
 </div>
 
 
-<NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+<div style="display: inline-flex;">
+    <div class="">
+
+        <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+        
+    </div>
+
+    <div class="wayfinder-search-alt">
+        <span class="wayfinder-search-icon material-icons">search</span>
+        <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
+        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+        <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
+    </div>
+</div>
+
 <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
 
 @if (this.CurrentCategory == "Cutscenes")
@@ -203,9 +222,12 @@ else if (this.CurrentCategory == "Cutscenes" && this.SceneDtos.Count > 0)
             <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Characters</label></th>
             <th><img src="/images/icons/music_gray.png" class="header-margins"> <label class="header-label">Music</label></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" />
+            <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Scenes", Scene.Id))" IsFavorite="@(this.IsFavoriteForUser("Scenes", Scene.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Scenes", Scene.Id))" IsProject="@(this.IsProjectForUser("Scenes", Scene.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <SceneTableExpandedRow Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -226,9 +248,12 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Participants</label></th>
             <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Provider</label></th>
             <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Translator</label></th>
+            <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" />
+            <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" 
+                FavoriteCallbackMethod="@(() => this.SetFavorite("Interviews", Interview.Id))" IsFavorite="@(this.IsFavoriteForUser("Interviews", Interview.Id))"
+                ProjectCallbackMethod="@(() => this.OpenProjectModal("Interviews", Interview.Id))" IsProject="@(this.IsProjectForUser("Interviews", Interview.Id))" />
         </RowTemplate>
         <ExpandedRowTemplate>
             <InterviewTableExpandedRow Interview="@Interview" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -296,6 +321,10 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     #region Query Parameters
     [Parameter]
+    [SupplyParameterFromQuery(Name = "text")]
+    public string[]? TextQuery { get; set; }
+
+    [Parameter]
     [SupplyParameterFromQuery(Name = "area")]
     public string[]? AreaQuery { get; set; }
 
@@ -344,7 +373,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     public string? CategoryQuery { get; set; }
     #endregion Query Parameters
 
-    private List<string> categories = new List<string> { "Cutscenes", "Trailers", "Interviews" };
+    private List<string> categories = new List<string> { "Cutscenes", "Interviews" }; //"Trailers",
     private NavBar? WayfinderNavBar;
 
     private List<string> options = new List<string> { "Scenes", "Games", "Worlds", "Areas", "Characters", "Music" };
@@ -426,10 +455,17 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     private InterviewTable<InterviewDto>? MainInterviewTable;
     #endregion Interview Variables
-    //private Table<TrailerDto>? MainTrailerTable;
 
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();
+    private List<FavoriteDto> Favourites = new List<FavoriteDto>();
+    private SearchSettingsDto SearchSettings = default!;
 
     private bool failed = false;
+
+    private bool isPatron;
+    private int favouriteCount = 200;
 
     protected override async Task OnInitializedAsync()
     {
@@ -437,10 +473,34 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var authState = await authenticationStateTask;
 
-            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-            //{
-            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
-            //}
+            if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            {
+                NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            }
+
+            // Set Patron Status
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                {
+                    var patreonService = new PatreonService(new HttpClient());
+
+                    try
+                    {
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                    catch (Exception)
+                    {
+                        await patreonService.RefreshToken(context, user.Id);
+
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                }
+
+                this.favouriteCount = this.isPatron ? 650 : 200;
+            }
         }
 
         this.api = new WayfinderController(context);
@@ -455,10 +515,22 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             try
             {
                 await this.ResetOptions();
-
-                Thread.Sleep(1000);
-
                 await this.HandleQueryParams();
+
+                if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+                {
+                    var authState = await authenticationStateTask;
+
+                    WayfinderProjectUser user = new();
+                    if (authState.User.Identity != null)
+                    {
+                        user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                    }
+
+                    this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                }
             }
             catch (Exception)
             {
@@ -483,6 +555,21 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                 Thread.Sleep(1000);
 
                 await this.HandleQueryParams();
+
+                if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+                {
+                    var authState = await authenticationStateTask;
+
+                    WayfinderProjectUser user = new();
+                    if (authState.User.Identity != null)
+                    {
+                        user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                    }
+
+                    this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                }
             }
             catch (Exception)
             {
@@ -511,7 +598,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             this.options = new List<string> { "Interviews", "Games", "Participants", "Providers", "Translators" };
         }
-        
+
         await this.Search();
 
         await InvokeAsync(() =>
@@ -540,11 +627,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
         if (!this.Loading)
         {
-            await this.Search();
+            await this.Search(true);
         }
     }
 
-    public async Task Search()
+    public async Task Search(bool allowSearch = false)
     {
         this.Loading = true;
 
@@ -554,15 +641,15 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
         if (this.CurrentCategory == "Cutscenes")
         {
-            await this.SearchScenes();
+            await this.SearchScenes(allowSearch);
         }
         else if (this.CurrentCategory == "Trailers")
         {
-            this.SearchTrailers();
+            this.SearchTrailers(allowSearch);
         }
         else if (this.CurrentCategory == "Interviews")
         {
-            await this.SearchInterviews();
+            await this.SearchInterviews(allowSearch);
         }
 
         this.Loading = false;
@@ -573,7 +660,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     }
 
     #region Sub-Search Methods
-    private async Task SearchScenes()
+    private async Task SearchScenes(bool allowSearch = false)
     {
         var games = this.SceneGamesSearch != null ? string.Join("::", this.SceneGamesSelected) != "" ? string.Join("::", this.SceneGamesSelected) : null : null;
         var scenes = this.ScenesSearch != null ? string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null : null;
@@ -594,40 +681,48 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            var authState = await this.authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            if (this.SearchSettings.AutoSearch || allowSearch)
+            {
+                var authState = await this.authenticationStateTask;
 
-            this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+                WayfinderProjectUser user = new();
+                if (authState.User.Identity != null)
+                {
+                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                }
 
-            // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+                // Maybe use the above to only call the search function we want to based on what's filled out and not null
+                if (user.ApiCallQuota > 0 || this.isPatron)
+                {
+                    this.SceneDtos = await this.api.GetScenes(accountId: user.Id, games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                        }
+                    }
+                }
+                else
+                {
+                    // TOAST: Out of API Call Quota, resets monthly.
+                    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month, or is removed if you become a Patron.");
+                }
+            }
 
-            this.UpdateSceneOptions();
-
+            this.UpdateSceneOptions((this.SearchSettings.AutoSearch || allowSearch));
 
             this.canDisplayClearAll = true;
         }
@@ -636,10 +731,15 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             MainSceneTable.SetCurrentPage(1);
             MainSceneTable.CurrentExpandedRow = -1;
+
+            if (this.SearchSettings.AutoExpandFirstResult)
+            {
+                this.MainSceneTable.CurrentExpandedRow = this.SceneDtos.FirstOrDefault()?.Id ?? -1;
+            }
         }
     }
 
-    private void SearchTrailers()
+    private void SearchTrailers(bool allowSearch = false)
     {
         // Include game, worlds, areas, characters, music
 
@@ -662,7 +762,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         //}
     }
 
-    private async Task SearchInterviews()
+    private async Task SearchInterviews(bool allowSearch = false)
     {
         // Include translators, interviewers, interviewees, date, link, game
 
@@ -684,39 +784,47 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            var authState = await this.authenticationStateTask;
-            //var user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+            if (this.SearchSettings.AutoSearch || allowSearch)
+            {
+                var authState = await this.authenticationStateTask;
 
-            this.InterviewDtos = await this.api.GetInterviews(interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
+                WayfinderProjectUser user = new();
+                if (authState.User.Identity != null)
+                {
+                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                }
 
-            // Maybe use the above to only call the search function we want to based on what's filled out and not null
-            //if (user.ApiCallQuota > 0)
-            //{
-            //    this.SceneDtos = await this.api.SearchForScenes(games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+                if (user.ApiCallQuota > 0 || this.isPatron)
+                {
+                    this.InterviewDtos = await this.api.GetInterviews(accountId: user.Id, interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
 
-            //    user.ApiCallQuota -= 1;
-            //    context.SaveChanges();
+                    if (!this.isPatron)
+                    {
+                        user.ApiCallQuota -= 1;
+                        context.SaveChanges();
 
-            //    if (user.ApiCallQuota == 2500)
-            //    {
-            //        toastService.ShowInfo("Used half of API Quota (2500/5000).");
-            //    }
-            //    else if (user.ApiCallQuota == 500)
-            //    {
-            //        toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
-            //    }
-            //    else if (user.ApiCallQuota == 0)
-            //    {
-            //        toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
-            //    }
-            //}
-            //else
-            //{
-            //    // TOAST: Out of API Call Quota, resets monthly.
-            //    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
-            //}
+                        if (user.ApiCallQuota == 2500)
+                        {
+                            toastService.ShowInfo("Used half of API Quota (2500/5000).");
+                        }
+                        else if (user.ApiCallQuota == 500)
+                        {
+                            toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
+                        }
+                        else if (user.ApiCallQuota == 0)
+                        {
+                            toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
+                        }
+                    }
+                }
+                else
+                {
+                    // TOAST: Out of API Call Quota, resets monthly.
+                    toastService.ShowError("Reached max calls of API Quota (5000/5000). This resets at the start of each month.");
+                }
+            }
 
-            this.UpdateInterviewOptions();
+            this.UpdateInterviewOptions((this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -726,6 +834,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             MainInterviewTable.SetCurrentPage(1);
             MainInterviewTable.CurrentExpandedRow = -1;
+
+            if (this.SearchSettings.AutoExpandFirstResult)
+            {
+                this.MainInterviewTable.CurrentExpandedRow = this.InterviewDtos.FirstOrDefault()?.Id ?? -1;
+            }
         }
     }
     #endregion Sub-Search Methods
@@ -734,27 +847,39 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (this.CurrentCategory == "Cutscenes")
         {
-            this.UpdateSceneOptions();
+            this.UpdateSceneOptions(this.SearchSettings.AutoSearch);
         }
         else if (this.CurrentCategory == "Trailers")
         {
-            this.UpdateTrailerOptions();
+            this.UpdateTrailerOptions(this.SearchSettings.AutoSearch);
         }
         else if (this.CurrentCategory == "Interviews")
         {
-            this.UpdateInterviewOptions();
+            this.UpdateInterviewOptions(this.SearchSettings.AutoSearch);
         }
     }
 
     #region Sub-Option Methods
-    private void UpdateSceneOptions()
+    private void UpdateSceneOptions(bool allowSearch = true)
     {
-        this.SceneAreasAvailable = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.SceneAreasSelected).Distinct().ToList();
-        this.SceneCharactersAvailable = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.SceneCharactersSelected).Distinct().ToList();
-        this.SceneGamesAvailable = this.SceneDtos.Select(x => x.Game.Name).Except(this.SceneGamesSelected).Distinct().ToList();
-        this.SceneMusicAvailable = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.SceneMusicSelected).Distinct().ToList();
-        this.ScenesAvailable = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSelected).Distinct().ToList();
-        this.SceneWorldsAvailable = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.SceneWorldsSelected).Distinct().ToList();
+        if (allowSearch)
+        {
+            this.SceneAreasAvailable = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.SceneAreasSelected).Distinct().ToList();
+            this.SceneCharactersAvailable = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.SceneCharactersSelected).Distinct().ToList();
+            this.SceneGamesAvailable = this.SceneDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
+            this.SceneMusicAvailable = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.SceneMusicSelected).Distinct().ToList();
+            this.ScenesAvailable = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSelected).Distinct().ToList();
+            this.SceneWorldsAvailable = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.SceneWorldsSelected).Distinct().ToList();
+        }
+        else
+        {
+            this.SceneAreasAvailable = this.SceneAreas.Except(this.SceneAreasSelected).Distinct().ToList();
+            this.SceneCharactersAvailable = this.SceneCharacters.Except(this.SceneCharactersSelected).Distinct().ToList();
+            this.SceneGamesAvailable = this.SceneGames.Except(this.SceneGamesSelected).Distinct().ToList();
+            this.SceneMusicAvailable = this.SceneMusic.Except(this.SceneMusicSelected).Distinct().ToList();
+            this.ScenesAvailable = this.Scenes.Except(this.ScenesSelected).Distinct().ToList();
+            this.SceneWorldsAvailable = this.SceneWorlds.Except(this.SceneWorldsSelected).Distinct().ToList();
+        }
 
         this.SceneAreasAvailable.Sort();
         this.SceneCharactersAvailable.Sort();
@@ -763,9 +888,32 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         this.SceneWorldsAvailable.Sort();
     }
 
-    private void UpdateTrailerOptions() { }
+    private void UpdateTrailerOptions(bool allowSearch = true) { }
 
-    private void UpdateInterviewOptions() { }
+    private void UpdateInterviewOptions(bool allowSearch = true)
+    {
+        if (allowSearch)
+        {
+            this.InterviewGamesAvailable = this.InterviewDtos.SelectMany(x => x.Games).OrderBy(x => x.Id).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
+            this.InterviewsAvailable = this.InterviewDtos.Select(x => x.Name).Except(this.InterviewsSelected).Distinct().ToList();
+            this.InterviewParticipantsAvailable = this.InterviewDtos.SelectMany(x => x.Participants).Select(y => y.Name).Except(this.InterviewParticipantsSelected).Distinct().ToList();
+            this.InterviewProvidersAvailable = this.InterviewDtos.Select(y => y.Provider.Name).Except(this.InterviewProvidersSelected).Distinct().ToList();
+            this.InterviewTranslatorsAvailable = this.InterviewDtos.Select(y => y.Translator.Name).Except(this.InterviewTranslatorsSelected).Distinct().ToList();
+        }
+        else
+        {
+            this.InterviewGamesAvailable = this.InterviewGames.Except(this.SceneGamesSelected).Distinct().ToList();
+            this.InterviewsAvailable = this.Interviews.Except(this.InterviewsSelected).Distinct().ToList();
+            this.InterviewParticipantsAvailable = this.InterviewParticipants.Except(this.InterviewParticipantsSelected).Distinct().ToList();
+            this.InterviewProvidersAvailable = this.InterviewProviders.Except(this.InterviewProvidersSelected).Distinct().ToList();
+            this.InterviewTranslatorsAvailable = this.InterviewTranslators.Except(this.InterviewTranslatorsSelected).Distinct().ToList();
+        }
+
+        this.InterviewsAvailable.Sort();
+        this.InterviewParticipantsAvailable.Sort();
+        this.InterviewProvidersAvailable.Sort();
+        this.InterviewTranslatorsAvailable.Sort();
+    }
     #endregion Sub-Option Methods
 
     public async Task ResetOptions()
@@ -1271,6 +1419,13 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         var optionUpdated = false;
 
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.quoteSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
+
         if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.SceneAreasSearch != null)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
@@ -1340,6 +1495,13 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         var optionUpdated = false;
 
+        if (this.TextQuery != null && this.TextQuery.Count() > 0)
+        {
+            this.quoteSearch = this.TextQuery.First();
+
+            optionUpdated = true;
+        }
+
         if (this.InterviewQuery != null && this.InterviewQuery.Count() > 0 && this.InterviewsSearch != null)
         {
             var interviewIds = this.InterviewQuery.Select(x => int.Parse(x));
@@ -1359,7 +1521,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
             optionUpdated = true;
         }
-        
+
         if (this.ParticipantQuery != null && this.ParticipantQuery.Count() > 0 && this.InterviewParticipantsSearch != null)
         {
             var participantIds = this.ParticipantQuery.Select(x => int.Parse(x));
@@ -1459,8 +1621,138 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         catch (Exception)
         {
-            
+
         }
+    }
+
+    public async Task OpenSettings()
+    {
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            var temp = Modal.Show<SettingsModal>("Search Settings", parameters, options);
+            await temp.Result;
+
+            this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+        }
+    }
+
+    public async Task OpenHistory()
+    {
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("Type", "Memory Archive");
+            parameters.Add("Context", this.context);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            Modal.Show<HistoryModal>("Search History", parameters, options);
+        }
+    }
+
+    public async Task SetFavorite(string category, int specificRecordId)
+    {
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            if (this.Favourites.Select(x => x.SpecificRecordId).Any(x => x == specificRecordId))
+            {
+                await this.api.InsertRemoveFavourite(user.Id, "Memory Archive", category, specificRecordId);
+
+                this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+            }
+            else
+            {
+                if (this.context.Favorites.Where(x => x.AccountId == user.Id).ToList().Count < favouriteCount)
+                {
+                    await this.api.InsertRemoveFavourite(user.Id, "Memory Archive", category, specificRecordId);
+
+                    this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                }
+                else
+                {
+                    var additionalInfo = this.isPatron ? " Become a Patron to increase this to 650." : string.Empty;
+                    toastService.ShowError($"Reached max Favourite Quota ({this.favouriteCount}/{this.favouriteCount}).{additionalInfo}");
+                }
+            }
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
+    }
+
+    public bool IsFavoriteForUser(string category, int specificRecordId)
+    {
+        return this.Favourites.Exists(x => x.Type == "Memory Archive" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+
+    public async Task OpenProjectModal(string category, int specificRecordId)
+    {
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            WayfinderProjectUser user = new();
+            if (authState.User.Identity != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+
+            var parameters = new ModalParameters();
+
+            parameters.Add("AccountId", user.Id);
+            parameters.Add("Type", "Memory Archive");
+            parameters.Add("Category", category);
+            parameters.Add("SpecificRecordId", specificRecordId);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            var temp = Modal.Show<ProjectModal>($"Projects - {category}", parameters, options);
+            await temp.Result;
+
+            this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+        }
+    }
+
+    public bool IsProjectForUser(string category, int specificRecordId)
+    {
+        return this.ProjectRecords.Exists(x => x.Type == "Memory Archive" && x.Category == category && x.SpecificRecordId == specificRecordId);
     }
     #endregion Scene Specific Methods
 }

@@ -1,0 +1,117 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-3" style="text-align: center;">
+            <button class="@(this.searchSettings.AutoSearch ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("AutoSearch"))">Auto-Search</button>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <button class="@(this.searchSettings.AutoExpandFirstResult ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("AutoExpandFirstResult"))">Auto-Expand First Result</button>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <button class="@(this.searchSettings.MainSearchEverything ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("MainSearchEverything"))">Main Search Everything</button>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <button class="@(this.searchSettings.TrackHistory ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("TrackHistory"))">Track History</button>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-md-3" style="text-align: center;">
+            <label>This option allows you to save on API calls and loading between selecting options. You will need to manually select the search button to initiate a search.</label>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <label>This option allows you to automatically expand the first row of the search. This will make things like specific searches auto-expand the single result you are expecting.</label>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <label>This option allows you to search all categories with the main search bar. You can separate tags so that you can search for multiple things at once. This option may cause slow-downs in searching.</label>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <label>This option allows you to to toggle on or off search history. If you don't want The Wayfinder Project to store searches, turn this off.</label>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 35px;">
+        <div class="col-md-3" style="text-align: center;">
+            <button class="@(this.searchSettings.FavouriteSearch ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("FavouriteSearch"))">Favourites Search</button>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <button class="@(this.searchSettings.ProjectSearch ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("ProjectSearch"))">Projects Search</button>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-md-3" style="text-align: center;">
+            <label>This option allows you to search only for your favourites. If you have project search enabled, search results will include both.</label>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <label>This option allows you to search only through your projects. If you have favourite search enabled, search results will include both.</label>
+        </div>
+    </div>
+
+    <hr />
+
+    <button class="active-wayfinder-button" onclick="@(async () => { await this.SaveSearchSettings(); await BlazoredModal.CancelAsync(); })">Save</button>
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Cancel</button>
+</div>
+
+@code {
+    [Parameter] public string AccountId { get; set; } = string.Empty;
+    [Parameter] public WayfinderController? API { get; set; }
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    private SearchSettingsDto searchSettings = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (this.API != null)
+        {
+            this.searchSettings = await this.API.GetSearchSettings(this.AccountId);
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task SaveSearchSettings()
+    {
+        if (this.API != null)
+        {
+            await this.API.SaveSearchSettings(this.AccountId, this.searchSettings.AutoSearch, this.searchSettings.AutoExpandFirstResult, this.searchSettings.MainSearchEverything, this.searchSettings.TrackHistory, this.searchSettings.FavouriteSearch, this.searchSettings.ProjectSearch);
+        }
+    }
+
+    public void ToggleSetting(string setting)
+    {
+        switch (setting)
+        {
+            case "AutoSearch":
+                this.searchSettings.AutoSearch = !this.searchSettings.AutoSearch;
+                break;
+            case "AutoExpandFirstResult":
+                this.searchSettings.AutoExpandFirstResult = !this.searchSettings.AutoExpandFirstResult;
+                break;
+            case "MainSearchEverything":
+                this.searchSettings.MainSearchEverything = !this.searchSettings.MainSearchEverything;
+                break;
+            case "TrackHistory":
+                this.searchSettings.TrackHistory = !this.searchSettings.TrackHistory;
+                break;
+            case "FavouriteSearch":
+                this.searchSettings.FavouriteSearch = !this.searchSettings.FavouriteSearch;
+                break;
+            case "ProjectSearch":
+                this.searchSettings.ProjectSearch = !this.searchSettings.ProjectSearch;
+                break;
+        }
+    }
+}

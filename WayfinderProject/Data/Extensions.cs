@@ -162,5 +162,104 @@ namespace WayfinderProjectAPI.Data
                 });
         }
         #endregion Moogle Shop
+
+        #region Search History And Settings
+        public static IQueryable<SearchHistoryDto> ToDto(this IQueryable<SearchHistory> history)
+        {
+            return history
+                .Select(x => new SearchHistoryDto
+                {
+                    Id = x.Id,
+                    AccountId = x.AccountId,
+                    CreatedDate = x.CreatedDate,
+                    Type = x.Type,
+                    Category = x.Category,
+                    TextSearch = x.TextSearch,
+                    SpecificSearch = x.SpecificSearch,
+                    Param1Search = x.Param1Search,
+                    Param2Search = x.Param2Search,
+                    Param3Search = x.Param3Search,
+                    Param4Search = x.Param4Search,
+                    Param5Search = x.Param5Search,
+                    Param6Search = x.Param6Search,
+                    Param7Search = x.Param7Search,
+                });
+        }
+
+        public static IQueryable<SearchHistoryDto> ToDto(this IQueryable<SearchHistory> history, string type)
+        {
+            return history.Where(x => x.Type == type)
+                .Select(x => new SearchHistoryDto
+                {
+                    Id = x.Id,
+                    AccountId = x.AccountId,
+                    CreatedDate = x.CreatedDate,
+                    Type = x.Type,
+                    Category = x.Category,
+                    TextSearch = x.TextSearch,
+                    SpecificSearch = x.SpecificSearch,
+                    Param1Search = x.Param1Search,
+                    Param2Search = x.Param2Search,
+                    Param3Search = x.Param3Search,
+                    Param4Search = x.Param4Search,
+                    Param5Search = x.Param5Search,
+                    Param6Search = x.Param6Search,
+                    Param7Search = x.Param7Search,
+                });
+        }
+
+        public static SearchSettingsDto ToDto(this SearchSettings settings)
+        {
+            return new SearchSettingsDto
+            {
+                Id = settings.Id,
+                AccountId = settings.AccountId,
+                AutoSearch = settings.AutoSearch,
+                AutoExpandFirstResult = settings.AutoExpandFirstResult,
+                MainSearchEverything = settings.MainSearchEverything,
+                TrackHistory = settings.TrackHistory,
+                FavouriteSearch = settings.FavouriteSearch,
+                ProjectSearch = settings.ProjectSearch
+            };
+        }
+        #endregion Search History And Settings
+
+        #region Projects And Favorites
+        public static IQueryable<ProjectDto> ToDto(this IQueryable<Project> projects)
+        {
+            return projects
+                .Select(x => new ProjectDto
+                {
+                    Id = x.Id,
+                    AccountId = x.AccountId,
+                    Name = x.Name,
+                    Description = x.Description,
+                    CreatedDate = x.CreatedDate,
+                    ProjectRecords = x.ProjectRecords.Select(y => new ProjectRecordDto
+                    {
+                        Id = y.Id,
+                        CreatedDate = y.CreatedDate,
+                        Type = y.Type,
+                        Category = y.Category,
+                        SpecificRecordId = y.SpecificRecordId,
+                        Notes = y.Notes
+                    }).ToList()
+                });
+        }
+
+        public static IQueryable<FavoriteDto> ToDto(this IQueryable<Favorite> favorites)
+        {
+            return favorites
+                .Select(x => new FavoriteDto
+                {
+                    Id = x.Id,
+                    AccountId = x.AccountId,
+                    CreatedDate = x.CreatedDate,
+                    Type = x.Type,
+                    Category = x.Category,
+                    SpecificRecordId = x.SpecificRecordId
+                });
+        }
+        #endregion Projects And Favorites
     }
 }

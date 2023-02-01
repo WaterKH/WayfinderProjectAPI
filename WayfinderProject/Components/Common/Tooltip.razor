@@ -1,5 +1,5 @@
 ﻿<div class="tooltip-wrapper" style="@Style">
-    <span style="margin-top: 25px; margin-left: -100px;">@Text</span>
+    <span style="margin-top: 25px; margin-left: @(this.Margin);">@Text</span>
     @ChildContent
 </div>
 
@@ -7,4 +7,5 @@
     [Parameter] public RenderFragment? ChildContent { get; set; }
     [Parameter] public string Text { get; set; } = string.Empty;
     [Parameter] public string Style { get; set; } = string.Empty;
+    [Parameter] public string Margin { get; set; } = "-100px";
 }

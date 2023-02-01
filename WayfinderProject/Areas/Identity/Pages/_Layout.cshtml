@@ -1,0 +1,351 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (parentLayout?.ToString()) ?? string.Empty;
+    }
+}
+
+@using Microsoft.AspNetCore.Components.Web
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="WayfinderProject.styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
+    <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    <div class="page">
+        <main>
+            <div class="top-row px-4" style="background-color: white; border-bottom: unset;">
+                <a href="/"><img src="/images/wayfinder_project_icon.png" alt="The Wayfinder Project" style="position: absolute; left: 50px; top: 12px; width: 28px;"></a>
+
+                <div class="links" style="left: 135px; position: absolute; cursor: default;">
+                    <a class="wayfinder-link" href="/memory_archive" style="color: #3c39de; font-size: large;">Memory Archive</a>
+                    <span class="wayfinder-span" style="color: #68a4ff;">•</span>
+                    <a class="wayfinder-link" href="/jiminy_journal" style="color: #387ee6; font-size: large;">Jiminy's Journal</a>
+                    <span class="wayfinder-span" style="color: #387ee6">•</span>
+                    <a class="wayfinder-link" href="/moogle_shop" style="color: #5067bb; font-size: large;">Moogle Shop</a>
+                </div>
+            </div>
+
+            <article class="content content-body px-4" style="padding-top: 0px;">
+                @RenderBody()
+                @RenderSection("scripts", required: false)
+            </article>
+
+            <div class="bottom-row px-4">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="wayfinder-title">
+                            <img src="/images/wayfinder_project_title.png" style="width: 25%;" />
+                        </div>
+
+                        <div class="wayfinder-contact" style="margin-top: 2px;">
+                            <span>
+                                <strong>twitter:</strong> <a href="https://twitter.com/WFP_KH" target="_blank" style="margin: unset;">@@WFP_KH</a> //
+                                <strong>email:</strong> thewayfinderprojectKH@gmail.com
+                            </span>
+                        </div>
+
+                        <div class="wayfinder-contact" style="margin-top: 5px;">
+                            <span>
+                                creator: <a href="https://linktr.ee/RegularPat" target="_blank" style="margin: unset;">RegularPat</a> //
+                                developer: <a href="https://linktr.ee/waterkh" target="_blank" style="margin: unset;">waterkh</a>
+                            </span>
+                        </div>
+                        <div class="wayfinder-contact" style="margin-top: 5px;">
+                            <span>
+                                designer: <a href="https://twitter.com/Kimpchuu" target="_blank" style="margin: unset;">Kimpchuu</a> //
+                                illustrator: <a href="https://twitter.com/cabletownart" target="_blank" style="margin: unset;">PJ</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="text-align: end;">
+                        <div class="wayfinder-info">
+                            <strong>Important Links:</strong>
+                        </div>
+
+                        <div class="wayfinder-link" style="margin-top: 2px;">
+                            <a href="/terms_of_use" target="_blank" style="margin: unset;">Terms of Use</a> //
+                            <a href="/privacy_policy" target="_blank" style="margin: unset;">Privacy Policy</a>
+                        </div>
+                        <div class="wayfinder-link" style="margin-top: 5px;">
+                            <a href="https://github.com/WaterKH/WayfinderProjectAPI" style="margin: unset;" target="_blank">Source Code</a> //
+                            <a href="https://github.com/WaterKH/WayfinderProjectAPI/commits/main" style="margin: unset;" target="_blank">Version History</a> //
+                            <a href="/swagger" style="margin: unset;" target="_blank">API Reference</a>
+                        </div>
+                        <div>
+                            <a href="https://www.digitalocean.com/?refcode=075bbdd84c8b&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
+                                <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" width="20%" style="margin-top: 10px;" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+<style>
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.sidebar {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.content-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-row {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row ::deep a, .top-row .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.wayfinder-nav-button {
+    background-color: white;
+    border: 1px solid #989898;
+    border-radius: 10px;
+    padding: 3px 25px;
+}
+
+.dropdown-container {
+    position: absolute;
+    border: 1px solid #989898;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.dropdown-list {
+    display: none;
+    top: 5px;
+    position: relative;
+    padding: 0px 15px;
+}
+
+.wayfinder-dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: white;
+}
+
+.is-active {
+    display: block;
+}
+
+.wayfinder-chevron {
+    font-size: x-small;
+    margin-left: 5px;
+}
+
+.account-container {
+    border: 1px solid #989898;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.account-icon {
+    font-size: 22px;
+    color: #989898;
+}
+
+.wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+}
+
+    .wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.bottom-row {
+    background-color: #f7f7f7;
+    border-top: 1px solid #d6d5d5;
+    margin-top: auto;
+    width: 100%;
+    padding: 15px 25px;
+}
+
+    .bottom-row ::deep a, .top-row .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .bottom-row a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@@media (max-width: 640.98px) {
+    .top-row:not(.auth) {
+        display: none;
+    }
+
+    .top-row.auth {
+        justify-content: space-between;
+    }
+
+    .top-row a, .top-row .btn-link {
+        margin-left: 0;
+    }
+}
+
+@@media (min-width: 641px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row, article {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 10px;
+}
+
+.wayfinder-link {
+    text-decoration: none;
+    margin: 0px !important;
+}
+
+.wayfinder-span {
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: default;
+}
+
+.wayfinder-larger-span {
+    margin-left: 40px;
+    margin-right: 40px;
+    cursor: default;
+}
+
+.header-margins {
+    width: 20px;
+    margin-top: -5px;
+    margin-right: 5px;
+}
+.header-margins-alt {
+    width: 20px;
+    margin-top: -5px;
+    margin-left: 5px;
+}
+
+.wayfinder-hover p {
+    opacity: 0;
+    width: 0px;
+    display: inline-block;
+    transform: translateX(100%);
+    transition: width .1s ease-in-out;
+    transition: opacity .1s ease-in-out;
+    transition: transform .1s ease-in-out;
+}
+
+.wayfinder-hover {
+    position: sticky;
+}
+
+    /*.wayfinder-hover:hover {
+        border-bottom: 1px solid black;
+        transition: border-bottom ease-in-out 1s;
+    }*/
+
+    .wayfinder-hover:hover p {
+        opacity: 1;
+        width: fit-content;
+        transform: translateX(0);
+    }
+</style>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

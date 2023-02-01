@@ -1,0 +1,47 @@
+.history-bubble {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30px;
+    margin: 5px 7px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.wayfinder-history-header {
+
+}
+
+.wayfinder-history-body {
+
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+    h2 span {
+        background: #f2f2f2;
+        padding: 0 20px;
+    }
+
+
+.wayfinder-search-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+}
+
+    .wayfinder-search-button:focus {
+        outline: none;
+        border: none;
+    }

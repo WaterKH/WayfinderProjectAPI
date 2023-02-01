@@ -37,22 +37,28 @@ builder.Services.AddDefaultIdentity<WayfinderProjectUser>(options => options.Sig
     .AddEntityFrameworkStores<WayfinderContext>();
 
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<WayfinderProjectUser>>();
+builder.Services.AddScoped(x => new HttpClient() { BaseAddress = new Uri("https://wayfinderprojectkh.com/") });
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
-//builder.Services.AddAuthentication()
-//    .AddGoogle(options =>
-//    {
-//        options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId");
-//        options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret");
-//    })
-//    .AddTwitter(twitterOptions =>
-//    {
-//        twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey");
-//        twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterConsumerSecret");
-//        twitterOptions.RetrieveUserDetails = true;
-//    });
+builder.Services.AddAuthentication()
+    .AddDiscord(discordOptions =>
+    {
+        discordOptions.ClientId = Environment.GetEnvironmentVariable("DiscordClientId") ?? "";
+        discordOptions.ClientSecret = Environment.GetEnvironmentVariable("DiscordClientSecret") ?? "";
+    })
+    .AddGoogle(options =>
+    {
+        options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId") ?? "";
+        options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret") ?? "";
+    })
+    .AddTwitter(twitterOptions =>
+    {
+        twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey");
+        twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterConsumerSecret");
+        twitterOptions.RetrieveUserDetails = true;
+    });
 
 
 builder.Services.AddQuartz(q =>

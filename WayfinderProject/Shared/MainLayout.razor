@@ -1,8 +1,10 @@
 ﻿@using Blazored.Toast.Configuration;
+@using WayfinderProject.Data
 
 @inherits LayoutComponentBase
 
 @inject NavigationManager NavigationManager
+@inject WayfinderProjectAPI.Data.WayfinderContext context
 
 <PageTitle>The Wayfinder Project</PageTitle>
 
@@ -28,17 +30,18 @@
 
             <div id="support">
                 <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("/support", true))" style="text-decoration: none; background: linear-gradient(to right, #ff91cf, #ff4fb2);">
-                    <img src="/images/icons/ability.png" class="header-margins">
-                    Support Us!
-                    <img src="/images/icons/ability.png" class="header-margins-alt">
+                    @*<img src="/images/icons/ability.png" class="header-margins">*@
+                    Support
+                    @*<img src="/images/icons/ability.png" class="header-margins-alt">*@
                 </button>
             </div>
 
             <span class="wayfinder-span" style="color: #387ee6;">•</span>
 
             <div id="about">
-                <button class="wayfinder-nav-button" onclick="@(() => this.Show("About"))" @onclick:stopPropagation @onclick:preventDefault 
-                    style="color: #3c39de;">About the Project <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span></button>
+                <button class="wayfinder-nav-button" onclick="@(() => this.Show("About"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault
+                        style="color: #3c39de;">About <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span>
+                </button>
 
                 <div class="@(this.currentAction == "About" ? "dropdown-container" : "")" onblur="@(() => this.Hide())">
                     <ul class="dropdown-list @(this.currentAction == "About" ? "is-active" : "")">
@@ -55,8 +58,9 @@
             <span class="wayfinder-span" style="color: #68a4ff;">•</span>
 
             <div id="resources">
-                <button class="wayfinder-nav-button" onclick="@(() => this.Show("Resources"))" @onclick:stopPropagation @onclick:preventDefault
-                    style="color: #5067bb;">Resources <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span></button>
+                <button class="wayfinder-nav-button" onclick="@(() => this.Show("Resources"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault
+                        style="color: #5067bb;">Resources <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span>
+                </button>
 
                 <div class="@(this.currentAction == "Resources" ? "dropdown-container" : "")" onblur="@(() => this.Hide())">
                     <ul class="dropdown-list @(this.currentAction == "Resources" ? "is-active" : "")">
@@ -75,6 +79,7 @@
 
             <span style="margin-left: 35px;"></span>
 
+
             @if (this.authState == null || this.authState.User.Identity == null || !this.authState.User.Identity.IsAuthenticated)
             {
                 <div id="account-login">
@@ -84,14 +89,39 @@
             else
             {
                 <div id="account-logged-in">
-                    <div class="account-container" onclick="@(() => this.Show("Account"))">
+                    <button class="account-container" onclick="@(() => this.Show("Account"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault>
                         <span class="oi oi-person account-icon"></span>
-                    </div>
+                    </button>
 
                     <div class="@(this.currentAction == "Account" ? "dropdown-container" : "")" onblur="@(() => this.Hide())" style="right: 20px;">
                         <ul class="dropdown-list @(this.currentAction == "Account" ? "is-active" : "")">
                             <li class="wayfinder-dropdown-item">
-                                <a class="wayfinder-link" href="/Identity/Account/Manage" style="color: #5067bb;">Account</a>
+                                <a class="wayfinder-link" href="/Identity/Account/Manage" style="color: #5067bb;">Manage Account</a>
+                            </li>
+                            <li class="wayfinder-dropdown-item" style="margin-bottom: 5px;">
+                                @if (this.isPatron)
+                                {
+                                    <button class="patreon-button" @onclick="@(() => this.UnlinkPatreon())">
+                                        <img src="/images/patreon.png" style="width: 15px;" />
+                                        Unlink Patreon
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="patreon-button" @onclick="@(() => this.LinkPatreon())">
+                                        <img src="/images/patreon.png" style="width: 15px;" />
+                                        Link Patreon
+                                    </button>
+                                }
+                            </li>
+                            <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
+                                <a class="wayfinder-link" href="/Projects" style="color: #5067bb;">Projects</a>
+                            </li>
+                            <li class="wayfinder-dropdown-item">
+                                <a class="wayfinder-link" href="/Favourites" style="color: #5067bb;">Favourites</a>
+                            </li>
+                            <li class="wayfinder-dropdown-item">
+                                <a class="wayfinder-link" href="/Search_History" style="color: #5067bb;">History</a>
                             </li>
                             <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
                                 <a class="wayfinder-link" href="/Identity/Account/Logout" style="color: #5067bb;">Logout</a>
@@ -123,7 +153,11 @@
                     <div class="wayfinder-contact" style="margin-top: 5px;">
                         <span>
                             creator: <a href="https://linktr.ee/RegularPat" target="_blank" style="margin: unset;">RegularPat</a> //
-                            developer: <a href="https://linktr.ee/waterkh" target="_blank" style="margin: unset;">waterkh</a> //
+                            developer: <a href="https://linktr.ee/waterkh" target="_blank" style="margin: unset;">waterkh</a>
+                        </span>
+                    </div>
+                    <div class="wayfinder-contact" style="margin-top: 5px;">
+                        <span>
                             designer: <a href="https://twitter.com/Kimpchuu" target="_blank" style="margin: unset;">Kimpchuu</a> //
                             illustrator: <a href="https://twitter.com/cabletownart" target="_blank" style="margin: unset;">PJ</a>
                         </span>
@@ -136,10 +170,18 @@
                     </div>
 
                     <div class="wayfinder-link" style="margin-top: 2px;">
-                        <a href="/terms_of_use" target="_blank" style="margin: unset;">Terms of Use</a> // <a href="/privacy_policy" target="_blank" style="margin: unset;">Privacy Policy</a>
+                        <a href="/terms_of_use" target="_blank" style="margin: unset;">Terms of Use</a> // 
+                        <a href="/privacy_policy" target="_blank" style="margin: unset;">Privacy Policy</a>
                     </div>
                     <div class="wayfinder-link" style="margin-top: 5px;">
-                        <a href="https://github.com/WaterKH/WayfinderProjectAPI" target="_blank">Source Code</a>
+                        <a href="https://github.com/WaterKH/WayfinderProjectAPI" style="margin: unset;" target="_blank">Source Code</a> //
+                        <a href="https://github.com/WaterKH/WayfinderProjectAPI/commits/main" style="margin: unset;" target="_blank">Version History</a> // 
+                        <a href="/swagger" style="margin: unset;" target="_blank">API Reference</a>
+                    </div>
+                    <div>
+                        <a href="https://www.digitalocean.com/?refcode=075bbdd84c8b&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
+                            <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" width="20%" style="margin-top: 10px;" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -175,6 +217,46 @@
     margin-top: -5px;
     margin-left: 5px;
 }
+
+.wayfinder-hover p {
+    opacity: 0;
+    width: 0px;
+    display: inline-block;
+    transform: translateX(100%);
+    transition: width .1s ease-in-out;
+    transition: opacity .1s ease-in-out;
+    transition: transform .1s ease-in-out;
+}
+
+.wayfinder-hover {
+    position: sticky;
+}
+
+    /*.wayfinder-hover:hover {
+        border-bottom: 1px solid black;
+        transition: border-bottom ease-in-out 1s;
+    }*/
+
+    .wayfinder-hover:hover p {
+        opacity: 1;
+        width: fit-content;
+        transform: translateX(0);
+    }
+
+
+.patreon-button {
+    border-radius: 5px;
+    background-color: #ff424d;
+    border: none;
+    padding: 5px 20px;
+    color: white;
+}
+
+    .patreon-button:active,
+    .patreon-button:active:focus,
+    .patreon-button:hover {
+        background-color: #e13d47;
+    }
 </style>
 
 @code {
@@ -184,23 +266,83 @@
     private string currentAction = "";
     private AuthenticationState? authState;
 
+    private bool isPatron;
+
     protected override async Task OnInitializedAsync()
     {
         if (this.authenticationStateTask != null)
         {
             this.authState = await authenticationStateTask;
+
+            if (authState.User.Identity != null)
+            {
+                WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
+
+                if (user != null && !string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                {
+                    var patreonService = new PatreonService(new HttpClient());
+
+                    try
+                    {
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                    catch (Exception)
+                    {
+                        await patreonService.RefreshToken(context, user.Id);
+
+                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                    }
+                }
+            }
         }
 
         await base.OnInitializedAsync();
     }
 
-    public void Show(string action)
+    public async void Show(string action)
     {
         currentAction = (currentAction == action) ? "" : action;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
     }
 
-    public void Hide()
+    public async void Hide()
     {
+        await Task.Delay(250);
+
         currentAction = "";
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public void LinkPatreon()
+    {
+        var clientId = Environment.GetEnvironmentVariable("PatreonClientId");
+
+        NavigationManager.NavigateTo($"https://www.patreon.com/oauth2/authorize?response_type=code&client_id={clientId}&redirect_uri=https://wayfinderprojectkh.com/&scope=identity campaigns.members campaigns.members.address");
+    }
+
+    public async Task UnlinkPatreon()
+    {
+        if (this.authenticationStateTask != null)
+        {
+            this.authState = await authenticationStateTask;
+
+            if (this.authState.User.Identity != null)
+            {
+                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                user.PatreonAccessToken = string.Empty;
+                user.PatreonRefreshToken = string.Empty;
+
+                context.SaveChanges();
+            }
+        }
     }
 }
