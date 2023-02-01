@@ -21,7 +21,7 @@ namespace WayfinderProject.Data
                 { new StringContent("authorization_code"), "grant_type" },
                 { new StringContent(Environment.GetEnvironmentVariable("PatreonClientId") ?? ""), "client_id" },
                 { new StringContent(Environment.GetEnvironmentVariable("PatreonClientSecret") ?? ""), "client_secret" },
-                { new StringContent("https://localhost:49153/"), "redirect_uri" }
+                { new StringContent("https://wayfinderprojectkh.com/"), "redirect_uri" }
             };
 
             request.Content = requestContent;
