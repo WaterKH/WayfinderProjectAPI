@@ -98,7 +98,7 @@
                             <li class="wayfinder-dropdown-item">
                                 <a class="wayfinder-link" href="/Identity/Account/Manage" style="color: #5067bb;">Manage Account</a>
                             </li>
-                            <li class="wayfinder-dropdown-item">
+                            <li class="wayfinder-dropdown-item" style="margin-bottom: 5px;">
                                 @if (this.isPatron)
                                 {
                                     <button class="patreon-button" @onclick="@(() => this.UnlinkPatreon())">
@@ -248,7 +248,7 @@
     border-radius: 5px;
     background-color: #ff424d;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 20px;
     color: white;
 }
 

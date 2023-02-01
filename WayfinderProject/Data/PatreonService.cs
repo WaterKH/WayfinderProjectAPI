@@ -46,6 +46,11 @@ namespace WayfinderProject.Data
         {
             var user = context.Users.First(x => x.Id == accountId);
 
+            return await this.IsPatron(user);
+        }
+
+        public async Task<bool> IsPatron(WayfinderProjectUser user)
+        {
             var request = new HttpRequestMessage(HttpMethod.Get, "https://www.patreon.com/api/oauth2/v2/identity");
 
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", user.PatreonAccessToken);

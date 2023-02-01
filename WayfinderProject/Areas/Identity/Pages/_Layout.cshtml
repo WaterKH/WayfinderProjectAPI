@@ -1,7 +1,9 @@
 ﻿@{
-    
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (parentLayout?.ToString()) ?? string.Empty;
+    }
 }
-
 
 @using Microsoft.AspNetCore.Components.Web
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
@@ -36,21 +38,8 @@
             </div>
 
             <article class="content content-body px-4" style="padding-top: 0px;">
-                <h1>Manage your account</h1>
-
-                <div>
-                    <h2>Change your account settings</h2>
-                    <hr />
-                    <div class="row">
-                        <div class="col-md-3">
-                            <partial name="_ManageNav" />
-                        </div>
-                        <div class="col-md-9">
-                            @RenderBody()
-                            @RenderSection("scripts", required: false)
-                        </div>
-                    </div>
-                </div>
+                @RenderBody()
+                @RenderSection("scripts", required: false)
             </article>
 
             <div class="bottom-row px-4">
