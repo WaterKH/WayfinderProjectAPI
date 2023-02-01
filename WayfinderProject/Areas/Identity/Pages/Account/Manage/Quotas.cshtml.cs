@@ -78,7 +78,7 @@ namespace WayfinderProject.Areas.Identity.Pages.Account.Manage
             this.FavouriteLimit = this.IsPatron ? "650" : "200";
             this.ProjectLimit = this.IsPatron ? "20" : "5";
             this.ProjectRecordLimit = this.IsPatron ? "500" : "100";
-            this.APILimit = this.IsPatron ? "5000" : "No Limit";
+            this.APILimit = this.IsPatron ? "No Limit" : "5000";
 
             if (int.TryParse(this.APILimit, out int limit))
             {
