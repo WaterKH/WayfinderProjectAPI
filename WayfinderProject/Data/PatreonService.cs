@@ -34,10 +34,14 @@ namespace WayfinderProject.Data
             {
                 if (httpResponse.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
-                    throw new BadHttpRequestException(httpResponse?.ReasonPhrase);
+                    throw new BadHttpRequestException(httpResponse.ReasonPhrase ?? "");
+                }
+                else if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    throw new UnauthorizedAccessException(httpResponse.ReasonPhrase ?? "");
                 }
 
-                throw new Exception();
+                throw new Exception(httpResponse.ReasonPhrase ?? "");
             }
 
             if (response != null)
