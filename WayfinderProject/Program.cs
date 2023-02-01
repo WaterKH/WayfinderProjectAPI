@@ -43,6 +43,11 @@ builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
 builder.Services.AddAuthentication()
+    .AddDiscord(discordOptions =>
+    {
+        discordOptions.ClientId = Environment.GetEnvironmentVariable("DiscordClientId") ?? "";
+        discordOptions.ClientSecret = Environment.GetEnvironmentVariable("DiscordClientSecret") ?? "";
+    })
     .AddGoogle(options =>
     {
         options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId") ?? "";

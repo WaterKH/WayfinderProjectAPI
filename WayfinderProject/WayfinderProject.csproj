@@ -17,6 +17,7 @@
 
   
   <ItemGroup>
+    <PackageReference Include="AspNet.Security.OAuth.Discord" Version="7.0.0" />
     <PackageReference Include="AspNet.Security.OAuth.Patreon" Version="7.0.0" />
     <PackageReference Include="Blazored.Modal" Version="7.1.0" />
     <PackageReference Include="Blazored.Toast" Version="4.0.0" />
