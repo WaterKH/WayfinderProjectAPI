@@ -142,9 +142,12 @@
 
             if (authState.User.Identity != null)
             {
-                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                WayfinderProjectUser? user = this.context.Users.FirstOrDefault(x => x.UserName == authState.User.Identity.Name);
 
-                await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
+                if (user != null)
+                {
+                    await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
+                }
             }
         }
 
