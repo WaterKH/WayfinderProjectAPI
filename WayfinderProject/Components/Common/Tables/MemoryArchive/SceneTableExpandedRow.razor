@@ -4,7 +4,7 @@
     <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
         <div class="row">
             <div class="col-md-5">
-                <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" />
+                <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
 
                 @if (this.CurrentSubOption == "Details")
                 {
@@ -61,8 +61,32 @@
                 }
                 else if (this.CurrentSubOption == "Dialogue")
                 {
-                    <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 523px; overflow-y: auto; margin-top: 10px;">
-                        <SceneTable Items="Scene.Script.Lines.ToList()" Context="Line" CurrentPage="1">
+                    <div class="row" style="width: 100%; margin: 0px 0px 10px 0px">
+                        <div class="col-md-12" style="align-self: center;">
+                            <div class="wayfinder-search">
+                                <span class="wayfinder-search-icon material-icons">search</span>
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.searchValue = e?.Value?.ToString() ?? string.Empty; await this.SearchDialogue(); })" placeholder="Search Dialogue...">
+                                <button class="wayfinder-search-button" onclick="@(async () => await this.SearchDialogue())">Search</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin: 15px 0px;">
+                        @foreach (var character in this.characters)
+                        {
+                            if (character == "None") continue;
+
+                            var tempCharacter = character;
+                            <div class="@(this.currentCharacter == character ? "character-option-selected" : "character-option")" @onclick="@(() => this.SelectCharacter(tempCharacter))">
+                                @character
+                            </div>
+                        }
+                    </div>
+
+                    <hr />
+
+                    <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 410px; overflow-y: auto; margin-top: 10px;">
+                        <SceneTable Items="this.dialogue" Context="Line" CurrentPage="1">
                             <TableHeader>
                                 <th>Dialogue</th>
                                 <th></th>
@@ -94,12 +118,20 @@
 
     public string CurrentSubOption { get; set; } = "Details";
 
+    private string searchValue = "";
+    private string currentCharacter = "";
+
+    private List<ScriptLineDto> dialogue = new List<ScriptLineDto>();
+    private List<string> characters = new List<string>();
 
     protected override async Task OnInitializedAsync()
     {
         if (this.API != null)
         {
             this.Scene.Script = await this.API.GetScript(Scene.Game.Name, Scene.Name);
+
+            this.dialogue = this.Scene.Script.Lines.ToList();
+            this.characters = this.dialogue.Select(x => x.Character).Distinct().ToList();
         }
 
         await base.OnInitializedAsync();
@@ -108,6 +140,49 @@
     public async Task UpdateCurrentSubOption(string option)
     {
         this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SearchDialogue()
+    {
+        if (!string.IsNullOrEmpty(this.searchValue))
+        {
+            this.dialogue = this.Scene.Script.Lines.Where(x => x.Line.Contains(this.searchValue)).ToList();
+        }
+        else
+        {
+            this.dialogue = this.Scene.Script.Lines.ToList();
+        }
+
+        this.characters = this.dialogue.Select(x => x.Character).Distinct().ToList();
+
+        if (!string.IsNullOrEmpty(this.currentCharacter))
+        {
+            this.dialogue = this.dialogue.Where(x => x.Character == this.currentCharacter).ToList();
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SelectCharacter(string value)
+    {
+        if (this.currentCharacter == value)
+        {
+            this.currentCharacter = "";
+        }
+        else
+        {
+            this.currentCharacter = value;
+        }
+
+        await this.SearchDialogue();
 
         await InvokeAsync(() =>
         {

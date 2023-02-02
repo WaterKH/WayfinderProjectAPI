@@ -66,7 +66,7 @@
             else
             {
                 <div class="col-md-5">
-                    <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" />
+                    <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
 
                     @if (this.CurrentSubOption == "Details")
                     {
@@ -113,8 +113,32 @@
                     }
                     else if (this.CurrentSubOption == "Dialogue")
                     {
-                        <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 523px; overflow-y: auto; margin-top: 10px;">
-                            <InterviewTable Items="Interview.Conversation.ToList()" Context="Line" CurrentPage="1">
+                        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                            <div class="col-md-12" style="align-self: center;">
+                                <div class="wayfinder-search">
+                                    <span class="wayfinder-search-icon material-icons">search</span>
+                                    <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.searchValue = e?.Value?.ToString() ?? string.Empty; await this.SearchDialogue(); })" placeholder="Search Dialogue...">
+                                    <button class="wayfinder-search-button" onclick="@(async () => await this.SearchDialogue())">Search</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin: 15px 0px;">
+                            @foreach (var speaker in this.speakers)
+                            {
+                                if (speaker == "None") continue;
+
+                                var tempSpeaker = speaker;
+                                <div class="@(this.currentSpeaker == speaker ? "speaker-option-selected" : "speaker-option")" @onclick="@(() => this.SelectSpeaker(tempSpeaker))">
+                                    @speaker
+                                </div>
+                            }
+                        </div>
+
+                        <hr />
+
+                        <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 410px; overflow-y: auto; margin-top: 10px;">
+                            <InterviewTable Items="this.conversation" Context="Line" CurrentPage="1">
                                 <TableHeader>
                                     <th>Dialogue</th>
                                     <th></th>
@@ -146,12 +170,20 @@
 
     public string CurrentSubOption { get; set; } = "Details";
 
+    private string searchValue = "";
+    private string currentSpeaker = "";
+
+    private List<InterviewLineDto> conversation = new List<InterviewLineDto>();
+    private List<string> speakers = new List<string>();
 
     protected override async Task OnInitializedAsync()
     {
         if (this.API != null)
         {
             this.Interview.Conversation = await this.API.GetInterviewConversation(Interview.Name, Interview.Provider.Name, Interview.Translator.Name);
+
+            this.conversation = this.Interview.Conversation.ToList();
+            this.speakers = this.conversation.Select(x => x.Speaker).Distinct().ToList();
         }
 
         await base.OnInitializedAsync();
@@ -160,6 +192,49 @@
     public async Task UpdateCurrentSubOption(string option)
     {
         this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SearchDialogue()
+    {
+        if (!string.IsNullOrEmpty(this.searchValue))
+        {
+            this.conversation = this.Interview.Conversation.Where(x => x.Line.Contains(this.searchValue)).ToList();
+        }
+        else
+        {
+            this.conversation = this.Interview.Conversation.ToList();
+        }
+
+        this.speakers = this.conversation.Select(x => x.Speaker).Distinct().ToList();
+
+        if (!string.IsNullOrEmpty(this.currentSpeaker))
+        {
+            this.conversation = this.conversation.Where(x => x.Speaker == this.currentSpeaker).ToList();
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SelectSpeaker(string value)
+    {
+        if (this.currentSpeaker == value)
+        {
+            this.currentSpeaker = "";
+        }
+        else
+        {
+            this.currentSpeaker = value;
+        }
+
+        await this.SearchDialogue();
 
         await InvokeAsync(() =>
         {

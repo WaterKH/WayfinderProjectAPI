@@ -1,8 +1,8 @@
 ﻿<div class="wayfinder-sub-nav-bar" style="@(CustomStyle)">
     @if (!string.IsNullOrEmpty(this.FocusOption) && this.IsFocusEnabled)
     {
-        <div class="@((this.CurrentOption == this.FocusOption) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(this.FocusOption))" style="margin-right: 25px;">
-            <div class="@((this.CurrentOption == this.FocusOption) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px; ">
+        <div class="@((this.CurrentOption == this.FocusOption) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(this.FocusOption))" style="margin-right: 25px;@(this.InvertBackgroundColor ? "background-color: white;" : "")">
+            <div class="@((this.CurrentOption == this.FocusOption) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px;@(this.InvertBackgroundColor ? "background-color: white;" : "")">
                 <img src="@this.GetImage(this.FocusOption)" style="width: 15px; vertical-align: unset; margin-right: 10px; margin-top: 3px;" />  @this.FocusOption
             </div>
         </div>
@@ -14,8 +14,8 @@
     {
         @if (option != this.FocusOption || !this.IsFocusEnabled)
         {
-            <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(option))">
-                <div class="@((this.CurrentOption == option) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px;">
+            <div class="@((this.CurrentOption == option) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(option))" style="@(this.InvertBackgroundColor ? "background-color: white;" : "")">
+                <div class="@((this.CurrentOption == option) ? "wayfinder-option-active" : "wayfinder-option")" style="max-width: 200px;@(this.InvertBackgroundColor ? "background-color: white;" : "")">
                     <img src="@this.GetImage(option)" style="width: 15px; vertical-align: unset; margin-right: 10px; margin-top: 3px;" />  @option
                 </div>
             </div>
@@ -32,6 +32,7 @@
     [Parameter] public string FocusOption { get; set; } = string.Empty;
     [Parameter] public bool IsFocusEnabled { get; set; } = true;
     [Parameter] public bool DisplayIcons { get; set; } = true;
+    [Parameter] public bool InvertBackgroundColor { get; set; } = false;
 
     [Parameter] public Action<string>? UpdateCurrentOption { get; set; }
 

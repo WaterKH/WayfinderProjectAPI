@@ -28,19 +28,10 @@
             </div>
 
 
-            <div id="support">
-                <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("/support", true))" style="text-decoration: none; background: linear-gradient(to right, #ff91cf, #ff4fb2);">
-                    @*<img src="/images/icons/ability.png" class="header-margins">*@
-                    Support
-                    @*<img src="/images/icons/ability.png" class="header-margins-alt">*@
-                </button>
-            </div>
-
-            <span class="wayfinder-span" style="color: #387ee6;">•</span>
-
             <div id="about">
                 <button class="wayfinder-nav-button" onclick="@(() => this.Show("About"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault
-                        style="color: #3c39de;">About <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span>
+                        style="color: #3c39de;">
+                    About <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span>
                 </button>
 
                 <div class="@(this.currentAction == "About" ? "dropdown-container" : "")" onblur="@(() => this.Hide())">
@@ -55,26 +46,23 @@
                 </div>
             </div>
 
+            <span class="wayfinder-span" style="color: #387ee6;">•</span>
+
+            <div id="support">
+                <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("/support", true))" style="text-decoration: none; background: linear-gradient(to right, #ff91cf, #ff4fb2);">
+                    @*<img src="/images/icons/ability.png" class="header-margins">*@
+                    Support
+                    @*<img src="/images/icons/ability.png" class="header-margins-alt">*@
+                </button>
+            </div>
+
             <span class="wayfinder-span" style="color: #68a4ff;">•</span>
 
             <div id="resources">
-                <button class="wayfinder-nav-button" onclick="@(() => this.Show("Resources"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault
-                        style="color: #5067bb;">Resources <span class="oi oi-chevron-bottom wayfinder-chevron" style="color: #989898;"></span>
+                <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("https://github.com/WaterKH/WayfinderProjectAPI/issues/new?assignees=WaterKH&labels=bug&template=bug_report.md&title=", true))"
+                        style="color: white; background: linear-gradient(to right, #d91515, #fd2727);">
+                    Report an Issue?
                 </button>
-
-                <div class="@(this.currentAction == "Resources" ? "dropdown-container" : "")" onblur="@(() => this.Hide())">
-                    <ul class="dropdown-list @(this.currentAction == "Resources" ? "is-active" : "")">
-                        <li class="wayfinder-dropdown-item">
-                            <a class="wayfinder-link" href="https://github.com/WaterKH/WayfinderProjectAPI/issues/new?assignees=WaterKH&labels=bug&template=bug_report.md&title=" target="_blank" style="color: #5067bb;">Report an Issue?</a>
-                        </li>
-                        <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
-                            <a class="wayfinder-link" href="https://github.com/WaterKH/WayfinderProjectAPI/commits/main" target="_blank" style="color: #5067bb;">Version History</a>
-                        </li>
-                        <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
-                            <a class="wayfinder-link" href="/swagger" target="_blank" style="color: #5067bb;">API Reference</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
             <span style="margin-left: 35px;"></span>
