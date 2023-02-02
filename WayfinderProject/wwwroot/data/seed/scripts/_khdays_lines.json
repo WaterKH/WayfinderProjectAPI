@@ -173,84 +173,81 @@
         "Order": 11,
         "Character": "Axel",
         "Line": "No way you're gonna forget his name, right? Let's go."
-      },
+      }
+    ],
+    "Day 8; The Icing on the Cake": [
       {
-        "Order": 12,
-        "Character": "Day 8",
-        "Line": "The Icing on the Cake"
-      },
-      {
-        "Order": 13,
+        "Order": 0,
         "Character": "Axel",
         "Line": "The icing on the cake."
       },
       {
-        "Order": 14,
+        "Order": 1,
         "Character": "Roxas",
         "Line": "Huh?"
       },
       {
-        "Order": 15,
+        "Order": 2,
         "Character": "Axel",
         "Line": "You remember what this ice cream is called?"
       },
       {
-        "Order": 16,
+        "Order": 3,
         "Character": "Roxas",
         "Line": "It's umm..."
       },
       {
-        "Order": 17,
+        "Order": 4,
         "Character": "Axel",
         "Line": "Sea-salt ice cream. I already told you before. Get it memorized."
       },
       {
-        "Order": 18,
+        "Order": 5,
         "Character": "Roxas",
         "Line": "It's salty... but sweet."
       },
       {
-        "Order": 19,
+        "Order": 6,
         "Character": "Axel",
         "Line": "Roxas, you said the same exact thing the other day."
       },
       {
-        "Order": 20,
+        "Order": 7,
         "Character": "Roxas",
         "Line": "I did? I don't remember..."
       },
       {
-        "Order": 21,
+        "Order": 8,
         "Character": "Axel",
         "Line": "So what has it been, a week since you joined the Organization?"
       },
       {
-        "Order": 22,
+        "Order": 9,
         "Character": "Roxas",
         "Line": "I guess it has..."
       },
       {
-        "Order": 23,
+        "Order": 10,
         "Character": "Axel",
         "Line": "You guess it has? C'mon, you must remember that much. Well, here you are, finally out in the field, working for the Organization, right?"
       },
       {
-        "Order": 24,
+        "Order": 11,
         "Character": "Roxas",
         "Line": "For the Organization..."
       },
       {
-        "Order": 25,
+        "Order": 12,
         "Character": "Axel",
         "Line": "You might even say that today is where it all really begins for you."
       },
       {
-        "Order": 26,
+        "Order": 13,
         "Character": "Roxas",
         "Line": "Where it all begins?"
       },
       {
-        "Order": 27,
+        "Order": 14,
         "Character": "Roxas",
         "Line": "As a member of the Organization, I'll be receiving missions everyday... But I'm still not exactly sure what I'm supposed to do."
       }
