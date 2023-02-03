@@ -1,0 +1,43 @@
+.google-button {
+    background-color: #4285f4;
+    color: white;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.discord-button {
+    background-color: #7289da;
+    color: white;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.twitter-button {
+    background-color: #55acee;
+    color: white;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+.login-icon {
+    margin-right: 25px;
+}
+
+.login-text {
+    padding: 15px;
+}
+
+
+.return-button {
+    width: 100%;
+}
+
+.a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: -webkit-link;
+}

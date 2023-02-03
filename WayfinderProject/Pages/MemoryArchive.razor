@@ -473,13 +473,13 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var authState = await authenticationStateTask;
 
-            if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-            {
-                NavigationManager.NavigateTo("/Identity/Account/Login", true);
-            }
+            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            //{
+            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
+            //}
 
             // Set Patron Status
-            if (authState.User.Identity != null)
+            if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
             {
                 WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
 
@@ -512,6 +512,24 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (firstRender)
         {
+            if (this.authenticationStateTask != null)
+            {
+                var authState = await authenticationStateTask;
+
+                if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+                {
+                    var options = new ModalOptions { Class = "login-modal-custom" };
+
+                    var modal = Modal.Show<LoginModal>("Log In", new ModalParameters(), options);
+                    var temp = await modal.Result;
+
+                    if (temp.Cancelled)
+                    {
+                        NavigationManager.NavigateTo("/");
+                    }
+                }
+            }
+
             try
             {
                 await this.ResetOptions();

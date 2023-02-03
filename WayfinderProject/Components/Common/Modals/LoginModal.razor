@@ -1,0 +1,26 @@
+﻿@inject NavigationManager NavigationManager
+
+<div class="simple-form">
+    <label style="padding: 0px 30px;">
+        <strong>To use The Wayfinder Project,</strong> please log in through existing accounts (Discord, Google or Twitter) or register/login with a local account.
+    </label>
+    
+    <label style="padding: 30px;">
+        Development of a temporary user to experience the project without having to login was attempted, 
+        but unfortunately this could not be worked into the current design at this time. We hope that you will still take the time to 
+        link any of your external logins for a quick and easy option to start experiencing all that this website has to offer.
+    </label>
+
+    <div style="text-align: center;">
+        <button id="login-submit" @onclick="@(() => NavigationManager.NavigateTo("/Identity/Account/Login", true))" type="submit" class="w-75 btn btn-lg btn-primary">Log in</button>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+}

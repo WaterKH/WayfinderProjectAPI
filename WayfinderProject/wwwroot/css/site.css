@@ -80,6 +80,20 @@ a, .btn-link {
     margin-top: 5vh;
 }
 
+.login-modal-custom {
+    background-color: #F2F2F2;
+    border-radius: 30px;
+    display: flex;
+    z-index: 102;
+    flex-direction: column;
+    border: 1px solid #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 25%);
+    max-width: 30vw;
+    margin-left: 33vw;
+    margin-top: 15vh;
+}
+
 /* Rounded sliders */
 .slider.round {
     border-radius: 34px;

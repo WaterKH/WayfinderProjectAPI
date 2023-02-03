@@ -51,7 +51,27 @@
                             <p>
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    if (provider.DisplayName == "Patreon") continue;
+
+                                    if (provider.DisplayName == "Discord")
+                                    {
+                                        <button type="submit" class="btn discord-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                            <span class="login-icon"><img src="/images/discord.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
+                                        </button>
+                                    }
+                                    else if (provider.DisplayName == "Google")
+                                    {
+                                        <button type="submit" class="btn google-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                            <span class="login-icon"><img src="/images/google.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
+                                        </button>
+                                    }
+
+                                    else if (provider.DisplayName == "Twitter")
+                                    {
+                                        <button type="submit" class="btn twitter-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                            <span class="login-icon"><img src="/images/twitter.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
+                                        </button>
+                                    }
                                 }
                             </p>
                         </div>
@@ -61,6 +81,46 @@
         </section>
     </div>
 </div>
+
+<style>
+    .google-button
+    {
+        background-color: #4285f4;
+        color: white;
+    font-weight: 600;    
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .discord-button
+    {
+        background-color: #7289da;
+        color: white;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .twitter-button 
+    {
+        background-color: #55acee;
+        color: white;
+        font-weight: 600;    
+        display: block;
+        margin-bottom: 15px;
+    }
+
+
+    .login-icon 
+    {
+        margin-right: 25px;
+    }
+
+    .login-text
+    {
+        padding: 15px;
+    }
+</style>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

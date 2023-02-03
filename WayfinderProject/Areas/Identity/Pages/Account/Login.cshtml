@@ -1,25 +1,61 @@
 ﻿@page
 @model LoginModel
 
-@{
-    ViewData["Title"] = "Log in";
-}
-
-<h1>@ViewData["Title"]</h1>
 <div class="row" style="padding: 25px">
-    <div class="col-md-4">
+    <div class="col-md-4 offset-md-4">
+        <section>
+            <h2>Use an external service to log in.</h2>
+            <hr />
+            @{
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    <div style="text-align: -webkit-center;">
+                        <p>
+                            @foreach (var provider in Model.ExternalLogins!)
+                            {
+                                if (provider.DisplayName == "Patreon") continue;
+
+                                if (provider.DisplayName == "Discord")
+                                {
+                                    <button type="submit" class="btn discord-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                        <span class="login-icon"><img src="/images/discord.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
+                                    </button>
+                                }
+                                else if (provider.DisplayName == "Google")
+                                {
+                                    <button type="submit" class="btn google-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                        <span class="login-icon"><img src="/images/google.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
+                                    </button>
+                                }
+                                    
+                                else if (provider.DisplayName == "Twitter")
+                                {
+                                    <button type="submit" class="btn twitter-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                        <span class="login-icon"><img src="/images/twitter.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
+                                    </button>
+                                }
+                            }
+                        </p>
+                    </div>
+                </form>
+            }
+        </section>
+    </div>
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4 offset-md-4" style="margin-top: 35px;">
         <section>
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
+                <h3>Or use a local account to log in.</h3>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="Email..." />
                     <label asp-for="Input.Email" class="form-label">Email</label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password..." />
                     <label asp-for="Input.Password" class="form-label">Password</label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
@@ -32,68 +68,22 @@
                 <div>
                     <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
                 </div>
+                
+                <h4><span>Or</span></h4>
+
+                <div>
+                    <button id="register-submit" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="w-100 btn btn-lg btn-primary btn-primary-alt">Register</button>
+                </div>
+
                 <div style="margin-top: 10px;">
                     <p>
                         <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
                     </p>
                     <p>
                         <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
                     </p>
                 </div>
             </form>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    if (provider.DisplayName == "Patreon") continue;
-
-                                    if (provider.DisplayName == "Discord")
-                                    {
-                                        <button type="submit" class="btn discord-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
-                                            <span class="login-icon"><img src="/images/discord.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
-                                        </button>
-                                    }
-                                    else if (provider.DisplayName == "Google")
-                                    {
-                                        <button type="submit" class="btn google-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
-                                            <span class="login-icon"><img src="/images/google.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
-                                        </button>
-                                    }
-                                    
-                                    else if (provider.DisplayName == "Twitter")
-                                    {
-                                        <button type="submit" class="btn twitter-button" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
-                                            <span class="login-icon"><img src="/images/twitter.png" style="width: 25px;" /></span> <span class="login-text">Sign in with @provider.DisplayName</span>
-                                        </button>
-                                    }
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
         </section>
     </div>
 </div>
@@ -136,6 +126,30 @@
     {
         padding: 15px;
     }
+
+
+    h4 {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #000;
+        line-height: 0.1em;
+        margin: 30px 0px;
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+        h4 span {
+            background: #ffffff;
+            padding: 0 20px;
+        }
+
+    .btn-primary-alt {
+        background-color: #ab2dae;
+    }
+
+        .btn-primary-alt:hover {
+            background-color: #a419a7;
+        }
 </style>
 
 @section Scripts {
