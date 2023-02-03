@@ -68,6 +68,17 @@ namespace WayfinderProjectAPI.Data
                 Line = x.Line
             });
         }
+
+        public static IQueryable<AliasDto> ToDto(this IQueryable<Alias> aliases)
+        {
+            return aliases
+                .Select(x => new AliasDto
+                {
+                    Id = x.Id,
+                    Original = x.Original,
+                    AppearAs = x.AppearAs
+                });
+        }
         #endregion Memory Archive
 
         #region Jiminy Journal
@@ -219,7 +230,8 @@ namespace WayfinderProjectAPI.Data
                 MainSearchEverything = settings.MainSearchEverything,
                 TrackHistory = settings.TrackHistory,
                 FavouriteSearch = settings.FavouriteSearch,
-                ProjectSearch = settings.ProjectSearch
+                ProjectSearch = settings.ProjectSearch,
+                IncludeAlias = settings.IncludeAlias
             };
         }
         #endregion Search History And Settings

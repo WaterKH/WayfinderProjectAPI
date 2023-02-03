@@ -21,6 +21,8 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<World>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Script>().Property(p => p.Id).ValueGeneratedOnAdd();
 
+            modelBuilder.Entity<Alias>().Property(p => p.Id).ValueGeneratedOnAdd();
+
             modelBuilder.Entity<Interview>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<InterviewLine>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Participant>().Property(p => p.Id).ValueGeneratedOnAdd();
@@ -56,6 +58,8 @@ namespace WayfinderProjectAPI.Data
         public DbSet<Scene> Scenes { get; set; } = null!;
         public DbSet<World> Worlds { get; set; } = null!;
         public DbSet<Script> Script { get; set; } = null!;
+
+        public DbSet<Alias> Aliases { get; set; } = null!;
 
         public DbSet<Interview> Interviews { get; set; } = null!;
         public DbSet<InterviewLine> InterviewLines { get; set; } = null!;

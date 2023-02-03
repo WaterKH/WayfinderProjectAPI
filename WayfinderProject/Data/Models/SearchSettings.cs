@@ -25,5 +25,7 @@ namespace WayfinderProjectAPI.Data.Models
         public bool FavouriteSearch { get; set; } = false;
         [Required]
         public bool ProjectSearch { get; set; } = false;
+        [Required]
+        public bool IncludeAlias { get; set; } = false;
     }
 }

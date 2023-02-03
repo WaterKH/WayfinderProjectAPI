@@ -58,16 +58,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var worldsList = worlds.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))))
-                {
-                    if (result == null || result.Worlds == null) continue;
-
-                    if (worldsList.All(x => result.Worlds.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -76,16 +67,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var areasList = areas.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Areas).Where(x => x.Areas.Any(y => areasList.Contains(y.Name))))
-                {
-                    if (result == null || result.Areas == null) continue;
-
-                    if (areasList.All(x => result.Areas.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Areas).Where(x => x.Areas.Any(y => areasList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -94,16 +76,19 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var charactersList = characters.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))))
+                // Look up aliases of characters
+                List<string> aliases = new List<string>();
+                if (settings.IncludeAlias)
                 {
-                    if (result == null || result.Characters == null) continue;
-
-                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
+                    foreach (var character in charactersList)
                     {
-                        resultIds.Add(result.Id);
+                        var tempAliases = this._context.Aliases.Where(x => x.Original == character).Select(x => x.AppearAs);
+
+                        aliases.AddRange(tempAliases);
                     }
                 }
+
+                var resultIds = results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name) || x.Characters.Any(y => aliases.Contains(y.Name)))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -112,16 +97,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var musicList = music.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Music).Where(x => x.Music.Any(y => musicList.Contains(y.Name))))
-                {
-                    if (result == null || result.Music == null) continue;
-
-                    if (musicList.All(x => result.Music.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Music).Where(x => x.Music.Any(y => musicList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -192,27 +168,6 @@ namespace WayfinderProjectAPI.Controllers
                     x.Music.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
                     x.Worlds.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))
                 ).Select(x => x.Id).ToList();
-
-            //var resultIds = new List<int>();
-            //foreach (var result in results.Include(x => x.Areas).Where(x => x.Areas.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
-            //{
-            //    resultIds.Add(result.Id);
-            //}
-
-            //foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
-            //{
-            //    resultIds.Add(result.Id);
-            //}
-
-            //foreach (var result in results.Include(x => x.Music).Where(x => x.Music.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
-            //{
-            //    resultIds.Add(result.Id);
-            //}
-
-            //foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))))
-            //{
-            //    resultIds.Add(result.Id);
-            //}
 
             var allIds = scenes.Select(x => x.Id).ToList().Union(resultIds);
 
@@ -292,16 +247,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var gamesList = games.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Games).Where(x => x.Games.Any(y => gamesList.Contains(y.Name))))
-                {
-                    if (result == null || result.Games == null) continue;
-
-                    if (gamesList.All(x => result.Games.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Games).Where(x => x.Games.Any(y => gamesList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -310,16 +256,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var participantsList = participants.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Participants).Where(x => x.Participants.Any(y => participantsList.Contains(y.Name))))
-                {
-                    if (result == null || result.Participants == null) continue;
-
-                    if (participantsList.All(x => result.Participants.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Participants).Where(x => x.Participants.Any(y => participantsList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -487,16 +424,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var charactersList = characters.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))))
-                {
-                    if (result == null || result.Characters == null) continue;
-
-                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -505,16 +433,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var worldsList = worlds.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))))
-                {
-                    if (result == null || result.Worlds == null) continue;
-
-                    if (worldsList.All(x => result.Worlds.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -629,16 +548,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var charactersList = characterNames.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))))
-                {
-                    if (result == null || result.Characters == null) continue;
-
-                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -670,16 +580,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var worldsList = worldNames.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))))
-                {
-                    if (result == null || result.Worlds == null) continue;
-
-                    if (worldsList.All(x => result.Worlds.Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -743,16 +644,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var synthList = synthMaterials.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.RecipeMaterials).Where(x => x.RecipeMaterials.Any(y => synthList.Contains(y.Inventory.Name))))
-                {
-                    if (result == null || result.RecipeMaterials == null) continue;
-
-                    if (synthList.All(x => result.RecipeMaterials.Select(y => y.Inventory.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.RecipeMaterials).Where(x => x.RecipeMaterials.Any(y => synthList.Contains(y.Inventory.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -915,16 +807,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var enemiesList = enemies.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => enemiesList.Contains(y.CharacterLocation.Character.Name))))
-                {
-                    if (result == null || result.EnemyDrops == null) continue;
-
-                    if (enemiesList.All(x => result.EnemyDrops.Select(y => y.CharacterLocation.Character.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => enemiesList.Contains(y.CharacterLocation.Character.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -933,16 +816,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var worldsList = worlds.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => worldsList.Contains(y.CharacterLocation.World.Name))))
-                {
-                    if (result == null || result.EnemyDrops == null) continue;
-
-                    if (worldsList.All(x => result.EnemyDrops.Select(y => y.CharacterLocation.World.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => worldsList.Contains(y.CharacterLocation.World.Name))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -951,16 +825,7 @@ namespace WayfinderProjectAPI.Controllers
             {
                 var areasList = areas.Split("::").Select(x => x.Trim());
 
-                var resultIds = new List<int>();
-                foreach (var result in results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => y.CharacterLocation.Areas.Any(z => areasList.Contains(z.Name)))))
-                {
-                    if (result == null || result.EnemyDrops == null) continue;
-
-                    if (areasList.All(x => result.EnemyDrops.Select(y => y.CharacterLocation).SelectMany(y => y.Areas).Select(y => y.Name).Any(y => y == x)))
-                    {
-                        resultIds.Add(result.Id);
-                    }
-                }
+                var resultIds = results.Include(x => x.EnemyDrops).Where(x => x.EnemyDrops.Any(y => y.CharacterLocation.Areas.Any(z => areasList.Contains(z.Name)))).Select(x => x.Id);
 
                 results = results.Where(x => resultIds.Contains(x.Id));
             }
@@ -1122,7 +987,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("SaveSearchSettings")]
-        public async Task SaveSearchSettings(string accountId, bool autoSearch, bool autoExpandFirstResult, bool mainSearchEverything, bool trackHistory, bool favourites, bool projects)
+        public async Task SaveSearchSettings(string accountId, bool autoSearch, bool autoExpandFirstResult, bool mainSearchEverything, bool trackHistory, bool favourites, bool projects, bool includeAlias)
         {
             var settings = await this._context.SearchSettings.FirstOrDefaultAsync(x => x.AccountId == accountId);
 
@@ -1134,6 +999,7 @@ namespace WayfinderProjectAPI.Controllers
                 settings.TrackHistory = trackHistory;
                 settings.FavouriteSearch = favourites;
                 settings.ProjectSearch = projects;
+                settings.IncludeAlias = includeAlias;
             }
             else
             {
@@ -1145,7 +1011,8 @@ namespace WayfinderProjectAPI.Controllers
                     MainSearchEverything = mainSearchEverything,
                     TrackHistory = trackHistory,
                     FavouriteSearch = favourites,
-                    ProjectSearch = projects
+                    ProjectSearch = projects,
+                    IncludeAlias = includeAlias
                 });
             }
 

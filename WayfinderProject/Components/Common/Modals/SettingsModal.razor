@@ -46,6 +46,10 @@
         <div class="col-md-3" style="text-align: center;">
             <button class="@(this.searchSettings.ProjectSearch ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("ProjectSearch"))">Projects Search</button>
         </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <button class="@(this.searchSettings.IncludeAlias ? "active-wayfinder-button" : "inactive-wayfinder-button")" onclick="@(() => this.ToggleSetting("IncludeAlias"))">Include Alias</button>
+        </div>
     </div>
 
     <div class="row" style="margin-top: 15px;">
@@ -55,6 +59,10 @@
 
         <div class="col-md-3" style="text-align: center;">
             <label>This option allows you to search only through your projects. If you have favourite search enabled, search results will include both.</label>
+        </div>
+
+        <div class="col-md-3" style="text-align: center;">
+            <label>This option allows you to search with aliases enabled, meaning searching for a character yields additional characters they appear as, i.e. Luxu will search for Xigbar as well.</label>
         </div>
     </div>
 
@@ -86,7 +94,7 @@
     {
         if (this.API != null)
         {
-            await this.API.SaveSearchSettings(this.AccountId, this.searchSettings.AutoSearch, this.searchSettings.AutoExpandFirstResult, this.searchSettings.MainSearchEverything, this.searchSettings.TrackHistory, this.searchSettings.FavouriteSearch, this.searchSettings.ProjectSearch);
+            await this.API.SaveSearchSettings(this.AccountId, this.searchSettings.AutoSearch, this.searchSettings.AutoExpandFirstResult, this.searchSettings.MainSearchEverything, this.searchSettings.TrackHistory, this.searchSettings.FavouriteSearch, this.searchSettings.ProjectSearch, this.searchSettings.IncludeAlias);
         }
     }
 
@@ -111,6 +119,9 @@
                 break;
             case "ProjectSearch":
                 this.searchSettings.ProjectSearch = !this.searchSettings.ProjectSearch;
+                break;
+            case "IncludeAlias":
+                this.searchSettings.IncludeAlias = !this.searchSettings.IncludeAlias;
                 break;
         }
     }
