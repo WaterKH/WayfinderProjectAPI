@@ -27,6 +27,14 @@
                 <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+
+            <div class="checkbox mb-3">
+                <label asp-for="Input.AcceptedTerms" class="form-label">
+                    <input class="form-check-input" asp-for="Input.AcceptedTerms" />
+                    <label asp-for="Input.AcceptedTerms">I have read and accept the <a href="/terms_of_use" target="_blank">Terms of Use</a> and <a href="/privacy_policy" target="_blank">Privacy Policy</a>.</label>
+                </label>
+            </div>
+
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
