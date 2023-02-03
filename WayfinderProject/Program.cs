@@ -88,7 +88,7 @@ builder.Services.AddQuartz(q =>
     q.AddTrigger(opts => opts
         .ForJob(cutsceneJobKey)
         .WithIdentity("DailyCutsceneJob-trigger")
-        .WithCronSchedule("0 1 * * * ?")); // run every day at 1am
+        .WithCronSchedule("0 0 9 ? * MON")); // run every Monday at 9am
 
     // Entry Daily Job
     var entryJobKey = new JobKey("DailyEntryJob");
@@ -97,7 +97,7 @@ builder.Services.AddQuartz(q =>
     q.AddTrigger(opts => opts
         .ForJob(entryJobKey)
         .WithIdentity("DailyEntryJob-trigger")
-        .WithCronSchedule("0 21 * * * ?")); // run every day at 9pm
+        .WithCronSchedule("0 0 9 ? * WED")); // run every Wednesday at 9am
 
     // Moogle Record Daily Job
     var moogleRecordJobKey = new JobKey("DailyMoogleRecordJob");
@@ -106,7 +106,7 @@ builder.Services.AddQuartz(q =>
     q.AddTrigger(opts => opts
         .ForJob(moogleRecordJobKey)
         .WithIdentity("DailyMoogleRecordJob-trigger")
-        .WithCronSchedule("0 5 * * * ?")); // run every day at 5am
+        .WithCronSchedule("0 0 9 ? * FRI")); // run every Friday at 9am
 });
 
 builder.Services.AddQuartzHostedService(opt =>
