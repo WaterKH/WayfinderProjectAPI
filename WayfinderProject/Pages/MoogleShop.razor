@@ -738,7 +738,6 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             try
             {
                 await this.ResetOptions();
-                await this.HandleQueryParams();
 
                 if (this.authenticationStateTask != null && this.api != null && !this.Loading)
                 {
@@ -753,6 +752,8 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                     this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                     this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                    
+                    await this.HandleQueryParams();
                 }
             }
             catch (Exception)
@@ -772,12 +773,8 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             try
             {
                 Thread.Sleep(1000);
-
+                
                 await this.ResetOptions();
-
-                Thread.Sleep(1000);
-
-                await this.HandleQueryParams();
 
                 if (this.authenticationStateTask != null && this.api != null && !this.Loading)
                 {
@@ -792,6 +789,10 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                     this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                     this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+
+                    Thread.Sleep(1000);
+
+                    await this.HandleQueryParams();
                 }
             }
             catch (Exception)

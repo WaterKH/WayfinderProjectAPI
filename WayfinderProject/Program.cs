@@ -1,5 +1,8 @@
 using Blazored.Modal;
 using Blazored.Toast;
+using Discord;
+using Discord.Commands;
+using Discord.WebSocket;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -43,6 +46,8 @@ builder.Services.AddScoped(x => new HttpClient() { BaseAddress = new Uri("https:
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
+
+// Add Authentication
 builder.Services.AddAuthentication()
     .AddDiscord(discordOptions =>
     {
@@ -62,6 +67,7 @@ builder.Services.AddAuthentication()
     });
 
 
+// Add Scheduling
 builder.Services.AddQuartz(q =>
 {
     q.UseMicrosoftDependencyInjectionJobFactory();
@@ -112,7 +118,32 @@ builder.Services.AddDataProtection()
     .SetApplicationName("wayfinder-project")
     .PersistKeysToFileSystem(new DirectoryInfo("/data-protetion/keys"));
 
+
+// Create Discord Bot
+
+var discordConfig = new DiscordSocketConfig()
+{
+    GatewayIntents = GatewayIntents.All
+};
+
+var _client = new DiscordSocketClient(discordConfig);
+var _commands = new CommandService();
+
+
+builder.Services
+    .AddSingleton(discordConfig)
+    .AddSingleton(_commands)
+    .AddSingleton(_client);
+
 var app = builder.Build();
+
+
+// Discord Start
+var _commandHandler = new DiscordCommandHandler(app.Services, _client, _commands);
+await _commandHandler.InstallCommandsAsync();
+
+await _client.LoginAsync(TokenType.Bot, Environment.GetEnvironmentVariable("DiscordBotToken"));
+await _client.StartAsync();
 
 //using (var scope = app.Services.CreateScope())
 //{

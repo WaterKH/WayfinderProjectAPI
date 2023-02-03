@@ -533,7 +533,6 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             try
             {
                 await this.ResetOptions();
-                await this.HandleQueryParams();
 
                 if (this.authenticationStateTask != null && this.api != null && !this.Loading)
                 {
@@ -548,6 +547,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                     this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                    
+                    await this.HandleQueryParams();
                 }
             }
             catch (Exception)
@@ -567,12 +568,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             try
             {
                 Thread.Sleep(1000);
-
+                
                 await this.ResetOptions();
-
-                Thread.Sleep(1000);
-
-                await this.HandleQueryParams();
 
                 if (this.authenticationStateTask != null && this.api != null && !this.Loading)
                 {
@@ -587,6 +584,10 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                     this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                    
+                    Thread.Sleep(1000);
+
+                    await this.HandleQueryParams();
                 }
             }
             catch (Exception)

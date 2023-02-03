@@ -1356,5 +1356,23 @@ namespace WayfinderProjectAPI.Controllers
             }
         }
         #endregion Favorites And Projects
+
+
+        #region Discord Methods
+        [HttpGet("GetRandomScene")]
+        public async Task<SceneDto> GetRandomScene()
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+
+            var ids = await this._context.Scenes.Select(x => x.Id).ToListAsync();
+
+            var randomScene = random.Next(0, ids.Count);
+
+            var id = ids[randomScene];
+            return (await this._context.Scenes.Include(x => x.Game).Include(x => x.Areas).Include(x => x.Characters).Include(x => x.Music).Include(x => x.Worlds).Include(x => x.Script).Include(x => x.Script.Lines)
+                .FirstAsync(x => x.Id == randomScene))
+                .ToDto();
+        }
+        #endregion Discord Methods
     }
 }

@@ -30,6 +30,29 @@ namespace WayfinderProjectAPI.Data
                 });
         }
 
+        public static SceneDto ToDto(this Scene scene)
+        {
+            return new SceneDto
+            {
+                Id = scene.Id,
+                Game = new GameDto { Id = scene.Game.Id, Name = scene.Game.Name },
+                Name = scene.Name,
+                Link = scene.Link,
+                Worlds = scene.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
+                Characters = scene.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
+                Areas = scene.Areas.Select(y => new AreaDto { Id = y.Id, Name = y.Name }).ToList(),
+                Music = scene.Music.Select(y => new MusicDto { Id = y.Id, Name = y.Name, Link = y.Link }).ToList(),
+                //Script = new ScriptDto
+                //{
+                //    Id = scene.Script.Id,
+                //    SceneName = scene.Script.SceneName,
+                //    GameName = scene.Script.GameName,
+                //    Lines = scene.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
+                //},
+                Notes = scene.Notes
+            };
+        }
+
         public static ScriptDto ToDto(this Script script)
         {
             return new ScriptDto
