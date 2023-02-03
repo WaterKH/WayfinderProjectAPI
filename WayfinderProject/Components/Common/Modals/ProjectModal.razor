@@ -16,6 +16,18 @@
 
                 <button class="@(tempContains ? "remove-project-button" : "add-project-button")" onclick="@(async () => await this.CreateDeleteProjectRecord(project.Name))">@(tempContains ? "Remove from Project" : "Add to Project")</button>
                 <button class="project-button" onclick="@(() => NavigationManager.NavigateTo("/Projects", true))">Go To Project</button>
+                
+                @if (tempContains)
+                {
+                    var notes = project.ProjectRecords.First(x => x.SpecificRecordId == this.SpecificRecordId).Notes;
+                    var tempInput = notes;
+
+                    <hr />
+
+                    <input class="custom-input" style="width: 85%; margin-bottom: 15px;" value="@notes" @onchange="@(async (input) => { tempInput = input.Value?.ToString(); await this.UpdateProjectRecordNotes(project.Name, input.Value?.ToString()); })">
+                    <br />
+                    <button class="wayfinder-button" onclick="@(async () => await this.UpdateProjectRecordNotes(project.Name, tempInput))">Update Notes</button>
+                }
             </div>
         }
     </div>
@@ -34,7 +46,7 @@
             {
                 <input maxlength="50" class="custom-input" @bind="@this.projectName" @oninput="@((input) => { if (input.Value != null) { this.projectName = (string)input.Value; } })">
 
-                <button class="wayfinder-button" onclick="@(async () => await this.CreateProject(projectName))">Create Project</button>   
+                <button class="wayfinder-button" style="margin-left: 10px;" onclick="@(async () => await this.CreateProject(projectName))">Create Project</button>  
             }
         </div>
     </div>
@@ -133,6 +145,16 @@
                 toastService.ShowError($"Reached max Project Record Quota ({this.projectRecordCount}/{this.projectRecordCount}).{additionalInfo}");
             }
         }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task UpdateProjectRecordNotes(string name, string? input)
+    {
+        await this.API.EditProjectRecordNotes(this.AccountId, name, this.Type, this.Category, this.SpecificRecordId, input ?? string.Empty);
 
         await InvokeAsync(() =>
         {
