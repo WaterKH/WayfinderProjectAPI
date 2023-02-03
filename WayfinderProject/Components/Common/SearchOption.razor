@@ -4,7 +4,7 @@
 <div class="@(this.IsSelected ? "search-option-selected" : "search-option")" @onclick="@(() => this.SelectValue.InvokeAsync(this.Value))">
     <div class="row">
         <div class="col-md-1 wayfinder-option-color" style="background-color: @(this.Color)">
-            <img src="/images/icons/@(this.Id.ToLower())_gray.png" style="width: 100%; margin-top: 15px; opacity: 10%; rotate: 30deg;" />
+            @*<img src="/images/icons/@(this.Id.ToLower())_gray.png" style="width: 100%; margin-top: 15px; opacity: 10%; rotate: 30deg;" />*@
         </div>
 
         <div class="col-md-1 wayfinder-option-padding" style="padding-top: 15px;">
