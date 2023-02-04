@@ -58,6 +58,7 @@ builder.Services.AddAuthentication()
     {
         options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId") ?? "";
         options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret") ?? "";
+        options.ReturnUrlParameter = "https://wayfinderprojectkh.com/signin-google";
     })
     .AddTwitter(twitterOptions =>
     {
