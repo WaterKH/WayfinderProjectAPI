@@ -470,8 +470,8 @@ namespace WayfinderProjectAPI.Controllers
         #endregion Memory Archive
 
         #region Jiminy Journal
-        [HttpGet("SearchForJournalEntries")]
-        public async Task<List<JournalEntryDto>> SearchForJournalEntries([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
+        [HttpGet("GetJournalEntries")]
+        public async Task<List<JournalEntryDto>> GetJournalEntries([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
         {
             var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
             if (settings == null)
@@ -1370,8 +1370,145 @@ namespace WayfinderProjectAPI.Controllers
 
             var id = ids[randomScene];
             return (await this._context.Scenes.Include(x => x.Game).Include(x => x.Areas).Include(x => x.Characters).Include(x => x.Music).Include(x => x.Worlds).Include(x => x.Script).Include(x => x.Script.Lines)
-                .FirstAsync(x => x.Id == randomScene))
+                .FirstAsync(x => x.Id == id))
                 .ToDto();
+        }
+
+        [HttpGet("GetScene")]
+        public async Task<SceneDto> GetScene(int sceneId)
+        {
+            var scene = await this._context.Scenes.AsNoTrackingWithIdentityResolution()
+                .Include(x => x.Game).Include(x => x.Areas).Include(x => x.Characters).Include(x => x.Music).Include(x => x.Worlds).Include(x => x.Script).Include(x => x.Script.Lines)
+                .FirstOrDefaultAsync(x => x.Id == sceneId);
+
+            if (scene == null)
+            {
+                return new SceneDto();
+            }
+
+            return scene.ToDto();
+        }
+
+        [HttpGet("GetRandomInterview")]
+        public async Task<InterviewDto> GetRandomInterview()
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+
+            var ids = await this._context.Interviews.Select(x => x.Id).ToListAsync();
+
+            var randomInterview = random.Next(0, ids.Count);
+
+            var id = ids[randomInterview];
+            return (await this._context.Interviews.Include(x => x.Games).Include(x => x.Translator).Include(x => x.Participants).Include(x => x.Conversation).Include(x => x.Provider)
+                .FirstAsync(x => x.Id == id))
+                .ToDto();
+        }
+
+        [HttpGet("GetInterview")]
+        public async Task<InterviewDto> GetInterview(int interviewId)
+        {
+            var interview = await this._context.Interviews.AsNoTrackingWithIdentityResolution()
+                .Include(x => x.Games).Include(x => x.Translator).Include(x => x.Participants).Include(x => x.Conversation).Include(x => x.Provider)
+                .FirstOrDefaultAsync(x => x.Id == interviewId);
+
+            if (interview == null)
+            {
+                return new InterviewDto();
+            }
+
+            return interview.ToDto();
+        }
+
+        [HttpGet("GetRandomEntry")]
+        public async Task<JournalEntryDto> GetRandomEntry()
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+
+            var ids = await this._context.JournalEntries.Select(x => x.Id).ToListAsync();
+
+            var randomEntry = random.Next(0, ids.Count);
+
+            var id = ids[randomEntry];
+            return (await this._context.JournalEntries.Include(x => x.Game).Include(x => x.Characters).Include(x => x.Worlds)
+                .FirstAsync(x => x.Id == id))
+                .ToDto();
+        }
+
+        [HttpGet("GetEntry")]
+        public async Task<JournalEntryDto> GetEntry(int entryId)
+        {
+            var entry = await this._context.JournalEntries.AsNoTrackingWithIdentityResolution()
+                .Include(x => x.Game).Include(x => x.Characters).Include(x => x.Worlds)
+                .FirstOrDefaultAsync(x => x.Id == entryId);
+
+            if (entry == null)
+            {
+                return new JournalEntryDto();
+            }
+
+            return entry.ToDto();
+        }
+
+        [HttpGet("GetRandomRecipe")]
+        public async Task<RecipeDto> GetRandomRecipe()
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+
+            var ids = await this._context.Recipes.Select(x => x.Id).ToListAsync();
+
+            var randomRecipe = random.Next(0, ids.Count);
+
+            var id = ids[randomRecipe];
+            var recipe = this._context.Recipes.Include(x => x.Game).Include(x => x.RecipeMaterials)
+                .Where(x => x.Id == id);
+
+            return await recipe.ToDto().FirstAsync();
+        }
+
+        [HttpGet("GetRecipe")]
+        public async Task<RecipeDto> GetRecipe(int recipeId)
+        {
+            var recipe = this._context.Recipes.AsNoTrackingWithIdentityResolution()
+                .Include(x => x.Game).Include(x => x.RecipeMaterials)
+                .Where(x => x.Id == recipeId);
+
+            if (recipe == null)
+            {
+                return new RecipeDto();
+            }
+
+            return await recipe.ToDto().FirstAsync();
+        }
+
+        [HttpGet("GetRandomRecord")]
+        public async Task<InventoryDto> GetRandomRecord()
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+
+            var ids = await this._context.Inventory.Select(x => x.Id).ToListAsync();
+
+            var randomInventory = random.Next(0, ids.Count);
+
+            var id = ids[randomInventory];
+            var inventory = this._context.Inventory.Include(x => x.Game).Include(x => x.EnemyDrops)
+                .Where(x => x.Id == id);
+
+            return await inventory.ToDto().FirstAsync();
+        }
+
+        [HttpGet("GetRecord")]
+        public async Task<InventoryDto> GetRecord(int inventoryId)
+        {
+            var inventory = this._context.Inventory.AsNoTrackingWithIdentityResolution()
+                .Include(x => x.Game).Include(x => x.EnemyDrops)
+                .Where(x => x.Id == inventoryId);
+
+            if (inventory == null)
+            {
+                return new InventoryDto();
+            }
+
+            return await inventory.ToDto().FirstAsync();
         }
         #endregion Discord Methods
     }

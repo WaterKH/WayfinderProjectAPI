@@ -790,7 +790,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
                 if (user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJStoryDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
+                    this.JJStoryDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
 
                     if (!this.isPatron)
                     {
@@ -877,7 +877,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
                 if (user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJReportDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
+                    this.JJReportDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
 
                     if (!this.isPatron)
                     {
@@ -964,7 +964,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
                 if (user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJCharacterDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
+                    this.JJCharacterDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
 
                     if (!this.isPatron)
                     {
@@ -1051,7 +1051,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
                 if (user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJEnemyDtos = await this.api.SearchForJournalEntries(accountId: user.Id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
+                    this.JJEnemyDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
 
                     if (!this.isPatron)
                     {

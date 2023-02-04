@@ -129,7 +129,6 @@
     public string? CodeQuery { get; set; }
 
     public bool IsPatron { get; set; }
-    private bool checkedIsPatron = false;
 
     private PatreonService patreonService = default!;
 
@@ -148,8 +147,6 @@
                 if (user != null && (string.IsNullOrEmpty(user.PatreonAccessToken) || string.IsNullOrEmpty(user.PatreonRefreshToken)))
                 {
                     await this.patreonService.GetIdentity(context, user.Id, this.CodeQuery);
-
-                    this.checkedIsPatron = true;
                 }
             }
         }

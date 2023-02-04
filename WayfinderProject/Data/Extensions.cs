@@ -81,6 +81,22 @@ namespace WayfinderProjectAPI.Data
                 });
         }
 
+        public static InterviewDto ToDto(this Interview interview)
+        {
+            return new InterviewDto
+            {
+                Id = interview.Id,
+                Name = interview.Name,
+                Link = interview.Link,
+                ReleaseDate = interview.ReleaseDate,
+                AdditionalLink = interview.AdditionalLink,
+                Games = interview.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name }).ToList(),
+                Participants = interview.Participants.Select(y => new PersonDto { Id = y.Id, Name = y.Name, Description = y.Description, Link = y.Link }).ToList(),
+                Provider = new ProviderDto { Id = interview.Provider.Id, Name = interview.Provider.Name, Description = interview.Provider.Description, Link = interview.Provider.Link },
+                Translator = new PersonDto { Id = interview.Translator.Id, Name = interview.Translator.Name, Description = interview.Translator.Description, Link = interview.Translator.Link }
+            };
+        }
+
         public static IEnumerable<InterviewLineDto> ToDto(this List<InterviewLine> conversation)
         {
             return conversation.Select(x => new InterviewLineDto
@@ -120,6 +136,21 @@ namespace WayfinderProjectAPI.Data
                     Category = x.Category
                 });
         }
+
+        public static JournalEntryDto ToDto(this JournalEntry entry)
+        {
+            return new JournalEntryDto
+            {
+                Id = entry.Id,
+                Game = new GameDto { Id = entry.Game.Id, Name = entry.Game.Name },
+                Title = entry.Title,
+                Description = entry.Description,
+                Worlds = entry.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
+                Characters = entry.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
+                Category = entry.Category,
+                AdditionalInformation = entry.AdditionalInformation
+            };
+        }
         #endregion Jiminy Journal
 
         #region Moogle Shop
@@ -133,37 +164,79 @@ namespace WayfinderProjectAPI.Data
                     Category = x.Category,
                     UnlockConditionDescription = x.UnlockConditionDescription,
                     Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name },
-                    RecipeMaterials = x.RecipeMaterials.Select(x => new RecipeMaterialDto
+                    RecipeMaterials = x.RecipeMaterials.Select(y => new RecipeMaterialDto
                     {
-                        Id = x.Id,
-                        Amount = x.Amount,
+                        Id = y.Id,
+                        Amount = y.Amount,
                         Inventory = new InventoryDto
                         {
-                            Id = x.Inventory.Id,
-                            Name = x.Inventory.Name,
-                            Category = x.Inventory.Category,
-                            Cost = x.Inventory.Cost,
-                            Currency = x.Inventory.Currency,
-                            Description = x.Inventory.Description,
-                            AdditionalInformation = x.Inventory.AdditionalInformation,
-                            Game = new GameDto { Id = x.Inventory.Game.Id, Name = x.Inventory.Game.Name },
-                            EnemyDrops = x.Inventory.EnemyDrops.Select(y => new EnemyDropDto
+                            Id = y.Inventory.Id,
+                            Name = y.Inventory.Name,
+                            Category = y.Inventory.Category,
+                            Cost = y.Inventory.Cost,
+                            Currency = y.Inventory.Currency,
+                            Description = y.Inventory.Description,
+                            AdditionalInformation = y.Inventory.AdditionalInformation,
+                            Game = new GameDto { Id = y.Inventory.Game.Id, Name = y.Inventory.Game.Name },
+                            EnemyDrops = y.Inventory.EnemyDrops.Select(z => new EnemyDropDto
                             {
-                                Id = y.Id,
-                                DropRate = y.DropRate,
-                                AdditionalInformation = y.AdditionalInformation,
+                                Id = z.Id,
+                                DropRate = z.DropRate,
+                                AdditionalInformation = z.AdditionalInformation,
                                 CharacterLocation = new CharacterLocationDto
                                 {
-                                    Id = y.CharacterLocation.Id,
-                                    Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name },
-                                    Character = new CharacterDto { Id = y.CharacterLocation.Character.Id, Name = y.CharacterLocation.Character.Name },
-                                    World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
-                                    Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
+                                    Id = z.CharacterLocation.Id,
+                                    Game = new GameDto { Id = z.CharacterLocation.Game.Id, Name = z.CharacterLocation.Game.Name },
+                                    Character = new CharacterDto { Id = z.CharacterLocation.Character.Id, Name = z.CharacterLocation.Character.Name },
+                                    World = new WorldDto { Id = z.CharacterLocation.World.Id, Name = z.CharacterLocation.World.Name },
+                                    Areas = z.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
                                 }
                             }).ToList()
                         }
                     }).ToList()
                 });
+        }
+
+        public static RecipeDto ToDto(this Recipe recipe)
+        {
+            return new RecipeDto
+            {
+                Id = recipe.Id,
+                Name = recipe.Name,
+                Category = recipe.Category,
+                UnlockConditionDescription = recipe.UnlockConditionDescription,
+                Game = new GameDto { Id = recipe.Game.Id, Name = recipe.Game.Name },
+                RecipeMaterials = recipe.RecipeMaterials.Select(x => new RecipeMaterialDto
+                {
+                    Id = x.Id,
+                    Amount = x.Amount,
+                    Inventory = new InventoryDto
+                    {
+                        Id = x.Inventory.Id,
+                        Name = x.Inventory.Name,
+                        Category = x.Inventory.Category,
+                        Cost = x.Inventory.Cost,
+                        Currency = x.Inventory.Currency,
+                        Description = x.Inventory.Description,
+                        AdditionalInformation = x.Inventory.AdditionalInformation,
+                        Game = new GameDto { Id = x.Inventory.Game.Id, Name = x.Inventory.Game.Name },
+                        EnemyDrops = x.Inventory.EnemyDrops.Select(y => new EnemyDropDto
+                        {
+                            Id = y.Id,
+                            DropRate = y.DropRate,
+                            AdditionalInformation = y.AdditionalInformation,
+                            CharacterLocation = new CharacterLocationDto
+                            {
+                                Id = y.CharacterLocation.Id,
+                                Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name },
+                                Character = new CharacterDto { Id = y.CharacterLocation.Character.Id, Name = y.CharacterLocation.Character.Name },
+                                World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
+                                Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
+                            }
+                        }).ToList()
+                    }
+                }).ToList()
+            };
         }
 
         public static IQueryable<InventoryDto> ToDto(this IQueryable<Inventory> inventory)
@@ -194,6 +267,35 @@ namespace WayfinderProjectAPI.Data
                         }
                     }).ToList()
                 });
+        }
+
+        public static InventoryDto ToDto(this Inventory inventory)
+        {
+            return new InventoryDto
+            {
+                Id = inventory.Id,
+                Game = new GameDto { Id = inventory.Game.Id, Name = inventory.Game.Name },
+                Name = inventory.Name,
+                Description = inventory.Description,
+                Cost = inventory.Cost,
+                Currency = inventory.Currency,
+                Category = inventory.Category,
+                AdditionalInformation = inventory.AdditionalInformation,
+                EnemyDrops = inventory.EnemyDrops.Select(y => new EnemyDropDto
+                {
+                    Id = y.Id,
+                    DropRate = y.DropRate,
+                    AdditionalInformation = y.AdditionalInformation,
+                    CharacterLocation = new CharacterLocationDto
+                    {
+                        Id = y.CharacterLocation.Id,
+                        Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name },
+                        Character = new CharacterDto { Id = y.CharacterLocation.Character.Id, Name = y.CharacterLocation.Character.Name },
+                        World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
+                        Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
+                    }
+                }).ToList()
+            };
         }
         #endregion Moogle Shop
 
