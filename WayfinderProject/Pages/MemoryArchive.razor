@@ -467,6 +467,9 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     private bool isPatron;
     private int favouriteCount = 200;
 
+    private int limitToNotify = 25;
+    private int currentNotifyCount = 0;
+
     protected override async Task OnInitializedAsync()
     {
         if (authenticationStateTask != null)
@@ -547,7 +550,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                     this.SearchSettings = await this.api.GetSearchSettings(user.Id);
-                    
+
                     await this.HandleQueryParams();
                 }
             }
@@ -568,7 +571,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             try
             {
                 Thread.Sleep(1000);
-                
+
                 await this.ResetOptions();
 
                 if (this.authenticationStateTask != null && this.api != null && !this.Loading)
@@ -584,7 +587,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                     this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                     this.SearchSettings = await this.api.GetSearchSettings(user.Id);
-                    
+
                     Thread.Sleep(1000);
 
                     await this.HandleQueryParams();
@@ -733,6 +736,15 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
                     }
+
+                    // Notify if we meet our threshold
+                    ++this.currentNotifyCount;
+                    if (this.currentNotifyCount == this.limitToNotify)
+                    {
+                        this.currentNotifyCount = 0;
+
+                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                    }
                 }
                 else
                 {
@@ -834,6 +846,15 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                         {
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
                         }
+                    }
+
+                    // Notify if we meet our threshold
+                    ++this.currentNotifyCount;
+                    if (this.currentNotifyCount == this.limitToNotify)
+                    {
+                        this.currentNotifyCount = 0;
+
+                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
                     }
                 }
                 else

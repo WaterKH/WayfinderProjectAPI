@@ -671,6 +671,9 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private bool isPatron;
     private int favouriteCount = 200;
+    
+    private int limitToNotify = 25;
+    private int currentNotifyCount = 0;
 
     protected override async Task OnInitializedAsync()
     {
@@ -952,6 +955,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
                     }
+
+                    // Notify if we meet our threshold
+                    ++this.currentNotifyCount;
+                    if (this.currentNotifyCount == this.limitToNotify)
+                    {
+                        this.currentNotifyCount = 0;
+
+                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                    }
                 }
                 else
                 {
@@ -1031,6 +1043,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                         {
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
+                    }
+
+                    // Notify if we meet our threshold
+                    ++this.currentNotifyCount;
+                    if (this.currentNotifyCount == this.limitToNotify)
+                    {
+                        this.currentNotifyCount = 0;
+
+                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
                     }
                 }
                 else
@@ -1113,6 +1134,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
                     }
+
+                    // Notify if we meet our threshold
+                    ++this.currentNotifyCount;
+                    if (this.currentNotifyCount == this.limitToNotify)
+                    {
+                        this.currentNotifyCount = 0;
+
+                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                    }
                 }
                 else
                 {
@@ -1193,6 +1223,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
                     }
+
+                    // Notify if we meet our threshold
+                    ++this.currentNotifyCount;
+                    if (this.currentNotifyCount == this.limitToNotify)
+                    {
+                        this.currentNotifyCount = 0;
+
+                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                    }
                 }
                 else
                 {
@@ -1272,6 +1311,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                         {
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
+                    }
+
+                    // Notify if we meet our threshold
+                    ++this.currentNotifyCount;
+                    if (this.currentNotifyCount == this.limitToNotify)
+                    {
+                        this.currentNotifyCount = 0;
+
+                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
                     }
                 }
                 else
