@@ -5,6 +5,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
@@ -58,7 +59,6 @@ builder.Services.AddAuthentication()
     {
         options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId") ?? "";
         options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret") ?? "";
-        options.ReturnUrlParameter = "https://wayfinderprojectkh.com/signin-google";
     })
     .AddTwitter(twitterOptions =>
     {
@@ -160,6 +160,11 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedProto
+});
 
 app.UseSwagger();
 app.UseSwaggerUI();
