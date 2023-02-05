@@ -54,17 +54,20 @@ builder.Services.AddAuthentication()
     {
         discordOptions.ClientId = Environment.GetEnvironmentVariable("DiscordClientId") ?? "";
         discordOptions.ClientSecret = Environment.GetEnvironmentVariable("DiscordClientSecret") ?? "";
+        //discordOptions.ReturnUrlParameter = "https://wayfinderprojectkh.com/signin-discord";
     })
     .AddGoogle(options =>
     {
         options.ClientId = Environment.GetEnvironmentVariable("GoogleAuthId") ?? "";
         options.ClientSecret = Environment.GetEnvironmentVariable("GoogleAuthSecret") ?? "";
+        //options.ReturnUrlParameter = "https://wayfinderprojectkh.com/signin-google";
     })
     .AddTwitter(twitterOptions =>
     {
         twitterOptions.ConsumerKey = Environment.GetEnvironmentVariable("TwitterConsumerKey");
         twitterOptions.ConsumerSecret = Environment.GetEnvironmentVariable("TwitterConsumerSecret");
         twitterOptions.RetrieveUserDetails = true;
+        //twitterOptions.ReturnUrlParameter = "https://wayfinderprojectkh.com/signin-twitter";
     });
 
 

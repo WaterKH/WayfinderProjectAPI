@@ -1359,6 +1359,16 @@ namespace WayfinderProjectAPI.Controllers
 
 
         #region Discord Methods
+        [HttpGet("GetDailyScene")]
+        public async Task<SceneDto> GetDailyScene()
+        {
+            var dailyScene = await this._context.DailyCutscenes.OrderByDescending(x => x.Id).FirstAsync();
+
+            return (await this._context.Scenes.Include(x => x.Game).Include(x => x.Areas).Include(x => x.Characters).Include(x => x.Music).Include(x => x.Worlds).Include(x => x.Script).Include(x => x.Script.Lines)
+                .FirstAsync(x => x.Id == dailyScene.SceneId))
+                .ToDto();
+        }
+
         [HttpGet("GetRandomScene")]
         public async Task<SceneDto> GetRandomScene()
         {
@@ -1419,6 +1429,16 @@ namespace WayfinderProjectAPI.Controllers
             return interview.ToDto();
         }
 
+        [HttpGet("GetDailyEntry")]
+        public async Task<JournalEntryDto> GetDailyEntry()
+        {
+            var dailyEntry = await this._context.DailyJournalEntries.OrderByDescending(x => x.Id).FirstAsync();
+
+            return (await this._context.JournalEntries.Include(x => x.Game).Include(x => x.Characters).Include(x => x.Worlds)
+                .FirstAsync(x => x.Id == dailyEntry.Id))
+                .ToDto();
+        }
+
         [HttpGet("GetRandomEntry")]
         public async Task<JournalEntryDto> GetRandomEntry()
         {
@@ -1477,7 +1497,18 @@ namespace WayfinderProjectAPI.Controllers
                 return new RecipeDto();
             }
 
-            return await recipe.ToDto().FirstAsync();
+            return await recipe.Take(1).ToDto().FirstAsync();
+        }
+
+        [HttpGet("GetDailyRecord")]
+        public async Task<InventoryDto> GetDailyRecord()
+        {
+            var dailyRecord = await this._context.DailyMoogleRecords.OrderByDescending(x => x.Id).FirstAsync();
+
+            var inventory = this._context.Inventory.Include(x => x.Game).Include(x => x.EnemyDrops)
+                .Where(x => x.Id == dailyRecord.Id);
+
+            return await inventory.Take(1).ToDto().FirstAsync();
         }
 
         [HttpGet("GetRandomRecord")]
@@ -1493,7 +1524,7 @@ namespace WayfinderProjectAPI.Controllers
             var inventory = this._context.Inventory.Include(x => x.Game).Include(x => x.EnemyDrops)
                 .Where(x => x.Id == id);
 
-            return await inventory.ToDto().FirstAsync();
+            return await inventory.Take(1).ToDto().FirstAsync();
         }
 
         [HttpGet("GetRecord")]
@@ -1508,7 +1539,7 @@ namespace WayfinderProjectAPI.Controllers
                 return new InventoryDto();
             }
 
-            return await inventory.ToDto().FirstAsync();
+            return await inventory.Take(1).ToDto().FirstAsync();
         }
         #endregion Discord Methods
     }

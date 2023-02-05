@@ -16,6 +16,53 @@ namespace WayfinderProject.Data.Discord
             this.serviceProvider = serviceProvider;
         }
 
+        [Command("help")]
+        [Summary("Returns all commands, how to use them and what they provide.")]
+        public async Task HelpAsync()
+        {
+            try
+            {
+                await Context.Channel.SendMessageAsync(
+                        $"```\r\n" +
+                        $"!jj daily - Returns the daily entry.\r\n" +
+                        $"!jj random_entry - Returns a random entry result.\r\n" +
+                        $"!jj search_entry <search_criteria> - Returns up to 25 search results that meet your criteria. If your search criteria contains any spaces, wrap your query in two quotes, i.e. \"Sora III\".\r\n" +
+                        $"!jj entry <entry_id> - Returns a entry with the specific entry id. Find an id either through random or search.\r\n" +
+                        $"```");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        [Command("daily")]
+        [Summary("Returns a daily entry.")]
+        public async Task DailyEntryAsync()
+        {
+            try
+            {
+                using (var scope = serviceProvider.CreateScope())
+                {
+                    var context = scope.ServiceProvider.GetRequiredService<WayfinderContext>();
+                    var api = new WayfinderController(context);
+
+                    var dailyEntry = await api.GetDailyEntry();
+                    await Context.Channel.SendMessageAsync(
+                        $"**Entry Name:** {dailyEntry.Title} (Id: {dailyEntry.Id})\r\n" +
+                        $"**Game:** {dailyEntry.Game.Name}\r\n" +
+                        $"**Category:** {dailyEntry.Category}\r\n" +
+                        $"**Description:** {dailyEntry.Description}\r\n" +
+                        $"**Additional Information:** {dailyEntry.AdditionalInformation}\r\n" +
+                        $"\r\nFind more information at https://wayfinderprojectkh.com/jiminy_journal?category={HttpUtility.UrlEncode(dailyEntry.Category)}&entry={dailyEntry.Id}&open_row={dailyEntry.Id}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         [Command("random_entry")]
         [Summary("Returns a random entry.")]
         public async Task RandomEntryAsync()
@@ -44,7 +91,7 @@ namespace WayfinderProject.Data.Discord
         }
 
         [Command("search_entry")]
-        [Summary("Returns entries with search criteria.")]
+        [Summary("Returns entries with search criteria. If your search criteria contains spaces, wrap in quotes.")]
         public async Task SearchEntriesAsync(string criteria)
         {
             try

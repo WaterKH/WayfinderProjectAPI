@@ -16,6 +16,29 @@ namespace WayfinderProject.Data.Discord
             this.serviceProvider = serviceProvider;
         }
 
+        [Command("help")]
+        [Summary("Returns all commands, how to use them and what they provide.")]
+        public async Task HelpAsync()
+        {
+            try
+            {
+                await Context.Channel.SendMessageAsync(
+                        $"```\r\n" +
+                        $"!ms daily - Returns the daily record.\r\n" +
+                        $"!ms random_record - Returns a random record result.\r\n" +
+                        $"!ms search_record <search_criteria> - Returns up to 25 search results that meet your criteria. If your search criteria contains any spaces, wrap your query in two quotes, i.e. \"Wooden Sword\".\r\n" +
+                        $"!ms record <record_id> - Returns a record with the specific record id. Find an id either through random or search.\r\n" +
+                        $"!ms random_recipe - Returns a random recipe result.\r\n" +
+                        $"!ms search_recipe <search_criteria> - Returns up to 25 search results that meet your criteria. If your search criteria contains any spaces, wrap your query in two quotes, i.e. \"Mystery Goo\".\r\n" +
+                        $"!ms recipe <recipe_id> - Returns a recipe with the specific recipe id. Find an id either through random or search.\r\n" +
+                        $"```");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         [Command("random_recipe")]
         [Summary("Returns a random recipe.")]
         public async Task RandomRecipeAsync()
@@ -44,7 +67,7 @@ namespace WayfinderProject.Data.Discord
         }
 
         [Command("search_recipe")]
-        [Summary("Returns recipes with search criteria.")]
+        [Summary("Returns recipes with search criteria. If your search criteria contains spaces, wrap in quotes.")]
         public async Task SearchRecipesAsync(string criteria)
         {
             try
@@ -112,6 +135,35 @@ namespace WayfinderProject.Data.Discord
             }
         }
 
+        [Command("daily")]
+        [Summary("Returns a daily record.")]
+        public async Task DailyRecordAsync()
+        {
+            try
+            {
+                using (var scope = serviceProvider.CreateScope())
+                {
+                    var context = scope.ServiceProvider.GetRequiredService<WayfinderContext>();
+                    var api = new WayfinderController(context);
+
+                    var dailyRecord = await api.GetDailyRecord();
+                    await Context.Channel.SendMessageAsync(
+                        $"**Record Name**: {dailyRecord.Name} (Id: {dailyRecord.Id})\r\n" +
+                        $"**Game**: {dailyRecord.Game.Name}\r\n" +
+                        $"**Category**: {dailyRecord.Category}\r\n" +
+                        $"**Description**: {dailyRecord.Description}\r\n" +
+                        $"**Cost**: {dailyRecord.Cost} {dailyRecord.Currency}\r\n" +
+                        $"**Drops**: {string.Join(", ", dailyRecord.EnemyDrops.Select(x => $"x{x.DropRate} {x.CharacterLocation.Character.Name}"))}\r\n" +
+                        $"**Additional Information**: {dailyRecord.AdditionalInformation}\r\n" +
+                        $"\r\nFind more information at https://wayfinderprojectkh.com/moogle_shop?category={HttpUtility.UrlEncode(dailyRecord.Category)}&record={dailyRecord.Id}&open_row={dailyRecord.Id}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         [Command("random_record")]
         [Summary("Returns a random record.")]
         public async Task RandomRecordAsync()
@@ -142,7 +194,7 @@ namespace WayfinderProject.Data.Discord
         }
 
         [Command("search_record")]
-        [Summary("Returns records with search criteria.")]
+        [Summary("Returns records with search criteria. If your search criteria contains spaces, wrap in quotes.")]
         public async Task SearchRecordsAsync(string criteria)
         {
             try

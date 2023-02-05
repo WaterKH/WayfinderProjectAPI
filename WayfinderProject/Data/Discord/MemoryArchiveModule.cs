@@ -16,6 +16,57 @@ namespace WayfinderProject.Data.Discord
             this.serviceProvider = serviceProvider;
         }
 
+        [Command("help")]
+        [Summary("Returns all commands, how to use them and what they provide.")]
+        public async Task HelpAsync()
+        {
+            try
+            {
+                await Context.Channel.SendMessageAsync(
+                        $"```\r\n" +
+                        $"!ma daily - Returns the daily scene.\r\n" +
+                        $"!ma random_scene - Returns a random scene result.\r\n" +
+                        $"!ma search_scene <search_criteria> - Returns up to 25 search results that meet your criteria. If your search criteria contains any spaces, wrap your query in two quotes, i.e. \"You're stupid\".\r\n" +
+                        $"!ma scene <scene_id> - Returns a scene with the specific scene id. Find an id either through random or search.\r\n" +
+                        $"!ma random_interview - Returns a random interview result.\r\n" +
+                        $"!ma search_interview <search_criteria> - Returns up to 25 search results that meet your criteria. If your search criteria contains any spaces, wrap your query in two quotes, i.e. \"Tetsuya Nomura\".\r\n" +
+                        $"!ma interview <interview_id> - Returns an interview with the specific interview id. Find an id either through random or search.\r\n" +
+                        $"```");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        [Command("daily")]
+        [Summary("Returns a daily scene.")]
+        public async Task DailySceneAsync()
+        {
+            try
+            {
+                using (var scope = serviceProvider.CreateScope())
+                {
+                    var context = scope.ServiceProvider.GetRequiredService<WayfinderContext>();
+                    var api = new WayfinderController(context);
+
+                    var dailyScene = await api.GetDailyScene();
+                    await Context.Channel.SendMessageAsync(
+                        $"**Scene Name:** {dailyScene.Name} (Id: {dailyScene.Id})\r\n" +
+                        $"**Game:** {dailyScene.Game.Name}\r\n" +
+                        $"**Characters:** {string.Join(", ", dailyScene.Characters.Select(x => x.Name))}\r\n" +
+                        $"**Worlds:** {string.Join(", ", dailyScene.Worlds.Select(x => x.Name))}\r\n" +
+                        $"**Music:** {string.Join(", ", dailyScene.Music.Select(x => x.Name))}\r\n" +
+                        $"**Link:** {dailyScene.Link}" +
+                        $"\r\n\r\nFind more information at https://wayfinderprojectkh.com/memory_archive?category=Scenes&scene={dailyScene.Id}&open_row={dailyScene.Id}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         [Command("random_scene")]
         [Summary("Returns a random scene.")]
         public async Task RandomSceneAsync()
@@ -45,7 +96,7 @@ namespace WayfinderProject.Data.Discord
         }
 
         [Command("search_scene")]
-        [Summary("Returns scenes with search criteria.")]
+        [Summary("Returns scenes with search criteria. If your search criteria contains spaces, wrap in quotes.")]
         public async Task SearchSceneAsync(string criteria)
         {
             try
@@ -143,7 +194,7 @@ namespace WayfinderProject.Data.Discord
         }
 
         [Command("search_interview")]
-        [Summary("Returns interviews with search criteria.")]
+        [Summary("Returns interviews with search criteria. If your search criteria contains spaces, wrap in quotes.")]
         public async Task SearchInterviewAsync(string criteria)
         {
             try
