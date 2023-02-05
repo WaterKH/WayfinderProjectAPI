@@ -2,16 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.Encodings.Web;
 using WayfinderProject.Data.Models;
 
 namespace WayfinderProject.Areas.Identity.Pages.Account.Manage
@@ -126,8 +124,13 @@ namespace WayfinderProject.Areas.Identity.Pages.Account.Manage
                     protocol: Request.Scheme);
                 await _emailSender.SendEmailAsync(
                     Input.NewEmail,
-                    "Confirm your email",
-                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    "The Wayfinder Project - Confirm your email",
+                    @$"Dear {user.UserName},
+                                
+                    Thank you for creating an account with The Wayfinder Project! Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.
+
+                    Signed,
+                    The Wayfinder Project Team");
 
                 StatusMessage = "Confirmation link to change email sent. Please check your email.";
                 return RedirectToPage();
@@ -162,8 +165,13 @@ namespace WayfinderProject.Areas.Identity.Pages.Account.Manage
                 protocol: Request.Scheme);
             await _emailSender.SendEmailAsync(
                 email,
-                "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                "The Wayfinder Project - Confirm your email",
+                @$"Dear {user.UserName},
+                                
+                Thank you for creating an account with The Wayfinder Project! Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.
+
+                Signed,
+                The Wayfinder Project Team");
 
             StatusMessage = "Verification email sent. Please check your email.";
             return RedirectToPage();

@@ -32,7 +32,7 @@ namespace WayfinderProject.Data
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("wayfinderprojectkh@gmail.com", "Password Recovery"),
+                From = new EmailAddress("thewayfinderprojectkh@gmail.com", "The Wayfinder Project - Password Recovery"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
