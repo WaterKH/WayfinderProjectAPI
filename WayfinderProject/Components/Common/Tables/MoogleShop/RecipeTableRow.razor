@@ -48,23 +48,26 @@
     }
 </td>
 <td>
-    @if (this.IsFavorite)
+    @if (this.LoggedIn)
     {
-        <iconify-icon icon="ic:baseline-star" class="favorite-icon-active" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
-    }
-    else
-    {
-        <iconify-icon icon="ic:baseline-star-outline" class="favorite-icon-inactive" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
-    }
+        if (this.IsFavorite)
+        {
+            <iconify-icon icon="ic:baseline-star" class="favorite-icon-active" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
+        }
+        else
+        {
+            <iconify-icon icon="ic:baseline-star-outline" class="favorite-icon-inactive" onclick="@(async () => await this.FavoriteCallbackMethod.InvokeAsync())"></iconify-icon>
+        }
 
 
-    @if (this.IsProject)
-    {
-        <iconify-icon icon="material-symbols:folder-rounded" class="project-icon-active" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
-    }
-    else
-    {
-        <iconify-icon icon="material-symbols:folder-outline-rounded" class="project-icon-inactive" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+        if (this.IsProject)
+        {
+            <iconify-icon icon="material-symbols:folder-rounded" class="project-icon-active" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+        }
+        else
+        {
+            <iconify-icon icon="material-symbols:folder-outline-rounded" class="project-icon-inactive" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
+        }
     }
 </td>
 }
@@ -143,6 +146,7 @@ else
 @code {
     [Parameter] public RecipeDto Recipe { get; set; } = new RecipeDto();
     [Parameter] public RecipeTable<RecipeDto>? MainTable { get; set; }
+    [Parameter] public bool LoggedIn { get; set; }
     [Parameter] public bool ProjectView { get; set; }
     [Parameter] public bool IsFavorite { get; set; }
     [Parameter] public bool IsProject { get; set; }

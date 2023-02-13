@@ -267,7 +267,7 @@ else if (this.CurrentCategory == "Recipes" && this.MSRecipeDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" 
+            <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Recipes", Recipe.Id))" IsFavorite="@(this.IsFavoriteForUser("Recipes", Recipe.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Recipes", Recipe.Id))" IsProject="@(this.IsProjectForUser("Recipes", Recipe.Id))" />
         </RowTemplate>
@@ -291,7 +291,7 @@ else if (this.CurrentCategory == "Items" && this.MSInventoryItemDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" 
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Items", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Items", Inventory.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Items", Inventory.Id))" IsProject="@(this.IsProjectForUser("Items", Inventory.Id))" />
         </RowTemplate>
@@ -315,7 +315,7 @@ else if (this.CurrentCategory == "Weapons" && this.MSInventoryWeaponDtos.Count >
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" 
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Weapons", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Weapons", Inventory.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Weapons", Inventory.Id))" IsProject="@(this.IsProjectForUser("Weapons", Inventory.Id))" />
         </RowTemplate>
@@ -339,7 +339,7 @@ else if (this.CurrentCategory == "Accessories & Armor" && this.MSInventoryAccess
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" 
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Accessories & Armor", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Accessories & Armor", Inventory.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Accessories & Armor", Inventory.Id))" IsProject="@(this.IsProjectForUser("Accessories & Armor", Inventory.Id))" />
         </RowTemplate>
@@ -363,7 +363,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" 
+            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Synthesis Materials", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Synthesis Materials", Inventory.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Synthesis Materials", Inventory.Id))" IsProject="@(this.IsProjectForUser("Synthesis Materials", Inventory.Id))" />
         </RowTemplate>
@@ -669,9 +669,10 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private bool failed = false;
 
+    private bool loggedIn = false;
     private bool isPatron;
     private int favouriteCount = 200;
-    
+
     private int limitToNotify = 25;
     private int currentNotifyCount = 0;
 
@@ -681,10 +682,10 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         {
             var authState = await authenticationStateTask;
 
-            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-            //{
-            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
-            //}
+            if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
+            {
+                loggedIn = true;
+            }
 
             // Set Patron Status
             if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
@@ -720,23 +721,23 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     {
         if (firstRender)
         {
-            if (this.authenticationStateTask != null)
-            {
-                var authState = await authenticationStateTask;
+            //if (this.authenticationStateTask != null)
+            //{
+            //    var authState = await authenticationStateTask;
 
-                if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-                {
-                    var options = new ModalOptions { Class = "login-modal-custom" };
+            //    if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            //    {
+            //        var options = new ModalOptions { Class = "login-modal-custom" };
 
-                    var modal = Modal.Show<LoginModal>("Log In", new ModalParameters(), options);
-                    var temp = await modal.Result;
+            //        var modal = Modal.Show<LoginModal>("Log In", new ModalParameters(), options);
+            //        var temp = await modal.Result;
 
-                    if (temp.Cancelled)
-                    {
-                        NavigationManager.NavigateTo("/");
-                    }
-                }
-            }
+            //        if (temp.Cancelled)
+            //        {
+            //            NavigationManager.NavigateTo("/");
+            //        }
+            //    }
+            //}
 
             try
             {
@@ -747,15 +748,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                     var authState = await authenticationStateTask;
 
                     WayfinderProjectUser user = new();
-                    if (authState.User.Identity != null)
+                    if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                        
+                        this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
+                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
                     }
 
-                    this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
-                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
-                    
                     await this.HandleQueryParams();
                 }
             }
@@ -784,14 +785,14 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                     var authState = await authenticationStateTask;
 
                     WayfinderProjectUser user = new();
-                    if (authState.User.Identity != null)
+                    if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-                    }
 
-                    this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
-                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
+                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                    }
 
                     Thread.Sleep(1000);
 
@@ -922,22 +923,23 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
 
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.MSRecipeDtos = await this.api.GetRecipes(accountId: user.Id, games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
+                    var id = user != null ? user.Id : null;
+                    this.MSRecipeDtos = await this.api.GetRecipes(accountId: id, games: games, recipes: recipes, synthMaterials: synthesisMaterials, description: information, categories: categories);
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -972,7 +974,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
             }
 
-            this.UpdateRecipeOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateRecipeOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -983,7 +985,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             MainRecipeTable.SetCurrentPage(1);
             MainRecipeTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainRecipeTable.CurrentExpandedRow = this.MSRecipeDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -1011,22 +1013,23 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.MSInventoryItemDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
+                    var id = user != null ? user.Id : null;
+                    this.MSInventoryItemDtos = await this.api.GetInventory(accountId: id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Item");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -1061,7 +1064,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
             }
 
-            this.UpdateInventoryItemOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateInventoryItemOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -1072,7 +1075,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             MainInventoryItemTable.SetCurrentPage(1);
             MainInventoryItemTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainInventoryItemTable.CurrentExpandedRow = this.MSInventoryItemDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -1101,22 +1104,23 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.MSInventoryWeaponDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
+                    var id = user != null ? user.Id : null;
+                    this.MSInventoryWeaponDtos = await this.api.GetInventory(accountId: id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Weapon");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -1151,7 +1155,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
             }
 
-            this.UpdateInventoryWeaponOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateInventoryWeaponOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -1162,7 +1166,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             MainInventoryWeaponTable.SetCurrentPage(1);
             MainInventoryWeaponTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainInventoryWeaponTable.CurrentExpandedRow = this.MSInventoryWeaponDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -1190,22 +1194,23 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
 
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
+                    var id = user != null ? user.Id : null;
+                    this.MSInventoryAccessoryArmorDtos = await this.api.GetInventory(accountId: id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Accessories & Armor");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -1240,7 +1245,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
             }
 
-            this.UpdateInventoryAccessoryArmorOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateInventoryAccessoryArmorOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -1251,7 +1256,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             MainInventoryAccessoryArmorTable.SetCurrentPage(1);
             MainInventoryAccessoryArmorTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainInventoryAccessoryArmorTable.CurrentExpandedRow = this.MSInventoryAccessoryArmorDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -1279,22 +1284,23 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.MSInventoryMaterialDtos = await this.api.GetInventory(accountId: user.Id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
+                    var id = user != null ? user.Id : null;
+                    this.MSInventoryMaterialDtos = await this.api.GetInventory(accountId: id, games: games, items: inventory, enemies: enemies, worlds: worlds, areas: areas, description: information, category: "Synthesis Material");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -1329,7 +1335,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                 }
             }
 
-            this.UpdateInventoryMaterialOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateInventoryMaterialOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -1340,7 +1346,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             MainInventoryMaterialTable.SetCurrentPage(1);
             MainInventoryMaterialTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings == null || this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainInventoryMaterialTable.CurrentExpandedRow = this.MSInventoryMaterialDtos.FirstOrDefault()?.Id ?? -1;
             }

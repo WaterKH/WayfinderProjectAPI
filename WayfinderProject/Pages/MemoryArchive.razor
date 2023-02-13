@@ -225,7 +225,7 @@ else if (this.CurrentCategory == "Cutscenes" && this.SceneDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" 
+            <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Scenes", Scene.Id))" IsFavorite="@(this.IsFavoriteForUser("Scenes", Scene.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Scenes", Scene.Id))" IsProject="@(this.IsProjectForUser("Scenes", Scene.Id))" />
         </RowTemplate>
@@ -251,7 +251,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" 
+            <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Interviews", Interview.Id))" IsFavorite="@(this.IsFavoriteForUser("Interviews", Interview.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Interviews", Interview.Id))" IsProject="@(this.IsProjectForUser("Interviews", Interview.Id))" />
         </RowTemplate>
@@ -463,7 +463,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     private SearchSettingsDto SearchSettings = default!;
 
     private bool failed = false;
-
+    
+    private bool loggedIn = false;
     private bool isPatron;
     private int favouriteCount = 200;
 
@@ -476,10 +477,10 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var authState = await authenticationStateTask;
 
-            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-            //{
-            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
-            //}
+            if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
+            {
+                this.loggedIn = true;
+            }
 
             // Set Patron Status
             if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
@@ -515,23 +516,23 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (firstRender)
         {
-            if (this.authenticationStateTask != null)
-            {
-                var authState = await authenticationStateTask;
+            //if (this.authenticationStateTask != null)
+            //{
+            //    var authState = await authenticationStateTask;
 
-                if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-                {
-                    var options = new ModalOptions { Class = "login-modal-custom" };
+            //    if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            //    {
+            //        var options = new ModalOptions { Class = "login-modal-custom" };
 
-                    var modal = Modal.Show<LoginModal>("Log In", new ModalParameters(), options);
-                    var temp = await modal.Result;
+            //        var modal = Modal.Show<LoginModal>("Log In", new ModalParameters(), options);
+            //        var temp = await modal.Result;
 
-                    if (temp.Cancelled)
-                    {
-                        NavigationManager.NavigateTo("/");
-                    }
-                }
-            }
+            //        if (temp.Cancelled)
+            //        {
+            //            NavigationManager.NavigateTo("/");
+            //        }
+            //    }
+            //}
 
             try
             {
@@ -542,14 +543,14 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     var authState = await authenticationStateTask;
 
                     WayfinderProjectUser user = new();
-                    if (authState.User.Identity != null)
+                    if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                        
+                        this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
                     }
-
-                    this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
-                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
 
                     await this.HandleQueryParams();
                 }
@@ -579,14 +580,14 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     var authState = await authenticationStateTask;
 
                     WayfinderProjectUser user = new();
-                    if (authState.User.Identity != null)
+                    if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-                    }
 
-                    this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
-                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                    }
 
                     Thread.Sleep(1000);
 
@@ -703,22 +704,23 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await this.authenticationStateTask;
 
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.SceneDtos = await this.api.GetScenes(accountId: user.Id, games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
+                    var id = user != null ? user.Id : null;
+                    this.SceneDtos = await this.api.GetScenes(accountId: id, games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -753,7 +755,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                 }
             }
 
-            this.UpdateSceneOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateSceneOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
             this.canDisplayClearAll = true;
         }
@@ -763,7 +765,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             MainSceneTable.SetCurrentPage(1);
             MainSceneTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainSceneTable.CurrentExpandedRow = this.SceneDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -815,21 +817,22 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await this.authenticationStateTask;
 
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.InterviewDtos = await this.api.GetInterviews(accountId: user.Id, interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
+                    var id = user != null ? user.Id : null;
+                    this.InterviewDtos = await this.api.GetInterviews(accountId: id, interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -864,7 +867,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                 }
             }
 
-            this.UpdateInterviewOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateInterviewOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -875,7 +878,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             MainInterviewTable.SetCurrentPage(1);
             MainInterviewTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainInterviewTable.CurrentExpandedRow = this.InterviewDtos.FirstOrDefault()?.Id ?? -1;
             }

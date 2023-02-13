@@ -228,7 +228,7 @@ else if (this.CurrentCategory == "Story" && this.JJStoryDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" 
+            <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Story", Story.Id))" IsFavorite="@(this.IsFavoriteForUser("Story", Story.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Story", Story.Id))" IsProject="@(this.IsProjectForUser("Story", Story.Id))" />
         </RowTemplate>
@@ -250,7 +250,7 @@ else if (this.CurrentCategory == "Reports" && this.JJReportDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" 
+            <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Reports", Report.Id))" IsFavorite="@(this.IsFavoriteForUser("Reports", Report.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Reports", Report.Id))" IsProject="@(this.IsProjectForUser("Reports", Report.Id))" />
         </RowTemplate>
@@ -272,7 +272,7 @@ else if (this.CurrentCategory == "Characters" && this.JJCharacterDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" 
+            <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Characters", Character.Id))" IsFavorite="@(this.IsFavoriteForUser("Characters", Character.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Characters", Character.Id))" IsProject="@(this.IsProjectForUser("Characters", Character.Id))" />
         </RowTemplate>
@@ -294,7 +294,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             <th style="text-align: right;"></th>
         </TableHeader>
         <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable"
+            <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable" LoggedIn="@(this.loggedIn)"
                 FavoriteCallbackMethod="@(() => this.SetFavorite("Enemies", Enemy.Id))" IsFavorite="@(this.IsFavoriteForUser("Enemies", Enemy.Id))"
                 ProjectCallbackMethod="@(() => this.OpenProjectModal("Enemies", Enemy.Id))" IsProject="@(this.IsProjectForUser("Enemies", Enemy.Id))" />
         </RowTemplate>
@@ -525,9 +525,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private bool failed = false;
 
+    private bool loggedIn = false;
     private bool isPatron;
     private int favouriteCount = 200;
-    
+
     private int limitToNotify = 25;
     private int currentNotifyCount = 0;
 
@@ -537,10 +538,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         {
             var authState = await authenticationStateTask;
 
-            //if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-            //{
-            //    NavigationManager.NavigateTo("/Identity/Account/Login", true);
-            //}
+            if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
+            {
+                this.loggedIn = true;
+            }
 
             // Set Patron Status
             if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
@@ -576,23 +577,23 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     {
         if (firstRender)
         {
-            if (this.authenticationStateTask != null)
-            {
-                var authState = await authenticationStateTask;
+            //if (this.authenticationStateTask != null)
+            //{
+            //    var authState = await authenticationStateTask;
 
-                if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
-                {
-                    var options = new ModalOptions { Class = "login-modal-custom" };
+            //    if (authState.User.Identity == null || !authState.User.Identity.IsAuthenticated)
+            //    {
+            //        var options = new ModalOptions { Class = "login-modal-custom" };
 
-                    var modal = Modal.Show<LoginModal>("Log In", new ModalParameters(), options);
-                    var temp = await modal.Result;
+            //        var modal = Modal.Show<LoginModal>("Log In", new ModalParameters(), options);
+            //        var temp = await modal.Result;
 
-                    if (temp.Cancelled)
-                    {
-                        NavigationManager.NavigateTo("/");
-                    }
-                }
-            }
+            //        if (temp.Cancelled)
+            //        {
+            //            NavigationManager.NavigateTo("/");
+            //        }
+            //    }
+            //}
 
             try
             {
@@ -602,15 +603,15 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                     var authState = await authenticationStateTask;
 
                     WayfinderProjectUser user = new();
-                    if (authState.User.Identity != null)
+                    if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                        this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
+                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
                     }
 
-                    this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
-                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
-                    
                     await this.HandleQueryParams();
                 }
             }
@@ -631,7 +632,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             try
             {
                 Thread.Sleep(1000);
-                
+
                 await this.ResetOptions();
 
                 if (this.authenticationStateTask != null && this.api != null && !this.Loading)
@@ -639,15 +640,15 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                     var authState = await authenticationStateTask;
 
                     WayfinderProjectUser user = new();
-                    if (authState.User.Identity != null)
+                    if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                        this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
+                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
                     }
 
-                    this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
-                    this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                    this.SearchSettings = await this.api.GetSearchSettings(user.Id);
-                
                     Thread.Sleep(1000);
 
                     await this.HandleQueryParams();
@@ -777,22 +778,23 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
 
-                WayfinderProjectUser user = new();
+                WayfinderProjectUser? user = null;
                 if (authState.User.Identity != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJStoryDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
+                    var id = user != null ? user.Id : null;
+                    this.JJStoryDtos = await this.api.GetJournalEntries(accountId: id, games: games, entries: storyEntries, worlds: worlds, characters: characters, information: information, category: "Story");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -827,7 +829,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
             }
 
-            this.UpdateStoryEntryOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateStoryEntryOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -838,7 +840,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             MainStoryTable.SetCurrentPage(1);
             MainStoryTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainStoryTable.CurrentExpandedRow = this.JJStoryDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -864,22 +866,23 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
 
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJReportDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
+                    var id = user != null ? user.Id : null;
+                    this.JJReportDtos = await this.api.GetJournalEntries(accountId: id, games: games, entries: reportEntries, worlds: worlds, characters: characters, information: information, category: "Report");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -914,7 +917,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
             }
 
-            this.UpdateReportEntryOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateReportEntryOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -925,7 +928,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             MainReportTable.SetCurrentPage(1);
             MainReportTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainReportTable.CurrentExpandedRow = this.JJReportDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -951,22 +954,23 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJCharacterDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
+                    var id = user != null ? user.Id : null;
+                    this.JJCharacterDtos = await this.api.GetJournalEntries(accountId: id, games: games, entries: characterEntries, worlds: worlds, characters: characters, information: information, category: "Character");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -1001,7 +1005,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
             }
 
-            this.UpdateCharacterEntryOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateCharacterEntryOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -1012,7 +1016,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             MainCharacterTable.SetCurrentPage(1);
             MainCharacterTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainCharacterTable.CurrentExpandedRow = this.JJCharacterDtos.FirstOrDefault()?.Id ?? -1;
             }
@@ -1038,22 +1042,23 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (this.authenticationStateTask != null && this.api != null)
         {
-            if (this.SearchSettings.AutoSearch || allowSearch)
+            if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null)
+                
+                WayfinderProjectUser? user = null;
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
 
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user.ApiCallQuota > 0 || this.isPatron)
+                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    this.JJEnemyDtos = await this.api.GetJournalEntries(accountId: user.Id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
+                    var id = user != null ? user.Id : null;
+                    this.JJEnemyDtos = await this.api.GetJournalEntries(accountId: id, games: games, entries: enemyEntries, worlds: worlds, characters: characters, information: information, category: "Enemy");
 
-                    if (!this.isPatron)
+                    if (!this.isPatron && user != null)
                     {
                         user.ApiCallQuota -= 1;
                         context.SaveChanges();
@@ -1088,7 +1093,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 }
             }
 
-            this.UpdateEnemyEntryOptions((this.SearchSettings.AutoSearch || allowSearch));
+            this.UpdateEnemyEntryOptions((this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch));
 
 
             this.canDisplayClearAll = true;
@@ -1099,7 +1104,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             MainEnemyTable.SetCurrentPage(1);
             MainEnemyTable.CurrentExpandedRow = -1;
 
-            if (this.SearchSettings.AutoExpandFirstResult)
+            if (this.SearchSettings != null && this.SearchSettings.AutoExpandFirstResult)
             {
                 this.MainEnemyTable.CurrentExpandedRow = this.JJEnemyDtos.FirstOrDefault()?.Id ?? -1;
             }

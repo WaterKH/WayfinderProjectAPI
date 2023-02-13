@@ -23,10 +23,10 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Memory Archive
         [HttpGet("GetScenes")]
-        public async Task<List<SceneDto>> GetScenes([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
+        public async Task<List<SceneDto>> GetScenes([FromQuery] string? accountId, [FromQuery] string? games = null, [FromQuery] string? scenes = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
         {
             var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
-            if (settings == null)
+            if (settings == null && accountId != null)
             {
                 settings = new SearchSettings { AccountId = accountId };
 
@@ -195,22 +195,25 @@ namespace WayfinderProjectAPI.Controllers
                     results = results.Where(x => x.Script.Lines.ToList().Any(y => y.Line.Contains(queryString)));
                 }
 
-                if (settings.MainSearchEverything)
+                if (settings != null && settings.MainSearchEverything)
                 {
                     results = this.MainSearchQueryScenes(queryString, results);
                 }
             }
 
-            // Add to search history
-            if (settings.TrackHistory)
+            if (accountId != null && settings != null)
             {
-                this.InsertSearchHistory(accountId, "Memory Archive", "Scenes",
-                    queryString ?? string.Empty, scenes ?? string.Empty,
-                    games ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty, characters ?? string.Empty, music ?? string.Empty);
-            }
+                // Add to search history
+                if (settings.TrackHistory)
+                {
+                    this.InsertSearchHistory(accountId, "Memory Archive", "Scenes",
+                        queryString ?? string.Empty, scenes ?? string.Empty,
+                        games ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty, characters ?? string.Empty, music ?? string.Empty);
+                }
 
-            // Check for Favourites and Projects
-            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+                // Check for Favourites and Projects
+                results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+            }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
@@ -283,10 +286,10 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpGet("GetInterviews")]
-        public async Task<List<InterviewDto>> GetInterviews([FromQuery] string accountId, [FromQuery] string? interviews = null, [FromQuery] string? games = null, [FromQuery] string? participants = null, [FromQuery] string? providers = null, [FromQuery] string? translators = null, [FromQuery] string? line = null)
+        public async Task<List<InterviewDto>> GetInterviews([FromQuery] string? accountId, [FromQuery] string? interviews = null, [FromQuery] string? games = null, [FromQuery] string? participants = null, [FromQuery] string? providers = null, [FromQuery] string? translators = null, [FromQuery] string? line = null)
         {
             var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
-            if (settings == null)
+            if (settings == null && accountId != null)
             {
                 settings = new SearchSettings { AccountId = accountId };
 
@@ -386,22 +389,25 @@ namespace WayfinderProjectAPI.Controllers
                     results = results.Where(x => x.Conversation.ToList().Any(y => y.Line.Contains(queryString)));
                 }
 
-                if (settings.MainSearchEverything)
+                if (settings != null && settings.MainSearchEverything)
                 {
                     results = this.MainSearchQueryInterviews(queryString, results);
                 }
             }
 
-            // Add to search history
-            if (settings.TrackHistory)
+            if (accountId != null && settings != null)
             {
-                this.InsertSearchHistory(accountId, "Memory Archive", "Interviews",
-                    queryString ?? string.Empty, interviews ?? string.Empty,
-                    games ?? string.Empty, participants ?? string.Empty, providers ?? string.Empty, translators ?? string.Empty);
-            }
+                // Add to search history
+                if (settings.TrackHistory)
+                {
+                    this.InsertSearchHistory(accountId, "Memory Archive", "Interviews",
+                        queryString ?? string.Empty, interviews ?? string.Empty,
+                        games ?? string.Empty, participants ?? string.Empty, providers ?? string.Empty, translators ?? string.Empty);
+                }
 
-            // Check for Favourites and Projects
-            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+                // Check for Favourites and Projects
+                results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+            }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
@@ -471,10 +477,10 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Jiminy Journal
         [HttpGet("GetJournalEntries")]
-        public async Task<List<JournalEntryDto>> GetJournalEntries([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
+        public async Task<List<JournalEntryDto>> GetJournalEntries([FromQuery] string? accountId, [FromQuery] string? games = null, [FromQuery] string? entries = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? information = null, [FromQuery] string? category = null)
         {
             var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
-            if (settings == null)
+            if (settings == null && accountId != null)
             {
                 settings = new SearchSettings { AccountId = accountId };
 
@@ -570,22 +576,25 @@ namespace WayfinderProjectAPI.Controllers
                     results = results.Where(x => x.Description.Contains(queryString) || x.AdditionalInformation.Contains(queryString));
                 }
 
-                if (settings.MainSearchEverything)
+                if (settings != null && settings.MainSearchEverything)
                 {
                     results = this.MainSearchQueryJournalEntries(queryString, results);
                 }
             }
 
-            // Add to search history
-            if (settings.TrackHistory)
+            if (accountId != null && settings != null)
             {
-                this.InsertSearchHistory(accountId, "Jiminy's Journal", category ?? "Journal Entry",
-                    queryString ?? string.Empty, entries ?? string.Empty,
-                    games ?? string.Empty, characters ?? string.Empty, worlds ?? string.Empty);
-            }
+                // Add to search history
+                if (settings.TrackHistory)
+                {
+                    this.InsertSearchHistory(accountId, "Jiminy's Journal", category ?? "Journal Entry",
+                        queryString ?? string.Empty, entries ?? string.Empty,
+                        games ?? string.Empty, characters ?? string.Empty, worlds ?? string.Empty);
+                }
 
-            // Check for Favourites and Projects
-            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+                // Check for Favourites and Projects
+                results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+            }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
@@ -720,10 +729,10 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Moogle Shop
         [HttpGet("GetRecipes")]
-        public async Task<List<RecipeDto>> GetRecipes([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? recipes = null, [FromQuery] string? synthMaterials = null, [FromQuery] string? description = null, [FromQuery] string? categories = null)
+        public async Task<List<RecipeDto>> GetRecipes([FromQuery] string? accountId, [FromQuery] string? games = null, [FromQuery] string? recipes = null, [FromQuery] string? synthMaterials = null, [FromQuery] string? description = null, [FromQuery] string? categories = null)
         {
             var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
-            if (settings == null)
+            if (settings == null && accountId != null)
             {
                 settings = new SearchSettings { AccountId = accountId };
 
@@ -820,22 +829,25 @@ namespace WayfinderProjectAPI.Controllers
                     results = results.Where(x => x.UnlockConditionDescription.Contains(queryString) || x.RecipeMaterials.Any(x => x.Inventory.Description.Contains(queryString)) || x.RecipeMaterials.Any(x => x.Inventory.AdditionalInformation.Contains(queryString)));
                 }
 
-                if (settings.MainSearchEverything)
+                if (settings != null && settings.MainSearchEverything)
                 {
                     results = this.MainSearchQueryRecipes(queryString, results);
                 }
             }
 
-            // Add to search history
-            if (settings.TrackHistory)
+            if (accountId != null && settings != null)
             {
-                this.InsertSearchHistory(accountId, "Moogle Shop", "Recipes",
-                    queryString ?? string.Empty, recipes ?? string.Empty,
-                    games ?? string.Empty, categories ?? string.Empty, synthMaterials ?? string.Empty);
-            }
+                // Add to search history
+                if (settings.TrackHistory)
+                {
+                    this.InsertSearchHistory(accountId, "Moogle Shop", "Recipes",
+                        queryString ?? string.Empty, recipes ?? string.Empty,
+                        games ?? string.Empty, categories ?? string.Empty, synthMaterials ?? string.Empty);
+                }
 
-            // Check for Favourites and Projects
-            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+                // Check for Favourites and Projects
+                results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+            }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
@@ -886,10 +898,10 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpGet("GetInventory")]
-        public async Task<List<InventoryDto>> GetInventory([FromQuery] string accountId, [FromQuery] string? games = null, [FromQuery] string? items = null, [FromQuery] string? enemies = null, [FromQuery] string? worlds = null, [FromQuery] string? areas = null, [FromQuery] string? description = null, [FromQuery] string? category = null)
+        public async Task<List<InventoryDto>> GetInventory([FromQuery] string? accountId, [FromQuery] string? games = null, [FromQuery] string? items = null, [FromQuery] string? enemies = null, [FromQuery] string? worlds = null, [FromQuery] string? areas = null, [FromQuery] string? description = null, [FromQuery] string? category = null)
         {
             var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
-            if (settings == null)
+            if (settings == null && accountId != null)
             {
                 settings = new SearchSettings { AccountId = accountId };
 
@@ -1016,22 +1028,25 @@ namespace WayfinderProjectAPI.Controllers
                     results = results.Where(x => x.Description.Contains(queryString) || x.AdditionalInformation.Contains(queryString));
                 }
 
-                if (settings.MainSearchEverything)
+                if (settings != null && settings.MainSearchEverything)
                 {
                     results = this.MainSearchQueryInventory(queryString, results);
                 }
             }
 
-            // Add to search history
-            if (settings.TrackHistory)
+            if (accountId != null && settings != null)
             {
-                this.InsertSearchHistory(accountId, "Moogle Shop", category ?? "Moogle Record",
-                    queryString ?? string.Empty, items ?? string.Empty,
-                    games ?? string.Empty, enemies ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty);
-            }
+                // Add to search history
+                if (settings.TrackHistory)
+                {
+                    this.InsertSearchHistory(accountId, "Moogle Shop", category ?? "Moogle Record",
+                        queryString ?? string.Empty, items ?? string.Empty,
+                        games ?? string.Empty, enemies ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty);
+                }
 
-            // Check for Favourites and Projects
-            results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+                // Check for Favourites and Projects
+                results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+            }
 
             return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
         }
