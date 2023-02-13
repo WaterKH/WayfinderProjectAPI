@@ -98,7 +98,7 @@ namespace WayfinderProjectAPI.Controllers
                 Dictionary<string, List<string>> aliases = new Dictionary<string, List<string>>();
                 List<string> aliasAppearAs = new List<string>();
 
-                if (settings.IncludeAlias)
+                if (settings != null && settings.IncludeAlias)
                 {
                     await this._context.Aliases.Where(x => charactersList.Contains(x.Original)).ForEachAsync(x =>
                     {
@@ -123,7 +123,7 @@ namespace WayfinderProjectAPI.Controllers
                     }
 
                     // Look up aliases of characters
-                    if (settings.IncludeAlias)
+                    if (settings != null && settings.IncludeAlias)
                     {
                         foreach (var (original, appearAs) in aliases)
                         {
