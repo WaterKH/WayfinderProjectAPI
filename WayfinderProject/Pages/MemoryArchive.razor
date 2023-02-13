@@ -32,8 +32,11 @@
                 <div class="wayfinder-search">
                     <span class="wayfinder-search-icon material-icons">search</span>
                     <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" @onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
-                    <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-                    <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                    @if (this.loggedIn)
+                    {
+                        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                    }
                     <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
                 </div>
 
@@ -101,8 +104,11 @@
     <div class="wayfinder-search-alt">
         <span class="wayfinder-search-icon material-icons">search</span>
         <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
-        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+        @if (this.loggedIn)
+        {
+            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+        }
         <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
     </div>
 </div>
@@ -745,7 +751,14 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     {
                         this.currentNotifyCount = 0;
 
-                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                        if (this.loggedIn)
+                        {
+                            toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                        }
+                        else
+                        {
+                            toastService.ShowInfo("Create an account to have access to Projects, Favourites, Settings & History");
+                        }
                     }
                 }
                 else
@@ -857,7 +870,14 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     {
                         this.currentNotifyCount = 0;
 
-                        toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                        if (this.loggedIn)
+                        {
+                            toastService.ShowInfo("Using The Wayfinder Project for a project? Consider mentioning us in your references!");
+                        }
+                        else
+                        {
+                            toastService.ShowInfo("Create an account to have access to Projects, Favourites, Settings & History");
+                        }
                     }
                 }
                 else
