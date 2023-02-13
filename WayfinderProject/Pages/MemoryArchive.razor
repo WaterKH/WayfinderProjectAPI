@@ -37,7 +37,7 @@
                         <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
                         <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
                     }
-                    <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
+                    <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
                 </div>
 
                 <div class="wayfinder-sub-description">
@@ -109,7 +109,7 @@
             <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
             <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
         }
-        <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))">Search</button>
+        <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
     </div>
 </div>
 
