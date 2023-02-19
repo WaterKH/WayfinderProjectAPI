@@ -789,7 +789,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                 var authState = await authenticationStateTask;
 
                 WayfinderProjectUser? user = null;
-                if (authState.User.Identity != null)
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
                     user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
                 }
