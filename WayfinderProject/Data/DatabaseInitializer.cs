@@ -43,7 +43,7 @@ namespace WayfinderProjectAPI.Data
             //CreateScenes(context);
 
             // Load Interviews
-            CreateInterviews(context);
+            //CreateInterviews(context);
 
             // JJ
             // Character
@@ -351,7 +351,7 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, characters) in allJJCharacters["Characters"])
             {
-                if (gameName != "Kingdom Hearts") continue;
+                if (gameName == "Kingdom Hearts Re:Chain of Memories" || gameName == "Kingdom Hearts") continue;
 
                 foreach (var character in characters)
                 {
@@ -389,7 +389,7 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, storyEntries) in allJJStoryEntries["Story"])
             {
-                if (gameName != "Kingdom Hearts") continue;
+                if (gameName == "Kingdom Hearts") continue;
 
                 foreach (var storyEntry in storyEntries)
                 {
@@ -427,13 +427,22 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, enemyEntries) in allJJEnemiesEntries["Enemies"])
             {
-                if (gameName != "Kingdom Hearts") continue;
+                if (gameName == "Kingdom Hearts") continue;
 
                 foreach (var enemyEntry in enemyEntries)
                 {
+
+                    enemyEntry.Characters.ForEach(x =>
+                    {
+                        if (!context.Characters.Any(y => y.Name == x))
+                        {
+                            context.Characters.Add(new Character { Name = x });
+                            context.SaveChanges();
+                        }
+                    });
                     var tempCharacters = context.Characters.Where(x => enemyEntry.Characters.Contains(x.Name)).ToList();
-                    if (tempCharacters.Count() != enemyEntry.Characters.Count())
-                        Console.WriteLine();
+                    //if (tempCharacters.Count() != enemyEntry.Characters.Count())
+                    // Console.WriteLine();
 
                     var tempWorlds = context.Worlds.Where(x => enemyEntry.Worlds.Contains(x.Name)).ToList();
                     if (tempWorlds.Count() != enemyEntry.Worlds.Count())
@@ -465,7 +474,7 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, reportEntries) in allJJReportEntries["Reports"])
             {
-                if (gameName != "Kingdom Hearts") continue;
+                if (gameName == "Kingdom Hearts") continue;
 
                 foreach (var enemyEntry in reportEntries)
                 {
