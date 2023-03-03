@@ -2,21 +2,21 @@
 {
     @if (this.AllowMultipleSelect)
     {
-        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Start Typing..." />
-        <select class="wayfinder-select" multiple @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
+        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Filter List..." />
+        <select class="wayfinder-select" multiple>
             @foreach (var item in this.Available)
             {
-                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Select(item))">@item</option>
+                <option class="wayfinder-option" value="@item" @onchange="@(() => this.Select(item))">@item</option>
             }
         </select>
     }
     else
     {
-        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Start Typing..." />
-        <select class="wayfinder-select" @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
+        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Filter List..." />
+        <select class="wayfinder-select">
             @foreach (var item in this.Available)
             {
-                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Select(item))">@item</option>
+                <option class="wayfinder-option" value="@item" @onchange="@(() => this.Select(item))">@item</option>
             }
         </select>
     }
@@ -25,20 +25,19 @@ else if (this.CurrentView == "Selected")
 {
     @if (this.AllowMultipleSelect)
     {
-        <select class="wayfinder-select" multiple @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
+        <select class="wayfinder-select" multiple>
             @foreach (var item in this.Selected)
             {
-                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Remove(item))">@item</option>
+                <option class="wayfinder-option" value="@item" @onchange="@(() => this.Remove(item))">@item</option>
             }
         </select>
     }
     else
     {
-
-        <select class="wayfinder-select" @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
+        <select class="wayfinder-select">
             @foreach (var item in this.Selected)
             {
-                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Remove(@item))">@item</option>
+                <option class="wayfinder-option" value="@item" @onchange="@(() => this.Remove(@item))">@item</option>
             }
         </select>
     }
@@ -64,12 +63,12 @@ else if (this.CurrentView == "Selected")
     {
         this.Selected.Add(value);
 
-        //this.Available.Remove(value);
+        this.Available.Remove(value);
 
-        //if (this.UpdateSearch != null)
-        //{
-        //    await Task.Run(async () => await this.UpdateSearch.Invoke());
-        //}
+        if (this.UpdateSearch != null)
+        {
+            await Task.Run(async () => await this.UpdateSearch.Invoke());
+        }
 
         await InvokeAsync(() =>
         {
@@ -84,10 +83,10 @@ else if (this.CurrentView == "Selected")
         this.Available.Add(value);
         this.Available.Sort();
 
-        //if (this.UpdateSearch != null)
-        //{
-        //    await Task.Run(async () => await this.UpdateSearch.Invoke());
-        //}
+        if (this.UpdateSearch != null)
+        {
+            await Task.Run(async () => await this.UpdateSearch.Invoke());
+        }
 
         await InvokeAsync(() =>
         {
