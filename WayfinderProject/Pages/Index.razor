@@ -22,12 +22,12 @@
     <div class="row">
         <div class="col-md-6" style="align-self: center;">
             <div class="wayfinder-title">
-                <img src="/images/wayfinder_project_title.png" style="float: left;" />
+                <img src="/images/wayfinder_project_title.png" style="float: left; @(!this.IsMobile ? "" : "width: 100%; margin-bottom: 15px;")" />
             </div>
         </div>
 
         <div class="col-md-6" style="align-self: center;">
-            <div class="wayfinder-description">
+            <div class="wayfinder-description" style="@(!this.IsMobile ? "" : "text-align: center;")">
                 <span style="text-align: end;">Kingdom Hearts Resource Database</span>
             </div>
         </div>
@@ -37,7 +37,7 @@
 <div class="row">
     <div class="col-md-4">
         <div class="ma-folder">
-            <span class="folder-title">Memory Archive</span>
+            <span class="folder-title" style="@(!this.IsMobile ? "" : "font-size: 75%; top: -20px; left: 0px;")">Memory Archive</span>
 
             <div class="folder-container">
                 <div class="folder-redirect">
@@ -58,7 +58,7 @@
 
     <div class="col-md-4">
         <div class="jj-folder">
-            <span class="folder-title">Jiminy's Journal</span>
+            <span class="folder-title" style="@(!this.IsMobile ? "" : "font-size: 75%; top: -20px; left: 0px;")">Jiminy's Journal</span>
 
             <div class="folder-container">
                 <div class="folder-redirect">
@@ -79,7 +79,7 @@
 
     <div class="col-md-4">
         <div class="ms-folder">
-            <span class="folder-title">Moogle Shop</span>
+            <span class="folder-title" style="@(!this.IsMobile ? "" : "font-size: 75%; top: -20px; left: 0px;")">Moogle Shop</span>
 
             <div class="folder-container">
                 <div class="folder-redirect">
@@ -129,6 +129,7 @@
     public string? CodeQuery { get; set; }
 
     public bool IsPatron { get; set; }
+    public bool IsMobile { get; set; }
 
     private PatreonService patreonService = default!;
 
@@ -156,6 +157,16 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if (firstRender)
+        {
+            this.IsMobile = true; //await JS.InvokeAsync<bool>("isDevice");
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
+
         await base.OnAfterRenderAsync(firstRender);
     }
 }

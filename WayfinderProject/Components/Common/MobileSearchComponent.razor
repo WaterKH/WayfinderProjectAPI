@@ -2,20 +2,21 @@
 {
     @if (this.AllowMultipleSelect)
     {
-        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" />
-        <select id="@($"{this.Id}SelectList")" multiple class="wayfinder-select">
+        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Start Typing..." />
+        <select class="wayfinder-select" multiple @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
             @foreach (var item in this.Available)
             {
-                <option class="wayfinder-option" value="@item" selected @onclick="@(() => this.Select(item))">@item</option>
+                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Select(item))">@item</option>
             }
         </select>
     }
     else
     {
-        <select class="wayfinder-select">
-            @foreach (var item in this.Selected)
+        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Start Typing..." />
+        <select class="wayfinder-select" @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
+            @foreach (var item in this.Available)
             {
-                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Select(@item))">@item</option>
+                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Select(item))">@item</option>
             }
         </select>
     }
@@ -24,16 +25,17 @@ else if (this.CurrentView == "Selected")
 {
     @if (this.AllowMultipleSelect)
     {
-        <select class="wayfinder-select" multiple>
+        <select class="wayfinder-select" multiple @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
             @foreach (var item in this.Selected)
             {
-                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Remove(@item))">@item</option>
+                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Remove(item))">@item</option>
             }
         </select>
     }
     else
     {
-        <select class="wayfinder-select">
+
+        <select class="wayfinder-select" @onchange="(async () => { if (this.UpdateSearch != null) { await Task.Run(async () => await this.UpdateSearch.Invoke()); } })">
             @foreach (var item in this.Selected)
             {
                 <option class="wayfinder-option" value="@item" @onclick="@(() => this.Remove(@item))">@item</option>
@@ -64,10 +66,10 @@ else if (this.CurrentView == "Selected")
 
         //this.Available.Remove(value);
 
-        if (this.UpdateSearch != null)
-        {
-            await Task.Run(async () => await this.UpdateSearch.Invoke());
-        }
+        //if (this.UpdateSearch != null)
+        //{
+        //    await Task.Run(async () => await this.UpdateSearch.Invoke());
+        //}
 
         await InvokeAsync(() =>
         {
@@ -82,10 +84,10 @@ else if (this.CurrentView == "Selected")
         this.Available.Add(value);
         this.Available.Sort();
 
-        if (this.UpdateSearch != null)
-        {
-            await Task.Run(async () => await this.UpdateSearch.Invoke());
-        }
+        //if (this.UpdateSearch != null)
+        //{
+        //    await Task.Run(async () => await this.UpdateSearch.Invoke());
+        //}
 
         await InvokeAsync(() =>
         {
@@ -97,7 +99,7 @@ else if (this.CurrentView == "Selected")
     {
         this.Available = new List<string>();
 
-        if (string.IsNullOrEmpty(search) || search.Length < 3)
+        if (string.IsNullOrEmpty(search))
         {
             this.Available = this.Initial;
             return;

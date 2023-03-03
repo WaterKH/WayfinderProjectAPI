@@ -132,7 +132,7 @@
                     {
                         startDate = resource.PledgeRelationshipStart.Value.ToString().Split(" ")[0];
                     }
-                
+
                     this.supporters.Add(resource.FullName, startDate);
                 }
             }
@@ -141,6 +141,8 @@
         }
         catch (Exception ex)
         {
+            this.supporters = new Dictionary<string, string>() { { "ERROR WITH PATREON API", "UNKNOWN" } };
+
             Console.WriteLine(ex);
         }
 

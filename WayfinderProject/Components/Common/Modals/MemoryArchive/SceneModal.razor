@@ -68,9 +68,7 @@
                 <div class="row" style="width: 100%; margin: 0px 0px 10px 0px">
                     <div class="col-md-12" style="align-self: center;">
                         <div class="wayfinder-search">
-                            <span class="wayfinder-search-icon material-icons">search</span>
                             <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.searchValue = e?.Value?.ToString() ?? string.Empty; await this.SearchDialogue(); })" placeholder="Search Dialogue...">
-                            <button class="wayfinder-search-button" onclick="@(async () => await this.SearchDialogue())">Search</button>
                         </div>
                     </div>
                 </div>
