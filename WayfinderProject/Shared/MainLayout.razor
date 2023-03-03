@@ -5,6 +5,7 @@
 
 @inject NavigationManager NavigationManager
 @inject WayfinderProjectAPI.Data.WayfinderContext context
+@inject IJSRuntime JS
 
 <PageTitle>The Wayfinder Project</PageTitle>
 
@@ -16,16 +17,20 @@
 
 <div class="page">
     <main>
-        <div class="top-row px-4" style="background-color: white; border-bottom: unset;">
+        <div class="top-row px-4" style="background-color: white; border-bottom: unset; @(!this.IsMobile ? "" : "display: flex;")">
             <a href="/"><img src="/images/wayfinder_project_icon.png" alt="The Wayfinder Project" style="position: absolute; left: 50px; top: 12px; width: 28px;"></a>
 
-            <div class="links" style="left: 135px; position: absolute; cursor: default;">
-                <a class="wayfinder-link" href="/memory_archive" style="color: #3c39de; font-size: large;">Memory Archive</a>
-                <span class="wayfinder-span" style="color: #68a4ff;">•</span>
-                <a class="wayfinder-link" href="/jiminy_journal" style="color: #387ee6; font-size: large;">Jiminy's Journal</a>
-                <span class="wayfinder-span" style="color: #387ee6">•</span>
-                <a class="wayfinder-link" href="/moogle_shop" style="color: #5067bb; font-size: large;">Moogle Shop</a>
-            </div>
+            @if (!this.IsMobile)
+            {
+                <div class="links" style="left: 135px; position: absolute; cursor: default;">
+                    <a class="wayfinder-link" href="/memory_archive" style="color: #3c39de; font-size: large;">Memory Archive</a>
+                    <span class="wayfinder-span" style="color: #68a4ff;">•</span>
+                    <a class="wayfinder-link" href="/jiminy_journal" style="color: #387ee6; font-size: large;">Jiminy's Journal</a>
+                    <span class="wayfinder-span" style="color: #387ee6">•</span>
+                    <a class="wayfinder-link" href="/moogle_shop" style="color: #5067bb; font-size: large;">Moogle Shop</a>
+                </div>
+            }
+
             <div id="about">
                 <button class="wayfinder-nav-button" onclick="@(() => this.Show("About"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault
                         style="color: #3c39de;">
@@ -44,7 +49,14 @@
                 </div>
             </div>
 
-            <span class="wayfinder-span" style="color: #387ee6;">•</span>
+            @if (!this.IsMobile)
+            {
+                <span class="wayfinder-span" style="color: #387ee6;">•</span>
+            }
+            else
+            {
+                <span style="margin-right:10px;"></span>
+            }
 
             <div id="support">
                 <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("/support", true))" style="text-decoration: none; background: linear-gradient(to right, #ff91cf, #ff4fb2);">
@@ -54,67 +66,70 @@
                 </button>
             </div>
 
-            <span class="wayfinder-span" style="color: #68a4ff;">•</span>
-
-            <div id="resources">
-                <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("https://github.com/WaterKH/WayfinderProjectAPI/issues/new?assignees=WaterKH&labels=bug&template=bug_report.md&title=", true))"
-                        style="color: white; background: linear-gradient(to right, #d91515, #fd2727);">
-                    Report an Issue?
-                </button>
-            </div>
-
-            <span style="margin-left: 35px;"></span>
-
-
-            @if (this.authState == null || this.authState.User.Identity == null || !this.authState.User.Identity.IsAuthenticated)
+            @if (!this.IsMobile)
             {
-                <div id="account-login">
-                    <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("/Identity/Account/Login", true))">Login</button>
-                </div>
-            }
-            else
-            {
-                <div id="account-logged-in">
-                    <button class="account-container" onclick="@(() => this.Show("Account"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault>
-                        <span class="oi oi-person account-icon"></span>
+                <span class="wayfinder-span" style="color: #68a4ff;">•</span>
+
+                <div id="resources">
+                    <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("https://github.com/WaterKH/WayfinderProjectAPI/issues/new?assignees=WaterKH&labels=bug&template=bug_report.md&title=", true))"
+                            style="color: white; background: linear-gradient(to right, #d91515, #fd2727);">
+                        Report an Issue?
                     </button>
-
-                    <div class="@(this.currentAction == "Account" ? "dropdown-container" : "")" onblur="@(() => this.Hide())" style="right: 20px;">
-                        <ul class="dropdown-list @(this.currentAction == "Account" ? "is-active" : "")">
-                            <li class="wayfinder-dropdown-item">
-                                <a class="wayfinder-link" href="/Identity/Account/Manage" style="color: #5067bb;">Manage Account</a>
-                            </li>
-                            <li class="wayfinder-dropdown-item" style="margin-bottom: 5px;">
-                                @if (this.isPatron)
-                                {
-                                    <button class="unlink-patreon-button" @onclick="@(() => this.UnlinkPatreon())">
-                                        <img src="/images/patreon.png" style="width: 15px;" />
-                                        Unlink Patreon
-                                    </button>
-                                }
-                                else
-                                {
-                                    <button class="patreon-button" @onclick="@(() => this.LinkPatreon())">
-                                        <img src="/images/patreon.png" style="width: 15px;" />
-                                        Link Patreon
-                                    </button>
-                                }
-                            </li>
-                            <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
-                                <a class="wayfinder-link" href="/Projects" style="color: #5067bb;">Projects</a>
-                            </li>
-                            <li class="wayfinder-dropdown-item">
-                                <a class="wayfinder-link" href="/Favourites" style="color: #5067bb;">Favourites</a>
-                            </li>
-                            <li class="wayfinder-dropdown-item">
-                                <a class="wayfinder-link" href="/Search_History" style="color: #5067bb;">History</a>
-                            </li>
-                            <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
-                                <a class="wayfinder-link" href="/Identity/Account/Logout" style="color: #5067bb;">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
+
+                <span style="margin-left: 35px;"></span>
+
+
+                @if (this.authState == null || this.authState.User.Identity == null || !this.authState.User.Identity.IsAuthenticated)
+                {
+                    <div id="account-login">
+                        <button class="wayfinder-button" onclick="@(() => NavigationManager.NavigateTo("/Identity/Account/Login", true))">Login</button>
+                    </div>
+                }
+                else
+                {
+                    <div id="account-logged-in">
+                        <button class="account-container" onclick="@(() => this.Show("Account"))" @onfocusout="@(() => this.Hide())" @onclick:stopPropagation @onclick:preventDefault>
+                            <span class="oi oi-person account-icon"></span>
+                        </button>
+
+                        <div class="@(this.currentAction == "Account" ? "dropdown-container" : "")" onblur="@(() => this.Hide())" style="right: 20px;">
+                            <ul class="dropdown-list @(this.currentAction == "Account" ? "is-active" : "")">
+                                <li class="wayfinder-dropdown-item">
+                                    <a class="wayfinder-link" href="/Identity/Account/Manage" style="color: #5067bb;">Manage Account</a>
+                                </li>
+                                <li class="wayfinder-dropdown-item" style="margin-bottom: 5px;">
+                                    @if (this.isPatron)
+                                    {
+                                        <button class="unlink-patreon-button" @onclick="@(() => this.UnlinkPatreon())">
+                                            <img src="/images/patreon.png" style="width: 15px;" />
+                                            Unlink Patreon
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        <button class="patreon-button" @onclick="@(() => this.LinkPatreon())">
+                                            <img src="/images/patreon.png" style="width: 15px;" />
+                                            Link Patreon
+                                        </button>
+                                    }
+                                </li>
+                                <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
+                                    <a class="wayfinder-link" href="/Projects" style="color: #5067bb;">Projects</a>
+                                </li>
+                                <li class="wayfinder-dropdown-item">
+                                    <a class="wayfinder-link" href="/Favourites" style="color: #5067bb;">Favourites</a>
+                                </li>
+                                <li class="wayfinder-dropdown-item">
+                                    <a class="wayfinder-link" href="/Search_History" style="color: #5067bb;">History</a>
+                                </li>
+                                <li class="wayfinder-dropdown-item" style="border-top: 1px solid #dddddd;">
+                                    <a class="wayfinder-link" href="/Identity/Account/Logout" style="color: #5067bb;">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                }
             }
         </div>
 
@@ -259,6 +274,8 @@
     [CascadingParameter]
     private Task<AuthenticationState>? authenticationStateTask { get; set; }
 
+    public bool IsMobile = false;
+
     private string currentAction = "";
     private AuthenticationState? authState;
 
@@ -290,6 +307,11 @@
                             await patreonService.RefreshToken(context, user.Id);
 
                             this.isPatron = await patreonService.IsPatron(context, user.Id);
+
+                            if (user.UserName == "thewayfinderprojectkh@gmail.com")
+                            {
+                                this.isPatron = true;
+                            }
                         }
 
                         this.checkedIsPatron = true;
@@ -299,6 +321,21 @@
         }
 
         await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            this.IsMobile = true; //await JS.InvokeAsync<bool>("isDevice");
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
     }
 
     public async void Show(string action)
