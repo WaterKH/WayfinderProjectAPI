@@ -166,6 +166,12 @@
     }
     else
     {
+        <div class="wayfinder-buttons" style="align-self: center; margin: 15px;">
+            <button class="@(this.CurrentViewMobile == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())" style="right: unset;">@(this.CurrentViewMobile == "Available" ? "Filters" : "Options")</button>
+
+            <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault>Clear All</button>
+        </div>
+
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-6">
                 <MobileSearchComponent Id="Scenes" Initial="@this.Scenes" Available="@this.ScenesAvailable" Selected="@this.ScenesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
@@ -2025,6 +2031,17 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             this.CurrentViewMobile = "Available";
         }
+    }
+
+    private void DisplayClearAllModal()
+    {
+        var parameters = new ModalParameters();
+        
+        parameters.Add("ClearAllSubMethod", ClearAllOptions);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        Modal.Show<ClearAllModal>("Clear All", parameters, options);
     }
     #endregion Scene Specific Methods
 }

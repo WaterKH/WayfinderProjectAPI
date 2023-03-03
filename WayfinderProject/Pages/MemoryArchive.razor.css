@@ -182,6 +182,47 @@
     color: #2997ff;
 }
 
+.wayfinder-buttons {
+    display: inline-flex;
+}
+
+
+.wayfinder-search-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+}
+
+    .wayfinder-search-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.wayfinder-outlined-button {
+    padding: 5px 30px;
+    color: black;
+    border: 1px solid #2787fd;
+    border-radius: 20px;
+    background: #f1f1f1;
+}
+
+    .wayfinder-outlined-button:focus {
+        outline: none;
+    }
+
+.clear-all-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #d91515, #fd2727);
+    margin-right: 10px;
+}
+
 
 /* Rounded sliders */
 .slider.round {
