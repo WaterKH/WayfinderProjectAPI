@@ -206,17 +206,11 @@
         this.search = search;
         this.Available = new List<string>();
 
-        if (string.IsNullOrEmpty(search))
-        {
-            this.Available = this.Initial;
-            return;
-        }
-
         foreach (var selection in this.Initial)
         {
             if (this.Selected.Contains(selection)) continue;
 
-            if (selection.ToLower().Contains(search.ToLower()))
+            if (selection.ToLower().Contains(search.ToLower()) || string.IsNullOrEmpty(search))
             {
                 this.Available.Add(selection);
             }

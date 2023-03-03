@@ -37,6 +37,12 @@
         function isDevice() {
             return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile/i.test(navigator.userAgent);
         }
+
+        function getSelections(id) {
+            var options = document.getElementById(id).selectedOptions;
+
+            return Array.from(options).map(({ value }) => value);
+        }
     </script>
 
     <script>
