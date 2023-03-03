@@ -361,10 +361,10 @@ else if (this.CurrentCategory == "Cutscenes" && this.SceneDtos.Count > 0)
 
                     <div class="row">
                         <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
-                            <RowContentDisplay Content="scene.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            <RowContentDisplay Content="scene.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
                         </div>
                         <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
-                            <RowContentDisplay Content="scene.Areas.Select(x => x.Name).ToList()" CustomDisplayClass="area-display" DefaultDisplayClass="area-display" CustomColourClass="area-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            <RowContentDisplay Content="scene.Areas.Select(x => x.Name).ToList()" CustomDisplayClass="area-display" DefaultDisplayClass="area-display" CustomColourClass="area-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
                         </div>
                     </div>
 
@@ -718,7 +718,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (firstRender)
         {
-            this.IsMobile = true;//await JS.InvokeAsync<bool>("isDevice");
+            this.IsMobile = await JS.InvokeAsync<bool>("isDevice");
             
             this.initialized = true;
                 
