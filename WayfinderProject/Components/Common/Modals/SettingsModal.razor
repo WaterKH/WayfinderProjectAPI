@@ -94,7 +94,8 @@
     {
         if (this.API != null)
         {
-            await this.API.SaveSearchSettings(this.AccountId, this.searchSettings.AutoSearch, this.searchSettings.AutoExpandFirstResult, this.searchSettings.MainSearchEverything, this.searchSettings.TrackHistory, this.searchSettings.FavouriteSearch, this.searchSettings.ProjectSearch, this.searchSettings.IncludeAlias);
+            await this.API.SaveSearchSettings(this.AccountId, this.searchSettings.AutoSearch, this.searchSettings.AutoExpandFirstResult, this.searchSettings.MainSearchEverything, this.searchSettings.TrackHistory, 
+                                                this.searchSettings.FavouriteSearch, this.searchSettings.ProjectSearch, this.searchSettings.IncludeAlias, this.searchSettings.ResultsDisplay);
         }
     }
 

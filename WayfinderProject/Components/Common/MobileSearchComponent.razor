@@ -1,0 +1,121 @@
+﻿@if (this.CurrentView == "Available")
+{
+    @if (this.AllowMultipleSelect)
+    {
+        <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" />
+        <select id="@($"{this.Id}SelectList")" multiple class="wayfinder-select">
+            @foreach (var item in this.Available)
+            {
+                <option class="wayfinder-option" value="@item" selected @onclick="@(() => this.Select(item))">@item</option>
+            }
+        </select>
+    }
+    else
+    {
+        <select class="wayfinder-select">
+            @foreach (var item in this.Selected)
+            {
+                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Select(@item))">@item</option>
+            }
+        </select>
+    }
+}
+else if (this.CurrentView == "Selected")
+{
+    @if (this.AllowMultipleSelect)
+    {
+        <select class="wayfinder-select" multiple>
+            @foreach (var item in this.Selected)
+            {
+                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Remove(@item))">@item</option>
+            }
+        </select>
+    }
+    else
+    {
+        <select class="wayfinder-select">
+            @foreach (var item in this.Selected)
+            {
+                <option class="wayfinder-option" value="@item" @onclick="@(() => this.Remove(@item))">@item</option>
+            }
+        </select>
+    }
+}
+
+@code {
+    [Parameter] public string Id { get; set; } = string.Empty;
+    [Parameter] public List<string> Initial { get; set; } = new List<string>();
+    [Parameter] public List<string> Available { get; set; } = new List<string>();
+    [Parameter] public List<string> Selected { get; set; } = new List<string>();
+
+    [Parameter] public string CurrentView { get; set; } = "Available";
+    [Parameter] public bool AllowMultipleSelect { get; set; } = true;
+
+    [Parameter] public Func<Task>? UpdateSearch { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+
+    private async Task Select(string value)
+    {
+        this.Selected.Add(value);
+
+        //this.Available.Remove(value);
+
+        if (this.UpdateSearch != null)
+        {
+            await Task.Run(async () => await this.UpdateSearch.Invoke());
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    private async Task Remove(string value)
+    {
+        this.Selected.Remove(value);
+
+        this.Available.Add(value);
+        this.Available.Sort();
+
+        if (this.UpdateSearch != null)
+        {
+            await Task.Run(async () => await this.UpdateSearch.Invoke());
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    private async Task UpdateFilteredAvailable(string search)
+    {
+        this.Available = new List<string>();
+
+        if (string.IsNullOrEmpty(search) || search.Length < 3)
+        {
+            this.Available = this.Initial;
+            return;
+        }
+
+        foreach (var selection in this.Initial)
+        {
+            if (this.Selected.Contains(selection)) continue;
+
+            if (selection.ToLower().Contains(search.ToLower()))
+            {
+                this.Available.Add(selection);
+            }
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}

@@ -27,5 +27,7 @@ namespace WayfinderProjectAPI.Data.Models
         public bool ProjectSearch { get; set; } = false;
         [Required]
         public bool IncludeAlias { get; set; } = false;
+        [Required]
+        public string ResultsDisplay { get; set; } = "Table";
     }
 }

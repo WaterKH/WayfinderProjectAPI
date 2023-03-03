@@ -12,5 +12,6 @@
         public bool FavouriteSearch { get; set; } = false;
         public bool ProjectSearch { get; set; } = false;
         public bool IncludeAlias { get; set; } = false;
+        public string ResultsDisplay { get; set; } = "Table";
     }
 }

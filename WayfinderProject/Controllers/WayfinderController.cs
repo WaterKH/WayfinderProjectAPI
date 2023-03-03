@@ -1153,7 +1153,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("SaveSearchSettings")]
-        public async Task SaveSearchSettings(string accountId, bool autoSearch, bool autoExpandFirstResult, bool mainSearchEverything, bool trackHistory, bool favourites, bool projects, bool includeAlias)
+        public async Task SaveSearchSettings(string accountId, bool autoSearch, bool autoExpandFirstResult, bool mainSearchEverything, bool trackHistory, bool favourites, bool projects, bool includeAlias, string resultsDisplay)
         {
             var settings = await this._context.SearchSettings.FirstOrDefaultAsync(x => x.AccountId == accountId);
 
@@ -1166,6 +1166,7 @@ namespace WayfinderProjectAPI.Controllers
                 settings.FavouriteSearch = favourites;
                 settings.ProjectSearch = projects;
                 settings.IncludeAlias = includeAlias;
+                settings.ResultsDisplay = resultsDisplay;
             }
             else
             {
@@ -1178,7 +1179,8 @@ namespace WayfinderProjectAPI.Controllers
                     TrackHistory = trackHistory,
                     FavouriteSearch = favourites,
                     ProjectSearch = projects,
-                    IncludeAlias = includeAlias
+                    IncludeAlias = includeAlias,
+                    ResultsDisplay = resultsDisplay
                 });
             }
 

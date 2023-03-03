@@ -1,0 +1,195 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-12">
+            <SubNavBar Options="@(new List<string> { "Details", "Video", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
+
+            @if (this.CurrentSubOption == "Details")
+            {
+                <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                    <div class="row" style="height: 281px;">
+                        <div class="col-md-6">
+                            <h3 class="world-color"><img src="/images/icons/worlds.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
+                            <label>@(string.Join(", ", this.Scene.Worlds.Select(x => x.Name)))</label><br />
+                        </div>
+
+                        <div class="col-md-6">
+                            <div id="share" class="share" @onclick="@(() => { if (this.GenerateShareLink != null) { this.GenerateShareLink.Invoke(); } })">
+                                <span class="copyable">
+                                    <i class="oi oi-file"></i>
+                                    <label class="share-text"><b>Share Scene</b></label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="col-md-12" style="margin-top: 25px;">
+                            <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
+                            <label>@(string.Join(", ", this.Scene.Characters.Select(x => x.Name)))</label><br />
+                        </div>
+
+                        <div class="col-md-12" style="margin-top: 25px;">
+                            <h3 class="area-color"><img src="/images/icons/areas.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Areas</h3>
+                            <label>@(string.Join(", ", this.Scene.Areas.Select(x => x.Name)))</label><br />
+                        </div>
+
+                        <div class="col-md-12" style="margin-top: 25px;">
+                            <h3 class="music-color"><img src="/images/icons/music.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Music</h3>
+                            <div style="display: inline-flex;">
+                                @for (int i = 0; i < this.Scene.Music.Count; ++i)
+                                {
+                                    @if (this.Scene.Music.ToList()[i].Name != ":None:")
+                                    {
+                                        <a href="@this.Scene.Music.ToList()[i].Link" target="_blank">@this.Scene.Music.ToList()[i].Name</a>
+                                        if (i < this.Scene.Music.Count - 1)
+                                        {
+                                            <div>,&ensp;</div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @this.Scene.Music.ToList()[i].Name
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (this.CurrentSubOption == "Video")
+            {
+                <iframe src="@(Scene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px; width: 100%; height: 563px;"></iframe>
+            }
+            else if (this.CurrentSubOption == "Dialogue")
+            {
+                <div class="row" style="width: 100%; margin: 0px 0px 10px 0px">
+                    <div class="col-md-12" style="align-self: center;">
+                        <div class="wayfinder-search">
+                            <span class="wayfinder-search-icon material-icons">search</span>
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.searchValue = e?.Value?.ToString() ?? string.Empty; await this.SearchDialogue(); })" placeholder="Search Dialogue...">
+                            <button class="wayfinder-search-button" onclick="@(async () => await this.SearchDialogue())">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 15px 0px;">
+                    @foreach (var character in this.characters)
+                    {
+                        if (character == "None") continue;
+
+                        var tempCharacter = character;
+                        <div class="@(this.currentCharacter == character ? "character-option-selected" : "character-option")" @onclick="@(() => this.SelectCharacter(tempCharacter))">
+                            @character
+                        </div>
+                    }
+                </div>
+
+                <hr />
+
+                <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 410px; overflow-y: auto; margin-top: 10px;">
+                    <SceneTable Items="this.dialogue" Context="Line" CurrentPage="1">
+                        <TableHeader>
+                            <th>Dialogue</th>
+                            <th></th>
+                        </TableHeader>
+                        <RowTemplate>
+                            <td><strong>@Line.Character</strong></td>
+                            <td>@Line.Line</td>
+                        </RowTemplate>
+                    </SceneTable>
+                </div>
+            }
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+@code {
+    [Parameter] public SceneDto Scene { get; set; } = default!;
+    [Parameter] public string AccountId { get; set; } = string.Empty;
+    [Parameter] public WayfinderController? API { get; set; }
+    
+    [Parameter] public Func<Task>? GenerateShareLink { get; set; }
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private string searchValue = "";
+    private string currentCharacter = "";
+
+    private List<ScriptLineDto> dialogue = new List<ScriptLineDto>();
+    private List<string> characters = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (this.API != null)
+        {
+            this.Scene.Script = await this.API.GetScript(Scene.Game.Name, Scene.Name);
+
+            this.dialogue = this.Scene.Script.Lines.ToList();
+            this.characters = this.dialogue.Select(x => x.Character).Distinct().ToList();
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SearchDialogue()
+    {
+        if (!string.IsNullOrEmpty(this.searchValue))
+        {
+            this.dialogue = this.Scene.Script.Lines.Where(x => x.Line.Contains(this.searchValue)).ToList();
+        }
+        else
+        {
+            this.dialogue = this.Scene.Script.Lines.ToList();
+        }
+
+        this.characters = this.dialogue.Select(x => x.Character).Distinct().ToList();
+
+        if (!string.IsNullOrEmpty(this.currentCharacter))
+        {
+            this.dialogue = this.dialogue.Where(x => x.Character == this.currentCharacter).ToList();
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SelectCharacter(string value)
+    {
+        if (this.currentCharacter == value)
+        {
+            this.currentCharacter = "";
+        }
+        else
+        {
+            this.currentCharacter = value;
+        }
+
+        await this.SearchDialogue();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}
