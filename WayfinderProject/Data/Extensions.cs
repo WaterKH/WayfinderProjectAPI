@@ -356,7 +356,8 @@ namespace WayfinderProjectAPI.Data
                 TrackHistory = settings.TrackHistory,
                 FavouriteSearch = settings.FavouriteSearch,
                 ProjectSearch = settings.ProjectSearch,
-                IncludeAlias = settings.IncludeAlias
+                IncludeAlias = settings.IncludeAlias,
+                ResultsDisplay = settings.ResultsDisplay
             };
         }
         #endregion Search History And Settings

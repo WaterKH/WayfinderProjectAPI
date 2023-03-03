@@ -1,0 +1,33 @@
+﻿@if (this.Content.Count() > this.Limit)
+{
+    <div style="margin-left: @(this.CustomMargin)px; height: 38px; cursor: default;">
+        <Tooltip Text="@(string.Join(", ", this.Content))" Margin="@($"{this.CustomTooltipMargin.ToString()}px")">
+            <div class="@(this.CustomDisplayClass)">
+                Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
+            </div>
+        </Tooltip>
+    </div>
+}
+else if (this.Content.Count > 0 && this.Content.First() != ":None:")
+{
+    <div style="display: inline-flex; cursor: default;" class="@(this.Content.Count == this.Limit ? this.CustomDisplayClass : this.DefaultDisplayClass)">
+        @for (int i = 0; i < this.Content.Count; ++i)
+        {
+            <span class="@(this.CustomColourClass)">@this.Content.ToList()[i]</span>
+            if (i < this.Content.Count - 1)
+            {
+                <div>,&nbsp;</div>
+            }
+        }
+    </div>
+}
+
+@code {
+    [Parameter] public List<string> Content { get; set; } = new List<string>();
+    [Parameter] public string CustomDisplayClass { get; set; } = string.Empty;
+    [Parameter] public string CustomColourClass { get; set; } = string.Empty;
+    [Parameter] public string DefaultDisplayClass { get; set; } = string.Empty;
+    [Parameter] public int Limit { get; set; } = 2;
+    [Parameter] public int CustomMargin { get; set; } = -5;
+    [Parameter] public int CustomTooltipMargin { get; set; } = -100;
+}

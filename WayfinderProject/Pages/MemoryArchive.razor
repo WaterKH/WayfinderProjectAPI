@@ -17,135 +17,178 @@
 <br/>
 <br/>
 
-<div class="wayfinder-background">
-    <div class="wayfinder-parallax">
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-12" style="align-self: center;">
-                <div class="wayfinder-title">
-                    <img src="/images/wayfinder_project_title.png" />
-                </div>
+@if (!this.IsMobile)
+{
+    <div class="wayfinder-background">
+        <div class="wayfinder-parallax">
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-12" style="align-self: center;">
+                    <div class="wayfinder-title">
+                        <img src="/images/wayfinder_project_title.png" />
+                    </div>
 
-                <div class="wayfinder-description">
-                    <strong>Search for a <span style="color: #522aff;">Word</span>, <span style="color: #ff7519;">Phrase</span> or <span style="color: #2cce78;">Quote</span>...</strong>
-                </div>
+                    <div class="wayfinder-description">
+                        <strong>Search for a <span style="color: #522aff;">Word</span>, <span style="color: #ff7519;">Phrase</span> or <span style="color: #2cce78;">Quote</span>...</strong>
+                    </div>
 
-                <div class="wayfinder-search">
-                    <span class="wayfinder-search-icon material-icons">search</span>
-                    <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" @onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
-                    @if (this.loggedIn)
-                    {
-                        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-                        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
-                    }
-                    <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
-                </div>
+                    <div class="wayfinder-search">
+                        <span class="wayfinder-search-icon material-icons">search</span>
+                        <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" @onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
+                        @if (this.loggedIn)
+                        {
+                            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                        }
+                        <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
+                    </div>
 
-                <div class="wayfinder-sub-description">
-                    <strong>
-                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Scenes</span>, <span style="color: #ea4a4a;">Worlds</span>
-                        , <span style="color: #5499fc;">Areas</span>, <span style="color: #f3b222;">Characters</span> and <span style="color: #a13bfb;">Music</span>.
-                    </strong>
+                    <div class="wayfinder-sub-description">
+                        <strong>
+                            Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Scenes</span>, <span style="color: #ea4a4a;">Worlds</span>
+                            , <span style="color: #5499fc;">Areas</span>, <span style="color: #f3b222;">Characters</span> and <span style="color: #a13bfb;">Music</span>.
+                        </strong>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <hr />
+            <hr />
 
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-1"></div>
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-1"></div>
 
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #522aff;">Cutscene of the Day</span></strong>
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #522aff;">Cutscene of the Day</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Discover a brand new daily cutscene by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyCutscene())" @onclick:stopPropagation>Daily Cutscene</button>
                 </div>
 
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Discover a brand new daily cutscene by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
-                    </strong>
+                <div class="col-md-2"></div>
+
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Cutscene</span> <span style="color: #5499fc;">Generator</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Can't decide which scene you want to find? Let us choose for you by selecting a random scene!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomCutscene())" @onclick:stopPropagation>Random Cutscene</button>
                 </div>
 
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyCutscene())" @onclick:stopPropagation>Daily Cutscene</button>
+                <div class="col-md-1"></div>
             </div>
-
-            <div class="col-md-2"></div>
-
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Cutscene</span> <span style="color: #5499fc;">Generator</span></strong>
-                </div>
-
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Can't decide which scene you want to find? Let us choose for you by selecting a random scene!
-                    </strong>
-                </div>
-
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomCutscene())" @onclick:stopPropagation>Random Cutscene</button>
-            </div>
-
-            <div class="col-md-1"></div>
         </div>
     </div>
-</div>
+}
 
-
-<div style="display: inline-flex;">
+<div style="@(!this.IsMobile ? "display: inline-flex;" : "")">
     <div class="">
-
         <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
-        
     </div>
 
     <div class="wayfinder-search-alt">
         <span class="wayfinder-search-icon material-icons">search</span>
-        <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
-        @if (this.loggedIn)
-        {
-            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
-        }
-        <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
+        <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" style="@(!this.IsMobile ? "" : "padding-right: 20px;")"
+            onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
     </div>
 </div>
 
-<SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
+@if (!this.IsMobile)
+{
+    <div class="wayfinder-search-alt" style="width: 0%;">
+        <div style="position: absolute; right: 175px; display: inline-flex;">
+            <div style="margin-top: 20px; margin-right: 15px;">
+                <span style="font-size: larger;"><strong>Results Display: </strong></span>
+            </div>
+        
+            <NavBar @ref="WayfinderResultsDisplay" Categories="@(new List<string> { "Table", "Tiles" })" UpdateCurrentCategory="@(async (string category) => await UpdateResultsDisplay(category))" CurrentCategory="@this.CurrentResultsDisplay" Loading="@this.Loading" CustomStyle="margin-top: 15px;" />
+        </div>
+    </div>
+
+    <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
+}
 
 @if (this.CurrentCategory == "Cutscenes")
 {
-    <div id="scenes-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="SceneGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.SceneGames" Selected="this.SceneGamesSelected" Available="this.SceneGamesAvailable" 
+    @if (!this.IsMobile)
+    {
+        <div id="scenes-search" class="advanced-search-box">
+            <div class="row">
+                <div class="col-md-12">
+                    <SearchComponent @ref="SceneGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.SceneGames" Selected="this.SceneGamesSelected" Available="this.SceneGamesAvailable" 
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable" 
+                    <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable" 
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="SceneWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.SceneWorlds" Selected="this.SceneWorldsSelected" Available="this.SceneWorldsAvailable"
+                    <SearchComponent @ref="SceneWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.SceneWorlds" Selected="this.SceneWorldsSelected" Available="this.SceneWorldsAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="SceneAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.SceneAreas" Selected="this.SceneAreasSelected" Available="this.SceneAreasAvailable"
+                    <SearchComponent @ref="SceneAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.SceneAreas" Selected="this.SceneAreasSelected" Available="this.SceneAreasAvailable"
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="SceneCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.SceneCharacters" Selected="this.SceneCharactersSelected" Available="this.SceneCharactersAvailable"
+                    <SearchComponent @ref="SceneCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.SceneCharacters" Selected="this.SceneCharactersSelected" Available="this.SceneCharactersAvailable"
                              CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="SceneMusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.SceneMusic" Selected="this.SceneMusicSelected" Available="this.SceneMusicAvailable"
+                    <SearchComponent @ref="SceneMusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.SceneMusic" Selected="this.SceneMusicSelected" Available="this.SceneMusicAvailable"
                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                </div>
             </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-6">
+                <MobileSearchComponent Id="Scenes" Initial="@this.Scenes" Available="@this.ScenesAvailable" Selected="@this.ScenesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+            </div>
+
+            <div class="col-md-6">
+                <MobileSearchComponent Id="SceneGames" Initial="@this.SceneGames" Available="@this.SceneGamesAvailable" Selected="@this.SceneGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <MobileSearchComponent Id="SceneWorlds" Initial="@this.SceneWorlds" Available="@this.SceneWorldsAvailable" Selected="@this.SceneWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+            </div>
+
+            <div class="col-md-6">
+                <MobileSearchComponent Id="SceneAreas" Initial="@this.SceneAreas" Available="@this.SceneAreasAvailable" Selected="@this.SceneAreasSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <MobileSearchComponent Id="SceneCharacters" Initial="@this.SceneCharacters" Available="@this.SceneCharactersAvailable" Selected="@this.SceneCharactersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+            </div>
+
+            <div class="col-md-6">
+                <MobileSearchComponent Id="SceneMusic" Initial="@this.SceneMusic" Available="@this.SceneMusicAvailable" Selected="@this.SceneMusicSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+            </div>
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Trailers")
 {
@@ -219,26 +262,76 @@ else if (this.CurrentCategory == "Interviews")
 }
 else if (this.CurrentCategory == "Cutscenes" && this.SceneDtos.Count > 0)
 {
-    <SceneTable @ref="MainSceneTable" Items="this.SceneDtos" Context="Scene" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Scene</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Characters</label></th>
-            <th><img src="/images/icons/music_gray.png" class="header-margins"> <label class="header-label">Music</label></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Scenes", Scene.Id))" IsFavorite="@(this.IsFavoriteForUser("Scenes", Scene.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Scenes", Scene.Id))" IsProject="@(this.IsProjectForUser("Scenes", Scene.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <SceneTableExpandedRow Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </SceneTable>
+    @if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <SceneTable @ref="MainSceneTable" Items="this.SceneDtos" Context="Scene" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Scene</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Characters</label></th>
+                <th><img src="/images/icons/music_gray.png" class="header-margins"> <label class="header-label">Music</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Scenes", Scene.Id))" IsFavorite="@(this.IsFavoriteForUser("Scenes", Scene.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Scenes", Scene.Id))" IsProject="@(this.IsProjectForUser("Scenes", Scene.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <SceneTableExpandedRow Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </SceneTable>
+    }
+    else
+    {
+        <div class="row">
+        @foreach (var scene in this.SceneDtos)
+        {
+            <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                    <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                        <div class="col-md-10">
+                            <img src="@(this.GetGameIcon(scene.Game.Name))" width="10%" />
+                        </div>
+                        <div class="col-md-1">
+                            <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateSceneShareLink(scene.Id))">content_copy</span>
+                        </div>
+                        <div class="col-md-1">
+                            <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenSceneModal(scene))">open_in_full</span>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                            <a href="@(scene.Link)" target="_blank"><strong>@scene.Name</strong></a>
+                        </label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                            <RowContentDisplay Content="scene.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" />
+                        </div>
+                        <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="scene.Areas.Select(x => x.Name).ToList()" CustomDisplayClass="area-display" DefaultDisplayClass="area-display" CustomColourClass="area-color" CustomMargin="-115" CustomTooltipMargin="-290" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                            <RowContentDisplay Content="scene.Characters.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" />
+                        </div>
+                        <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                            <RowContentDisplay Content="scene.Music.Select(x => x.Name).ToList()" CustomDisplayClass="music-display" DefaultDisplayClass="music-display" CustomColourClass="music-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="-290" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Trailers")
 {
@@ -322,6 +415,9 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     public string CurrentOption { get; set; } = "Games";
     public string CurrentSubOption { get; set; } = "Details";
 
+    public string CurrentResultsDisplay { get; set; } = "Table";
+    public bool IsMobile { get; set; } = false;
+
     private string quoteSearch = "";
     private WayfinderController? api;
 
@@ -384,6 +480,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     private List<string> options = new List<string> { "Scenes", "Games", "Worlds", "Areas", "Characters", "Music" };
     private SubNavBar? WayfinderSubNavBar;
+
+    private NavBar? WayfinderResultsDisplay;
 
     private bool canDisplayClearAll;
 
@@ -467,9 +565,10 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();
     private List<FavoriteDto> Favourites = new List<FavoriteDto>();
     private SearchSettingsDto SearchSettings = default!;
+    private string CurrentViewMobile = "Available";
 
     private bool failed = false;
-    
+
     private bool loggedIn = false;
     private bool isPatron;
     private int favouriteCount = 200;
@@ -514,7 +613,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
 
         this.api = new WayfinderController(context);
-
+        
         await base.OnInitializedAsync();
     }
 
@@ -522,6 +621,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (firstRender)
         {
+            this.IsMobile = await JS.InvokeAsync<bool>("isDevice");
+
             //if (this.authenticationStateTask != null)
             //{
             //    var authState = await authenticationStateTask;
@@ -552,10 +653,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                     if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-                        
+
                         this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                         this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                         this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
                     await this.HandleQueryParams();
@@ -593,6 +695,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                         this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
                         this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                         this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
                     Thread.Sleep(1000);
@@ -646,6 +749,35 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         });
     }
 
+    public async Task UpdateResultsDisplay(string option)
+    {
+        this.CurrentResultsDisplay = option;
+
+        if (this.SearchSettings != null)
+        {
+            this.SearchSettings.ResultsDisplay = option;
+
+            if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+            {
+                var authState = await authenticationStateTask;
+
+                WayfinderProjectUser user = new();
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
+                {
+                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                    await this.api.SaveSearchSettings(user.Id, this.SearchSettings.AutoSearch, this.SearchSettings.AutoExpandFirstResult, this.SearchSettings.MainSearchEverything, this.SearchSettings.TrackHistory, 
+                                                        this.SearchSettings.FavouriteSearch, this.SearchSettings.ProjectSearch, this.SearchSettings.IncludeAlias, this.SearchSettings.ResultsDisplay);
+                }
+            }
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
     public async Task SearchQuotes(string search)
     {
         if (search.Length < 3)
@@ -691,12 +823,12 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     #region Sub-Search Methods
     private async Task SearchScenes(bool allowSearch = false)
     {
-        var games = this.SceneGamesSearch != null ? string.Join("::", this.SceneGamesSelected) != "" ? string.Join("::", this.SceneGamesSelected) : null : null;
-        var scenes = this.ScenesSearch != null ? string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null : null;
-        var worlds = this.SceneWorldsSearch != null ? string.Join("::", this.SceneWorldsSelected) != "" ? string.Join("::", this.SceneWorldsSelected) : null : null;
-        var areas = this.SceneAreasSearch != null ? string.Join("::", this.SceneAreasSelected) != "" ? string.Join("::", this.SceneAreasSelected) : null : null;
-        var characters = this.SceneCharactersSearch != null ? string.Join("::", this.SceneCharactersSelected) != "" ? string.Join("::", this.SceneCharactersSelected) : null : null;
-        var music = this.SceneMusicSearch != null ? string.Join("::", this.SceneMusicSelected) != "" ? string.Join("::", this.SceneMusicSelected) : null : null;
+        var games = string.Join("::", this.SceneGamesSelected) != "" ? string.Join("::", this.SceneGamesSelected) : null;
+        var scenes = string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected) : null;
+        var worlds = string.Join("::", this.SceneWorldsSelected) != "" ? string.Join("::", this.SceneWorldsSelected) : null;
+        var areas = string.Join("::", this.SceneAreasSelected) != "" ? string.Join("::", this.SceneAreasSelected) : null;
+        var characters = string.Join("::", this.SceneCharactersSelected) != "" ? string.Join("::", this.SceneCharactersSelected) : null;
+        var music = string.Join("::", this.SceneMusicSelected) != "" ? string.Join("::", this.SceneMusicSelected) : null;
         var line = this.quoteSearch != "" ? this.quoteSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1319,7 +1451,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     }
 
     #region Generate Share Link Sub-Methods
-    private async Task GenerateSceneShareLink()
+    private async Task GenerateSceneShareLink(int? sceneId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}memory_archive?";
 
@@ -1354,13 +1486,13 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
 
         shareLink += "category=Scenes&";
-        shareLink += $"open_row={this.MainSceneTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={sceneId ?? this.MainSceneTable?.CurrentExpandedRow}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
         if (this.MainSceneTable != null)
         {
-            toastService.ShowInfo($"Copied link to '{this.context.Scenes.FirstOrDefault(x => x.Id == this.MainSceneTable.CurrentExpandedRow)?.Name}' scene.");
+            toastService.ShowInfo($"Copied link to '{this.context.Scenes.FirstOrDefault(x => x.Id == (sceneId ?? this.MainSceneTable.CurrentExpandedRow))?.Name}' scene.");
         }
     }
 
@@ -1816,6 +1948,76 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     public bool IsProjectForUser(string category, int specificRecordId)
     {
         return this.ProjectRecords.Exists(x => x.Type == "Memory Archive" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+
+    public string GetGameIcon(string gameName)
+    {
+        switch (gameName)
+        {
+            case "Kingdom Hearts":
+                return "/images/icons/game_hearts/KH1.png";
+            case "Kingdom Hearts Re:Chain of Memories":
+            case "Kingdom Hearts Melody of Memory":
+                return "/images/icons/game_hearts/COM.png";
+            case "Kingdom Hearts II":
+                return "/images/icons/game_hearts/KH2.png";
+            case "Kingdom Hearts 358/2 Days":
+                return "/images/icons/game_hearts/Days.png";
+            case "Kingdom Hearts Birth By Sleep":
+                return "/images/icons/game_hearts/BBS.png";
+            case "Kingdom Hearts Re:Coded":
+                return "/images/icons/game_hearts/Coded.png";
+            case "Kingdom Hearts Dream Drop Distance":
+                return "/images/icons/game_hearts/DDD.png";
+            case "Kingdom Hearts 0.2":
+                return "/images/icons/game_hearts/zero-point-two.png";
+            case "Kingdom Hearts χ":
+            case "Kingdom Hearts χ Back Cover":
+            case "Kingdom Hearts Unchained χ":
+            case "Kingdom Hearts Union χ":
+            case "Kingdom Hearts Union Dark Road":
+                return "/images/icons/game_hearts/UX.png";
+            case "Kingdom Hearts III":
+                return "/images/icons/game_hearts/KH3.png";
+            default:
+                return "/images/icons/game_hearts/KH1.png";
+        }
+    }
+
+    public async Task OpenSceneModal(SceneDto scene)
+    {
+        WayfinderProjectUser user = new();
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            if (authState.User.Identity != null && authState.User.Identity.Name != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+        }
+
+        var parameters = new ModalParameters();
+
+        parameters.Add("Scene", scene);
+        parameters.Add("AccountId", user?.Id ?? default!);
+        parameters.Add("API", this.api ?? default!);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        var temp = Modal.Show<SceneModal>($"{scene.Name}", parameters, options);
+    }
+
+    private void ToggleView()
+    {
+        if (this.CurrentViewMobile == "Available")
+        {
+            this.CurrentViewMobile = "Selected";
+        }
+        else if (this.CurrentViewMobile == "Selected")
+        {
+            this.CurrentViewMobile = "Available";
+        }
     }
     #endregion Scene Specific Methods
 }

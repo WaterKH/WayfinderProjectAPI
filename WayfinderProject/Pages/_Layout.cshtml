@@ -34,12 +34,9 @@
     <script src="_framework/blazor.server.js"></script>
 
     <script type="text/javascript">
-        window.getDimensions = function() {
-            return {
-                width: window.innerWidth,
-                height: window.innerHeight 
-            };
-        };
+        function isDevice() {
+            return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile/i.test(navigator.userAgent);
+        }
     </script>
 
     <script>

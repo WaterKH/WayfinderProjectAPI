@@ -1,0 +1,27 @@
+﻿.wayfinder-input {
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    border: 1px solid #c2c2c2;
+    margin-top: 10px;
+}
+
+.wayfinder-select {
+    padding: 5px;
+    background: #ececec;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    border: 1px solid #c2c2c2;
+    margin-bottom: 10px;
+}
+
+.wayfinder-option {
+    background: #ececec;
+    font-size: large;
+    font-weight: 600;
+}

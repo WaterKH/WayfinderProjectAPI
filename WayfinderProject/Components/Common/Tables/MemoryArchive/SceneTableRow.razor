@@ -8,139 +8,30 @@
 <td style="vertical-align: middle;">
     @if (this.MainTable != null)
     {
-        if (this.MainTable.CurrentExpandedRow == Scene.Id)
-        {
-            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))">
-                <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
-            </div>
-        }
-        else
-        {
-            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))">
-                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
-            </div>
-        }
+        <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => MainTable.UpdateExpandedRow(Scene.Id))">
+            <span class="oi @(this.MainTable.CurrentExpandedRow == this.Scene.Id ? "oi-minus" : "oi-plus") mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+        </div>
     }
 </td>
 <td style="vertical-align: middle;">
-    <span style="font-weight: 600;">@Scene.Game.Name</span>
+    <span style="font-weight: 600;">@this.Scene.Game.Name</span>
 </td>
 <td style="vertical-align: middle;">
-    <a style="font-weight: 600; color: #1a00ff;" href="@Scene.Link" target="_blank">@Scene.Name</a>
+    <a style="font-weight: 600; color: #1a00ff;" href="@this.Scene.Link" target="_blank">@this.Scene.Name</a>
 </td>
 @if (!this.ProjectView)
 {
 <td style="vertical-align: middle;">
-    @if (Scene.Worlds.Count > 2)
-    {
-        <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Scene.Worlds.Select(x => x.Name)))">
-                <div class="world-display">
-                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
-                </div>
-            </Tooltip>
-        </div>
-    }
-    else
-    {
-        if (Scene.Worlds.Count > 0 && Scene.Worlds.First().Name != ":None:")
-        {
-            <div style="display: inline-flex" class="@(Scene.Worlds.Count == 2 ? "world-display" : "")">
-                @for (int i = 0; i < Scene.Worlds.Count; ++i)
-                {
-                    <span class="world-color">@Scene.Worlds.ToList()[i].Name</span>
-                    if (i < Scene.Worlds.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-        }
-    }
+    <RowContentDisplay Content="this.Scene.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" CustomColourClass="world-color" />
 </td>
 <td style="vertical-align: middle;">
-    @if (Scene.Areas.Count > 2)
-    {
-        <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Scene.Areas.Select(x => x.Name)))">
-                <div class="area-display">
-                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
-                </div>
-            </Tooltip>
-        </div>
-    }
-    else
-    {
-        if (Scene.Areas.Count > 0 && Scene.Areas.First().Name != ":None:")
-        {
-            <div style="display: inline-flex" class="@(Scene.Areas.Count == 2 ? "area-display" : "")">
-                @for (int i = 0; i < Scene.Areas.Count; ++i)
-                {
-                    <span class="area-color">@Scene.Areas.ToList()[i].Name</span>
-                    if (i < Scene.Areas.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-        }
-    }
+        <RowContentDisplay Content="this.Scene.Areas.Select(x => x.Name).ToList()" CustomDisplayClass="area-display" CustomColourClass="area-color" />
 </td>
 <td style="vertical-align: middle;">
-    @if (Scene.Characters.Count > 2)
-    {
-        <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Scene.Characters.Select(x => x.Name)))">
-                <div class="character-display">
-                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
-                </div>
-            </Tooltip>
-        </div>
-    }
-    else
-    {
-        if (Scene.Characters.Count > 0 && Scene.Characters.First().Name != ":None:")
-        {
-            <div style="display: inline-flex" class="@(Scene.Characters.Count == 2 ? "character-display" : "")">
-                @for (int i = 0; i < Scene.Characters.Count; ++i)
-                {
-                    <span class="character-color">@Scene.Characters.ToList()[i].Name</span>
-                    if (i < Scene.Characters.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-        }
-    }
+    <RowContentDisplay Content="this.Scene.Characters.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" CustomColourClass="character-color" />
 </td>
 <td style="vertical-align: middle;">
-    @if (Scene.Music.Count > 1)
-    {
-        <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Scene.Music.Select(x => x.Name)))" Margin="@("-200px")">
-                <div class="music-display">
-                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
-                </div>
-            </Tooltip>
-        </div>
-    }
-    else
-    {
-        if (Scene.Music.Count > 0 && Scene.Music.First().Name != ":None:")
-        {
-            <div style="display: inline-flex" class="@(Scene.Music.Count == 2 ? "music-display" : "")">
-                @for (int i = 0; i < Scene.Music.Count; ++i)
-                {
-                    <a class="music-color" style="color: #1a00ff;" href="@Scene.Music.ToList()[i].Link" target="_blank">@Scene.Music.ToList()[i].Name</a>
-                    if (i < Scene.Music.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-        }
-    }
+    <RowContentDisplay Content="this.Scene.Music.Select(x => x.Name).ToList()" CustomDisplayClass="music-display" CustomColourClass="music-color" />
 </td>
 <td>
     @if (this.LoggedIn)
@@ -176,6 +67,7 @@ else
     <iconify-icon icon="material-symbols:delete" class="project-icon-inactive" style="color: #d70e0e;" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
 </td>
 }
+
 
 <style>
 .clickable {
