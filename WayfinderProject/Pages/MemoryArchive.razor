@@ -17,257 +17,293 @@
 <br/>
 <br/>
 
-<div class="wayfinder-background">
-    <div class="wayfinder-parallax">
+@if (this.initialized)
+{
+    <div class="wayfinder-background">
+        <div class="wayfinder-parallax">
 
-        @if (!this.IsMobile)
-        {
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-12" style="align-self: center;">
-                <div class="wayfinder-title">
-                    <img src="/images/wayfinder_project_title.png" />
-                </div>
-
-                <div class="wayfinder-description">
-                    <strong>Search for a <span style="color: #522aff;">Word</span>, <span style="color: #ff7519;">Phrase</span> or <span style="color: #2cce78;">Quote</span>...</strong>
-                </div>
-
-                <div class="wayfinder-search">
-                    <span class="wayfinder-search-icon material-icons">search</span>
-                    <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" @onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
-                    @if (this.loggedIn)
-                    {
-                        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-                        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
-                    }
-                    <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
-                </div>
-
-                <div class="wayfinder-sub-description">
-                    <strong>
-                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Scenes</span>, <span style="color: #ea4a4a;">Worlds</span>
-                        , <span style="color: #5499fc;">Areas</span>, <span style="color: #f3b222;">Characters</span> and <span style="color: #a13bfb;">Music</span>.
-                    </strong>
-                </div>
-            </div>
-        </div>
-        
-        <hr />
-        }
-
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-1"></div>
-
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #522aff;">Cutscene of the Day</span></strong>
-                </div>
-
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Discover a brand new daily cutscene by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
-                    </strong>
-                </div>
-
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyCutscene())" @onclick:stopPropagation>Daily Cutscene</button>
-            </div>
-
-            <div class="col-md-2"></div>
-
-            @if (this.IsMobile)
+            @if (!this.IsMobile)
             {
-                <span style="margin-bottom: 25px;"></span>
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-12" style="align-self: center;">
+                    <div class="wayfinder-title">
+                        <img src="/images/wayfinder_project_title.png" />
+                    </div>
+
+                    <div class="wayfinder-description">
+                        <strong>Search for a <span style="color: #522aff;">Word</span>, <span style="color: #ff7519;">Phrase</span> or <span style="color: #2cce78;">Quote</span>...</strong>
+                    </div>
+
+                    <div class="wayfinder-search">
+                        <span class="wayfinder-search-icon material-icons">search</span>
+                        <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" @onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
+                        @if (this.loggedIn)
+                        {
+                            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                        }
+                        <button class="wayfinder-search-button" onclick="@(() => this.SearchQuotes(this.quoteSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
+                    </div>
+
+                    <div class="wayfinder-sub-description">
+                        <strong>
+                            Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Scenes</span>, <span style="color: #ea4a4a;">Worlds</span>
+                            , <span style="color: #5499fc;">Areas</span>, <span style="color: #f3b222;">Characters</span> and <span style="color: #a13bfb;">Music</span>.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        
+            <hr />
             }
 
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Cutscene</span> <span style="color: #5499fc;">Generator</span></strong>
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-1"></div>
+
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #522aff;">Cutscene of the Day</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Discover a brand new daily cutscene by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyCutscene())" @onclick:stopPropagation>Daily Cutscene</button>
                 </div>
 
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Can't decide which scene you want to find? Let us choose for you by selecting a random scene!
-                    </strong>
+                <div class="col-md-2"></div>
+
+                @if (this.IsMobile)
+                {
+                    <span style="margin-bottom: 25px;"></span>
+                }
+
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Cutscene</span> <span style="color: #5499fc;">Generator</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Can't decide which scene you want to find? Let us choose for you by selecting a random scene!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomCutscene())" @onclick:stopPropagation>Random Cutscene</button>
                 </div>
 
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomCutscene())" @onclick:stopPropagation>Random Cutscene</button>
+                <div class="col-md-1"></div>
             </div>
-
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-</div>
-
-
-<div style="@(!this.IsMobile ? "display: inline-flex;" : "")">
-    <div class="">
-        <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
-    </div>
-
-    <div class="wayfinder-search-alt" style="@(!this.IsMobile ? "" : "text-align: center;")">
-        <span class="wayfinder-search-icon material-icons">search</span>
-        <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" style="@(!this.IsMobile ? "" : "padding-right: 20px; width: unset;")"
-            onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
-    </div>
-</div>
-
-@if (!this.IsMobile)
-{
-    <div class="wayfinder-search-alt" style="width: 0%;">
-        <div style="position: absolute; right: 175px; display: inline-flex;">
-            <div style="margin-top: 20px; margin-right: 15px;">
-                <span style="font-size: larger;"><strong>Results Display: </strong></span>
-            </div>
-        
-            <NavBar @ref="WayfinderResultsDisplay" Categories="@(new List<string> { "Table", "Tiles" })" UpdateCurrentCategory="@(async (string category) => await UpdateResultsDisplay(category))" CurrentCategory="@this.CurrentResultsDisplay" Loading="@this.Loading" CustomStyle="margin-top: 15px;" />
         </div>
     </div>
 
-    <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
-}
 
-@if (this.CurrentCategory == "Cutscenes")
-{
+    <div style="@(!this.IsMobile ? "display: inline-flex;" : "")">
+        <div class="">
+            <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+        </div>
+
+        <div class="wayfinder-search-alt" style="@(!this.IsMobile ? "" : "text-align: center;")">
+            <span class="wayfinder-search-icon material-icons">search</span>
+            <input id="main-search" name="main-search" class="custom-input" value="@this.quoteSearch" style="@(!this.IsMobile ? "" : "padding-right: 20px; width: unset;")"
+                onchange="@(async (ChangeEventArgs e) => { this.quoteSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchQuotes(this.quoteSearch); })" placeholder="Start Typing...">
+        </div>
+    </div>
+
     @if (!this.IsMobile)
     {
-        <div id="scenes-search" class="advanced-search-box">
-            <div class="row">
-                <div class="col-md-12">
-                    <SearchComponent @ref="SceneGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.SceneGames" Selected="this.SceneGamesSelected" Available="this.SceneGamesAvailable" 
-                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                    <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable" 
-                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                    <SearchComponent @ref="SceneWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.SceneWorlds" Selected="this.SceneWorldsSelected" Available="this.SceneWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                    <SearchComponent @ref="SceneAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.SceneAreas" Selected="this.SceneAreasSelected" Available="this.SceneAreasAvailable"
-                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                    <SearchComponent @ref="SceneCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.SceneCharacters" Selected="this.SceneCharactersSelected" Available="this.SceneCharactersAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                    <SearchComponent @ref="SceneMusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.SceneMusic" Selected="this.SceneMusicSelected" Available="this.SceneMusicAvailable"
-                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+        <div class="wayfinder-search-alt" style="width: 0%;">
+            <div style="position: absolute; right: 175px; display: inline-flex;">
+                <div style="margin-top: 20px; margin-right: 15px;">
+                    <span style="font-size: larger;"><strong>Results Display: </strong></span>
                 </div>
+        
+                <NavBar @ref="WayfinderResultsDisplay" Categories="@(new List<string> { "Table", "Tiles" })" UpdateCurrentCategory="@(async (string category) => await UpdateResultsDisplay(category))" CurrentCategory="@this.CurrentResultsDisplay" Loading="@this.Loading" CustomStyle="margin-top: 15px;" />
             </div>
         </div>
+
+        <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
     }
     else
     {
         <div class="wayfinder-buttons" style="align-self: center; margin: 15px;">
-            <button class="@(this.CurrentViewMobile == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())" style="right: unset;">@(this.CurrentViewMobile == "Available" ? "Filters" : "Options")</button>
+            <button class="@(this.CurrentViewMobile == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())" style="right: unset; margin-left: 25px;">@(this.CurrentViewMobile == "Available" ? "Filters" : "Options")</button>
 
-            <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault>Clear All</button>
-        </div>
+            <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault style="margin-left: 15px; margin-right: unset;">Clear All</button>
+        </div>    
+    }
 
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-md-6">
-                <MobileSearchComponent Id="Scenes" Initial="@this.Scenes" Available="@this.ScenesAvailable" Selected="@this.ScenesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+    @if (this.CurrentCategory == "Cutscenes")
+    {
+        @if (!this.IsMobile)
+        {
+            <div id="scenes-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="SceneGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.SceneGames" Selected="this.SceneGamesSelected" Available="this.SceneGamesAvailable" 
+                                    CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable" 
+                                    CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="SceneWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.SceneWorlds" Selected="this.SceneWorldsSelected" Available="this.SceneWorldsAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="SceneAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.SceneAreas" Selected="this.SceneAreasSelected" Available="this.SceneAreasAvailable"
+                                    CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="SceneCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.SceneCharacters" Selected="this.SceneCharactersSelected" Available="this.SceneCharactersAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="SceneMusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.SceneMusic" Selected="this.SceneMusicSelected" Available="this.SceneMusicAvailable"
+                                    CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="Scenes" Name="Scenes" Initial="@this.Scenes" Available="@this.ScenesAvailable" Selected="@this.ScenesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="SceneGames" Name="Games" Initial="@this.SceneGames" Available="@this.SceneGamesAvailable" Selected="@this.SceneGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
 
-            <div class="col-md-6">
-                <MobileSearchComponent Id="SceneGames" Initial="@this.SceneGames" Available="@this.SceneGamesAvailable" Selected="@this.SceneGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
-            </div>
-        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="SceneWorlds" Name="Worlds" Initial="@this.SceneWorlds" Available="@this.SceneWorldsAvailable" Selected="@this.SceneWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <MobileSearchComponent Id="SceneWorlds" Initial="@this.SceneWorlds" Available="@this.SceneWorldsAvailable" Selected="@this.SceneWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="SceneAreas" Name="Areas" Initial="@this.SceneAreas" Available="@this.SceneAreasAvailable" Selected="@this.SceneAreasSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-
-            <div class="col-md-6">
-                <MobileSearchComponent Id="SceneAreas" Initial="@this.SceneAreas" Available="@this.SceneAreasAvailable" Selected="@this.SceneAreasSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
-            </div>
-        </div>
         
-        <div class="row">
-            <div class="col-md-6">
-                <MobileSearchComponent Id="SceneCharacters" Initial="@this.SceneCharacters" Available="@this.SceneCharactersAvailable" Selected="@this.SceneCharactersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
-            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="SceneCharacters" Name="Characters" Initial="@this.SceneCharacters" Available="@this.SceneCharactersAvailable" Selected="@this.SceneCharactersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-            <div class="col-md-6">
-                <MobileSearchComponent Id="SceneMusic" Initial="@this.SceneMusic" Available="@this.SceneMusicAvailable" Selected="@this.SceneMusicSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="SceneMusic" Name="Music" Initial="@this.SceneMusic" Available="@this.SceneMusicAvailable" Selected="@this.SceneMusicSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
+    else if (this.CurrentCategory == "Trailers")
+    {
+        <div id="scenes-search" class="advanced-search-box">
+            <div class="row">
+                <div class="col-md-12">
+                    @*<SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.Games" Selected="this.GamesSelected" Available="this.GamesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                    <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                    <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.Worlds" Selected="this.WorldsSelected" Available="this.WorldsAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                    <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.Areas" Selected="this.AreasSelected" Available="this.AreasAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                    <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.Characters" Selected="this.CharactersSelected" Available="this.CharactersAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                    <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.Music" Selected="this.MusicSelected" Available="this.MusicAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />*@
+                </div>
             </div>
         </div>
     }
-}
-else if (this.CurrentCategory == "Trailers")
-{
-    <div id="scenes-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                @*<SearchComponent @ref="GamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.Games" Selected="this.GamesSelected" Available="this.GamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+    else if (this.CurrentCategory == "Interviews")
+    {
+        @if (!this.IsMobile)
+        {
+            <div id="interviews-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="InterviewsSearch" Id="Interviews" Placeholder="Start Typing..." Color="#e685da" Initial="this.Interviews" Selected="this.InterviewsSelected" Available="this.InterviewsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="ScenesSearch" Id="Scenes" Placeholder="Start Typing..." Color="#e685da" Initial="this.Scenes" Selected="this.ScenesSelected" Available="this.ScenesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="WorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.Worlds" Selected="this.WorldsSelected" Available="this.WorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="AreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.Areas" Selected="this.AreasSelected" Available="this.AreasAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="CharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.Characters" Selected="this.CharactersSelected" Available="this.CharactersAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="MusicSearch" Id="Music" Placeholder="Start Typing..." Color="#a13bfb" Initial="this.Music" Selected="this.MusicSelected" Available="this.MusicAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />*@
-            </div>
-        </div>
-    </div>
-}
-else if (this.CurrentCategory == "Interviews")
-{
-    <div id="scenes-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="InterviewsSearch" Id="Interviews" Placeholder="Start Typing..." Color="#e685da" Initial="this.Interviews" Selected="this.InterviewsSelected" Available="this.InterviewsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InterviewGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InterviewGames" Selected="this.InterviewGamesSelected" Available="this.InterviewGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InterviewGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InterviewGames" Selected="this.InterviewGamesSelected" Available="this.InterviewGamesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
                              
-                <SearchComponent @ref="InterviewParticipantsSearch" Id="Participants" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InterviewParticipants" Selected="this.InterviewParticipantsSelected" Available="this.InterviewParticipantsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InterviewParticipantsSearch" Id="Participants" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InterviewParticipants" Selected="this.InterviewParticipantsSelected" Available="this.InterviewParticipantsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InterviewProvidersSearch" Id="Providers" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InterviewProviders" Selected="this.InterviewProvidersSelected" Available="this.InterviewProvidersAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InterviewProvidersSearch" Id="Providers" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InterviewProviders" Selected="this.InterviewProvidersSelected" Available="this.InterviewProvidersAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InterviewTranslatorsSearch" Id="Translators" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InterviewTranslators" Selected="this.InterviewTranslatorsSelected" Available="this.InterviewTranslatorsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InterviewTranslatorsSearch" Id="Translators" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InterviewTranslators" Selected="this.InterviewTranslatorsSelected" Available="this.InterviewTranslatorsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="Interviews" Name="Interviews" Initial="@this.Interviews" Available="@this.InterviewsAvailable" Selected="@this.InterviewsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InterviewGames" Name="Games" Initial="@this.InterviewGames" Available="@this.InterviewGamesAvailable" Selected="@this.InterviewGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InterviewParticipants" Name="Participants" Initial="@this.InterviewParticipants" Available="@this.InterviewParticipantsAvailable" Selected="@this.InterviewParticipantsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InterviewProviders" Name="Providers" Initial="@this.InterviewProviders" Available="@this.InterviewProvidersAvailable" Selected="@this.InterviewProvidersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InterviewTranslators" Name="Translators" Initial="@this.InterviewTranslators" Available="@this.InterviewTranslatorsAvailable" Selected="@this.InterviewTranslatorsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
 }
 
 <br />
 <br />
 
-@if (this.Loading)
+@if (this.Loading || !this.initialized)
 {
     <div class="row" style="justify-content: center;">
         <div class="loader col-md-12"></div>
@@ -352,25 +388,72 @@ else if (this.CurrentCategory == "Trailers")
 }
 else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 {
-    <InterviewTable @ref="MainInterviewTable" Items="this.InterviewDtos" Context="Interview" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Interview</label></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Games</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Participants</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Provider</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Translator</label></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Interviews", Interview.Id))" IsFavorite="@(this.IsFavoriteForUser("Interviews", Interview.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Interviews", Interview.Id))" IsProject="@(this.IsProjectForUser("Interviews", Interview.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <InterviewTableExpandedRow Interview="@Interview" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </InterviewTable>
+    @if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <InterviewTable @ref="MainInterviewTable" Items="this.InterviewDtos" Context="Interview" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Interview</label></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Games</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Participants</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Provider</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Translator</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InterviewTableRow Interview="@Interview" MainTable="@MainInterviewTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Interviews", Interview.Id))" IsFavorite="@(this.IsFavoriteForUser("Interviews", Interview.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Interviews", Interview.Id))" IsProject="@(this.IsProjectForUser("Interviews", Interview.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InterviewTableExpandedRow Interview="@Interview" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </InterviewTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var interview in this.InterviewDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(interview.Games.FirstOrDefault()?.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateInterviewShareLink(interview.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenInterviewModal(interview))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <a href="@(interview.Link)" target="_blank"><strong>@interview.Name</strong></a>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="interview.Participants.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="new List<string> { interview.Provider.Name }" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="new List<string> { interview.Translator.Name }" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 
 <span style="margin-bottom: 50px;"></span>
@@ -580,6 +663,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     private SearchSettingsDto SearchSettings = default!;
     private string CurrentViewMobile = "Available";
 
+    private bool initialized = false;
     private bool failed = false;
 
     private bool loggedIn = false;
@@ -626,7 +710,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
 
         this.api = new WayfinderController(context);
-        
+
         await base.OnInitializedAsync();
     }
 
@@ -635,6 +719,13 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         if (firstRender)
         {
             this.IsMobile = true;//await JS.InvokeAsync<bool>("isDevice");
+            
+            this.initialized = true;
+                
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
 
             //if (this.authenticationStateTask != null)
             //{
@@ -793,7 +884,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     public async Task SearchQuotes(string search)
     {
-        if (search.Length < 3)
+        if (search.Length < 2)
             this.quoteSearch = "";
         else
             this.quoteSearch = search;
@@ -957,11 +1048,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         // Include translators, interviewers, interviewees, date, link, game
 
-        var interviews = this.InterviewsSearch != null ? string.Join("::", this.InterviewsSelected) != "" ? string.Join("::", this.InterviewsSelected) : null : null;
-        var games = this.InterviewGamesSearch != null ? string.Join("::", this.InterviewGamesSelected) != "" ? string.Join("::", this.InterviewGamesSelected) : null : null;
-        var participants = this.InterviewParticipantsSearch != null ? string.Join("::", this.InterviewParticipantsSelected) != "" ? string.Join("::", this.InterviewParticipantsSelected) : null : null;
-        var providers = this.InterviewProvidersSearch != null ? string.Join("::", this.InterviewProvidersSelected) != "" ? string.Join("::", this.InterviewProvidersSelected) : null : null;
-        var translators = this.InterviewTranslatorsSearch != null ? string.Join("::", this.InterviewTranslatorsSelected) != "" ? string.Join("::", this.InterviewTranslatorsSelected) : null : null;
+        var interviews = string.Join("::", this.InterviewsSelected) != "" ? string.Join("::", this.InterviewsSelected) : null;
+        var games = string.Join("::", this.InterviewGamesSelected) != "" ? string.Join("::", this.InterviewGamesSelected) : null;
+        var participants = string.Join("::", this.InterviewParticipantsSelected) != "" ? string.Join("::", this.InterviewParticipantsSelected) : null;
+        var providers = string.Join("::", this.InterviewProvidersSelected) != "" ? string.Join("::", this.InterviewProvidersSelected) : null;
+        var translators = string.Join("::", this.InterviewTranslatorsSelected) != "" ? string.Join("::", this.InterviewTranslatorsSelected) : null;
         var line = this.quoteSearch != "" ? this.quoteSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1516,7 +1607,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
     }
 
-    private async Task GenerateInterviewShareLink()
+    private async Task GenerateInterviewShareLink(int? interviewId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}memory_archive?";
 
@@ -1546,13 +1637,13 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
 
         shareLink += "category=Interviews&";
-        shareLink += $"open_row={this.MainInterviewTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={interviewId ?? this.MainInterviewTable?.CurrentExpandedRow}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
         if (this.MainInterviewTable != null)
         {
-            toastService.ShowInfo($"Copied link to '{this.context.Interviews.FirstOrDefault(x => x.Id == this.MainInterviewTable.CurrentExpandedRow)?.Name}' interview.");
+            toastService.ShowInfo($"Copied link to '{this.context.Interviews.FirstOrDefault(x => x.Id == (interviewId ?? this.MainInterviewTable.CurrentExpandedRow))?.Name}' interview.");
         }
     }
     #endregion Generate Share Link Sub-Methods
@@ -2021,6 +2112,30 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         var temp = Modal.Show<SceneModal>($"{scene.Name}", parameters, options);
     }
 
+    public async Task OpenInterviewModal(InterviewDto interview)
+    {
+        WayfinderProjectUser user = new();
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            if (authState.User.Identity != null && authState.User.Identity.Name != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+        }
+
+        var parameters = new ModalParameters();
+
+        parameters.Add("Interview", interview);
+        parameters.Add("AccountId", user?.Id ?? default!);
+        parameters.Add("API", this.api ?? default!);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        var temp = Modal.Show<InterviewModal>($"{interview.Name}", parameters, options);
+    }
+
     private void ToggleView()
     {
         if (this.CurrentViewMobile == "Available")
@@ -2037,7 +2152,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         var parameters = new ModalParameters();
         
-        parameters.Add("ClearAllSubMethod", ClearAllOptions);
+        parameters.Add("ClearAllSubMethod", ClearAllOptions(this.CurrentCategory));
 
         var options = new ModalOptions { Class = "modal-custom" };
 

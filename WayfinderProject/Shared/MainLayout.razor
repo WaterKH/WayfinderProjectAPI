@@ -14,7 +14,8 @@
                 ShowProgressBar="true"
                 RemoveToastsOnNavigation="true"
                 MaxToastCount="3" />
-
+@if (this.initialized)
+{
 <div class="page">
     <main>
         <div class="top-row px-4" style="background-color: white; border-bottom: unset; @(!this.IsMobile ? "" : "display: flex;")">
@@ -189,6 +190,7 @@
         </div>
     </main>
 </div>
+}
 
 <style>
 .wayfinder-link {
@@ -281,6 +283,7 @@
 
     private bool isPatron;
     private bool checkedIsPatron;
+    private bool initialized;
 
     protected override async Task OnInitializedAsync()
     {
@@ -327,7 +330,9 @@
     {
         if (firstRender)
         {
-            this.IsMobile = true; //await JS.InvokeAsync<bool>("isDevice");
+            this.IsMobile = await JS.InvokeAsync<bool>("isDevice");
+
+            this.initialized = true;
 
             await InvokeAsync(() =>
             {

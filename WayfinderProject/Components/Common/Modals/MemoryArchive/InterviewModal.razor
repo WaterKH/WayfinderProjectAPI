@@ -1,0 +1,198 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-12">
+            <SubNavBar Options="@options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
+
+            @if (this.CurrentSubOption == "Details")
+            {
+                <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                    <div class="row" style="height: 281px;">
+                        <div class="col-md-6">
+                            <h3 class="scene-color">@Interview.Name</h3>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div id="share" class="share" @onclick="@(() => { if (this.GenerateShareLink != null) { this.GenerateShareLink.Invoke(); } })">
+                                <span class="copyable">
+                                    <i class="oi oi-file"></i>
+                                    <label class="share-text"><b>Share Interview</b></label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="col-md-6" style="margin-top: 45px;">
+                            <h3 class="game-color"><img src="/images/icons/games_gray.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Games</h3>
+                            <label>@(string.Join(", ", this.Interview.Games.Select(x => x.Name)))</label><br />
+                        </div>
+
+                        <div class="col-md-12" style="margin-top: 25px;">
+                            <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Participants</h3>
+                            <label>@(string.Join(", ", this.Interview.Participants.Select(x => x.Name)))</label><br />
+                        </div>
+
+                        <div class="col-md-12" style="margin-top: 45px;">
+                            <label><strong>Provided by <a href="@this.Interview.Provider.Link">@(this.Interview.Provider.Name)</a></strong>: @this.Interview.Provider.Description</label><br />
+                            @if (this.Interview.Translator.Name == "Unknown")
+                            {
+                                <label style="margin-top: 15px; margin-bottom: 15px;"><strong>Translated by @(this.Interview.Translator.Name)</strong>.</label>
+
+                                <br />
+                            }
+                            else
+                            {
+                                <label style="margin-top: 15px; margin-bottom: 15px;"><strong>Translated by <a href="@this.Interview.Translator.Link">@(this.Interview.Translator.Name)</a></strong>: @this.Interview.Translator.Description</label>
+
+                                <br />
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (this.CurrentSubOption == "Video")
+            {
+                <iframe src="@(Interview.AdditionalLink.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px; width: 100%; height: 563px;"></iframe>
+            }
+            else if (this.CurrentSubOption == "Dialogue")
+            {
+                <div class="row" style="width: 100%; margin: 0px 0px 10px 0px">
+                    <div class="col-md-12" style="align-self: center;">
+                        <div class="wayfinder-search">
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.searchValue = e?.Value?.ToString() ?? string.Empty; await this.SearchDialogue(); })" placeholder="Search Dialogue...">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 15px 0px;">
+                    @foreach (var speaker in this.speakers)
+                    {
+                        if (speaker == "None") continue;
+
+                        var tempCharacter = speaker;
+                        <div class="@(this.currentSpeaker == speaker ? "character-option-selected" : "character-option")" @onclick="@(() => this.SelectSpeaker(tempCharacter))">
+                            @speaker
+                        </div>
+                    }
+                </div>
+
+                <hr />
+
+                <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 410px; overflow-y: auto; margin-top: 10px;">
+                    <InterviewTable Items="this.conversation" Context="Line" CurrentPage="1">
+                        <TableHeader>
+                            <th>Dialogue</th>
+                            <th></th>
+                        </TableHeader>
+                        <RowTemplate>
+                            <td><strong>@Line.Speaker</strong></td>
+                            <td>@Line.Line</td>
+                        </RowTemplate>
+                    </InterviewTable>
+                </div>
+            }
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+@code {
+    [Parameter] public InterviewDto Interview { get; set; } = default!;
+    [Parameter] public string AccountId { get; set; } = string.Empty;
+    [Parameter] public WayfinderController? API { get; set; }
+
+    [Parameter] public Func<Task>? GenerateShareLink { get; set; }
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private string searchValue = "";
+    private string currentSpeaker = "";
+
+    private List<InterviewLineDto> conversation = new List<InterviewLineDto>();
+    private List<string> speakers = new List<string>();
+
+    private List<string> options = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (string.IsNullOrEmpty(this.Interview.AdditionalLink))
+        {
+            options = new List<string> { "Details", "Dialogue" };
+        }
+        else
+        {
+            options = new List<string> { "Details", "Video", "Dialogue" };
+        }
+
+        if (this.API != null)
+        {
+            this.Interview.Conversation = await this.API.GetInterviewConversation(Interview.Name, Interview.Provider.Name, Interview.Translator.Name);
+
+            this.conversation = this.Interview.Conversation.ToList();
+            this.speakers = this.conversation.Select(x => x.Speaker).Distinct().ToList();
+        }
+
+        await base.OnInitializedAsync();
+    }
+    
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SearchDialogue()
+    {
+        if (!string.IsNullOrEmpty(this.searchValue))
+        {
+            this.conversation = this.Interview.Conversation.Where(x => x.Line.Contains(this.searchValue)).ToList();
+        }
+        else
+        {
+            this.conversation = this.Interview.Conversation.ToList();
+        }
+
+        this.speakers = this.conversation.Select(x => x.Speaker).Distinct().ToList();
+
+        if (!string.IsNullOrEmpty(this.currentSpeaker))
+        {
+            this.conversation = this.conversation.Where(x => x.Speaker == this.currentSpeaker).ToList();
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task SelectSpeaker(string value)
+    {
+        if (this.currentSpeaker == value)
+        {
+            this.currentSpeaker = "";
+        }
+        else
+        {
+            this.currentSpeaker = value;
+        }
+
+        await this.SearchDialogue();
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}
