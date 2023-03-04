@@ -17,205 +17,340 @@
 <br/>
 <br/>
 
-<div class="wayfinder-background">
-    <div class="wayfinder-parallax">
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-12" style="align-self: center;">
-                <div class="wayfinder-title">
-                    <img src="/images/wayfinder_project_title.png" />
+@if (this.initialized)
+{
+    <div class="wayfinder-background">
+        <div class="wayfinder-parallax">
+            
+            @if (!this.IsMobile)
+            {
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-12" style="align-self: center;">
+                    <div class="wayfinder-title">
+                        <img src="/images/wayfinder_project_title.png" />
+                    </div>
+
+                    <div class="wayfinder-description">
+                        <strong>Search for a <span style="color: #522aff;">Word</span> or <span style="color: #ff7519;">Phrase</span>...</strong>
+                    </div>
+
+                    <div class="wayfinder-search">
+                        <span class="wayfinder-search-icon material-icons">search</span>
+                        <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+                        @if (this.loggedIn)
+                        {
+                            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                        }
+                        <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
+                    </div>
+
+                    <div class="wayfinder-sub-description">
+                        <strong>
+                            Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Entries</span>, <span style="color: #ea4a4a;">Worlds</span> or <span style="color: #ea4a4a;">Characters</span>.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            }
+
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-1"></div>
+
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #522aff;">Daily Journal Entry</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Discover a brand new daily journal entry by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyJournalEntry())" @onclick:stopPropagation>Daily Journal Entry</button>
                 </div>
 
-                <div class="wayfinder-description">
-                    <strong>Search for a <span style="color: #522aff;">Word</span> or <span style="color: #ff7519;">Phrase</span>...</strong>
+                <div class="col-md-2"></div>
+                
+                @if (this.IsMobile)
+                {
+                    <span style="margin-bottom: 25px;"></span>
+                }
+
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Entry</span> <span style="color: #5499fc;">Generator</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Can't decide which entry you want to find? Let us choose for you by selecting a random journal entry!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomJournalEntry())" @onclick:stopPropagation>Random Journal Entry</button>
                 </div>
 
-                <div class="wayfinder-search">
-                    <span class="wayfinder-search-icon material-icons">search</span>
-                    <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
-                    @if (this.loggedIn)
-                    {
-                        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-                        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
-                    }
-                    <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
-                </div>
-
-                <div class="wayfinder-sub-description">
-                    <strong>
-                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Entries</span>, <span style="color: #ea4a4a;">Worlds</span> or <span style="color: #ea4a4a;">Characters</span>.
-                    </strong>
-                </div>
+                <div class="col-md-1"></div>
             </div>
         </div>
+    </div>
 
-        <hr />
 
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-1"></div>
+    <div style="@(!this.IsMobile ? "display: inline-flex;" : "")">
+        <div class="">
+            <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+        </div>
 
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #522aff;">Daily Journal Entry</span></strong>
-                </div>
-
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Discover a brand new daily journal entry by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
-                    </strong>
-                </div>
-
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyJournalEntry())" @onclick:stopPropagation>Daily Journal Entry</button>
-            </div>
-
-            <div class="col-md-2"></div>
-
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Entry</span> <span style="color: #5499fc;">Generator</span></strong>
-                </div>
-
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Can't decide which entry you want to find? Let us choose for you by selecting a random journal entry!
-                    </strong>
-                </div>
-
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomJournalEntry())" @onclick:stopPropagation>Random Journal Entry</button>
-            </div>
-
-            <div class="col-md-1"></div>
+        <div class="wayfinder-search-alt" style="@(!this.IsMobile ? "" : "text-align: center;")">
+            <span class="wayfinder-search-icon material-icons">search</span>
+            <input id="main-search" name="main-search" class="custom-input" value="@this.informationSearch" style="@(!this.IsMobile ? "" : "padding-right: 20px; width: unset;")"
+                onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+            
+            @if (!this.IsMobile)
+            {
+                if (this.loggedIn)
+                {
+                    <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                }
+                <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
+            }
         </div>
     </div>
-</div>
 
+    @if (!this.IsMobile)
+    {
+        <div class="wayfinder-search-alt" style="width: 0%;">
+            <div style="position: absolute; right: 175px; display: inline-flex;">
+                <div style="margin-top: 20px; margin-right: 15px;">
+                    <span style="font-size: larger;"><strong>Results Display: </strong></span>
+                </div>
+        
+                <NavBar @ref="WayfinderResultsDisplay" Categories="@(new List<string> { "Table", "Tiles" })" UpdateCurrentCategory="@(async (string category) => await UpdateResultsDisplay(category))" CurrentCategory="@this.CurrentResultsDisplay" Loading="@this.Loading" CustomStyle="margin-top: 15px;" />
+            </div>
+        </div>
+        
+        <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
+    }
+    else
+    {
+        <div class="wayfinder-buttons" style="align-self: center; margin: 15px;">
+            <button class="@(this.CurrentViewMobile == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())" style="right: unset; margin-left: 25px;">@(this.CurrentViewMobile == "Available" ? "Filters" : "Options")</button>
 
-<div style="display: inline-flex;">
-    <div class="">
+            <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault style="margin-left: 15px; margin-right: unset;">Clear All</button>
+        </div>    
+    }
 
-        <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
-
-    </div>
-
-    <div class="wayfinder-search-alt">
-        <span class="wayfinder-search-icon material-icons">search</span>
-        <input id="main-search" name="main-search" class="custom-input" value="@this.informationSearch" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
-        @if (this.loggedIn)
+    @if (this.CurrentCategory == "Story")
+    {
+        if (!this.IsMobile)
         {
-            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+            <div id="story-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="StoryGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.StoryGames" Selected="this.StoryGamesSelected" Available="this.StoryGamesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="StoryEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.StoryEntries" Selected="this.StoryEntriesSelected" Available="this.StoryEntriesAvailable"
+                                    CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="StoryCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.StoryCharacters" Selected="this.StoryCharactersSelected" Available="this.StoryCharactersAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="StoryWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.StoryWorlds" Selected="this.StoryWorldsSelected" Available="this.StoryWorldsAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
         }
-        <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
-    </div>
-</div>
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="StoryEntries" Name="Story Entries" Initial="@this.StoryEntries" Available="@this.StoryEntriesAvailable" Selected="@this.StoryEntriesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-<SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
-
-<!-- TODO Probably want to convert this SearchComponent into something better - Keep track of selections and available outside of the component -->
-@if (this.CurrentCategory == "Story")
-{
-    <div id="story-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="StoryGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.StoryGames" Selected="this.StoryGamesSelected" Available="this.StoryGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="StoryEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.StoryEntries" Selected="this.StoryEntriesSelected" Available="this.StoryEntriesAvailable"
-                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="StoryCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.StoryCharacters" Selected="this.StoryCharactersSelected" Available="this.StoryCharactersAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="StoryWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.StoryWorlds" Selected="this.StoryWorldsSelected" Available="this.StoryWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="StoryGames" Name="Games" Initial="@this.StoryGames" Available="@this.StoryGamesAvailable" Selected="@this.StoryGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-        </div>
-    </div>
-}
-else if (this.CurrentCategory == "Characters")
-{
-    <div id="characters-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="CharacterGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.CharacterGames" Selected="this.CharacterGamesSelected" Available="this.CharacterGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="CharacterEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.CharacterEntries" Selected="this.CharacterEntriesSelected" Available="this.CharacterEntriesAvailable"
-                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="StoryCharacters" Name="Characters" Initial="@this.StoryCharacters" Available="@this.StoryCharactersAvailable" Selected="@this.StoryCharactersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-                <SearchComponent @ref="CharacterCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.CharacterCharacters" Selected="this.CharacterCharactersSelected" Available="this.CharacterCharactersAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="CharacterWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.CharacterWorlds" Selected="this.CharacterWorldsSelected" Available="this.CharacterWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="StoryWorlds" Name="Worlds" Initial="@this.StoryWorlds" Available="@this.StoryWorldsAvailable" Selected="@this.StoryWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-        </div>
-    </div>    
-}
-else if (this.CurrentCategory == "Enemies")
-{
-    <div id="enemies-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="EnemyGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.EnemyGames" Selected="this.EnemyGamesSelected" Available="this.EnemyGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+        }
+    }
+    else if (this.CurrentCategory == "Characters")
+    {
+        if (!this.IsMobile)
+        {
+            <div id="characters-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="CharacterGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.CharacterGames" Selected="this.CharacterGamesSelected" Available="this.CharacterGamesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="EnemyEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.EnemyEntries" Selected="this.EnemyEntriesSelected" Available="this.EnemyEntriesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="CharacterEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.CharacterEntries" Selected="this.CharacterEntriesSelected" Available="this.CharacterEntriesAvailable"
+                                    CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                    UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="EnemyCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.EnemyCharacters" Selected="this.EnemyCharactersSelected" Available="this.EnemyCharactersAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="CharacterCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.CharacterCharacters" Selected="this.CharacterCharactersSelected" Available="this.CharacterCharactersAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="EnemyWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.EnemyWorlds" Selected="this.EnemyWorldsSelected" Available="this.EnemyWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="CharacterWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.CharacterWorlds" Selected="this.CharacterWorldsSelected" Available="this.CharacterWorldsAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-}
-else if (this.CurrentCategory == "Reports")
-{
-    <div id="reports-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="ReportGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.ReportGames" Selected="this.ReportGamesSelected" Available="this.ReportGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="CharacterEntries" Name="Character Entries" Initial="@this.CharacterEntries" Available="@this.CharacterEntriesAvailable" Selected="@this.CharacterEntriesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-                <SearchComponent @ref="ReportEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.ReportEntries" Selected="this.ReportEntriesSelected" Available="this.ReportEntriesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="ReportCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.ReportCharacters" Selected="this.ReportCharactersSelected" Available="this.ReportCharactersAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="ReportWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.ReportWorlds" Selected="this.ReportWorldsSelected" Available="this.ReportWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="CharacterGames" Name="Games" Initial="@this.CharacterGames" Available="@this.CharacterGamesAvailable" Selected="@this.CharacterGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-        </div>
-    </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="CharacterCharacters" Name="Characters" Initial="@this.CharacterCharacters" Available="@this.CharacterCharactersAvailable" Selected="@this.CharacterCharactersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="CharacterWorlds" Name="Worlds" Initial="@this.CharacterWorlds" Available="@this.CharacterWorldsAvailable" Selected="@this.CharacterWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
+    else if (this.CurrentCategory == "Enemies")
+    {
+        if (!this.IsMobile)
+        {
+            <div id="enemies-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="EnemyGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.EnemyGames" Selected="this.EnemyGamesSelected" Available="this.EnemyGamesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="EnemyEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.EnemyEntries" Selected="this.EnemyEntriesSelected" Available="this.EnemyEntriesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="EnemyCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.EnemyCharacters" Selected="this.EnemyCharactersSelected" Available="this.EnemyCharactersAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="EnemyWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.EnemyWorlds" Selected="this.EnemyWorldsSelected" Available="this.EnemyWorldsAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="EnemyEntries" Name="Enemy Entries" Initial="@this.EnemyEntries" Available="@this.EnemyEntriesAvailable" Selected="@this.EnemyEntriesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="EnemyGames" Name="Games" Initial="@this.EnemyGames" Available="@this.EnemyGamesAvailable" Selected="@this.EnemyGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="EnemyCharacters" Name="Enemies" Initial="@this.EnemyCharacters" Available="@this.EnemyCharactersAvailable" Selected="@this.EnemyCharactersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="EnemyWorlds" Name="Worlds" Initial="@this.EnemyWorlds" Available="@this.EnemyWorldsAvailable" Selected="@this.EnemyWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
+    else if (this.CurrentCategory == "Reports")
+    {
+        if (!this.IsMobile)
+        {
+            <div id="reports-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="ReportGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.ReportGames" Selected="this.ReportGamesSelected" Available="this.ReportGamesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="ReportEntriesSearch" Id="Entries" Placeholder="Start Typing..." Color="#e685da" Initial="this.ReportEntries" Selected="this.ReportEntriesSelected" Available="this.ReportEntriesAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="ReportCharactersSearch" Id="Characters" Placeholder="Start Typing..." Color="#f3b222" Initial="this.ReportCharacters" Selected="this.ReportCharactersSelected" Available="this.ReportCharactersAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="ReportWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.ReportWorlds" Selected="this.ReportWorldsSelected" Available="this.ReportWorldsAvailable"
+                                 CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                 UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="ReportEntries" Name="Report Entries" Initial="@this.ReportEntries" Available="@this.ReportEntriesAvailable" Selected="@this.ReportEntriesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="ReportGames" Name="Games" Initial="@this.ReportGames" Available="@this.ReportGamesAvailable" Selected="@this.ReportGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="ReportCharacters" Name="Enemies" Initial="@this.ReportCharacters" Available="@this.ReportCharactersAvailable" Selected="@this.ReportCharactersSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="ReportWorlds" Name="Worlds" Initial="@this.ReportWorlds" Available="@this.ReportWorldsAvailable" Selected="@this.ReportWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
 }
 
 <br />
 <br />
 
-@if (this.Loading)
+@if (this.Loading || !this.initialized)
 {
     <div class="row" style="justify-content: center;">
         <div class="loader col-md-12"></div>
@@ -223,91 +358,255 @@ else if (this.CurrentCategory == "Reports")
 }
 else if (this.CurrentCategory == "Story" && this.JJStoryDtos.Count > 0)
 {
-    <JournalEntryTable @ref="MainStoryTable" Items="this.JJStoryDtos" Context="Story" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Story", Story.Id))" IsFavorite="@(this.IsFavoriteForUser("Story", Story.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Story", Story.Id))" IsProject="@(this.IsProjectForUser("Story", Story.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <JournalEntryTableExpandedRow JournalEntry="@Story" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </JournalEntryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <JournalEntryTable @ref="MainStoryTable" Items="this.JJStoryDtos" Context="Story" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Characters</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Story" MainTable="@MainStoryTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Story", Story.Id))" IsFavorite="@(this.IsFavoriteForUser("Story", Story.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Story", Story.Id))" IsProject="@(this.IsProjectForUser("Story", Story.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Story" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var story in this.JJStoryDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(story.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateStoryEntryShareLink(story.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenEntryModal(story))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@story.Title</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="story.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="story.Characters.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Reports" && this.JJReportDtos.Count > 0)
 {
-    <JournalEntryTable @ref="MainReportTable" Items="this.JJReportDtos" Context="Report" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Reports", Report.Id))" IsFavorite="@(this.IsFavoriteForUser("Reports", Report.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Reports", Report.Id))" IsProject="@(this.IsProjectForUser("Reports", Report.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <JournalEntryTableExpandedRow JournalEntry="@Report" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </JournalEntryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <JournalEntryTable @ref="MainReportTable" Items="this.JJReportDtos" Context="Report" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Report" MainTable="@MainReportTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Reports", Report.Id))" IsFavorite="@(this.IsFavoriteForUser("Reports", Report.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Reports", Report.Id))" IsProject="@(this.IsProjectForUser("Reports", Report.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Report" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var report in this.JJReportDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(report.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateReportEntryShareLink(report.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenEntryModal(report))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@report.Title</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="report.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="report.Characters.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Characters" && this.JJCharacterDtos.Count > 0)
 {
-    <JournalEntryTable @ref="MainCharacterTable" Items="this.JJCharacterDtos" Context="Character" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Characters", Character.Id))" IsFavorite="@(this.IsFavoriteForUser("Characters", Character.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Characters", Character.Id))" IsProject="@(this.IsProjectForUser("Characters", Character.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <JournalEntryTableExpandedRow JournalEntry="@Character" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </JournalEntryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <JournalEntryTable @ref="MainCharacterTable" Items="this.JJCharacterDtos" Context="Character" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Character" MainTable="@MainCharacterTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Characters", Character.Id))" IsFavorite="@(this.IsFavoriteForUser("Characters", Character.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Characters", Character.Id))" IsProject="@(this.IsProjectForUser("Characters", Character.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Character" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var character in this.JJCharacterDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(character.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateCharacterEntryShareLink(character.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenEntryModal(character))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@character.Title</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="character.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="character.Characters.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 {
-    <JournalEntryTable @ref="MainEnemyTable" Items="this.JJEnemyDtos" Context="Enemy" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Enemies", Enemy.Id))" IsFavorite="@(this.IsFavoriteForUser("Enemies", Enemy.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Enemies", Enemy.Id))" IsProject="@(this.IsProjectForUser("Enemies", Enemy.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <JournalEntryTableExpandedRow JournalEntry="@Enemy" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </JournalEntryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <JournalEntryTable @ref="MainEnemyTable" Items="this.JJEnemyDtos" Context="Enemy" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Title</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Character</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <JournalEntryTableRow JournalEntry="@Enemy" MainTable="@MainEnemyTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Enemies", Enemy.Id))" IsFavorite="@(this.IsFavoriteForUser("Enemies", Enemy.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Enemies", Enemy.Id))" IsProject="@(this.IsProjectForUser("Enemies", Enemy.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <JournalEntryTableExpandedRow JournalEntry="@Enemy" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </JournalEntryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var enemy in this.JJEnemyDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(enemy.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateEnemyEntryShareLink(enemy.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenEntryModal(enemy))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@enemy.Title</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="enemy.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="enemy.Characters.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 
 <span style="margin-bottom: 50px;"></span>
@@ -365,6 +664,9 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     public string CurrentOption { get; set; } = "Games";
     public string CurrentSubOption { get; set; } = "Details";
 
+    public string CurrentResultsDisplay { get; set; } = "Table";
+    public bool IsMobile { get; set; } = false;
+
     private string informationSearch = "";
     private WayfinderController? api;
 
@@ -403,6 +705,8 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private List<string> options = new List<string> { "Entries", "Games", "Worlds", "Characters" };
     private SubNavBar? WayfinderSubNavBar;
+
+    private NavBar? WayfinderResultsDisplay;
 
     private bool canDisplayClearAll;
 
@@ -528,8 +832,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();
     private List<FavoriteDto> Favourites = new List<FavoriteDto>();
     private SearchSettingsDto SearchSettings = default!;
+    private string CurrentViewMobile = "Available";
 
     private bool failed = false;
+    private bool initialized;
 
     private bool loggedIn = false;
     private bool isPatron;
@@ -583,6 +889,15 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     {
         if (firstRender)
         {
+            this.IsMobile = await JS.InvokeAsync<bool>("isDevice");
+
+            this.initialized = true;
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+
             //if (this.authenticationStateTask != null)
             //{
             //    var authState = await authenticationStateTask;
@@ -616,6 +931,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                         this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
                         this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                         this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
                     await this.HandleQueryParams();
@@ -653,6 +969,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
                         this.Favourites = await this.api.GetFavourites(user.Id, "Jiminy's Journal");
                         this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                         this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
                     Thread.Sleep(1000);
@@ -714,6 +1031,35 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         });
     }
 
+    public async Task UpdateResultsDisplay(string option)
+    {
+        this.CurrentResultsDisplay = option;
+
+        if (this.SearchSettings != null)
+        {
+            this.SearchSettings.ResultsDisplay = option;
+
+            if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+            {
+                var authState = await authenticationStateTask;
+
+                WayfinderProjectUser user = new();
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
+                {
+                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                    await this.api.SaveSearchSettings(user.Id, this.SearchSettings.AutoSearch, this.SearchSettings.AutoExpandFirstResult, this.SearchSettings.MainSearchEverything, this.SearchSettings.TrackHistory, 
+                                                        this.SearchSettings.FavouriteSearch, this.SearchSettings.ProjectSearch, this.SearchSettings.IncludeAlias, this.SearchSettings.ResultsDisplay);
+                }
+            }
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
     public async Task SearchInformation(string search)
     {
         if (search.Length < 2)
@@ -767,10 +1113,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     #region Sub-Search Methods
     private async Task SearchStoryEntries(bool allowSearch = false)
     {
-        var games = this.StoryGamesSearch != null ? string.Join("::", this.StoryGamesSelected) != "" ? string.Join("::", this.StoryGamesSelected) : null : null;
-        var storyEntries = this.StoryEntriesSearch != null ? string.Join("::", this.StoryEntriesSelected) != "" ? string.Join("::", this.StoryEntriesSelected) : null : null;
-        var worlds = this.StoryWorldsSearch != null ? string.Join("::", this.StoryWorldsSelected) != "" ? string.Join("::", this.StoryWorldsSelected) : null : null;
-        var characters = this.StoryCharactersSearch != null ? string.Join("::", this.StoryCharactersSelected) != "" ? string.Join("::", this.StoryCharactersSelected) : null : null;
+        var games = string.Join("::", this.StoryGamesSelected) != "" ? string.Join("::", this.StoryGamesSelected.Distinct()) : null;
+        var storyEntries = string.Join("::", this.StoryEntriesSelected) != "" ? string.Join("::", this.StoryEntriesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.StoryWorldsSelected) != "" ? string.Join("::", this.StoryWorldsSelected.Distinct()) : null;
+        var characters = string.Join("::", this.StoryCharactersSelected) != "" ? string.Join("::", this.StoryCharactersSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -862,10 +1208,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private async Task SearchReportEntries(bool allowSearch = false)
     {
-        var games = this.ReportGamesSearch != null ? string.Join("::", this.ReportGamesSelected) != "" ? string.Join("::", this.ReportGamesSelected) : null : null;
-        var reportEntries = this.ReportEntriesSearch != null ? string.Join("::", this.ReportEntriesSelected) != "" ? string.Join("::", this.ReportEntriesSelected) : null : null;
-        var worlds = this.ReportWorldsSearch != null ? string.Join("::", this.ReportWorldsSelected) != "" ? string.Join("::", this.ReportWorldsSelected) : null : null;
-        var characters = this.ReportCharactersSearch != null ? string.Join("::", this.ReportCharactersSelected) != "" ? string.Join("::", this.ReportCharactersSelected) : null : null;
+        var games = string.Join("::", this.ReportGamesSelected) != "" ? string.Join("::", this.ReportGamesSelected.Distinct()) : null;
+        var reportEntries = string.Join("::", this.ReportEntriesSelected) != "" ? string.Join("::", this.ReportEntriesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.ReportWorldsSelected) != "" ? string.Join("::", this.ReportWorldsSelected.Distinct()) : null;
+        var characters = string.Join("::", this.ReportCharactersSelected) != "" ? string.Join("::", this.ReportCharactersSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -957,10 +1303,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private async Task SearchCharacterEntries(bool allowSearch = false)
     {
-        var games = this.CharacterGamesSearch != null ? string.Join("::", this.CharacterGamesSelected) != "" ? string.Join("::", this.CharacterGamesSelected) : null : null;
-        var characterEntries = this.CharacterEntriesSearch != null ? string.Join("::", this.CharacterEntriesSelected) != "" ? string.Join("::", this.CharacterEntriesSelected) : null : null;
-        var worlds = this.CharacterWorldsSearch != null ? string.Join("::", this.CharacterWorldsSelected) != "" ? string.Join("::", this.CharacterWorldsSelected) : null : null;
-        var characters = this.CharacterCharactersSearch != null ? string.Join("::", this.CharacterCharactersSelected) != "" ? string.Join("::", this.CharacterCharactersSelected) : null : null;
+        var games = string.Join("::", this.CharacterGamesSelected) != "" ? string.Join("::", this.CharacterGamesSelected.Distinct()) : null;
+        var characterEntries = string.Join("::", this.CharacterEntriesSelected) != "" ? string.Join("::", this.CharacterEntriesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.CharacterWorldsSelected) != "" ? string.Join("::", this.CharacterWorldsSelected.Distinct()) : null;
+        var characters = string.Join("::", this.CharacterCharactersSelected) != "" ? string.Join("::", this.CharacterCharactersSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -977,7 +1323,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-                
+
                 WayfinderProjectUser? user = null;
                 if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
@@ -1052,10 +1398,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private async Task SearchEnemyEntries(bool allowSearch = false)
     {
-        var games = this.EnemyGamesSearch != null ? string.Join("::", this.EnemyGamesSelected) != "" ? string.Join("::", this.EnemyGamesSelected) : null : null;
-        var enemyEntries = this.EnemyEntriesSearch != null ? string.Join("::", this.EnemyEntriesSelected) != "" ? string.Join("::", this.EnemyEntriesSelected) : null : null;
-        var worlds = this.EnemyWorldsSearch != null ? string.Join("::", this.EnemyWorldsSelected) != "" ? string.Join("::", this.EnemyWorldsSelected) : null : null;
-        var characters = this.EnemyCharactersSearch != null ? string.Join("::", this.EnemyCharactersSelected) != "" ? string.Join("::", this.EnemyCharactersSelected) : null : null;
+        var games = string.Join("::", this.EnemyGamesSelected) != "" ? string.Join("::", this.EnemyGamesSelected.Distinct()) : null;
+        var enemyEntries = string.Join("::", this.EnemyEntriesSelected) != "" ? string.Join("::", this.EnemyEntriesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.EnemyWorldsSelected) != "" ? string.Join("::", this.EnemyWorldsSelected.Distinct()) : null;
+        var characters = string.Join("::", this.EnemyCharactersSelected) != "" ? string.Join("::", this.EnemyCharactersSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1072,7 +1418,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-                
+
                 WayfinderProjectUser? user = null;
                 if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
@@ -1319,7 +1665,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     #region Sub-ResetOption Methods
     private async Task ResetStoryEntryOptions()
     {
-        this.StoryEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").Select(x => x.Title).ToListAsync();
+        this.StoryEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").Select(x => x.Title).Distinct().ToListAsync();
         this.StoryWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.StoryCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.StoryGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
@@ -1353,7 +1699,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private async Task ResetReportEntryOptions()
     {
-        this.ReportEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").Select(x => x.Title).ToListAsync();
+        this.ReportEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").Select(x => x.Title).Distinct().ToListAsync();
         this.ReportWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.ReportCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.ReportGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
@@ -1388,7 +1734,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private async Task ResetCharacterEntryOptions()
     {
-        this.CharacterEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").Select(x => x.Title).ToListAsync();
+        this.CharacterEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").Select(x => x.Title).Distinct().ToListAsync();
         this.CharacterWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.CharacterCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.CharacterGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
@@ -1423,7 +1769,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     private async Task ResetEnemyEntryOptions()
     {
-        this.EnemyEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").Select(x => x.Title).ToListAsync();
+        this.EnemyEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").Select(x => x.Title).Distinct().ToListAsync();
         this.EnemyWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.EnemyCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.EnemyGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
@@ -1769,9 +2115,10 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     }
 
     #region Generate Share Link Sub-Methods
-    private async Task GenerateStoryEntryShareLink()
+    private async Task GenerateStoryEntryShareLink(int? entryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+        var id = entryId ?? this.MainStoryTable?.CurrentExpandedRow;
 
         if (this.StoryEntriesSelected.Count > 0)
         {
@@ -1794,19 +2141,18 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
 
         shareLink += "category=Story&";
-        shareLink += $"open_row={this.MainStoryTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainStoryTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainStoryTable.CurrentExpandedRow)?.Title}' entry.");
-        }
+
+        toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == id)?.Title}' entry.");
     }
 
-    private async Task GenerateReportEntryShareLink()
+    private async Task GenerateReportEntryShareLink(int? entryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+        var id = entryId ?? this.MainReportTable?.CurrentExpandedRow;
 
         if (this.ReportEntriesSelected.Count > 0)
         {
@@ -1829,19 +2175,17 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
 
         shareLink += "category=Reports&";
-        shareLink += $"open_row={this.MainReportTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainReportTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainReportTable.CurrentExpandedRow)?.Title}' entry.");
-        }
+        toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == id)?.Title}' entry.");
     }
 
-    private async Task GenerateCharacterEntryShareLink()
+    private async Task GenerateCharacterEntryShareLink(int? entryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+        var id = entryId ?? this.MainCharacterTable?.CurrentExpandedRow;
 
         if (this.CharacterEntriesSelected.Count > 0)
         {
@@ -1864,19 +2208,17 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
 
         shareLink += "category=Characters&";
-        shareLink += $"open_row={this.MainCharacterTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainCharacterTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainCharacterTable.CurrentExpandedRow)?.Title}' entry.");
-        }
+        toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == id)?.Title}' entry.");
     }
 
-    private async Task GenerateEnemyEntryShareLink()
+    private async Task GenerateEnemyEntryShareLink(int? entryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}jiminy_journal?";
+        var id = entryId ?? this.MainEnemyTable?.CurrentExpandedRow;
 
         if (this.EnemyEntriesSelected.Count > 0)
         {
@@ -1899,14 +2241,11 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
 
         shareLink += "category=Enemies&";
-        shareLink += $"open_row={this.MainEnemyTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainEnemyTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == this.MainEnemyTable.CurrentExpandedRow)?.Title}' entry.");
-        }
+        toastService.ShowInfo($"Copied link to '{this.context.JournalEntries.FirstOrDefault(x => x.Id == id)?.Title}' entry.");
     }
 
     private async Task GenerateCollectibleEntryShareLink()
@@ -2005,42 +2344,58 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             optionUpdated = true;
         }
 
-        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.StoryEntriesSearch != null)
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0)
         {
             var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
 
             this.StoryEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
-            await this.StoryEntriesSearch.SetCurrentView("Selected");
+
+            if (this.StoryEntriesSearch != null)
+            {
+                await this.StoryEntriesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.StoryWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.StoryWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.StoryWorldsSearch.SetCurrentView("Selected");
+
+            if (this.StoryWorldsSearch != null)
+            {
+                await this.StoryWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.StoryCharactersSearch != null)
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0)
         {
             var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
 
             this.StoryCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.StoryCharactersSearch.SetCurrentView("Selected");
+
+            if (this.StoryCharactersSearch != null)
+            {
+                await this.StoryCharactersSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.StoryGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.StoryGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.StoryGamesSearch.SetCurrentView("Selected");
+
+            if (this.StoryGamesSearch != null)
+            {
+                await this.StoryGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2059,42 +2414,58 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             optionUpdated = true;
         }
 
-        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.ReportEntriesSearch != null)
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0)
         {
             var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
 
             this.ReportEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
-            await this.ReportEntriesSearch.SetCurrentView("Selected");
+
+            if (this.ReportEntriesSearch != null)
+            {
+                await this.ReportEntriesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.ReportWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.ReportWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.ReportWorldsSearch.SetCurrentView("Selected");
+
+            if (this.ReportWorldsSearch != null)
+            {
+                await this.ReportWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.ReportCharactersSearch != null)
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0)
         {
             var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
 
             this.ReportCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.ReportCharactersSearch.SetCurrentView("Selected");
+
+            if (this.ReportCharactersSearch != null)
+            {
+                await this.ReportCharactersSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.ReportGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.ReportGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.ReportGamesSearch.SetCurrentView("Selected");
+
+            if (this.ReportGamesSearch != null)
+            {
+                await this.ReportGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2105,7 +2476,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     private async Task<bool> HandleCharacterEntryQueryParams()
     {
         var optionUpdated = false;
-        
+
         if (this.TextQuery != null && this.TextQuery.Count() > 0)
         {
             this.informationSearch = this.TextQuery.First();
@@ -2113,42 +2484,58 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             optionUpdated = true;
         }
 
-        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.CharacterEntriesSearch != null)
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0)
         {
             var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
 
             this.CharacterEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
-            await this.CharacterEntriesSearch.SetCurrentView("Selected");
+
+            if (this.CharacterEntriesSearch != null)
+            {
+                await this.CharacterEntriesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.CharacterWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.CharacterWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.CharacterWorldsSearch.SetCurrentView("Selected");
+
+            if (this.CharacterWorldsSearch != null)
+            {
+                await this.CharacterWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.CharacterCharactersSearch != null)
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0)
         {
             var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
 
             this.CharacterCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.CharacterCharactersSearch.SetCurrentView("Selected");
+
+            if (this.CharacterCharactersSearch != null)
+            {
+                await this.CharacterCharactersSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.CharacterGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.CharacterGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.CharacterGamesSearch.SetCurrentView("Selected");
+
+            if (this.CharacterGamesSearch != null)
+            {
+                await this.CharacterGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2167,42 +2554,58 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
             optionUpdated = true;
         }
 
-        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0 && this.EnemyEntriesSearch != null)
+        if (this.EntryTitleQuery != null && this.EntryTitleQuery.Count() > 0)
         {
             var entryTitleIds = this.EntryTitleQuery.Select(x => int.Parse(x));
 
             this.EnemyEntriesSelected = this.context.JournalEntries.AsNoTracking().Where(x => entryTitleIds.Contains(x.Id)).Select(x => x.Title).ToList();
-            await this.EnemyEntriesSearch.SetCurrentView("Selected");
+
+            if (this.EnemyEntriesSearch != null)
+            {
+                await this.EnemyEntriesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.EnemyWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.EnemyWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.EnemyWorldsSearch.SetCurrentView("Selected");
+
+            if (this.EnemyWorldsSearch != null)
+            {
+                await this.EnemyWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0 && this.EnemyCharactersSearch != null)
+        if (this.CharacterQuery != null && this.CharacterQuery.Count() > 0)
         {
             var characterIds = this.CharacterQuery.Select(x => int.Parse(x));
 
             this.EnemyCharactersSelected = this.context.Characters.AsNoTracking().Where(x => characterIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.EnemyCharactersSearch.SetCurrentView("Selected");
+
+            if (this.EnemyCharactersSearch != null)
+            {
+                await this.EnemyCharactersSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.EnemyGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.EnemyGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.EnemyGamesSearch.SetCurrentView("Selected");
+            
+            if (this.EnemyGamesSearch != null)
+            {
+                await this.EnemyGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2442,6 +2845,86 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     public bool IsProjectForUser(string category, int specificRecordId)
     {
         return this.ProjectRecords.Exists(x => x.Type == "Jiminy's Journal" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+
+    public string GetGameIcon(string gameName)
+    {
+        switch (gameName)
+        {
+            case "Kingdom Hearts":
+                return "/images/icons/game_hearts/KH1.png";
+            case "Kingdom Hearts Re:Chain of Memories":
+            case "Kingdom Hearts Melody of Memory":
+                return "/images/icons/game_hearts/COM.png";
+            case "Kingdom Hearts II":
+                return "/images/icons/game_hearts/KH2.png";
+            case "Kingdom Hearts 358/2 Days":
+                return "/images/icons/game_hearts/Days.png";
+            case "Kingdom Hearts Birth By Sleep":
+                return "/images/icons/game_hearts/BBS.png";
+            case "Kingdom Hearts Re:Coded":
+                return "/images/icons/game_hearts/Coded.png";
+            case "Kingdom Hearts Dream Drop Distance":
+                return "/images/icons/game_hearts/DDD.png";
+            case "Kingdom Hearts 0.2":
+                return "/images/icons/game_hearts/zero-point-two.png";
+            case "Kingdom Hearts χ":
+            case "Kingdom Hearts χ Back Cover":
+            case "Kingdom Hearts Unchained χ":
+            case "Kingdom Hearts Union χ":
+            case "Kingdom Hearts Union Dark Road":
+                return "/images/icons/game_hearts/UX.png";
+            case "Kingdom Hearts III":
+                return "/images/icons/game_hearts/KH3.png";
+            default:
+                return "/images/icons/game_hearts/KH1.png";
+        }
+    }
+
+    public async Task OpenEntryModal(JournalEntryDto entry)
+    {
+        WayfinderProjectUser user = new();
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            if (authState.User.Identity != null && authState.User.Identity.Name != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+        }
+
+        var parameters = new ModalParameters();
+
+        parameters.Add("JournalEntry", entry);
+        parameters.Add("API", this.api ?? default!);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        var temp = Modal.Show<JournalEntryModal>($"{entry.Title}", parameters, options);
+    }
+
+    private void ToggleView()
+    {
+        if (this.CurrentViewMobile == "Available")
+        {
+            this.CurrentViewMobile = "Selected";
+        }
+        else if (this.CurrentViewMobile == "Selected")
+        {
+            this.CurrentViewMobile = "Available";
+        }
+    }
+
+    private void DisplayClearAllModal()
+    {
+        var parameters = new ModalParameters();
+
+        parameters.Add("ClearAllSubMethod", ClearAllOptions(this.CurrentCategory));
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        Modal.Show<ClearAllModal>("Clear All", parameters, options);
     }
     #endregion Journal Specific Methods
 }

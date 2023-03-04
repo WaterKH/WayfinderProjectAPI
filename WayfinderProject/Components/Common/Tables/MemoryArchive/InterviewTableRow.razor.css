@@ -1,4 +1,18 @@
 ﻿
+.game-color {
+    color: #cdd1ff;
+    font-weight: 600;
+}
+
+.game-display {
+    border: solid 2px #cdd1ff;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background-color: #f4f9fd;
+    color: #cdd1ff;
+    font-weight: 600;
+}
+
 .world-color {
     color: #ea4a4a;
     font-weight: 600;

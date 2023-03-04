@@ -22,16 +22,16 @@
 @if (!this.ProjectView)
 {
 <td style="vertical-align: middle;">
-    <RowContentDisplay Content="this.Scene.Worlds.Select(x => x.Name).ToList()" CustomDisplayClass="world-display" CustomColourClass="world-color" />
+    <RowContentDisplay Content="this.Scene.Worlds.Select(x => x.Name).Distinct().ToList()" CustomDisplayClass="world-display" CustomColourClass="world-color" />
 </td>
 <td style="vertical-align: middle;">
-        <RowContentDisplay Content="this.Scene.Areas.Select(x => x.Name).ToList()" CustomDisplayClass="area-display" CustomColourClass="area-color" />
+    <RowContentDisplay Content="this.Scene.Areas.Select(x => x.Name).Distinct().ToList()" CustomDisplayClass="area-display" CustomColourClass="area-color" />
 </td>
 <td style="vertical-align: middle;">
-    <RowContentDisplay Content="this.Scene.Characters.Select(x => x.Name).ToList()" CustomDisplayClass="character-display" CustomColourClass="character-color" />
+    <RowContentDisplay Content="this.Scene.Characters.Select(x => x.Name).Distinct().ToList()" CustomDisplayClass="character-display" CustomColourClass="character-color" />
 </td>
 <td style="vertical-align: middle;">
-    <RowContentDisplay Content="this.Scene.Music.Select(x => x.Name).ToList()" CustomDisplayClass="music-display" CustomColourClass="music-color" />
+    <RowContentDisplay Content="this.Scene.Music.Select(x => x.Name).Distinct().ToList()" CustomDisplayClass="music-display" CustomColourClass="music-color" CustomTooltipMargin="-200" />
 </td>
 <td>
     @if (this.LoggedIn)

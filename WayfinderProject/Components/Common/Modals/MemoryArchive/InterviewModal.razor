@@ -103,13 +103,12 @@
 </div>
 
 @code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
     [Parameter] public InterviewDto Interview { get; set; } = default!;
-    [Parameter] public string AccountId { get; set; } = string.Empty;
     [Parameter] public WayfinderController? API { get; set; }
 
     [Parameter] public Func<Task>? GenerateShareLink { get; set; }
-
-    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
     public string CurrentSubOption { get; set; } = "Details";
 

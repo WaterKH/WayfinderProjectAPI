@@ -1,0 +1,125 @@
+﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-12">
+            <SubNavBar Options="@(new List<string> { "Details" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
+
+            @if (this.CurrentSubOption == "Details")
+            {
+                <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                    @if (this.Inventory != null)
+                    {
+                        <div class="row" style="height: 281px;">
+                            <div class="col-md-6">
+                                <h3>@(Inventory.Name)</h3>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div id="share" class="share" @onclick="@(() => { if (this.GenerateShareLink != null) { this.GenerateShareLink.Invoke(); } })">
+                                    <span class="copyable">
+                                        <i class="oi oi-file"></i>
+                                        <label class="share-text"><b>Share Inventory Record</b></label>
+                                        <br />
+                                    </span>
+                                </div>
+                            </div>
+
+                            @if (Inventory.Cost != 0)
+                            {
+                                <div class="col-md-12" style="margin-top: 25px;">
+                                    <label style="font-size: large"><strong>Cost</strong></label>
+                                    <label>@(Inventory.Cost) @(Inventory.Currency)</label><br />
+                                </div>
+                            }
+
+                            <div class="col-md-12" style="margin-top: 15px;">
+                                <label>@(Inventory.Description)</label><br />
+                            </div>
+
+                            @if (!string.IsNullOrEmpty(Inventory.AdditionalInformation))
+                            {
+                                <div class="col-md-12" style="margin-top: 10px;">
+                                    <label>@(Inventory.AdditionalInformation)</label><br />
+                                </div>
+                            }
+
+                            @if (this.Inventory.EnemyDrops.Count > 0)
+                            {
+                                <div class="row" style="height: 281px;">
+                                    <div class="col-md-6" style="margin-top: 25px;">
+                                        <h3>Enemy Drop Rates</h3>
+                                    </div>
+
+                                    @foreach (var drop in this.Inventory.EnemyDrops)
+                                    {
+                                        if (previousName != drop.CharacterLocation.Character.Name)
+                                        {
+                                            <div class="col-md-12" style="margin-left: 5px; margin-top: 15px;">
+                                                <label style="font-size: larger"><strong class="character-color">@(drop.CharacterLocation.Character.Name.Split("(")[0])</strong>: @(drop.DropRate.ToString(".0"))% (Drop Rate)</label><br />
+                                            </div>
+
+                                            previousName = drop.CharacterLocation.Character.Name;
+                                        }
+
+                                        if (previousInfo != drop.AdditionalInformation)
+                                        {
+                                            if (!string.IsNullOrEmpty(drop.AdditionalInformation))
+                                            {
+                                                <div class="col-md-12" style="margin-left: 10px; margin-top: 5px;">
+                                                    <label>@(drop.AdditionalInformation)</label><br />
+                                                </div>
+                                            }
+
+                                            previousInfo = drop.AdditionalInformation;
+                                        }
+
+                                        <div class="col-md-12" style="margin-left: 25px; margin-top: 5px;">
+                                            <label><span class="world-color">@drop.CharacterLocation.World.Name</span> - <span class="area-color">@(string.Join(", ", drop.CharacterLocation.Areas.Select(x => x.Name)))</span></label><br />
+                                        </div>
+                                    }
+
+                                    <div style="height: 25px;"></div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public InventoryDto Inventory { get; set; } = default!;
+    [Parameter] public WayfinderController? API { get; set; }
+    
+    [Parameter] public Func<Task>? GenerateShareLink { get; set; }
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private string previousName = string.Empty;
+    private string previousInfo = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+}
