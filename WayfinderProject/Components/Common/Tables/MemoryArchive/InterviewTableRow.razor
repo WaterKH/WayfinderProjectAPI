@@ -25,62 +25,12 @@
     <a style="font-weight: 600; color: #1a00ff;" href="@Interview.Link" target="_blank">@Interview.Name</a>
 </td>
 <td style="vertical-align: middle;">
-    @if (Interview.Games.Count > 2)
-    {
-        <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Interview.Games.Select(x => x.Name)))">
-                <div class="game-display">
-                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
-                </div>
-            </Tooltip>
-        </div>
-    }
-    else
-    {
-        if (Interview.Games.Count > 0 && Interview.Games.First().Name != ":None:")
-        {
-            <div style="display: inline-flex" class="@(Interview.Games.Count == 2 ? "game-display" : "")">
-                @for (int i = 0; i < Interview.Games.Count; ++i)
-                {
-                    <span class="game-color">@Interview.Games.ToList()[i].Name</span>
-                    if (i < Interview.Games.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-        }
-    }
+    <RowContentDisplay Content="this.Interview.Games.Select(x => x.Name).Distinct().ToList()" CustomDisplayClass="game-display" CustomColourClass="game-color" />
 </td>
 @if (!this.ProjectView)
 {
 <td style="vertical-align: middle;">
-    @if (Interview.Participants.Count > 2)
-    {
-        <div style="margin-left: -5px; height: 38px;">
-            <Tooltip Text="@(string.Join(", ", Interview.Participants.Select(x => x.Name)))">
-                <div class="character-display">
-                    Multiple <iconify-icon icon="bi:caret-down-fill" style="margin-left: 7px; margin-bottom: -4px;"></iconify-icon>
-                </div>
-            </Tooltip>
-        </div>
-    }
-    else
-    {
-        if (Interview.Participants.Count > 0 && Interview.Participants.First().Name != ":None:")
-        {
-            <div style="display: inline-flex" class="@(Interview.Participants.Count == 2 ? "character-display" : "")">
-                @for (int i = 0; i < Interview.Participants.Count; ++i)
-                {
-                    <span class="character-color">@Interview.Participants.ToList()[i].Name</span>
-                    if (i < Interview.Participants.Count - 1)
-                    {
-                        <div>,&nbsp;</div>
-                    }
-                }
-            </div>
-        }
-    }
+    <RowContentDisplay Content="this.Interview.Participants.Select(x => x.Name).Distinct().ToList()" CustomDisplayClass="character-display" CustomColourClass="character-color" />
 </td>
 <td style="vertical-align: middle;">
     <a style="font-weight: 600; color: #1a00ff;" href="@Interview.Provider.Link" target="_blank">@Interview.Provider.Name</a>

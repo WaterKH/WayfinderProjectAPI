@@ -17,244 +17,431 @@
 <br/>
 <br/>
 
-<div class="wayfinder-background">
-    <div class="wayfinder-parallax">
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-12" style="align-self: center;">
-                <div class="wayfinder-title">
-                    <img src="/images/wayfinder_project_title.png" />
+@if (this.initialized)
+{
+    <div class="wayfinder-background">
+        <div class="wayfinder-parallax">
+            
+            @if (!this.IsMobile)
+            {
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-12" style="align-self: center;">
+                    <div class="wayfinder-title">
+                        <img src="/images/wayfinder_project_title.png" />
+                    </div>
+
+                    <div class="wayfinder-description">
+                        <strong>Search for a <span style="color: #522aff;">Word</span> or <span style="color: #ff7519;">Phrase</span>...</strong>
+                    </div>
+
+                    <div class="wayfinder-search">
+                        <span class="wayfinder-search-icon material-icons">search</span>
+                        <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+                        @if (this.loggedIn)
+                        {
+                            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                        }
+                        <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
+                    </div>
+
+                    <div class="wayfinder-sub-description">
+                        <strong>
+                            Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Records</span>, <span style="color: #ea4a4a;">Categories</span> or <span style="color: #f3b222;">Synthesis Materials</span>.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            }
+
+            <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
+                <div class="col-md-1"></div>
+
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #522aff;">Daily Moogle Record</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Discover a brand new daily moogle record by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyMoogleRecord())" @onclick:stopPropagation>Daily Moogle Record</button>
                 </div>
 
-                <div class="wayfinder-description">
-                    <strong>Search for a <span style="color: #522aff;">Word</span> or <span style="color: #ff7519;">Phrase</span>...</strong>
+                <div class="col-md-2"></div>
+                
+                @if (this.IsMobile)
+                {
+                    <span style="margin-bottom: 25px;"></span>
+                }
+
+                <div class="col-md-4" style="text-align: center;">
+                    <div class="wayfinder-title">
+                        <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Record</span> <span style="color: #5499fc;">Generator</span></strong>
+                    </div>
+
+                    <div class="wayfinder-alt-description">
+                        <strong>
+                            Can't decide which entry you want to find? Let us choose for you by selecting a random moogle record!
+                        </strong>
+                    </div>
+
+                    <br />
+
+                    <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomMoogleRecord())" @onclick:stopPropagation>Random Moogle Record</button>
                 </div>
 
-                <div class="wayfinder-search">
-                    <span class="wayfinder-search-icon material-icons">search</span>
-                    <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
-                    @if (this.loggedIn)
-                    {
-                        <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-                        <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
-                    }
-                    <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
-                </div>
-
-                <div class="wayfinder-sub-description">
-                    <strong>
-                        Or use a combination of filters below to search through <span style="color: #949dff;">Games</span>, <span style="color: #e685da;">Records</span>, <span style="color: #ea4a4a;">Categories</span> or <span style="color: #f3b222;">Synthesis Materials</span>.
-                    </strong>
-                </div>
+                <div class="col-md-1"></div>
             </div>
         </div>
+    </div>
 
-        <hr />
 
-        <div class="row" style="width: 100%; margin: 0px 0px 30px 0px">
-            <div class="col-md-1"></div>
+    <div style="@(!this.IsMobile ? "display: inline-flex;" : "")">
+        <div style="width: 100%;">
 
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #522aff;">Daily Moogle Record</span></strong>
-                </div>
+            <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
 
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Discover a brand new daily moogle record by visiting The Wayfinder Project everyday! Follow <a href="https://twitter.com/WFP_KH" target="_blank">@@WFP_KH on Twitter</a>!
-                    </strong>
-                </div>
+        </div>
 
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToDailyMoogleRecord())" @onclick:stopPropagation>Daily Moogle Record</button>
-            </div>
-
-            <div class="col-md-2"></div>
-
-            <div class="col-md-4" style="text-align: center;">
-                <div class="wayfinder-title">
-                    <strong><span style="color: #ea4a4a;">Random</span> <span style="color: #2cce78;">Record</span> <span style="color: #5499fc;">Generator</span></strong>
-                </div>
-
-                <div class="wayfinder-alt-description">
-                    <strong>
-                        Can't decide which entry you want to find? Let us choose for you by selecting a random moogle record!
-                    </strong>
-                </div>
-
-                <br />
-
-                <button class="wayfinder-button" onclick="@(() => this.NavigateToRandomMoogleRecord())" @onclick:stopPropagation>Random Moogle Record</button>
-            </div>
-
-            <div class="col-md-1"></div>
+        <div class="wayfinder-search-alt" style="@(!this.IsMobile ? "" : "text-align: center;")">
+            <span class="wayfinder-search-icon material-icons">search</span>
+            <input id="main-search" name="main-search" class="custom-input" value="@this.informationSearch" style="@(!this.IsMobile ? "" : "padding-right: 20px; width: unset;")"
+                onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
+            
+            @if (!this.IsMobile)
+            {
+                if (this.loggedIn)
+                {
+                    <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
+                    <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+                }
+                <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
+            }
         </div>
     </div>
-</div>
 
+    @if (!this.IsMobile)
+    {
+        <div class="wayfinder-search-alt" style="width: 0%;">
+            <div style="position: absolute; right: 175px; display: inline-flex;">
+                <div style="margin-top: 20px; margin-right: 15px;">
+                    <span style="font-size: larger;"><strong>Results Display: </strong></span>
+                </div>
+        
+                <NavBar @ref="WayfinderResultsDisplay" Categories="@(new List<string> { "Table", "Tiles" })" UpdateCurrentCategory="@(async (string category) => await UpdateResultsDisplay(category))" CurrentCategory="@this.CurrentResultsDisplay" Loading="@this.Loading" CustomStyle="margin-top: 15px;" />
+            </div>
+        </div>
+        
+        <SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
+    }
+    else
+    {
+        <div class="wayfinder-buttons" style="align-self: center; margin: 15px;">
+            <button class="@(this.CurrentViewMobile == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())" style="right: unset; margin-left: 25px;">@(this.CurrentViewMobile == "Available" ? "Filters" : "Options")</button>
 
-<div style="display: inline-flex;">
-    <div style="width: 100%;">
+            <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault style="margin-left: 15px; margin-right: unset;">Clear All</button>
+        </div>    
+    }
 
-        <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
-
-    </div>
-
-    <div class="wayfinder-search-alt">
-        <span class="wayfinder-search-icon material-icons">search</span>
-        <input id="main-search" name="main-search" class="custom-input" value="@this.informationSearch" onchange="@(async (ChangeEventArgs e) => { this.informationSearch = e?.Value?.ToString() ?? string.Empty; await this.SearchInformation(this.informationSearch); })" placeholder="Start Typing...">
-        @if (this.loggedIn)
+    @if (this.CurrentCategory == "Recipes")
+    {
+        if (!this.IsMobile)
         {
-            <span class="wayfinder-general-icon material-icons" style="right: 195px;" onclick="@(() => this.OpenSettings())">settings</span>
-            <span class="wayfinder-general-icon material-icons" style="right: 185px;" onclick="@(() => this.OpenHistory())">history</span>
+            <div id="recipe-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="RecipesSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.Recipes" Selected="this.RecipesSelected" Available="this.RecipesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="RecipeGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.RecipeGames" Selected="this.RecipeGamesSelected" Available="this.RecipeGamesAvailable"
+                                        CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                        UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="RecipeCategoriesSearch" Id="Categories" Placeholder="Start Typing..." Color="#f3b222" Initial="this.RecipeCategories" Selected="this.RecipeCategoriesSelected" Available="this.RecipeCategoriesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="RecipeMaterialsSearch" Id="Materials" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.RecipeMaterials" Selected="this.RecipeMaterialsSelected" Available="this.RecipeMaterialsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
         }
-        <button class="wayfinder-search-button" onclick="@(() => this.SearchInformation(this.informationSearch))" style="@(this.loggedIn ? "" : "right: 115px;")">Search</button>
-    </div>
-</div>
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="Recipes" Name="Recipes" Initial="@this.Recipes" Available="@this.RecipesAvailable" Selected="@this.RecipesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-<SubNavBar @ref="WayfinderSubNavBar" FocusOption="@this.options.FirstOrDefault()" Options="this.options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentOption(option))" StartingOption="@this.CurrentOption" />
-
-@if (this.CurrentCategory == "Recipes")
-{
-    <div id="recipe-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="RecipesSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.Recipes" Selected="this.RecipesSelected" Available="this.RecipesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="RecipeGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.RecipeGames" Selected="this.RecipeGamesSelected" Available="this.RecipeGamesAvailable"
-                                CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                                UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="RecipeCategoriesSearch" Id="Categories" Placeholder="Start Typing..." Color="#f3b222" Initial="this.RecipeCategories" Selected="this.RecipeCategoriesSelected" Available="this.RecipeCategoriesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="RecipeMaterialsSearch" Id="Materials" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.RecipeMaterials" Selected="this.RecipeMaterialsSelected" Available="this.RecipeMaterialsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="RecipeGames" Name="Games" Initial="@this.RecipeGames" Available="@this.RecipeGamesAvailable" Selected="@this.RecipeGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-        </div>
-    </div>
-}
-else if (this.CurrentCategory == "Items")
-{
-    <div id="item-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="InventoryItemsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryItems" Selected="this.InventoryItemsSelected" Available="this.InventoryItemsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryItemGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryItemGames" Selected="this.InventoryItemGamesSelected" Available="this.InventoryItemGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="RecipeCategories" Name="Categories" Initial="@this.RecipeCategories" Available="@this.RecipeCategoriesAvailable" Selected="@this.RecipeCategoriesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-                <SearchComponent @ref="InventoryItemEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryItemEnemies" Selected="this.InventoryItemEnemiesSelected" Available="this.InventoryItemEnemiesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InventoryItemWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryItemWorlds" Selected="this.InventoryItemWorldsSelected" Available="this.InventoryItemWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InventoryItemAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryItemAreas" Selected="this.InventoryItemAreasSelected" Available="this.InventoryItemAreasAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="RecipeMaterials" Name="Materials" Initial="@this.RecipeMaterials" Available="@this.RecipeMaterialsAvailable" Selected="@this.RecipeMaterialsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-        </div>
-    </div>
-}
-else if (this.CurrentCategory == "Weapons")
-{
-    <div id="weapon-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="InventoryWeaponsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryWeapons" Selected="this.InventoryWeaponsSelected" Available="this.InventoryWeaponsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+        }
+    }
+    else if (this.CurrentCategory == "Items")
+    {
+        if (!this.IsMobile)
+        {
+            <div id="item-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="InventoryItemsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryItems" Selected="this.InventoryItemsSelected" Available="this.InventoryItemsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryWeaponGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryWeaponGames" Selected="this.InventoryWeaponGamesSelected" Available="this.InventoryWeaponGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InventoryItemGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryItemGames" Selected="this.InventoryItemGamesSelected" Available="this.InventoryItemGamesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryWeaponEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryWeaponEnemies" Selected="this.InventoryWeaponEnemiesSelected" Available="this.InventoryWeaponEnemiesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InventoryItemEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryItemEnemies" Selected="this.InventoryItemEnemiesSelected" Available="this.InventoryItemEnemiesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryWeaponWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryWeaponWorlds" Selected="this.InventoryWeaponWorldsSelected" Available="this.InventoryWeaponWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InventoryItemWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryItemWorlds" Selected="this.InventoryItemWorldsSelected" Available="this.InventoryItemWorldsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryWeaponAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryWeaponAreas" Selected="this.InventoryWeaponAreasSelected" Available="this.InventoryWeaponAreasAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                        <SearchComponent @ref="InventoryItemAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryItemAreas" Selected="this.InventoryItemAreasSelected" Available="this.InventoryItemAreasAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-}
-else if (this.CurrentCategory == "Accessories & Armor")
-{
-    <div id="accessory-armor-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="InventoryAccessoryArmorsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryAccessoryArmors" Selected="this.InventoryAccessoryArmorsSelected" Available="this.InventoryAccessoryArmorsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryItems" Name="Items" Initial="@this.InventoryItems" Available="@this.InventoryItemsAvailable" Selected="@this.InventoryItemsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-                <SearchComponent @ref="InventoryAccessoryArmorGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryAccessoryArmorGames" Selected="this.InventoryAccessoryArmorGamesSelected" Available="this.InventoryAccessoryArmorGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InventoryAccessoryArmorEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryAccessoryArmorEnemies" Selected="this.InventoryAccessoryArmorEnemiesSelected" Available="this.InventoryAccessoryArmorEnemiesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InventoryAccessoryArmorWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryAccessoryArmorWorlds" Selected="this.InventoryAccessoryArmorWorldsSelected" Available="this.InventoryAccessoryArmorWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InventoryAccessoryArmorAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryAccessoryArmorAreas" Selected="this.InventoryAccessoryArmorAreasSelected" Available="this.InventoryAccessoryArmorAreasAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryItemGames" Name="Games" Initial="@this.InventoryItemGames" Available="@this.InventoryItemGamesAvailable" Selected="@this.InventoryItemGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-        </div>
-    </div>
-}
-else if (this.CurrentCategory == "Synthesis Materials")
-{
-    <div id="material-search" class="advanced-search-box">
-        <div class="row">
-            <div class="col-md-12">
-                <SearchComponent @ref="InventoryMaterialsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryMaterials" Selected="this.InventoryMaterialsSelected" Available="this.InventoryMaterialsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
 
-                <SearchComponent @ref="InventoryMaterialGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryMaterialGames" Selected="this.InventoryMaterialGamesSelected" Available="this.InventoryMaterialGamesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryItemEnemies" Name="Enemies" Initial="@this.InventoryItemEnemies" Available="@this.InventoryItemEnemiesAvailable" Selected="@this.InventoryItemEnemiesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
 
-                <SearchComponent @ref="InventoryMaterialEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryMaterialEnemies" Selected="this.InventoryMaterialEnemiesSelected" Available="this.InventoryMaterialEnemiesAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InventoryMaterialWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryMaterialWorlds" Selected="this.InventoryMaterialWorldsSelected" Available="this.InventoryMaterialWorldsAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
-
-                <SearchComponent @ref="InventoryMaterialAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryMaterialAreas" Selected="this.InventoryMaterialAreasSelected" Available="this.InventoryMaterialAreasAvailable"
-                             CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
-                             UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryItemWorlds" Name="Worlds" Initial="@this.InventoryItemWorlds" Available="@this.InventoryItemWorldsAvailable" Selected="@this.InventoryItemWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
             </div>
-        </div>
-    </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryItemAreas" Name="Areas" Initial="@this.InventoryItemAreas" Available="@this.InventoryItemAreasAvailable" Selected="@this.InventoryItemAreasSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
+    else if (this.CurrentCategory == "Weapons")
+    {
+        if (!this.IsMobile)
+        {
+            <div id="weapon-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="InventoryWeaponsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryWeapons" Selected="this.InventoryWeaponsSelected" Available="this.InventoryWeaponsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryWeaponGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryWeaponGames" Selected="this.InventoryWeaponGamesSelected" Available="this.InventoryWeaponGamesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryWeaponEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryWeaponEnemies" Selected="this.InventoryWeaponEnemiesSelected" Available="this.InventoryWeaponEnemiesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryWeaponWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryWeaponWorlds" Selected="this.InventoryWeaponWorldsSelected" Available="this.InventoryWeaponWorldsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryWeaponAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryWeaponAreas" Selected="this.InventoryWeaponAreasSelected" Available="this.InventoryWeaponAreasAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryWeapons" Name="Weapons" Initial="@this.InventoryWeapons" Available="@this.InventoryWeaponsAvailable" Selected="@this.InventoryWeaponsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryWeaponGames" Name="Games" Initial="@this.InventoryWeaponGames" Available="@this.InventoryWeaponGamesAvailable" Selected="@this.InventoryWeaponGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryWeaponEnemies" Name="Enemies" Initial="@this.InventoryWeaponEnemies" Available="@this.InventoryWeaponEnemiesAvailable" Selected="@this.InventoryWeaponEnemiesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryWeaponWorlds" Name="Worlds" Initial="@this.InventoryWeaponWorlds" Available="@this.InventoryWeaponWorldsAvailable" Selected="@this.InventoryWeaponWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryWeaponAreas" Name="Areas" Initial="@this.InventoryWeaponAreas" Available="@this.InventoryWeaponAreasAvailable" Selected="@this.InventoryWeaponAreasSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
+    else if (this.CurrentCategory == "Accessories & Armor")
+    {
+        if (!this.IsMobile)
+        {
+            <div id="accessory-armor-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="InventoryAccessoryArmorsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryAccessoryArmors" Selected="this.InventoryAccessoryArmorsSelected" Available="this.InventoryAccessoryArmorsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryAccessoryArmorGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryAccessoryArmorGames" Selected="this.InventoryAccessoryArmorGamesSelected" Available="this.InventoryAccessoryArmorGamesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryAccessoryArmorEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryAccessoryArmorEnemies" Selected="this.InventoryAccessoryArmorEnemiesSelected" Available="this.InventoryAccessoryArmorEnemiesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryAccessoryArmorWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryAccessoryArmorWorlds" Selected="this.InventoryAccessoryArmorWorldsSelected" Available="this.InventoryAccessoryArmorWorldsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryAccessoryArmorAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryAccessoryArmorAreas" Selected="this.InventoryAccessoryArmorAreasSelected" Available="this.InventoryAccessoryArmorAreasAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryAccessoryArmors" Name="Armor & Accessories" Initial="@this.InventoryAccessoryArmors" Available="@this.InventoryAccessoryArmorsAvailable" Selected="@this.InventoryAccessoryArmorsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryAccessoryArmorGames" Name="Games" Initial="@this.InventoryAccessoryArmorGames" Available="@this.InventoryAccessoryArmorGamesAvailable" Selected="@this.InventoryAccessoryArmorGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryAccessoryArmorEnemies" Name="Enemies" Initial="@this.InventoryAccessoryArmorEnemies" Available="@this.InventoryAccessoryArmorEnemiesAvailable" Selected="@this.InventoryAccessoryArmorEnemiesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryAccessoryArmorWorlds" Name="Worlds" Initial="@this.InventoryAccessoryArmorWorlds" Available="@this.InventoryAccessoryArmorWorldsAvailable" Selected="@this.InventoryAccessoryArmorWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryAccessoryArmorAreas" Name="Areas" Initial="@this.InventoryAccessoryArmorAreas" Available="@this.InventoryAccessoryArmorAreasAvailable" Selected="@this.InventoryAccessoryArmorAreasSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
+    else if (this.CurrentCategory == "Synthesis Materials")
+    {
+        if (!this.IsMobile)
+        {
+            <div id="material-search" class="advanced-search-box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <SearchComponent @ref="InventoryMaterialsSearch" Id="Records" Placeholder="Start Typing..." Color="#e685da" Initial="this.InventoryMaterials" Selected="this.InventoryMaterialsSelected" Available="this.InventoryMaterialsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryMaterialGamesSearch" Id="Games" Placeholder="Start Typing..." Color="#cdd1ff" Initial="this.InventoryMaterialGames" Selected="this.InventoryMaterialGamesSelected" Available="this.InventoryMaterialGamesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryMaterialEnemiesSearch" Id="Enemies" Placeholder="Start Typing..." Color="#f3b222" Initial="this.InventoryMaterialEnemies" Selected="this.InventoryMaterialEnemiesSelected" Available="this.InventoryMaterialEnemiesAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryMaterialWorldsSearch" Id="Worlds" Placeholder="Start Typing..." Color="#ea4a4a" Initial="this.InventoryMaterialWorlds" Selected="this.InventoryMaterialWorldsSelected" Available="this.InventoryMaterialWorldsAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+
+                        <SearchComponent @ref="InventoryMaterialAreasSearch" Id="Areas" Placeholder="Start Typing..." Color="#5499fc" Initial="this.InventoryMaterialAreas" Selected="this.InventoryMaterialAreasSelected" Available="this.InventoryMaterialAreasAvailable"
+                                     CanSearch="!this.Loading" CurrentOption="@this.CurrentOption" CanShowClearAll="@this.canDisplayClearAll"
+                                     UpdateSearch="@(async () => await Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryMaterials" Name="Materials" Initial="@this.InventoryMaterials" Available="@this.InventoryMaterialsAvailable" Selected="@this.InventoryMaterialsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryMaterialGames" Name="Games" Initial="@this.InventoryMaterialGames" Available="@this.InventoryMaterialGamesAvailable" Selected="@this.InventoryMaterialGamesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryMaterialEnemies" Name="Enemies" Initial="@this.InventoryMaterialEnemies" Available="@this.InventoryMaterialEnemiesAvailable" Selected="@this.InventoryMaterialEnemiesSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryMaterialWorlds" Name="Worlds" Initial="@this.InventoryMaterialWorlds" Available="@this.InventoryMaterialWorldsAvailable" Selected="@this.InventoryMaterialWorldsSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <MobileSearchComponent Id="InventoryMaterialAreas" Name="Areas" Initial="@this.InventoryMaterialAreas" Available="@this.InventoryMaterialAreasAvailable" Selected="@this.InventoryMaterialAreasSelected" CurrentView="@this.CurrentViewMobile" UpdateSearch="@(async () => await Search())" />
+                </div>
+            </div>
+        }
+    }
 }
 
 <br />
 <br />
 
-@if (this.Loading)
+@if (this.Loading || !this.initialized)
 {
     <div class="row" style="justify-content: center;">
         <div class="loader col-md-12"></div>
@@ -262,121 +449,362 @@ else if (this.CurrentCategory == "Synthesis Materials")
 }
 else if (this.CurrentCategory == "Recipes" && this.MSRecipeDtos.Count > 0)
 {
-    <RecipeTable @ref="MainRecipeTable" Items="this.MSRecipeDtos" Context="Recipe" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Category</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Materials</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Recipes", Recipe.Id))" IsFavorite="@(this.IsFavoriteForUser("Recipes", Recipe.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Recipes", Recipe.Id))" IsProject="@(this.IsProjectForUser("Recipes", Recipe.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <RecipeTableExpandedRow Recipe="@Recipe" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </RecipeTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <RecipeTable @ref="MainRecipeTable" Items="this.MSRecipeDtos" Context="Recipe" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Category</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Materials</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <RecipeTableRow Recipe="@Recipe" MainTable="@MainRecipeTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Recipes", Recipe.Id))" IsFavorite="@(this.IsFavoriteForUser("Recipes", Recipe.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Recipes", Recipe.Id))" IsProject="@(this.IsProjectForUser("Recipes", Recipe.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <RecipeTableExpandedRow Recipe="@Recipe" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </RecipeTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var recipe in this.MSRecipeDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(recipe.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateRecipeShareLink(recipe.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenRecipeModal(recipe))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@recipe.Name</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="@(new List<string> { recipe.Category })" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="recipe.RecipeMaterials.Select(x => x.Inventory.Name).ToList()" CustomDisplayClass="music-display" DefaultDisplayClass="music-display" CustomColourClass="music-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Items" && this.MSInventoryItemDtos.Count > 0)
 {
-    <InventoryTable @ref="MainInventoryItemTable" Items="this.MSInventoryItemDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Items", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Items", Inventory.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Items", Inventory.Id))" IsProject="@(this.IsProjectForUser("Items", Inventory.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </InventoryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <InventoryTable @ref="MainInventoryItemTable" Items="this.MSInventoryItemDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryItemTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Items", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Items", Inventory.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Items", Inventory.Id))" IsProject="@(this.IsProjectForUser("Items", Inventory.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in this.MSInventoryItemDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(item.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateInventoryItemShareLink(item.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenInventoryModal(item))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@item.Name</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="@(new List<string> { this.GetInventoryInformation(item) })" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.World.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => x.Name).ToList()" CustomDisplayClass="area-display" DefaultDisplayClass="area-display" CustomColourClass="area-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Weapons" && this.MSInventoryWeaponDtos.Count > 0)
 {
-    <InventoryTable @ref="MainInventoryWeaponTable" Items="this.MSInventoryWeaponDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Weapons", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Weapons", Inventory.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Weapons", Inventory.Id))" IsProject="@(this.IsProjectForUser("Weapons", Inventory.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </InventoryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <InventoryTable @ref="MainInventoryWeaponTable" Items="this.MSInventoryWeaponDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryWeaponTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Weapons", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Weapons", Inventory.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Weapons", Inventory.Id))" IsProject="@(this.IsProjectForUser("Weapons", Inventory.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in this.MSInventoryWeaponDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(item.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateInventoryWeaponShareLink(item.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenInventoryModal(item))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@item.Name</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="@(new List<string> { this.GetInventoryInformation(item) })" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.World.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => x.Name).ToList()" CustomDisplayClass="area-display" DefaultDisplayClass="area-display" CustomColourClass="area-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Accessories & Armor" && this.MSInventoryAccessoryArmorDtos.Count > 0)
 {
-    <InventoryTable @ref="MainInventoryAccessoryArmorTable" Items="this.MSInventoryAccessoryArmorDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Accessories & Armor", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Accessories & Armor", Inventory.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Accessories & Armor", Inventory.Id))" IsProject="@(this.IsProjectForUser("Accessories & Armor", Inventory.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </InventoryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <InventoryTable @ref="MainInventoryAccessoryArmorTable" Items="this.MSInventoryAccessoryArmorDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryAccessoryArmorTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Accessories & Armor", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Accessories & Armor", Inventory.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Accessories & Armor", Inventory.Id))" IsProject="@(this.IsProjectForUser("Accessories & Armor", Inventory.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in this.MSInventoryAccessoryArmorDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(item.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateInventoryAccessoryArmorShareLink(item.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenInventoryModal(item))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@item.Name</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="@(new List<string> { this.GetInventoryInformation(item) })" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.World.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => x.Name).ToList()" CustomDisplayClass="area-display" DefaultDisplayClass="area-display" CustomColourClass="area-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMaterialDtos.Count > 0)
 {
-    <InventoryTable @ref="MainInventoryMaterialTable" Items="this.MSInventoryMaterialDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
-        <TableHeader>
-            <th style="text-align: left;"></th>
-            <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
-            <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
-            <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
-            <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
-            <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
-            <th></th>
-            <th style="text-align: right;"></th>
-        </TableHeader>
-        <RowTemplate>
-            <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" LoggedIn="@(this.loggedIn)"
-                FavoriteCallbackMethod="@(() => this.SetFavorite("Synthesis Materials", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Synthesis Materials", Inventory.Id))"
-                ProjectCallbackMethod="@(() => this.OpenProjectModal("Synthesis Materials", Inventory.Id))" IsProject="@(this.IsProjectForUser("Synthesis Materials", Inventory.Id))" />
-        </RowTemplate>
-        <ExpandedRowTemplate>
-            <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
-        </ExpandedRowTemplate>
-    </InventoryTable>
+    if (this.CurrentResultsDisplay == "Table" && !this.IsMobile)
+    {
+        <InventoryTable @ref="MainInventoryMaterialTable" Items="this.MSInventoryMaterialDtos" Context="Inventory" OpenRowQuery="this.OpenRow">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Name</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Obtain By</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Enemies</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+                <th></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InventoryTableRow Inventory="@Inventory" MainTable="@MainInventoryMaterialTable" LoggedIn="@(this.loggedIn)"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Synthesis Materials", Inventory.Id))" IsFavorite="@(this.IsFavoriteForUser("Synthesis Materials", Inventory.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Synthesis Materials", Inventory.Id))" IsProject="@(this.IsProjectForUser("Synthesis Materials", Inventory.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InventoryTableExpandedRow Inventory="@Inventory" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
+            </ExpandedRowTemplate>
+        </InventoryTable>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in this.MSInventoryMaterialDtos)
+            {
+                <div class="@(!this.IsMobile ? "col-md-4" : "col-md-12")">
+                    <div style="height: fit-content; min-height: 250px; background: linear-gradient(125deg, #d5e5fa, #f2f2f7, #d5e5fa); border-radius: 15px; padding: 15px; margin: 15px 0px; border: #aeaeae solid 1.5px; box-shadow: 3px 6px 10px 0px #0000008f;">
+                        <div class="@(!this.IsMobile ? "row" : "")" style="@(!this.IsMobile ? "" : "display: inline-flex;")">
+                            <div class="col-md-10">
+                                <img src="@(this.GetGameIcon(item.Game.Name ?? string.Empty))" width="10%" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.GenerateInventoryMaterialShareLink(item.Id))">content_copy</span>
+                            </div>
+                            <div class="col-md-1">
+                                <span class="wayfinder-general-icon material-icons" onclick="@(() => this.OpenInventoryModal(item))">open_in_full</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-md-12" style="text-align: center; font-size: x-large; margin: 5px 0px 15px 0px;">
+                                <strong>@item.Name</strong>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="@(new List<string> { this.GetInventoryInformation(item) })" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.Character.Name).ToList()" CustomDisplayClass="character-display" DefaultDisplayClass="character-display" CustomColourClass="character-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation.World.Name).ToList()" CustomDisplayClass="world-display" DefaultDisplayClass="world-display" CustomColourClass="world-color" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -100 : -200)" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center; margin: 10px 0px;">
+                                <RowContentDisplay Content="item.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => x.Name).ToList()" CustomDisplayClass="area-display" DefaultDisplayClass="area-display" CustomColourClass="area-color" Limit="1" CustomMargin="-115" CustomTooltipMargin="@(!this.IsMobile ? -290 : -200)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 
 <span style="margin-bottom: 50px;"></span>
@@ -434,6 +862,9 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     public string CurrentOption { get; set; } = "Games";
     public string CurrentSubOption { get; set; } = "Details";
 
+    public string CurrentResultsDisplay { get; set; } = "Table";
+    public bool IsMobile { get; set; } = false;
+
     private string informationSearch = "";
     private WayfinderController? api;
 
@@ -484,6 +915,8 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private List<string> options = new List<string> { "Records", "Games", "Categories", "Synthesis Materials" };
     private SubNavBar? WayfinderSubNavBar;
+
+    private NavBar? WayfinderResultsDisplay;
 
     private bool canDisplayClearAll;
 
@@ -672,7 +1105,9 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private List<ProjectRecordDto> ProjectRecords = new List<ProjectRecordDto>();
     private List<FavoriteDto> Favourites = new List<FavoriteDto>();
     private SearchSettingsDto SearchSettings = default!;
+    private string CurrentViewMobile = "Available";
 
+    private bool initialized = false;
     private bool failed = false;
 
     private bool loggedIn = false;
@@ -727,6 +1162,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     {
         if (firstRender)
         {
+            this.IsMobile = await JS.InvokeAsync<bool>("isDevice");
+
+            this.initialized = true;
+
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+
             //if (this.authenticationStateTask != null)
             //{
             //    var authState = await authenticationStateTask;
@@ -757,10 +1201,11 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                     if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
                         user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-                        
+
                         this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
                         this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                         this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
                     await this.HandleQueryParams();
@@ -783,7 +1228,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             try
             {
                 Thread.Sleep(1000);
-                
+
                 await this.ResetOptions();
 
                 if (this.authenticationStateTask != null && this.api != null && !this.Loading)
@@ -798,6 +1243,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                         this.Favourites = await this.api.GetFavourites(user.Id, "Moogle Shop");
                         this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
                         this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
                     Thread.Sleep(1000);
@@ -859,6 +1305,35 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         });
     }
 
+    public async Task UpdateResultsDisplay(string option)
+    {
+        this.CurrentResultsDisplay = option;
+
+        if (this.SearchSettings != null)
+        {
+            this.SearchSettings.ResultsDisplay = option;
+
+            if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+            {
+                var authState = await authenticationStateTask;
+
+                WayfinderProjectUser user = new();
+                if (authState.User.Identity != null && authState.User.Identity.Name != null)
+                {
+                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+
+                    await this.api.SaveSearchSettings(user.Id, this.SearchSettings.AutoSearch, this.SearchSettings.AutoExpandFirstResult, this.SearchSettings.MainSearchEverything, this.SearchSettings.TrackHistory, 
+                                                        this.SearchSettings.FavouriteSearch, this.SearchSettings.ProjectSearch, this.SearchSettings.IncludeAlias, this.SearchSettings.ResultsDisplay);
+                }
+            }
+        }
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
     public async Task SearchInformation(string search)
     {
         if (search.Length < 2)
@@ -912,10 +1387,10 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     #region Sub-Search Methods
     private async Task SearchRecipes(bool allowSearch = false)
     {
-        var recipes = this.RecipesSearch != null ? string.Join("::", this.RecipesSelected) != "" ? string.Join("::", this.RecipesSelected) : null : null;
-        var games = this.RecipeGamesSearch != null ? string.Join("::", this.RecipeGamesSelected) != "" ? string.Join("::", this.RecipeGamesSelected) : null : null;
-        var categories = this.RecipeCategoriesSearch != null ? string.Join("::", this.RecipeCategoriesSelected) != "" ? string.Join("::", this.RecipeCategoriesSelected) : null : null;
-        var synthesisMaterials = this.RecipeMaterialsSearch != null ? string.Join("::", this.RecipeMaterialsSelected) != "" ? string.Join("::", this.RecipeMaterialsSelected) : null : null;
+        var recipes = string.Join("::", this.RecipesSelected) != "" ? string.Join("::", this.RecipesSelected.Distinct()) : null;
+        var games = string.Join("::", this.RecipeGamesSelected) != "" ? string.Join("::", this.RecipeGamesSelected.Distinct()) : null;
+        var categories = string.Join("::", this.RecipeCategoriesSelected) != "" ? string.Join("::", this.RecipeCategoriesSelected.Distinct()) : null;
+        var synthesisMaterials = string.Join("::", this.RecipeMaterialsSelected) != "" ? string.Join("::", this.RecipeMaterialsSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1007,12 +1482,12 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task SearchInventoryItems(bool allowSearch = false)
     {
-        var inventory = this.InventoryItemsSearch != null ? string.Join("::", this.InventoryItemsSelected) != "" ? string.Join("::", this.InventoryItemsSelected) : null : null;
-        var games = this.InventoryItemGamesSearch != null ? string.Join("::", this.InventoryItemGamesSelected) != "" ? string.Join("::", this.InventoryItemGamesSelected) : null : null;
+        var inventory = string.Join("::", this.InventoryItemsSelected) != "" ? string.Join("::", this.InventoryItemsSelected.Distinct()) : null;
+        var games = string.Join("::", this.InventoryItemGamesSelected) != "" ? string.Join("::", this.InventoryItemGamesSelected.Distinct()) : null;
         //var categories = this.InventoryItemCategoriesSearch != null ? string.Join("::", this.InventoryItemCategoriesSelected) != "" ? string.Join("::", this.InventoryItemCategoriesSelected) : null : null;
-        var enemies = this.InventoryItemEnemiesSearch != null ? string.Join("::", this.InventoryItemEnemiesSelected) != "" ? string.Join("::", this.InventoryItemEnemiesSelected) : null : null;
-        var worlds = this.InventoryItemWorldsSearch != null ? string.Join("::", this.InventoryItemWorldsSelected) != "" ? string.Join("::", this.InventoryItemWorldsSelected) : null : null;
-        var areas = this.InventoryItemAreasSearch != null ? string.Join("::", this.InventoryItemAreasSelected) != "" ? string.Join("::", this.InventoryItemAreasSelected) : null : null;
+        var enemies = string.Join("::", this.InventoryItemEnemiesSelected) != "" ? string.Join("::", this.InventoryItemEnemiesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.InventoryItemWorldsSelected) != "" ? string.Join("::", this.InventoryItemWorldsSelected.Distinct()) : null;
+        var areas = string.Join("::", this.InventoryItemAreasSelected) != "" ? string.Join("::", this.InventoryItemAreasSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1029,7 +1504,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-                
+
                 WayfinderProjectUser? user = null;
                 if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
@@ -1105,12 +1580,12 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task SearchInventoryWeapons(bool allowSearch = false)
     {
-        var inventory = this.InventoryWeaponsSearch != null ? string.Join("::", this.InventoryWeaponsSelected) != "" ? string.Join("::", this.InventoryWeaponsSelected) : null : null;
-        var games = this.InventoryWeaponGamesSearch != null ? string.Join("::", this.InventoryWeaponGamesSelected) != "" ? string.Join("::", this.InventoryWeaponGamesSelected) : null : null;
+        var inventory = string.Join("::", this.InventoryWeaponsSelected) != "" ? string.Join("::", this.InventoryWeaponsSelected.Distinct()) : null;
+        var games = string.Join("::", this.InventoryWeaponGamesSelected) != "" ? string.Join("::", this.InventoryWeaponGamesSelected.Distinct()) : null;
         //var categories = this.InventoryWeaponCategoriesSearch != null ? string.Join("::", this.InventoryWeaponCategoriesSelected) != "" ? string.Join("::", this.InventoryWeaponCategoriesSelected) : null : null;
-        var enemies = this.InventoryWeaponEnemiesSearch != null ? string.Join("::", this.InventoryWeaponEnemiesSelected) != "" ? string.Join("::", this.InventoryWeaponEnemiesSelected) : null : null;
-        var worlds = this.InventoryWeaponWorldsSearch != null ? string.Join("::", this.InventoryWeaponWorldsSelected) != "" ? string.Join("::", this.InventoryWeaponWorldsSelected) : null : null;
-        var areas = this.InventoryWeaponAreasSearch != null ? string.Join("::", this.InventoryWeaponAreasSelected) != "" ? string.Join("::", this.InventoryWeaponAreasSelected) : null : null;
+        var enemies = string.Join("::", this.InventoryWeaponEnemiesSelected) != "" ? string.Join("::", this.InventoryWeaponEnemiesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.InventoryWeaponWorldsSelected) != "" ? string.Join("::", this.InventoryWeaponWorldsSelected.Distinct()) : null;
+        var areas = string.Join("::", this.InventoryWeaponAreasSelected) != "" ? string.Join("::", this.InventoryWeaponAreasSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1127,7 +1602,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-                
+
                 WayfinderProjectUser? user = null;
                 if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
@@ -1203,11 +1678,11 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task SearchInventoryAccessoriesArmors(bool allowSearch = false)
     {
-        var inventory = this.InventoryAccessoryArmorsSearch != null ? string.Join("::", this.InventoryAccessoryArmorsSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorsSelected) : null : null;
-        var games = this.InventoryAccessoryArmorGamesSearch != null ? string.Join("::", this.InventoryAccessoryArmorGamesSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorGamesSelected) : null : null;
-        var enemies = this.InventoryAccessoryArmorEnemiesSearch != null ? string.Join("::", this.InventoryAccessoryArmorEnemiesSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorEnemiesSelected) : null : null;
-        var worlds = this.InventoryAccessoryArmorWorldsSearch != null ? string.Join("::", this.InventoryAccessoryArmorWorldsSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorWorldsSelected) : null : null;
-        var areas = this.InventoryAccessoryArmorAreasSearch != null ? string.Join("::", this.InventoryAccessoryArmorAreasSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorAreasSelected) : null : null;
+        var inventory = string.Join("::", this.InventoryAccessoryArmorsSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorsSelected.Distinct()) : null;
+        var games = string.Join("::", this.InventoryAccessoryArmorGamesSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorGamesSelected.Distinct()) : null;
+        var enemies = string.Join("::", this.InventoryAccessoryArmorEnemiesSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorEnemiesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.InventoryAccessoryArmorWorldsSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorWorldsSelected.Distinct()) : null;
+        var areas = string.Join("::", this.InventoryAccessoryArmorAreasSelected) != "" ? string.Join("::", this.InventoryAccessoryArmorAreasSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1300,11 +1775,11 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task SearchInventorySynthesisMaterials(bool allowSearch = false)
     {
-        var inventory = this.InventoryMaterialsSearch != null ? string.Join("::", this.InventoryMaterialsSelected) != "" ? string.Join("::", this.InventoryMaterialsSelected) : null : null;
-        var games = this.InventoryMaterialGamesSearch != null ? string.Join("::", this.InventoryMaterialGamesSelected) != "" ? string.Join("::", this.InventoryMaterialGamesSelected) : null : null;
-        var enemies = this.InventoryMaterialEnemiesSearch != null ? string.Join("::", this.InventoryMaterialEnemiesSelected) != "" ? string.Join("::", this.InventoryMaterialEnemiesSelected) : null : null;
-        var worlds = this.InventoryMaterialWorldsSearch != null ? string.Join("::", this.InventoryMaterialWorldsSelected) != "" ? string.Join("::", this.InventoryMaterialWorldsSelected) : null : null;
-        var areas = this.InventoryMaterialAreasSearch != null ? string.Join("::", this.InventoryMaterialAreasSelected) != "" ? string.Join("::", this.InventoryMaterialAreasSelected) : null : null;
+        var inventory = string.Join("::", this.InventoryMaterialsSelected) != "" ? string.Join("::", this.InventoryMaterialsSelected.Distinct()) : null;
+        var games = string.Join("::", this.InventoryMaterialGamesSelected) != "" ? string.Join("::", this.InventoryMaterialGamesSelected.Distinct()) : null;
+        var enemies = string.Join("::", this.InventoryMaterialEnemiesSelected) != "" ? string.Join("::", this.InventoryMaterialEnemiesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.InventoryMaterialWorldsSelected) != "" ? string.Join("::", this.InventoryMaterialWorldsSelected.Distinct()) : null;
+        var areas = string.Join("::", this.InventoryMaterialAreasSelected) != "" ? string.Join("::", this.InventoryMaterialAreasSelected.Distinct()) : null;
         var information = this.informationSearch != "" ? this.informationSearch : null;
 
         // TODO Remove this after we add in the pagination limiter?
@@ -1321,7 +1796,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
                 var authState = await authenticationStateTask;
-                
+
                 WayfinderProjectUser? user = null;
                 if (authState.User.Identity != null && authState.User.Identity.Name != null)
                 {
@@ -1588,7 +2063,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     #region Sub-ResetOption Methods
     private async Task ResetRecipeOptions()
     {
-        this.Recipes = await context.Recipes.AsNoTracking().Select(x => x.Name).ToListAsync();
+        this.Recipes = await context.Recipes.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
         this.RecipeGames = await context.Recipes.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
         this.RecipeCategories = await context.Recipes.AsNoTracking().Select(x => x.Category).Distinct().ToListAsync();
         this.RecipeMaterials = await context.Recipes.AsNoTracking().SelectMany(x => x.RecipeMaterials).Select(x => x.Inventory.Name).Distinct().ToListAsync();
@@ -1622,7 +2097,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task ResetInventoryItemOptions()
     {
-        this.InventoryItems = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Name).ToListAsync();
+        this.InventoryItems = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Name).Distinct().ToListAsync();
         this.InventoryItemGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
         //this.InventoryItemCategories = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Category).Distinct().ToListAsync();
         this.InventoryItemEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
@@ -1665,7 +2140,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task ResetInventoryWeaponOptions()
     {
-        this.InventoryWeapons = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").Select(x => x.Name).ToListAsync();
+        this.InventoryWeapons = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").Select(x => x.Name).Distinct().ToListAsync();
         this.InventoryWeaponGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
         this.InventoryWeaponEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
         this.InventoryWeaponWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
@@ -1707,7 +2182,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task ResetInventoryAccessoryArmorOptions()
     {
-        this.InventoryAccessoryArmors = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").Select(x => x.Name).ToListAsync();
+        this.InventoryAccessoryArmors = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").Select(x => x.Name).Distinct().ToListAsync();
         this.InventoryAccessoryArmorGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
         this.InventoryAccessoryArmorEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
         this.InventoryAccessoryArmorWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
@@ -1749,7 +2224,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     private async Task ResetInventoryMaterialOptions()
     {
-        this.InventoryMaterials = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").Select(x => x.Name).ToListAsync();
+        this.InventoryMaterials = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").Select(x => x.Name).Distinct().ToListAsync();
         this.InventoryMaterialGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
         this.InventoryMaterialEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
         this.InventoryMaterialWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
@@ -2202,9 +2677,10 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     }
 
     #region Generate Share Link Sub-Methods
-    private async Task GenerateRecipeShareLink()
+    private async Task GenerateRecipeShareLink(int? recipeId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+        var id = recipeId ?? this.MainRecipeTable?.CurrentExpandedRow;
 
         if (this.RecipesSelected.Count > 0)
         {
@@ -2226,19 +2702,17 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             shareLink += string.Join("&", this.RecipeMaterialsSelected.Select(x => $"material={this.context.Recipes.AsNoTracking().SelectMany(y => y.RecipeMaterials).FirstOrDefault(y => y.Inventory.Name == x)?.Id}")) + "&";
         }
 
-        shareLink += $"open_row={this.MainRecipeTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainRecipeTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.Recipes.FirstOrDefault(x => x.Id == this.MainRecipeTable.CurrentExpandedRow)?.Name}' record.");
-        }
+        toastService.ShowInfo($"Copied link to '{this.context.Recipes.FirstOrDefault(x => x.Id == id)?.Name}' record.");
     }
 
-    private async Task GenerateInventoryItemShareLink()
+    private async Task GenerateInventoryItemShareLink(int? inventoryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+        var id = inventoryId ?? this.MainInventoryItemTable?.CurrentExpandedRow;
 
         if (this.InventoryItemsSelected.Count > 0)
         {
@@ -2266,19 +2740,17 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
 
         shareLink += "category=Items&";
-        shareLink += $"open_row={this.MainInventoryItemTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainInventoryItemTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Item").FirstOrDefault(x => x.Id == this.MainInventoryItemTable.CurrentExpandedRow)?.Name}' record.");
-        }
+        toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Item").FirstOrDefault(x => x.Id == id)?.Name}' record.");
     }
 
-    private async Task GenerateInventoryWeaponShareLink()
+    private async Task GenerateInventoryWeaponShareLink(int? inventoryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+        var id = inventoryId ?? this.MainInventoryWeaponTable?.CurrentExpandedRow;
 
         if (this.InventoryWeaponsSelected.Count > 0)
         {
@@ -2306,19 +2778,17 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
 
         shareLink += "category=Weapons&";
-        shareLink += $"open_row={this.MainInventoryWeaponTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainInventoryWeaponTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").FirstOrDefault(x => x.Id == this.MainInventoryWeaponTable.CurrentExpandedRow)?.Name}' record.");
-        }
+        toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").FirstOrDefault(x => x.Id == id)?.Name}' record.");
     }
 
-    private async Task GenerateInventoryAccessoryArmorShareLink()
+    private async Task GenerateInventoryAccessoryArmorShareLink(int? inventoryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+        var id = inventoryId ?? this.MainInventoryAccessoryArmorTable?.CurrentExpandedRow;
 
         if (this.InventoryAccessoryArmorsSelected.Count > 0)
         {
@@ -2346,19 +2816,17 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
 
         shareLink += "category=AccessoryArmor&";
-        shareLink += $"open_row={this.MainInventoryAccessoryArmorTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
-        if (this.MainInventoryAccessoryArmorTable != null)
-        {
-            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Accessory" || x.Category == "Armor").FirstOrDefault(x => x.Id == this.MainInventoryAccessoryArmorTable.CurrentExpandedRow)?.Name}' record.");
-        }
+        toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Accessory" || x.Category == "Armor").FirstOrDefault(x => x.Id == id)?.Name}' record.");
     }
 
-    private async Task GenerateInventoryMaterialShareLink()
+    private async Task GenerateInventoryMaterialShareLink(int? inventoryId = null)
     {
         var shareLink = $"{NavigationManager.BaseUri}moogle_shop?";
+        var id = inventoryId ?? this.MainInventoryMaterialTable?.CurrentExpandedRow;
 
         if (this.InventoryMaterialsSelected.Count > 0)
         {
@@ -2386,13 +2854,13 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
 
         shareLink += "category=SynthesisMaterial&";
-        shareLink += $"open_row={this.MainInventoryMaterialTable?.CurrentExpandedRow}";
+        shareLink += $"open_row={id}";
 
         await JS.InvokeVoidAsync("navigator.clipboard.writeText", shareLink);
 
         if (this.MainInventoryMaterialTable != null)
         {
-            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Synthesis Material").FirstOrDefault(x => x.Id == this.MainInventoryMaterialTable.CurrentExpandedRow)?.Name}' record.");
+            toastService.ShowInfo($"Copied link to '{this.context.Inventory.Where(x => x.Category == "Synthesis Material").FirstOrDefault(x => x.Id == id)?.Name}' record.");
         }
     }
     #endregion Generate Share Link Sub-Methods
@@ -2480,7 +2948,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleRecipeQueryParams()
     {
         var optionUpdated = false;
-        
+
         if (this.TextQuery != null && this.TextQuery.Count() > 0)
         {
             this.informationSearch = this.TextQuery.First();
@@ -2488,40 +2956,56 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             optionUpdated = true;
         }
 
-        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.RecipesSearch != null)
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0)
         {
             var recipeIds = this.RecordQuery.Select(x => int.Parse(x));
 
             this.RecipesSelected = this.context.Recipes.AsNoTracking().Where(x => recipeIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.RecipesSearch.SetCurrentView("Selected");
+
+            if (this.RecipesSearch != null)
+            {
+                await this.RecipesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.RecipeGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.RecipeGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.RecipeGamesSearch.SetCurrentView("Selected");
+
+            if (this.RecipeGamesSearch != null)
+            {
+                await this.RecipeGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.RecipeCategoryQuery != null && this.RecipeCategoryQuery.Count() > 0 && this.RecipeCategoriesSearch != null)
+        if (this.RecipeCategoryQuery != null && this.RecipeCategoryQuery.Count() > 0)
         {
             this.RecipeCategoriesSelected = this.context.Recipes.AsNoTracking().Where(x => this.RecipeCategoryQuery.Contains(x.Category)).Select(x => x.Category).ToList();
-            await this.RecipeCategoriesSearch.SetCurrentView("Selected");
+
+            if (this.RecipeCategoriesSearch != null)
+            {
+                await this.RecipeCategoriesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.RecipeMaterialQuery != null && this.RecipeMaterialQuery.Count() > 0 && this.RecipeMaterialsSearch != null)
+        if (this.RecipeMaterialQuery != null && this.RecipeMaterialQuery.Count() > 0)
         {
             var materialIds = this.RecipeMaterialQuery.Select(x => int.Parse(x));
 
             this.RecipeMaterialsSelected = this.context.Recipes.AsNoTracking().SelectMany(x => x.RecipeMaterials).Where(x => materialIds.Contains(x.Id)).Select(x => x.Inventory.Name).ToList();
-            await this.RecipeMaterialsSearch.SetCurrentView("Selected");
+
+            if (this.RecipeMaterialsSearch != null)
+            {
+                await this.RecipeMaterialsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2532,7 +3016,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleInventoryItemQueryParams()
     {
         var optionUpdated = false;
-        
+
         if (this.TextQuery != null && this.TextQuery.Count() > 0)
         {
             this.informationSearch = this.TextQuery.First();
@@ -2540,52 +3024,72 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             optionUpdated = true;
         }
 
-        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryItemsSearch != null)
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0)
         {
             var recordIds = this.RecordQuery.Select(x => int.Parse(x));
 
             this.InventoryItemsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryItemsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryItemsSearch != null)
+            {
+                await this.InventoryItemsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryItemGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.InventoryItemGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.InventoryItemGamesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryItemGamesSearch != null)
+            {
+                await this.InventoryItemGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryItemEnemiesSearch != null)
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0)
         {
             var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
 
             this.InventoryItemEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
-            await this.InventoryItemEnemiesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryItemEnemiesSearch != null)
+            {
+                await this.InventoryItemEnemiesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryItemWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.InventoryItemWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
-            await this.InventoryItemWorldsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryItemWorldsSearch != null)
+            {
+                await this.InventoryItemWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryItemAreasSearch != null)
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
             this.InventoryItemAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryItemAreasSearch.SetCurrentView("Selected");
+
+            if (this.InventoryItemAreasSearch != null)
+            {
+                await this.InventoryItemAreasSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2596,7 +3100,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleInventoryWeaponQueryParams()
     {
         var optionUpdated = false;
-        
+
         if (this.TextQuery != null && this.TextQuery.Count() > 0)
         {
             this.informationSearch = this.TextQuery.First();
@@ -2604,52 +3108,72 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             optionUpdated = true;
         }
 
-        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryWeaponsSearch != null)
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0)
         {
             var recordIds = this.RecordQuery.Select(x => int.Parse(x));
 
             this.InventoryWeaponsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryWeaponsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryWeaponsSearch != null)
+            {
+                await this.InventoryWeaponsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryWeaponGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.InventoryWeaponGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.InventoryWeaponGamesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryWeaponGamesSearch != null)
+            {
+                await this.InventoryWeaponGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryWeaponEnemiesSearch != null)
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0)
         {
             var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
 
             this.InventoryWeaponEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
-            await this.InventoryWeaponEnemiesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryWeaponEnemiesSearch != null)
+            {
+                await this.InventoryWeaponEnemiesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryWeaponWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.InventoryWeaponWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
-            await this.InventoryWeaponWorldsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryWeaponWorldsSearch != null)
+            {
+                await this.InventoryWeaponWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryWeaponAreasSearch != null)
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
             this.InventoryWeaponAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryWeaponAreasSearch.SetCurrentView("Selected");
+
+            if (this.InventoryWeaponAreasSearch != null)
+            {
+                await this.InventoryWeaponAreasSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2660,7 +3184,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task<bool> HandleInventoryAccessoryArmorQueryParams()
     {
         var optionUpdated = false;
-        
+
         if (this.TextQuery != null && this.TextQuery.Count() > 0)
         {
             this.informationSearch = this.TextQuery.First();
@@ -2668,52 +3192,72 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             optionUpdated = true;
         }
 
-        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryAccessoryArmorsSearch != null)
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0)
         {
             var recordIds = this.RecordQuery.Select(x => int.Parse(x));
 
             this.InventoryAccessoryArmorsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryAccessoryArmorsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryAccessoryArmorsSearch != null)
+            {
+                await this.InventoryAccessoryArmorsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryAccessoryArmorGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.InventoryAccessoryArmorGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.InventoryAccessoryArmorGamesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryAccessoryArmorGamesSearch != null)
+            {
+                await this.InventoryAccessoryArmorGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryAccessoryArmorEnemiesSearch != null)
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0)
         {
             var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
 
             this.InventoryAccessoryArmorEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
-            await this.InventoryAccessoryArmorEnemiesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryAccessoryArmorEnemiesSearch != null)
+            {
+                await this.InventoryAccessoryArmorEnemiesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryAccessoryArmorWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.InventoryAccessoryArmorWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
-            await this.InventoryAccessoryArmorWorldsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryAccessoryArmorWorldsSearch != null)
+            {
+                await this.InventoryAccessoryArmorWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryAccessoryArmorAreasSearch != null)
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
             this.InventoryAccessoryArmorAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryAccessoryArmorAreasSearch.SetCurrentView("Selected");
+
+            if (this.InventoryAccessoryArmorAreasSearch != null)
+            {
+                await this.InventoryAccessoryArmorAreasSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2732,52 +3276,72 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
             optionUpdated = true;
         }
 
-        if (this.RecordQuery != null && this.RecordQuery.Count() > 0 && this.InventoryMaterialsSearch != null)
+        if (this.RecordQuery != null && this.RecordQuery.Count() > 0)
         {
             var recordIds = this.RecordQuery.Select(x => int.Parse(x));
 
             this.InventoryMaterialsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").Where(x => recordIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryMaterialsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryMaterialsSearch != null)
+            {
+                await this.InventoryMaterialsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.GameQuery != null && this.GameQuery.Count() > 0 && this.InventoryMaterialGamesSearch != null)
+        if (this.GameQuery != null && this.GameQuery.Count() > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
             this.InventoryMaterialGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
-            await this.InventoryMaterialGamesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryMaterialGamesSearch != null)
+            {
+                await this.InventoryMaterialGamesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0 && this.InventoryMaterialEnemiesSearch != null)
+        if (this.EnemyQuery != null && this.EnemyQuery.Count() > 0)
         {
             var enemyIds = this.EnemyQuery.Select(x => int.Parse(x));
 
             this.InventoryMaterialEnemiesSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Where(x => enemyIds.Contains(x.CharacterLocation.Character.Id)).Select(x => x.CharacterLocation.Character.Name).ToList();
-            await this.InventoryMaterialEnemiesSearch.SetCurrentView("Selected");
+
+            if (this.InventoryMaterialEnemiesSearch != null)
+            {
+                await this.InventoryMaterialEnemiesSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.WorldQuery != null && this.WorldQuery.Count() > 0 && this.InventoryMaterialWorldsSearch != null)
+        if (this.WorldQuery != null && this.WorldQuery.Count() > 0)
         {
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.InventoryMaterialWorldsSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Where(x => worldIds.Contains(x.CharacterLocation.World.Id)).Select(x => x.CharacterLocation.World.Name).ToList();
-            await this.InventoryMaterialWorldsSearch.SetCurrentView("Selected");
+
+            if (this.InventoryMaterialWorldsSearch != null)
+            {
+                await this.InventoryMaterialWorldsSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
 
-        if (this.AreaQuery != null && this.AreaQuery.Count() > 0 && this.InventoryMaterialAreasSearch != null)
+        if (this.AreaQuery != null && this.AreaQuery.Count() > 0)
         {
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
             this.InventoryMaterialAreasSelected = this.context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            await this.InventoryMaterialAreasSearch.SetCurrentView("Selected");
+
+            if (this.InventoryMaterialAreasSearch != null)
+            {
+                await this.InventoryMaterialAreasSearch.SetCurrentView("Selected");
+            }
 
             optionUpdated = true;
         }
@@ -2792,25 +3356,28 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         try
         {
             var dateCode = DateTime.Now.ToString("yyyyMMdd");
-            var entryId = this.context.DailyJournalEntries.FirstOrDefault(entry => entry.DateCode == dateCode)?.EntryId;
-            var journalEntry = this.context.JournalEntries.AsNoTracking()
-                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
-                .FirstOrDefault(j => j.Id == entryId);
+            var recordId = this.context.DailyMoogleRecords.FirstOrDefault(record => record.DateCode == dateCode)?.RecordId;
+            var moogleRecord = this.context.Inventory.AsNoTracking()
+                .Include(i => i.Game)
+                .Include(i => i.EnemyDrops).ThenInclude(i => i.CharacterLocation).ThenInclude(i => i.World)
+                .Include(i => i.EnemyDrops).ThenInclude(i => i.CharacterLocation).ThenInclude(i => i.Areas)
+                .FirstOrDefault(i => i.Id == recordId);
 
-            if (journalEntry == null)
+            if (moogleRecord == null)
             {
                 return;
             }
 
             var dailyLink = $"{NavigationManager.BaseUri}moogle_shop?";
 
-            dailyLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
-            dailyLink += $"game={journalEntry.Game.Id}&";
-            dailyLink += $"entry={journalEntry.Id}&";
-            dailyLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
+            dailyLink += string.Join("&", moogleRecord.EnemyDrops.Select(x => $"character={x.Id}")) + "&";
+            dailyLink += $"game={moogleRecord.Game.Id}&";
+            dailyLink += $"record={moogleRecord.Id}&";
+            dailyLink += string.Join("&", moogleRecord.EnemyDrops.Select(x => x.CharacterLocation).Select(x => $"world={x.World.Id}")) + "&";
+            dailyLink += string.Join("&", moogleRecord.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => $"area={x.Id}")) + "&";
 
             var category = string.Empty;
-            switch (journalEntry.Category)
+            switch (moogleRecord.Category)
             {
                 case "Item":
                     category = "Items";
@@ -2822,15 +3389,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                     break;
                 case "Accessory":
                 case "Armor":
-                    category = "Accesories & Armor";
+                    category = "AccessoryArmor";
                     break;
                 case "Synthesis Material":
-                    category = "Synthesis Materials";
+                    category = "SynthesisMaterial";
                     break;
             }
 
             dailyLink += $"category={category}&";
-            dailyLink += $"open_row={journalEntry.Id}";
+            dailyLink += $"open_row={moogleRecord.Id}";
 
             NavigationManager.NavigateTo(dailyLink, true);
         }
@@ -2845,25 +3412,29 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         try
         {
             Random random = new Random((int)DateTime.Now.Ticks);
-            var randomEntryId = random.Next(0, this.context.JournalEntries.Count());
-            var journalEntry = this.context.JournalEntries.AsNoTracking()
-                .Include(j => j.Characters).Include(j => j.Worlds).Include(j => j.Game)
-                .FirstOrDefault(j => j.Id == randomEntryId);
+            var randomRecordId = random.Next(0, this.context.Inventory.Count());
+            var moogleRecord = this.context.Inventory.AsNoTracking()
+                .Include(i => i.Game)
+                .Include(i => i.EnemyDrops).ThenInclude(i => i.CharacterLocation.World)
+                .Include(i => i.EnemyDrops).ThenInclude(i => i.CharacterLocation.Areas)
+                .FirstOrDefault(j => j.Id == randomRecordId);
 
-            if (journalEntry == null)
+            if (moogleRecord == null)
             {
                 return;
             }
 
             var randomLink = $"{NavigationManager.BaseUri}moogle_shop?";
 
-            randomLink += string.Join("&", journalEntry.Characters.Select(x => $"character={x.Id}")) + "&";
-            randomLink += $"game={journalEntry.Game.Id}&";
-            randomLink += $"entry={journalEntry.Id}&";
-            randomLink += string.Join("&", journalEntry.Worlds.Select(x => $"world={x.Id}")) + "&";
+            randomLink += string.Join("&", moogleRecord.EnemyDrops.Select(x => $"character={x.Id}")) + "&";
+            randomLink += $"game={moogleRecord.Game.Id}&";
+            randomLink += $"record={moogleRecord.Id}&";
+            randomLink += string.Join("&", moogleRecord.EnemyDrops.Select(x => x.CharacterLocation).Select(x => $"world={x.World.Id}")) + "&";
+            randomLink += string.Join("&", moogleRecord.EnemyDrops.Select(x => x.CharacterLocation).SelectMany(x => x.Areas).Select(x => $"area={x.Id}")) + "&";
+
 
             var category = string.Empty;
-            switch (journalEntry.Category)
+            switch (moogleRecord.Category)
             {
                 case "Item":
                     category = "Items";
@@ -2875,15 +3446,15 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
                     break;
                 case "Accessory":
                 case "Armor":
-                    category = "Accesories & Armor";
+                    category = "AccessoryArmor";
                     break;
                 case "Synthesis Material":
-                    category = "Synthesis Materials";
+                    category = "SynthesisMaterial";
                     break;
             }
 
             randomLink += $"category={category}&";
-            randomLink += $"open_row={journalEntry.Id}";
+            randomLink += $"open_row={moogleRecord.Id}";
 
             NavigationManager.NavigateTo(randomLink, true);
         }
@@ -2892,7 +3463,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
         }
     }
-    
+
     public async Task OpenSettings()
     {
         if (this.authenticationStateTask != null && this.api != null && !this.Loading)
@@ -3021,6 +3592,127 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     public bool IsProjectForUser(string category, int specificRecordId)
     {
         return this.ProjectRecords.Exists(x => x.Type == "Moogle Shop" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+    public string GetGameIcon(string gameName)
+    {
+        switch (gameName)
+        {
+            case "Kingdom Hearts":
+                return "/images/icons/game_hearts/KH1.png";
+            case "Kingdom Hearts Re:Chain of Memories":
+            case "Kingdom Hearts Melody of Memory":
+                return "/images/icons/game_hearts/COM.png";
+            case "Kingdom Hearts II":
+                return "/images/icons/game_hearts/KH2.png";
+            case "Kingdom Hearts 358/2 Days":
+                return "/images/icons/game_hearts/Days.png";
+            case "Kingdom Hearts Birth By Sleep":
+                return "/images/icons/game_hearts/BBS.png";
+            case "Kingdom Hearts Re:Coded":
+                return "/images/icons/game_hearts/Coded.png";
+            case "Kingdom Hearts Dream Drop Distance":
+                return "/images/icons/game_hearts/DDD.png";
+            case "Kingdom Hearts 0.2":
+                return "/images/icons/game_hearts/zero-point-two.png";
+            case "Kingdom Hearts χ":
+            case "Kingdom Hearts χ Back Cover":
+            case "Kingdom Hearts Unchained χ":
+            case "Kingdom Hearts Union χ":
+            case "Kingdom Hearts Union Dark Road":
+                return "/images/icons/game_hearts/UX.png";
+            case "Kingdom Hearts III":
+                return "/images/icons/game_hearts/KH3.png";
+            default:
+                return "/images/icons/game_hearts/KH1.png";
+        }
+    }
+
+    public async Task OpenRecipeModal(RecipeDto recipe)
+    {
+        WayfinderProjectUser user = new();
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            if (authState.User.Identity != null && authState.User.Identity.Name != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+        }
+
+        var parameters = new ModalParameters();
+
+        parameters.Add("Recipe", recipe);
+        parameters.Add("API", this.api ?? default!);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        var temp = Modal.Show<RecipeModal>($"{recipe.Name}", parameters, options);
+    }
+
+    public async Task OpenInventoryModal(InventoryDto inventory)
+    {
+        WayfinderProjectUser user = new();
+        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        {
+            var authState = await this.authenticationStateTask;
+
+            if (authState.User.Identity != null && authState.User.Identity.Name != null)
+            {
+                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+            }
+        }
+
+        var parameters = new ModalParameters();
+
+        parameters.Add("Inventory", inventory);
+        parameters.Add("API", this.api ?? default!);
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        var temp = Modal.Show<InventoryModal>($"{inventory.Name}", parameters, options);
+    }
+
+    private void ToggleView()
+    {
+        if (this.CurrentViewMobile == "Available")
+        {
+            this.CurrentViewMobile = "Selected";
+        }
+        else if (this.CurrentViewMobile == "Selected")
+        {
+            this.CurrentViewMobile = "Available";
+        }
+    }
+
+    private void DisplayClearAllModal()
+    {
+        var parameters = new ModalParameters();
+
+        parameters.Add("ClearAllSubMethod", ClearAllOptions(this.CurrentCategory));
+
+        var options = new ModalOptions { Class = "modal-custom" };
+
+        Modal.Show<ClearAllModal>("Clear All", parameters, options);
+    }
+
+    private string GetInventoryInformation(InventoryDto inventory)
+    {
+        if (inventory.Cost > 0)
+        {
+            return $"{inventory.Cost} {inventory.Currency}";
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(inventory.AdditionalInformation))
+            {
+                return inventory.AdditionalInformation;
+            }
+            else
+            {
+                return "Obtained by Synthesis, Treasures or Other";
+            }
+        }
     }
     #endregion Record Specific Methods
 }

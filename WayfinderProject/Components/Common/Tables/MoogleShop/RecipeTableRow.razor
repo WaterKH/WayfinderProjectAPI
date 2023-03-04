@@ -33,19 +33,7 @@
     <span style="font-weight: 600;">@Recipe.Category</span>
 </td>
 <td style="vertical-align: middle;">
-    @if (Recipe.RecipeMaterials.Count > 0)
-    {
-        <div style="display: inline-flex">
-            @for (int i = 0; i < Recipe.RecipeMaterials.Count; ++i)
-            {
-                <span>@(Recipe.RecipeMaterials[i].Inventory.Name) <strong>x@(Recipe.RecipeMaterials[i].Amount)</strong></span>
-                if (i < Recipe.RecipeMaterials.Count - 1)
-                {
-                    <div>,&nbsp;</div>
-                }
-            }
-        </div>
-    }
+    <RowContentDisplay Content="@(this.Recipe.RecipeMaterials.Select(x => $"{x.Inventory.Name} x{x.Amount}").Distinct().ToList())" CustomDisplayClass="character-display" Limit="1" CustomColourClass="character-color" />
 </td>
 <td>
     @if (this.LoggedIn)

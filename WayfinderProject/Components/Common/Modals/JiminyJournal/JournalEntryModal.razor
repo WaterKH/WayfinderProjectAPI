@@ -1,12 +1,16 @@
 ﻿@using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Controllers
 
 @inject NavigationManager NavigationManager
 
-<tr>
-    <td colspan="12" style="background-color: #f1f1f1; border-radius: 50px; padding: 50px;">
-        <div class="row">
-            <div class="col-md-5">
-                <div style="height: 563px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-12">
+            <SubNavBar Options="options" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
+
+            @if (this.CurrentSubOption == "Details")
+            {
+                <div style="height: 523px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
                     @if (this.JournalEntry != null)
                     {
                         <div class="row" style="height: 281px;">
@@ -56,84 +60,74 @@
                         </div>
                     }
                 </div>
-            </div>
-
-
-            <div class="col-md-7">
-                @if (this.loadingFirstAppearance)
-                {
-                    <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
-                        
-                    </div>
-                }
-                else
-                {
-                    if (this.firstAppearanceScene != null)
-                    {
-                        <iframe src="@(this.firstAppearanceScene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px; width: 100%; height: 536px;"></iframe>
-                    }
-                    else
-                    {
-                        <div style="width: 100%; height: 563px; border-radius: 25px; background-color: #ececec; text-align: center; vertical-align: middle;">
-                            <label>No scene appearance found in the Memory Archive for this character in this game.</label>
-                        </div>
-                    }
-                }
-            </div>
+            }
+            else if (this.CurrentSubOption == "Video" && this.firstAppearanceScene != null)
+            {
+                <iframe src="@(this.firstAppearanceScene.Link.Replace("watch?v=", "embed/").Split("&list=")[0])" style="border-radius: 25px; width: 100%; height: 536px;"></iframe>
+            }
         </div>
-    </td>
-</tr>
+    </div>
 
+    <hr />
+
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
 
 @code {
-    [Parameter] public JournalEntryDto? JournalEntry {get; set;}
-    [Parameter] public WayfinderProjectAPI.Controllers.WayfinderController? API { get; set; }
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
+    [Parameter] public JournalEntryDto JournalEntry { get; set; } = default!;
+    [Parameter] public WayfinderController? API { get; set; }
+    
     [Parameter] public Func<Task>? GenerateShareLink { get; set; }
 
     public string CurrentSubOption { get; set; } = "Details";
 
     private SceneDto? firstAppearanceScene = new SceneDto();
-    private bool loadingFirstAppearance = true;
     private string memoryArchiveWithoutGameLink = string.Empty;
     private string memoryArchiveWithGameLink = string.Empty;
 
-    protected override void OnInitialized()
+    private List<string> options = new List<string>();
+
+    protected override async Task OnInitializedAsync()
     {
         if (this.JournalEntry != null)
         {
-            Task.Run(async () =>
+            if (this.JournalEntry.Category == "Story" && this.API != null)
             {
-                if (this.JournalEntry.Category == "Story" && this.API != null)
-                {
-                    string worldName = JournalEntry.Worlds.FirstOrDefault()?.Name ?? string.Empty;
-                    this.firstAppearanceScene = await this.API.GetWorldsFirstAppearance(worldName, JournalEntry.Game.Name);
-                }
-                else if (this.JournalEntry.Category == "Character" && this.API != null)
-                {
-                    string characterName = JournalEntry.Characters.FirstOrDefault()?.Name ?? string.Empty;
-                    this.firstAppearanceScene = await this.API.GetCharactersFirstAppearance(characterName, JournalEntry.Game.Name);
-                }
-                else if (this.JournalEntry.Category == "Enemy" && this.API != null)
-                {
-                    string enemyName = JournalEntry.Characters.FirstOrDefault()?.Name ?? string.Empty;
-                    this.firstAppearanceScene = await this.API.GetCharactersFirstAppearance(enemyName, JournalEntry.Game.Name);
-                }
+                string worldName = JournalEntry.Worlds.FirstOrDefault()?.Name ?? string.Empty;
+                this.firstAppearanceScene = await this.API.GetWorldsFirstAppearance(worldName, JournalEntry.Game.Name);
+            }
+            else if (this.JournalEntry.Category == "Character" && this.API != null)
+            {
+                string characterName = JournalEntry.Characters.FirstOrDefault()?.Name ?? string.Empty;
+                this.firstAppearanceScene = await this.API.GetCharactersFirstAppearance(characterName, JournalEntry.Game.Name);
+            }
+            else if (this.JournalEntry.Category == "Enemy" && this.API != null)
+            {
+                string enemyName = JournalEntry.Characters.FirstOrDefault()?.Name ?? string.Empty;
+                this.firstAppearanceScene = await this.API.GetCharactersFirstAppearance(enemyName, JournalEntry.Game.Name);
+            }
 
-                this.loadingFirstAppearance = false;
-
-                await InvokeAsync(() =>
-                {
-                    this.StateHasChanged();
-                });
+            if (this.firstAppearanceScene != null)
+            {
+                options = new List<string> { "Details", "Video" };
+            }
+            else
+            {
+                options = new List<string> { "Details" };
+            }
+            
+            await InvokeAsync(() =>
+            {
+                this.StateHasChanged();
             });
-
 
             this.memoryArchiveWithoutGameLink = $"{NavigationManager.BaseUri}memory_archive?{string.Join("&", JournalEntry.Characters.Select(character => $"characters={character.Id}"))}&category=Scenes";
             this.memoryArchiveWithGameLink = $"{NavigationManager.BaseUri}memory_archive?game={JournalEntry.Game.Id}&{string.Join("&", JournalEntry.Characters.Select(character => $"character={character.Id}"))}&category=Scenes";
         }
 
-        base.OnInitialized();
+        await base.OnInitializedAsync();
     }
 
     public async Task UpdateCurrentSubOption(string option)
