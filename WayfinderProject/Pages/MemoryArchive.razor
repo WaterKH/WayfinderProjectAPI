@@ -728,7 +728,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (firstRender)
         {
-            this.IsMobile = true;//await JS.InvokeAsync<bool>("isDevice");
+            this.IsMobile = await JS.InvokeAsync<bool>("isDevice");
 
             this.initialized = true;
 
