@@ -107,7 +107,7 @@
 
     <div style="@(!this.IsMobile ? "display: inline-flex;" : "")">
         <div class="">
-            <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" />
+            <NavBar @ref="WayfinderNavBar" Categories="this.categories" UpdateCurrentCategory="@(async (string category) => await UpdateCurrentCategory(category))" CurrentCategory="@this.CurrentCategory" Loading="@this.Loading" IsMobile="@this.IsMobile" />
         </div>
 
         <div class="wayfinder-search-alt" style="@(!this.IsMobile ? "" : "text-align: center;")">

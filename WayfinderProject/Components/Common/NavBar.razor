@@ -1,4 +1,4 @@
-﻿<div class="wayfinder-nav-bar" style="@(CustomStyle)">
+﻿<div class="wayfinder-nav-bar" style="@(CustomStyle) @(this.IsMobile ? "display: block;" : "")">
     @foreach (var option in this.Categories)
     {
         <div class="@((this.CurrentCategory == option) ? "wayfinder-container-active" : "wayfinder-container")" @onclick="@(() => this.Select(option))">
@@ -12,6 +12,7 @@
     [Parameter] public string CustomStyle { get; set; } = string.Empty;
     [Parameter] public string CurrentCategory { get; set; } = string.Empty;
     [Parameter] public bool Loading { get; set; }
+    [Parameter] public bool IsMobile { get; set; }
 
     [Parameter] public Action<string>? UpdateCurrentCategory { get; set; }
 
