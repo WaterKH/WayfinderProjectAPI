@@ -2153,7 +2153,360 @@
       
     ],
     "Kingdom Hearts III": [
-      
+
+    ],
+    "Kingdom Hearts Melody of Memory": [
+      {
+        "Name": "Potion",
+        "Category": "Item",
+        "Description": "Set to restore HP by 30% when your HP is at 40% or below.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mega-Potion",
+        "Category": "Item",
+        "Description": "Set to restore HP by 60% when your HP is at 20% or below.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Item Boost",
+        "Category": "Item",
+        "Description": "Set to increase item drop rate.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "EXP Boost",
+        "Category": "Item",
+        "Description": "Set to double the amount of EXP earned.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Summoning Star",
+        "Category": "Item",
+        "Description": "Set to summon King Mickey to a Field Battle to help with healing, Rhythm Point bonuses, and more.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Soothing Crystal",
+        "Category": "Synthesis Material",
+        "Description": "A miraculous crystal formed of pure vitality. (Doubles the amount of Moogle EXP earned)",
+        "AdditionalInformation": "Drops from the following songs; Sanctuary ~opening version~ (Memory Dive), Medley of Conflict, Sanctuary ~opening version~ (Field Battle)",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Wellspring Crystal",
+        "Category": "Synthesis Material",
+        "Description": "A miraculous crystal formed of pure courage. (Halves material cost)",
+        "AdditionalInformation": "Drops from the following songs; Lazy Afternoons, What Lies Beneath, Desire for All That Is Lost",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Hungry Crystal",
+        "Category": "Synthesis Material",
+        "Description": "A miraculous crystal formed of pure longing. (Increases synthesis output quantity)",
+        "AdditionalInformation": "Drops from the following songs; Working Together, Reviving Hollow Bastion, Sinister Shadows",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Blazing Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic that is warm to the touch.",
+        "AdditionalInformation": "Drops from the following songs; Hollow Bastion, Bibbidi-Bobbidi-Boo, Happy Holidays!, Destiny Islands, Monstrous Monstro, An Adventure in Atlantica, Spooks of Halloween Town, Fragments of Sorrow, Destiny's Force, Lord of the Castle, Riku, The Afternoon Streets, Monochrome Dreams, Deep Drive, The 13th Struggle, Rowdy Rumble, Fate of the Unknown, Vector to the Heavens, No More Bugs!!, Ventus, Future Masters, The Secret Whispers, Radiant Garden, Enter the Darkness, Hand to Hand, La Cloche, Prankster's Party, L'Oscurità dell'Ignoto, CALLING -KINGDOM MIX-, You've Got a Friend in Me -KINGDOM HEARTS III Version-, Sora - Allegro con brio, A Whole New World",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Frost Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic that is cold to the touch.",
+        "AdditionalInformation": "Drops from the following songs; Dance of the Daring, Adventures in the Savannah, Roxas, Bustin' Up on the Beach, Welcome to Wonderland, Olympus Coliseum, Pirate's Gigue, Scherzo Di Notte (KH1), Shrouding Dark Cloud, Guardando nel buio, One-Winged Angel (from FINAL FANTASY VII), Forgotten Challenge, Part of Your World, Sanctuary ~opening version~, Working Together, Reviving Hollow Bastion, The Underworld, Sinister Shadows, The 13th Dilemma, Aqua, Castle Escapade, Hau'oli, Hau'oli, Daydream upon Neverland, The Tumbling, Dismiss, Access the Grid, One for All, Deep Drop, The Eye of Darkness, Monster Smash!, Graveyard Labyrinth, Medley of Conflict",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Lightning Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic that tingles when held.",
+        "AdditionalInformation": "Drops from the following songs; Up Down Adventure, The Promised Beginning, The Rustling Forest, Traverse Town, A Day in Agrabah, This is Halloween, End of the World, Another Side, Naminé, The Force in You, Sora, Lazy Afternoons, Magical Mystery, Fields of Honor, What Lies Beneath, Savannah Pride, Space Paranoids, Desire for All That Is Lost, Rage Awakened, Crossing to Neverland, Fight and Away, Wonder of Electron, Mákaukau?, Black Powder, Traverse in Trance, Digital Domination, Majestic Wings, Robot Overdrive, Don't Think Twice, Rise of the Union, Destati, Circle of Life",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Lucid Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic that shimmers with promise.",
+        "AdditionalInformation": "Drops from the following songs; Hand in Hand (KH1), Night of Fate, Traverse Town, Bustin’ Up on the Beach",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Pulsing Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic that rumbles with strength.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Writhing Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic that stays bathed in shadow.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Betwixt Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic with an energy neither fully light nor dark.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Twilight Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of magic that glows like the setting sun.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mythril Shard",
+        "Category": "Synthesis Material",
+        "Description": "A sliver of mythril ore.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Lucid Gem",
+        "Category": "Synthesis Material",
+        "Description": "A fine jewel that can barely contain the radiance within it.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Pulsing Gem",
+        "Category": "Synthesis Material",
+        "Description": "A fine jewel that can barely contain the force within it.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Writhing Gem",
+        "Category": "Synthesis Material",
+        "Description": "A fine jewel that can barely contain the blackness within it.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Betwixt Gem",
+        "Category": "Synthesis Material",
+        "Description": "A fine jewel that can barely contain the uncertainty within it.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Twilight Gem",
+        "Category": "Synthesis Material",
+        "Description": "A fine jewel that can barely contain the twilight within it.",
+        "AdditionalInformation": "",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "Mythril Gem",
+        "Category": "Synthesis Material",
+        "Description": "A fine jewel of refined mythril.",
+        "AdditionalInformation": "Drops from the following songs; One-Winged Angel (from FINAL FANTASY VII), Don’t Think Twice (Memory Dive), Monster Smash!, The Other Promise, Wave of Darkness I, Happy Hair Day, Let It Go, Don't Think Twice (Field Battle), Graveyard Labyrinth, Dark Domination",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Sora” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Sora” Memory Dive MS.",
+        "AdditionalInformation": "Obtain a total of 5000 Rhythm Points.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Riku” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Riku” Memory Dive MS.",
+        "AdditionalInformation": "Obtain a total of 10000 Rhythm Points.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Kairi I” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Kairi I” Memory Dive MS.",
+        "AdditionalInformation": "Clear Destiny Islands.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Roxas” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Roxas” Memory Dive MS.",
+        "AdditionalInformation": "Obtain a total of 12500 Rhythm Points.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Naminé” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Naminé” Memory Dive MS.",
+        "AdditionalInformation": "Clear Castle Oblivion.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Musique pour la tristesse de Xion” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Musique pour la tristesse de Xion” Memory Dive MS.",
+        "AdditionalInformation": "Clear Melody of Returning (Vector to the Heavens).",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Terra” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Terra” Memory Dive MS.",
+        "AdditionalInformation": "Obtain a total of 17500 Rhythm Points.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Ventus” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Ventus” Memory Dive MS.",
+        "AdditionalInformation": "Obtain a total of 15000 Rhythm Points.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Aqua” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Aqua” Memory Dive MS.",
+        "AdditionalInformation": "Clear Writhing Melody (Wave of Darkness I).",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Another Side” Field Battle MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Another Side” Field Battle MS.",
+        "AdditionalInformation": "Clear Melody of Clashing Keys (The Other Promise).",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Fate of the Unknown” Field Battle MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Fate of the Unknown” Field Battle MS.",
+        "AdditionalInformation": "Clear Lingering Melody (Rage Awakened).",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“CALLING -KINGDOM MIX-” Field Battle MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “CALLING -KINGDOM MIX-” Field Battle MS.",
+        "AdditionalInformation": "Obtain a total of 22500 Rhythm Points.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“A Whole New World” Field Battle MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “A Whole New World” Field Battle MS.",
+        "AdditionalInformation": "Clear Agrabah.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Beauty and the Beast” Field Battle MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Beauty and the Beast” Field Battle MS.",
+        "AdditionalInformation": "Clear Beast’s Castle.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Circle Of Life” Field Battle MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Circle Of Life” Field Battle MS.",
+        "AdditionalInformation": "Clear Pride Lands.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      },
+      {
+        "Name": "“Part of Your World” Memory Dive MS Material",
+        "Category": "Synthesis Material",
+        "Description": "An essential ingredient to synthesize the “Part of Your World” Memory Dive MS.",
+        "AdditionalInformation": "Clear Atlantica.",
+        "Cost": 0,
+        "Currency": "",
+        "EnemyDrops": []
+      }
     ]
   }
 }

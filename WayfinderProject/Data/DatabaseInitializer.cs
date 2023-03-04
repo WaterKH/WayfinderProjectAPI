@@ -532,12 +532,12 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, inventory) in allMSInventory["Inventory"])
             {
-                if (gameName != "Kingdom Hearts") continue;
+                if (gameName != "Kingdom Hearts Melody of Memory") continue;
 
                 foreach (var item in inventory)
                 {
                     var tempItem = context.Inventory.FirstOrDefault(x => x.Name == item.Name && x.Game.Name == gameName);
-                    if (tempItem == null)
+                    if (tempItem != null)
                         continue;
 
                     var drops = new List<EnemyDrop>();
@@ -564,18 +564,19 @@ namespace WayfinderProjectAPI.Data
                         }
                     }
 
-                    tempItem.EnemyDrops = drops;
-                    //context.Inventory.Add(new Inventory
-                    //{
-                    //    Name = item.Name,
-                    //    Category = item.Category,
-                    //    Description = item.Description,
-                    //    AdditionalInformation = item.AdditionalInformation,
-                    //    Cost = item.Cost,
-                    //    Currency = item.Currency,
-                    //    Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
-                    //    EnemyDrops = drops
-                    //});
+                    //tempItem.EnemyDrops = drops;
+
+                    context.Inventory.Add(new Inventory
+                    {
+                        Name = item.Name,
+                        Category = item.Category,
+                        Description = item.Description,
+                        AdditionalInformation = item.AdditionalInformation,
+                        Cost = item.Cost,
+                        Currency = item.Currency,
+                        Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                        EnemyDrops = drops
+                    });
                 }
             }
 
@@ -599,7 +600,7 @@ namespace WayfinderProjectAPI.Data
 
             foreach (var (gameName, recipes) in allMSRecipes["Recipes"])
             {
-                if (gameName != "Kingdom Hearts") continue;
+                if (gameName != "Kingdom Hearts Melody of Memory") continue;
 
                 foreach (var recipe in recipes)
                 {
@@ -610,7 +611,7 @@ namespace WayfinderProjectAPI.Data
                     var recipeMaterials = new List<RecipeMaterial>();
                     foreach (var (name, amount) in recipe.MaterialsNeeded)
                     {
-                        var tempItem = context.Inventory.FirstOrDefault(x => name == x.Name);
+                        var tempItem = context.Inventory.FirstOrDefault(x => name == x.Name && gameName == x.Game.Name);
                         if (tempItem == null)
                         {
                             Console.WriteLine();

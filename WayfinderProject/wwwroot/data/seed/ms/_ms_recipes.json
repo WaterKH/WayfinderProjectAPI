@@ -373,7 +373,946 @@
       
     ],
     "Kingdom Hearts III": [
-      
+
+    ],
+    "Kingdom Hearts Melody of Memory": [
+      {
+        "Name": "Potion",
+        "Category": "Item",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Blazing Shard": 6
+        }
+      },
+      {
+        "Name": "Mega-Potion",
+        "Category": "Item",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Blazing Shard": 4,
+          "Frost Shard": 4,
+          "Lightning Shard": 4
+        }
+      },
+      {
+        "Name": "Item Boost",
+        "Category": "Item",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Frost Shard": 16
+        }
+      },
+      {
+        "Name": "EXP Boost",
+        "Category": "Item",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Lightning Shard": 9
+        }
+      },
+      {
+        "Name": "Summoning Star",
+        "Category": "Item",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Blazing Shard": 7,
+          "Frost Shard": 7,
+          "Lightning Shard": 7
+        }
+      },
+      {
+        "Name": "“Sora” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Sora” Memory Dive MS Material": 1,
+          "Lucid Gem": 27
+        }
+      },
+      {
+        "Name": "“Riku” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Riku” Memory Dive MS Material": 1,
+          "Pulsing Gem": 36
+        }
+      },
+      {
+        "Name": "“Kairi I” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Kairi I” Memory Dive MS Material": 1,
+          "Lucid Gem": 27
+        }
+      },
+      {
+        "Name": "“Roxas” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Roxas” Memory Dive MS Material": 1,
+          "Lucid Gem": 27
+        }
+      },
+      {
+        "Name": "“Naminé” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Naminé” Memory Dive MS Material": 1,
+          "Pulsing Gem": 36
+        }
+      },
+      {
+        "Name": "“Musique pour la tristesse de Xion” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Musique pour la tristesse de Xion” Memory Dive MS Material": 1,
+          "Writhing Gem": 45
+        }
+      },
+      {
+        "Name": "“Terra” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Terra” Memory Dive MS Material": 1,
+          "Betwixt Gem": 33
+        }
+      },
+      {
+        "Name": "“Ventus” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Ventus” Memory Dive MS Material": 1,
+          "Betwixt Gem": 33
+        }
+      },
+      {
+        "Name": "“Aqua” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Aqua” Memory Dive MS Material": 1,
+          "Mythril Gem": 28
+        }
+      },
+      {
+        "Name": "“Another Side” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Another Side” Field Battle MS Material": 1,
+          "Mythril Gem": 28
+        }
+      },
+      {
+        "Name": "“Fate of the Unknown” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Fate of the Unknown” Field Battle MS Material": 1,
+          "Betwixt Shard": 74
+        }
+      },
+      {
+        "Name": "“CALLING -KINGDOM MIX-” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“CALLING -KINGDOM MIX-” Field Battle MS Material": 1,
+          "Twilight Shard": 65
+        }
+      },
+      {
+        "Name": "“A Whole New World” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“A Whole New World” Field Battle MS Material": 1,
+          "Lucid Shard": 56
+        }
+      },
+      {
+        "Name": "“Beauty and the Beast” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Beauty and the Beast” Field Battle MS Material": 1,
+          "Lucid Shard": 56
+        }
+      },
+      {
+        "Name": "“Circle Of Life” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Circle Of Life” Field Battle MS Material": 1,
+          "Writhing Shard": 98
+        }
+      },
+      {
+        "Name": "“Part of Your World” Memory Dive MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "“Part of Your World” Memory Dive MS Material": 1,
+          "Pulsing Shard": 78
+        }
+      },
+      {
+        "Name": "“Hand in Hand” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 35,
+          "Pulsing Shard": 25
+        }
+      },
+      {
+        "Name": "“Working Together - Allegro vivace” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Gem": 44,
+          "Writhing Shard": 32
+        }
+      },
+      {
+        "Name": "“Sora - Allegro con brio” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Twilight Gem": 30,
+          "Twilight Shard": 21
+        }
+      },
+      {
+        "Name": "“Medley of Conflict” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Blazing Shard": 27,
+          "Frost Shard": 28,
+          "Lightning Shard": 27
+        }
+      },
+      {
+        "Name": "“Destati” Field Battle MS",
+        "Category": "Music Stage Key",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Blazing Shard": 27,
+          "Frost Shard": 28,
+          "Lightning Shard": 27
+        }
+      },
+      {
+        "Name": "Princesses & New Seven Hearts",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 58
+        }
+      },
+      {
+        "Name": "Characters",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Lucid Shard": 25
+        }
+      },
+      {
+        "Name": "Organization XIII",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Betwixt Shard": 60
+        }
+      },
+      {
+        "Name": "Villains",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Shard": 43
+        }
+      },
+      {
+        "Name": "Characters (Illustrated)",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Betwixt Shard": 22
+        }
+      },
+      {
+        "Name": "Characters (Stylized)",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Twilight Shard": 63
+        }
+      },
+      {
+        "Name": "Characters (KH III)",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Mythril Shard": 56
+        }
+      },
+      {
+        "Name": "Special A",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 20
+        }
+      },
+      {
+        "Name": "Special B",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Gem": 20
+        }
+      },
+      {
+        "Name": "Special C",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Twilight Gem": 14
+        }
+      },
+      {
+        "Name": "Special D",
+        "Category": "ProfiCard Icon",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Twilight Gem": 10
+        }
+      },
+      {
+        "Name": "Key Art A",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 9
+        }
+      },
+      {
+        "Name": "Key Art B",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Shard": 11
+        }
+      },
+      {
+        "Name": "Key Art C",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Mythril Shard": 7
+        }
+      },
+      {
+        "Name": "Station of Awakening",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Lucid Shard": 7
+        }
+      },
+      {
+        "Name": "Story Scene A",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 9
+        }
+      },
+      {
+        "Name": "Story Scene B",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Shard": 11
+        }
+      },
+      {
+        "Name": "Story Scene C",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Twilight Shard": 8
+        }
+      },
+      {
+        "Name": "Story Scene D",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Mythril Shard": 7
+        }
+      },
+      {
+        "Name": "Character A",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 9
+        }
+      },
+      {
+        "Name": "Character B",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Shard": 11
+        }
+      },
+      {
+        "Name": "Character C",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Betwixt Shard": 9
+        }
+      },
+      {
+        "Name": "Character D",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Lucid Shard": 7
+        }
+      },
+      {
+        "Name": "Character E",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Mythril Shard": 7
+        }
+      },
+      {
+        "Name": "Enemy A",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 9
+        }
+      },
+      {
+        "Name": "Enemy B",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Shard": 11
+        }
+      },
+      {
+        "Name": "Enemy C",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Twilight Shard": 8
+        }
+      },
+      {
+        "Name": "Enemy D",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Mythril Shard": 7
+        }
+      },
+      {
+        "Name": "Keyblade A",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 9
+        }
+      },
+      {
+        "Name": "Keyblade B",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Writhing Shard": 11
+        }
+      },
+      {
+        "Name": "Keyblade C",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Betwixt Shard": 9
+        }
+      },
+      {
+        "Name": "Keyblade D",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Mythril Shard": 7
+        }
+      },
+      {
+        "Name": "Key Art No. 1 - 20",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 3
+        }
+      },
+      {
+        "Name": "Key Art No. 21 - 40",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 3
+        }
+      },
+      {
+        "Name": "Key Art No. 41 - 61",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 3
+        }
+      },
+      {
+        "Name": "Station of Awakening No. 1 - 23",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 3
+        }
+      },
+      {
+        "Name": "Story Scene No. 1 - 20",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 4
+        }
+      },
+      {
+        "Name": "Story Scene No. 21 - 40",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 4
+        }
+      },
+      {
+        "Name": "Story Scene No. 41 - 60",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 4
+        }
+      },
+      {
+        "Name": "Story Scene No. 61 - 80",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 4
+        }
+      },
+      {
+        "Name": "Story Scene No. 81 - 100",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 4
+        }
+      },
+      {
+        "Name": "Story Scene No. 101 - 120",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 4
+        }
+      },
+      {
+        "Name": "Story Scene No. 121 - 130",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Pulsing Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 1 - 30",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Betwixt Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 31 - 60",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Betwixt Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 61 - 90",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Betwixt Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 91 - 120",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Betwixt Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 121 - 150",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Betwixt Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 151 - 180",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Twilight Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 181 - 210",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Twilight Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 211 - 240",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Twilight Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 241 - 270",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Twilight Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 271 - 300",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Twilight Gem": 4
+        }
+      },
+      {
+        "Name": "Character No. 301 - 321",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Twilight Gem": 4
+        }
+      },
+      {
+        "Name": "Enemy No. 1 - 30",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Writhing Gem": 5
+        }
+      },
+      {
+        "Name": "Enemy No. 31 - 60",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Writhing Gem": 5
+        }
+      },
+      {
+        "Name": "Enemy No. 61 - 90",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Writhing Gem": 5
+        }
+      },
+      {
+        "Name": "Enemy No. 91 - 120",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Writhing Gem": 5
+        }
+      },
+      {
+        "Name": "Enemy No. 121 - 150",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Writhing Gem": 5
+        }
+      },
+      {
+        "Name": "Enemy No. 151 - 193",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Writhing Gem": 5
+        }
+      },
+      {
+        "Name": "Keyblade No. 1 -20",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Mythril Gem": 3
+        }
+      },
+      {
+        "Name": "Keyblade No. 21 - 40",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Mythril Gem": 3
+        }
+      },
+      {
+        "Name": "Keyblade No. 41 - 60",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Mythril Gem": 3
+        }
+      },
+      {
+        "Name": "Keyblade No. 61 - 80",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Mythril Gem": 3
+        }
+      },
+      {
+        "Name": "Keyblade No. 81 - 100",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Mythril Gem": 3
+        }
+      },
+      {
+        "Name": "Keyblade No. 101 - 125",
+        "Category": "Collector’s Card",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Mythril Gem": 3
+        }
+      },
+      {
+        "Name": "Soothing Crystal",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 2.",
+        "MaterialsNeeded": {
+          "Lucid Gem": 7,
+          "Pulsing Gem": 9
+        }
+      },
+      {
+        "Name": "Soothing Crystal",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Blazing Shard": 15,
+          "Frost Shard": 16
+        }
+      },
+      {
+        "Name": "Wellspring Crystal",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 4.",
+        "MaterialsNeeded": {
+          "Writhing Gem": 17,
+          "Betwixt Gem": 12
+        }
+      },
+      {
+        "Name": "Wellspring Crystal",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Frost Shard": 24,
+          "Lightning Shard": 23
+        }
+      },
+      {
+        "Name": "Hungry Crystal",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 6.",
+        "MaterialsNeeded": {
+          "Twilight Gem": 12,
+          "Mythril Gem": 11
+        }
+      },
+      {
+        "Name": "Hungry Crystal",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 8.",
+        "MaterialsNeeded": {
+          "Lightning Shard": 23,
+          "Blazing Shard": 23
+        }
+      },
+      {
+        "Name": "Blazing Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Frost Shard": 2
+        }
+      },
+      {
+        "Name": "Frost Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Lightning Shard": 2
+        }
+      },
+      {
+        "Name": "Lightning Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "",
+        "MaterialsNeeded": {
+          "Blazing Shard": 2
+        }
+      },
+      {
+        "Name": "Lucid Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 3.",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 3
+        }
+      },
+      {
+        "Name": "Pulsing Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 5.",
+        "MaterialsNeeded": {
+          "Writhing Shard": 3
+        }
+      },
+      {
+        "Name": "Writhing Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 5.",
+        "MaterialsNeeded": {
+          "Betwixt Shard": 2
+        }
+      },
+      {
+        "Name": "Betwixt Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 7.",
+        "MaterialsNeeded": {
+          "Twilight Shard": 2
+        }
+      },
+      {
+        "Name": "Twilight Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 7.",
+        "MaterialsNeeded": {
+          "Mythril Shard": 2
+        }
+      },
+      {
+        "Name": "Mythril Shard",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 7.",
+        "MaterialsNeeded": {
+          "Lucid Shard": 2
+        }
+      },
+      {
+        "Name": "Lucid Gem",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 3.",
+        "MaterialsNeeded": {
+          "Lucid Shard": 4
+        }
+      },
+      {
+        "Name": "Pulsing Gem",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 5.",
+        "MaterialsNeeded": {
+          "Pulsing Shard": 4
+        }
+      },
+      {
+        "Name": "Writhing Gem",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 5.",
+        "MaterialsNeeded": {
+          "Writhing Shard": 4
+        }
+      },
+      {
+        "Name": "Betwixt Gem",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 7.",
+        "MaterialsNeeded": {
+          "Betwixt Shard": 4
+        }
+      },
+      {
+        "Name": "Twilight Gem",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 7.",
+        "MaterialsNeeded": {
+          "Twilight Shard": 4
+        }
+      },
+      {
+        "Name": "Mythril Gem",
+        "Category": "Synthesis Material",
+        "UnlockConditionDescription": "Get the Moogle to level 7.",
+        "MaterialsNeeded": {
+          "Mythril Shard": 5
+        }
+      }
     ]
   }
 }
