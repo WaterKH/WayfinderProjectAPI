@@ -1811,28 +1811,31 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
 
     public async Task ClearAllOptions(string clearString)
     {
-        if (this.CurrentCategory == "Story")
+        if (!this.Loading)
         {
-            await this.ClearAllStoryEntryOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Reports")
-        {
-            await this.ClearAllReportEntryOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Characters")
-        {
-            await this.ClearAllCharacterEntryOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Enemies")
-        {
-            await this.ClearAllEnemyEntryOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Collectibles")
-        {
-            await this.ClearAllCollectibleEntryOptions(clearString);
-        }
+            if (this.CurrentCategory == "Story")
+            {
+                await this.ClearAllStoryEntryOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Reports")
+            {
+                await this.ClearAllReportEntryOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Characters")
+            {
+                await this.ClearAllCharacterEntryOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Enemies")
+            {
+                await this.ClearAllEnemyEntryOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Collectibles")
+            {
+                await this.ClearAllCollectibleEntryOptions(clearString);
+            }
 
-        await this.Search();
+            await this.Search();
+        }
     }
 
     #region Clear All Sub-Methods
@@ -2920,7 +2923,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
     {
         var parameters = new ModalParameters();
 
-        parameters.Add("ClearAllSubMethod", ClearAllOptions(this.CurrentCategory));
+        parameters.Add("ClearAllSubMethod", (string clearString) => ClearAllOptions(clearString));
 
         var options = new ModalOptions { Class = "modal-custom" };
 

@@ -7,7 +7,7 @@
     {
         <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Filter List..." />
         <select id="@($"Available-{Id}")" class="wayfinder-select" multiple @onchange="@(() => this.Select($"Available-{Id}"))">
-            @foreach (var item in this.Available)
+            @foreach (var item in this.FilteredAvailable)
             {
                 <option class="wayfinder-option" value="@item">@item</option>
             }
@@ -17,28 +17,7 @@
     {
         <input class="wayfinder-input" oninput="@((ChangeEventArgs t) => this.UpdateFilteredAvailable(t.Value?.ToString() ?? string.Empty))" placeholder="Filter List..." />
         <select id="@($"Available-{Id}")" class="wayfinder-select" @onchange="@(() => this.Select($"Available-{Id}"))">
-            @foreach (var item in this.Available)
-            {
-                <option class="wayfinder-option" value="@item">@item</option>
-            }
-        </select>
-    }
-}
-else if (this.CurrentView == "Selected")
-{
-    @if (this.AllowMultipleSelect)
-    {
-        <select id="@($"Selected-{Id}")" class="wayfinder-select" multiple @onchange="@(() => this.Remove($"Selected-{Id}"))">
-            @foreach (var item in this.Selected)
-            {
-                <option class="wayfinder-option" value="@item">@item</option>
-            }
-        </select>
-    }
-    else
-    {
-        <select id="@($"Selected-{Id}")" class="wayfinder-select" @onchange="@(() => this.Remove($"Selected-{Id}"))">
-            @foreach (var item in this.Selected)
+            @foreach (var item in this.FilteredAvailable)
             {
                 <option class="wayfinder-option" value="@item">@item</option>
             }
@@ -58,45 +37,27 @@ else if (this.CurrentView == "Selected")
 
     [Parameter] public Func<Task>? UpdateSearch { get; set; }
 
+    private List<string> FilteredAvailable { get; set; } = new List<string>();
+
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        this.FilteredAvailable = this.Initial.ToList();
+
+        await base.OnParametersSetAsync();
     }
 
     private async Task Select(string id)
     {
         var values = await JS.InvokeAsync<string[]>("getSelections", id);
 
-        this.Selected.AddRange(values);
-
-        foreach (var value in values)
-        {
-            this.Available.Remove(value);
-        }
-
-        if (this.UpdateSearch != null)
-        {
-            await Task.Run(async () => await this.UpdateSearch.Invoke());
-        }
-
-        await InvokeAsync(() =>
-        {
-            this.StateHasChanged();
-        });
-    }
-
-    private async Task Remove(string id)
-    {
-        var values = await JS.InvokeAsync<string[]>("getSelections", id);
-
-        foreach (var value in values)
-        {
-            this.Selected.Remove(value);
-        }
-
-        this.Available.AddRange(values);
-        this.Available.Sort();
-
+        this.Selected.Clear();
+        this.Selected.AddRange(values.ToList());
+        
         if (this.UpdateSearch != null)
         {
             await Task.Run(async () => await this.UpdateSearch.Invoke());
@@ -110,7 +71,7 @@ else if (this.CurrentView == "Selected")
 
     private async Task UpdateFilteredAvailable(string search)
     {
-        this.Available = new List<string>();
+        this.FilteredAvailable = new List<string>();
 
         foreach (var selection in this.Initial)
         {
@@ -118,7 +79,7 @@ else if (this.CurrentView == "Selected")
 
             if (string.IsNullOrEmpty(search) || selection.ToLower().Contains(search.ToLower()))
             {
-                this.Available.Add(selection);
+                this.FilteredAvailable.Add(selection);
             }
         }
 

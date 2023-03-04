@@ -80,3 +80,15 @@
 .a {
     color: #1a00ff;
 }
+
+.share {
+    cursor: pointer;
+    color: #4d84ff;
+    font-size: larger;
+    float: right;
+}
+
+.share-text {
+    cursor: pointer;
+    text-decoration: underline;
+}

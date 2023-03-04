@@ -2267,28 +2267,31 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
 
     public async Task ClearAllOptions(string clearString)
     {
-        if (this.CurrentCategory == "Recipes")
+        if (!this.Loading)
         {
-            await this.ClearAllRecipeOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Items")
-        {
-            await this.ClearAllInventoryItemOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Weapons")
-        {
-            await this.ClearAllInventoryWeaponOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Accessories & Armor")
-        {
-            await this.ClearAllInventoryAccessoryArmorOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Synthesis Materials")
-        {
-            await this.ClearAllInventoryMaterialOptions(clearString);
-        }
+            if (this.CurrentCategory == "Recipes")
+            {
+                await this.ClearAllRecipeOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Items")
+            {
+                await this.ClearAllInventoryItemOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Weapons")
+            {
+                await this.ClearAllInventoryWeaponOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Accessories & Armor")
+            {
+                await this.ClearAllInventoryAccessoryArmorOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Synthesis Materials")
+            {
+                await this.ClearAllInventoryMaterialOptions(clearString);
+            }
 
-        await this.Search();
+            await this.Search();
+        }
     }
 
     #region Clear All Sub-Methods
@@ -3689,7 +3692,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     {
         var parameters = new ModalParameters();
 
-        parameters.Add("ClearAllSubMethod", ClearAllOptions(this.CurrentCategory));
+        parameters.Add("ClearAllSubMethod", (string clearString) => ClearAllOptions(clearString));
 
         var options = new ModalOptions { Class = "modal-custom" };
 

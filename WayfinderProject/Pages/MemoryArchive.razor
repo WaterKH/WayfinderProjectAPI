@@ -144,9 +144,9 @@
     else
     {
         <div class="wayfinder-buttons" style="align-self: center; margin: 15px;">
-            <button class="@(this.CurrentViewMobile == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())" style="right: unset; margin-left: 25px;">@(this.CurrentViewMobile == "Available" ? "Filters" : "Options")</button>
+            @*<button class="@(this.CurrentViewMobile == "Selected" ? "wayfinder-outlined-button" : "wayfinder-search-button")" @onclick="@(() => ToggleView())" style="right: unset; margin-left: 25px;">@(this.CurrentViewMobile == "Available" ? "Filters" : "Options")</button>*@
 
-            <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault style="margin-left: 15px; margin-right: unset;">Clear All</button>
+            <button class="clear-all-button" @onclick="@(() => DisplayClearAllModal())" @onclick:stopPropagation @onclick:preventDefault style="margin-left: 20px; margin-right: unset;">Clear All</button>
         </div>    
     }
 
@@ -728,7 +728,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (firstRender)
         {
-            this.IsMobile = await JS.InvokeAsync<bool>("isDevice");
+            this.IsMobile = true;//await JS.InvokeAsync<bool>("isDevice");
 
             this.initialized = true;
 
@@ -1356,20 +1356,23 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     public async Task ClearAllOptions(string clearString)
     {
-        if (this.CurrentCategory == "Cutscenes")
+        if (!this.Loading)
         {
-            await this.ClearAllSceneOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Trailers")
-        {
-            await this.ClearAllTrailerOptions(clearString);
-        }
-        else if (this.CurrentCategory == "Interviews")
-        {
-            await this.ClearAllInterviewOptions(clearString);
-        }
+            if (this.CurrentCategory == "Cutscenes")
+            {
+                await this.ClearAllSceneOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Trailers")
+            {
+                await this.ClearAllTrailerOptions(clearString);
+            }
+            else if (this.CurrentCategory == "Interviews")
+            {
+                await this.ClearAllInterviewOptions(clearString);
+            }
 
-        await this.Search();
+            await this.Search();
+        }
     }
 
     #region Clear All Sub-Methods
@@ -2200,7 +2203,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         var parameters = new ModalParameters();
         
-        parameters.Add("ClearAllSubMethod", ClearAllOptions(this.CurrentCategory));
+        parameters.Add("ClearAllSubMethod", (string clearString) => ClearAllOptions(clearString));
 
         var options = new ModalOptions { Class = "modal-custom" };
 

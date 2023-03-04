@@ -11,10 +11,6 @@
                 <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
                     <div class="row" style="height: 281px;">
                         <div class="col-md-6">
-                            <h3 class="scene-color">@Interview.Name</h3>
-                        </div>
-
-                        <div class="col-md-6">
                             <div id="share" class="share" @onclick="@(() => { if (this.GenerateShareLink != null) { this.GenerateShareLink.Invoke(); } })">
                                 <span class="copyable">
                                     <i class="oi oi-file"></i>
@@ -24,6 +20,10 @@
                         </div>
 
                         <br />
+
+                        <div class="col-md-6">
+                            <h3 class="scene-color">@Interview.Name</h3>
+                        </div>
 
                         <div class="col-md-6" style="margin-top: 45px;">
                             <h3 class="game-color"><img src="/images/icons/games_gray.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Games</h3>
