@@ -2631,7 +2631,7 @@
         "Name": "The Tactician's Move",
         "Link": "https://www.youtube.com/watch?v=4qxLp9Y2jZ4&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=156",
         "Worlds": [ "Castle Oblivion" ],
-        "Characters": [ "Riku" ],
+        "Characters": [ "Axel", "Zexion" ],
         "Areas": [ "Basement 13" ],
         "Music": [ "Thirteenth Discretion" ]
       },
@@ -18075,7 +18075,7 @@
       },
       {
         "Name": "You Admit It",
-        "Link": "https://www.youtube.com/watch?v=ls7vZDD3Vu8&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=228",
+        "Link": "https://www.youtube.com/watch?v=QJ0HiELZ0ZY&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=229",
         "Worlds": [ "The Keyblade Graveyard" ],
         "Characters": [ "Saïx", "Lea", "Sora", "Roxas", "Xion" ],
         "Areas": [ "Twist of Isolation" ],
@@ -18669,7 +18669,7 @@
     "Kingdom Hearts Dark Road": [
       {
         "Name": "A Recurring Dream",
-        "Link": "https://www.youtube.com/watch?v=JD4OqjxdfWU&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=10",
+        "Link": "https://www.youtube.com/watch?v=58Dwz-YGR4U&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=8",
         "Worlds": [ "Destiny Islands", "Dive to the Heart", "Agrabah", "Wonderland", "Olympus Coliseum", "Dwarf Woodlands", "Beast's Castle", "Daybreak Town", "The Keyblade Graveyard" ],
         "Characters": [ "Young Xehanort", "Ansem Seeker of Darkness", "Player", "Aladdin", "Red Bandit(s)", "Alice", "White Rabbit", "Card Soldier(s)", "Queen of Hearts", "Cerberus", "Hades", "Search Ghost(s)", "Beast", "Wily Bandit(s)", "Grumpy", "Doc", "Happy", "Dopey", "Bashful", "Sleepy", "Sneezy", "The Hag", "Cloud", "Hercules", "Belle", "Cogsworth", "Mrs. Potts", "Lumiere", "Prince Adam", "Chirithy", "Darkling(s)", "Dark Chirithy", "Skuld", "Ephemer" ],
         "Areas": [ "Seashore", "Station of Awakening", "Aladdin's House", "Queen's Court", "The Underworld", "Entrance Hall", "Bandit Hideout", "Mountain Trail", "Arena", "Beast's Room", "Bridge", "The Keyblade Graveyard" ],
@@ -19005,7 +19005,7 @@
       },
       {
         "Name": "Dark Emotions",
-        "Link": "https://www.youtube.com/watch?v=vSaGb3VNrfk&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=52",
+        "Link": "https://www.youtube.com/watch?v=nt7T58DHkDE&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=50",
         "Worlds": [ "Dark World", "Agrabah", "Dwarf Woodlands", "Beast's Castle", "Wonderland" ],
         "Characters": [ "Young Xehanort", "Master of Masters", "Young Eraqus", "Bragi", "Vor", "Hermod", "Urd" ],
         "Areas": [ "Corridor of Darkness", "Oasis", "Magic Mirror Chamber", "Courtyard", "Fork in the Road" ],
@@ -19093,7 +19093,7 @@
       },
       {
         "Name": "A Worthy Heart",
-        "Link": "https://www.youtube.com/watch?v=UJZvLdpQztM&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=63",
+        "Link": "https://www.youtube.com/watch?v=gGwDWv29k8E&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=61",
         "Worlds": [ "Dark World" ],
         "Characters": [ "Master Xehanort", "Ventus", "Player" ],
         "Areas": [ "Corridor of Darkness" ],
@@ -19101,7 +19101,7 @@
       },
       {
         "Name": "Reunited",
-        "Link": "https://www.youtube.com/watch?v=DMpePDG7YCI&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=64",
+        "Link": "https://www.youtube.com/watch?v=FkXlz8gYa5Q&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=62",
         "Worlds": [ "The Land of Departure" ],
         "Characters": [ "Terra", "Aqua", "Eraqus", "Master Xehanort", "Ventus" ],
         "Areas": [ "Castle Throne Room" ],
@@ -19341,7 +19341,7 @@
       },
       {
         "Name": "Two Kinds of People",
-        "Link": "https://www.youtube.com/watch?v=U3CvCo0mDOk&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=94",
+        "Link": "https://www.youtube.com/watch?v=AA2sh_5x2oc&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=92",
         "Worlds": [ "Scala ad Caelum" ],
         "Characters": [ "Young Xehanort", "Young Eraqus", "Baldr", "Hoder", "Odin" ],
         "Areas": [ "The Stairway to the Sky" ],
@@ -19365,7 +19365,7 @@
       },
       {
         "Name": "Child of Destiny",
-        "Link": "https://www.youtube.com/watch?v=Am3RY_Xydrs&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=97",
+        "Link": "https://www.youtube.com/watch?v=4Fm2diD49hs&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=95",
         "Worlds": [ "Scala ad Caelum", "Destiny Islands" ],
         "Characters": [ "Young Xehanort", "Player", "Unnamed Woman", "Young Eraqus", "Vor", "Bragi", "Urd", "Hermod", "Ephemer" ],
         "Areas": [ "The Stairway to the Sky", "Seashore" ],
