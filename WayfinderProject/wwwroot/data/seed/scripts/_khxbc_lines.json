@@ -1507,47 +1507,45 @@
       {
         "Order": 38,
         "Character": "Ava",
-        "Line": "I'm sorry. I know you want the Master to return, but you don't know how summoning Kingdom Hearts will affect the rest of the world. The Master... He forbid it for a reason. I'm afraid I can't help"
-      }
-    ],
-    "you.": [
+        "Line": "I'm sorry. I know you want the Master to return, but you don't know how summoning Kingdom Hearts will affect the rest of the world. The Master... He forbid it for a reason. I'm afraid I can't help you."
+      },
       {
-        "Order": 0,
+        "Order": 39,
         "Character": "Gula",
         "Line": "I see. May your heart be your guiding key."
       },
       {
-        "Order": 1,
+        "Order": 40,
         "Character": "Ava",
         "Line": "Gula's on a mission to collect Lux."
       },
       {
-        "Order": 2,
+        "Order": 41,
         "Character": "Invi",
         "Line": "Ah. That explains why Aced and Ira are as well. They're trying to maintain the balance. But, that isn't the balance we were expected to keep. If everyone's collecting light solely for themselves, Keyblade wielders will soon turn against one another, which will lead to... the Keyblade War."
       },
       {
-        "Order": 3,
+        "Order": 42,
         "Character": "Ava",
         "Line": "Then what's written in the Book, all of it will happen..."
       },
       {
-        "Order": 4,
+        "Order": 43,
         "Character": "Invi",
         "Line": "Light will expire."
       },
       {
-        "Order": 5,
+        "Order": 44,
         "Character": "Ava",
         "Line": "Invi, what are you going to do?"
       },
       {
-        "Order": 6,
+        "Order": 45,
         "Character": "Invi",
         "Line": "I'll gather Lux, too. No matter what, the balance must be kept. Ava, you do the same. We must... delay the inevitable."
       },
       {
-        "Order": 7,
+        "Order": 46,
         "Character": "Ava",
         "Line": "Right..."
       }
