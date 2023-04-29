@@ -9132,7 +9132,7 @@
       {
         "Name": "Plan Beta",
         "Link": "https://www.youtube.com/watch?v=K3a8p7ffYuc&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=62",
-        "Worlds": [ "Olympus Coliseum", "Enchanted Dominion" ],
+        "Worlds": [ "Olympus Coliseum" ],
         "Characters": [ "Terra", "Hades", "Zack" ],
         "Areas": [ "Vestibule" ],
         "Music": [ ":None:" ]
@@ -9150,13 +9150,13 @@
         "Link": "https://www.youtube.com/watch?v=jMFL0RcougU&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=64",
         "Worlds": [ "Olympus Coliseum", "Enchanted Dominion" ],
         "Characters": [ "Zack", "Terra", "Maleficent", "Aurora", "Hades" ],
-        "Areas": [ "Arena" ],
+        "Areas": [ "Arena", "Aurora's Chamber" ],
         "Music": [ "Extreme Encounters" ]
       },
       {
         "Name": "The Picture of a Hero",
         "Link": "https://www.youtube.com/watch?v=YfuHKx8_YC0&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=65",
-        "Worlds": [ "Olympus Coliseum", "Enchanted Dominion" ],
+        "Worlds": [ "Olympus Coliseum" ],
         "Characters": [ "Zack", "Terra", "Hades" ],
         "Areas": [ "Arena" ],
         "Music": [ "A Date with Fate" ]
