@@ -1815,7 +1815,7 @@
         "Name": "Oogie's Nightmare",
         "Link": "https://www.youtube.com/watch?v=IS1fk5y2kqo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=55",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Oogie Boogie" ],
         "Areas": [ "Torture Chamber" ],
         "Music": [ "Disquieting" ]
       },
@@ -12617,7 +12617,7 @@
         "Name": "The Return",
         "Link": "https://www.youtube.com/watch?v=zefVXgr8f2U&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=153",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [ "Riku", "Mickey", "Master Xehanort", "Xemnas", "Ansem Seeker of Darkness", "Xigbar", "True Organization XIII", "Lea", "Saïx", "Guardian", "Donald", "Goofy" ],
+        "Characters": [],
         "Areas": [ "The Tower" ],
         "Music": [ "Magical Mystery" ]
       },
