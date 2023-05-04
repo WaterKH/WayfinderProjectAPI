@@ -12,7 +12,7 @@ namespace WayfinderProjectAPI.Data
                 .Select(x => new SceneDto
                 {
                     Id = x.Id,
-                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name },
+                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name, Order = x.Game.Order },
                     Name = x.Name,
                     Link = x.Link,
                     Worlds = x.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
@@ -35,7 +35,7 @@ namespace WayfinderProjectAPI.Data
             return new SceneDto
             {
                 Id = scene.Id,
-                Game = new GameDto { Id = scene.Game.Id, Name = scene.Game.Name },
+                Game = new GameDto { Id = scene.Game.Id, Name = scene.Game.Name, Order = scene.Game.Order },
                 Name = scene.Name,
                 Link = scene.Link,
                 Worlds = scene.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
@@ -74,7 +74,7 @@ namespace WayfinderProjectAPI.Data
                     Link = x.Link,
                     ReleaseDate = x.ReleaseDate,
                     AdditionalLink = x.AdditionalLink,
-                    Games = x.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Games = x.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name, Order = y.Order }).ToList(),
                     Participants = x.Participants.Select(y => new PersonDto { Id = y.Id, Name = y.Name, Description = y.Description, Link = y.Link }).ToList(),
                     Provider = new ProviderDto { Id = x.Provider.Id, Name = x.Provider.Name, Description = x.Provider.Description, Link = x.Provider.Link },
                     Translator = new PersonDto { Id = x.Translator.Id, Name = x.Translator.Name, Description = x.Translator.Description, Link = x.Translator.Link }
@@ -90,7 +90,7 @@ namespace WayfinderProjectAPI.Data
                 Link = interview.Link,
                 ReleaseDate = interview.ReleaseDate,
                 AdditionalLink = interview.AdditionalLink,
-                Games = interview.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name }).ToList(),
+                Games = interview.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name, Order = y.Order }).ToList(),
                 Participants = interview.Participants.Select(y => new PersonDto { Id = y.Id, Name = y.Name, Description = y.Description, Link = y.Link }).ToList(),
                 Provider = new ProviderDto { Id = interview.Provider.Id, Name = interview.Provider.Name, Description = interview.Provider.Description, Link = interview.Provider.Link },
                 Translator = new PersonDto { Id = interview.Translator.Id, Name = interview.Translator.Name, Description = interview.Translator.Description, Link = interview.Translator.Link }
@@ -130,7 +130,7 @@ namespace WayfinderProjectAPI.Data
                     Title = x.Title,
                     Description = x.Description,
                     AdditionalInformation = x.AdditionalInformation,
-                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name },
+                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name, Order = x.Game.Order },
                     Characters = x.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
                     Worlds = x.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
                     Category = x.Category
@@ -142,7 +142,7 @@ namespace WayfinderProjectAPI.Data
             return new JournalEntryDto
             {
                 Id = entry.Id,
-                Game = new GameDto { Id = entry.Game.Id, Name = entry.Game.Name },
+                Game = new GameDto { Id = entry.Game.Id, Name = entry.Game.Name, Order = entry.Game.Order },
                 Title = entry.Title,
                 Description = entry.Description,
                 Worlds = entry.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
@@ -163,7 +163,7 @@ namespace WayfinderProjectAPI.Data
                     Name = x.Name,
                     Category = x.Category,
                     UnlockConditionDescription = x.UnlockConditionDescription,
-                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name },
+                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name, Order = x.Game.Order },
                     RecipeMaterials = x.RecipeMaterials.Select(y => new RecipeMaterialDto
                     {
                         Id = y.Id,
@@ -177,7 +177,7 @@ namespace WayfinderProjectAPI.Data
                             Currency = y.Inventory.Currency,
                             Description = y.Inventory.Description,
                             AdditionalInformation = y.Inventory.AdditionalInformation,
-                            Game = new GameDto { Id = y.Inventory.Game.Id, Name = y.Inventory.Game.Name },
+                            Game = new GameDto { Id = y.Inventory.Game.Id, Name = y.Inventory.Game.Name, Order = y.Inventory.Game.Order },
                             EnemyDrops = y.Inventory.EnemyDrops.Select(z => new EnemyDropDto
                             {
                                 Id = z.Id,
@@ -186,7 +186,7 @@ namespace WayfinderProjectAPI.Data
                                 CharacterLocation = new CharacterLocationDto
                                 {
                                     Id = z.CharacterLocation.Id,
-                                    Game = new GameDto { Id = z.CharacterLocation.Game.Id, Name = z.CharacterLocation.Game.Name },
+                                    Game = new GameDto { Id = z.CharacterLocation.Game.Id, Name = z.CharacterLocation.Game.Name, Order = z.CharacterLocation.Game.Order },
                                     Character = new CharacterDto { Id = z.CharacterLocation.Character.Id, Name = z.CharacterLocation.Character.Name },
                                     World = new WorldDto { Id = z.CharacterLocation.World.Id, Name = z.CharacterLocation.World.Name },
                                     Areas = z.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
@@ -205,7 +205,7 @@ namespace WayfinderProjectAPI.Data
                 Name = recipe.Name,
                 Category = recipe.Category,
                 UnlockConditionDescription = recipe.UnlockConditionDescription,
-                Game = new GameDto { Id = recipe.Game.Id, Name = recipe.Game.Name },
+                Game = new GameDto { Id = recipe.Game.Id, Name = recipe.Game.Name, Order = recipe.Game.Order },
                 RecipeMaterials = recipe.RecipeMaterials.Select(x => new RecipeMaterialDto
                 {
                     Id = x.Id,
@@ -219,7 +219,7 @@ namespace WayfinderProjectAPI.Data
                         Currency = x.Inventory.Currency,
                         Description = x.Inventory.Description,
                         AdditionalInformation = x.Inventory.AdditionalInformation,
-                        Game = new GameDto { Id = x.Inventory.Game.Id, Name = x.Inventory.Game.Name },
+                        Game = new GameDto { Id = x.Inventory.Game.Id, Name = x.Inventory.Game.Name, Order = x.Inventory.Game.Order },
                         EnemyDrops = x.Inventory.EnemyDrops.Select(y => new EnemyDropDto
                         {
                             Id = y.Id,
@@ -228,7 +228,7 @@ namespace WayfinderProjectAPI.Data
                             CharacterLocation = new CharacterLocationDto
                             {
                                 Id = y.CharacterLocation.Id,
-                                Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name },
+                                Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name, Order = y.CharacterLocation.Game.Order },
                                 Character = new CharacterDto { Id = y.CharacterLocation.Character.Id, Name = y.CharacterLocation.Character.Name },
                                 World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
                                 Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
@@ -251,7 +251,7 @@ namespace WayfinderProjectAPI.Data
                     Currency = x.Currency,
                     Description = x.Description,
                     AdditionalInformation = x.AdditionalInformation,
-                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name },
+                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name, Order = x.Game.Order },
                     EnemyDrops = x.EnemyDrops.Select(y => new EnemyDropDto
                     {
                         Id = y.Id,
@@ -260,7 +260,7 @@ namespace WayfinderProjectAPI.Data
                         CharacterLocation = new CharacterLocationDto
                         {
                             Id = y.CharacterLocation.Id,
-                            Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name },
+                            Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name, Order = y.CharacterLocation.Game.Order },
                             Character = new CharacterDto { Id = y.CharacterLocation.Character.Id, Name = y.CharacterLocation.Character.Name },
                             World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
                             Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
@@ -274,7 +274,7 @@ namespace WayfinderProjectAPI.Data
             return new InventoryDto
             {
                 Id = inventory.Id,
-                Game = new GameDto { Id = inventory.Game.Id, Name = inventory.Game.Name },
+                Game = new GameDto { Id = inventory.Game.Id, Name = inventory.Game.Name, Order = inventory.Game.Order },
                 Name = inventory.Name,
                 Description = inventory.Description,
                 Cost = inventory.Cost,
@@ -289,7 +289,7 @@ namespace WayfinderProjectAPI.Data
                     CharacterLocation = new CharacterLocationDto
                     {
                         Id = y.CharacterLocation.Id,
-                        Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name },
+                        Game = new GameDto { Id = y.CharacterLocation.Game.Id, Name = y.CharacterLocation.Game.Name, Order = y.CharacterLocation.Game.Order },
                         Character = new CharacterDto { Id = y.CharacterLocation.Character.Id, Name = y.CharacterLocation.Character.Name },
                         World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
                         Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()

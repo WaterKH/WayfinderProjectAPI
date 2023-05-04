@@ -10,11 +10,6 @@
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Areas\Identity\Pages\Account\LogOut.cshtml~RF29d3e4b.TMP" />
-    <None Remove="Data\DTOs\MemoryArchive\ProviderDto.cs~RF4ffe26.TMP" />
-  </ItemGroup>
-
   
   <ItemGroup>
     <PackageReference Include="AspNet.Security.OAuth.Discord" Version="7.0.0" />
