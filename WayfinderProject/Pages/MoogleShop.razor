@@ -1900,7 +1900,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (allowSearch)
         {
             this.RecipesAvailable = this.MSRecipeDtos.Select(y => y.Name).Except(this.RecipesSelected).Distinct().ToList();
-            this.RecipeGamesAvailable = this.MSRecipeDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.RecipeGamesSelected).Distinct().ToList();
+            this.RecipeGamesAvailable = this.MSRecipeDtos.Select(x => x.Game).OrderBy(x => x.Order).Select(x => x.Name).Except(this.RecipeGamesSelected).Distinct().ToList();
             this.RecipeCategoriesAvailable = this.MSRecipeDtos.Select(x => x.Category).Except(this.RecipeCategoriesSelected).Distinct().ToList();
             this.RecipeMaterialsAvailable = this.MSRecipeDtos.SelectMany(x => x.RecipeMaterials).Select(x => x.Inventory.Name).Except(this.RecipeMaterialsSelected).Distinct().ToList();
         }
@@ -1922,7 +1922,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (allowSearch)
         {
             this.InventoryItemsAvailable = this.MSInventoryItemDtos.Select(y => y.Name).Except(this.InventoryItemsSelected).Distinct().ToList();
-            this.InventoryItemGamesAvailable = this.MSInventoryItemDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryItemGamesSelected).Distinct().ToList();
+            this.InventoryItemGamesAvailable = this.MSInventoryItemDtos.Select(x => x.Game).OrderBy(x => x.Order).Select(x => x.Name).Except(this.InventoryItemGamesSelected).Distinct().ToList();
             //this.InventoryItemCategoriesAvailable = this.MSInventoryItemDtos.Select(x => x.Category).Except(this.InventoryItemCategoriesSelected).Distinct().ToList();
             this.InventoryItemEnemiesAvailable = this.MSInventoryItemDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryItemEnemiesSelected).Distinct().ToList();
             this.InventoryItemWorldsAvailable = this.MSInventoryItemDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryItemWorldsSelected).Distinct().ToList();
@@ -1950,7 +1950,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (allowSearch)
         {
             this.InventoryWeaponsAvailable = this.MSInventoryWeaponDtos.Select(y => y.Name).Except(this.InventoryWeaponsSelected).Distinct().ToList();
-            this.InventoryWeaponGamesAvailable = this.MSInventoryWeaponDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryWeaponGamesSelected).Distinct().ToList();
+            this.InventoryWeaponGamesAvailable = this.MSInventoryWeaponDtos.Select(x => x.Game).OrderBy(x => x.Order).Select(x => x.Name).Except(this.InventoryWeaponGamesSelected).Distinct().ToList();
             //this.InventoryWeaponCategoriesAvailable = this.MSInventoryWeaponDtos.Select(x => x.Category).Except(this.InventoryWeaponCategoriesSelected).Distinct().ToList();
             this.InventoryWeaponEnemiesAvailable = this.MSInventoryWeaponDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryWeaponEnemiesSelected).Distinct().ToList();
             this.InventoryWeaponWorldsAvailable = this.MSInventoryWeaponDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryWeaponWorldsSelected).Distinct().ToList();
@@ -1978,7 +1978,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (allowSearch)
         {
             this.InventoryAccessoryArmorsAvailable = this.MSInventoryAccessoryArmorDtos.Select(y => y.Name).Except(this.InventoryAccessoryArmorsSelected).Distinct().ToList();
-            this.InventoryAccessoryArmorGamesAvailable = this.MSInventoryAccessoryArmorDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryAccessoryArmorGamesSelected).Distinct().ToList();
+            this.InventoryAccessoryArmorGamesAvailable = this.MSInventoryAccessoryArmorDtos.Select(x => x.Game).OrderBy(x => x.Order).Select(x => x.Name).Except(this.InventoryAccessoryArmorGamesSelected).Distinct().ToList();
             this.InventoryAccessoryArmorEnemiesAvailable = this.MSInventoryAccessoryArmorDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryAccessoryArmorEnemiesSelected).Distinct().ToList();
             this.InventoryAccessoryArmorWorldsAvailable = this.MSInventoryAccessoryArmorDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryAccessoryArmorWorldsSelected).Distinct().ToList();
             this.InventoryAccessoryArmorAreasAvailable = this.MSInventoryAccessoryArmorDtos.SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Except(this.InventoryAccessoryArmorAreasSelected).Distinct().ToList();
@@ -2003,7 +2003,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         if (allowSearch)
         {
             this.InventoryMaterialsAvailable = this.MSInventoryMaterialDtos.Select(y => y.Name).Except(this.InventoryMaterialsSelected).Distinct().ToList();
-            this.InventoryMaterialGamesAvailable = this.MSInventoryMaterialDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.InventoryMaterialGamesSelected).Distinct().ToList();
+            this.InventoryMaterialGamesAvailable = this.MSInventoryMaterialDtos.Select(x => x.Game).OrderBy(x => x.Order).Select(x => x.Name).Except(this.InventoryMaterialGamesSelected).Distinct().ToList();
             this.InventoryMaterialEnemiesAvailable = this.MSInventoryMaterialDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Except(this.InventoryMaterialEnemiesSelected).Distinct().ToList();
             this.InventoryMaterialWorldsAvailable = this.MSInventoryMaterialDtos.SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Except(this.InventoryMaterialWorldsSelected).Distinct().ToList();
             this.InventoryMaterialAreasAvailable = this.MSInventoryMaterialDtos.SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Except(this.InventoryMaterialAreasSelected).Distinct().ToList();
@@ -2064,7 +2064,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task ResetRecipeOptions()
     {
         this.Recipes = await context.Recipes.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
-        this.RecipeGames = await context.Recipes.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.RecipeGames = (await context.Recipes.AsNoTracking().OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
         this.RecipeCategories = await context.Recipes.AsNoTracking().Select(x => x.Category).Distinct().ToListAsync();
         this.RecipeMaterials = await context.Recipes.AsNoTracking().SelectMany(x => x.RecipeMaterials).Select(x => x.Inventory.Name).Distinct().ToListAsync();
 
@@ -2098,7 +2098,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task ResetInventoryItemOptions()
     {
         this.InventoryItems = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Name).Distinct().ToListAsync();
-        this.InventoryItemGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.InventoryItemGames = (await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
         //this.InventoryItemCategories = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").Select(x => x.Category).Distinct().ToListAsync();
         this.InventoryItemEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
         this.InventoryItemWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
@@ -2141,7 +2141,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task ResetInventoryWeaponOptions()
     {
         this.InventoryWeapons = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").Select(x => x.Name).Distinct().ToListAsync();
-        this.InventoryWeaponGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.InventoryWeaponGames = (await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
         this.InventoryWeaponEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
         this.InventoryWeaponWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
         this.InventoryWeaponAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
@@ -2183,7 +2183,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task ResetInventoryAccessoryArmorOptions()
     {
         this.InventoryAccessoryArmors = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").Select(x => x.Name).Distinct().ToListAsync();
-        this.InventoryAccessoryArmorGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.InventoryAccessoryArmorGames = (await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
         this.InventoryAccessoryArmorEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
         this.InventoryAccessoryArmorWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
         this.InventoryAccessoryArmorAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
@@ -2225,7 +2225,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
     private async Task ResetInventoryMaterialOptions()
     {
         this.InventoryMaterials = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").Select(x => x.Name).Distinct().ToListAsync();
-        this.InventoryMaterialGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+        this.InventoryMaterialGames = (await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
         this.InventoryMaterialEnemies = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.Character.Name).Distinct().ToListAsync();
         this.InventoryMaterialWorlds = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).Select(x => x.CharacterLocation.World.Name).Distinct().ToListAsync();
         this.InventoryMaterialAreas = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").SelectMany(x => x.EnemyDrops).SelectMany(x => x.CharacterLocation.Areas).Select(x => x.Name).Distinct().ToListAsync();
@@ -2312,8 +2312,8 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (clearString == "Games")
         {
-            this.RecipeGames = await context.Recipes.AsNoTracking().OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
-            this.RecipeGames.Sort();
+            this.RecipeGames = await context.Recipes.AsNoTracking().OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
+            //this.RecipeGames.Sort();
 
             this.RecipeGamesAvailable = this.RecipeGames;
             this.RecipeGamesSelected = new List<string>();
@@ -2371,7 +2371,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (clearString == "Games")
         {
-            this.InventoryItemGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.InventoryItemGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Item").OrderBy(x => x.Id).OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
 
             this.InventoryItemGamesAvailable = this.InventoryItemGames;
             this.InventoryItemGamesSelected = new List<string>();
@@ -2443,7 +2443,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (clearString == "Games")
         {
-            this.InventoryWeaponGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.InventoryWeaponGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Keyblade" || x.Category == "Staff" || x.Category == "Shield").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
 
             this.InventoryWeaponGamesAvailable = this.InventoryWeaponGames;
             this.InventoryWeaponGamesSelected = new List<string>();
@@ -2515,7 +2515,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (clearString == "Games")
         {
-            this.InventoryAccessoryArmorGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.InventoryAccessoryArmorGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Accessory" || x.Category == "Armor").OrderBy(x => x.Game.Order).Select(x => x.Name).Distinct().ToListAsync();
 
             this.InventoryAccessoryArmorGamesAvailable = this.InventoryAccessoryArmorGames;
             this.InventoryAccessoryArmorGamesSelected = new List<string>();
@@ -2587,7 +2587,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         }
         else if (clearString == "Games")
         {
-            this.InventoryMaterialGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").OrderBy(x => x.Id).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.InventoryMaterialGames = await context.Inventory.AsNoTracking().Where(x => x.Category == "Synthesis Material").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
 
             this.InventoryMaterialGamesAvailable = this.InventoryMaterialGames;
             this.InventoryMaterialGamesSelected = new List<string>();
@@ -2977,7 +2977,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.RecipeGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            this.RecipeGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Order).Select(x => x.Name).ToList();
 
             if (this.RecipeGamesSearch != null)
             {
@@ -3045,7 +3045,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.InventoryItemGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            this.InventoryItemGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Order).Select(x => x.Name).ToList();
 
             if (this.InventoryItemGamesSearch != null)
             {
@@ -3129,7 +3129,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.InventoryWeaponGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            this.InventoryWeaponGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Order).Select(x => x.Name).ToList();
 
             if (this.InventoryWeaponGamesSearch != null)
             {
@@ -3213,7 +3213,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.InventoryAccessoryArmorGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            this.InventoryAccessoryArmorGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Order).Select(x => x.Name).ToList();
 
             if (this.InventoryAccessoryArmorGamesSearch != null)
             {
@@ -3297,7 +3297,7 @@ else if (this.CurrentCategory == "Synthesis Materials" && this.MSInventoryMateri
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.InventoryMaterialGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            this.InventoryMaterialGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Order).Select(x => x.Name).ToList();
 
             if (this.InventoryMaterialGamesSearch != null)
             {

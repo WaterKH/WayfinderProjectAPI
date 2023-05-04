@@ -1175,7 +1175,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             this.SceneAreasAvailable = this.SceneDtos.SelectMany(x => x.Areas).Select(y => y.Name).Except(this.SceneAreasSelected).Distinct().ToList();
             this.SceneCharactersAvailable = this.SceneDtos.SelectMany(x => x.Characters).Select(y => y.Name).Except(this.SceneCharactersSelected).Distinct().ToList();
-            this.SceneGamesAvailable = this.SceneDtos.Select(x => x.Game).OrderBy(x => x.Id).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
+            this.SceneGamesAvailable = this.SceneDtos.Select(x => x.Game).OrderBy(x => x.Order).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
             this.SceneMusicAvailable = this.SceneDtos.SelectMany(x => x.Music).Select(y => y.Name).Except(this.SceneMusicSelected).Distinct().ToList();
             this.ScenesAvailable = this.SceneDtos.Select(x => x.Name).Except(this.ScenesSelected).Distinct().ToList();
             this.SceneWorldsAvailable = this.SceneDtos.SelectMany(x => x.Worlds).Select(y => y.Name).Except(this.SceneWorldsSelected).Distinct().ToList();
@@ -1203,7 +1203,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (allowSearch)
         {
-            this.InterviewGamesAvailable = this.InterviewDtos.SelectMany(x => x.Games).OrderBy(x => x.Id).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
+            this.InterviewGamesAvailable = this.InterviewDtos.SelectMany(x => x.Games).OrderBy(x => x.Order).Select(x => x.Name).Except(this.SceneGamesSelected).Distinct().ToList();
             this.InterviewsAvailable = this.InterviewDtos.Select(x => x.Name).Except(this.InterviewsSelected).Distinct().ToList();
             this.InterviewParticipantsAvailable = this.InterviewDtos.SelectMany(x => x.Participants).Select(y => y.Name).Except(this.InterviewParticipantsSelected).Distinct().ToList();
             this.InterviewProvidersAvailable = this.InterviewDtos.Select(y => y.Provider.Name).Except(this.InterviewProvidersSelected).Distinct().ToList();
@@ -1258,7 +1258,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         this.SceneAreas = await context.Areas.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.SceneCharacters = await context.Characters.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).Distinct().ToListAsync();
-        this.SceneGames = await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Id).Select(x => x.Name).Distinct().ToListAsync();
+        this.SceneGames = (await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Order).ToListAsync()).Select(x => x.Name).Distinct().ToList();
         this.SceneMusic = await context.Music.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
         this.SceneWorlds = await context.Worlds.AsNoTracking().Where(x => x.Scenes.Any()).Select(x => x.Name).Distinct().ToListAsync();
@@ -1315,7 +1315,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     private async Task ResetInterviewOptions()
     {
         this.Interviews = await context.Interviews.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
-        this.InterviewGames = await context.Interviews.AsNoTracking().SelectMany(x => x.Games).Select(x => x.Name).Distinct().ToListAsync();
+        this.InterviewGames = (await context.Interviews.AsNoTracking().SelectMany(x => x.Games).OrderBy(x => x.Order).ToListAsync()).Select(x => x.Name).Distinct().ToList();
         this.InterviewParticipants = await context.Interviews.AsNoTracking().SelectMany(x => x.Participants).Select(x => x.Name).Distinct().ToListAsync();
         this.InterviewProviders = await context.Interviews.AsNoTracking().Select(x => x.Provider.Name).Distinct().ToListAsync();
         this.InterviewTranslators = await context.Interviews.AsNoTracking().Select(x => x.Translator.Name).Distinct().ToListAsync();
@@ -1380,7 +1380,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (clearString == "Games")
         {
-            this.SceneGames = await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Id).Select(x => x.Name).ToListAsync();
+            this.SceneGames = await context.Games.AsNoTracking().Where(x => x.Scenes.Any()).OrderBy(x => x.Order).Select(x => x.Name).ToListAsync();
 
             this.SceneGamesAvailable = this.SceneGames;
             this.SceneGamesSelected = new List<string>();
@@ -1483,7 +1483,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
         else if (clearString == "Games")
         {
-            this.InterviewGames = await context.Interviews.AsNoTracking().SelectMany(x => x.Games).Select(x => x.Name).ToListAsync();
+            this.InterviewGames = await context.Interviews.AsNoTracking().SelectMany(x => x.Games).OrderBy(x => x.Order).Select(x => x.Name).ToListAsync();
 
             this.InterviewGamesAvailable = this.InterviewGames;
             this.InterviewGamesSelected = new List<string>();
@@ -1766,7 +1766,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.SceneGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            this.SceneGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Order).Select(x => x.Name).ToList();
 
             if (this.SceneGamesSearch != null)
             {
@@ -1852,7 +1852,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var gameIds = this.GameQuery.Select(x => int.Parse(x));
 
-            this.InterviewGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Id).Select(x => x.Name).ToList();
+            this.InterviewGamesSelected = this.context.Games.AsNoTracking().Where(x => gameIds.Contains(x.Id)).OrderBy(x => x.Order).Select(x => x.Name).ToList();
 
             if (this.InterviewGamesSearch != null)
             {
