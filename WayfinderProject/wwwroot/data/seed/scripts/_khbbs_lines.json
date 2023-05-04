@@ -4213,7 +4213,41 @@
         "Line": "Over there!"
       }
     ],
-    "Brought Together": [
+    "Brought Together (Terra)": [
+      {
+        "Order": 0,
+        "Character": "Terra",
+        "Line": "Ven!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aqua",
+        "Line": "Ven!"
+      },
+      {
+        "Order": 2,
+        "Character": "Ventus",
+        "Line": "Terra! Aqua!"
+      }
+    ],
+    "Brought Together (Aqua)": [
+      {
+        "Order": 0,
+        "Character": "Terra",
+        "Line": "Ven!"
+      },
+      {
+        "Order": 1,
+        "Character": "Aqua",
+        "Line": "Ven!"
+      },
+      {
+        "Order": 2,
+        "Character": "Ventus",
+        "Line": "Terra! Aqua!"
+      }
+    ],
+    "Brought Together (Ventus)": [
       {
         "Order": 0,
         "Character": "Terra",
