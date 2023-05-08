@@ -19836,67 +19836,65 @@
       {
         "Order": 1,
         "Character": "Sora",
-        "Line": "C'mon! Eeyore, Pooh. Are you okay? Gosh, that's too bad, Eeyore. After all that"
-      }
-    ],
-    "work...": [
-      {
-        "Order": 0,
-        "Character": "Eeyore",
-        "Line": "No matter. Most likely would have fallen down anyway."
-      },
-      {
-        "Order": 1,
-        "Character": "Piglet",
-        "Line": "Well, I'll help you fix your house, Eeyore."
+        "Line": "C'mon! Eeyore, Pooh. Are you okay? Gosh, that's too bad, Eeyore. After all that work..."
       },
       {
         "Order": 2,
         "Character": "Eeyore",
-        "Line": "Oh, hello there, Piglet. Thanks for offerin'. Wouldn't want to spoil your fun day, though."
+        "Line": "No matter. Most likely would have fallen down anyway."
       },
       {
         "Order": 3,
-        "Character": "Pooh",
-        "Line": "Well, hello, Piglet. And hello, Somebody-I-Don't-Know."
+        "Character": "Piglet",
+        "Line": "Well, I'll help you fix your house, Eeyore."
       },
       {
         "Order": 4,
-        "Character": "Sora",
-        "Line": "Pooh, this is Eeyore. You know Eeyore, don't you?"
+        "Character": "Eeyore",
+        "Line": "Oh, hello there, Piglet. Thanks for offerin'. Wouldn't want to spoil your fun day, though."
       },
       {
         "Order": 5,
         "Character": "Pooh",
-        "Line": "Um, I do?"
+        "Line": "Well, hello, Piglet. And hello, Somebody-I-Don't-Know."
       },
       {
         "Order": 6,
         "Character": "Sora",
-        "Line": "What could've happened to him?"
+        "Line": "Pooh, this is Eeyore. You know Eeyore, don't you?"
       },
       {
         "Order": 7,
-        "Character": "Piglet",
-        "Line": "Oh, I have an idea! Maybe Pooh's tummy is so rumbly that it's making him forget. If we bring him some honey, he's sure to remember!"
+        "Character": "Pooh",
+        "Line": "Um, I do?"
       },
       {
         "Order": 8,
         "Character": "Sora",
-        "Line": "Well... um... I guess it's worth a try."
+        "Line": "What could've happened to him?"
       },
       {
         "Order": 9,
-        "Character": "Eeyore",
-        "Line": "Might work. But prob'ly not."
+        "Character": "Piglet",
+        "Line": "Oh, I have an idea! Maybe Pooh's tummy is so rumbly that it's making him forget. If we bring him some honey, he's sure to remember!"
       },
       {
         "Order": 10,
         "Character": "Sora",
-        "Line": "First we gotta find some honey."
+        "Line": "Well... um... I guess it's worth a try."
       },
       {
         "Order": 11,
+        "Character": "Eeyore",
+        "Line": "Might work. But prob'ly not."
+      },
+      {
+        "Order": 12,
+        "Character": "Sora",
+        "Line": "First we gotta find some honey."
+      },
+      {
+        "Order": 13,
         "Character": "Eeyore",
         "Line": "If honey's what you're looking for, I know just the place. Follow me."
       }
