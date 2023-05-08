@@ -5033,7 +5033,7 @@
         "Name": "Santa's Home",
         "Link": "https://www.youtube.com/watch?v=L-Y8mZ6Ur8o&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=294",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Sandy Claws" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Santa Claus" ],
         "Areas": [ "Santa's House" ],
         "Music": [ "Laughter and Merriment" ]
       },
@@ -5041,7 +5041,7 @@
         "Name": "The Three Pranksters",
         "Link": "https://www.youtube.com/watch?v=zPbtckwLJ60&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=295",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Sandy Claws", "Lock", "Shock", "Barrel", "Maleficent" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Santa Claus", "Lock", "Shock", "Barrel", "Maleficent" ],
         "Areas": [ "Shipping and Receiving" ],
         "Music": [ ":None:" ]
       },
@@ -5073,7 +5073,7 @@
         "Name": "Maleficent and Oogie",
         "Link": "https://www.youtube.com/watch?v=5JDM4HnB10c&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=300",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sandy Claws", "Sally", "Maleficent", "Oogie Boogie" ],
+        "Characters": [ "Santa Claus", "Sally", "Maleficent", "Oogie Boogie" ],
         "Areas": [ "Hinterlands" ],
         "Music": [ "Hesitation" ]
       },
@@ -5081,7 +5081,7 @@
         "Name": "Jolly Ol' Oogie",
         "Link": "https://www.youtube.com/watch?v=k8GGxtahCjU&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=302",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Oogie Boogie", "Sandy Claws", "Maleficent" ],
+        "Characters": [ "Oogie Boogie", "Santa Claus", "Maleficent" ],
         "Areas": [ "Shipping and Receiving" ],
         "Music": [ ":None:" ]
       },
@@ -5097,7 +5097,7 @@
         "Name": "Save Santa!",
         "Link": "https://www.youtube.com/watch?v=5CG7ax3fGFo&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=304",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Oogie Boogie", "Sally", "Sandy Claws" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Oogie Boogie", "Sally", "Santa Claus" ],
         "Areas": [ "Shipping and Receiving" ],
         "Music": [ "The Encounter" ]
       },
@@ -5113,7 +5113,7 @@
         "Name": "Everyone Has a Job to Do",
         "Link": "https://www.youtube.com/watch?v=WHNyY53Ub7c&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=306",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Sally", "Sandy Claws", "The Mayor" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Sally", "Santa Claus", "The Mayor" ],
         "Areas": [ "Candy Cane Lane" ],
         "Music": [ "What a Surprise?!" ]
       },
@@ -6689,7 +6689,7 @@
         "Name": "The Stolen Presents",
         "Link": "https://www.youtube.com/watch?v=t3uyDjEWpKE&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=545",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sandy Claws", "Sora", "Jack Skellington", "Donald", "Goofy" ],
+        "Characters": [ "Santa Claus", "Sora", "Jack Skellington", "Donald", "Goofy" ],
         "Areas": [ "Santa's House" ],
         "Music": [ ":None:" ]
       },
@@ -6729,7 +6729,7 @@
         "Name": "Where to Put the Presents",
         "Link": "https://www.youtube.com/watch?v=pzqNd4tCvI4&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=552",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Sandy Claws", "Jack Skellington" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Santa Claus", "Jack Skellington" ],
         "Areas": [ "Santa's House" ],
         "Music": [ "What a Surprise?!" ]
       },
@@ -6737,7 +6737,7 @@
         "Name": "Jack's Wonderful Idea",
         "Link": "https://www.youtube.com/watch?v=clRLo3rDXNU&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=553",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sandy Claws", "Jack Skellington", "Sora", "Donald", "Goofy" ],
+        "Characters": [ "Santa Claus", "Jack Skellington", "Sora", "Donald", "Goofy" ],
         "Areas": [ "Candy Cane Lane" ],
         "Music": [ "What a Surprise?!" ]
       },
@@ -6753,7 +6753,7 @@
         "Name": "The Experiment",
         "Link": "https://www.youtube.com/watch?v=LW9nUtbWCYA&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=555",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "The Experiment", "Reindeer", "Sandy Claws" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "The Experiment", "Reindeer", "Santa Claus" ],
         "Areas": [ "Christmas Tree Plaza" ],
         "Music": [ "The Corrupted" ]
       },
@@ -6761,7 +6761,7 @@
         "Name": "Merry Christmas!",
         "Link": "https://www.youtube.com/watch?v=PpthWPz3Jdg&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=556",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Dr. Finkelstein", "Sora", "Donald", "Goofy", "Sally", "Jack Skellington", "Reindeer", "Sandy Claws", "Kairi" ],
+        "Characters": [ "Dr. Finkelstein", "Sora", "Donald", "Goofy", "Sally", "Jack Skellington", "Reindeer", "Santa Claus", "Kairi" ],
         "Areas": [ "Halloween Town Square" ],
         "Music": [ "Kairi" ]
       },

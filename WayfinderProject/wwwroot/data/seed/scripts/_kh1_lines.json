@@ -3305,82 +3305,80 @@
       {
         "Order": 0,
         "Character": "Jack Skellington",
-        "Line": "I don't understand. Maybe the guidance system was damaged in "
-      }
-    ],
-    "the explosion.": [
+        "Line": "I don't understand. Maybe the guidance system was damaged in the explosion."
+      },
       {
-        "Order": 0,
+        "Order": 1,
         "Character": "Dr. Finkelstein",
         "Line": "Nonsense. My devices are always perfect!"
       },
       {
-        "Order": 1,
+        "Order": 2,
         "Character": "Jack Skellington",
         "Line": "Oh, I've got it! Why, of course! The Heartless need a heart! Doctor, do you think we can add a heart to that device?"
       },
       {
-        "Order": 2,
+        "Order": 3,
         "Character": "Dr. Finkelstein",
         "Line": "Certainly. A heart's not all that complicated. Let's get to work."
       },
       {
-        "Order": 3,
+        "Order": 4,
         "Character": "Jack Skellington",
         "Line": "To make a heart, first take a container with a lock..."
       },
       {
-        "Order": 4,
+        "Order": 5,
         "Character": "Dr. Finkelstein",
         "Line": "We need the key to this thing first!"
       },
       {
-        "Order": 5,
+        "Order": 6,
         "Character": "Jack Skellington",
         "Line": "My! That was amazing! Uh, and you are..."
       },
       {
-        "Order": 6,
+        "Order": 7,
         "Character": "Sora",
         "Line": "Sora."
       },
       {
-        "Order": 7,
+        "Order": 8,
         "Character": "Jack Skellington",
         "Line": "Well done, Sora! I'd like you to be a part of this year's Halloween."
       },
       {
-        "Order": 8,
+        "Order": 9,
         "Character": "Sora",
         "Line": "What's this Heartless doing here?"
       },
       {
-        "Order": 9,
+        "Order": 10,
         "Character": "Jack Skellington",
         "Line": "Oh, the Heartless came to town just recently. What's frustrating is I can't get them to dance with me. So the doctor and I are trying to improve the guidance system. He's quite a genius! Okay, Doctor, let's continue. The ingredients for a heart- Pulse. Emotion."
       },
       {
-        "Order": 10,
+        "Order": 11,
         "Character": "Dr. Finkelstein",
         "Line": "Terror."
       },
       {
-        "Order": 11,
+        "Order": 12,
         "Character": "Jack Skellington",
         "Line": "Fear. Hope and despair. Mix them all together, and we have a heart! It failed! "
       },
       {
-        "Order": 12,
+        "Order": 13,
         "Character": "Dr. Finkelstein",
         "Line": "Maybe we're missing some ingredients. Let's try adding memory. Sally! Sally! Good-for-nothing girl! Don't know why I bothered creating her! Sally's got the memory we need. See if you can track her down."
       },
       {
-        "Order": 13,
+        "Order": 14,
         "Character": "Jack Skellington",
         "Line": "No problem. Sora, would you like to come along?"
       },
       {
-        "Order": 14,
+        "Order": 15,
         "Character": "Sora",
         "Line": "Sure."
       }

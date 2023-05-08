@@ -1779,14 +1779,14 @@
       },
       {
         "Title": "Donald Duck V",
-        "Characters": [ "Donald", "Sora", "Mickey", "Sandy Claws" ],
+        "Characters": [ "Donald", "Sora", "Mickey", "Santa Claus" ],
         "Worlds": [ "Christmas Town" ],
         "Description": "A Magician who serves His Majesty. He and Sora join together to search for the missing King. At first, he was reluctant to serve as Santa's bodyguard, but once he stepped foot in Christmas Town, he was more than willing to take on the role.",
         "AdditionalInformation": "The Wise Little Hen (1934)"
       },
       {
         "Title": "Donald Duck VI",
-        "Characters": [ "Donald", "Mickey", "Sandy Claws" ],
+        "Characters": [ "Donald", "Mickey", "Santa Claus" ],
         "Worlds": [ "Disney Castle" ],
         "Description": "The Royal Court Magician. He woke one morning and found a letter the King had left behind before he disappeared. That's when Donald left Disney Castle on this long journey. His one wish is to be reunited with the King and for them to return to Disney Castle together.",
         "AdditionalInformation": "The Wise Little Hen (1934)"
@@ -2136,7 +2136,7 @@
       },
       {
         "Title": "Jack Skellington I",
-        "Characters": [ "Jack Skellington", "Sora", "Sandy Claws" ],
+        "Characters": [ "Jack Skellington", "Sora", "Santa Claus" ],
         "Worlds": [ "Halloween Town", "Christmas Town" ],
         "Description": "The Pumpkin King. He loves scaring folks more than just about anything. When Sora and his friends first met Jack, he wanted to use the Heartless to spice up his frightening Halloween celebration. But things didn't work out quite like Jack planned. Now Jack's enchanted by Christmas. He's determined to give Santa a rest and show he can do a top-notch job running the big day.",
         "AdditionalInformation": "The Nightmare Before Christmas (1993)"
@@ -2144,7 +2144,7 @@
       {
         "Title": "Jack Skellington II",
         "CharacterName": "Jack Skellington",
-        "Characters": [ "Jack Skellington", "Sally", "Sandy Claws" ],
+        "Characters": [ "Jack Skellington", "Sally", "Santa Claus" ],
         "Worlds": [ "Halloween Town", "Christmas Town" ],
         "Description": "He loves to scare people silly - but when Jack discovered Christmas, he was captivated. He even thought he could improve it by adding his own special brand of fright. Jack wanted to deliver presents to the children of the world for Santa. Santa helped him realize that his talents were really meant for Halloween. But Jack still has the Santa suit Sally made for him!",
         "AdditionalInformation": "The Nightmare Before Christmas (1993)"
@@ -2719,7 +2719,7 @@
       },
       {
         "Title": "Santa Claus",
-        "Characters": [ "Sandy Claws", "Jack Skellington" ],
+        "Characters": [ "Santa Claus", "Jack Skellington" ],
         "Worlds": [ "Christmas Town" ],
         "Description": "Known to some as Father Christmas, Santa Claus makes children's dreams come true every year on December 25th, delivering presents in a sleigh drawn by flying reindeer. To get ready for Christmas, he depends on his list of this year's good little girls and boys. It seems our friend Jack Skellington is a bit confused. He thinks Santa's name is actually Sandy Claws.",
         "AdditionalInformation": "The Nightmare Before Christmas (1993)"
