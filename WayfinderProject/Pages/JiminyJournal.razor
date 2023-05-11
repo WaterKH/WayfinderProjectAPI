@@ -1668,7 +1668,8 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         this.StoryEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").Select(x => x.Title).Distinct().ToListAsync();
         this.StoryWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.StoryCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Story").Any()).Select(x => x.Name).Distinct().ToListAsync();
-        this.StoryGames = (await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
+        var t = (await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Story").OrderBy(x => x.Game.Order).ToListAsync());
+        this.StoryGames = t.Select(x => x.Game.Name).Distinct().ToList();
 
         this.StoryEntriesAvailable = this.StoryEntries;
         this.StoryWorldsAvailable = this.StoryWorlds;
@@ -1702,7 +1703,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         this.ReportEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").Select(x => x.Title).Distinct().ToListAsync();
         this.ReportWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.ReportCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Report").Any()).Select(x => x.Name).Distinct().ToListAsync();
-        this.ReportGames = (await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
+        this.ReportGames = (await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Report").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
 
         this.ReportEntriesAvailable = this.ReportEntries;
         this.ReportWorldsAvailable = this.ReportWorlds;
@@ -1737,7 +1738,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         this.CharacterEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").Select(x => x.Title).Distinct().ToListAsync();
         this.CharacterWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.CharacterCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Character").Any()).Select(x => x.Name).Distinct().ToListAsync();
-        this.CharacterGames = (await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
+        this.CharacterGames = (await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
 
         this.CharacterEntriesAvailable = this.CharacterEntries;
         this.CharacterWorldsAvailable = this.CharacterWorlds;
@@ -1772,7 +1773,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         this.EnemyEntries = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").Select(x => x.Title).Distinct().ToListAsync();
         this.EnemyWorlds = await context.Worlds.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
         this.EnemyCharacters = await context.Characters.AsNoTracking().Where(x => x.JournalEntries.Where(x => x.Category == "Enemy").Any()).Select(x => x.Name).Distinct().ToListAsync();
-        this.EnemyGames = (await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
+        this.EnemyGames = (await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Enemy").OrderBy(x => x.Game.Order).ToListAsync()).Select(x => x.Game.Name).Distinct().ToList();
 
         this.EnemyEntriesAvailable = this.EnemyEntries;
         this.EnemyWorldsAvailable = this.EnemyWorlds;
@@ -1882,7 +1883,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (clearString == "Games")
         {
-            this.StoryGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Story").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.StoryGames = await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Story").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
 
             this.StoryGamesAvailable = this.StoryGames;
             this.StoryGamesSelected = new List<string>();
@@ -1941,7 +1942,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (clearString == "Games")
         {
-            this.ReportGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Report").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.ReportGames = await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Report").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
 
             this.ReportGamesAvailable = this.ReportGames;
             this.ReportGamesSelected = new List<string>();
@@ -2000,7 +2001,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (clearString == "Games")
         {
-            this.CharacterGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.CharacterGames = await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Character").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
 
             this.CharacterGamesAvailable = this.CharacterGames;
             this.CharacterGamesSelected = new List<string>();
@@ -2059,7 +2060,7 @@ else if (this.CurrentCategory == "Enemies" && this.JJEnemyDtos.Count > 0)
         }
         else if (clearString == "Games")
         {
-            this.EnemyGames = await context.JournalEntries.AsNoTracking().Where(x => x.Category == "Enemy").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
+            this.EnemyGames = await context.JournalEntries.Include(x => x.Game).AsNoTracking().Where(x => x.Category == "Enemy").OrderBy(x => x.Game.Order).Select(x => x.Game.Name).Distinct().ToListAsync();
 
             this.EnemyGamesAvailable = this.EnemyGames;
             this.EnemyGamesSelected = new List<string>();
