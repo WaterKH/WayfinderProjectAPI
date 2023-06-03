@@ -556,7 +556,7 @@ namespace WayfinderProjectAPI.Data
                             {
                                 DropRate = drop.DropRate,
                                 AdditionalInformation = drop.AdditionalInformation,
-                                Inventory = tempItem,
+                                //Inventory = tempItem,
                                 CharacterLocation = characterLocation
                             };
 
