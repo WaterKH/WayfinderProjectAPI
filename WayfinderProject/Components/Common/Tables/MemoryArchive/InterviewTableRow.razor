@@ -135,7 +135,7 @@ else
 
 @code {
     [Parameter] public InterviewDto Interview { get; set; } = new InterviewDto();
-    [Parameter] public InterviewTable<InterviewDto>? MainTable { get; set; }
+    [Parameter] public WayfinderProject.Components.Common.Tables.MemoryArchive.InterviewTable<InterviewDto>? MainTable { get; set; }
     [Parameter] public bool LoggedIn { get; set; }
     [Parameter] public bool IsFavorite { get; set; }
     [Parameter] public bool IsProject { get; set; }

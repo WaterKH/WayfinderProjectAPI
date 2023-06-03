@@ -132,7 +132,7 @@ else
 
 @code {
     [Parameter] public SceneDto Scene { get; set; } = new SceneDto();
-    [Parameter] public SceneTable<SceneDto>? MainTable { get; set; }
+    [Parameter] public WayfinderProject.Components.Common.Tables.MemoryArchive.SceneTable<SceneDto>? MainTable { get; set; }
     [Parameter] public bool LoggedIn { get; set; }
     [Parameter] public bool ProjectView { get; set; }
     [Parameter] public bool IsFavorite { get; set; }

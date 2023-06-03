@@ -136,7 +136,7 @@ else
 
 @code {
     [Parameter] public JournalEntryDto JournalEntry { get; set; } = new JournalEntryDto();
-    [Parameter] public JournalEntryTable<JournalEntryDto>? MainTable { get; set; }
+    [Parameter] public WayfinderProject.Components.Common.Tables.JiminyJournal.JournalEntryTable<JournalEntryDto>? MainTable { get; set; }
     [Parameter] public bool LoggedIn { get; set; }
     [Parameter] public bool IsFavorite { get; set; }
     [Parameter] public bool IsProject { get; set; }

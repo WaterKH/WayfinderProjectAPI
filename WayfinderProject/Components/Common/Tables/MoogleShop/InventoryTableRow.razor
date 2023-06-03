@@ -152,7 +152,7 @@ else
 
 @code {
     [Parameter] public InventoryDto Inventory { get; set; } = new InventoryDto();
-    [Parameter] public InventoryTable<InventoryDto>? MainTable { get; set; }
+    [Parameter] public WayfinderProject.Components.Common.Tables.MoogleShop.InventoryTable<InventoryDto>? MainTable { get; set; }
     [Parameter] public bool LoggedIn { get; set; }
     [Parameter] public bool ProjectView { get; set; }
     [Parameter] public bool IsFavorite { get; set; }
