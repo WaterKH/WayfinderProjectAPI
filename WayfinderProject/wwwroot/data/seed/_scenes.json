@@ -86,7 +86,7 @@
         "Link": "https://www.youtube.com/watch?v=5Q66E3WFFUA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=13",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Goofy", "Donald", "Pluto", "Sora" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ "Where Is This?" ]
       },
       {
@@ -94,7 +94,7 @@
         "Link": "https://www.youtube.com/watch?v=nRZMNvAlfeU&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=14",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Travis the Blueshirt", "Soldier(s)", "Shadow(s)", "Leon", "Yuffie" ],
-        "Areas": [ "Second District", "First District" ],
+        "Areas": [ "2nd District", "1st District" ],
         "Music": [ "Night of Fate" ]
       },
       {
@@ -118,7 +118,7 @@
         "Link": "https://www.youtube.com/watch?v=p0xCxLDK8pM&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=17",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Yuffie", "Soldier(s)", "Leon", "Donald", "Aerith", "Sora", "Goofy", "Guard Armor" ],
-        "Areas": [ "Green Room", "Red Room", "Alleyway", "Third District" ],
+        "Areas": [ "Green Room", "Red Room", "Alleyway", "3rd District" ],
         "Music": [ "Night of Fate", "The Heartless Has Come", "Shrouding Dark Cloud" ]
       },
       {
@@ -126,7 +126,7 @@
         "Link": "https://www.youtube.com/watch?v=dhZYnzH4PGg&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=18",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Leon", "Yuffie" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -350,7 +350,7 @@
         "Link": "https://www.youtube.com/watch?v=iDDP-kLkKww&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=60",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Soldiers", "Donald", "Goofy", "Riku", "Shadow(s)" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -358,7 +358,7 @@
         "Link": "https://www.youtube.com/watch?v=FCeBWDFXcsY&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=62",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Maleficent", "Riku", "Sora", "Donald", "Goofy" ],
-        "Areas": [ "Third District", "Small House" ],
+        "Areas": [ "3rd District", "Small House" ],
         "Music": [ "Villains of a Sort" ]
       },
       {
@@ -366,7 +366,7 @@
         "Link": "https://www.youtube.com/watch?v=e_5KSG9q_to&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=64",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Guard Armor", "Sora", "Donald", "Goofy", "Opposite Armor" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Shrouding Dark Cloud" ]
       },
       {
@@ -374,7 +374,7 @@
         "Link": "https://www.youtube.com/watch?v=j0phk9UkJME&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=65",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Donald", "Goofy" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Turning the Key" ]
       },
       {
@@ -878,7 +878,7 @@
         "Link": "https://www.youtube.com/watch?v=tRv-bCIGSd8&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=140",
         "Worlds": [ "Traverse Town", "Hollow Bastion" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Young Kairi", "Kairi's Grandma" ],
-        "Areas": [ "First District", "Library" ],
+        "Areas": [ "1st District", "Library" ],
         "Music": [ "Kairi III" ]
       },
       {
@@ -1198,7 +1198,7 @@
         "Link": "https://www.youtube.com/watch?v=7wLsGDKRjYQ",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Leon", "Yuffie" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -1408,7 +1408,7 @@
         "Link": "https://www.youtube.com/watch?v=w8vuXniQ9xA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=3",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Marluxia", "Jiminy" ],
-        "Areas": [ "First District-esque" ],
+        "Areas": [ "1st District-esque" ],
         "Music": [ "Disquieting" ]
       },
       {
@@ -1416,7 +1416,7 @@
         "Link": "https://www.youtube.com/watch?v=tabWZZ6f4Ro&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=5",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Marluxia", "Donald", "Goofy", "Jiminy" ],
-        "Areas": [ "First District-esque" ],
+        "Areas": [ "1st District-esque" ],
         "Music": [ "Disquieting" ]
       },
       {
@@ -1424,7 +1424,7 @@
         "Link": "https://www.youtube.com/watch?v=WONnMRi8cxA&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=5",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Pluto", "Jiminy", "Leon", "Yuffie" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "Traverse Town", "Just Wondering" ]
       },
       {
@@ -1432,7 +1432,7 @@
         "Link": "https://www.youtube.com/watch?v=P94v9Bez6Wo&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=7",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Leon" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "Traverse Town" ]
       },
       {
@@ -1448,7 +1448,7 @@
         "Link": "https://www.youtube.com/watch?v=v-0yKOyUH8o&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=8",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Cid", "Guard Armor" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Traverse Town", "Struggle Away" ]
       },
       {
@@ -1456,7 +1456,7 @@
         "Link": "https://www.youtube.com/watch?v=N1cMDk4P228&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=9",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Donald", "Goofy", "Leon", "Yuffie", "Aerith", "Cid" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Traverse Town", "Scent of Silence" ]
       },
       {
@@ -2898,7 +2898,7 @@
         "Link": "https://www.youtube.com/watch?v=MOzGIIWP6sY&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=13",
         "Worlds": [ "Traverse Town", "Agrabah" ],
         "Characters": [ "Sora", "Pluto", "Shadow(s)", "Kairi", "Soldier(s)", "Leon", "Donald", "Goofy", "Yuffie", "Aerith", "Jafar" ],
-        "Areas": [ "First District", "Second District", "Third District", "Red Room", "Green Room", "Lamp Chamber" ],
+        "Areas": [ "1st District", "2nd District", "3rd District", "Red Room", "Green Room", "Lamp Chamber" ],
         "Music": [ "Treasured Memories" ]
       },
       {
@@ -10798,7 +10798,7 @@
         "Link": "https://www.youtube.com/watch?v=Em-d8vxEFE8&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=270",
         "Worlds": [ "Dark World", "Neverland", "Traverse Town", "Twilight Town", "Destiny Islands", "Castle Oblivion" ],
         "Characters": [ "Aqua", "Mickey", "Riku", "Kairi", "Donald", "Goofy", "Hayner", "Pence", "Olette", "Sora", "Ansem the Wise", "Roxas", "Xion", "Master Xehanort", "Ansem Seeker of Darkness", "Xemnas" ],
-        "Areas": [ "Dark Castle of Dreams", "Realm of Darkness", "Clock Tower", "First District", "The Old Mansion", "Pod Room", "Seashore" ],
+        "Areas": [ "Dark Castle of Dreams", "Realm of Darkness", "Clock Tower", "1st District", "The Old Mansion", "Pod Room", "Seashore" ],
         "Music": [ "Destati -Drammatica-" ]
       },
       {
@@ -10944,7 +10944,7 @@
         "Link": "https://www.youtube.com/watch?v=sk7jJ5f6pIo&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=7",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Data-Sora", "Pluto", "Mickey" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ "Where Is This?", "Traverse Town" ]
       },
       {
@@ -10952,7 +10952,7 @@
         "Link": "https://www.youtube.com/watch?v=-qL3f2K4nRM&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=8",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Mickey", "Data-Sora", "Cid" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ "It Began With a Letter" ]
       },
       {
@@ -10968,7 +10968,7 @@
         "Link": "https://www.youtube.com/watch?v=Xj0MbBIRo9U&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=10",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Mickey", "Data-Sora", "Huey", "Dewey", "Louie" ],
-        "Areas": [ "Second District", "Alleyway" ],
+        "Areas": [ "2nd District", "Alleyway" ],
         "Music": [ "It Began With a Letter" ]
       },
       {
@@ -10976,7 +10976,7 @@
         "Link": "https://www.youtube.com/watch?v=so9X9ogyxT0&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=12",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Data-Sora", "Louie", "Data-Riku", "Mickey" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -10984,7 +10984,7 @@
         "Link": "https://www.youtube.com/watch?v=KuAwSoqVawU&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=13",
         "Worlds": [ "Traverse Town", "Disney Castle", "Wonderland" ],
         "Characters": [ "Data-Sora", "Mickey", "Jiminy", "Donald", "Goofy", "Pluto", "Shadow(s)" ],
-        "Areas": [ "First District", "Library", "Clearing", "Third District" ],
+        "Areas": [ "1st District", "Library", "Clearing", "3rd District" ],
         "Music": [ "Where Is This?", "Night of Fate" ]
       },
       {
@@ -11208,7 +11208,7 @@
         "Link": "https://www.youtube.com/watch?v=osZTNfTnUQ0&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=41",
         "Worlds": [ "Datascape", "Traverse Town" ],
         "Characters": [ "Data-Sora", "Blox Bug(s)", "Data-Riku" ],
-        "Areas": [ "Datascape", "First District" ],
+        "Areas": [ "Datascape", "1st District" ],
         "Music": [ "Night of Fate" ]
       },
       {
@@ -11296,7 +11296,7 @@
         "Link": "https://www.youtube.com/watch?v=3-EpQ-Awkec&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=51",
         "Worlds": [ "Disney Castle", "Traverse Town" ],
         "Characters": [ "Goofy", "Donald", "Mickey", "Jiminy", "Data-Riku", "Data-Sora", "Pluto" ],
-        "Areas": [ "Library", "First District" ],
+        "Areas": [ "Library", "1st District" ],
         "Music": [ "Where Is This?" ]
       },
       {
@@ -11442,7 +11442,7 @@
         "Link": "https://www.youtube.com/watch?v=5IuM-LPFE4g&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=6",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Neku" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ "TWISTER -KINGDOM MIX-" ]
       },
       {
@@ -11450,7 +11450,7 @@
         "Link": "https://www.youtube.com/watch?v=K6ZX9cshFjo&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=7",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Neku", "Meow Wow(s)", "Necho Cat(s)", "Komory Bat(s)" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Traverse in Trance", "Hand to Hand" ]
       },
       {
@@ -11458,7 +11458,7 @@
         "Link": "https://www.youtube.com/watch?v=z71KZ3RGxv0&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=8",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Neku", "Meow Wow(s)", "Necho Cat(s)", "Komory Bat(s)" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Dream Eaters" ]
       },
       {
@@ -11466,7 +11466,7 @@
         "Link": "https://www.youtube.com/watch?v=Px-asuEH4o0&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=9",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Neku", "Young Xehanort" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "Shaded Truths" ]
       },
       {
@@ -11474,7 +11474,7 @@
         "Link": "https://www.youtube.com/watch?v=y9eUfcCRgMM&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=10",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Neku", "Young Xehanort" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "Traverse in Trance" ]
       },
       {
@@ -11482,7 +11482,7 @@
         "Link": "https://www.youtube.com/watch?v=NnaoYarpBtM&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=11",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Rhyme", "Moogle(s)" ],
-        "Areas": [ "Fourth District" ],
+        "Areas": [ "4th District" ],
         "Music": [ "Innocent Times" ]
       },
       {
@@ -11490,7 +11490,7 @@
         "Link": "https://www.youtube.com/watch?v=v20fEjCD-Ro&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=12",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Rhyme", "Neku", "Young Xehanort", "Hockomonkey" ],
-        "Areas": [ "Fifth District" ],
+        "Areas": [ "5th District" ],
         "Music": [ "UNTAMABLE" ]
       },
       {
@@ -11498,7 +11498,7 @@
         "Link": "https://www.youtube.com/watch?v=grL9UdWfkJw&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=13",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Hockomonkey", "Sora", "Riku", "Shiki", "Joshua", "Neku", "Rhyme", "Young Xehanort", "Beat" ],
-        "Areas": [ "Garden", "Fifth District" ],
+        "Areas": [ "Garden", "5th District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -11506,7 +11506,7 @@
         "Link": "https://www.youtube.com/watch?v=PJw8fVo0k8E&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=14",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Joshua" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "CALLING -KINGDOM MIX-" ]
       },
       {
@@ -11514,7 +11514,7 @@
         "Link": "https://www.youtube.com/watch?v=0570dPf88kc&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=15",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Joshua" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -11522,7 +11522,7 @@
         "Link": "https://www.youtube.com/watch?v=QrFsnoY0tk0&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=16",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Joshua", "Komory Bat(s)", "Beat", "Kooma Panda(s)" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Hand to Hand" ]
       },
       {
@@ -11530,7 +11530,7 @@
         "Link": "https://www.youtube.com/watch?v=PmC4pXTz5zg&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=17",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Beat", "Joshua", "Riku" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -11538,7 +11538,7 @@
         "Link": "https://www.youtube.com/watch?v=YGjYImpqDAw&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=18",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Shiki", "Meow Wow(s)" ],
-        "Areas": [ "Second District" ],
+        "Areas": [ "2nd District" ],
         "Music": [ "Hand to Hand" ]
       },
       {
@@ -11546,7 +11546,7 @@
         "Link": "https://www.youtube.com/watch?v=5T9aqyaNTXg&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=19",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Shiki", "Meow Wow(s)" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ ":None:" ]
       },
       {
@@ -11554,7 +11554,7 @@
         "Link": "https://www.youtube.com/watch?v=Mg7pCzS0JbU&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=20",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Shiki" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ "Traverse in Trance" ]
       },
       {
@@ -11562,7 +11562,7 @@
         "Link": "https://www.youtube.com/watch?v=1PM1RWs9a-U&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=21",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Shiki", "Young Xehanort", "Beat", "Hockomonkey" ],
-        "Areas": [ "Fifth District" ],
+        "Areas": [ "5th District" ],
         "Music": [ "Drops of Poison", "UNTAMABLE" ]
       },
       {
@@ -11578,7 +11578,7 @@
         "Link": "https://www.youtube.com/watch?v=gQkxfP1FfQU&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=23",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Shiki", "Beat", "Sora", "Neku", "Joshua", "Rhyme" ],
-        "Areas": [ "Fifth District" ],
+        "Areas": [ "5th District" ],
         "Music": [ "The Dream" ]
       },
       {
@@ -11586,7 +11586,7 @@
         "Link": "https://www.youtube.com/watch?v=1pQyGGLZl-8&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=24",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Beat", "Rhyme", "Neku", "Shiki", "Sora", "Riku", "Joshua" ],
-        "Areas": [ "Fifth District" ],
+        "Areas": [ "5th District" ],
         "Music": [ "SOMEDAY -KINGDOM MIX-" ]
       },
       {
@@ -12082,7 +12082,7 @@
         "Link": "https://www.youtube.com/watch?v=rnlDGJ-3Rxg&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=85",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Joshua" ],
-        "Areas": [ "Fifth District" ],
+        "Areas": [ "5th District" ],
         "Music": [ "Traverse in Trance" ]
       },
       {
@@ -12106,7 +12106,7 @@
         "Link": "https://www.youtube.com/watch?v=RdMvaoTbEVs&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=88",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Neku", "Shiki", "Joshua", "Sora", "Spellican", "Tatsu Blaze(s)", "Hockomonkey" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "UNTAMABLE" ]
       },
       {
@@ -12114,7 +12114,7 @@
         "Link": "https://www.youtube.com/watch?v=iGQqsHOiuaE&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=89",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Spellican", "Sora", "Neku", "Joshua", "Shiki" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "CALLING -KINGDOM MIX-" ]
       },
       {
@@ -12122,7 +12122,7 @@
         "Link": "https://www.youtube.com/watch?v=YYrCdJ55BqY&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=90",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Joshua", "Neku", "Shiki", "Beat", "Rhyme" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ "Traverse in Trance" ]
       },
       {
@@ -12154,7 +12154,7 @@
         "Link": "https://www.youtube.com/watch?v=7bYNqBQfO6s&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=94",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Spellican", "Beat", "Rhyme", "Joshua" ],
-        "Areas": [ "Third District" ],
+        "Areas": [ "3rd District" ],
         "Music": [ "Hand to Hand", "TWISTER -KINGDOM MIX-" ]
       },
       {
@@ -12458,7 +12458,7 @@
         "Link": "https://www.youtube.com/watch?v=mfa_rcB6LtE&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=133",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Young Xehanort", "Mickey", "Goofy", "Donald", "Pluto", "Riku" ],
-        "Areas": [ "First District" ],
+        "Areas": [ "1st District" ],
         "Music": [ "The Nightmare" ]
       },
       {
@@ -12674,7 +12674,7 @@
         "Link": "https://www.youtube.com/watch?v=O6qXl-kGIOc&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=160",
         "Worlds": [ "Traverse Town", "Castle Oblivion" ],
         "Characters": [ "Sora", "Dream Eater(s)", "Ventus" ],
-        "Areas": [ "First District", "Chamber of Waking" ],
+        "Areas": [ "1st District", "Chamber of Waking" ],
         "Music": [ "Hand in Hand", "Ventus" ]
       },
       {
@@ -18614,7 +18614,7 @@
         "Link": "https://www.youtube.com/watch?v=Qtq3D9kvHt0&list=PLYnY5NdwIhRDYFxexfUfdRQ_WS5a46Stw&index=1",
         "Worlds": [ "Destiny Islands", "Traverse Town", "Agrabah", "Olympus Coliseum", "Wonderland", "Neverland", "Atlantica", "Agrabah", "Hollow Bastion" ],
         "Characters": [ "Chirithy", "Sora", "Kairi", "Riku", "Donald", "Goofy", "Leon", "Yuffie", "Genie", "Hercules", "Alice", "Peter Pan", "Ariel", "Jafar", "Jasmine", "Maleficent", "Cerberus", "Ursula", "Ansem Seeker of Darkness" ],
-        "Areas": [ "Seashore", "Third District", "Desert", "Arena", "Bizarre Room", "Brig", "Tranquil Grotto", "Alley", "Castle Chapel", "Ursula's Lair", "Grand Hall" ],
+        "Areas": [ "Seashore", "3rd District", "Desert", "Arena", "Bizarre Room", "Brig", "Tranquil Grotto", "Alley", "Castle Chapel", "Ursula's Lair", "Grand Hall" ],
         "Music": [ "Hikari -KINGDOM Orchestra Instrumental Version-" ]
       },
       {
@@ -19386,7 +19386,7 @@
         "Link": "https://www.youtube.com/watch?v=BfisDo3z5Fk&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=2",
         "Worlds": [ "Destiny Islands", "Traverse Town" ],
         "Characters": [ "Sora", "Riku", "Kairi", "Donald", "Goofy" ],
-        "Areas": [ "Seashore", "Secret Place", "Storm-tossed Island", "First District" ],
+        "Areas": [ "Seashore", "Secret Place", "Storm-tossed Island", "1st District" ],
         "Music": [ "Night of Fate" ]
       },
       {
@@ -19394,7 +19394,7 @@
         "Link": "https://www.youtube.com/watch?v=TlTkjQXjql0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=3",
         "Worlds": [ "Traverse Town", "Wonderland", "Atlantica", "Agrabah", "Olympus Coliseum", "Halloween Town", "Hollow Bastion" ],
         "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Leon", "Yuffie", "Card Soldiers", "Alice", "Queen of Hearts", "Ariel", "Aladdin", "Genie", "Hercules", "Cloud", "Cerberus", "Riku", "Maleficent" ],
-        "Areas": [ "Third District", "Queen's Castle", "Tranquil Grotto", "Desert", "Arena", "Manor Ruins", "Rising Falls" ],
+        "Areas": [ "3rd District", "Queen's Castle", "Tranquil Grotto", "Desert", "Arena", "Manor Ruins", "Rising Falls" ],
         "Music": [ "A Walk in Andante" ]
       },
       {
@@ -19506,7 +19506,7 @@
         "Link": "https://www.youtube.com/watch?v=HkLZltuqP_Y&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=18",
         "Worlds": [ "Disney Castle", "Dive to the Heart", "Destiny Islands", "Traverse Town", "Wonderland", "Olympus Coliseum", "Agrabah", "Hollow Bastion", "Datascape", "Castle Oblivion" ],
         "Characters": [ "Jiminy", "Chip", "Dale", "Mickey", "Donald", "Goofy", "Data-Sora", "Wakka", "Alice", "Shadow(s)", "Data-Riku", "Pete", "Maleficent", "Sora's Heartless", "Pluto", "Data-Roxas", "Naminé", "Roxas", "Axel", "Xion", "Terra", "Aqua", "Ventus", "Kairi", "Sora", "Riku" ],
-        "Areas": [ "Library", "Awakening", "Seashore", "First District", "Clearing", "Colonnade", "Outside the Coliseum", "Desert: Cave", "Grand Hall", "Datascape", "First District", "Castle Oblivion Entrance", "Pod Room" ],
+        "Areas": [ "Library", "Awakening", "Seashore", "1st District", "Clearing", "Colonnade", "Outside the Coliseum", "Desert: Cave", "Grand Hall", "Datascape", "1st District", "Castle Oblivion Entrance", "Pod Room" ],
         "Music": [ "Hand in Hand", "Destiny's Force", "The Other Promise", "Friends in My Heart" ]
       },
       {
@@ -19554,7 +19554,7 @@
         "Link": "https://www.youtube.com/watch?v=LjKpLUVAAsA&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=23",
         "Worlds": [ "Mysterious Tower", "Destiny Islands", "Traverse Town" ],
         "Characters": [ "Kairi", "Sora", "Riku", "Yen Sid", "Mickey", "Donald", "Goofy", "Meow Wow(s)", "Necho Cat(s)", "Joshua", "Komory Bat(s)", "Shiki", "Beat", "Young Xehanort" ],
-        "Areas": [ "Sorcerer's Loft", "Open Ocean", "First District", "Third District", "Second District", "Fifth District" ],
+        "Areas": [ "Sorcerer's Loft", "Open Ocean", "1st District", "3rd District", "2nd District", "5th District" ],
         "Music": [ "Storm Diver" ]
       },
       {
