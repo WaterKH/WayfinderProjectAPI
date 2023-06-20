@@ -1314,7 +1314,7 @@
         "Line": "Hey, now. It's time to introduce today's combatants! The four bad boys who struggled their way through the preliminaries! Regular finalist and head of the Twilight Disciplinary Committee- Seifer! Completely out of nowhere- who knew he'd make it so far THIS year? Vivi! An underground favorite and local attitude problem- Hayner! It's his first trip to the finals! And Struggler number 4, who happens to be my absolute favorite customer- Roxas! So- who will win this sweltering summer Struggle!? Who will take home the grand prize? The summa cum laude of Struggle- the Four Crystal Trophy! AND... a chance to take on our defending champion, Setzer! It won't be long now, folks. I suggest our challengers go over the official Struggle Rules before we begin!"
       }
     ],
-    "Round 1; Roxas vss Hayner": [
+    "Round 1: Roxas vs. Hayner": [
       {
         "Order": 0,
         "Character": "Roxas",
@@ -1341,7 +1341,7 @@
         "Line": "Our first match of today's Struggle tournament will be between Roxas and his best friend Hayner!"
       }
     ],
-    "Round 2; Seifer vs. Vivi": [
+    "Round 2: Seifer vs. Vivi": [
       {
         "Order": 0,
         "Character": "Biggs",
@@ -1433,7 +1433,7 @@
         "Line": "So I'm in third now? Aw, baby!"
       }
     ],
-    "Round 3; Roxas vs. Vivi": [
+    "Round 3: Roxas vs. Vivi": [
       {
         "Order": 0,
         "Character": "Struggle Tournament Sponsor",
