@@ -265,6 +265,249 @@ namespace WayfinderProjectAPI.Controllers
             return results;
         }
 
+        [HttpGet("GetInteractions")]
+        public async Task<List<InteractionDto>> GetInteractions([FromQuery] string? accountId, [FromQuery] string? games = null, [FromQuery] string? interactions = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
+        {
+            var settings = _context.SearchSettings.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.AccountId == accountId);
+            if (settings == null && accountId != null)
+            {
+                settings = new SearchSettings { AccountId = accountId };
+
+                _context.SearchSettings.Add(settings);
+                _context.SaveChanges();
+            }
+
+            var results = _context.Interactions.AsNoTrackingWithIdentityResolution();
+
+            // See if we search for favourites
+
+            var queryString = (line == null ? line : line.Any(x => char.IsPunctuation(x)) ? line : Regex.Replace(line, @"[^\w\s]", ""));
+
+            if (games != null)
+            {
+                var gamesList = games.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => gamesList.Contains(x.Game.Name));
+            }
+
+            if (interactions != null)
+            {
+                var interactionsList = interactions.Split("::").Select(x => x.Trim());
+
+                results = results.Where(x => interactionsList.Contains(x.Name));
+            }
+
+            if (worlds != null)
+            {
+                var worldsList = worlds.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Worlds).Where(x => x.Worlds.Any(y => worldsList.Contains(y.Name))))
+                {
+                    if (result == null || result.Worlds == null) continue;
+
+                    if (worldsList.All(x => result.Worlds.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (areas != null)
+            {
+                var areasList = areas.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Areas).Where(x => x.Areas.Any(y => areasList.Contains(y.Name))))
+                {
+                    if (result == null || result.Areas == null) continue;
+
+                    if (areasList.All(x => result.Areas.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (characters != null)
+            {
+                var charactersList = characters.Split("::").Select(x => x.Trim());
+
+                // Create Aliases
+                Dictionary<string, List<string>> aliases = new Dictionary<string, List<string>>();
+                List<string> aliasAppearAs = new List<string>();
+
+                if (settings != null && settings.IncludeAlias)
+                {
+                    await this._context.Aliases.Where(x => charactersList.Contains(x.Original)).ForEachAsync(x =>
+                    {
+                        if (!aliases.ContainsKey(x.Original))
+                        {
+                            aliases.Add(x.Original, new List<string>());
+                        }
+
+                        aliases[x.Original].Add(x.AppearAs);
+                        aliasAppearAs.Add(x.AppearAs);
+                    });
+                }
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Characters).Where(x => x.Characters.Any(y => charactersList.Contains(y.Name) || aliasAppearAs.Contains(y.Name))))
+                {
+                    if (result == null || result.Characters == null) continue;
+
+                    if (charactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+
+                    // Look up aliases of characters
+                    if (settings != null && settings.IncludeAlias)
+                    {
+                        foreach (var (original, appearAs) in aliases)
+                        {
+                            foreach (var character in appearAs)
+                            {
+                                var newCharactersList = charactersList.ToList();
+                                newCharactersList.Remove(original);
+                                newCharactersList.Add(character);
+
+                                if (newCharactersList.All(x => result.Characters.Select(y => y.Name).Any(y => y == x)))
+                                {
+                                    resultIds.Add(result.Id);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (music != null)
+            {
+                var musicList = music.Split("::").Select(x => x.Trim());
+
+                var resultIds = new List<int>();
+                foreach (var result in results.Include(x => x.Music).Where(x => x.Music.Any(y => musicList.Contains(y.Name))))
+                {
+                    if (result == null || result.Music == null) continue;
+
+                    if (musicList.All(x => result.Music.Select(y => y.Name).Any(y => y == x)))
+                    {
+                        resultIds.Add(result.Id);
+                    }
+                }
+
+                results = results.Where(x => resultIds.Contains(x.Id));
+            }
+
+            if (queryString != null)
+            {
+                if (!queryString.Contains("\""))
+                {
+                    queryString = queryString.ToLower();
+
+                    var tempResults = new List<Data.Models.Interaction>();
+                    foreach (var result in results.Include(x => x.Script).Include(x => x.Script.Lines))
+                    {
+                        if (result.Script.Lines == null)
+                            continue;
+
+                        foreach (var scriptLine in result.Script.Lines)
+                        {
+                            var tempLine = scriptLine.Line;
+                            if (!queryString.Any(x => char.IsPunctuation(x)))
+                                tempLine = Regex.Replace(scriptLine.Line, @"[^\w\s]", "");
+
+                            if (tempLine.ToLower().Contains(queryString))
+                                tempResults.Add(result);
+                        }
+                    }
+
+                    results = results.Where(x => tempResults.Select(y => y.Id).Contains(x.Id));
+                }
+                else
+                {
+                    queryString = queryString.Replace("\"", "");
+
+                    results = results.Where(x => x.Script.Lines.ToList().Any(y => y.Line.Contains(queryString)));
+                }
+
+                if (settings != null && settings.MainSearchEverything)
+                {
+                    results = this.MainSearchQueryInteractions(queryString, results);
+                }
+            }
+
+            if (accountId != null && settings != null)
+            {
+                // Add to search history
+                if (settings.TrackHistory)
+                {
+                    this.InsertSearchHistory(accountId, "Memory Archive", "Interactions",
+                        queryString ?? string.Empty, interactions ?? string.Empty,
+                        games ?? string.Empty, worlds ?? string.Empty, areas ?? string.Empty, characters ?? string.Empty, music ?? string.Empty);
+                }
+
+                // Check for Favourites and Projects
+                results = this.GetFavouritesProjectsSearchResults(accountId, settings, results);
+            }
+
+            return await results.OrderBy(x => x.Id).ToDto().ToListAsync();
+        }
+
+        private IQueryable<Interaction> MainSearchQueryInteractions(string queryString, IQueryable<Interaction> interactions)
+        {
+            // Combine our incoming interactions with what we find with the straight query search
+            var results = _context.Interactions.AsNoTrackingWithIdentityResolution();
+
+            var resultIds = results
+                .Where(x =>
+                    x.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Game.Name.ToLower().Contains(queryString.ToLower()) ||
+                    x.Areas.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Characters.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Music.Any(y => y.Name.ToLower().Contains(queryString.ToLower())) ||
+                    x.Worlds.Any(y => y.Name.ToLower().Contains(queryString.ToLower()))
+                ).Select(x => x.Id).ToList();
+
+            var allIds = interactions.Select(x => x.Id).ToList().Union(resultIds);
+
+            return results.Where(x => allIds.Contains(x.Id));
+        }
+
+        private IQueryable<Interaction> GetFavouritesProjectsSearchResults(string accountId, SearchSettings settings, IQueryable<Interaction> results)
+        {
+            if (settings.FavouriteSearch && settings.ProjectSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Memory Archive" && x.Category == "Interactions").Select(x => x.SpecificRecordId);
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Memory Archive" && x.Category == "Interactions").Select(x => x.SpecificRecordId);
+
+                var combinedIds = favouriteIds.Union(projectRecordIds);
+
+                results = results.Where(x => combinedIds.Contains(x.Id));
+            }
+            else if (settings.FavouriteSearch)
+            {
+                var favouriteIds = this._context.Favorites.Where(x => x.AccountId == accountId && x.Type == "Memory Archive" && x.Category == "Interactions").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => favouriteIds.Contains(x.Id));
+            }
+            else if (settings.ProjectSearch)
+            {
+                var projectRecordIds = this._context.Projects.Where(x => x.AccountId == accountId).SelectMany(x => x.ProjectRecords).Where(x => x.Type == "Memory Archive" && x.Category == "Interactions").Select(x => x.SpecificRecordId);
+
+                results = results.Where(x => projectRecordIds.Contains(x.Id));
+            }
+
+            return results;
+        }
+
         [HttpGet("GetScript")]
         public async Task<ScriptDto> GetScript([FromQuery] string gameName, [FromQuery] string sceneName)
         {

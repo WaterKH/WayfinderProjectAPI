@@ -18,6 +18,8 @@ namespace WayfinderProjectAPI.Data.Models
         [AllowNull]
         public virtual ICollection<Scene> Scenes { get; set; }
         [AllowNull]
+        public virtual ICollection<Interaction> Interactions { get; set; }
+        [AllowNull]
         public virtual ICollection<JournalEntry> JournalEntries { get; set; }
 
         [AllowNull]
