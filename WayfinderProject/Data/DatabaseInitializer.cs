@@ -45,6 +45,9 @@ namespace WayfinderProjectAPI.Data
             // Load Interviews
             //CreateInterviews(context);
 
+            // Load Interactions
+            //CreateInteractions(context);
+
             // JJ
             // Character
             //CreateCharacterEntries(context);
@@ -323,6 +326,84 @@ namespace WayfinderProjectAPI.Data
                     Participants = participants,
                     Provider = provider,
                     Translator = translator
+                });
+
+            }
+
+            context.SaveChanges();
+        }
+
+        class InteractionObject
+        {
+            public string Title { get; set; } = string.Empty;
+            public string Link { get; set; } = string.Empty;
+
+            public List<InteractionLineObject> Interactions { get; set; } = new List<InteractionLineObject>();
+            public List<string> Worlds { get; set; } = new List<string>();
+            public List<string> Characters { get; set; } = new List<string>();
+            public List<string> Areas { get; set; } = new List<string>();
+            public List<string> Music { get; set; } = new List<string>();
+        }
+        class InteractionLineObject
+        {
+            public int Order { get; set; }
+            public string Character { get; set; } = string.Empty;
+            public string Line { get; set; } = string.Empty;
+        }
+        public static void CreateInteractions(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/interactions/_kh1_interactions.json"));
+            var allInteractions = JsonSerializer.Deserialize<Dictionary<string, List<InteractionObject>>>(streamReader.ReadToEnd());
+
+            if (!allInteractions!.ContainsKey("Interactions"))
+                throw new Exception("No Interactions List Found!");
+
+            foreach (var interaction in allInteractions["Interactions"])
+            {
+                //if (gameName != "Kingdom Hearts") break;
+
+                var gameName = "Kingdom Hearts";
+
+                // Create Script
+                context.Script.Add(new Script
+                {
+                    GameName = gameName,
+                    SceneName = interaction.Title,
+                    Lines = interaction.Interactions.Select(x => new ScriptLine { Character = x.Character, Line = x.Line, Order = x.Order }).ToList()
+                });
+
+                context.SaveChanges();
+
+                // Add missing characters
+                foreach (var character in interaction.Characters)
+                {
+                    if (context.Characters.FirstOrDefault(x => x.Name == character) == null)
+                    {
+                        context.Characters.Add(new Character
+                        {
+                            Name = character
+                        });
+                    }
+                }
+
+                var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+                var worlds = context.Worlds.Where(x => interaction.Worlds.Contains(x.Name)).ToList();
+                var characters = context.Characters.Where(x => interaction.Characters.Contains(x.Name)).ToList();
+                var areas = context.Areas.Where(x => interaction.Areas.Contains(x.Name)).ToList();
+                var music = context.Music.Where(x => interaction.Music.Contains(x.Name)).ToList();
+                var script = context.Script.FirstOrDefault(x => x.SceneName == interaction.Title && x.GameName == gameName) ??
+                    context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+                context.Interactions.Add(new Interaction
+                {
+                    Game = game,
+                    Name = interaction.Title,
+                    Link = interaction.Link,
+                    Worlds = worlds,
+                    Characters = characters,
+                    Areas = areas,
+                    Music = music,
+                    Script = script
                 });
 
             }
