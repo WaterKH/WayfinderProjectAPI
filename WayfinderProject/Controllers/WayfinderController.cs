@@ -265,6 +265,75 @@ namespace WayfinderProjectAPI.Controllers
             return results;
         }
 
+        [HttpPost("AddScene")]
+        public void AddScene([FromQuery] string? accountId, [FromQuery] string? sceneName = null, [FromQuery] string? sceneLink = null, [FromQuery] string? gameName = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? script = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            var scene = _context.Scenes.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Name == sceneName && x.Game.Name == gameName);
+
+            if (scene == null)
+            {
+                scene = new Scene();
+            }
+
+            scene.Name = sceneName ?? "ERRORED SCENE NAME";
+            scene.Game = _context.Games.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Name == gameName);
+            scene.Link = sceneLink;
+
+            // TODO: These Contains don't work the same as the above GET
+            if (worlds != null)
+                scene.Worlds = _context.Worlds.AsNoTrackingWithIdentityResolution().Where(x => worlds.Contains(x.Name)).ToList();
+
+            if (characters != null)
+                scene.Characters = _context.Characters.Where(x => characters.Contains(x.Name)).ToList();
+
+            if (areas != null)
+                scene.Areas = _context.Areas.Where(x => areas.Contains(x.Name)).ToList();
+
+            if (music != null)
+                scene.Music = _context.Music.Where(x => music.Contains(x.Name)).ToList();
+
+            _context.SaveChanges();
+
+            // Update Script
+            if (script != null)
+            {
+                var sceneScript = new Script
+                {
+                    SceneName = scene.Name,
+                    GameName = scene.Game.Name,
+                    Lines = new List<ScriptLine>()
+                };
+
+                var splitScript = script.Split("::");
+
+                for (int i = 0; i < splitScript.Length; ++i)
+                {
+                    var subSplitScript = splitScript[i].Split(": ");
+
+                    if (subSplitScript.Length < 2) continue;
+
+                    sceneScript.Lines.Add(new ScriptLine
+                    {
+                        Order = i,
+                        Character = subSplitScript[0],
+                        Line = subSplitScript[1],
+                    });
+                }
+
+                _context.Add(sceneScript);
+
+                scene.Script = sceneScript;
+
+                _context.SaveChanges();
+            }
+        }
+
         [HttpGet("GetInteractions")]
         public async Task<List<InteractionDto>> GetInteractions([FromQuery] string? accountId, [FromQuery] string? games = null, [FromQuery] string? interactions = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
         {

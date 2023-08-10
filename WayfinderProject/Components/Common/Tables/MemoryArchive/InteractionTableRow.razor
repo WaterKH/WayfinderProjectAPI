@@ -2,6 +2,7 @@
 @using WayfinderProject.Data
 @using WayfinderProject.Data.Models
 @using WayfinderProjectAPI.Data.DTOs
+@using WayfinderProjectAPI.Data
 
 @inject WayfinderProjectAPI.Data.WayfinderContext context
 
@@ -54,6 +55,11 @@
         {
             <iconify-icon icon="material-symbols:folder-outline-rounded" class="project-icon-inactive" onclick="@(async () => await this.ProjectCallbackMethod.InvokeAsync())"></iconify-icon>
         }
+@*
+        if (this.IsAdmin)
+        {
+            <iconify-icon icon="material-symbols:edit" class="edit-icon" onclick="@(async () => await this.AdminCallbackMethod.InvokeAsync())"></iconify-icon>
+        }*@
     }
 </td>
 }
@@ -128,6 +134,20 @@ else
     .project-icon-active:hover {
         color: #b4b4b4ab;
     }
+
+
+.edit-icon {
+    font-size: x-large;
+    margin-top: 5px;
+    color: #4287f5;
+    cursor: pointer;
+    transition: color ease-in-out .4s;
+}
+
+
+    .edit-icon:hover {
+        color: #146cfa;
+    }
 </style>
 
 @code {
@@ -137,9 +157,11 @@ else
     [Parameter] public bool ProjectView { get; set; }
     [Parameter] public bool IsFavorite { get; set; }
     [Parameter] public bool IsProject { get; set; }
+    [Parameter] public bool IsAdmin { get; set; }
     [Parameter] public string Notes { get; set; } = string.Empty;
     [Parameter] public EventCallback FavoriteCallbackMethod { get; set; } = default!;
     [Parameter] public EventCallback ProjectCallbackMethod { get; set; } = default!;
+    [Parameter] public EventCallback AdminCallbackMethod { get; set; } = default!;
     [Parameter] public EventCallback NotesCallbackMethod { get; set; } = default!;
 
     //private BrowserDimension BrowserDimension { get; set; } = new BrowserDimension();

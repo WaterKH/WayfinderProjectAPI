@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using WayfinderProject.Data.Enums;
 
 namespace WayfinderProjectAPI.Data.Models
 {
@@ -20,6 +21,8 @@ namespace WayfinderProjectAPI.Data.Models
         public DateTime ReleaseDate { get; set; }
         [AllowNull]
         public string AdditionalLink { get; set; } // Usually used for Videos
+        [AllowNull]
+        public State State { get; set; }
 
 
         [AllowNull]

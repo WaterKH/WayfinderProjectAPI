@@ -404,7 +404,8 @@ else if (this.CurrentCategory == "Cutscenes" && this.SceneDtos.Count > 0)
             <RowTemplate>
                 <SceneTableRow Scene="@Scene" MainTable="@MainSceneTable" LoggedIn="@(this.loggedIn)"
                     FavoriteCallbackMethod="@(() => this.SetFavorite("Scenes", Scene.Id))" IsFavorite="@(this.IsFavoriteForUser("Scenes", Scene.Id))"
-                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Scenes", Scene.Id))" IsProject="@(this.IsProjectForUser("Scenes", Scene.Id))" />
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Scenes", Scene.Id))" IsProject="@(this.IsProjectForUser("Scenes", Scene.Id))"
+                    AdminCallbackMethod="@(() => this.OpenSceneAdminModal(Scene))" IsAdmin="@(this.IsAdmin())" />
             </RowTemplate>
             <ExpandedRowTemplate>
                 <SceneTableExpandedRow Scene="@Scene" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -655,6 +656,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 @code {
     [CascadingParameter]
     private Task<AuthenticationState>? authenticationStateTask { get; set; }
+    private WayfinderProjectUser? user { get; set; } = null;
 
     public bool Loading { get; set; }
     public string CurrentCategory { get; set; } = "Cutscenes";
@@ -695,7 +697,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     [Parameter]
     [SupplyParameterFromQuery(Name = "world")]
     public string[]? WorldQuery { get; set; }
-    
+
     [Parameter]
     [SupplyParameterFromQuery(Name = "interaction")]
     public string[]? InteractionQuery { get; set; }
@@ -774,7 +776,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     private SceneTable<SceneDto>? MainSceneTable;
     #endregion Scene Variables
-    
+
     #region Interaction Variables
     private List<InteractionDto> InteractionDtos = new List<InteractionDto>();
 
@@ -881,21 +883,21 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             // Set Patron Status
             if (authState.User.Identity != null && authState.User.Identity.IsAuthenticated)
             {
-                WayfinderProjectUser user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                this.user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
 
-                if (!string.IsNullOrEmpty(user.PatreonAccessToken) && !string.IsNullOrEmpty(user.PatreonRefreshToken))
+                if (!string.IsNullOrEmpty(this.user.PatreonAccessToken) && !string.IsNullOrEmpty(this.user.PatreonRefreshToken))
                 {
                     var patreonService = new PatreonService(new HttpClient());
 
                     try
                     {
-                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                        this.isPatron = await patreonService.IsPatron(context, this.user.Id);
                     }
                     catch (Exception)
                     {
-                        await patreonService.RefreshToken(context, user.Id);
+                        await patreonService.RefreshToken(context, this.user.Id);
 
-                        this.isPatron = await patreonService.IsPatron(context, user.Id);
+                        this.isPatron = await patreonService.IsPatron(context, this.user.Id);
                     }
                 }
 
@@ -947,14 +949,14 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                 {
                     var authState = await authenticationStateTask;
 
-                    WayfinderProjectUser user = new();
+                    this.user = new();
                     if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
-                        user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                        this.user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
 
-                        this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
-                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.Favourites = await this.api.GetFavourites(this.user.Id, "Memory Archive");
+                        this.ProjectRecords = (await this.api.GetProjects(this.user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(this.user.Id);
                         this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
@@ -985,14 +987,14 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
                 {
                     var authState = await authenticationStateTask;
 
-                    WayfinderProjectUser user = new();
+                    this.user = new();
                     if (authState.User.Identity != null && authState.User.Identity.Name != null)
                     {
-                        user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
+                        this.user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
 
-                        this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
-                        this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
-                        this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+                        this.Favourites = await this.api.GetFavourites(this.user.Id, "Memory Archive");
+                        this.ProjectRecords = (await this.api.GetProjects(this.user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+                        this.SearchSettings = await this.api.GetSearchSettings(this.user.Id);
                         this.CurrentResultsDisplay = this.SearchSettings.ResultsDisplay;
                     }
 
@@ -1059,18 +1061,10 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             this.SearchSettings.ResultsDisplay = option;
 
-            if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+            if (this.user != null && this.api != null && !this.Loading)
             {
-                var authState = await authenticationStateTask;
-
-                WayfinderProjectUser user = new();
-                if (authState.User.Identity != null && authState.User.Identity.Name != null)
-                {
-                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-
-                    await this.api.SaveSearchSettings(user.Id, this.SearchSettings.AutoSearch, this.SearchSettings.AutoExpandFirstResult, this.SearchSettings.MainSearchEverything, this.SearchSettings.TrackHistory, 
-                                                        this.SearchSettings.FavouriteSearch, this.SearchSettings.ProjectSearch, this.SearchSettings.IncludeAlias, this.SearchSettings.ResultsDisplay);
-                }
+                await this.api.SaveSearchSettings(this.user.Id, this.SearchSettings.AutoSearch, this.SearchSettings.AutoExpandFirstResult, this.SearchSettings.MainSearchEverything, this.SearchSettings.TrackHistory, 
+                                                    this.SearchSettings.FavouriteSearch, this.SearchSettings.ProjectSearch, this.SearchSettings.IncludeAlias, this.SearchSettings.ResultsDisplay);
             }
         }
 
@@ -1150,34 +1144,26 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
-                var authState = await this.authenticationStateTask;
-
-                WayfinderProjectUser? user = null;
-                if (authState.User.Identity != null && authState.User.Identity.Name != null)
-                {
-                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-                }
-
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
+                if (this.user == null || this.user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    var id = user != null ? user.Id : null;
+                    var id = this.user != null ? this.user.Id : null;
                     this.SceneDtos = await this.api.GetScenes(accountId: id, games: games, scenes: scenes, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
 
-                    if (!this.isPatron && user != null)
+                    if (!this.isPatron && this.user != null)
                     {
-                        user.ApiCallQuota -= 1;
+                        this.user.ApiCallQuota -= 1;
                         context.SaveChanges();
 
-                        if (user.ApiCallQuota == 2500)
+                        if (this.user.ApiCallQuota == 2500)
                         {
                             toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
                         }
-                        else if (user.ApiCallQuota == 500)
+                        else if (this.user.ApiCallQuota == 500)
                         {
                             toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
-                        else if (user.ApiCallQuota == 0)
+                        else if (this.user.ApiCallQuota == 0)
                         {
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
@@ -1242,38 +1228,30 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
             this.canDisplayClearAll = false;
         }
-        else if (this.authenticationStateTask != null && this.api != null)
+        else if (this.api != null)
         {
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
-                var authState = await this.authenticationStateTask;
-
-                WayfinderProjectUser? user = null;
-                if (authState.User.Identity != null && authState.User.Identity.Name != null)
-                {
-                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-                }
-
                 // Maybe use the above to only call the search function we want to based on what's filled out and not null
-                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
+                if (this.user == null || this.user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    var id = user != null ? user.Id : null;
+                    var id = this.user != null ? this.user.Id : null;
                     this.InteractionDtos = await this.api.GetInteractions(accountId: id, games: games, interactions: interactions, worlds: worlds, areas: areas, characters: characters, music: music, line: line);
 
-                    if (!this.isPatron && user != null)
+                    if (!this.isPatron && this.user != null)
                     {
-                        user.ApiCallQuota -= 1;
+                        this.user.ApiCallQuota -= 1;
                         context.SaveChanges();
 
-                        if (user.ApiCallQuota == 2500)
+                        if (this.user.ApiCallQuota == 2500)
                         {
                             toastService.ShowInfo("Used half of API Quota (2500/5000). Become a Patron to remove this limit.");
                         }
-                        else if (user.ApiCallQuota == 500)
+                        else if (this.user.ApiCallQuota == 500)
                         {
                             toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
-                        else if (user.ApiCallQuota == 0)
+                        else if (this.user.ApiCallQuota == 0)
                         {
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month, or is removed if you become a Patron.");
                         }
@@ -1366,33 +1344,25 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             if (this.SearchSettings == null || this.SearchSettings.AutoSearch || allowSearch)
             {
-                var authState = await this.authenticationStateTask;
-
-                WayfinderProjectUser? user = null;
-                if (authState.User.Identity != null && authState.User.Identity.Name != null)
+                if (this.user == null || this.user.ApiCallQuota > 0 || this.isPatron)
                 {
-                    user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-                }
-
-                if (user == null || user.ApiCallQuota > 0 || this.isPatron)
-                {
-                    var id = user != null ? user.Id : null;
+                    var id = this.user != null ? this.user.Id : null;
                     this.InterviewDtos = await this.api.GetInterviews(accountId: id, interviews: interviews, games: games, participants: participants, providers: providers, translators: translators, line: line);
 
-                    if (!this.isPatron && user != null)
+                    if (!this.isPatron && this.user != null)
                     {
-                        user.ApiCallQuota -= 1;
+                        this.user.ApiCallQuota -= 1;
                         context.SaveChanges();
 
-                        if (user.ApiCallQuota == 2500)
+                        if (this.user.ApiCallQuota == 2500)
                         {
                             toastService.ShowInfo("Used half of API Quota (2500/5000).");
                         }
-                        else if (user.ApiCallQuota == 500)
+                        else if (this.user.ApiCallQuota == 500)
                         {
                             toastService.ShowInfo("Used almost all of API Quota (500/5000). This resets at the start of each month.");
                         }
-                        else if (user.ApiCallQuota == 0)
+                        else if (this.user.ApiCallQuota == 0)
                         {
                             toastService.ShowInfo("Used all of API Quota (0/5000). This resets at the start of each month.");
                         }
@@ -2250,7 +2220,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var areaIds = this.AreaQuery.Select(x => int.Parse(x));
 
             this.SceneAreasSelected = this.context.Areas.AsNoTracking().Where(x => areaIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            
+
             if (this.SceneAreasSearch != null)
             {
                 await this.SceneAreasSearch.SetCurrentView("Selected");
@@ -2306,7 +2276,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var sceneIds = this.SceneQuery.Select(x => int.Parse(x));
 
             this.ScenesSelected = this.context.Scenes.AsNoTracking().Where(x => sceneIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            
+
             if (this.ScenesSearch != null)
             {
                 await this.ScenesSearch.SetCurrentView("Selected");
@@ -2320,7 +2290,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var worldIds = this.WorldQuery.Select(x => int.Parse(x));
 
             this.SceneWorldsSelected = this.context.Worlds.AsNoTracking().Where(x => worldIds.Contains(x.Id)).Select(x => x.Name).ToList();
-            
+
             if (this.SceneWorldsSearch != null)
             {
                 await this.SceneWorldsSearch.SetCurrentView("Selected");
@@ -2588,19 +2558,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     public async Task OpenSettings()
     {
-        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        if (this.api != null && !this.Loading)
         {
-            var authState = await this.authenticationStateTask;
-
-            WayfinderProjectUser user = new();
-            if (authState.User.Identity != null)
-            {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-            }
-
             var parameters = new ModalParameters();
 
-            parameters.Add("AccountId", user.Id);
+            parameters.Add("AccountId", this.user.Id);
             parameters.Add("API", this.api);
 
             var options = new ModalOptions { Class = "modal-custom" };
@@ -2608,25 +2570,17 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var temp = Modal.Show<SettingsModal>("Search Settings", parameters, options);
             await temp.Result;
 
-            this.SearchSettings = await this.api.GetSearchSettings(user.Id);
+            this.SearchSettings = await this.api.GetSearchSettings(this.user.Id);
         }
     }
 
     public async Task OpenHistory()
     {
-        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        if (this.api != null && !this.Loading)
         {
-            var authState = await this.authenticationStateTask;
-
-            WayfinderProjectUser user = new();
-            if (authState.User.Identity != null)
-            {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-            }
-
             var parameters = new ModalParameters();
 
-            parameters.Add("AccountId", user.Id);
+            parameters.Add("AccountId", this.user.Id);
             parameters.Add("Type", "Memory Archive");
             parameters.Add("Context", this.context);
             parameters.Add("API", this.api);
@@ -2639,29 +2593,21 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     public async Task SetFavorite(string category, int specificRecordId)
     {
-        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        if (this.api != null && !this.Loading)
         {
-            var authState = await this.authenticationStateTask;
-
-            WayfinderProjectUser user = new();
-            if (authState.User.Identity != null)
-            {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-            }
-
             if (this.Favourites.Select(x => x.SpecificRecordId).Any(x => x == specificRecordId))
             {
-                await this.api.InsertRemoveFavourite(user.Id, "Memory Archive", category, specificRecordId);
+                await this.api.InsertRemoveFavourite(this.user.Id, "Memory Archive", category, specificRecordId);
 
-                this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                this.Favourites = await this.api.GetFavourites(this.user.Id, "Memory Archive");
             }
             else
             {
-                if (this.context.Favorites.Where(x => x.AccountId == user.Id).ToList().Count < favouriteCount)
+                if (this.context.Favorites.Where(x => x.AccountId == this.user.Id).ToList().Count < favouriteCount)
                 {
-                    await this.api.InsertRemoveFavourite(user.Id, "Memory Archive", category, specificRecordId);
+                    await this.api.InsertRemoveFavourite(this.user.Id, "Memory Archive", category, specificRecordId);
 
-                    this.Favourites = await this.api.GetFavourites(user.Id, "Memory Archive");
+                    this.Favourites = await this.api.GetFavourites(this.user.Id, "Memory Archive");
                 }
                 else
                 {
@@ -2684,19 +2630,11 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
     public async Task OpenProjectModal(string category, int specificRecordId)
     {
-        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
+        if (this.api != null && !this.Loading)
         {
-            var authState = await this.authenticationStateTask;
-
-            WayfinderProjectUser user = new();
-            if (authState.User.Identity != null)
-            {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-            }
-
             var parameters = new ModalParameters();
 
-            parameters.Add("AccountId", user.Id);
+            parameters.Add("AccountId", this.user.Id);
             parameters.Add("Type", "Memory Archive");
             parameters.Add("Category", category);
             parameters.Add("SpecificRecordId", specificRecordId);
@@ -2714,6 +2652,28 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     public bool IsProjectForUser(string category, int specificRecordId)
     {
         return this.ProjectRecords.Exists(x => x.Type == "Memory Archive" && x.Category == category && x.SpecificRecordId == specificRecordId);
+    }
+
+    public async Task OpenSceneAdminModal(SceneDto scene)
+    {
+        if (this.api != null && !this.Loading)
+        {
+            var parameters = new ModalParameters();
+
+            parameters.Add("Scene", scene);
+            parameters.Add("User", this.user);
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            var temp = Modal.Show<SceneAddEditModal>($"Admin Scene - {scene.Id}", parameters, options);
+            await temp.Result;
+        }
+    }
+
+    public bool IsAdmin()
+    {
+        return Extensions.IsAdmin(this.user ?? new());
     }
 
     public string GetGameIcon(string gameName)
@@ -2750,19 +2710,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         }
     }
 
-    public async Task OpenSceneModal(SceneDto scene)
+    public void OpenSceneModal(SceneDto scene)
     {
-        WayfinderProjectUser user = new();
-        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
-        {
-            var authState = await this.authenticationStateTask;
-
-            if (authState.User.Identity != null && authState.User.Identity.Name != null)
-            {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-            }
-        }
-
         var parameters = new ModalParameters();
 
         parameters.Add("Scene", scene);
@@ -2773,19 +2722,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         var temp = Modal.Show<SceneModal>($"{scene.Name}", parameters, options);
     }
 
-    public async Task OpenInteractionModal(InteractionDto interaction)
+    public void OpenInteractionModal(InteractionDto interaction)
     {
-        WayfinderProjectUser user = new();
-        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
-        {
-            var authState = await this.authenticationStateTask;
-
-            if (authState.User.Identity != null && authState.User.Identity.Name != null)
-            {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-            }
-        }
-
         var parameters = new ModalParameters();
 
         parameters.Add("Interaction", interaction);
@@ -2796,19 +2734,8 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         var temp = Modal.Show<InteractionModal>($"{interaction.Name}", parameters, options);
     }
 
-    public async Task OpenInterviewModal(InterviewDto interview)
+    public void OpenInterviewModal(InterviewDto interview)
     {
-        WayfinderProjectUser user = new();
-        if (this.authenticationStateTask != null && this.api != null && !this.Loading)
-        {
-            var authState = await this.authenticationStateTask;
-
-            if (authState.User.Identity != null && authState.User.Identity.Name != null)
-            {
-                user = this.context.Users.First(x => x.UserName == authState.User.Identity.Name);
-            }
-        }
-
         var parameters = new ModalParameters();
 
         parameters.Add("Interview", interview);

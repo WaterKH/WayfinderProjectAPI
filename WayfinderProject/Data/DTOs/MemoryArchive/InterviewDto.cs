@@ -1,4 +1,6 @@
-﻿namespace WayfinderProjectAPI.Data.DTOs
+﻿using WayfinderProject.Data.Enums;
+
+namespace WayfinderProjectAPI.Data.DTOs
 {
     public class InterviewDto
     {
@@ -7,6 +9,7 @@
         public string Link { get; set; } = string.Empty;
         public DateTime ReleaseDate { get; set; }
         public string AdditionalLink { get; set; } = string.Empty;
+        public State State { get; set; }
 
 
         public ICollection<InterviewLineDto> Conversation { get; set; } = new List<InterviewLineDto>();

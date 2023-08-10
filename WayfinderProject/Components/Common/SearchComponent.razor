@@ -1,4 +1,4 @@
-﻿@if(this.CurrentOption == this.Id)
+﻿@if(this.CurrentOption == this.Id || this.AllowAllSearch)
 {
     if (this.loaded)
     {
@@ -121,6 +121,7 @@
     [Parameter] public string Placeholder { get; set; } = "Search for values...";
     [Parameter] public string Color { get; set; } = "#ffffff";
     [Parameter] public bool CanSearch { get; set; } = true;
+    [Parameter] public bool AllowAllSearch { get; set; } = false;
 
     [Parameter] public List<string> Initial { get; set; } = new List<string>();
     [Parameter] public List<string> Available { get; set; } = new List<string>();
