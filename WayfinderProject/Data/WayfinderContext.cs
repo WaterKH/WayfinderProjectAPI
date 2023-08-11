@@ -20,6 +20,7 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<Scene>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<World>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Script>().Property(p => p.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<ScriptLine>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Interaction>().Property(p => p.Id).ValueGeneratedOnAdd();
 
@@ -60,6 +61,7 @@ namespace WayfinderProjectAPI.Data
         public DbSet<Scene> Scenes { get; set; } = null!;
         public DbSet<World> Worlds { get; set; } = null!;
         public DbSet<Script> Script { get; set; } = null!;
+        public DbSet<ScriptLine> ScriptLine { get; set; } = null!;
 
         public DbSet<Interaction> Interactions { get; set; } = null!;
 

@@ -89,7 +89,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <input class="custom-input" onchange="@(async (ChangeEventArgs e) => { line.Line = e?.Value?.ToString() ?? string.Empty;  })" value="@line.Line" placeholder="Enter Line...">
+                                <input class="custom-input" onchange="@(async (ChangeEventArgs e) => { line.Line = e?.Value?.ToString() ?? string.Empty;  })" value="@line.Line" placeholder="Enter Line..." style="width: 100%;">
                             </div>
 
                             <div class="col-md-1">
@@ -118,7 +118,7 @@
 
     <hr />
 
-    <button onclick="@(() => Save())" class="btn remove-project-button" style="margin-left: 15px;">Save Scene</button>
+    <button onclick="@(() => Save())" class="active-wayfinder-button" style="margin-left: 15px;">Save Scene</button>
     <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
 </div>
 
@@ -139,6 +139,21 @@
     margin-top: 3px;
     cursor: pointer;
 }
+
+.active-wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+}
+
+    .active-wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
 </style>
 
 @code {
@@ -306,13 +321,15 @@
         var characters = string.Join("::", this.SceneCharactersSelected) != "" ? string.Join("::", this.SceneCharactersSelected.Distinct()) : null;
         var music = string.Join("::", this.SceneMusicSelected) != "" ? string.Join("::", this.SceneMusicSelected.Distinct()) : null;
 
-        var script = string.Join("::", this.dialogue.Select(x => x.Line));
+        var script = string.Join("::", this.dialogue.Select(x => $"{x.Character}: {x.Line}"));
 
         // TODO Remove this after we add in the pagination limiter?
         if (this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
         {
             this.API.AddScene(accountId: this.User.Id, gameName: games, sceneName: this.SceneName, sceneLink: this.SceneLink, worlds: worlds, areas: areas, characters: characters, music: music, script: script);
         }
+
+        BlazoredModal.CloseAsync();
     }
 
     private async Task ClearAllOptions(string clearString)

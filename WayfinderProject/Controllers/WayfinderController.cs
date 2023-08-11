@@ -285,32 +285,78 @@ namespace WayfinderProjectAPI.Controllers
             scene.Game = _context.Games.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Name == gameName);
             scene.Link = sceneLink;
 
-            // TODO: These Contains don't work the same as the above GET
             if (worlds != null)
-                scene.Worlds = _context.Worlds.AsNoTrackingWithIdentityResolution().Where(x => worlds.Contains(x.Name)).ToList();
+            {
+                var splitWorlds = worlds.Split("::");
+
+                scene.Worlds = _context.Worlds.AsNoTrackingWithIdentityResolution().Where(x => splitWorlds.Contains(x.Name)).ToList();
+            }
 
             if (characters != null)
-                scene.Characters = _context.Characters.Where(x => characters.Contains(x.Name)).ToList();
+            {
+                var splitCharacters = characters.Split("::");
+
+                scene.Characters = _context.Characters.Where(x => splitCharacters.Contains(x.Name)).ToList();
+            }
 
             if (areas != null)
-                scene.Areas = _context.Areas.Where(x => areas.Contains(x.Name)).ToList();
+            {
+                var splitAreas = areas.Split("::");
+
+                scene.Areas = _context.Areas.Where(x => splitAreas.Contains(x.Name)).ToList();
+            }
 
             if (music != null)
-                scene.Music = _context.Music.Where(x => music.Contains(x.Name)).ToList();
+            {
+                var splitMusic = music.Split("::");
+
+                scene.Music = _context.Music.Where(x => splitMusic.Contains(x.Name)).ToList();
+            }
 
             _context.SaveChanges();
 
             // Update Script
             if (script != null)
             {
-                var sceneScript = new Script
-                {
-                    SceneName = scene.Name,
-                    GameName = scene.Game.Name,
-                    Lines = new List<ScriptLine>()
-                };
-
                 var splitScript = script.Split("::");
+                var sceneScript = _context.Script.FirstOrDefault(x => x.SceneName == scene.Name && x.GameName == scene.Game.Name);
+
+                if (sceneScript == null)
+                {
+                    if (splitScript.Length == 1 && splitScript[0] == "None: None")
+                    {
+                        scene.Script = _context.Script.FirstOrDefault(x => x.Id == 1); // None
+
+                        _context.SaveChanges();
+
+                        return;
+                    }
+
+                    sceneScript = new Script
+                    {
+                        SceneName = scene.Name,
+                        GameName = scene.Game.Name,
+                        Lines = new List<ScriptLine>()
+                    };
+
+                    _context.Add(sceneScript);
+                    _context.SaveChanges();
+
+                    sceneScript = _context.Script.First(x => x.SceneName == scene.Name && x.GameName == scene.Game.Name);
+                }
+                else
+                {
+                    sceneScript.Lines = new List<ScriptLine>();
+                }
+
+                // Remove previous line in this position
+                var tempScriptLines = _context.ScriptLine.Where(x => x.Script.Id == sceneScript.Id);
+
+                if (tempScriptLines != null)
+                {
+                    _context.RemoveRange(tempScriptLines);
+                    _context.SaveChanges();
+                }
 
                 for (int i = 0; i < splitScript.Length; ++i)
                 {
@@ -318,15 +364,28 @@ namespace WayfinderProjectAPI.Controllers
 
                     if (subSplitScript.Length < 2) continue;
 
-                    sceneScript.Lines.Add(new ScriptLine
+                    //var scriptLine = _context.ScriptLine.FirstOrDefault(x => x.Script.Id == sceneScript.Id && x.Character == subSplitScript[0] && x.Line == subSplitScript[1]);
+
+                    //if (scriptLine == null)
+                    //{
+                    var scriptLine = new ScriptLine
                     {
                         Order = i,
                         Character = subSplitScript[0],
-                        Line = subSplitScript[1],
-                    });
-                }
+                        Line = subSplitScript[1]
+                    };
 
-                _context.Add(sceneScript);
+                    sceneScript.Lines.Add(scriptLine);
+                    //}
+                    //else
+                    //{
+                    //scriptLine.Order = i;
+                    //scriptLine.Character = subSplitScript[0];
+                    //scriptLine.Line = subSplitScript[1];
+
+                    //sceneScript.Lines.Add(scriptLine);
+                    //}
+                }
 
                 scene.Script = sceneScript;
 
