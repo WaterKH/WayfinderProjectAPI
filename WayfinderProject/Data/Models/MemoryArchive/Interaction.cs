@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using WayfinderProject.Data.Enums;
 
 namespace WayfinderProjectAPI.Data.Models
 {
@@ -18,6 +19,8 @@ namespace WayfinderProjectAPI.Data.Models
         public string Link { get; set; } = string.Empty;
         [AllowNull]
         public string Notes { get; set; } = string.Empty;
+        [AllowNull]
+        public State State { get; set; }
 
 
         [AllowNull]

@@ -1,10 +1,18 @@
-﻿using WayfinderProjectAPI.Data.DTOs;
+﻿using WayfinderProject.Data.Models;
+using WayfinderProjectAPI.Data.DTOs;
 using WayfinderProjectAPI.Data.Models;
 
 namespace WayfinderProjectAPI.Data
 {
     public static class Extensions
     {
+        public static bool IsAdmin(this WayfinderProjectUser user)
+        {
+            List<string> allowedUsers = new() { "regularpatyt@gmail.com", "waterkh@outlook.com" };
+
+            return allowedUsers.Contains(user.UserName?.ToLower() ?? "");
+        }
+
         #region Memory Archive
         public static IQueryable<SceneDto> ToDto(this IQueryable<Scene> scenes)
         {
@@ -26,7 +34,8 @@ namespace WayfinderProjectAPI.Data
                     //    GameName = x.Script.GameName,
                     //    Lines = x.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
                     //},
-                    Notes = x.Notes
+                    Notes = x.Notes,
+                    State = x.State
                 });
         }
 
@@ -49,7 +58,8 @@ namespace WayfinderProjectAPI.Data
                 //    GameName = scene.Script.GameName,
                 //    Lines = scene.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
                 //},
-                Notes = scene.Notes
+                Notes = scene.Notes,
+                State = scene.State
             };
         }
 
@@ -84,7 +94,8 @@ namespace WayfinderProjectAPI.Data
                     //    GameName = x.Script.GameName,
                     //    Lines = x.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
                     //},
-                    Notes = x.Notes
+                    Notes = x.Notes,
+                    State = x.State
                 });
         }
 
@@ -107,7 +118,8 @@ namespace WayfinderProjectAPI.Data
                 //    GameName = interaction.Script.GameName,
                 //    Lines = interaction.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
                 //},
-                Notes = interaction.Notes
+                Notes = interaction.Notes,
+                State = interaction.State
             };
         }
 
@@ -124,7 +136,8 @@ namespace WayfinderProjectAPI.Data
                     Games = x.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name, Order = y.Order }).ToList(),
                     Participants = x.Participants.Select(y => new PersonDto { Id = y.Id, Name = y.Name, Description = y.Description, Link = y.Link }).ToList(),
                     Provider = new ProviderDto { Id = x.Provider.Id, Name = x.Provider.Name, Description = x.Provider.Description, Link = x.Provider.Link },
-                    Translator = new PersonDto { Id = x.Translator.Id, Name = x.Translator.Name, Description = x.Translator.Description, Link = x.Translator.Link }
+                    Translator = new PersonDto { Id = x.Translator.Id, Name = x.Translator.Name, Description = x.Translator.Description, Link = x.Translator.Link },
+                    State = x.State
                 });
         }
 
@@ -140,7 +153,8 @@ namespace WayfinderProjectAPI.Data
                 Games = interview.Games.Select(y => new GameDto { Id = y.Id, Name = y.Name, Order = y.Order }).ToList(),
                 Participants = interview.Participants.Select(y => new PersonDto { Id = y.Id, Name = y.Name, Description = y.Description, Link = y.Link }).ToList(),
                 Provider = new ProviderDto { Id = interview.Provider.Id, Name = interview.Provider.Name, Description = interview.Provider.Description, Link = interview.Provider.Link },
-                Translator = new PersonDto { Id = interview.Translator.Id, Name = interview.Translator.Name, Description = interview.Translator.Description, Link = interview.Translator.Link }
+                Translator = new PersonDto { Id = interview.Translator.Id, Name = interview.Translator.Name, Description = interview.Translator.Description, Link = interview.Translator.Link },
+                State = interview.State
             };
         }
 
@@ -180,7 +194,8 @@ namespace WayfinderProjectAPI.Data
                     Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name, Order = x.Game.Order },
                     Characters = x.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
                     Worlds = x.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
-                    Category = x.Category
+                    Category = x.Category,
+                    State = x.State
                 });
         }
 
@@ -195,7 +210,8 @@ namespace WayfinderProjectAPI.Data
                 Worlds = entry.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
                 Characters = entry.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
                 Category = entry.Category,
-                AdditionalInformation = entry.AdditionalInformation
+                AdditionalInformation = entry.AdditionalInformation,
+                State = entry.State
             };
         }
         #endregion Jiminy Journal
@@ -240,7 +256,8 @@ namespace WayfinderProjectAPI.Data
                                 }
                             }).ToList()
                         }
-                    }).ToList()
+                    }).ToList(),
+                    State = x.State
                 });
         }
 
@@ -282,7 +299,8 @@ namespace WayfinderProjectAPI.Data
                             }
                         }).ToList()
                     }
-                }).ToList()
+                }).ToList(),
+                State = recipe.State
             };
         }
 
@@ -312,7 +330,8 @@ namespace WayfinderProjectAPI.Data
                             World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
                             Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
                         }
-                    }).ToList()
+                    }).ToList(),
+                    State = x.State
                 });
         }
 
@@ -341,7 +360,8 @@ namespace WayfinderProjectAPI.Data
                         World = new WorldDto { Id = y.CharacterLocation.World.Id, Name = y.CharacterLocation.World.Name },
                         Areas = y.CharacterLocation.Areas.Select(area => new AreaDto { Id = area.Id, Name = area.Name }).ToList()
                     }
-                }).ToList()
+                }).ToList(),
+                State = inventory.State
             };
         }
         #endregion Moogle Shop

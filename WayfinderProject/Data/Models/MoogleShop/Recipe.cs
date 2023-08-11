@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
+using WayfinderProject.Data.Enums;
 
 namespace WayfinderProjectAPI.Data.Models
 {
@@ -16,6 +18,8 @@ namespace WayfinderProjectAPI.Data.Models
         [Required]
         public string UnlockConditionDescription { get; set; } = string.Empty;
         // TODO Create User Entry for if this is crafted or not
+        [AllowNull]
+        public State State { get; set; }
 
 
         [Required]

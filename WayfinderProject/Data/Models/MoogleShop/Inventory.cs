@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
+using WayfinderProject.Data.Enums;
 
 namespace WayfinderProjectAPI.Data.Models
 {
@@ -21,6 +23,8 @@ namespace WayfinderProjectAPI.Data.Models
         public int Cost { get; set; } = 0;
         [Required]
         public string Currency { get; set; } = string.Empty;
+        [AllowNull]
+        public State State { get; set; }
 
 
         [Required]

@@ -1,0 +1,430 @@
+﻿@using Microsoft.EntityFrameworkCore
+@using WayfinderProjectAPI.Controllers
+@using WayfinderProjectAPI.Data
+@using WayfinderProjectAPI.Data.DTOs
+
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-12">
+            <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
+
+            @if (this.CurrentSubOption == "Details")
+            {
+                <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                    <div class="row" style="height: 281px;">
+                        
+                        <div class="col-md-12">
+                            <div class="wayfinder-search">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.SceneName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.SceneName" placeholder="Enter a Scene Name..." style="width: 50%;">
+                            </div>
+
+                            <div class="wayfinder-search">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.SceneLink = e?.Value?.ToString() ?? string.Empty;  })" value="@this.SceneLink" placeholder="Enter a Scene Link..." style="width: 55%;">
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="SceneGamesSearch" Id="Games" Placeholder="Start Typing for Games..." Color="#cdd1ff" Initial="this.SceneGames" Selected="this.SceneGamesSelected" Available="this.SceneGamesAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneGamesSelected.Count > 0)" AllowAllSearch="true"
+                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="SceneWorldsSearch" Id="Worlds" Placeholder="Start Typing for Worlds..." Color="#ea4a4a" Initial="this.SceneWorlds" Selected="this.SceneWorldsSelected" Available="this.SceneWorldsAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneWorldsSelected.Count > 0)" AllowAllSearch="true"
+                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="SceneAreasSearch" Id="Areas" Placeholder="Start Typing for Areas..." Color="#5499fc" Initial="this.SceneAreas" Selected="this.SceneAreasSelected" Available="this.SceneAreasAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneAreasSelected.Count > 0)" AllowAllSearch="true"
+                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="SceneCharactersSearch" Id="Characters" Placeholder="Start Typing for Characters..." Color="#f3b222" Initial="this.SceneCharacters" Selected="this.SceneCharactersSelected" Available="this.SceneCharactersAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneCharactersSelected.Count > 0)" AllowAllSearch="true"
+                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="SceneMusicSearch" Id="Music" Placeholder="Start Typing for Music..." Color="#a13bfb" Initial="this.SceneMusic" Selected="this.SceneMusicSelected" Available="this.SceneMusicAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneMusicSelected.Count > 0)" AllowAllSearch="true"
+                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (this.CurrentSubOption == "Dialogue")
+            {
+
+                <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 410px; overflow-y: auto; margin-top: 10px;">
+                    <div class="row">
+                        @foreach (var line in this.dialogue)
+                        {
+                            <div class="col-md-4">
+                                <input class="custom-input" onchange="@(async (ChangeEventArgs e) => { line.Character = e?.Value?.ToString() ?? string.Empty;  })" value="@line.Character" placeholder="Enter Character Name...">
+                            </div>
+
+                            <div class="col-md-7">
+                                <input class="custom-input" onchange="@(async (ChangeEventArgs e) => { line.Line = e?.Value?.ToString() ?? string.Empty;  })" value="@line.Line" placeholder="Enter Line..." style="width: 100%;">
+                            </div>
+
+                            <div class="col-md-1">
+                                <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => this.DeleteLine(line.Id))">
+                                    <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+                                </div>
+                            </div>
+                        }
+
+                        <div class="col-md-4">
+                        </div>
+
+                        <div class="col-md-7">
+                        </div>
+
+                        <div class="col-md-1">
+                            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => this.AddLine())">
+                                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(() => Save())" class="active-wayfinder-button" style="margin-left: 15px;">Save Scene</button>
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+<style>
+.advanced-search-box {
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+
+.clickable {
+    float: right;
+    font-size: 1rem;
+    color: #3e79a7;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.active-wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+}
+
+    .active-wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
+</style>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public SceneDto Scene { get; set; } = default!;
+    [Parameter] public WayfinderController? API { get; set; }
+    [Parameter] public WayfinderProjectUser? User { get; set; }
+
+    public string CurrentSubOption { get; set; } = "Details";
+
+    private List<ScriptLineDto> dialogue = new List<ScriptLineDto>();
+
+    #region Scene Variables
+    public string SceneName { get; set; } = "";
+    public string SceneLink { get; set; } = "";
+    //private List<SceneDto> SceneDtos = new List<SceneDto>();
+
+    public List<string> SceneAreas { get; set; } = new List<string>();
+    public List<string> SceneCharacters { get; set; } = new List<string>();
+    public List<string> SceneGames { get; set; } = new List<string>();
+    public List<string> SceneMusic { get; set; } = new List<string>();
+    //public List<string> Scenes { get; set; } = new List<string>();
+    public List<string> SceneWorlds { get; set; } = new List<string>();
+
+
+    #region Scecne Search Variables
+    private SearchComponent? SceneAreasSearch;
+    private List<string> SceneAreasSelected = new List<string>();
+    private List<string> SceneAreasAvailable = new List<string>();
+
+    private SearchComponent? SceneCharactersSearch;
+    private List<string> SceneCharactersSelected = new List<string>();
+    private List<string> SceneCharactersAvailable = new List<string>();
+
+    private SearchComponent? SceneGamesSearch;
+    private List<string> SceneGamesSelected = new List<string>();
+    private List<string> SceneGamesAvailable = new List<string>();
+
+    private SearchComponent? SceneMusicSearch;
+    private List<string> SceneMusicSelected = new List<string>();
+    private List<string> SceneMusicAvailable = new List<string>();
+
+    //private SearchComponent? ScenesSearch;
+    //private List<string> ScenesSelected = new List<string>();
+    //private List<string> ScenesAvailable = new List<string>();
+
+    private SearchComponent? SceneWorldsSearch;
+    private List<string> SceneWorldsSelected = new List<string>();
+    private List<string> SceneWorldsAvailable = new List<string>();
+    #endregion Scene Search Variables
+
+    #endregion Scene Variables
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (this.API != null)
+        {
+            await this.ResetOptions();
+
+            if (this.Scene != null)
+            {
+                this.SceneName = this.Scene.Name;
+                this.SceneLink = this.Scene.Link;
+                this.SceneAreasSelected = this.Scene.Areas.Select(x => x.Name).ToList();
+                this.SceneCharactersSelected = this.Scene.Characters.Select(x => x.Name).ToList();
+                this.SceneGamesSelected = new List<string> { this.Scene.Game.Name };
+                this.SceneMusicSelected = this.Scene.Music.Select(x => x.Name).ToList();
+                this.SceneWorldsSelected = this.Scene.Worlds.Select(x => x.Name).ToList();
+
+                this.Scene.Script = await this.API.GetScript(Scene.Game.Name, Scene.Name);
+
+                this.dialogue = this.Scene.Script.Lines.ToList();
+            }
+
+            this.Search();
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public void Search()
+    {
+        this.SceneAreasAvailable = this.SceneAreas.Except(this.SceneAreasSelected).Distinct().ToList();
+        this.SceneCharactersAvailable = this.SceneCharacters.Except(this.SceneCharactersSelected).Distinct().ToList();
+        this.SceneGamesAvailable = this.SceneGames.Except(this.SceneGamesSelected).Distinct().ToList();
+        this.SceneMusicAvailable = this.SceneMusic.Except(this.SceneMusicSelected).Distinct().ToList();
+        //this.ScenesAvailable = this.Scenes.Except(this.ScenesSelected).Distinct().ToList();
+        this.SceneWorldsAvailable = this.SceneWorlds.Except(this.SceneWorldsSelected).Distinct().ToList();
+
+
+        this.SceneAreasAvailable.Sort();
+        this.SceneCharactersAvailable.Sort();
+        this.SceneMusicAvailable.Sort();
+        //this.ScenesAvailable.Sort();
+        this.SceneWorldsAvailable.Sort();
+    }
+
+    private async Task ResetOptions()
+    {
+        this.SceneAreas = await context.Areas.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        this.SceneCharacters = await context.Characters.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        this.SceneGames = (await context.Games.AsNoTracking().OrderBy(x => x.Order).ToListAsync()).Select(x => x.Name).Distinct().ToList();
+        this.SceneMusic = await context.Music.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        //this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        this.SceneWorlds = await context.Worlds.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+
+        this.SceneAreasAvailable = this.SceneAreas;
+        this.SceneCharactersAvailable = this.SceneCharacters;
+        this.SceneGamesAvailable = this.SceneGames;
+        this.SceneMusicAvailable = this.SceneMusic;
+        //this.ScenesAvailable = this.Scenes;
+        this.SceneWorldsAvailable = this.SceneWorlds;
+
+        this.SceneAreasAvailable.Sort();
+        this.SceneCharactersAvailable.Sort();
+        this.SceneMusicAvailable.Sort();
+        //this.ScenesAvailable.Sort();
+        this.SceneWorldsAvailable.Sort();
+
+        this.SceneGamesSelected = new List<string>();
+        //this.ScenesSelected = new List<string>();
+        this.SceneWorldsSelected = new List<string>();
+        this.SceneAreasSelected = new List<string>();
+        this.SceneCharactersSelected = new List<string>();
+        this.SceneMusicSelected = new List<string>();
+
+        if (this.SceneGamesSearch != null)
+            await this.SceneGamesSearch.SetCurrentView("Available");
+
+        //if (this.ScenesSearch != null)
+        //    await this.ScenesSearch.SetCurrentView("Available");
+
+        if (this.SceneWorldsSearch != null)
+            await this.SceneWorldsSearch.SetCurrentView("Available");
+
+        if (this.SceneAreasSearch != null)
+            await this.SceneAreasSearch.SetCurrentView("Available");
+
+        if (this.SceneCharactersSearch != null)
+            await this.SceneCharactersSearch.SetCurrentView("Available");
+
+        if (this.SceneMusicSearch != null)
+            await this.SceneMusicSearch.SetCurrentView("Available");
+    }
+
+    private void Save()
+    {
+        var games = string.Join("::", this.SceneGamesSelected) != "" ? string.Join("::", this.SceneGamesSelected.Distinct()) : null;
+        //var scenes = string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.SceneWorldsSelected) != "" ? string.Join("::", this.SceneWorldsSelected.Distinct()) : null;
+        var areas = string.Join("::", this.SceneAreasSelected) != "" ? string.Join("::", this.SceneAreasSelected.Distinct()) : null;
+        var characters = string.Join("::", this.SceneCharactersSelected) != "" ? string.Join("::", this.SceneCharactersSelected.Distinct()) : null;
+        var music = string.Join("::", this.SceneMusicSelected) != "" ? string.Join("::", this.SceneMusicSelected.Distinct()) : null;
+
+        var script = string.Join("::", this.dialogue.Select(x => $"{x.Character}: {x.Line}"));
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
+        {
+            this.API.AddScene(accountId: this.User.Id, gameName: games, sceneName: this.SceneName, sceneLink: this.SceneLink, worlds: worlds, areas: areas, characters: characters, music: music, script: script);
+        }
+
+        BlazoredModal.CloseAsync();
+    }
+
+    private async Task ClearAllOptions(string clearString)
+    {
+        if (clearString == "Games")
+        {
+            this.SceneGames = await context.Games.AsNoTracking().OrderBy(x => x.Order).Select(x => x.Name).ToListAsync();
+
+            this.SceneGamesAvailable = this.SceneGames;
+            this.SceneGamesSelected = new List<string>();
+
+            if (this.SceneGamesSearch != null)
+            {
+                await this.SceneGamesSearch.SetCurrentView("Available");
+            }
+        }
+        //else if (clearString == "Scenes")
+        //{
+        //    this.Scenes = await context.Scenes.AsNoTracking().Select(x => x.Name).ToListAsync();
+        //    this.Scenes.Sort();
+
+        //    this.ScenesAvailable = this.Scenes;
+        //    this.ScenesSelected = new List<string>();
+
+        //    if (this.ScenesSearch != null)
+        //    {
+        //        await this.ScenesSearch.SetCurrentView("Available");
+        //    }
+        //}
+        else if (clearString == "Worlds")
+        {
+            this.SceneWorlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.SceneWorlds.Sort();
+
+            this.SceneWorldsAvailable = this.SceneWorlds;
+            this.SceneWorldsSelected = new List<string>();
+
+            if (this.SceneWorldsSearch != null)
+            {
+                await this.SceneWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Areas")
+        {
+            this.SceneAreas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.SceneAreas.Sort();
+
+            this.SceneAreasAvailable = this.SceneAreas;
+            this.SceneAreasSelected = new List<string>();
+
+            if (this.SceneAreasSearch != null)
+            {
+                await this.SceneAreasSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Characters")
+        {
+            this.SceneCharacters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.SceneCharacters.Sort();
+
+            this.SceneCharactersAvailable = this.SceneCharacters;
+            this.SceneCharactersSelected = new List<string>();
+
+            if (this.SceneCharactersSearch != null)
+            {
+                await this.SceneCharactersSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Music")
+        {
+            this.SceneMusic = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.SceneMusic.Sort();
+
+            this.SceneMusicAvailable = this.SceneMusic;
+            this.SceneMusicSelected = new List<string>();
+
+            if (this.SceneMusicSearch != null)
+            {
+                await this.SceneMusicSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    public void AddLine()
+    {
+        this.dialogue.Add(new ScriptLineDto());
+    }
+
+    public void DeleteLine(int id)
+    {
+        var line = this.dialogue.FirstOrDefault(x => x.Id == id);
+
+        if (line != null)
+            this.dialogue.Remove(line);
+    }
+}

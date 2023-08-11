@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WayfinderProject.Data.Enums;
 
 namespace WayfinderProjectAPI.Data.Models
 {
@@ -16,6 +17,7 @@ namespace WayfinderProjectAPI.Data.Models
         [Required]
         public string Description { get; set; } = string.Empty;
         public string AdditionalInformation { get; set; } = string.Empty;
+        public State State { get; set; }
 
 
         [Required]

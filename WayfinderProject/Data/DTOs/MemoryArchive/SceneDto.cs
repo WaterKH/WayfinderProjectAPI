@@ -1,4 +1,6 @@
-﻿namespace WayfinderProjectAPI.Data.DTOs
+﻿using WayfinderProject.Data.Enums;
+
+namespace WayfinderProjectAPI.Data.DTOs
 {
     public class SceneDto
     {
@@ -6,6 +8,7 @@
         public string Name { get; set; } = string.Empty;
         public string Link { get; set; } = string.Empty;
         public string Notes { get; set; } = string.Empty;
+        public State State { get; set; }
 
 
         public GameDto Game { get; set; } = new GameDto();

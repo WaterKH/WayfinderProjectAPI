@@ -1,10 +1,17 @@
-﻿namespace WayfinderProjectAPI.Data.DTOs
+﻿using WayfinderProject.Data.Enums;
+
+namespace WayfinderProjectAPI.Data.DTOs
 {
-    public class RecipeMaterialDto
+    public class RecipeDto
     {
         public int Id { get; set; }
-        public int Amount { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
+        public string UnlockConditionDescription { get; set; } = string.Empty;
+        public State State { get; set; }
 
-        public virtual InventoryDto Inventory { get; set; } = new();
+
+        public virtual GameDto Game { get; set; } = new();
+        public virtual List<RecipeMaterialDto> RecipeMaterials { get; set; } = new();
     }
 }

@@ -265,6 +265,134 @@ namespace WayfinderProjectAPI.Controllers
             return results;
         }
 
+        [HttpPost("AddScene")]
+        public void AddScene([FromQuery] string? accountId, [FromQuery] string? sceneName = null, [FromQuery] string? sceneLink = null, [FromQuery] string? gameName = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? script = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            var scene = _context.Scenes.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Name == sceneName && x.Game.Name == gameName);
+
+            if (scene == null)
+            {
+                scene = new Scene();
+            }
+
+            scene.Name = sceneName ?? "ERRORED SCENE NAME";
+            scene.Game = _context.Games.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Name == gameName);
+            scene.Link = sceneLink;
+
+            if (worlds != null)
+            {
+                var splitWorlds = worlds.Split("::");
+
+                scene.Worlds = _context.Worlds.AsNoTrackingWithIdentityResolution().Where(x => splitWorlds.Contains(x.Name)).ToList();
+            }
+
+            if (characters != null)
+            {
+                var splitCharacters = characters.Split("::");
+
+                scene.Characters = _context.Characters.Where(x => splitCharacters.Contains(x.Name)).ToList();
+            }
+
+            if (areas != null)
+            {
+                var splitAreas = areas.Split("::");
+
+                scene.Areas = _context.Areas.Where(x => splitAreas.Contains(x.Name)).ToList();
+            }
+
+            if (music != null)
+            {
+                var splitMusic = music.Split("::");
+
+                scene.Music = _context.Music.Where(x => splitMusic.Contains(x.Name)).ToList();
+            }
+
+            _context.SaveChanges();
+
+            // Update Script
+            if (script != null)
+            {
+                var splitScript = script.Split("::");
+                var sceneScript = _context.Script.FirstOrDefault(x => x.SceneName == scene.Name && x.GameName == scene.Game.Name);
+
+                if (sceneScript == null)
+                {
+                    if (splitScript.Length == 1 && splitScript[0] == "None: None")
+                    {
+                        scene.Script = _context.Script.FirstOrDefault(x => x.Id == 1); // None
+
+                        _context.SaveChanges();
+
+                        return;
+                    }
+
+                    sceneScript = new Script
+                    {
+                        SceneName = scene.Name,
+                        GameName = scene.Game.Name,
+                        Lines = new List<ScriptLine>()
+                    };
+
+                    _context.Add(sceneScript);
+                    _context.SaveChanges();
+
+                    sceneScript = _context.Script.First(x => x.SceneName == scene.Name && x.GameName == scene.Game.Name);
+                }
+                else
+                {
+                    sceneScript.Lines = new List<ScriptLine>();
+                }
+
+                // Remove previous line in this position
+                var tempScriptLines = _context.ScriptLine.Where(x => x.Script.Id == sceneScript.Id);
+
+                if (tempScriptLines != null)
+                {
+                    _context.RemoveRange(tempScriptLines);
+                    _context.SaveChanges();
+                }
+
+                for (int i = 0; i < splitScript.Length; ++i)
+                {
+                    var subSplitScript = splitScript[i].Split(": ");
+
+                    if (subSplitScript.Length < 2) continue;
+
+                    //var scriptLine = _context.ScriptLine.FirstOrDefault(x => x.Script.Id == sceneScript.Id && x.Character == subSplitScript[0] && x.Line == subSplitScript[1]);
+
+                    //if (scriptLine == null)
+                    //{
+                    var scriptLine = new ScriptLine
+                    {
+                        Order = i,
+                        Character = subSplitScript[0],
+                        Line = subSplitScript[1]
+                    };
+
+                    sceneScript.Lines.Add(scriptLine);
+                    //}
+                    //else
+                    //{
+                    //scriptLine.Order = i;
+                    //scriptLine.Character = subSplitScript[0];
+                    //scriptLine.Line = subSplitScript[1];
+
+                    //sceneScript.Lines.Add(scriptLine);
+                    //}
+                }
+
+                scene.Script = sceneScript;
+
+                _context.SaveChanges();
+            }
+        }
+
         [HttpGet("GetInteractions")]
         public async Task<List<InteractionDto>> GetInteractions([FromQuery] string? accountId, [FromQuery] string? games = null, [FromQuery] string? interactions = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? line = null)
         {
