@@ -165,8 +165,6 @@
 
     public string CurrentSubOption { get; set; } = "Details";
 
-    private string searchValue = "";
-
     private List<ScriptLineDto> dialogue = new List<ScriptLineDto>();
 
     #region Scene Variables
@@ -214,10 +212,6 @@
     {
         if (this.API != null)
         {
-            this.Scene.Script = await this.API.GetScript(Scene.Game.Name, Scene.Name);
-
-            this.dialogue = this.Scene.Script.Lines.ToList();
-
             await this.ResetOptions();
 
             if (this.Scene != null)
@@ -229,6 +223,10 @@
                 this.SceneGamesSelected = new List<string> { this.Scene.Game.Name };
                 this.SceneMusicSelected = this.Scene.Music.Select(x => x.Name).ToList();
                 this.SceneWorldsSelected = this.Scene.Worlds.Select(x => x.Name).ToList();
+
+                this.Scene.Script = await this.API.GetScript(Scene.Game.Name, Scene.Name);
+
+                this.dialogue = this.Scene.Script.Lines.ToList();
             }
 
             this.Search();

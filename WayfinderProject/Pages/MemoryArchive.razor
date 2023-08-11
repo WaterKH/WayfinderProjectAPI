@@ -216,6 +216,13 @@
                 </div>
             </div>
         }
+
+        @if (this.IsAdmin())
+        {
+            <div class="row">
+                <button class="wayfinder-search-button" @onclick="@(() => OpenSceneAdminModal())" @onclick:stopPropagation @onclick:preventDefault style="font-size: larger; right: 0px;">Add Scene</button>
+        </div>
+        }
     }
     else if (this.CurrentCategory == "Interactions")
     {
@@ -2562,7 +2569,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var parameters = new ModalParameters();
 
-            parameters.Add("AccountId", this.user.Id);
+            parameters.Add("AccountId", this.user?.Id ?? "");
             parameters.Add("API", this.api);
 
             var options = new ModalOptions { Class = "modal-custom" };
@@ -2570,7 +2577,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var temp = Modal.Show<SettingsModal>("Search Settings", parameters, options);
             await temp.Result;
 
-            this.SearchSettings = await this.api.GetSearchSettings(this.user.Id);
+            this.SearchSettings = await this.api.GetSearchSettings(this.user?.Id ?? "");
         }
     }
 
@@ -2580,14 +2587,15 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var parameters = new ModalParameters();
 
-            parameters.Add("AccountId", this.user.Id);
+            parameters.Add("AccountId", this.user?.Id ?? "");
             parameters.Add("Type", "Memory Archive");
             parameters.Add("Context", this.context);
             parameters.Add("API", this.api);
 
             var options = new ModalOptions { Class = "modal-custom" };
 
-            Modal.Show<HistoryModal>("Search History", parameters, options);
+            var temp = Modal.Show<HistoryModal>("Search History", parameters, options);
+            await temp.Result;
         }
     }
 
@@ -2595,19 +2603,20 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         if (this.api != null && !this.Loading)
         {
+            var userId = this.user?.Id ?? "";
             if (this.Favourites.Select(x => x.SpecificRecordId).Any(x => x == specificRecordId))
             {
-                await this.api.InsertRemoveFavourite(this.user.Id, "Memory Archive", category, specificRecordId);
+                await this.api.InsertRemoveFavourite(userId, "Memory Archive", category, specificRecordId);
 
-                this.Favourites = await this.api.GetFavourites(this.user.Id, "Memory Archive");
+                this.Favourites = await this.api.GetFavourites(this.user?.Id ?? "", "Memory Archive");
             }
             else
             {
-                if (this.context.Favorites.Where(x => x.AccountId == this.user.Id).ToList().Count < favouriteCount)
+                if (this.context.Favorites.Where(x => x.AccountId == userId).ToList().Count < favouriteCount)
                 {
-                    await this.api.InsertRemoveFavourite(this.user.Id, "Memory Archive", category, specificRecordId);
+                    await this.api.InsertRemoveFavourite(userId, "Memory Archive", category, specificRecordId);
 
-                    this.Favourites = await this.api.GetFavourites(this.user.Id, "Memory Archive");
+                    this.Favourites = await this.api.GetFavourites(userId, "Memory Archive");
                 }
                 else
                 {
@@ -2634,7 +2643,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         {
             var parameters = new ModalParameters();
 
-            parameters.Add("AccountId", this.user.Id);
+            parameters.Add("AccountId", this.user?.Id ?? "");
             parameters.Add("Type", "Memory Archive");
             parameters.Add("Category", category);
             parameters.Add("SpecificRecordId", specificRecordId);
@@ -2645,7 +2654,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var temp = Modal.Show<ProjectModal>($"Projects - {category}", parameters, options);
             await temp.Result;
 
-            this.ProjectRecords = (await this.api.GetProjects(user.Id)).SelectMany(x => x.ProjectRecords).ToList();
+            this.ProjectRecords = (await this.api.GetProjects(user?.Id ?? "")).SelectMany(x => x.ProjectRecords).ToList();
         }
     }
 
@@ -2654,19 +2663,23 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
         return this.ProjectRecords.Exists(x => x.Type == "Memory Archive" && x.Category == category && x.SpecificRecordId == specificRecordId);
     }
 
-    public async Task OpenSceneAdminModal(SceneDto scene)
+    public async Task OpenSceneAdminModal(SceneDto? scene = null)
     {
         if (this.api != null && !this.Loading)
         {
             var parameters = new ModalParameters();
 
-            parameters.Add("Scene", scene);
-            parameters.Add("User", this.user);
+            if (scene != null)
+            {
+                parameters.Add("Scene", scene);
+            }
+
+            parameters.Add("User", this.user ?? new());
             parameters.Add("API", this.api);
 
             var options = new ModalOptions { Class = "modal-custom" };
 
-            var temp = Modal.Show<SceneAddEditModal>($"Admin Scene - {scene.Id}", parameters, options);
+            var temp = Modal.Show<SceneAddEditModal>($"Admin Scene - {scene?.Id}", parameters, options);
             await temp.Result;
         }
     }
