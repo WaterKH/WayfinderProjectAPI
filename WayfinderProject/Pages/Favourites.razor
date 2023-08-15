@@ -68,9 +68,28 @@ else if (this.CurrentType == "Memory Archive")
             </ExpandedRowTemplate>
         </SceneTable>
     }
-    else if (this.CurrentCategory == "Trailers")
+    else if (this.CurrentCategory == "Interactions" && this.InteractionDtos.Count > 0)
     {
-    
+        <InteractionTable @ref="MainInteractionTable" Items="this.InteractionDtos" Context="Interaction">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Interaction</label></th>
+                <th><img src="/images/icons/worlds_gray.png" class="header-margins"> <label class="header-label">Worlds</label></th>
+                <th><img src="/images/icons/areas_gray.png" class="header-margins"> <label class="header-label">Areas</label></th>
+                <th><img src="/images/icons/characters_gray.png" class="header-margins"> <label class="header-label">Characters</label></th>
+                <th><img src="/images/icons/music_gray.png" class="header-margins"> <label class="header-label">Music</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <InteractionTableRow Interaction="@Interaction" MainTable="@MainInteractionTable"
+                    FavoriteCallbackMethod="@(() => this.SetFavorite("Interactions", Interaction.Id))" IsFavorite="@(this.IsFavoriteForUser("Interactions", Interaction.Id))"
+                    ProjectCallbackMethod="@(() => this.OpenProjectModal("Interactions", Interaction.Id))" IsProject="@(this.IsProjectForUser("Interactions", Interaction.Id))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <InteractionTableExpandedRow Interaction="@Interaction" API="@this.api" />
+            </ExpandedRowTemplate>
+        </InteractionTable>
     }
     else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
@@ -370,6 +389,9 @@ else if (this.CurrentType == "Moogle Shop")
     private List<SceneDto> SceneDtos = new List<SceneDto>();
     private SceneTable<SceneDto>? MainSceneTable;
 
+    private List<InteractionDto> InteractionDtos = new List<InteractionDto>();
+    private InteractionTable<InteractionDto>? MainInteractionTable;
+
     private List<InterviewDto> InterviewDtos = new List<InterviewDto>();
     private InterviewTable<InterviewDto>? MainInterviewTable;
     #endregion Scene Variables
@@ -408,7 +430,7 @@ else if (this.CurrentType == "Moogle Shop")
     private List<string> types = new List<string> { "Memory Archive", "Jiminy's Journal", "Moogle Shop" };
     private NavBar? WayfinderNavBar;
 
-    private List<string> categories = new List<string> { "Scenes", "Interviews" }; // "Trailers",
+    private List<string> categories = new List<string> { "Scenes", "Interactions", "Interviews" }; // "Trailers",
     private SubNavBar? WayfinderSubNavBar;
 
     [CascadingParameter] public IModalService Modal { get; set; } = default!;
@@ -483,7 +505,7 @@ else if (this.CurrentType == "Moogle Shop")
 
         if (this.CurrentType == "Memory Archive")
         {
-            this.categories = new List<string> { "Scenes", "Interviews" }; //"Trailers",
+            this.categories = new List<string> { "Scenes", "Interactions", "Interviews" }; //"Trailers",
         }
         else if (this.CurrentType == "Jiminy's Journal")
         {
@@ -542,6 +564,10 @@ else if (this.CurrentType == "Moogle Shop")
             if (this.CurrentCategory == "Scenes")
             {
                 this.SceneDtos = await this.context.Scenes.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
+            else if (this.CurrentCategory == "Interactions")
+            {
+                this.InteractionDtos = await this.context.Interactions.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
             }
             else if (this.CurrentCategory == "Interviews")
             {
