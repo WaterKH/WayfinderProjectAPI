@@ -222,6 +222,9 @@ namespace WayfinderProjectAPI.Data
 
                 foreach (var scene in scenes)
                 {
+                    if (context.Scenes.Any(x => x.Game.Name == gameName && x.Name == scene.Name))
+                        continue;
+
                     var game = context.Games.FirstOrDefault(x => x.Name == gameName);
                     var worlds = context.Worlds.Where(x => scene.Worlds.Contains(x.Name)).ToList();
                     var characters = context.Characters.Where(x => scene.Characters.Contains(x.Name)).ToList();

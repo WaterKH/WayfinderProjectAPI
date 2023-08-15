@@ -1130,6 +1130,94 @@
         "Music": [ "Another Side" ]
       },
       {
+        "Name": "Snow White Platform",
+        "Link": "https://www.youtube.com/watch?v=wzwy4Dw4XB0&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=1",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Power of the Warrior",
+        "Link": "https://www.youtube.com/watch?v=txxbFAK514Q&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=2",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Power of the Mystic",
+        "Link": "https://www.youtube.com/watch?v=0HZWXVaS1ek&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=3",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Power of the Guardian",
+        "Link": "https://www.youtube.com/watch?v=IlZiUIFiKjY&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=4",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Choosing Your Form",
+        "Link": "https://www.youtube.com/watch?v=clmKbosXAl8&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=5",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Cinderella Platform",
+        "Link": "https://www.youtube.com/watch?v=dzXDPUeuTWs&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=6",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora", "Shadow(s)" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Awakened Princesses Platform",
+        "Link": "https://www.youtube.com/watch?v=MAdMMfwzZbU&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=7",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Dawn Adventure",
+        "Link": "https://www.youtube.com/watch?v=Bp4bywzZvrA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=8",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora", "Selphie", "Tidus", "Wakka" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Midday Adventure",
+        "Link": "https://www.youtube.com/watch?v=vjk1hdtPGIc&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=9",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora", "Selphie", "Tidus", "Wakka" ],
+        "Areas": [ "Seashore" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Aurora Platform",
+        "Link": "https://www.youtube.com/watch?v=dMj6wYtYDsw&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=10",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora", "Selphie", "Tidus", "Wakka" ],
+        "Areas": [ "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
+        "Name": "Dead of Night Adventure",
+        "Link": "https://www.youtube.com/watch?v=4b2N11Hb1C4&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=11",
+        "Worlds": [ "Dive to the Heart" ],
+        "Characters": [ "Sora", "Selphie", "Tidus", "Wakka" ],
+        "Areas": [ "Seashore", "Awakening" ],
+        "Music": [ "Dive Into the Heart -Destati-" ]
+      },
+      {
         "Name": "Selphie Chat 1",
         "Link": "https://www.youtube.com/watch?v=Xlp4i8AyCKw&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=3",
         "Worlds": [ "Destiny Islands" ],
@@ -1202,6 +1290,62 @@
         "Music": [ ":None:" ]
       },
       {
+        "Name": "Rabbit Hole Doors",
+        "Link": "https://www.youtube.com/watch?v=xjW5ZSKpEQw&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=20",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ ":None:" ],
+        "Areas": [ "Rabbit Hole" ],
+        "Music": [ "Welcome to Wonderland" ]
+      },
+      {
+        "Name": "Doorknob Snores",
+        "Link": "https://www.youtube.com/watch?v=DuMuogsCHHA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=21",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Doorknob" ],
+        "Areas": [ "Bizarre Room" ],
+        "Music": [ "Welcome to Wonderland" ]
+      },
+      {
+        "Name": "The Tea Party Garden",
+        "Link": "https://www.youtube.com/watch?v=3RpReAnR14M&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=22",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ ":None:" ],
+        "Areas": [ "Tea Party Garden" ],
+        "Music": [ "Welcome to Wonderland" ]
+      },
+      {
+        "Name": "Tea Party Garden Gifts",
+        "Link": "https://www.youtube.com/watch?v=v02Q_e14sAw&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=23",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Tea Party Garden" ],
+        "Music": [ "Welcome to Wonderland" ]
+      },
+      {
+        "Name": "Tea Party Garden Heartless",
+        "Link": "https://www.youtube.com/watch?v=tYff_xmIzvQ&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=24",
+        "Worlds": [ "Wonderland" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Tea Party Garden" ],
+        "Music": [ "Welcome to Wonderland" ]
+      },
+      {
+        "Name": "Powerwilds Attack Gorilla",
+        "Link": "https://www.youtube.com/watch?v=pukrfdroQ2Q&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=25",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Powerwild(s)", "Gorilla" ],
+        "Areas": [ "Camp" ],
+        "Music": [ "Deep Jungle" ]
+      },
+      {
+        "Name": "Gunshot from the Bamboo Thicket",
+        "Link": "https://www.youtube.com/watch?v=uZj6z4H2E9c&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=26",
+        "Worlds": [ "Deep Jungle" ],
+        "Characters": [ ":None:" ],
+        "Areas": [ "Camp" ],
+        "Music": [ "Deep Jungle" ]
+      },
+      {
         "Name": "Jane and Terk Trapped",
         "Link": "https://www.youtube.com/watch?v=B1lEkNX0R1Y&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=9",
         "Worlds": [ "Deep Jungle" ],
@@ -1218,28 +1362,44 @@
         "Music": [ "No Time to Think" ]
       },
       {
-        "Name": "Block Tigger: Low Score",
-        "Link": "https://www.youtube.com/watch?v=GkijAkBKxN0&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=10",
-        "Worlds": [ "100 Acre Wood" ],
-        "Characters": [ "Tigger" ],
-        "Areas": [ "Rabbit's House" ],
-        "Music": [ ":None:" ]
-      },
-      {
-        "Name": "Block Tigger: Medium Score",
-        "Link": "https://www.youtube.com/watch?v=z5O3gQXoC6c&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=11",
-        "Worlds": [ "100 Acre Wood" ],
-        "Characters": [ "Tigger" ],
-        "Areas": [ "Rabbit's House" ],
-        "Music": [ ":None:" ]
-      },
-      {
         "Name": "Figures in the Darkness (Alternate)",
         "Link": "https://www.youtube.com/watch?v=UQ3tGb6Xac8",
         "Worlds": [ "Hollow Bastion" ],
         "Characters": [ "Jafar", "Maleficent", "Oogie Boogie", "Ursula", "Sora", "Donald", "Goofy", "Snow White" ],
         "Areas": [ "Castle Chapel" ],
         "Music": [ "Villains of a Sort" ]
+      },
+      {
+        "Name": "Revealing Traverse Town's Keyhole",
+        "Link": "https://www.youtube.com/watch?v=FXyVYq7rM0A&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=28",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora", "Donald", "Goofy" ],
+        "Areas": [ "2nd District" ],
+        "Music": [ "Traverse Town" ]
+      },
+      {
+        "Name": "Carpet Arrives in the Desert",
+        "Link": "https://www.youtube.com/watch?v=pAY866tyGq8&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=29",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Carpet" ],
+        "Areas": [ "Desert" ],
+        "Music": [ "A Day in Agrabah" ]
+      },
+      {
+        "Name": "Sora, Donald, and Goofy Ride the Carpet",
+        "Link": "https://www.youtube.com/watch?v=xAJ_x7KNyIQ&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=30",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Carpet" ],
+        "Areas": [ "Desert" ],
+        "Music": [ "A Day in Agrabah" ]
+      },
+      {
+        "Name": "Arriving at the Palace Gates",
+        "Link": "https://www.youtube.com/watch?v=PDPWUKMC0b0&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=31",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Jafar", "Jasmine", "Sora", "Donald", "Goofy" ],
+        "Areas": [ "Palace Gates" ],
+        "Music": [ "A Day in Agrabah" ]
       },
       {
         "Name": "Wish Number Two (Alley)",
@@ -1266,6 +1426,46 @@
         "Music": [ "Strange Whispers" ]
       },
       {
+        "Name": "Sora, Donald, and Goofy Ride the Carpet 2",
+        "Link": "https://www.youtube.com/watch?v=XPI3gOy5TfE&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=32",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Carpet" ],
+        "Areas": [ "Desert" ],
+        "Music": [ "A Day in Agrabah" ]
+      },
+      {
+        "Name": "Aladdin Calls Abu",
+        "Link": "https://www.youtube.com/watch?v=RsNJ4eznBSQ&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=33",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Aladdin", "Abu" ],
+        "Areas": [ "Silent Chamber" ],
+        "Music": [ "A Day in Agrabah" ]
+      },
+      {
+        "Name": "Aladdin Calls Abu 2",
+        "Link": "https://www.youtube.com/watch?v=QdCQbDR0v_E&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=34",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Aladdin", "Abu" ],
+        "Areas": [ "Dark Chamber" ],
+        "Music": [ "A Day in Agrabah" ]
+      },
+      {
+        "Name": "Aladdin Calls Abu 3",
+        "Link": "https://www.youtube.com/watch?v=49WOfsYlC6I&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=35",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Sora", "Donald", "Aladdin", "Abu" ],
+        "Areas": [ "Treasure Room" ],
+        "Music": [ "A Day in Agrabah" ]
+      },
+      {
+        "Name": "Escaping the Cave of Wonders",
+        "Link": "https://www.youtube.com/watch?v=7WauqfZEFUc&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=36",
+        "Worlds": [ "Agrabah" ],
+        "Characters": [ "Cave of Wonders Guardian", "Sora", "Donald", "Goofy", "Aladdin", "Carpet" ],
+        "Areas": [ "Desert: Cave" ],
+        "Music": [ "Arabian Dream" ]
+      },
+      {
         "Name": "Playing Games (Alternate)",
         "Link": "https://www.youtube.com/watch?v=vMjepd0C4v8",
         "Worlds": [ "Monstro" ],
@@ -1288,6 +1488,150 @@
         "Characters": [ "Riku", "Pinocchio", "Sora", "Donald", "Goofy", "Jiminy", "Parasite Cage" ],
         "Areas": [ "Stomach" ],
         "Music": [ "Destiny's Force" ]
+      },
+      {
+        "Name": "Confronting the Hooligans",
+        "Link": "https://www.youtube.com/watch?v=YEwvjmNy-vE&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=37",
+        "Worlds": [ "Halloweeen Town" ],
+        "Characters": [ "Lock", "Shock", "Barrel" ],
+        "Areas": [ "Evil Playroom" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Winning the Hercules Cup",
+        "Link": "https://www.youtube.com/watch?v=PBzUf7nbPwA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=38",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Phil" ],
+        "Areas": [ "Arena", "Lobby" ],
+        "Music": [ "Olympus Coliseum" ]
+      },
+      {
+        "Name": "Pooh's Hunny Hunt: Low Score",
+        "Link": "https://www.youtube.com/watch?v=I-0wDE8wLFM&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=39",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [ "Hunny Tree" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Pooh's Hunny Hunt: Medium Score",
+        "Link": "https://www.youtube.com/watch?v=-DWCHin-H3Q&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=40",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh" ],
+        "Areas": [ "Hunny Tree" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Returning to the Hunny Tree",
+        "Link": "https://www.youtube.com/watch?v=w3JrTmSXV-0&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=41",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Pooh" ],
+        "Areas": [ "Hunny Tree" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Arriving at Rabbit's House",
+        "Link": "https://www.youtube.com/watch?v=pOurm6FWu-k&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=42",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Rabbit's House" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Block Tigger: Low Score",
+        "Link": "https://www.youtube.com/watch?v=GkijAkBKxN0&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=10",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Tigger" ],
+        "Areas": [ "Rabbit's House" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Block Tigger: Medium Score",
+        "Link": "https://www.youtube.com/watch?v=z5O3gQXoC6c&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=11",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Tigger" ],
+        "Areas": [ "Rabbit's House" ],
+        "Music": [ ":None:" ]
+      },
+      {
+        "Name": "Returning to the Hill",
+        "Link": "https://www.youtube.com/watch?v=F9-1oO74Idg&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=45",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Rabbit" ],
+        "Areas": [ "Hill" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Returning to the Hill 2",
+        "Link": "https://www.youtube.com/watch?v=vtZZvoMcaV4&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=46",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Pooh", "Eeyore" ],
+        "Areas": [ "Hill" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Arriving at the Bouncing Spot",
+        "Link": "https://www.youtube.com/watch?v=mUGeZreUm20&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=47",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Owl", "Roo", "Tigger", "Pooh" ],
+        "Areas": [ "Bouncing Spot" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Arriving at the Muddy Path",
+        "Link": "https://www.youtube.com/watch?v=yzJJ0QhMsfg&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=48",
+        "Worlds": [ "100 Acre Wood" ],
+        "Characters": [ "Sora", "Roo", "Pooh", "Tigger" ],
+        "Areas": [ "Muddy Path" ],
+        "Music": [ "Winnie the Pooh" ]
+      },
+      {
+        "Name": "Entering the Castle",
+        "Link": "https://www.youtube.com/watch?v=Mo6LBy9pGLA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=49",
+        "Worlds": [ "Hollow Bastion" ],
+        "Characters": [ "Sora", "Beast" ],
+        "Areas": [ "Castle Gates" ],
+        "Music": [ "Hollow Bastion" ]
+      },
+      {
+        "Name": "The Waterway Mural",
+        "Link": "https://www.youtube.com/watch?v=TdrskT_pXjQ&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=50",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Sora" ],
+        "Areas": [ "Secret Waterway" ],
+        "Music": [ "Traverse Town" ]
+      },
+      {
+        "Name": "Gift from Pongo and Perdita",
+        "Link": "https://www.youtube.com/watch?v=ZfYERw_94sk&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=45",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Pongo", "Perdita", "99 Puppies" ],
+        "Areas": [ "Piano Room" ],
+        "Music": [ "Traverse Town" ]
+      },
+      {
+        "Name": "All Puppies Returned",
+        "Link": "https://www.youtube.com/watch?v=pCq_hcgKrTI&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=53",
+        "Worlds": [ "Traverse Town" ],
+        "Characters": [ "Pongo", "Perdita", "99 Puppies", "Sora" ],
+        "Areas": [ "Piano Room" ],
+        "Music": [ "A Piece of Peace" ]
+      },
+      {
+        "Name": "Winning the Hades Cup",
+        "Link": "https://www.youtube.com/watch?v=p2Pf6aKN8EA&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=51",
+        "Worlds": [ "Olympus Coliseum" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hades", "Hercules", "Phil" ],
+        "Areas": [ "Arena" ],
+        "Music": [ "Olympus Coliseum" ]
+      },
+      {
+        "Name": "World Terminus",
+        "Link": "https://www.youtube.com/watch?v=nxee_somamk&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=54",
+        "Worlds": [ "End of the World" ],
+        "Characters": [ ":None:" ],
+        "Areas": [ "World Terminus" ],
+        "Music": [ "End of the World" ]
       },
       {
         "Name": "Summoning Simba",
