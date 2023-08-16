@@ -1,0 +1,5954 @@
+{
+  "Addendum": [
+    {
+      "Title": "Friends Disappearing",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "This can't be right... We're in Traverse Town!"
+        },
+        {
+          "Order": 1,
+          "Character": "Marluxia",
+          "Line": "What you see isn't real. This town is an illusion created by your memories ingrained in that card."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "My memories?"
+        },
+        {
+          "Order": 3,
+          "Character": "Jiminy",
+          "Line": "Forget about that, Sora! We lost Donald and Goofy!"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Donald? Goofy? Guys, where are you? What did you do with them?!"
+        },
+        {
+          "Order": 5,
+          "Character": "Marluxia",
+          "Line": "They are at the mercy of the cards now. Master the cards, and their strength will be yours again."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Marluxia Combat Tutorial",
+      "Link": "https://www.youtube.com/watch?v=clxcfVPf9T8&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=1",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Marluxia",
+          "Line": "The laws of this castle require that your friends be transformed into cards. If you value your friends, you won't fail to pick them up. Cards you pick up are added to the top of your stack. Use them, and your friends will come to your aid.The cards you use vanish, but they will reappear to aid you time and again. Cards are the hearts of your friends. Everything in this castle is ruled by cards. Whether an enemy or a door confronts you, cards are the only way to proceed. But you mustn't forget your own strength. First think for yourself. Move, then use the cards. You now know how to use your strength. But it would be of no use if you lose sight of your opponent. I wonder if you can catch me. Good. Every move you make causes a card to disappear. If you use up all your cards, you will be unable to act. But there is a solution. Keep using cards until you run out, and I will show you. You have no more cards, and without them, no power. If you want that power back, you must focus. Bid the cards return to you, and they will. The strength of your heart brought back the lost cards. You can recall spent cards at any time. You need only wish it. But each time you do, the cards will take longer to return. The cards are by no means unlimited. Use them wisely. Anticipate the flow of battle- And choose the most effective cards. You may use any card in your deck. The four card types you use in battle are grouped into two wider categories. The first category includes attack cards, magic cards, and item cards. The second category consists entirely of enemy cards. To use cards from a different category-Cards will empower you whether you are attacking or defending. But it is up to you to decide when to attack and when to defend. Do not forget that."
+        }
+      ],
+      "Characters": [
+        "Marluxia"
+      ],
+      "Worlds": [
+        "Traverse Town"
+      ],
+      "Areas": [
+        "1st-District-esque"
+      ],
+      "Music": [
+        "Face It!"
+      ]
+    },
+    {
+      "Title": "Ruled by Cards",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Are you two all right? Where have you been?"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "You tell us! When you opened the door, we saw a strange light- ...and the rest is just...blank."
+        },
+        {
+          "Order": 2,
+          "Character": "Jiminy",
+          "Line": "Gee, that doesn't help. Try to remember what happened. I have to keep my journal up to date."
+        },
+        {
+          "Order": 3,
+          "Character": "Goofy",
+          "Line": "Hey, Donald, where'd I get the new clothes?"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "Wak?! Me too, Goofy! Somebody's been messing with our clothes!"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Could it be the cards again?"
+        },
+        {
+          "Order": 6,
+          "Character": "Marluxia",
+          "Line": "That is for you to ponder. Master the cards and make your way through the castle. But from here, you walk alone."
+        },
+        {
+          "Order": 7,
+          "Character": "Goofy",
+          "Line": "Alone?! We can't let Sora go alone!"
+        },
+        {
+          "Order": 8,
+          "Character": "Donald",
+          "Line": "Yeah! Sora can't do anything without our help!"
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "Thanks a lot, Donald."
+        },
+        {
+          "Order": 10,
+          "Character": "Goofy",
+          "Line": "You sure you'll be okay?"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Of course! You want me to go alone? Fine. I can take care of myself."
+        },
+        {
+          "Order": 12,
+          "Character": "Marluxia",
+          "Line": "Hmph, the hero speaks boldly. Go, then. The rest of Castle Oblivion awaits. Walk the avenues of latent memory, and you shall meet someone dear to you."
+        },
+        {
+          "Order": 13,
+          "Character": "Jiminy",
+          "Line": "I've got a bad feeling about this..."
+        },
+        {
+          "Order": 14,
+          "Character": "Sora",
+          "Line": "Relax, Jiminy. I'm ready for any tricks he's got up his sleeve. How hard can it be to figure out these cards? All I have to do is use one in front of that door over there."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Leon and Yuffie",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Hmm, fighting alone isn't as easy as I thought...Aah! Don't pop out of nowhere like that!"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "Hey, it's not our fault! We don't know what's going on!"
+        },
+        {
+          "Order": 2,
+          "Character": "Goofy",
+          "Line": "A-hyuck?!"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Pluto?!"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "Things keep getting stranger. What's Pluto doing here?!"
+        },
+        {
+          "Order": 5,
+          "Character": "Goofy",
+          "Line": "There's nothing strange about that. We came to Traverse Town with Pluto, didn't we?"
+        },
+        {
+          "Order": 6,
+          "Character": "Donald",
+          "Line": "Did we?"
+        },
+        {
+          "Order": 7,
+          "Character": "Jiminy",
+          "Line": "No, wait! According to my journal, it was before you met Sora that you came to town with Pluto!"
+        },
+        {
+          "Order": 8,
+          "Character": "Donald",
+          "Line": "Wak! He's right! We were chasing after Pluto, and that's how we ended up in Castle Oblivion!"
+        },
+        {
+          "Order": 9,
+          "Character": "Goofy",
+          "Line": "But aren't we in Traverse Town?"
+        },
+        {
+          "Order": 10,
+          "Character": "Jiminy",
+          "Line": "Well, it's not really Traverse Town. I think the card created this Traverse Town inside Castle Oblivion!"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Aaghh! Who cares about all that? It's too confusing! I don't know where we are, but let's just keep moving forward defeating Heartless! We'll get somewhere!"
+        },
+        {
+          "Order": 12,
+          "Character": "Leon",
+          "Line": "You'd better be careful, or it's the Heartless that are going to defeat you."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Leon, it's you! What are you doing in Castle Oblivion?"
+        },
+        {
+          "Order": 14,
+          "Character": "Leon",
+          "Line": "Castle Oblivion? What are you talking about? This is Traverse Town. And how do you know my name? Who are you?"
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "!"
+        },
+        {
+          "Order": 16,
+          "Character": "Leon",
+          "Line": "I've never met the likes of you before."
+        },
+        {
+          "Order": 17,
+          "Character": "Sora",
+          "Line": "Quit playing, Leon! We all fought the Heartless together! You know that!"
+        },
+        {
+          "Order": 18,
+          "Character": "Leon",
+          "Line": "Look, I don't know what you're talking about. I don't even know your names."
+        },
+        {
+          "Order": 19,
+          "Character": "Goofy",
+          "Line": "You don't?"
+        },
+        {
+          "Order": 20,
+          "Character": "Leon",
+          "Line": "...Sorry."
+        },
+        {
+          "Order": 21,
+          "Character": "Sora",
+          "Line": "I can't believe it. How can you have forgotten about us?"
+        },
+        {
+          "Order": 22,
+          "Character": "Leon",
+          "Line": "I feel for you, but you've got the wrong guy. Happens all the time. Don't take it so personally, Sora."
+        },
+        {
+          "Order": 23,
+          "Character": "Donald",
+          "Line": "!"
+        },
+        {
+          "Order": 24,
+          "Character": "Goofy",
+          "Line": "?"
+        },
+        {
+          "Order": 25,
+          "Character": "Donald",
+          "Line": "You DO know his name!"
+        },
+        {
+          "Order": 26,
+          "Character": "Leon",
+          "Line": "Now, now hold on! Why do I know your name?"
+        },
+        {
+          "Order": 27,
+          "Character": "Goofy",
+          "Line": "You think Leon's just kidding around?"
+        },
+        {
+          "Order": 28,
+          "Character": "Donald",
+          "Line": "If he is, it's not funny. Sora's really upset."
+        },
+        {
+          "Order": 29,
+          "Character": "Leon",
+          "Line": "Who's kidding around, Goofy? You and Donald are the ones who-"
+        },
+        {
+          "Order": 30,
+          "Character": "Donald",
+          "Line": "Hey!"
+        },
+        {
+          "Order": 31,
+          "Character": "Leon",
+          "Line": "I don't get it... Something's wrong with my memory. What's happening here?"
+        },
+        {
+          "Order": 32,
+          "Character": "Yuffie",
+          "Line": "I dunno, Leon. Maybe Aerith was onto something after all. She said she sensed some uncanny kind of power. And asked us to look into it. Well, this is as uncanny as it gets. Maybe you should take Sora to see Aerith."
+        },
+        {
+          "Order": 33,
+          "Character": "Sora",
+          "Line": "Yuffie, you know my name!"
+        },
+        {
+          "Order": 34,
+          "Character": "Yuffie",
+          "Line": "Yep! Looks like you know mine, too."
+        },
+        {
+          "Order": 35,
+          "Character": "Leon",
+          "Line": "You know him?"
+        },
+        {
+          "Order": 36,
+          "Character": "Yuffie",
+          "Line": "Nope! Total stranger. But I definitely know his name. Strange, yes, but convenient! We can skip the introductions."
+        },
+        {
+          "Order": 37,
+          "Character": "Leon",
+          "Line": "How is it that you can accept this situation so easily? I don't get you..."
+        },
+        {
+          "Order": 38,
+          "Character": "Yuffie",
+          "Line": "Well, I'm gonna run ahead and fill Aerith in. Leon, you give them the grand tour. See ya later!"
+        },
+        {
+          "Order": 39,
+          "Character": "Leon",
+          "Line": "... I guess it's no use pondering over it. Come on, follow me. But there are Heartless wandering around town. I'd better teach you how to protect yourself in battle."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Leon Combat Tutorial",
+      "Link": "https://www.youtube.com/watch?v=ZxPaSGugAKs&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=2",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Leon",
+          "Line": "See the numbers printed on your cards? They range from 0 to 9. Higher numbers mean stronger cards. If you and your enemy both play a card at the same time, the higher card wins. Go on, try it out. See how it works? Playing a card higher than your opponent's and breaking through their defenses is called a \"card break.\" Playing a lower card results in your attack being deflected. Even powerful cards can be deflected if the enemy's card is higher. Whoever is on the losing side of a break is left wide open to attacks. Don't let that person be you. Cards with 0 as their value are special. No matter what card the enemy plays, you can break it with a zero card. But if you play the zero card too soon, the enemy can break it with any card they play. In other words, it's the most powerful card if it comes last, and useless if it comes first. Try to make the most of it. Card values also affect the cost of assembling a deck. Keep that in mind. Now it's time to teach you how to stock cards. You don't have to use battle cards one at a time. You can also assemble three cards and use them all at once. This is called \"stocking\" cards. Stocking cards and using them in threes is much stronger than using cards individually. Go on, give it a try. Stock any three cards in your deck. The sum of your three stocked cards becomes the value you play. The value is usually high and hard to break, and the combo attack deals a lot of damage. Don't hold back. Show me what you can do. Combo attacks aren't the only benefit of stocking cards. Choose your cards carefully and you can unleash special abilities called \"sleights.\" Sleights come in all varieties, and each has its own unique card combination. You should try it out once you've collected more cards and learned a sleight or two. But keep one thing in mind. Every time you use stocked cards, you lose the first card you picked. You can't reload it. The lost card won't return until the end of the battle. Relying only on sleights will cause your cards to run out. That means trouble."
+        }
+      ],
+      "Characters": [
+        "Leon"
+      ],
+      "Worlds": [
+        "Traverse Town"
+      ],
+      "Areas": [
+        "3rd District"
+      ],
+      "Music": [
+        "Hand in Hand"
+      ]
+    },
+    {
+      "Title": "A Gift From Leon",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Leon",
+          "Line": "Think you've got the hang of it, Sora?"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Yeah, more or less. I'll pick up the rest when I fight some real battles."
+        },
+        {
+          "Order": 2,
+          "Character": "Leon",
+          "Line": "Here, I found this lying around. You take it. Remember what I told you and make good use of it."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "When the Bell Tolls",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Cid",
+          "Line": "Well, whaddaya know. It's Sora! Wait, what am I saying? I don't know you. But you do LOOK like a Sora, what with the spiky hair and baggy pants..."
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "It's okay, Cid. That's my name."
+        },
+        {
+          "Order": 2,
+          "Character": "Cid",
+          "Line": "So! You've heard of me, eh? Well, I can't say as I'm surprised."
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Anyway, maybe you can help me out. A friend of mine's supposed to be somewhere in this castle-er, town. Got any ideas?"
+        },
+        {
+          "Order": 4,
+          "Character": "Cid",
+          "Line": "Your friend, huh? Lately all this town sees is Heartless. Can't even take two steps without gettin' attacked. In fact, this plaza's the worst. Word is, a jumbo-sized Heartless shows up when that bell rings. If you value your hide, you'll get outta here while the gettin's good."
+        },
+        {
+          "Order": 5,
+          "Character": "Goofy",
+          "Line": "Gawrsh, maybe we should leave."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Don't you want to see the Heartless?"
+        },
+        {
+          "Order": 7,
+          "Character": "Donald",
+          "Line": "NO, we DON'T! The bell!"
+        },
+        {
+          "Order": 8,
+          "Character": "Goofy",
+          "Line": "Be careful, Sora!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Beware Your Memories",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Yuffie",
+          "Line": "So your friend wasn't here?"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "No, I don't think I'll find him in this town. But he's somewhere in this castle. I just know it."
+        },
+        {
+          "Order": 2,
+          "Character": "Cid",
+          "Line": "Castle? Like this whole town's inside some humongous castle? Hoo, that's rich!"
+        },
+        {
+          "Order": 3,
+          "Character": "Leon",
+          "Line": "He's probably right, Cid. We may not understand what's going on, but Sora does. He can see that reality is bigger than just this world."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "I wish I was that sure."
+        },
+        {
+          "Order": 5,
+          "Character": "Leon",
+          "Line": "You'll be okay, Sora. No matter what shape reality takes, you can handle it. I may not remember you, but I know you in my heart."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Leon..."
+        },
+        {
+          "Order": 7,
+          "Character": "Yuffie",
+          "Line": "Take care, Sora."
+        },
+        {
+          "Order": 8,
+          "Character": "Cid",
+          "Line": "I'm a little lost...but best of luck anyway."
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "What's up?"
+        },
+        {
+          "Order": 10,
+          "Character": "Aerith",
+          "Line": "I don't have all the answers, but I had to tell you something. Your memories created this town, right?"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "That's what the guy who gave me the card said."
+        },
+        {
+          "Order": 12,
+          "Character": "Aerith",
+          "Line": "If that's true, then this town is just a figment of your mind...and so are we."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "But...you can't be a figment! You're standing right here. The town is here, too!"
+        },
+        {
+          "Order": 14,
+          "Character": "Aerith",
+          "Line": "But I'm not really me. I don't remember the things I should. And I sense things I shouldn't. Sora, beware your memories. In the journey to come, you'll be faced with more illusions. Sometimes the shadows of your memory will deceive you, try to lead you astray."
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "So, uh...what exactly does that mean?"
+        },
+        {
+          "Order": 16,
+          "Character": "Aerith",
+          "Line": "I'm sorry. I'm just another illusion. The truth is out of my reach."
+        },
+        {
+          "Order": 17,
+          "Character": "Sora",
+          "Line": "Don't say stuff like that. It's depressing..."
+        },
+        {
+          "Order": 18,
+          "Character": "Aerith",
+          "Line": "Stay strong, Sora. Don't let the illusions distract you from what's truly important."
+        },
+        {
+          "Order": 19,
+          "Character": "Sora",
+          "Line": "...Okay."
+        },
+        {
+          "Order": 20,
+          "Character": "Donald",
+          "Line": "Sora!"
+        },
+        {
+          "Order": 21,
+          "Character": "Goofy",
+          "Line": "Are you ready to go?"
+        },
+        {
+          "Order": 22,
+          "Character": "Sora",
+          "Line": "Yeah, be right there. Well, I'd better be going. Aerith? Aerith!"
+        },
+        {
+          "Order": 23,
+          "Character": "Donald",
+          "Line": "What about Aerith?"
+        },
+        {
+          "Order": 24,
+          "Character": "Sora",
+          "Line": "Where did she go? I was just talking to her!"
+        },
+        {
+          "Order": 25,
+          "Character": "Goofy",
+          "Line": "Aerith left with Leon and the others, remember?"
+        },
+        {
+          "Order": 26,
+          "Character": "Sora",
+          "Line": "Huh?!"
+        },
+        {
+          "Order": 27,
+          "Character": "Donald",
+          "Line": "You worried us. Just standing there by yourself."
+        },
+        {
+          "Order": 28,
+          "Character": "Sora",
+          "Line": "Is this what she meant...?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Chasing the White Rabbit",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Hey, somebody's comin'."
+        },
+        {
+          "Order": 1,
+          "Character": "White Rabbit",
+          "Line": "I'm late! I'm late! I'm dreadfully, awfully late! The queen will roast me for dinner! If I'm late for the trial, it'll be off with MY head next!"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "What do you mean, \"off with your head\"!?"
+        },
+        {
+          "Order": 3,
+          "Character": "White Rabbit",
+          "Line": "Oh my fur and whiskers! I'll never make it!"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Off with his HEAD?"
+        },
+        {
+          "Order": 5,
+          "Character": "Donald",
+          "Line": "For such a peaceful-looking place, it sounds pretty dangerous!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Alice on Trial",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Gawrsh, looks like some kind of get-together. What's the occasion?"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "Hey, this must be that trial the White Rabbit was talking about!"
+        },
+        {
+          "Order": 2,
+          "Character": "White Rabbit",
+          "Line": "Alice! Do you understand the charges against you?"
+        },
+        {
+          "Order": 3,
+          "Character": "Alice",
+          "Line": "Of course not! I've done nothing wrong!"
+        },
+        {
+          "Order": 4,
+          "Character": "Queen of Hearts",
+          "Line": "Feigning ignorance, dear? You are charged with aiding the creatures called Heartless who threaten my kingdom!"
+        },
+        {
+          "Order": 5,
+          "Character": "Alice",
+          "Line": "Fiddlesticks! Where's the evidence?"
+        },
+        {
+          "Order": 6,
+          "Character": "Queen of Hearts",
+          "Line": "The evidence is...I forgot! That's the evidence! Because you, Alice, are the one who stole my memory!"
+        },
+        {
+          "Order": 7,
+          "Character": "White Rabbit",
+          "Line": "We can't rid the kingdom of Heartless until we get Her Majesty's memory back. This is a serious crime!"
+        },
+        {
+          "Order": 8,
+          "Character": "Alice",
+          "Line": "This is so unfair! So what if you're a queen! Don't blame me just because you can't remember things!"
+        },
+        {
+          "Order": 9,
+          "Character": "Queen of Hearts",
+          "Line": "Such insolence! You're talking to the Queen of Hearts! And to think I might have let you go, had you apologized straightaway! What a brazen thief!"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Who's the brazen one?"
+        },
+        {
+          "Order": 11,
+          "Character": "Goofy",
+          "Line": "Uh, Sora?"
+        },
+        {
+          "Order": 12,
+          "Character": "Queen of Hearts",
+          "Line": "The court has reached a verdict! OFF WITH HER HEAD!"
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Hold it! This trial is a farce! You should investigate before you arrest innocent people!"
+        },
+        {
+          "Order": 14,
+          "Character": "Queen of Hearts",
+          "Line": "What is the meaning of this? How dare you suggest Alice didn't steal my memory. I suppose you know who the real culprit is, then!"
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "Huh? I, er..."
+        },
+        {
+          "Order": 16,
+          "Character": "Queen of Hearts",
+          "Line": "Speak! Or it's off with all of your heads! Now, out with it! Who's the thief?"
+        },
+        {
+          "Order": 17,
+          "Character": "Sora",
+          "Line": "Um...uh... ... I'm the thief!"
+        },
+        {
+          "Order": 18,
+          "Character": "Queen of Hearts",
+          "Line": "Say that again?"
+        },
+        {
+          "Order": 19,
+          "Character": "Goofy",
+          "Line": "Gawrsh, really?"
+        },
+        {
+          "Order": 20,
+          "Character": "Sora",
+          "Line": "Of course not! But what else am I supposed to say?"
+        },
+        {
+          "Order": 21,
+          "Character": "Donald",
+          "Line": "This is really screwy, Sora!"
+        },
+        {
+          "Order": 22,
+          "Character": "Queen of Hearts",
+          "Line": "Cards! Seize them all!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Cards in Pursuit",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Whew..."
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "Wak! Where's Alice?"
+        },
+        {
+          "Order": 2,
+          "Character": "Goofy",
+          "Line": "Looks like she escaped."
+        },
+        {
+          "Order": 3,
+          "Character": "Queen of Hearts",
+          "Line": "Perhaps she did. But YOU won't!"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "I think we've been trumped!"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Run!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "The Cheshire Cat",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Things got a little crazy back there, but at least you're okay."
+        },
+        {
+          "Order": 1,
+          "Character": "Alice",
+          "Line": "I don't mean to be ungrateful, but...was that true, what you said? Are you the thief?"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "What? Of course not! Why would I steal the queen's memory?"
+        },
+        {
+          "Order": 3,
+          "Character": "Goofy",
+          "Line": "Yep, Sora only said that 'cause he wanted to save-"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "-to show off!"
+        },
+        {
+          "Order": 5,
+          "Character": "Alice",
+          "Line": "Is that right? Well, you saved me all the same. Thank you. It's the Cheshire Cat!"
+        },
+        {
+          "Order": 6,
+          "Character": "Cheshire Cat",
+          "Line": "Feeling better after that mad dash, are we? Oh, but you're not out of the woods yet! The queen's a stickler for justice! She won't forget you till she remembers! She won't stop hounding you till you get her memory back! Did she forget because she remembers? Does she remember that she forgot? Doesn't matter, I suppose."
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "I don't know-I think we oughta just stay away from her."
+        },
+        {
+          "Order": 8,
+          "Character": "Jiminy",
+          "Line": "But Sora, what about Alice? If the queen catches her again, it's off with-well, you know."
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "Then I guess we'd better do something about the queen."
+        },
+        {
+          "Order": 10,
+          "Character": "Cheshire Cat",
+          "Line": "You should do something. But you don't have to do anything."
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Huh?"
+        },
+        {
+          "Order": 12,
+          "Character": "Cheshire Cat",
+          "Line": "If you can't remember something, it's like it never happened. Likewise, if something never happened, you can't remember it. Try too hard to remember, and your memory might lie to you."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Lie?"
+        },
+        {
+          "Order": 14,
+          "Character": "Cheshire Cat",
+          "Line": "That's all I'll say. The rest is for you to figure out."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "The Queen's Ambush",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Gawrsh, what's with the sudden change of scenery?"
+        },
+        {
+          "Order": 1,
+          "Character": "Alice",
+          "Line": "Let's look around! Oh, dear!"
+        },
+        {
+          "Order": 2,
+          "Character": "Queen of Hearts",
+          "Line": "Thought you'd seen the last of me, did you?"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Uh-oh!"
+        },
+        {
+          "Order": 4,
+          "Character": "Queen of Hearts",
+          "Line": "Game's up, scoundrels! For stealing my memory, I sentence you to... I sentence you to... ... I...sentence... ... Oh? What's going on? Where am I?"
+        },
+        {
+          "Order": 5,
+          "Character": "Donald",
+          "Line": "Huh?"
+        },
+        {
+          "Order": 6,
+          "Character": "Queen of Hearts",
+          "Line": "What in the world am I doing? Confound it, I can't remember!"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "What's wrong with her?"
+        },
+        {
+          "Order": 8,
+          "Character": "Goofy",
+          "Line": "Maybe somebody swiped her memory again?"
+        },
+        {
+          "Order": 9,
+          "Character": "Alice",
+          "Line": "Sora, watch out! Something's coming!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "The Thieving Trickmaster",
+      "Link": "https://www.youtube.com/watch?v=sABI4alxtqo&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=4",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "So this is what stole the queen's memory!"
+        }
+      ],
+      "Characters": [
+        "Sora",
+        "Trickmaster"
+      ],
+      "Worlds": [
+        "Wonderland"
+      ],
+      "Areas": [
+        "Bizarre Room"
+      ],
+      "Music": [
+        "Struggle Away"
+      ]
+    },
+    {
+      "Title": "What's Really Real",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Queen of Hearts",
+          "Line": "You there! All of you! What is the meaning of this? Where did that creature come from?"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "How would WE know?"
+        },
+        {
+          "Order": 2,
+          "Character": "Queen of Hearts",
+          "Line": "So, you refuse to answer? You're hiding something! They're plotting against me! Seize them immediately!"
+        },
+        {
+          "Order": 3,
+          "Character": "Alice",
+          "Line": "Please, Your Majesty, wait! It was you who commanded us to destroy those creatures."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Huh?"
+        },
+        {
+          "Order": 5,
+          "Character": "Alice",
+          "Line": "Your Majesty, in her prudence, didn't completely trust us at first. And so, at Your Majesty's command, we fought them to prove ourselves. Isn't that right, Sora?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "We did? I mean, we did! Your, uh, Majesty."
+        },
+        {
+          "Order": 7,
+          "Character": "Queen of Hearts",
+          "Line": "I...told you...to do that?"
+        },
+        {
+          "Order": 8,
+          "Character": "Alice",
+          "Line": "But Your Majesty, don't you remember?"
+        },
+        {
+          "Order": 9,
+          "Character": "Queen of Hearts",
+          "Line": "Don't be ridiculous! I never forget anything! Of course I gave the command. You did splendidly."
+        },
+        {
+          "Order": 10,
+          "Character": "Alice",
+          "Line": "Well, that was close."
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Way to improvise! I never would've thought of that."
+        },
+        {
+          "Order": 12,
+          "Character": "Alice",
+          "Line": "But the Cheshire Cat said as much. \"Try too hard to remember, and your memory might lie to you.\" The queen would never admit she forgot. So instead, she remembered something... ...that didn't happen! She ended up fooling herself."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "..."
+        },
+        {
+          "Order": 14,
+          "Character": "Alice",
+          "Line": "What is it, Sora?"
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "Hm? Nothing. Well, I guess you'll be safe now."
+        },
+        {
+          "Order": 16,
+          "Character": "Goofy",
+          "Line": "And the queen won't give us any more trouble! After all, we got rid of the Heartless, just like she commanded!"
+        },
+        {
+          "Order": 17,
+          "Character": "Donald",
+          "Line": "Don't tell me you've been fooled, too!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Survival Cup",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Donald",
+          "Line": "Look, an announcement!"
+        },
+        {
+          "Order": 1,
+          "Character": "Jiminy",
+          "Line": "Hmmm... It's for some sort of contest. They're calling it the \"Olympus Coliseum Survival Cup.\" Contenders have to run an obstacle course, battling each other along the way. And listen to this"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Sounds like fun. Why don't we enter, too?"
+        },
+        {
+          "Order": 3,
+          "Character": "Goofy",
+          "Line": "I thought you'd say that. Whenever there's a contest, you're rarin' to join up."
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "You're going to compete even if we don't, right?"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Uh-huh."
+        },
+        {
+          "Order": 6,
+          "Character": "Donald",
+          "Line": "Guess we'd better tag along, then."
+        },
+        {
+          "Order": 7,
+          "Character": "Jiminy",
+          "Line": "Hold it, everyone. There's more... \"Only contenders who finish the preliminary course may enter the main competition.\" It says the preliminary course is just ahead."
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "Then what are we waiting for? Let's go!"
+        },
+        {
+          "Order": 9,
+          "Character": "Hades",
+          "Line": "\"Hercules is a model of true strength and gallantry-the perfect hero\"?! Oh, he's perfect, all right. PERFECTLY INFURIATING!! Just thinking about that little sunspot makes me boil! HOO, I'd like to drag him into the Underworld!"
+        },
+        {
+          "Order": 10,
+          "Character": "Cloud",
+          "Line": "Which is why you hired me."
+        },
+        {
+          "Order": 11,
+          "Character": "Hades",
+          "Line": "That's right. You're my man... Cloud, is it? Your job is to beat Hercules in the games. And once you've got him cornered... ...finish the job. Do that for me, and-"
+        },
+        {
+          "Order": 12,
+          "Character": "Cloud",
+          "Line": "You restore my lost memories. As we agreed."
+        },
+        {
+          "Order": 13,
+          "Character": "Hades",
+          "Line": "You have my word."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Two Words",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Phil",
+          "Line": "Huh? Where did you come from? Don't tell me you guys finished the prelims!"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "We sure did. And now we want to go for the Cup!"
+        },
+        {
+          "Order": 2,
+          "Character": "Phil",
+          "Line": "Well, you came to the right place. Not that you stand a chance against Herc."
+        },
+        {
+          "Order": 3,
+          "Character": "Donald",
+          "Line": "Why not?"
+        },
+        {
+          "Order": 4,
+          "Character": "Phil",
+          "Line": "Two words. You ain't heroes!"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "You're wrong!"
+        },
+        {
+          "Order": 6,
+          "Character": "Goofy",
+          "Line": "Yeah, he said three words."
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "Exactly...but that's not the point! How can we prove we're heroes unless you give us a chance?"
+        },
+        {
+          "Order": 8,
+          "Character": "Hercules",
+          "Line": "He's right, Phil. They cleared the prelims. I think they deserve a shot."
+        },
+        {
+          "Order": 9,
+          "Character": "Phil",
+          "Line": "Hmm...you got a point there, Herc. But still-"
+        },
+        {
+          "Order": 10,
+          "Character": "Hercules",
+          "Line": "Of course, we could always cancel the games."
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Cancel them? What for?"
+        },
+        {
+          "Order": 12,
+          "Character": "Hercules",
+          "Line": "Old Phil's prelim course was so hard, no one else could finish it."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Is that right? Well, if you let us compete, you won't have to cancel the games! How about it, Phil?"
+        },
+        {
+          "Order": 14,
+          "Character": "Phil",
+          "Line": "... Okay, you got me over a barrel, so fine. Here's how it works, kid-"
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "It's Sora-not \"kid.\""
+        },
+        {
+          "Order": 16,
+          "Character": "Phil",
+          "Line": "Sure, sure, kid. Since your team and Hercules are the only contenders-"
+        },
+        {
+          "Order": 17,
+          "Character": "Cloud",
+          "Line": "No, they're not. The games have a new challenger. Name's Cloud."
+        },
+        {
+          "Order": 18,
+          "Character": "Phil",
+          "Line": "The more the merrier! Now the games will really be something to see!"
+        },
+        {
+          "Order": 19,
+          "Character": "Hercules",
+          "Line": "I'm looking forward to this. Don't expect me to pull any punches!"
+        },
+        {
+          "Order": 20,
+          "Character": "Sora",
+          "Line": "Hey, as long as you don't expect me to take them! Let's give it our best."
+        },
+        {
+          "Order": 21,
+          "Character": "Cloud",
+          "Line": "Hmph."
+        },
+        {
+          "Order": 22,
+          "Character": "Phil",
+          "Line": "Okay, let's get this show going! But first I gotta explain a few rules. Rule #1! First one through the obstacle course wins! Rule #2! In the event of a tie, a battle will determine the winner! Rule #3! You can interfere with your opponents on the course! And finally... Rule #4! All challengers have to give it everything they got! All right, enough with the spiel. On your marks... Get set... GO!!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Cloud's Job",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Gawrsh, that was nice of him to wait for us to catch up!"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "He's not waiting! Remember Rule #3? \"You can interfere with your opponents on the course\"!"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "He's looking to narrow the field!"
+        },
+        {
+          "Order": 3,
+          "Character": "Cloud",
+          "Line": "You can put that away. I'm not looking for a fight with you, so keep moving."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "?"
+        },
+        {
+          "Order": 5,
+          "Character": "Goofy",
+          "Line": "See? He was waitin' for us to catch up."
+        },
+        {
+          "Order": 6,
+          "Character": "Donald",
+          "Line": "Well, we've caught up. Let's take him up on his offer and keep going!"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "I don't see a downside...Listen, are you sure?"
+        },
+        {
+          "Order": 8,
+          "Character": "Cloud",
+          "Line": "I'm not here for the Cup. Just Hercules. Today he loses more than the competition."
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "You don't mean... But why?!"
+        },
+        {
+          "Order": 10,
+          "Character": "Cloud",
+          "Line": "This is business. Stay out of it. Go win your Cup. Do you realize what you're doing?"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Rule #3! You can interfere with your opponents. Right? You're not the only one who wants to fight Hercules."
+        },
+        {
+          "Order": 12,
+          "Character": "Cloud",
+          "Line": "Big mistake."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Stopping Cloud",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Cloud! Where'd you go?"
+        },
+        {
+          "Order": 1,
+          "Character": "Jiminy",
+          "Line": "He headed for the finish line! We'd better go after him!"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Right!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Hades",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Hercules",
+          "Line": "You lost! Give it up, Cloud!"
+        },
+        {
+          "Order": 1,
+          "Character": "Cloud",
+          "Line": "We're not done yet..."
+        },
+        {
+          "Order": 2,
+          "Character": "Hercules",
+          "Line": "I can't guarantee your safety if we keep going like this!"
+        },
+        {
+          "Order": 3,
+          "Character": "Cloud",
+          "Line": "Better worry about yourself. Looks to me like you're slowing down a bit."
+        },
+        {
+          "Order": 4,
+          "Character": "Hercules",
+          "Line": "Ungh..."
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Don't worry! I'll back you up!"
+        },
+        {
+          "Order": 6,
+          "Character": "Hercules",
+          "Line": "Sora?"
+        },
+        {
+          "Order": 7,
+          "Character": "Cloud",
+          "Line": "Get all the backup you want. I'm going to finish you and get back my memories!"
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "! Your memories?"
+        },
+        {
+          "Order": 9,
+          "Character": "Hades",
+          "Line": "Now, now, Cloud, we don't want to spill the beans."
+        },
+        {
+          "Order": 10,
+          "Character": "Hercules",
+          "Line": "Hades! You!"
+        },
+        {
+          "Order": 11,
+          "Character": "Hades",
+          "Line": "Looks like you oversold yourself. All you did was wear him down. This doesn't look good for your performance rating... Let me put it this way"
+        },
+        {
+          "Order": 12,
+          "Character": "Cloud",
+          "Line": "! But...my memories! We had a deal!"
+        },
+        {
+          "Order": 13,
+          "Character": "Hades",
+          "Line": "Did you really think you could get back your lost memories just like that? Get a grip!"
+        },
+        {
+          "Order": 14,
+          "Character": "Cloud",
+          "Line": "Why, you-"
+        },
+        {
+          "Order": 15,
+          "Character": "Hades",
+          "Line": "Out of the way! I'll take care of Irk-ules myself!"
+        },
+        {
+          "Order": 16,
+          "Character": "Sora",
+          "Line": "Hey!"
+        },
+        {
+          "Order": 17,
+          "Character": "Hades",
+          "Line": "Rule #5! It's never too late to enter the games."
+        },
+        {
+          "Order": 18,
+          "Character": "Hercules",
+          "Line": "Hades, you were behind this from the start!"
+        },
+        {
+          "Order": 19,
+          "Character": "Hades",
+          "Line": "Cloud may have failed to take you out, but he did break you down. Time for Plan B. Pack your pita, Herc, 'cause you've just won a free trip to the Underworld-paid by me!"
+        },
+        {
+          "Order": 20,
+          "Character": "Sora",
+          "Line": "Hold it!"
+        },
+        {
+          "Order": 21,
+          "Character": "Hercules",
+          "Line": "Sora, no!"
+        },
+        {
+          "Order": 22,
+          "Character": "Sora",
+          "Line": "Come on, Herc-how can we go one-on-one if you're in the Underworld?"
+        },
+        {
+          "Order": 23,
+          "Character": "Hades",
+          "Line": "Good point, kid. I guess you'll just have to go with him! Rule #6! There are no rules! Ha ha!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Not Interested",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "What?! The games are cancelled? How come?"
+        },
+        {
+          "Order": 1,
+          "Character": "Phil",
+          "Line": "Two words! Everyone is pooped!"
+        },
+        {
+          "Order": 2,
+          "Character": "Goofy",
+          "Line": "Wait, that was more than two-"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "You gotta be kidding! What about my match with Hercules?"
+        },
+        {
+          "Order": 4,
+          "Character": "Hercules",
+          "Line": "I'm sorry, Sora. But you wouldn't want me to compete in this condition. Let's have a match when I've rested up a bit. Can you wait?"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Okay. I'll hold you to that."
+        },
+        {
+          "Order": 6,
+          "Character": "Hercules",
+          "Line": "Then it's settled!"
+        },
+        {
+          "Order": 7,
+          "Character": "Jiminy",
+          "Line": "Sora, over here! He's coming around."
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "You okay?"
+        },
+        {
+          "Order": 9,
+          "Character": "Cloud",
+          "Line": "Yeah. Sorry I messed up your games."
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Hey! Hope you get your memories back! Forget about what Hades said. Sometimes the tiniest thing can make you remember stuff you forgot years ago. If it's an important memory, there's no way it could ever be gone forever. That's what I think, anyway."
+        },
+        {
+          "Order": 11,
+          "Character": "Cloud",
+          "Line": "That's for you. For helping me out."
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "Sure you don't want to just come with us instead?"
+        },
+        {
+          "Order": 13,
+          "Character": "Cloud",
+          "Line": "Not interested."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Saving Aladdin",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Look, Sora! Someone's in trouble!"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "We'd better do something!"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Mind if we help?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Genie and the Magic Lamp",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Aladdin",
+          "Line": "Thanks! I thought I was done for!"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "They just keep coming!"
+        },
+        {
+          "Order": 2,
+          "Character": "Aladdin",
+          "Line": "Guess we'd better see if the legends are true. Magic lamp, my first wish! Get rid of these Heartless!"
+        },
+        {
+          "Order": 3,
+          "Character": "Genie",
+          "Line": "Stand back, kids! Genie of the lamp coming through! Ain't nothin' I can't make right as rain-well, if we HAD rain in the desert. But enough dry jokes! One Heartless disappearing act, coming right up!"
+        },
+        {
+          "Order": 4,
+          "Character": "Goofy",
+          "Line": "Gawrsh!"
+        },
+        {
+          "Order": 5,
+          "Character": "Donald",
+          "Line": "Why didn't you call him in the first place?"
+        },
+        {
+          "Order": 6,
+          "Character": "Aladdin",
+          "Line": "It's not that simple. You see-"
+        },
+        {
+          "Order": 7,
+          "Character": "Genie",
+          "Line": "I couldn't have said it better myself. But I will anyway! I'm strictly limited to three wishes per master. And ixnay on the wishing for more wishes!"
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "So you've got two wishes left? Better use them carefully."
+        },
+        {
+          "Order": 9,
+          "Character": "Aladdin",
+          "Line": "I've got to get back to the palace somehow. But with all these Heartless..."
+        },
+        {
+          "Order": 10,
+          "Character": "Goofy",
+          "Line": "Hey, Sora. We're headed that way too, so why don't we go with Aladdin?"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Sounds like a plan."
+        },
+        {
+          "Order": 12,
+          "Character": "Aladdin",
+          "Line": "That would be great! Thanks a lot!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Aladdin's Wish",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "So, uh, why are you going to the palace,Aladdin?"
+        },
+        {
+          "Order": 1,
+          "Character": "Aladdin",
+          "Line": "That no good royal vizier, Jafar. He tricked me into getting this magic lamp from the Cave of Wonders. The cave was crawling with Heartless. I'm lucky I made it back to Agrabah in one piece!"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Wasn't there anyone else there to help you out? This Jafar guy's got some nerve giving such dangerous orders."
+        },
+        {
+          "Order": 3,
+          "Character": "Genie",
+          "Line": "I know how you feel, Master. People have been ordering me around for 10,000 years. And what help do I get? I keep wishin' someone will wish me outta this gig. But go figure the odds on that."
+        },
+        {
+          "Order": 4,
+          "Character": "Aladdin",
+          "Line": "Well, how 'bout I use my third wish to set you free?"
+        },
+        {
+          "Order": 5,
+          "Character": "Genie",
+          "Line": "Doth my pointy ears deceive me? Master, you'd do that for me? You're not just pullin' my topknot now, are you?"
+        },
+        {
+          "Order": 6,
+          "Character": "Aladdin",
+          "Line": "I promise, Genie. Anyway, there's only one thing I really want."
+        },
+        {
+          "Order": 7,
+          "Character": "Genie",
+          "Line": "Then we'll just have to DO something about that, Al! Can I call you Al? So, what'll it be? Fame? Fortune? A herd of luxury camels to call your very own?"
+        },
+        {
+          "Order": 8,
+          "Character": "Aladdin",
+          "Line": "Well, there's this girl. Her name is Jasmine. She's princess of Agrabah. And...that's the problem. It's hard for a \"street rat\" like me to get a chance to see her. That's how this all started. I thought if I went to the Cave of Wonders, I could get the treasure, and maybe then Jasmine would want to meet me."
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "Sounds like your wish should be that you can see Jasmine anytime you want, huh?"
+        },
+        {
+          "Order": 10,
+          "Character": "Genie",
+          "Line": "Well, I've got just the package for you! You'll not only meet the lady, you'll go in style... ...as PRINCE ALI! How d'ya like the sound of that, Al?"
+        },
+        {
+          "Order": 11,
+          "Character": "Aladdin",
+          "Line": "Me, a prince! Can you really do that?"
+        },
+        {
+          "Order": 12,
+          "Character": "Genie",
+          "Line": "In an Agrabah minute!"
+        },
+        {
+          "Order": 13,
+          "Character": "Aladdin",
+          "Line": "I guess the legends were true after all. C'mon, let's get to the palace!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Jasmine in Danger",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Donald",
+          "Line": "Wak! Look at that!"
+        },
+        {
+          "Order": 1,
+          "Character": "Aladdin",
+          "Line": "Who is that...? It's Jasmine!"
+        },
+        {
+          "Order": 2,
+          "Character": "Goofy",
+          "Line": "She needs our help!"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "We'll never make it in time!"
+        },
+        {
+          "Order": 4,
+          "Character": "Aladdin",
+          "Line": "Then I've no choice. Genie, I wish for you to save Jasmine!"
+        },
+        {
+          "Order": 5,
+          "Character": "Genie",
+          "Line": "Can do! CHAAARGE!"
+        },
+        {
+          "Order": 6,
+          "Character": "Aladdin",
+          "Line": "Jasmine!"
+        },
+        {
+          "Order": 7,
+          "Character": "Goofy",
+          "Line": "We're lucky! She fainted, but it looks like she's okay."
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "But now you've only got one wish left."
+        },
+        {
+          "Order": 9,
+          "Character": "Aladdin",
+          "Line": "Not again! Sorry, Genie. But you're the only one who can-"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Wait! This is your last wish! Don't waste it. This time, let US handle the wish-granting!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Jafar's Ambition",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "See? We didn't need Genie this time."
+        },
+        {
+          "Order": 1,
+          "Character": "Aladdin",
+          "Line": "Thanks, Sora. But I'm still down to my last wish..."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "What-"
+        },
+        {
+          "Order": 3,
+          "Character": "Donald",
+          "Line": "Wak! What's happening?"
+        },
+        {
+          "Order": 4,
+          "Character": "Aladdin",
+          "Line": "Oh, no! The lamp! It's gone!"
+        },
+        {
+          "Order": 5,
+          "Character": "Jafar",
+          "Line": "Hmm, it seems my plans have gone amiss. I was certain you'd waste your last wish... ...what with poor Jasmine in distress and these delightful creatures to deal with. But no matter. At last the lamp and its genie are mine to command!"
+        },
+        {
+          "Order": 6,
+          "Character": "Aladdin",
+          "Line": "Why are you doing this, Jafar? You've got the lamp! What more do you want?"
+        },
+        {
+          "Order": 7,
+          "Character": "Jafar",
+          "Line": "Such an interesting question. You see, I knew you were going to use the lamp to try and win Jasmine's heart. But we can't have that, now, can we? Because I am the one Jasmine will marry!"
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "You?!"
+        },
+        {
+          "Order": 9,
+          "Character": "Jafar",
+          "Line": "Certainly you realize that if I marry the Princess, then nothing can stop me from becoming Sultan! You're nothing more than a pawn in my game, street rat! Genie! My first wish! Deliver Jasmine to me!"
+        },
+        {
+          "Order": 10,
+          "Character": "Aladdin",
+          "Line": "Genie! What are you doing?!"
+        },
+        {
+          "Order": 11,
+          "Character": "Genie",
+          "Line": "Sorry, Al. My hands are tied on this one. I gotta obey whoever has his mitts on the lamp."
+        },
+        {
+          "Order": 12,
+          "Character": "Jafar",
+          "Line": "Precisely. Farewell, Aladdin...you fool!"
+        },
+        {
+          "Order": 13,
+          "Character": "Aladdin",
+          "Line": "Great. Now I've lost Jasmine AND the lamp."
+        },
+        {
+          "Order": 14,
+          "Character": "Sora",
+          "Line": "You can feel bad about it some other time! If you don't pull yourself together, you'll never see Jasmine again! You lost the lamp. So what? You can still save her on your own! Losing someone you care about is bad, but not as bad as never getting them back!"
+        },
+        {
+          "Order": 15,
+          "Character": "Aladdin",
+          "Line": "Sora... You're right. I can't give up now! I've gotta save Jasmine!"
+        },
+        {
+          "Order": 16,
+          "Character": "Donald",
+          "Line": "But Jafar's got the lamp. We can't just walk up to him and expect to win..."
+        },
+        {
+          "Order": 17,
+          "Character": "Aladdin",
+          "Line": "Maybe we can. I've got an idea. Listen up!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Jafar Genie",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Jafar",
+          "Line": "What's this? Has Aladdin given up on his precious Jasmine already? Well, I'm not going to waste a wish on the likes of you three. I'll deal with you myself!"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Aladdin! Now!"
+        },
+        {
+          "Order": 2,
+          "Character": "Jafar",
+          "Line": "What? You! Genie, seize him!"
+        },
+        {
+          "Order": 3,
+          "Character": "Genie",
+          "Line": "Al, forgive me!"
+        },
+        {
+          "Order": 4,
+          "Character": "Aladdin",
+          "Line": "Gr...You fell for it, Jafar!"
+        },
+        {
+          "Order": 5,
+          "Character": "Jafar",
+          "Line": "What do you mean?!"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "He means that you just blew your second wish! Only one left!"
+        },
+        {
+          "Order": 7,
+          "Character": "Aladdin",
+          "Line": "Go ahead, use it to win Jasmine's heart. You'll still have us to deal with!"
+        },
+        {
+          "Order": 8,
+          "Character": "Genie",
+          "Line": "Oh, NOW I get it. Al, you are so clever!"
+        },
+        {
+          "Order": 9,
+          "Character": "Jafar",
+          "Line": "Well, well. The cunning of a rat. But unfortunately, you can't see beyond the bait. Your little ploy changes nothing! I can crush you once and for all AND make Jasmine my own! Genie! My last wish! Transform me into an all- powerful genie!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Jafar's Power",
+      "Link": "https://www.youtube.com/watch?v=7d4x1Fy9hvQ&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=4",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "It's so hot! Jafar must be doing this…"
+        }
+      ],
+      "Characters": [
+        "Iago",
+        "Jafar",
+        "Sora"
+      ],
+      "Worlds": [
+        "Agrabah"
+      ],
+      "Areas": [
+        "Core"
+      ],
+      "Music": [
+        "The Fight for My Friends"
+      ]
+    },
+    {
+      "Title": "The Last Wish",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Donald",
+          "Line": "We rescued Jasmine AND we got the lamp back!"
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "You still have one wish left, Aladdin."
+        },
+        {
+          "Order": 2,
+          "Character": "Genie",
+          "Line": "He sure does. Time for me to make a prince outta this guy! Course, I'd like to be free, but like they always say, genies can't be choosers. You're probably miffed about that whole puppet-of-Jafar thing, anyway. Go on, Al. Wish for what's really in your heart. Be a prince. Get the girl."
+        },
+        {
+          "Order": 3,
+          "Character": "Aladdin",
+          "Line": "Okay, here goes. Genie, I wish for your freedom!"
+        },
+        {
+          "Order": 4,
+          "Character": "Genie",
+          "Line": "But Al...!"
+        },
+        {
+          "Order": 5,
+          "Character": "Aladdin",
+          "Line": "Now no one like Jafar can use you for evil again. Genie, you're free!"
+        },
+        {
+          "Order": 6,
+          "Character": "Genie",
+          "Line": "Al, I'll never forget this. But what about Jasmine? What are you gonna do?"
+        },
+        {
+          "Order": 7,
+          "Character": "Aladdin",
+          "Line": "I was wrong, Genie. If I used your help to win Jasmine... ...I'd be no better than Jafar. Jasmine means the world to me. I want to show her the real me."
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "That's the spirit!"
+        },
+        {
+          "Order": 9,
+          "Character": "Aladdin",
+          "Line": "Thanks, and good luck to you, too."
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "What for?"
+        },
+        {
+          "Order": 11,
+          "Character": "Aladdin",
+          "Line": "I was ready to give up back there, but what you said really kept me going. That's when it hit me. You must be looking for someone you care about, too."
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "Yeah..."
+        },
+        {
+          "Order": 13,
+          "Character": "Aladdin",
+          "Line": "Listen, Genie..."
+        },
+        {
+          "Order": 14,
+          "Character": "Genie",
+          "Line": "Say no more, little pal! I know JUST what you're thinking. Here you go, Sora! Whenever you need me, just call. That okay with you, Al?"
+        },
+        {
+          "Order": 15,
+          "Character": "Aladdin",
+          "Line": "Of course!"
+        },
+        {
+          "Order": 16,
+          "Character": "Sora",
+          "Line": "Are you sure?"
+        },
+        {
+          "Order": 17,
+          "Character": "Genie",
+          "Line": "Anytime at all. Hey, without you guys, I might never have been able to ditch that lamp! And I think Aladdin will be fine without me for at least a little while."
+        },
+        {
+          "Order": 18,
+          "Character": "Sora",
+          "Line": "I see. Thanks!"
+        },
+        {
+          "Order": 19,
+          "Character": "Aladdin",
+          "Line": "Let's hope both our wishes come true, then. Take care, Sora!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Pinocchio and Jiminy",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "What a weird place! Everything's kinda springy and soft."
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "Nice and warm, too. I'm startin' to feel like a nap."
+        },
+        {
+          "Order": 2,
+          "Character": "Pinocchio",
+          "Line": "I think you should be a little more worried."
+        },
+        {
+          "Order": 3,
+          "Character": "Donald",
+          "Line": "Who's there?"
+        },
+        {
+          "Order": 4,
+          "Character": "Pinocchio",
+          "Line": "You're inside the belly of Monstro the Whale."
+        },
+        {
+          "Order": 5,
+          "Character": "Jiminy",
+          "Line": "Why, I know that voice... Pinocchio? Pinoke, it's you! Come on out!"
+        },
+        {
+          "Order": 6,
+          "Character": "Pinocchio",
+          "Line": "Is that you, Jiminy? Gosh, I thought I'd never see you again!"
+        },
+        {
+          "Order": 7,
+          "Character": "Jiminy",
+          "Line": "Gee, there's no way you wouldn't find me again. I'm your conscience. And your conscience will always be your guide. Remember?"
+        },
+        {
+          "Order": 8,
+          "Character": "Pinocchio",
+          "Line": "Sure, Jiminy. And I've been a good boy, promise. I didn't tell a single lie. Uh-oh!"
+        },
+        {
+          "Order": 9,
+          "Character": "Jiminy",
+          "Line": "Well, for Pete's sake!"
+        },
+        {
+          "Order": 10,
+          "Character": "Pinocchio",
+          "Line": "Oops! But...how did YOU end up inside Monstro, anyway?"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "We, uh, sort of used a special way..."
+        },
+        {
+          "Order": 12,
+          "Character": "Goofy",
+          "Line": "It's so special, we don't know how we did it!"
+        },
+        {
+          "Order": 13,
+          "Character": "Pinocchio",
+          "Line": "That's too bad... I was hoping you could help me and Father get out of here."
+        },
+        {
+          "Order": 14,
+          "Character": "Jiminy",
+          "Line": "Well, I'll be! Geppetto's here, too?"
+        },
+        {
+          "Order": 15,
+          "Character": "Pinocchio",
+          "Line": "Sure he is. Follow me!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Geppetto",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Jiminy",
+          "Line": "Geppetto!"
+        },
+        {
+          "Order": 1,
+          "Character": "Geppetto",
+          "Line": "Bless my soul, it's Jiminy Cricket. How in the world did you get here?"
+        },
+        {
+          "Order": 2,
+          "Character": "Jiminy",
+          "Line": "You tell me! How does a clockmaker wind up in the belly of a whale?"
+        },
+        {
+          "Order": 3,
+          "Character": "Geppetto",
+          "Line": "Well, it's a long story..."
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "So you sailed out to look for Pinocchio..."
+        },
+        {
+          "Order": 5,
+          "Character": "Goofy",
+          "Line": "...and Monstro swallowed you!"
+        },
+        {
+          "Order": 6,
+          "Character": "Geppetto",
+          "Line": "Yes, but I found my son. I would do anything for my Pinocchio."
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "But now you can't get out, can you? Being stuck in the belly of a whale is awful."
+        },
+        {
+          "Order": 8,
+          "Character": "Geppetto",
+          "Line": "Not if Pinocchio and I are together. That makes everything a little bit better. There's nothing better than being reunited with someone you care about."
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "Yeah... I know what you mean."
+        },
+        {
+          "Order": 10,
+          "Character": "Geppetto",
+          "Line": "I don't care if I'm trapped here, so long as I have Pinocchio. He's such a good boy."
+        },
+        {
+          "Order": 11,
+          "Character": "Jiminy",
+          "Line": "Well, he still tells fibs. But with a little help from me..."
+        },
+        {
+          "Order": 12,
+          "Character": "Geppetto",
+          "Line": "Oh, Jiminy, you worry too much."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Speaking of Pinocchio... Where is he?"
+        },
+        {
+          "Order": 14,
+          "Character": "Donald",
+          "Line": "He was here a minute ago. Where's he gone this time?"
+        },
+        {
+          "Order": 15,
+          "Character": "Geppetto",
+          "Line": "I expect he's off exploring. That boy has been poking around just about everywhere inside this monster. He won't tell me why it's so important. I tell him it's dangerous, but he won't listen."
+        },
+        {
+          "Order": 16,
+          "Character": "Jiminy",
+          "Line": "That boy's a handful! Sora, if you don't mind..."
+        },
+        {
+          "Order": 17,
+          "Character": "Sora",
+          "Line": "I know, I know. You want us to help you find him, right? C'mon, guys, let's get going!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Why He Lied",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Pinocchio",
+          "Line": "Oh!"
+        },
+        {
+          "Order": 1,
+          "Character": "Jiminy",
+          "Line": "Pinocchio! What are you thinking?! You know Geppetto worries when you wander off by yourself."
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "Jiminy was worried, too!"
+        },
+        {
+          "Order": 3,
+          "Character": "Pinocchio",
+          "Line": "I'm sorry..."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "What are you doing, anyway? Looking for something?"
+        },
+        {
+          "Order": 5,
+          "Character": "Pinocchio",
+          "Line": "Um...yeah, I'm looking for treasure!"
+        },
+        {
+          "Order": 6,
+          "Character": "Jiminy",
+          "Line": "Here we go again!"
+        },
+        {
+          "Order": 7,
+          "Character": "Pinocchio",
+          "Line": "But, Jiminy..."
+        },
+        {
+          "Order": 8,
+          "Character": "Goofy",
+          "Line": "Now, don't be so hard on the little fella, Jiminy. We promise not to get mad, Pinocchio. Is that why you're afraid to tell? No need to fret. Tell us the truth-we'll understand. Put yer trust in Goofy!"
+        },
+        {
+          "Order": 9,
+          "Character": "Pinocchio",
+          "Line": "... I was looking for a way out. Father says he's happy, but it's my fault we're stuck here. I shouldn't have run away from home. I want to help Father get home to the workshop. But he'll worry if I tell him what I'm doing."
+        },
+        {
+          "Order": 10,
+          "Character": "Jiminy",
+          "Line": "So that's why you thought you had to tell a lie."
+        },
+        {
+          "Order": 11,
+          "Character": "Goofy",
+          "Line": "You did it 'cause you love your dad!"
+        },
+        {
+          "Order": 12,
+          "Character": "Donald",
+          "Line": "All you need now is courage!"
+        },
+        {
+          "Order": 13,
+          "Character": "Pinocchio",
+          "Line": "What?"
+        },
+        {
+          "Order": 14,
+          "Character": "Donald",
+          "Line": "Tell Geppetto the truth. With a little courage, you can do it! If you tell him how you really feel, I bet he'll help you find a way out."
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "And we'll give you a hand!"
+        },
+        {
+          "Order": 16,
+          "Character": "Pinocchio",
+          "Line": "Really? You'll help us? Okay, I'll give it a try! Wish me luck, Jiminy!"
+        },
+        {
+          "Order": 17,
+          "Character": "Jiminy",
+          "Line": "No more keeping secrets, then. Have we got a deal?"
+        },
+        {
+          "Order": 18,
+          "Character": "Pinocchio",
+          "Line": "Sure! I'll be brave and tell Father how I really feel. No lies this time!"
+        },
+        {
+          "Order": 19,
+          "Character": "Jiminy",
+          "Line": "Great! Then your nose won't-"
+        },
+        {
+          "Order": 20,
+          "Character": "Sora",
+          "Line": "What's happening?!"
+        },
+        {
+          "Order": 21,
+          "Character": "Donald",
+          "Line": "I got a bad feeling about this!"
+        },
+        {
+          "Order": 22,
+          "Character": "Jiminy",
+          "Line": "Pinocchio, run for it!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Pinocchio's Courage",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Pinocchio!"
+        },
+        {
+          "Order": 1,
+          "Character": "Pinocchio",
+          "Line": "Help! I'm trapped!"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "What?!"
+        },
+        {
+          "Order": 3,
+          "Character": "Pinocchio",
+          "Line": "Help me! I'm scared!"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Pinocchio, be brave!"
+        },
+        {
+          "Order": 5,
+          "Character": "Pinocchio",
+          "Line": "How?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Don't give up! Try fighting your way out!"
+        },
+        {
+          "Order": 7,
+          "Character": "Pinocchio",
+          "Line": "Be brave... Okay, I'll try!"
+        },
+        {
+          "Order": 8,
+          "Character": "Jiminy",
+          "Line": "Pinocchio, are you all right?"
+        },
+        {
+          "Order": 9,
+          "Character": "Pinocchio",
+          "Line": "Don't worry, I'm okay. Just a little sticky...But I have a great idea! That thing spit me out when I started fighting back. Why don't we try the same thing with Monstro?"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Of course! If we're lucky, Monstro might cough us up!"
+        },
+        {
+          "Order": 11,
+          "Character": "Donald",
+          "Line": "Great idea! Let's go deeper inside and try it!"
+        },
+        {
+          "Order": 12,
+          "Character": "Pinocchio",
+          "Line": "I'm going, too!"
+        },
+        {
+          "Order": 13,
+          "Character": "Jiminy",
+          "Line": "No, it's too dangerous."
+        },
+        {
+          "Order": 14,
+          "Character": "Pinocchio",
+          "Line": "Aww, c'mon..."
+        },
+        {
+          "Order": 15,
+          "Character": "Jiminy",
+          "Line": "You should be with Geppetto. No use escaping from Monstro if you two get separated again!"
+        },
+        {
+          "Order": 16,
+          "Character": "Sora",
+          "Line": "Leave this to us."
+        },
+        {
+          "Order": 17,
+          "Character": "Pinocchio",
+          "Line": "I guess you're right. Be careful, everybody!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Belly Brawl",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Looks like this is as far as we go."
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Ready, then? Let's shake things up!"
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "It would be easier if we had someone to fight..."
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Perfect timing. Looks like we've got company!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Failing Monstro's Belly Brawl",
+      "Link": "https://www.youtube.com/watch?v=Bx-DB9UsVhE&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=6",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Donald",
+          "Line": "All right, Monstro! Cough us up this instant!"
+        },
+        {
+          "Order": 1,
+          "Character": "Monstro",
+          "Line": "..."
+        },
+        {
+          "Order": 2,
+          "Character": "Goofy",
+          "Line": "It didn't work..."
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "I wonder why??"
+        },
+        {
+          "Order": 4,
+          "Character": "Jiminy",
+          "Line": "We'll just have to put up a better fight. It might work if we defeat the Heartless, one right after another."
+        },
+        {
+          "Order": 5,
+          "Character": "Goofy",
+          "Line": "Wanna give it another go?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Let's wait a while. / Let's do it again!"
+        }
+      ],
+      "Characters": [
+        "Donald",
+        "Goofy",
+        "Jiminy",
+        "Sora"
+      ],
+      "Worlds": [
+        "Monstro"
+      ],
+      "Areas": [
+        "Throat"
+      ],
+      "Music": [
+        "Just Wondering"
+      ]
+    },
+    {
+      "Title": "Monstro's Belly Brawl Attempt 2",
+      "Link": "https://www.youtube.com/watch?v=ta2HqgVSx9k&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=6",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "You guys ready? This time we'll get it right!"
+        }
+      ],
+      "Characters": [
+        "Donald",
+        "Goofy",
+        "Sora"
+      ],
+      "Worlds": [
+        "Monstro"
+      ],
+      "Areas": [
+        "Throat"
+      ],
+      "Music": [
+        "Just Wondering"
+      ]
+    },
+    {
+      "Title": "Monstro's Sneeze",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Whew..."
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "A-hyuck?"
+        },
+        {
+          "Order": 2,
+          "Character": "Jiminy",
+          "Line": "It's working! Monstro's gonna sneeze!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Till We Meet Again",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Oww... Now I know what getting shot out of a cannon feels like."
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "Where's Pinocchio and his dad?"
+        },
+        {
+          "Order": 2,
+          "Character": "Jiminy",
+          "Line": "They're gone. They must've gotten out safely."
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Without you, Jiminy? I thought there was no escaping your conscience!"
+        },
+        {
+          "Order": 4,
+          "Character": "Jiminy",
+          "Line": "I don't mind being left behind, as long as they're both safe. Maybe Pinocchio doesn't need me after all."
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "What do you mean?"
+        },
+        {
+          "Order": 6,
+          "Character": "Jiminy",
+          "Line": "That little puppet used to have trouble telling right from wrong. But he's come a long way. Maybe he doesn't need Jiminy Cricket anymore. Seems like he's got a conscience of his very own."
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "Don't you remember what Geppetto said? \"There's nothing better than being reunited with someone you care about.\" I bet Pinocchio's counting the days till he can see you again."
+        },
+        {
+          "Order": 8,
+          "Character": "Jiminy",
+          "Line": "Well, what do you know... You might be right."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Jack, the King of Nightmares",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Gawrsh! Don't like the looks of this place. I bet it's crawlin' with ghosts!"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "Aw, phooey! There's nothin' to worry about. You won't be spooked if you already know what's coming! Not even real ghosts can frighten us anymore. If they take one look at us, THEY'd be the ones to run away!"
+        },
+        {
+          "Order": 2,
+          "Character": "Goofy",
+          "Line": "You really think so?"
+        },
+        {
+          "Order": 3,
+          "Character": "Donald",
+          "Line": "Trust me!"
+        },
+        {
+          "Order": 4,
+          "Character": "Jack Skellington",
+          "Line": "Welcome to Halloween Town!"
+        },
+        {
+          "Order": 5,
+          "Character": "Donald",
+          "Line": "Waaak! A ghost!"
+        },
+        {
+          "Order": 6,
+          "Character": "Jack Skellington",
+          "Line": "Wow, that was the best shriek I've heard in ages! If you're THAT easy to scare, we're gonna have a great time! Sorry, I haven't even introduced myself. I'm Jack Skellington! And this is Halloween Town. People around here call me the Pumpkin King! So if you're lookin' for a ghoulishly good time, you've come to the right place."
+        },
+        {
+          "Order": 7,
+          "Character": "Donald",
+          "Line": "Well, we aren't!"
+        },
+        {
+          "Order": 8,
+          "Character": "Jack Skellington",
+          "Line": "Too bad, because at the moment, we've got a bit of a problem in Halloween Town."
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "What kind of problem?"
+        },
+        {
+          "Order": 10,
+          "Character": "Jack Skellington",
+          "Line": "Well...Like this!"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Gyaaa!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Pesky Heartless",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Donald",
+          "Line": "What's the big idea! Why'd you go and call the Heartless?"
+        },
+        {
+          "Order": 1,
+          "Character": "Jack Skellington",
+          "Line": "I didn't call them. I just knew when they were going to show up. In fact, I'd love to get rid of them. They actually go around attacking people, instead of just scaring them."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Why are they here?"
+        },
+        {
+          "Order": 3,
+          "Character": "Jack Skellington",
+          "Line": "I was just going to go ask Dr. Finkelstein the same question. I'm heading to his laboratory right now. Follow me!"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "Sora, what should we do?"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "I guess we'd better go."
+        },
+        {
+          "Order": 6,
+          "Character": "Donald",
+          "Line": "I don't like this. What if he's leading us right to the Heartless?"
+        },
+        {
+          "Order": 7,
+          "Character": "Jack Skellington",
+          "Line": "Bingo! You saw right through me!"
+        },
+        {
+          "Order": 8,
+          "Character": "Donald",
+          "Line": "Waaak!"
+        },
+        {
+          "Order": 9,
+          "Character": "Jack Skellington",
+          "Line": "Ha ha ha, I'm just kidding! Now let's get going."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Dr. Finkelstein's Invention",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Jack Skellington",
+          "Line": "Allow me to introduce Dr. Finkelstein! He's a world-famous genius!"
+        },
+        {
+          "Order": 1,
+          "Character": "Dr. Finkelstein",
+          "Line": "Yes! Maybe I'm TOO smart. I'm afraid I've created something horrible!"
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "What's that?"
+        },
+        {
+          "Order": 3,
+          "Character": "Dr. Finkelstein",
+          "Line": "Well... Have you ever stopped to think about the power of \"true memories\"?"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "True memories?!"
+        },
+        {
+          "Order": 5,
+          "Character": "Dr. Finkelstein",
+          "Line": "You see me boy, our hearts are full of memories-but not all of them reflect the truth. The heart isn't a recording device. Even important memories change with time. They warp or fade, leaving us with but a shadow of what we hoped to remember."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Could that be happening to me?"
+        },
+        {
+          "Order": 7,
+          "Character": "Dr. Finkelstein",
+          "Line": "It happens to everyone. Some memories grow ugly, and some become more beautiful. If we could recover our true memories, the world would seem completely different. So, I devised a potion from forget-me-nots that brings our true memories back."
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "Did it work?"
+        },
+        {
+          "Order": 9,
+          "Character": "Dr. Finkelstein",
+          "Line": "Well, that's the problem..."
+        },
+        {
+          "Order": 10,
+          "Character": "Jack Skellington",
+          "Line": "As soon as the doctor got a whiff of the potion, Heartless started popping up!"
+        },
+        {
+          "Order": 11,
+          "Character": "Donald",
+          "Line": "Sounds like a failed experiment to me."
+        },
+        {
+          "Order": 12,
+          "Character": "Dr. Finkelstein",
+          "Line": "No! My research is flawless! I just need another look at the potion to find out what went wrong! Unfortunately...it's vanished."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Maybe someone swiped it?"
+        },
+        {
+          "Order": 14,
+          "Character": "Dr. Finkelstein",
+          "Line": "It must've been Sally! Jack, you've got to find her and get my potion back."
+        },
+        {
+          "Order": 15,
+          "Character": "Jack Skellington",
+          "Line": "Leave it to me!"
+        },
+        {
+          "Order": 16,
+          "Character": "Sora",
+          "Line": "Can I tag along?"
+        },
+        {
+          "Order": 17,
+          "Character": "Jack Skellington",
+          "Line": "What for?"
+        },
+        {
+          "Order": 18,
+          "Character": "Sora",
+          "Line": "I want to know more about these \"true memories\" the doctor keeps talking about."
+        },
+        {
+          "Order": 19,
+          "Character": "Jack Skellington",
+          "Line": "Excellent! Then let's go find Sally!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Sally's Worries",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Jack Skellington",
+          "Line": "There you are, Sally. I thought I'd find you here."
+        },
+        {
+          "Order": 1,
+          "Character": "Sally",
+          "Line": "Who are your friends?"
+        },
+        {
+          "Order": 2,
+          "Character": "Jack Skellington",
+          "Line": "They're interested in true memories. You have the potion, don't you?"
+        },
+        {
+          "Order": 3,
+          "Character": "Sally",
+          "Line": "Well...yes."
+        },
+        {
+          "Order": 4,
+          "Character": "Jack Skellington",
+          "Line": "Could you give it back?"
+        },
+        {
+          "Order": 5,
+          "Character": "Sally",
+          "Line": "I guess so, if you insist. But...I'm afraid. All the Doctor did was smell it, and the Heartless appeared. What if someone drinks it?"
+        },
+        {
+          "Order": 6,
+          "Character": "Jack Skellington",
+          "Line": "Are you kidding? What could be more exciting?"
+        },
+        {
+          "Order": 7,
+          "Character": "Sally",
+          "Line": "I'm worried, Jack. Isn't there another option?"
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "Any ideas, Jack?"
+        },
+        {
+          "Order": 9,
+          "Character": "Jack Skellington",
+          "Line": "I can't think of a thing."
+        },
+        {
+          "Order": 10,
+          "Character": "Oogie Boogie",
+          "Line": "I can! Give it here!"
+        },
+        {
+          "Order": 11,
+          "Character": "Sally",
+          "Line": "Oh, no! The potion!"
+        },
+        {
+          "Order": 12,
+          "Character": "Jack Skellington",
+          "Line": "Oogie! You again!"
+        },
+        {
+          "Order": 13,
+          "Character": "Oogie Boogie",
+          "Line": "Jack, where are your manners? I'm just helping you put the potion to good use! You should thank me! Well, well. Just one sniff, and the Heartless appeared. What would happen if I chugged the whole thing? THAT would be scary! Poor Jack! You can't hold a candle to Oogie Boogie. Time for Halloween Town to taste pain and despair beyond any nightmare!"
+        },
+        {
+          "Order": 14,
+          "Character": "Jack Skellington",
+          "Line": "Pain and despair? Oogie, you monster!"
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "C'mon, Jack! We've gotta go after him!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Oogie's Nightmare",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Jack Skellington",
+          "Line": "Oogie! Hand over the potion!"
+        },
+        {
+          "Order": 1,
+          "Character": "Oogie Boogie",
+          "Line": "You fools don't know when to quit! Say...all this running around is making me thirsty!"
+        },
+        {
+          "Order": 2,
+          "Character": "Jack Skellington",
+          "Line": "Oogie! No!"
+        },
+        {
+          "Order": 3,
+          "Character": "Oogie Boogie",
+          "Line": "Yes!"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Oh, no..."
+        },
+        {
+          "Order": 5,
+          "Character": "Oogie Boogie",
+          "Line": "Ahh! Lip-smacking good! Agh! What's this? What... Something's wrong! Something deep inside me. Something...scary!"
+        },
+        {
+          "Order": 6,
+          "Character": "Jack Skellington",
+          "Line": "Oogie! What's going on?"
+        },
+        {
+          "Order": 7,
+          "Character": "Oogie Boogie",
+          "Line": "No! Get back! Stay away from me!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "True Memories",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Dr. Finkelstein",
+          "Line": "Confound that Oogie Boogie! He drank nearly all of my precious potion! There are only a few drops left!"
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "Sora, why don't you ask the doc if you can drink the rest?"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "No. I'd better not."
+        },
+        {
+          "Order": 3,
+          "Character": "Dr. Finkelstein",
+          "Line": "What, don't you want it? Too bad. It would've been a great experiment."
+        },
+        {
+          "Order": 4,
+          "Character": "Sally",
+          "Line": "Now, Doctor..."
+        },
+        {
+          "Order": 5,
+          "Character": "Jack Skellington",
+          "Line": "Don't you want to find out about your true memories?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Of course-now more than ever. But there's this guy-Axel. I promised him I'd find the truth on my own."
+        },
+        {
+          "Order": 7,
+          "Character": "Dr. Finkelstein",
+          "Line": "I just don't understand. When I inhaled the potion, Heartless appeared- ...and when Oogie drank it, he was overcome with fear. What could it mean?"
+        },
+        {
+          "Order": 8,
+          "Character": "Sally",
+          "Line": "It means the potion was a failure."
+        },
+        {
+          "Order": 9,
+          "Character": "Dr. Finkelstein",
+          "Line": "No! I can't be wrong! Oogie MUST have found his true memories! Hmm... True memories must unbalance the heart- ...and cause unpredictable changes within!"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Then...what about me? What happens when my true memories awaken?"
+        },
+        {
+          "Order": 11,
+          "Character": "Dr. Finkelstein",
+          "Line": "Perhaps something even more terrifying... But this is all just a hypothesis. I can't be sure without further research."
+        },
+        {
+          "Order": 12,
+          "Character": "Jack Skellington",
+          "Line": "What's wrong, Sora? Does the doctor's theory scare you?"
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Well, yeah-a little."
+        },
+        {
+          "Order": 14,
+          "Character": "Jack Skellington",
+          "Line": "That's good to hear! Fear and doubt are signs of a strong heart. They push your heart, strike out in new directions, take chances! Without them, your zest for life might fade... ...as would your taste for fear. And believe me, that would really ruin my fun."
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "Thanks, Jack. I'll remember that."
+        },
+        {
+          "Order": 16,
+          "Character": "Jack Skellington",
+          "Line": "Then good luck, gentlemen! May you always enjoy being frightened!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Ariel in a Rush",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Gawrsh! This looks like the bottom of the sea."
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "It sure does. So how come we can breathe?"
+        },
+        {
+          "Order": 2,
+          "Character": "Goofy",
+          "Line": "Hmm... Beats me! Maybe someone cast a spell on us?"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "It's just like breathing air!"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "But it's not air. See? Someone's swimming this way!"
+        },
+        {
+          "Order": 5,
+          "Character": "Ariel",
+          "Line": "If anyone asks, you didn't see me!"
+        },
+        {
+          "Order": 6,
+          "Character": "Donald",
+          "Line": "What?"
+        },
+        {
+          "Order": 7,
+          "Character": "Ariel",
+          "Line": "Sorry, I don't have time to explain. Just promise you won't tell!"
+        },
+        {
+          "Order": 8,
+          "Character": "Goofy",
+          "Line": "Hey, what's that sparkling thingy you got there?"
+        },
+        {
+          "Order": 9,
+          "Character": "Ariel",
+          "Line": "Oh, nothing-nothing at all! Remember, you didn't see me!"
+        },
+        {
+          "Order": 10,
+          "Character": "Donald",
+          "Line": "Well. Looked like she was in a hurry."
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "She was hiding something."
+        },
+        {
+          "Order": 12,
+          "Character": "Donald",
+          "Line": "I wonder what it was?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "The Stolen Trident",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sebastian",
+          "Line": "Oh, woe is me..."
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Is something wrong?"
+        },
+        {
+          "Order": 2,
+          "Character": "Sebastian",
+          "Line": "Someone stole the king's magic trident. Atlantica is defenseless! And to top it off, Princess Ariel has disappeared! King Triton's worried sick. He won't leave his chambers."
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Ariel? She disappeared?"
+        },
+        {
+          "Order": 4,
+          "Character": "Sebastian",
+          "Line": "Ariel's friend Flounder would know where she is, but now he's gone, too."
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Wait a sec... Didn't we just see Ariel?"
+        },
+        {
+          "Order": 6,
+          "Character": "Goofy",
+          "Line": "Yep. But she didn't look real happy to see US! Hey, wasn't she carrying something when we saw her?"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "You don't think that was the trident?"
+        },
+        {
+          "Order": 8,
+          "Character": "Jiminy",
+          "Line": "You know, maybe it was."
+        },
+        {
+          "Order": 9,
+          "Character": "Donald",
+          "Line": "Wak? But that means Ariel stole it!"
+        },
+        {
+          "Order": 10,
+          "Character": "Jiminy",
+          "Line": "There must be some explanation."
+        },
+        {
+          "Order": 11,
+          "Character": "Sebastian",
+          "Line": "Ariel! Where did you swim off to this time? If anything happens to you... The king will think it's all my fault! He told me to keep an eye on her, and now this! What if she ran away because of something I said?! King Triton will banish me forever!"
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "He'll pop his shell if we tell him Ariel took the trident."
+        },
+        {
+          "Order": 13,
+          "Character": "Goofy",
+          "Line": "Guess we'll have to get to the bottom of this ourselves!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Ursula's Evil",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "There she is!"
+        },
+        {
+          "Order": 1,
+          "Character": "Ariel",
+          "Line": "This is all my fault. I wish I'd never taken Daddy's trident. I should've known things would turn out this way."
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "She DID take it!"
+        },
+        {
+          "Order": 3,
+          "Character": "Goofy",
+          "Line": "Pipe down! Somebody's comin'!"
+        },
+        {
+          "Order": 4,
+          "Character": "Ursula",
+          "Line": "No need to worry, child. You did the right thing. Why, I'm sure you'd do anything in the world to help your little friend. Poor Flounder has been swept away to the human world. No place for a little fish. Why, if we don't hurry, you might not have a friend to save-"
+        },
+        {
+          "Order": 5,
+          "Character": "Ariel",
+          "Line": "No!"
+        },
+        {
+          "Order": 6,
+          "Character": "Ursula",
+          "Line": "Besides, you're not GIVING me the trident, dear-just letting me borrow it for a bit. You can save Flounder! Lend me the trident, and I'll help you!"
+        },
+        {
+          "Order": 7,
+          "Character": "Ariel",
+          "Line": "I know. But Daddy needs the trident to defend Atlantica. I need time to think."
+        },
+        {
+          "Order": 8,
+          "Character": "Ursula",
+          "Line": "Well, it's all the same to me. Just remember, your little friend is dodging fishhooks while you twiddle your fins. Well, you can come see me once you've made up your mind."
+        },
+        {
+          "Order": 9,
+          "Character": "Ariel",
+          "Line": "What am I going to do?"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Don't trust HER, that's for sure."
+        },
+        {
+          "Order": 11,
+          "Character": "Ariel",
+          "Line": "How long have you been listening?"
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "Oh, long enough."
+        },
+        {
+          "Order": 13,
+          "Character": "Donald",
+          "Line": "It doesn't matter. Sora's right! Don't trust that sea witch! She's up to no good. You can see it in her face!"
+        },
+        {
+          "Order": 14,
+          "Character": "Ariel",
+          "Line": "Then we all agree! The problem is, I don't have any idea where Flounder is. And she's the only one who can help."
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "What about us? C'mon. Let's go talk to her. You shouldn't have to do this by yourself."
+        },
+        {
+          "Order": 16,
+          "Character": "Ariel",
+          "Line": "Really? You'll come with me?"
+        },
+        {
+          "Order": 17,
+          "Character": "Sora",
+          "Line": "You bet! I know how it feels to have friends in trouble. Let's get going!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Something Fishy",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Ursula",
+          "Line": "My, so many guests! Have you made up your mind, my dear?"
+        },
+        {
+          "Order": 1,
+          "Character": "Ariel",
+          "Line": "I'll do anything for Flounder. But I need proof I can trust you. You said we could save Flounder if I gave you the trident. Well, prove it!"
+        },
+        {
+          "Order": 2,
+          "Character": "Ursula",
+          "Line": "But of course! See?"
+        },
+        {
+          "Order": 3,
+          "Character": "Flounder",
+          "Line": "Ariel!"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "I knew something was fishy!"
+        },
+        {
+          "Order": 5,
+          "Character": "Ursula",
+          "Line": "There you have it. If you want your precious Flounder back, give me the trident!"
+        },
+        {
+          "Order": 6,
+          "Character": "Ariel",
+          "Line": "..."
+        },
+        {
+          "Order": 7,
+          "Character": "Ursula",
+          "Line": "Ha ha! Mine at last! Now I'm ruler of all the seas!"
+        },
+        {
+          "Order": 8,
+          "Character": "Ariel",
+          "Line": "Let Flounder go!"
+        },
+        {
+          "Order": 9,
+          "Character": "Ursula",
+          "Line": "But of course! I'm feeling generous. Which reminds me... You always wanted to see other worlds, didn't you? Well, dear, I know just the world to send you to! Unfortunately, this will be a one-way trip!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Giant Ursula",
+      "Link": "https://www.youtube.com/watch?v=C4Y6CbqL3os&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=8",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Ursula",
+          "Line": "The sea and all its denizens shall grovel before me!"
+        }
+      ],
+      "Characters": [
+        "Sora",
+        "Ursula"
+      ],
+      "Worlds": [
+        "Atlantica"
+      ],
+      "Areas": [
+        "Ursula's Lair"
+      ],
+      "Music": [
+        "The Fight for my Friends"
+      ]
+    },
+    {
+      "Title": "Telling the Truth",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Flounder",
+          "Line": "Please don't be mad, Ariel. That ol' witch tricked me."
+        },
+        {
+          "Order": 1,
+          "Character": "Ariel",
+          "Line": "Flounder, as long as you're safe, nothing else matters. Now all we have to do is return the trident and everything will be okay."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "But what if the king finds out you're the one who took it in the first place?"
+        },
+        {
+          "Order": 3,
+          "Character": "Ariel",
+          "Line": "I'll be grounded forever..."
+        },
+        {
+          "Order": 4,
+          "Character": "Sebastian",
+          "Line": "Ariel! Ariel! Where are you, girl? If you can hear me, please answer!"
+        },
+        {
+          "Order": 5,
+          "Character": "Ariel",
+          "Line": "It's Sebastian! He came all this way just to find me."
+        },
+        {
+          "Order": 6,
+          "Character": "Goofy",
+          "Line": "Yep, and when he does, you're gonna get it!"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "Hey, I know! Why don't you just say the sea witch stole the trident? And you got it back all by yourself! Then there's no way you'll get in trouble!"
+        },
+        {
+          "Order": 8,
+          "Character": "Ariel",
+          "Line": "I just had the same idea! But...I can't do that. I don't want to get in trouble, but I can't lie. Not about this. I know I haven't made the best decisions lately. It was a mistake to take the trident. But I made that mistake because I wanted to help you, Flounder. I'm proud of that. Blaming someone else would mean giving those feelings up. So, I'm going to tell the truth."
+        },
+        {
+          "Order": 9,
+          "Character": "Jiminy",
+          "Line": "She's right, Sora! Honesty is the best policy."
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Hey, I was just kidding! Great, now I'M the one in hot water!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "On a Ship",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Where are we now?"
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "The floor is kinda unsteady. I can hear the ocean, too..."
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "I know! We must be inside a ship!"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Well, we'd better find a way out. But which way do we go?"
+        },
+        {
+          "Order": 4,
+          "Character": "Donald",
+          "Line": "Wak!"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Who are you?"
+        },
+        {
+          "Order": 6,
+          "Character": "Jiminy",
+          "Line": "Maybe she's trying to help us."
+        },
+        {
+          "Order": 7,
+          "Character": "Goofy",
+          "Line": "Looks like you're right!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Peter Pan to the Rescue",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Is it just me, or are all the rooms starting to look the same?"
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "Maybe we're just goin' in circles?"
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "Some help SHE was."
+        },
+        {
+          "Order": 3,
+          "Character": "Goofy",
+          "Line": "I think you mighta ruffled her feathers, Donald."
+        },
+        {
+          "Order": 4,
+          "Character": "Peter Pan",
+          "Line": "Tink, what are you doing?! You weren't supposed to bring the pirates WITH you! Stay back, pirates! Or this will be the last fight you pick!"
+        },
+        {
+          "Order": 5,
+          "Character": "Donald",
+          "Line": "What's the big idea! We're not pirates! We're only here because... ... Umm... Why are we here, Sora?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Huh? How am I supposed to know, Donald? Goofy, what do you think?"
+        },
+        {
+          "Order": 7,
+          "Character": "Goofy",
+          "Line": "Gawrsh, beats me."
+        },
+        {
+          "Order": 8,
+          "Character": "Peter Pan",
+          "Line": "Okay, okay, I understand. Sora, Donald, and Goofy, right? I guess if you were real pirates- ...you wouldn't get lost on your own ship. Plus, you're dressed funny."
+        },
+        {
+          "Order": 9,
+          "Character": "Donald",
+          "Line": "There you go again!"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Wait, so if you thought we were pirates... This must be a pirate ship!"
+        },
+        {
+          "Order": 11,
+          "Character": "Peter Pan",
+          "Line": "That's right. You're trapped inside the Jolly Roger-ship of the ol' codfish, Captain Hook."
+        },
+        {
+          "Order": 12,
+          "Character": "Donald",
+          "Line": "Well, if we're trapped, that means you are, too!"
+        },
+        {
+          "Order": 13,
+          "Character": "Peter Pan",
+          "Line": "Me? Don't be silly. No one can capture Peter Pan! I'm just laying low until it's time to spring my plan."
+        },
+        {
+          "Order": 14,
+          "Character": "Goofy",
+          "Line": "What plan is that?"
+        },
+        {
+          "Order": 15,
+          "Character": "Peter Pan",
+          "Line": "The pirates kidnapped my friend Wendy. She's got to be somewhere on this ship. I didn't expect there to be so many pirates on watch, though. I sent Tink to look for a way around... ...but all she found was you."
+        },
+        {
+          "Order": 16,
+          "Character": "Sora",
+          "Line": "I bet I know what Tink had in mind! If we all make a big enough racket- we can distract the pirates!"
+        },
+        {
+          "Order": 17,
+          "Character": "Goofy",
+          "Line": "Gawrsh, you musta read her mind!"
+        },
+        {
+          "Order": 18,
+          "Character": "Sora",
+          "Line": "So how 'bout it? Let's work together, at least until we get above deck."
+        },
+        {
+          "Order": 19,
+          "Character": "Peter Pan",
+          "Line": "Well, why not? Of course, I could save Wendy myself, if I wanted to. But you guys look like you'd be stuck without me."
+        },
+        {
+          "Order": 20,
+          "Character": "Donald",
+          "Line": "Don't you have ANY manners?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Wendy's Heart",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Peter Pan",
+          "Line": "There she is!"
+        },
+        {
+          "Order": 1,
+          "Character": "Wendy",
+          "Line": "Peter? Peter Pan!"
+        },
+        {
+          "Order": 2,
+          "Character": "Peter Pan",
+          "Line": "Wendy, are you all right? I've come to rescue you with my three new Lost Boys! C'mon, let's get off this leaky ol' tub and do some exploring! Ha ha! We'll never grow up!"
+        },
+        {
+          "Order": 3,
+          "Character": "Wendy",
+          "Line": "Listen, Peter. I've got something to tell you... I want to go home to London."
+        },
+        {
+          "Order": 4,
+          "Character": "Peter Pan",
+          "Line": "What are you talking about? Why would you want to do that? You'd have to turn into a grown-up. Besides, goin' on adventures is a lot more fun! If you go back to London, you'll have to leave the nursery. You'll grow up and we'll never see each other again!"
+        },
+        {
+          "Order": 5,
+          "Character": "Wendy",
+          "Line": "I know, Peter. But... I still want to go home."
+        },
+        {
+          "Order": 6,
+          "Character": "Peter Pan",
+          "Line": "I came to rescue you! And you don't care if you ever see me again!"
+        },
+        {
+          "Order": 7,
+          "Character": "Wendy",
+          "Line": "No, you don't understand!"
+        },
+        {
+          "Order": 8,
+          "Character": "Peter Pan",
+          "Line": "Suit yourself! And while you're at it, rescue yourself! I'm leaving."
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "Hey, wait a minute-"
+        },
+        {
+          "Order": 10,
+          "Character": "Donald",
+          "Line": "There he goes."
+        },
+        {
+          "Order": 11,
+          "Character": "Wendy",
+          "Line": "Peter..."
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "Not very thoughtful, is he? What do we do now?"
+        },
+        {
+          "Order": 13,
+          "Character": "Goofy",
+          "Line": "Hey, I've got an idea! Why don't we think of something once we get up on deck?"
+        },
+        {
+          "Order": 14,
+          "Character": "Donald",
+          "Line": "That doesn't make any sense... I think."
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "Well, there's still trouble waiting outside. Wendy, you stay here. We'll try to create a distraction."
+        },
+        {
+          "Order": 16,
+          "Character": "Wendy",
+          "Line": "All right. Be careful."
+        },
+        {
+          "Order": 17,
+          "Character": "Goofy",
+          "Line": "Maybe if you stay here, Peter will change his mind and come back."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Hook's Wrath",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Donald",
+          "Line": "Whew! We finally made it out!"
+        },
+        {
+          "Order": 1,
+          "Character": "Captain Hook",
+          "Line": "There you are, you rascals! I'll teach you to play stow away on my ship! Friends of Peter Pan, I'll wager!"
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "Are we his friends?"
+        },
+        {
+          "Order": 3,
+          "Character": "Goofy",
+          "Line": "He sure didn't seem to think so."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Yeah, the way he took off like that. He even ditched Wendy."
+        },
+        {
+          "Order": 5,
+          "Character": "Captain Hook",
+          "Line": "I'm not finished talking yet! How dare you ignore me and plot behind my back! Uncivilized brats! You're in cahoots with Peter Pan, no mistake!"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "If you say so. Either way, you're gonna let us off this ship."
+        },
+        {
+          "Order": 7,
+          "Character": "Goofy",
+          "Line": "And Wendy's coming with us."
+        },
+        {
+          "Order": 8,
+          "Character": "Captain Hook",
+          "Line": "Think again, you scallywags! Hook's one step ahead of you!"
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "Wendy!"
+        },
+        {
+          "Order": 10,
+          "Character": "Captain Hook",
+          "Line": "Any trouble, and Wendy takes a long walk off the plank!"
+        },
+        {
+          "Order": 11,
+          "Character": "Donald",
+          "Line": "You wouldn't!"
+        },
+        {
+          "Order": 12,
+          "Character": "Captain Hook",
+          "Line": "Believe me, I'd rather not. After all, I need Wendy to bait that blasted Peter Pan!"
+        },
+        {
+          "Order": 13,
+          "Character": "Peter Pan",
+          "Line": "Then I'll just have to take the bait, you old codfish!"
+        },
+        {
+          "Order": 14,
+          "Character": "Captain Hook",
+          "Line": "!"
+        },
+        {
+          "Order": 15,
+          "Character": "Wendy",
+          "Line": "Peter!"
+        },
+        {
+          "Order": 16,
+          "Character": "Peter Pan",
+          "Line": "Here I am, Hook! Miss me?"
+        },
+        {
+          "Order": 17,
+          "Character": "Captain Hook",
+          "Line": "Insolent BRAT! Today is the day you pay for taking my hand!"
+        },
+        {
+          "Order": 18,
+          "Character": "Peter Pan",
+          "Line": "Uh-oh!"
+        },
+        {
+          "Order": 19,
+          "Character": "Captain Hook",
+          "Line": "Agh? Wa-wa-wa-wa-whoa! You've made a fool of me for the last time, Pan! I'll cleave you to the brisket!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Even After We Grow Up",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Thanks, Peter, we owe you one."
+        },
+        {
+          "Order": 1,
+          "Character": "Peter Pan",
+          "Line": "Well, at first I thought I'd let you handle it, but it really looked like you needed help. But hey, you three did pretty good, though. Wendy, about London... Are you sure you won't change your mind?"
+        },
+        {
+          "Order": 2,
+          "Character": "Wendy",
+          "Line": "Peter, I'm sorry. But I really want to go home."
+        },
+        {
+          "Order": 3,
+          "Character": "Peter Pan",
+          "Line": "I was afraid of that... Everyone grows up-and grown-ups always forget. First you'll forget what it feels like to be young, and then you'll forget about me."
+        },
+        {
+          "Order": 4,
+          "Character": "Wendy",
+          "Line": "How can you say such a thing, Peter? I'll never, ever forget you."
+        },
+        {
+          "Order": 5,
+          "Character": "Peter Pan",
+          "Line": "Sure, that's what you think now. But when you try to remember me, the memories will be gone. You'll forget-little by little, one memory at a time. Once you're grown up, there won't be a single memory left."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Don't say that. Memories-even important ones-don't come back to us whenever we want them to. But that doesn't mean the memories are gone. It's more like...like they're sleeping. So when the right thing comes along and wakes the memory up, we can remember it. The memories engraved in our hearts never go away. I'm sure of it."
+        },
+        {
+          "Order": 7,
+          "Character": "Wendy",
+          "Line": "He's right, Peter."
+        },
+        {
+          "Order": 8,
+          "Character": "Peter Pan",
+          "Line": "Never, huh? It's funny. I thought everybody who left Neverland forgot all about it. But I have a feeling you guys just might be different. Okay, Sora! If you say we'll meet again, then I believe you!"
+        },
+        {
+          "Order": 9,
+          "Character": "Wendy",
+          "Line": "Oh, Peter!"
+        },
+        {
+          "Order": 10,
+          "Character": "Peter Pan",
+          "Line": "Let's go, Wendy. London is waiting. Goodbye, Sora. I'll be waiting to see what you look like all grown up!"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "What's the matter, Tink? This must be a gift from Peter."
+        },
+        {
+          "Order": 12,
+          "Character": "Donald",
+          "Line": "Maybe he's not such a thoughtless guy after all. Oww!"
+        },
+        {
+          "Order": 13,
+          "Character": "Goofy",
+          "Line": "Another gift from Peter?"
+        },
+        {
+          "Order": 14,
+          "Character": "Donald",
+          "Line": "What's the big idea!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Belle Refuses the Beast",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "I'm hearin' voices! I wonder who it is."
+        },
+        {
+          "Order": 1,
+          "Character": "Jiminy",
+          "Line": "Shhh! I think something's wrong!"
+        },
+        {
+          "Order": 2,
+          "Character": "Beast",
+          "Line": "But Belle, I don't understand! I came here to rescue you!"
+        },
+        {
+          "Order": 3,
+          "Character": "Belle",
+          "Line": "Beast... I did not ask you to come. And it doesn't matter anyway. I'm not going back with you, so you're wasting your time."
+        },
+        {
+          "Order": 4,
+          "Character": "Beast",
+          "Line": "Belle? Do you know what you're saying? How can you stay here with that witch?"
+        },
+        {
+          "Order": 5,
+          "Character": "Belle",
+          "Line": "I've nothing more to say. Now leave, before she finds you."
+        },
+        {
+          "Order": 6,
+          "Character": "Beast",
+          "Line": "Belle...why?"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "I'm not sure what's going on, but...is everything okay?"
+        },
+        {
+          "Order": 8,
+          "Character": "Donald",
+          "Line": "Don't feel bad. There must be a reason she said those things."
+        },
+        {
+          "Order": 9,
+          "Character": "Beast",
+          "Line": "Keep your sympathy. No one could ever care for a beast like me."
+        },
+        {
+          "Order": 10,
+          "Character": "Goofy",
+          "Line": "Poor guy. Sure wish there was somethin' we could do for him."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Belle's Wavering Heart",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Belle",
+          "Line": "Who are you? Were you kidnapped, too?"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Uh...not exactly. It's a long story. Wait! So you've been kidnapped? You don't want to be here?"
+        },
+        {
+          "Order": 2,
+          "Character": "Belle",
+          "Line": "Yes... ...No, I don't really want to be here. That witch forced me to come here. I have no one to talk to. Books are all I have to ease my loneliness. And then there's him... Oh, I've missed him so much."
+        },
+        {
+          "Order": 3,
+          "Character": "Goofy",
+          "Line": "You mean the Beast? Then why were you so mean to him before?"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Yeah. You really hurt his feelings."
+        },
+        {
+          "Order": 5,
+          "Character": "Belle",
+          "Line": "You don't understand. I can't let him see how I really feel."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Why not?"
+        },
+        {
+          "Order": 7,
+          "Character": "Belle",
+          "Line": "It's just that- ! Oh no, she's coming! Hide, quickly!"
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "?"
+        },
+        {
+          "Order": 9,
+          "Character": "Donald",
+          "Line": "?"
+        },
+        {
+          "Order": 10,
+          "Character": "Goofy",
+          "Line": "?"
+        },
+        {
+          "Order": 11,
+          "Character": "Belle",
+          "Line": "There's no time to explain. Quick. Hide! Oh... Hello. To what do I owe this visit?"
+        },
+        {
+          "Order": 12,
+          "Character": "Maleficent",
+          "Line": "He was here-yes? He risked his life to come and save you. Why do you reject him?"
+        },
+        {
+          "Order": 13,
+          "Character": "Belle",
+          "Line": "I won't ask for his help."
+        },
+        {
+          "Order": 14,
+          "Character": "Maleficent",
+          "Line": "Oh, and why is that?"
+        },
+        {
+          "Order": 15,
+          "Character": "Belle",
+          "Line": "You know very well why. I'm not going to fall into your trap!"
+        },
+        {
+          "Order": 16,
+          "Character": "Maleficent",
+          "Line": "Then I have no choice but to make you BEG for his help!"
+        },
+        {
+          "Order": 17,
+          "Character": "Sora",
+          "Line": "No! She got away!"
+        },
+        {
+          "Order": 18,
+          "Character": "Goofy",
+          "Line": "What should we do?"
+        },
+        {
+          "Order": 19,
+          "Character": "Sora",
+          "Line": "Help her, of course! What else?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "A Heart Stolen",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Maleficent",
+          "Line": "What are you waiting for? Call to him!"
+        },
+        {
+          "Order": 1,
+          "Character": "Belle",
+          "Line": "No! I won't let you hurt him!"
+        },
+        {
+          "Order": 2,
+          "Character": "Maleficent",
+          "Line": "Then I shall make you scream! The fool will come running the moment he hears your cries."
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Enough! The Beast isn't the only one you have to deal with."
+        },
+        {
+          "Order": 4,
+          "Character": "Maleficent",
+          "Line": "Begone, boy. You have no business here. Unless, of course, you wish to join in the screaming! This is perfect. When that brute hears your shrieks of terror, he'll come right to me!"
+        },
+        {
+          "Order": 5,
+          "Character": "Beast",
+          "Line": "Don't trouble yourself."
+        },
+        {
+          "Order": 6,
+          "Character": "Belle",
+          "Line": "You're here! No! You mustn't! I told you to leave this place! Leave me alone! I never want to see your face again!"
+        },
+        {
+          "Order": 7,
+          "Character": "Beast",
+          "Line": "Belle..."
+        },
+        {
+          "Order": 8,
+          "Character": "Jiminy",
+          "Line": "What an awful thing to say!"
+        },
+        {
+          "Order": 9,
+          "Character": "Beast",
+          "Line": "All right. If that's how you feel, I understand. My hideousness is punishment for being selfish and unable to love. I was made into a monster, loved by no one...and I only became more selfish. That is... Until I met you, Belle. You're the only person who accepted me. Little by little, you warmed my cold, selfish heart. The memories of our days together are my most precious. I won't cast them aside. So I'm sorry, but I can't leave you here...even if you hate me for it. Consider it my final selfish act."
+        },
+        {
+          "Order": 10,
+          "Character": "Belle",
+          "Line": "Oh, Beast..."
+        },
+        {
+          "Order": 11,
+          "Character": "Maleficent",
+          "Line": "Well, well. I never dreamed such ugliness could hide so beautiful a heart. This calls for a change of plan. Beast, I shall claim your heart instead of Belle's!"
+        },
+        {
+          "Order": 12,
+          "Character": "Belle",
+          "Line": "No! Please!"
+        },
+        {
+          "Order": 13,
+          "Character": "Maleficent",
+          "Line": "Well, so much for the change of plan. Belle's heart it is, after all. It seems her cold words spoke little of her true feelings. Ha ha ha, she loves you, Beast! I can feel it shining in her heart!"
+        },
+        {
+          "Order": 14,
+          "Character": "Beast",
+          "Line": "You fiend! Release Belle's heart at once! Where are you?!"
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "She went that way! That's the way the shadows fled."
+        },
+        {
+          "Order": 16,
+          "Character": "Beast",
+          "Line": "What are you doing here?"
+        },
+        {
+          "Order": 17,
+          "Character": "Donald",
+          "Line": "No time to talk! We gotta go after them right away!"
+        },
+        {
+          "Order": 18,
+          "Character": "Beast",
+          "Line": "You'd help me?"
+        },
+        {
+          "Order": 19,
+          "Character": "Goofy",
+          "Line": "You bet! After what you just said, we GOTTA help you!"
+        },
+        {
+          "Order": 20,
+          "Character": "Sora",
+          "Line": "Let's go get Belle's heart back!"
+        },
+        {
+          "Order": 21,
+          "Character": "Beast",
+          "Line": "Right!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Maleficent",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Maleficent",
+          "Line": "You've done well to make it this far, Beast. As your reward, I'll tell you why Belle rejected you. My dark magic requires hearts of utmost beauty. Belle was perfect. Deep in her heart, her love for you shone with uncommon radiance. But she guessed my plans. By denying her love for you, she put her heart beyond my reach."
+        },
+        {
+          "Order": 1,
+          "Character": "Beast",
+          "Line": "But she saved me! She protected me!"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "She couldn't hide how she really felt..."
+        },
+        {
+          "Order": 3,
+          "Character": "Beast",
+          "Line": "I've heard enough! Release her heart! NOW! If you don't..."
+        },
+        {
+          "Order": 4,
+          "Character": "Maleficent",
+          "Line": "Hm hm hm..."
+        },
+        {
+          "Order": 5,
+          "Character": "Beast",
+          "Line": "Do not try my patience!"
+        },
+        {
+          "Order": 6,
+          "Character": "Maleficent",
+          "Line": "Don't you realize why I am telling you all this? Did you think it was out of kindness? I did it to erase your doubts. Now your heart is beginning to shine with love for Belle. I shall have your heart, too, monster!"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "Not if we stop you!"
+        },
+        {
+          "Order": 8,
+          "Character": "Maleficent",
+          "Line": "You dare to challenge me? Pitiful fools!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Together Again",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Beast",
+          "Line": "Belle! Thank goodness..."
+        },
+        {
+          "Order": 1,
+          "Character": "Belle",
+          "Line": "Please forgive me. I had to be cruel to you. But no matter how I tried, I couldn't hide my true feelings..."
+        },
+        {
+          "Order": 2,
+          "Character": "Beast",
+          "Line": "I'm the one who should apologize...for doubting you. I never want to remember feeling that way...so angry, so alone."
+        },
+        {
+          "Order": 3,
+          "Character": "Belle",
+          "Line": "Then don't. Let's replace the sad memories with happier ones-starting now."
+        },
+        {
+          "Order": 4,
+          "Character": "Beast",
+          "Line": "Belle..."
+        },
+        {
+          "Order": 5,
+          "Character": "Goofy",
+          "Line": "There they go with the mushy stuff, a-hyuck!"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Yeah, I think it's time we got on our way."
+        },
+        {
+          "Order": 7,
+          "Character": "Donald",
+          "Line": "Good idea! Let's keep moving."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Looking for Nobody",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "What's wrong, little fella?"
+        },
+        {
+          "Order": 1,
+          "Character": "Pooh",
+          "Line": "I'm looking for my friends."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Are they around here? It looks like nobody's here."
+        },
+        {
+          "Order": 3,
+          "Character": "Pooh",
+          "Line": "Oh. Then perhaps I'm looking for nobody."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "You're looking for nobody?"
+        },
+        {
+          "Order": 5,
+          "Character": "Pooh",
+          "Line": "I suppose I must be. But, they don't seem to be anywhere. And all this searching is making my tummy rumble. Hmm...I wonder if there's any honey about. Oh, but if I stop to eat, I shall first have to stop searching."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Why don't we look for your friends together?"
+        },
+        {
+          "Order": 7,
+          "Character": "Pooh",
+          "Line": "For nobody, you mean?"
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "No, for your friends. They might be around here. Let's find them together."
+        },
+        {
+          "Order": 9,
+          "Character": "Pooh",
+          "Line": "Oh, are you looking for my friends, too?"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "No, but I'm looking for some friends of my own."
+        },
+        {
+          "Order": 11,
+          "Character": "Pooh",
+          "Line": "And are they friends who know my friends?"
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "I'm not sure, Pooh. But I know what it's like to miss your friends. So why don't we look for them together?"
+        },
+        {
+          "Order": 13,
+          "Character": "Pooh",
+          "Line": "I'd like that, Sora."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Who's There?",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Huh?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Hello, Piglet",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Piglet",
+          "Line": "Ooooh! Oh no! Oh, dear! Don't mind me."
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "You're not Pooh's friend?"
+        },
+        {
+          "Order": 2,
+          "Character": "Piglet",
+          "Line": "Well, I... Um... I mean, I'm not NOT Pooh's friend... I'm..."
+        },
+        {
+          "Order": 3,
+          "Character": "Pooh",
+          "Line": "Why, hello there, Piglet."
+        },
+        {
+          "Order": 4,
+          "Character": "Piglet",
+          "Line": "Oh! It's you, Pooh! I'm so relieved... I finally found someone! I got separated from the others. And I was so worried, I didn't know what to do."
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "That explains why you were so fidgety."
+        },
+        {
+          "Order": 6,
+          "Character": "Pooh",
+          "Line": "Piglet, why don't you come with us to look for the rest of our friends?"
+        },
+        {
+          "Order": 7,
+          "Character": "Piglet",
+          "Line": "What? Oh my, I don't know... Ohh... What should I do..."
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "Guess he doesn't want to come."
+        },
+        {
+          "Order": 9,
+          "Character": "Piglet",
+          "Line": "Wait! Please!"
+        },
+        {
+          "Order": 10,
+          "Character": "Pooh",
+          "Line": "Have you decided to join us, Piglet?"
+        },
+        {
+          "Order": 11,
+          "Character": "Piglet",
+          "Line": "Well, no. I'm... I'm still thinking. But before you got here, I found something strange in the shrubs... I thought it might help you to find everyone else..."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Rabbit's Veggies",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Watch out! That was close! Are you okay, Pooh?"
+        },
+        {
+          "Order": 1,
+          "Character": "Pooh",
+          "Line": "Yes...I seem to be."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Where did that pumpkin come from?"
+        },
+        {
+          "Order": 3,
+          "Character": "Rabbit",
+          "Line": "Yoo-hoo!"
+        },
+        {
+          "Order": 4,
+          "Character": "Pooh",
+          "Line": "Hello, Rabbit."
+        },
+        {
+          "Order": 5,
+          "Character": "Rabbit",
+          "Line": "Oh, I'm glad you're here! Would you help me sort the vegetables from my garden?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "So the pumpkin was yours..."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "A Token of Appreciation",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Rabbit",
+          "Line": "Thank you for the help. Please take this, won't you?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Balloons",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "I wonder what these balloons are for?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Owl's Advice",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Owl",
+          "Line": "Are you all right, Pooh?"
+        },
+        {
+          "Order": 1,
+          "Character": "Pooh",
+          "Line": "Oh yes, Owl. I found it rather fun."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Maybe you could use a balloon to look for your friends."
+        },
+        {
+          "Order": 3,
+          "Character": "Owl",
+          "Line": "Hoo! Hoo! You might think so, young man. But serious problems arise when you arrive at your destination."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "?"
+        },
+        {
+          "Order": 5,
+          "Character": "Owl",
+          "Line": "Once you find your friends, how do you get down to them? You see, a balloon goes only where the wind blows. Which is usually up! What if you saw your friends, but the wind kept them just out of reach? I'd rather have to keep looking for my friends, than find them and not be able to reach them."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "You've got a point."
+        },
+        {
+          "Order": 7,
+          "Character": "Owl",
+          "Line": "If you want to find someone, you'd best do it on foot. It can be quite exciting to stumble across a friend where you least expect them!"
+        },
+        {
+          "Order": 8,
+          "Character": "Pooh",
+          "Line": "Well, that is how I feel-when I stumble across some honey!"
+        },
+        {
+          "Order": 9,
+          "Character": "Owl",
+          "Line": "That's the spirit, Pooh! Keep moving and keep looking."
+        },
+        {
+          "Order": 10,
+          "Character": "Pooh",
+          "Line": "Thank you, Owl. That's what I'll do. My tummy is anxious for me to find that honey."
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Don't worry, I'll help Pooh find his friends."
+        },
+        {
+          "Order": 12,
+          "Character": "Owl",
+          "Line": "Splendid! Here's something to speed you on your way."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "I'm Tigger",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Tigger",
+          "Line": "Hoo-hoo-hoo-hoo! Say, how would you like to bounce with me?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Bouncing Away",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Tigger",
+          "Line": "Hoo-hoo-hoo-hoo! Not bad at all!"
+        },
+        {
+          "Order": 1,
+          "Character": "Pooh",
+          "Line": "We were just trying to bounce like you, Tigger."
+        },
+        {
+          "Order": 2,
+          "Character": "Tigger",
+          "Line": "I'm surprised you could keep up with me."
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Well, I can bounce with the best of them, now!"
+        },
+        {
+          "Order": 4,
+          "Character": "Tigger",
+          "Line": "Is that so? Then let's see you do this!"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "Whoa!"
+        },
+        {
+          "Order": 6,
+          "Character": "Tigger",
+          "Line": "What do you think of that?"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "I could never..."
+        },
+        {
+          "Order": 8,
+          "Character": "Tigger",
+          "Line": "Awww, you don't have to do it like me! Bouncing is best when you do it your own way! 'Cause I'm Tigger, and you're Sora! Hoo-hoo-hoo-hoo!"
+        },
+        {
+          "Order": 9,
+          "Character": "Pooh",
+          "Line": "Tigger, I think you dropped something."
+        },
+        {
+          "Order": 10,
+          "Character": "Tigger",
+          "Line": "Oh, that? I found it on top of a tree when I was bouncing. You can have it, Sora. Kind of weighs me down when I'm bouncing!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "The Well Winds",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "That's an awfully blustery hole…"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Roo's Game",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Pooh",
+          "Line": "Hello there, Roo. What were you doing here?"
+        },
+        {
+          "Order": 1,
+          "Character": "Roo",
+          "Line": "I was so busy looking for Tigger, that I was blown away by the wind, and fell down here!"
+        },
+        {
+          "Order": 2,
+          "Character": "Pooh",
+          "Line": "And you got stuck?"
+        },
+        {
+          "Order": 3,
+          "Character": "Roo",
+          "Line": "No. I was waiting for Tigger... ...so we can ride the blustery wind together! So, if Tigger rides the wind here, this is where I'll be! It sure will surprise Tigger. Don't you think?"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "But what if he doesn't fall here?"
+        },
+        {
+          "Order": 5,
+          "Character": "Pooh",
+          "Line": "Hmm...yes, if Tigger rides the wind, his bounces might bounce him even further away."
+        },
+        {
+          "Order": 6,
+          "Character": "Roo",
+          "Line": "Well, I was getting a little lonely and tired of waiting for him."
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "Instead of waiting, why don't you see if you can find him?"
+        },
+        {
+          "Order": 8,
+          "Character": "Roo",
+          "Line": "You're right! That's a great idea! By the way, I found this in the shrubs. Why don't you take it?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Eeyore's Tail",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Eeyore",
+          "Line": "Lost my tail again. It figures..."
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Do you know where you lost it?"
+        },
+        {
+          "Order": 2,
+          "Character": "Pooh",
+          "Line": "Oh yum! I found it. I knew if I just listened to my tummy it would find some honey."
+        },
+        {
+          "Order": 3,
+          "Character": "Eeyore",
+          "Line": "Probably upset the bees, though. Taking their honey, that is."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "An Accidental Thank You",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Pooh",
+          "Line": "Oh, bother... My head..."
+        },
+        {
+          "Order": 1,
+          "Character": "Eeyore",
+          "Line": "Well, much obliged, Pooh."
+        },
+        {
+          "Order": 2,
+          "Character": "Pooh",
+          "Line": "I'm sure I'm obliged to you too, Eeyore. But...um...for what?"
+        },
+        {
+          "Order": 3,
+          "Character": "Eeyore",
+          "Line": "For running into that tree and getting my tail back for me."
+        },
+        {
+          "Order": 4,
+          "Character": "Pooh",
+          "Line": "Oh but, I was just trying to get away from those bees. And keep up with Sora."
+        },
+        {
+          "Order": 5,
+          "Character": "Eeyore",
+          "Line": "Well anyhow, you helped me. Thanks."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "And I was just trying to get rid of the bees. It was an accident that we found your tail."
+        },
+        {
+          "Order": 7,
+          "Character": "Eeyore",
+          "Line": "An accident. It figures. Nobody would help me on purpose. But I'm still obliged. Thank you, Pooh and Sora."
+        },
+        {
+          "Order": 8,
+          "Character": "Pooh",
+          "Line": "You're welcome, Eeyore."
+        },
+        {
+          "Order": 9,
+          "Character": "Eeyore",
+          "Line": "Here's something for you."
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "Hey, it's okay, Eeyore. It was just an accident."
+        },
+        {
+          "Order": 11,
+          "Character": "Eeyore",
+          "Line": "I know, but this fell down along with my tail. It's the accidental part of my thank you."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Friends Forever",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "I guess we can't go any farther. So Pooh, wasn't it more fun looking for friends together?"
+        },
+        {
+          "Order": 1,
+          "Character": "Pooh",
+          "Line": "Oh yes, Sora. It was. And I'd like you to have this. Thank you for helping me. Whew... I've walked so far, I think I need a little rest. If only I had a honey pot to keep me company..."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "... Well, I'd better be going."
+        },
+        {
+          "Order": 3,
+          "Character": "Pooh",
+          "Line": "Where to?"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "To look for my friends."
+        },
+        {
+          "Order": 5,
+          "Character": "Pooh",
+          "Line": "Then I shall help you look for them, too."
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "That's okay, Pooh. You should stay here."
+        },
+        {
+          "Order": 7,
+          "Character": "Pooh",
+          "Line": "You mean...this is goodbye?"
+        },
+        {
+          "Order": 8,
+          "Character": "Sora",
+          "Line": "No way! I'll always know where to find you. ! If I don't forget..."
+        },
+        {
+          "Order": 9,
+          "Character": "Pooh",
+          "Line": "Don't worry, Sora. You can count on me. Even if you forget Winnie the Pooh, I won't forget you."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "100 Acre Wood Field Dialogue",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Piglet",
+          "Line": "I just can't seem to make up my mind. Whatever should I do?"
+        },
+        {
+          "Order": 1,
+          "Character": "Rabbit",
+          "Line": "Do you want to help sort the vegetables?"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Maybe another time. / Sure, I'll help!"
+        },
+        {
+          "Order": 3,
+          "Character": "Balloons",
+          "Line": "Do you want to fly with the balloons?"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Sounds dangerous. / Sounds like fun!"
+        },
+        {
+          "Order": 5,
+          "Character": "Owl",
+          "Line": "Hoo! Look who made it all the way up here![be]"
+        },
+        {
+          "Order": 6,
+          "Character": "Tigger",
+          "Line": "Do you want to bounce with Tigger?"
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "Not now. / Definitely!"
+        },
+        {
+          "Order": 8,
+          "Character": "Eeyore",
+          "Line": "I can't do without my tail…[bf] / Thanks for accidentally helping me, Pooh. You too, Sora.[bg]"
+        },
+        {
+          "Order": 9,
+          "Character": "Tree",
+          "Line": "Do you want to get some honey?"
+        },
+        {
+          "Order": 10,
+          "Character": "Sora",
+          "Line": "The bees frighten me. / I would like some honey."
+        },
+        {
+          "Order": 11,
+          "Character": "Voice",
+          "Line": "Do you want to leave this world?"
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "I'll stay a little longer. / I'd better get going."
+        }
+      ],
+      "Characters": [
+        "Eeyore",
+        "Owl",
+        "Piglet",
+        "Rabbit",
+        "Sora",
+        "Tigger"
+      ],
+      "Worlds": [
+        "100 Acre Wood"
+      ],
+      "Areas": [
+        "Bouncing Spot",
+        "Hunny Tree",
+        "Meadow",
+        "Muddy Path",
+        "Pooh's House",
+        "Rabbit's House"
+      ],
+      "Music": [
+        "Winnie the Pooh"
+      ]
+    },
+    {
+      "Title": "Returning to 100 Acre Wood (Unfinished)",
+      "Link": "https://www.youtube.com/watch?v=bdkGFeZkaOE&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=9",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Pooh",
+          "Line": "Come along and help me find my friends."
+        }
+      ],
+      "Characters": [
+        "Pooh",
+        "Sora"
+      ],
+      "Worlds": [
+        "100 Acre Wood"
+      ],
+      "Areas": [
+        "Pooh's House"
+      ],
+      "Music": [
+        "Winnie the Pooh"
+      ]
+    },
+    {
+      "Title": "Friends Forever (Alternate)",
+      "Link": "https://www.youtube.com/watch?v=66nxFdHZ5Ks&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=10",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "I guess we can't go any farther. So Pooh, wasn't it more fun looking for friends together?"
+        },
+        {
+          "Order": 1,
+          "Character": "Pooh",
+          "Line": "Yes. Thank you. Whew... I've walked so far, I think I need a little rest. If only I had a honey pot to keep me company..."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "... Well, I'd better be going."
+        },
+        {
+          "Order": 3,
+          "Character": "Pooh",
+          "Line": "Where to?"
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "To look for my friends."
+        },
+        {
+          "Order": 5,
+          "Character": "Pooh",
+          "Line": "Are you sure you don't need my help?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Yeah. You should stay close to home."
+        },
+        {
+          "Order": 7,
+          "Character": "Pooh",
+          "Line": "All right, Sora. I'll be sure to do the remembering for both of us."
+        }
+      ],
+      "Characters": [
+        "Pooh",
+        "Sora"
+      ],
+      "Worlds": [
+        "100 Acre Wood"
+      ],
+      "Areas": [
+        "Meadow"
+      ],
+      "Music": null
+    },
+    {
+      "Title": "A Town Unremembered",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Gawrsh... Where are we, Sora?"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Hmm... I dunno... I've never been here."
+        },
+        {
+          "Order": 2,
+          "Character": "Donald",
+          "Line": "Me neither."
+        },
+        {
+          "Order": 3,
+          "Character": "Jiminy",
+          "Line": "That can't be right! Up 'til now, the only places we've been are from Sora's memory."
+        },
+        {
+          "Order": 4,
+          "Character": "Sora",
+          "Line": "Maybe so, but I definitely don't remember this."
+        },
+        {
+          "Order": 5,
+          "Character": "Donald",
+          "Line": "You might have forgotten this town just like the other stuff."
+        },
+        {
+          "Order": 6,
+          "Character": "Jiminy",
+          "Line": "This is terrible. Our memories are practically gone."
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "We'll be okay. See, look at this..."
+        },
+        {
+          "Order": 8,
+          "Character": "Goofy",
+          "Line": "Naminé's good luck charm!"
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "There's a special memory that goes with this. One night, when Naminé and I were little, there was this meteor shower. Naminé started crying. She said, \"What if a shooting star hits the islands?\" So I said, \"If a shooting star comes this way, I'll hit it right back into outer space!\" I was swinging this toy sword around the whole time. Naminé just smiled and said, \"Thanks.\" And then she gave me this."
+        },
+        {
+          "Order": 10,
+          "Character": "Naminé",
+          "Line": "Sora, I'm so sorry. All this, because of me..."
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Naminé said she had it ever since she was a baby."
+        },
+        {
+          "Order": 12,
+          "Character": "Donald",
+          "Line": "And she gave it to you? Aww..."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Yeah. So I promised her... From now on, I'll bring you good luck. I'll keep you safe. But then one day, Naminé left the islands...and I forgot about her all this time. I really let her down..."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Friends on the Islands",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "I'm not going crazy, am I? I know exactly where this is... Yeah! This is our island! Where Naminé and I used to play together!"
+        },
+        {
+          "Order": 1,
+          "Character": "Tidus",
+          "Line": "Heeeey!"
+        },
+        {
+          "Order": 2,
+          "Character": "Wakka",
+          "Line": "Heeeey!"
+        },
+        {
+          "Order": 3,
+          "Character": "Selphie",
+          "Line": "Heeeey!"
+        },
+        {
+          "Order": 4,
+          "Character": "Wakka",
+          "Line": "Whassup, Sora!"
+        },
+        {
+          "Order": 5,
+          "Character": "Selphie",
+          "Line": "So, whatcha wanna do today?"
+        },
+        {
+          "Order": 6,
+          "Character": "Sora",
+          "Line": "Hey, guys! Am I glad to see you, uh..."
+        },
+        {
+          "Order": 7,
+          "Character": "Tidus",
+          "Line": "\"Uh\" what?"
+        },
+        {
+          "Order": 8,
+          "Character": "Wakka",
+          "Line": "We got food on our faces?"
+        },
+        {
+          "Order": 9,
+          "Character": "Selphie",
+          "Line": "Please, Wakka. Only you could be dumb enough to not notice food stuck to your face."
+        },
+        {
+          "Order": 10,
+          "Character": "Wakka",
+          "Line": "Hey, whoa! That's a low blow, ya?"
+        },
+        {
+          "Order": 11,
+          "Character": "Tidus",
+          "Line": "I dunno, Wakka. I think Selphie's on the mark."
+        },
+        {
+          "Order": 12,
+          "Character": "Wakka",
+          "Line": "Aw, not you too, Tidus!"
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Oh, yeah. You're Selphie, Wakka, and Tidus, that's who you are!"
+        },
+        {
+          "Order": 14,
+          "Character": "Wakka",
+          "Line": "You hit your head?"
+        },
+        {
+          "Order": 15,
+          "Character": "Sora",
+          "Line": "No, uh...just thinking aloud."
+        },
+        {
+          "Order": 16,
+          "Character": "Selphie",
+          "Line": "I know... You're thinking about HER again!"
+        },
+        {
+          "Order": 17,
+          "Character": "Tidus",
+          "Line": "Ohhh, I get it. Yeah, he's a total zombie when she's on his mind."
+        },
+        {
+          "Order": 18,
+          "Character": "Wakka",
+          "Line": "That would explain why he's actin' all funny towards us."
+        },
+        {
+          "Order": 19,
+          "Character": "Selphie",
+          "Line": "I bet you want us to take a hike so you two can be ALONE, huh?"
+        },
+        {
+          "Order": 20,
+          "Character": "Sora",
+          "Line": "Ummm...I guess."
+        },
+        {
+          "Order": 21,
+          "Character": "Selphie",
+          "Line": "All right, all right. We'll disappear for awhile. Go find her, cowboy."
+        },
+        {
+          "Order": 22,
+          "Character": "Tidus",
+          "Line": "We'll try to be quiet while we SPY on you!"
+        },
+        {
+          "Order": 23,
+          "Character": "Wakka",
+          "Line": "Hey, Sora's serious. Give the guy some room."
+        },
+        {
+          "Order": 24,
+          "Character": "Tidus",
+          "Line": "I'm only kidding!"
+        },
+        {
+          "Order": 25,
+          "Character": "Selphie",
+          "Line": "See you later, Sora!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Riku in My Memories",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Riku",
+          "Line": "Hey, Sora. What's the big rush?"
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "I know you...You're Riku!"
+        },
+        {
+          "Order": 2,
+          "Character": "Riku",
+          "Line": "Gee, thanks for remembering me. It's been, what, a couple of hours?"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "Er... Never mind. Are you okay? Are you still under his control?"
+        },
+        {
+          "Order": 4,
+          "Character": "Riku",
+          "Line": "What are you TALKING about?"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "I get it... You must be the Riku from my memories."
+        },
+        {
+          "Order": 6,
+          "Character": "Riku",
+          "Line": "\"The Riku from my memories\"? Sounds like you're stuck in the land of make-believe."
+        },
+        {
+          "Order": 7,
+          "Character": "Sora",
+          "Line": "I guess I kind of am."
+        },
+        {
+          "Order": 8,
+          "Character": "Riku",
+          "Line": "Ha ha, you're such a kid. How are you gonna take care of HER if you act like that?"
+        },
+        {
+          "Order": 9,
+          "Character": "Sora",
+          "Line": "Hey, speaking of her- What's happening?!"
+        },
+        {
+          "Order": 10,
+          "Character": "Riku",
+          "Line": "How should I know! Whatever it is, it can't be good! I'm gonna go warn the others!"
+        },
+        {
+          "Order": 11,
+          "Character": "Sora",
+          "Line": "Then I should go-"
+        },
+        {
+          "Order": 12,
+          "Character": "Riku",
+          "Line": "I know, I know! It's your job to look after her. Go, Sora!"
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "Okay!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "A Forgotten Remnant",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Sora",
+          "Line": "Who's most special to me? That's an easy one. It's you, Nami- Who... Who was that? I can't remember her, but she feels so... familiar. Naminé? Naminé!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "The Final Battle",
+      "Link": "https://www.youtube.com/watch?v=nPqflV6Oj-0&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=3",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Donald",
+          "Line": "Oh boy, Sora! This is the final battle!"
+        },
+        {
+          "Order": 1,
+          "Character": "Goofy",
+          "Line": "Are you ready?"
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "I'm not quite ready... / It's our last battle!"
+        }
+      ],
+      "Characters": [
+        "Donald",
+        "Goofy",
+        "Naminé",
+        "Riku Replica",
+        "Sora"
+      ],
+      "Worlds": [
+        "Castle Oblivion"
+      ],
+      "Areas": [
+        "Castle Oblivion"
+      ],
+      "Music": [
+        "The 13th Floor"
+      ]
+    },
+    {
+      "Title": "Hollow Bastion",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Riku",
+          "Line": "This is Hollow Bastion!"
+        },
+        {
+          "Order": 1,
+          "Character": "Ansem the Wise",
+          "Line": "What you see is not real. It's the world of your memory."
+        },
+        {
+          "Order": 2,
+          "Character": "Riku",
+          "Line": "My memory?"
+        },
+        {
+          "Order": 3,
+          "Character": "Ansem the Wise",
+          "Line": "The things you remember from your time at Maleficent's castle became a card, and that card made this world. You've seen everything here before, haven't you?"
+        },
+        {
+          "Order": 4,
+          "Character": "Riku",
+          "Line": "Yeah... So what now? Am I going to learn something? Maybe meet someone?"
+        },
+        {
+          "Order": 5,
+          "Character": "Ansem the Wise",
+          "Line": "You would meet the people in your memories. Ordinarily."
+        },
+        {
+          "Order": 6,
+          "Character": "Riku",
+          "Line": "What does that mean? Hey! I'm asking you a question! Fine. But it had better be you I run across next, Voice."
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "A Tiny Room",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Riku",
+          "Line": "Everything IS just how I remember it. Even this room..."
+        },
+        {
+          "Order": 1,
+          "Character": "Ansem the Wise",
+          "Line": "It must be nice being back in your old bedroom. Think of all the memories..."
+        },
+        {
+          "Order": 2,
+          "Character": "Riku",
+          "Line": "You again. Sorry, but these memories I could do without. Maleficent gave me this room."
+        },
+        {
+          "Order": 3,
+          "Character": "Ansem the Wise",
+          "Line": "So she did. And you lived here, tempted by the darkness she offered. You cast away your home, your friends, everything... But at least they gave you a nice room."
+        },
+        {
+          "Order": 4,
+          "Character": "Riku",
+          "Line": "Stop talking!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Empty Heart",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Riku",
+          "Line": "No one here, either... There's nothing but Heartless in this castle. Voice! I know you're watching-so explain this! Where are the people from my memories?"
+        },
+        {
+          "Order": 1,
+          "Character": "Ansem the Wise",
+          "Line": "Do you want to see them?"
+        },
+        {
+          "Order": 2,
+          "Character": "Riku",
+          "Line": "Of course I do."
+        },
+        {
+          "Order": 3,
+          "Character": "Ansem the Wise",
+          "Line": "But you cast them aside."
+        },
+        {
+          "Order": 4,
+          "Character": "Riku",
+          "Line": "What?"
+        },
+        {
+          "Order": 5,
+          "Character": "Ansem the Wise",
+          "Line": "You dreamt of the outside world, and you passed through the door to darkness. Behind you, you left family, friends, home-everything-all in pursuit of darkness."
+        },
+        {
+          "Order": 6,
+          "Character": "Riku",
+          "Line": "But I cast that aside, too!"
+        },
+        {
+          "Order": 7,
+          "Character": "Ansem the Wise",
+          "Line": "And what do you have to show for it? First your home, then the dark. Your heart only knows how to cast away. It's empty-like that room. Like your memories. That's why you don't meet anyone. Your heart is hollow-except for the residual darkness."
+        },
+        {
+          "Order": 8,
+          "Character": "Riku",
+          "Line": "You're wrong! I rejected the darkness!"
+        },
+        {
+          "Order": 9,
+          "Character": "Ansem the Wise",
+          "Line": "Ha ha ha... Did you really, now?"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Maleficent Returns",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Maleficent",
+          "Line": "I knew you would return, Riku."
+        },
+        {
+          "Order": 1,
+          "Character": "Riku",
+          "Line": "Maleficent! You're alive?!"
+        },
+        {
+          "Order": 2,
+          "Character": "Maleficent",
+          "Line": "You haven't been paying attention. I am but a figment of your memory."
+        },
+        {
+          "Order": 3,
+          "Character": "Riku",
+          "Line": "Of all the people I could run into, it had to be you."
+        },
+        {
+          "Order": 4,
+          "Character": "Maleficent",
+          "Line": "But of course. After all, your heart is steeped in darkness. You can only see those who exist in that same darkness..."
+        },
+        {
+          "Order": 5,
+          "Character": "Riku",
+          "Line": "No..."
+        },
+        {
+          "Order": 6,
+          "Character": "Maleficent",
+          "Line": "Be grateful you have someone to keep you company. Your heart is empty. Were it not for the darkness it contains, you would be completely alone."
+        },
+        {
+          "Order": 7,
+          "Character": "Riku",
+          "Line": "That's sounding pretty good right about now."
+        },
+        {
+          "Order": 8,
+          "Character": "Maleficent",
+          "Line": "Come, now. You once turned to me to sate your hunger for darkness. You want me here. Who but I can grant you the darkness you long for?"
+        },
+        {
+          "Order": 9,
+          "Character": "Riku",
+          "Line": "There was a time I did want you around. I surrendered my heart to the dark. But never again. You and your darkness have nothing to offer. All I did was lose myself... Empty myself! I'm finished with all that. If I'm stuck seeing people like you, people of the dark... I'll take you out one by one."
+        },
+        {
+          "Order": 10,
+          "Character": "Maleficent",
+          "Line": "Then you mustn't forget to destroy yourself last. For, like me, you are one of the dark."
+        },
+        {
+          "Order": 11,
+          "Character": "Riku",
+          "Line": "That's fine with me. I turned to darkness because my heart was weak. I hate that weakness. It's like I'm my own enemy. And seeing people like you embrace the darkness just makes it worse! Enough talk, Maleficent."
+        },
+        {
+          "Order": 12,
+          "Character": "Maleficent",
+          "Line": "So you hate the darkness enough to fight it. Oh, the agony you must feel! Then let me end your pain, Riku-end it forever...with the wondrous power of darkness!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Ansem Combat Tutorial",
+      "Link": "https://www.youtube.com/watch?v=QyBE92CDuaw&list=PLYnY5NdwIhRC6SSbKjqjl7uV0s_fpOfG8&index=11",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Ansem the Wise",
+          "Line": "You shall feel the darkness everywhere!"
+        },
+        {
+          "Order": 1,
+          "Character": "Riku",
+          "Line": "Give me all you've got. I'll give it right back!"
+        },
+        {
+          "Order": 2,
+          "Character": "Ansem the Wise",
+          "Line": "Not giving up yet? I wonder how much of this you can take."
+        },
+        {
+          "Order": 3,
+          "Character": "Riku",
+          "Line": "I'm just going along until YOU give up."
+        }
+      ],
+      "Characters": [
+        "Ansem the Wise",
+        "Riku"
+      ],
+      "Worlds": [
+        "Castle Oblivion"
+      ],
+      "Areas": [
+        "Basement 12 Exit"
+      ],
+      "Music": [
+        "Revenge of Chaos"
+      ]
+    },
+    {
+      "Title": "Lost Friends",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Riku",
+          "Line": "I never thought I'd miss the island winds so much... Hmph. There was a time I couldn't wait to get off this rock. And now I'm acting all relieved. Is that...? Hey! What's with you guys? I don't think I've ever seen the three of you so quiet. What, is there something on my face? Guys?!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    },
+    {
+      "Title": "Lost Memories",
+      "Link": "",
+      "Lines": [
+        {
+          "Order": 0,
+          "Character": "Riku",
+          "Line": "Kairi... Hey, Kairi. Are you- Ah... No!"
+        },
+        {
+          "Order": 1,
+          "Character": "Zexion",
+          "Line": "Surely you knew this would happen."
+        },
+        {
+          "Order": 2,
+          "Character": "Riku",
+          "Line": "!"
+        },
+        {
+          "Order": 3,
+          "Character": "Zexion",
+          "Line": "You've been to a number of worlds in your memory before this one. And in those worlds, you met only dark beings. That's all that's left in your heart"
+        },
+        {
+          "Order": 4,
+          "Character": "Riku",
+          "Line": "That's a lie! I remember everyone from the islands! Tidus and Selphie and Wakka! Kairi and Sora, too! They're my...my... my closest friends..."
+        },
+        {
+          "Order": 5,
+          "Character": "Zexion",
+          "Line": "And who threw away those friends? Maybe it's your own actions that you've forgotten. You destroyed your home!"
+        }
+      ],
+      "Characters": null,
+      "Worlds": null,
+      "Areas": null,
+      "Music": null
+    }
+  ]
+}

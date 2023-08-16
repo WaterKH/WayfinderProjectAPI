@@ -8,6 +8,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Platforms>AnyCPU;x64</Platforms>
+    <UseRazorSourceGenerator>false</UseRazorSourceGenerator>
   </PropertyGroup>
 
   
@@ -56,6 +57,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\data\seed\ma\interactions\_khrecom_interactions.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\data\seed\ma\interactions\_kh1_interactions.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -78,6 +82,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\data\seed\scripts\_khdr_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\data\seed\scripts\_khrecom_addendum_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\data\seed\scripts\_khxbc_lines.json">

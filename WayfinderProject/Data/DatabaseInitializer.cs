@@ -36,11 +36,13 @@ namespace WayfinderProjectAPI.Data
             //// Load World Data into Database
             //CreateWorlds(context);
 
+            //// Load Scene Data into Database
+            //CreateScenes(context);
+
             //// Load Script Data into Database
             //CreateScripts(context);
 
-            //// Load Scene Data into Database
-            //CreateScenes(context);
+            //CreateAddendum(context);
 
             // Load Interviews
             //CreateInterviews(context);
@@ -250,6 +252,74 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
+        public static void CreateAddendum(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/scripts/_khrecom_addendum_lines.json"));
+            var allAddendum = JsonSerializer.Deserialize<Dictionary<string, List<InteractionObject>>>(streamReader.ReadToEnd());
+
+            var allowed = new List<string> { "Beware Your Memories", "Rabbit's Veggies", "Friends Forever (Alternate)", "Friends on the Islands" };
+            foreach (var addendum in allAddendum["Addendum"])
+            {
+                if (!allowed.Contains(addendum.Title)) continue;
+
+                //if (gameName != "Kingdom Hearts") break;
+
+                var gameName = "Kingdom Hearts Re:Chain of Memories";
+
+                // Create Script
+                if (!context.Script.Any(x => x.GameName == gameName && x.SceneName == addendum.Title))
+                {
+                    context.Script.Add(new Script
+                    {
+                        GameName = gameName,
+                        SceneName = addendum.Title,
+                        Lines = addendum.Interactions.Select(x => new ScriptLine { Character = x.Character, Line = x.Line, Order = x.Order }).ToList()
+                    });
+
+                    context.SaveChanges();
+                }
+
+                var scene = context.Scenes.FirstOrDefault(x => x.Game.Name == gameName && x.Name == addendum.Title);
+
+                var script = context.Script.FirstOrDefault(x => x.SceneName == addendum.Title && x.GameName == gameName) ??
+                    context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+                if (scene != null)
+                {
+                    scene.Script = script;
+                }
+                else
+                {
+                    try
+                    {
+                        var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+                        var worlds = context.Worlds.Where(x => addendum.Worlds.Contains(x.Name)).ToList();
+                        var characters = context.Characters.Where(x => addendum.Characters.Contains(x.Name)).ToList();
+                        var areas = context.Areas.Where(x => addendum.Areas.Contains(x.Name)).ToList();
+                        var music = context.Music.Where(x => addendum.Music.Contains(x.Name)).ToList();
+
+                        context.Scenes.Add(new Scene
+                        {
+                            Game = game,
+                            Name = addendum.Title,
+                            Link = addendum.Link,
+                            Worlds = worlds,
+                            Characters = characters,
+                            Areas = areas,
+                            Music = music,
+                            Script = script
+                        });
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine(addendum.Title);
+                    }
+                }
+            }
+
+            context.SaveChanges();
+        }
+
         class InterviewObject
         {
             public string Name { get; set; } = string.Empty;
@@ -355,7 +425,7 @@ namespace WayfinderProjectAPI.Data
         }
         public static void CreateInteractions(WayfinderContext context)
         {
-            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/interactions/_kh1_interactions.json"));
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/interactions/_khrecom_interactions.json"));
             var allInteractions = JsonSerializer.Deserialize<Dictionary<string, List<InteractionObject>>>(streamReader.ReadToEnd());
 
             if (!allInteractions!.ContainsKey("Interactions"))
@@ -365,7 +435,7 @@ namespace WayfinderProjectAPI.Data
             {
                 //if (gameName != "Kingdom Hearts") break;
 
-                var gameName = "Kingdom Hearts";
+                var gameName = "Kingdom Hearts Re:Chain of Memories";
 
                 // Create Script
                 context.Script.Add(new Script

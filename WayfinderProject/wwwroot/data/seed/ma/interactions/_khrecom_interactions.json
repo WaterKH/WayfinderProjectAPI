@@ -1,0 +1,75 @@
+{
+  "Interactions": [
+    {
+      "Title": "Castle Oblivion Dialogue",
+      "Link": "",
+      "Interactions": [
+        {
+          "Order": 0,
+          "Character": "Goofy",
+          "Line": "Gawrsh, you think there are more like Axel and that other guy? / Harrow... Halo... Hmm... That's funny. Why can't I remember? / Once we get out of the castle, let's help Jiminy rewrite the journal! / There's no way we could ever forget our friends! / I bet Riku and the king are still together. / Kairi will be real happy if you find Riku and bring him home. / What's on your mind, Sora? Seems like you're in another world. / Something or another is bound to make you remember your friend's name. / See how much you remembered! It won't be long before her name comes back to you, too. / Don't you just hate it when something's on the tip of your tongue? / Naminé... So that's her name. Aren't you glad you finally remembered? / Any friend of yours is a friend of ours. Let's go help Naminé! / Gawrsh, what coulda happened to make Riku talk like that? / It sure is nice to have the happy Sora back. / Once you help Riku get his memories back, you'll be friends again in no time. / It'll be real nice when you, Riku, and Naminé can laugh together again. / Maybe Riku doesn't want to fight with you anymore. / If you remember your promise to Naminé, then you still must have your important memories. / I got a bad feeling about all this. We should be careful. / You think there are memories on the other side of MY heart? Kinda scary... / Riku's good luck charm turned into...a card?! / You're a nice guy, Sora. Why? It's a secret, a-hyuck! / Promises never fade, even if all our memories do. / As long as we remember our promise, there's nothing we can't face!"
+        },
+        {
+          "Order": 1,
+          "Character": "Donald",
+          "Line": "If we meet Axel again, you can leave him to me! / We'll be here all week if we wait for Goofy to remember! / I don't think Jiminy would erase his own journal. / If you're still remembering the silly stuff, we'll be okay. / We've got to find the king soon! I know I'll never forget that! / Don't you lose the good luck charm Kairi gave you! / Snap out of it! We've gotta find the king and Riku! / Another friend, huh? Why didn't you mention her before? / Aww, I wish I had lots of buried memories to remember. / If you ask me, you're THIS close to remembering your friend's name. / Who cares what the bad guys say, anyway? Wak! / Come on, Sora! We gotta rescue Naminé from the bad guys! / We'd better go after Riku! / Try not to get TOO excited, Sora! / Riku is so stubborn! Has he always been like that? / Kai... Kai... Wak?! That's weird. I can't think of her name. / Careful! You never know where Riku might be hiding! / Special promises like yours are meant to be kept. / The other side of your heart? Is that where the stuff you forget goes? / If you ask me, Vexen's waiting to trap us! / So you and Riku had the same memory? Hmm... / What if we have to face Axel AND Marluxia? / Let's deal with Marluxia and get our memories back! / You ready? 'Cause whatever's behind that door seems really powerful..."
+        },
+        {
+          "Order": 2,
+          "Character": "Naminé",
+          "Line": "Everything is my fault... / I wish I could help Riku. I'm the one who caused his suffering... / Your heart can withstand even Marluxia's power. I know it!"
+        },
+        {
+          "Order": 3,
+          "Character": "Sora",
+          "Line": "I really gotta talk to Riku..."
+        },
+        {
+          "Order": 4,
+          "Character": "Riku Replica",
+          "Line": "I'll take care of Naminé. I promise."
+        },
+        {
+          "Order": 5,
+          "Character": "Mickey",
+          "Line": "The power of light should keep Ansem locked up for a while. / Gosh, it sure feels like I've met DiZ somewhere before. / You'd never let the darkness get the best of you. I'm sure of that."
+        }
+      ],
+      "Characters": [
+        "Donald", "Goofy", "Naminé", "Riku Replica", "Sora"
+      ],
+      "Worlds": [
+        "Castle Oblivion"
+      ],
+      "Areas": [
+        "Castle Oblivion"
+      ],
+      "Music": [
+        "The 13th Floor"
+      ]
+    },
+    {
+      "Title": "Moogle Room Dialogue",
+      "Link": "",
+      "Interactions": [
+        {
+          "Order": 0,
+          "Character": "Moogle",
+          "Line": "Here's a card pack for you, kupo! / Hiya, kupo! Buy some card packs before you go, kupo! / Which one do you want to buy, kupo? / Got any old cards, kupo? Trade them in for points!"
+        }
+      ],
+      "Characters": [
+        "Moogle"
+      ],
+      "Worlds": [
+        ":None:"
+      ],
+      "Areas": [
+        ":None:"
+      ],
+      "Music": [
+        ":None:"
+      ]
+    }
+  ]
+}
