@@ -257,6 +257,9 @@ namespace WayfinderProjectAPI.Data
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/scripts/_khrecom_addendum_lines.json"));
             var allAddendum = JsonSerializer.Deserialize<Dictionary<string, List<InteractionObject>>>(streamReader.ReadToEnd());
 
+            if (!allAddendum!.ContainsKey("Addendum"))
+                throw new Exception("No Addendum List Found!");
+
             var allowed = new List<string> { "Beware Your Memories", "Rabbit's Veggies", "Friends Forever (Alternate)", "Friends on the Islands" };
             foreach (var addendum in allAddendum["Addendum"])
             {

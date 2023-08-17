@@ -643,14 +643,24 @@ namespace WayfinderProjectAPI.Controllers
 
             if (result == null)
             {
-                return new ScriptDto
+                var scene = await _context.Scenes.AsNoTrackingWithIdentityResolution().Include(x => x.Script).FirstOrDefaultAsync(x => x.Game.Name == gameName && x.Name == sceneName);
+
+                if (scene != null)
                 {
-                    GameName = gameName,
-                    SceneName = sceneName,
-                    Lines = gameName == "Kingdom Hearts Union χ" ?
-                        new List<ScriptLineDto> { new ScriptLineDto { Character = "None", Line = "This will be updated after Damo279's big project." } } :
-                        new List<ScriptLineDto> { new ScriptLineDto { Character = "None", Line = "None" } }
-                };
+                    result = await _context.Script.AsNoTrackingWithIdentityResolution().Include(x => x.Lines).FirstOrDefaultAsync(x => x.Id == scene.Script.Id);
+                }
+
+                if (result == null)
+                {
+                    return new ScriptDto
+                    {
+                        GameName = gameName,
+                        SceneName = sceneName,
+                        Lines = gameName == "Kingdom Hearts Union χ" ?
+                            new List<ScriptLineDto> { new ScriptLineDto { Character = "None", Line = "This will be updated after Damo279's big project." } } :
+                            new List<ScriptLineDto> { new ScriptLineDto { Character = "None", Line = "None" } }
+                    };
+                }
             }
 
             return result.ToDto();
