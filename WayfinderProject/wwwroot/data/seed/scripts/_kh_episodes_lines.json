@@ -1,0 +1,644 @@
+{
+  "Episodes": {
+      "Episode 1: Departures": [
+        {
+          "Order": 0,
+          "Character": "Chirithy",
+          "Line": "Do you remember this story? It begins with Sora and his friends Kairi and Riku. The three are inseparable. And they believe another world is waiting out beyond the sea."
+        },
+        {
+          "Order": 1,
+          "Character": "Kairi",
+          "Line": "Sora, don't ever change."
+        },
+        {
+          "Order": 2,
+          "Character": "Sora",
+          "Line": "Huh?"
+        },
+        {
+          "Order": 3,
+          "Character": "Kairi",
+          "Line": "Once we set sail, it'll be great."
+        },
+        {
+          "Order": 4,
+          "Character": "Chirithy",
+          "Line": "But then darkness consumes the islands they call home and tears them apart."
+        },
+        {
+          "Order": 5,
+          "Character": "Riku",
+          "Line": "The door has opened, Sora! Now we can go to the outside world!"
+        },
+        {
+          "Order": 6,
+          "Character": "Chirithy",
+          "Line": "Sora wakes up in an unknown world, and before long he meets two courageous companions. A magician named Donald and a knight named Goofy."
+        },
+        {
+          "Order": 7,
+          "Character": "Goofy",
+          "Line": "Hey, why don't you come with us? We can go to other worlds on our vessel."
+        },
+        {
+          "Order": 8,
+          "Character": "Chirithy",
+          "Line": "They embark on an adventure and make countless friends..."
+        },
+        {
+          "Order": 9,
+          "Character": "Ariel",
+          "Line": "They do seem a little different. Where are you from?"
+        },
+        {
+          "Order": 10,
+          "Character": "Chirithy",
+          "Line": "And a few enemies..."
+        },
+        {
+          "Order": 11,
+          "Character": "Jafar",
+          "Line": "Ah, the boy who holds the key."
+        },
+        {
+          "Order": 12,
+          "Character": "Maleficent",
+          "Line": "This world will be plunged into darkness."
+        },
+        {
+          "Order": 13,
+          "Character": "Sora",
+          "Line": "After coming this far, there's no way we're gonna let that happen!"
+        },
+        {
+          "Order": 14,
+          "Character": "Chirithy",
+          "Line": "Just as Sora is starting to grasp the power of the Keyblade, he comes face to face with his friend Riku."
+        },
+        {
+          "Order": 15,
+          "Character": "Riku-Ansem",
+          "Line": "It is I, Ansem, the seeker of darkness."
+        },
+        {
+          "Order": 16,
+          "Character": "Sora",
+          "Line": "I know now I don't need the Keyblade. I don't need a weapon. My friends are my power!"
+        },
+        {
+          "Order": 17,
+          "Character": "Chirithy",
+          "Line": "But that's just the beginning of the tale. Little do Sora and his friends realize what fate has in store for them."
+        }
+      ],
+      "Episode 2: Memories": [
+        {
+          "Order": 0,
+          "Character": "Chirithy",
+          "Line": "Are the memories we share with the people we love our only true connection to them? Sora, Donald, and Goofy have been searching for King Mickey and Riku, their friends who were stranded on the other side of the door to darkness. A clue leads them to a mysterious citadel called Castle Oblivion."
+        },
+        {
+          "Order": 1,
+          "Character": "Sora",
+          "Line": "Riku! You mean Riku's here?!"
+        },
+        {
+          "Order": 2,
+          "Character": "Marluxia",
+          "Line": "Proceed, Sora. To lose and claim anew, or to claim anew only to lose..."
+        },
+        {
+          "Order": 3,
+          "Character": "Chirithy",
+          "Line": "Sora is determined to press on and look for his friends. But as he climbs, his most precious memories begin to slip away. He is being tricked by Marluxia and a mysterious Organization who are trying to make him their puppet. Unaware that the events of his past have been rewritten inside his mind, Sora races to the top of the castle to save a girl named Namine."
+        },
+        {
+          "Order": 4,
+          "Character": "Goofy",
+          "Line": "Sora, what happened to you?"
+        },
+        {
+          "Order": 5,
+          "Character": "Sora",
+          "Line": "What's that mean? Do you want me to abandon her?!"
+        },
+        {
+          "Order": 6,
+          "Character": "Chirithy",
+          "Line": "But there, he learns the shocking truth."
+        },
+        {
+          "Order": 7,
+          "Character": "Namine",
+          "Line": "Even if you come for me what then?"
+        },
+        {
+          "Order": 8,
+          "Character": "Axel",
+          "Line": "If you don't stop this, no one will."
+        },
+        {
+          "Order": 9,
+          "Character": "Chirithy",
+          "Line": "Namine has special powers, and she's the one who's been changing Sora's memory."
+        },
+        {
+          "Order": 10,
+          "Character": "Axel",
+          "Line": "Just make it count."
+        },
+        {
+          "Order": 11,
+          "Character": "Larxene",
+          "Line": "The girl you've been trying to protect all this time...is really a manipulative witch who shackles people's hearts."
+        },
+        {
+          "Order": 12,
+          "Character": "Sora",
+          "Line": "Erase my memories. Destroy my heart. I promised. I'll always protect you. You have to believe me!"
+        },
+        {
+          "Order": 13,
+          "Character": "Marluxia",
+          "Line": "You turn from the truth because your heart is weak. You will never defeat me!"
+        },
+        {
+          "Order": 14,
+          "Character": "Chirithy",
+          "Line": "This would be Sora's first encounter with Organization XIII, but certainly not his last."
+        }
+      ],
+      "Episode 3: Twilight": [
+        {
+          "Order": 0,
+          "Character": "Chirithy",
+          "Line": "Think now, for a moment, about your best friend. Someone you couldn't bear to lose."
+        },
+        {
+          "Order": 1,
+          "Character": "Roxas",
+          "Line": "For the seven days since my arrival...the name Roxas and the number thirteen were all I had."
+        },
+        {
+          "Order": 2,
+          "Character": "Chirithy",
+          "Line": "His mind a blank slate, Roxas starts counting the days, determined to never forget anything again. He and his friend Axel go on missions for the Organization."
+        },
+        {
+          "Order": 3,
+          "Character": "Roxas",
+          "Line": "Today makes 255. It's been that many days since I first joined the Organization."
+        },
+        {
+          "Order": 4,
+          "Character": "Axel",
+          "Line": "So, you got the number memorized, do you?"
+        },
+        {
+          "Order": 5,
+          "Character": "Chirithy",
+          "Line": "They are soon joined by the group's fourteenth member, a girl named Xion. Like Roxas, she has no memory of her past."
+        },
+        {
+          "Order": 6,
+          "Character": "Xemnas",
+          "Line": "Let us all welcome one of the Keyblade's chosen."
+        },
+        {
+          "Order": 7,
+          "Character": "Chirithy",
+          "Line": "The three have been told they don't have hearts that they're \"Nobodies\" and yet it's strange. They start to realize how much they care about each other."
+        },
+        {
+          "Order": 8,
+          "Character": "Xion",
+          "Line": "Axel...does that mean you and I are friends, too?"
+        },
+        {
+          "Order": 9,
+          "Character": "Axel",
+          "Line": "Well, if you're friends with Roxas, then yeah, of course you're my friend."
+        },
+        {
+          "Order": 10,
+          "Character": "Chirithy",
+          "Line": "If only all of this could last forever..."
+        },
+        {
+          "Order": 11,
+          "Character": "Xion",
+          "Line": "Just give me another chance!"
+        },
+        {
+          "Order": 12,
+          "Character": "Saix",
+          "Line": "We can't afford to take any more chances on you. You were a mistake we never should have made."
+        },
+        {
+          "Order": 13,
+          "Character": "Chirithy",
+          "Line": "Xion's darkest secret..."
+        },
+        {
+          "Order": 14,
+          "Character": "Xion",
+          "Line": "Is it that I'm not supposed to exist?"
+        },
+        {
+          "Order": 15,
+          "Character": "Axel",
+          "Line": "Xion is a puppet, created to duplicate your powers."
+        },
+        {
+          "Order": 16,
+          "Character": "Chirithy",
+          "Line": "...is that she only exists to seize control of Sora's power the Keyblade's power."
+        },
+        {
+          "Order": 17,
+          "Character": "Xemnas",
+          "Line": "Both of them have connections to Sora, but we only need one of them."
+        },
+        {
+          "Order": 18,
+          "Character": "Roxas",
+          "Line": "You mean...they have to destroy her? Answer me!"
+        },
+        {
+          "Order": 19,
+          "Character": "Axel",
+          "Line": "Roxas, if somebody doesn't...then you won't be you anymore."
+        },
+        {
+          "Order": 20,
+          "Character": "Chirithy",
+          "Line": "If they really have no hearts, then why does the truth hurt this much? The grief..."
+        },
+        {
+          "Order": 21,
+          "Character": "Axel",
+          "Line": "You can't turn on the Organization! You get on their bad side, and they'll destroy you!"
+        },
+        {
+          "Order": 22,
+          "Character": "Roxas",
+          "Line": "No one would miss me."
+        },
+        {
+          "Order": 23,
+          "Character": "Axel",
+          "Line": "That's not true. I would."
+        },
+        {
+          "Order": 24,
+          "Character": "Chirithy",
+          "Line": "The anger..."
+        },
+        {
+          "Order": 25,
+          "Character": "Xion",
+          "Line": "Please don't hold back, Axel. Promise."
+        },
+        {
+          "Order": 26,
+          "Character": "Axel",
+          "Line": "What's your problem?! You both...think you can do whatever you want. Well, I'm sick of it. Go on, you just keep running. But I'll always be there to bring you back!"
+        },
+        {
+          "Order": 27,
+          "Character": "Chirithy",
+          "Line": "The loss..."
+        },
+        {
+          "Order": 28,
+          "Character": "Xion",
+          "Line": "You're next, Roxas. I have to make you a part of me, too. Don't you see? This is why I was created."
+        },
+        {
+          "Order": 29,
+          "Character": "Chirithy",
+          "Line": "The emptiness..."
+        },
+        {
+          "Order": 30,
+          "Character": "Xion",
+          "Line": "See you again. I'm glad...I got to meet you. Oh...and of course, Axel, too. You're both my best friends. Never forget. That's the truth."
+        },
+        {
+          "Order": 31,
+          "Character": "Chirithy",
+          "Line": "But I believe there's hope for them. Don't you? One day they'll be together again."
+        }
+      ],
+      "Episode 4: Dawn": [
+        {
+          "Order": 0,
+          "Character": "Chirithy",
+          "Line": "Making tough choices isn't easy. But if that's what it takes to save a friend...Riku discovers Sora in Castle Oblivion, suspended in a deep sleep. He is faced with a decision."
+        },
+        {
+          "Order": 1,
+          "Character": "Namine",
+          "Line": "In your heart there is darkness, and in that darkness is Ansem. Riku, please choose."
+        },
+        {
+          "Order": 2,
+          "Character": "Riku",
+          "Line": "I don't need my heart locked. I'm ready. I'm gonna fight Ansem."
+        },
+        {
+          "Order": 3,
+          "Character": "Mickey",
+          "Line": "You're not gonna lose. I know it."
+        },
+        {
+          "Order": 4,
+          "Character": "Ansem Seeker of Darkness",
+          "Line": "You shall sink into the abyss!"
+        },
+        {
+          "Order": 5,
+          "Character": "Chirithy",
+          "Line": "Riku embraces his inner darkness, and resolves to carry it toward the light."
+        },
+        {
+          "Order": 6,
+          "Character": "Riku",
+          "Line": "What are you making me choose now?"
+        },
+        {
+          "Order": 7,
+          "Character": "DiZ",
+          "Line": "Between the road to light and the road to darkness."
+        },
+        {
+          "Order": 8,
+          "Character": "Riku",
+          "Line": "Neither suits me. I'm taking the middle road."
+        },
+        {
+          "Order": 9,
+          "Character": "DiZ",
+          "Line": "Do you mean the twilight road to nightfall?"
+        },
+        {
+          "Order": 10,
+          "Character": "Riku",
+          "Line": "No...It's the road to dawn."
+        },
+        {
+          "Order": 11,
+          "Character": "Chirithy",
+          "Line": "In time, Riku crosses paths with Xion, who attacks him with a false Keyblade."
+        },
+        {
+          "Order": 12,
+          "Character": "Xion",
+          "Line": "Tell me first...why you are dressed as one of us."
+        },
+        {
+          "Order": 13,
+          "Character": "Riku",
+          "Line": "To make sure my best friend...sleeps in peace. I don't know who you're supposed to be. But...you can't fight fire with sparks."
+        },
+        {
+          "Order": 14,
+          "Character": "Chirithy",
+          "Line": "He learns that Organization XIII is using her and Roxas to drain Sora of his memories and power."
+        },
+        {
+          "Order": 15,
+          "Character": "Namine",
+          "Line": "Sora's memories and escaping through Sora's Nobody into a third person and now, they're starting to become a part of her."
+        },
+        {
+          "Order": 16,
+          "Character": "Riku",
+          "Line": "Now, Sora has been put to sleep so that we can piece together his memory. Except..."
+        },
+        {
+          "Order": 17,
+          "Character": "Xion",
+          "Line": "You can't, because part of it is inside of me. That means...he can't wake up."
+        },
+        {
+          "Order": 18,
+          "Character": "Riku",
+          "Line": "Yeah. You got it."
+        },
+        {
+          "Order": 19,
+          "Character": "Chirithy",
+          "Line": "To save his best friend, Riku prepares for the inevitable."
+        },
+        {
+          "Order": 20,
+          "Character": "Riku",
+          "Line": "I have to face one of the Organization's members soon. I might not survive the fight. And if I do, it might be because I have in to the darkness."
+        },
+        {
+          "Order": 21,
+          "Character": "Chirithy",
+          "Line": "And Xion chooses to do the same."
+        },
+        {
+          "Order": 22,
+          "Character": "Xion",
+          "Line": "I belong with Sora. And now, I am going back...to be with him."
+        },
+        {
+          "Order": 23,
+          "Character": "Chirithy",
+          "Line": "Riku and Roxas clash, both desperate to save a friend."
+        },
+        {
+          "Order": 24,
+          "Character": "Roxas",
+          "Line": "Why are you trying to stop me?"
+        },
+        {
+          "Order": 25,
+          "Character": "Riku",
+          "Line": "Because I want back the rest of Sora's memories."
+        },
+        {
+          "Order": 26,
+          "Character": "Roxas",
+          "Line": "I'll set Kingdom Hearts free! Then everything will be the way it was! She'll come back...and the three of us can be together again!"
+        },
+        {
+          "Order": 27,
+          "Character": "Riku",
+          "Line": "You mean Xion? It's a struggle just to remember the name now...Either way, I can't let you go doing anything crazy."
+        },
+        {
+          "Order": 28,
+          "Character": "Chirithy",
+          "Line": "Riku's overpowered, and decides not to hold his darkness back any longer."
+        },
+        {
+          "Order": 29,
+          "Character": "Riku",
+          "Line": "You've left me with no other choice."
+        },
+        {
+          "Order": 30,
+          "Character": "Roxas",
+          "Line": "What?"
+        },
+        {
+          "Order": 31,
+          "Character": "Riku",
+          "Line": "I have to release the power in my heart the dark power that I've been holding back. Even...if it changes me forever."
+        },
+        {
+          "Order": 32,
+          "Character": "Riku-Ansem",
+          "Line": "I have accepted it."
+        },
+        {
+          "Order": 33,
+          "Character": "Chirithy",
+          "Line": "Each fork in the road shapes who we are. But Riku won't look back. Not while his friends need him."
+        }
+      ],
+      "Episode 5: Darkness": [
+        {
+          "Order": 0,
+          "Character": "Chirithy",
+          "Line": "Who are we fighting? How did this all begin? And why did it take us so long to notice?"
+        },
+        {
+          "Order": 1,
+          "Character": "Yen Sid",
+          "Line": "As a Keyblade Master, Xehanort had a gift like few others."
+        },
+        {
+          "Order": 2,
+          "Character": "Riku",
+          "Line": "Ansem. Or...Xehanort. You used to be a Keyblade wielder. But darkness stole your heart, and the Keyblade with it."
+        },
+        {
+          "Order": 3,
+          "Character": "Chirithy",
+          "Line": "Twice now, Master Xehanort has sought to drag the World into a great Keyblade War between the forces of light and darkness."
+        },
+        {
+          "Order": 4,
+          "Character": "Master Xehanort",
+          "Line": "They say ruin brings about creation. So what, then, would another Keyblade War bring? I must have these answers. The x-blade needs to be forged, and with it, the door to the Keyblade War unlocked!"
+        },
+        {
+          "Order": 5,
+          "Character": "Chirithy",
+          "Line": "But both times his ambitions have been thwarted. In his first attempt, he divided a boy's heart into two beings a pure light named Ventus and a pure darkness named Vanitas. The two were to clash and forge a relic known as the x-blade."
+        },
+        {
+          "Order": 6,
+          "Character": "Master Xehanort",
+          "Line": "Empty creature from Ventus riven...to you, the name Vanitas shall be given."
+        },
+        {
+          "Order": 7,
+          "Character": "Vanitas",
+          "Line": "So what are you waiting for? Join with me right here and now. Become the x-blade."
+        },
+        {
+          "Order": 8,
+          "Character": "Ventus",
+          "Line": "He told me, the only way the x-blade can be forged is if you and me fight. Well guess what? I'm not fighting."
+        },
+        {
+          "Order": 9,
+          "Character": "Chirithy",
+          "Line": "Three students of Master Eraqus, Xehanort's former brother-in-training, rose up in order to stop the x-blade from being forged."
+        },
+        {
+          "Order": 10,
+          "Character": "Ventus",
+          "Line": "I may have to fight Vanitas after all. If I do, guys...I want you to"
+        },
+        {
+          "Order": 11,
+          "Character": "Terra",
+          "Line": "The three of us can never be torn apart, all right? I'll always find a way."
+        },
+        {
+          "Order": 12,
+          "Character": "Chirithy",
+          "Line": "They fought bravely. And their strong bond allowed them to triumph over Xehanort."
+        },
+        {
+          "Order": 13,
+          "Character": "Ventus",
+          "Line": "I've got a better idea. How 'bout I destroy you both?"
+        },
+        {
+          "Order": 14,
+          "Character": "Vanitas",
+          "Line": "The x-blade is made of your heart, too, idiot. If you destroy it, your heart will vanish forever."
+        },
+        {
+          "Order": 15,
+          "Character": "Ventus",
+          "Line": "Whatever it takes. Anything to save Terra and Aqua."
+        },
+        {
+          "Order": 16,
+          "Character": "Chirithy",
+          "Line": "But, all three paid a terrible price, and their destinies were sealed. The destruction of the x-blade plunged Ventus into a deep sleep. Aqua sacrificed herself to the realm of darkness to save Terra. And, by the time he was found, Terra was going by a different name."
+        },
+        {
+          "Order": 17,
+          "Character": "Terra-Xehanort",
+          "Line": "Xeha...nort."
+        },
+        {
+          "Order": 18,
+          "Character": "Chirithy",
+          "Line": "Master Xehanort's second attempt to start the Keyblade War involved pitting seven pure lights against thirteen darknesses. His heart and body acted separately. His heart, Ansem, manipulated Riku and Maleficent into capturing the seven pure lights he needed, the princesses of heart. His body, Xemnas, founded Organization XIII, who would serve as the thirteen darknesses. But his plans were dashed by Sora and his friends, who defeated Ansem and Xemnas."
+        },
+        {
+          "Order": 19,
+          "Character": "Ansem Seeker of Darkness",
+          "Line": "Light...But why...?"
+        },
+        {
+          "Order": 20,
+          "Character": "Young Xehanort",
+          "Line": "Organization XIII's true goal is to divide Xehanort's heart among thirteen vessels."
+        },
+        {
+          "Order": 21,
+          "Character": "Riku",
+          "Line": "Thirteen...Xehanorts? What is..."
+        },
+        {
+          "Order": 22,
+          "Character": "Young Xehanort",
+          "Line": "The real Organization XIII."
+        },
+        {
+          "Order": 23,
+          "Character": "Chirithy",
+          "Line": "Now, Master Xehanort has warned of a third attempt to start his war."
+        },
+        {
+          "Order": 24,
+          "Character": "Mickey",
+          "Line": "Master Xehanort! We were right about you!"
+        },
+        {
+          "Order": 25,
+          "Character": "Master Xehanort",
+          "Line": "All of this was decided. My twelve selves would welcome me here on this day, when I would return a complete person. It is the future which lies beyond my sight. Let us finish this at the fated place, once your lights and my darknesses have joined together!"
+        },
+        {
+          "Order": 26,
+          "Character": "Chirithy",
+          "Line": "Thirteen darknesses. Seven lights. The End is coming..."
+        }
+      ]
+    }
+}

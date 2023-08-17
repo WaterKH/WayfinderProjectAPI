@@ -84,6 +84,9 @@
     <Content Update="wwwroot\data\seed\scripts\_khdr_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\data\seed\scripts\_kh_episodes_lines.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\data\seed\scripts\_khrecom_addendum_lines.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

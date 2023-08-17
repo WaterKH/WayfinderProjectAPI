@@ -42,6 +42,7 @@ namespace WayfinderProjectAPI.Data
             //// Load Script Data into Database
             //CreateScripts(context);
 
+            CreateScript(context, "_kh_episodes_lines.json", "Kingdom Hearts III");
             //CreateAddendum(context);
 
             // Load Interviews
@@ -185,10 +186,10 @@ namespace WayfinderProjectAPI.Data
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @$"wwwroot/data/seed/scripts/{fileName}"));
             var script = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<LineScriptObject>>>>(streamReader.ReadToEnd());
 
-            if (!script!.ContainsKey("Script"))
+            if (!script!.ContainsKey("Episodes"))
                 throw new Exception("No Script List Found!");
 
-            foreach (var (scene, lines) in script["Script"])
+            foreach (var (scene, lines) in script["Episodes"])
             {
                 var temp = new Script { SceneName = scene, GameName = gameName, Lines = new List<ScriptLine>() };
                 foreach (var line in lines)
@@ -197,10 +198,21 @@ namespace WayfinderProjectAPI.Data
                 }
 
                 context.Script.Add(temp);
+
+                context.SaveChanges();
+
+                var tempScene = context.Scenes.FirstOrDefault(x => x.Game.Name == gameName && x.Name == scene);
+
+                var tempScript = context.Script.FirstOrDefault(x => x.SceneName == scene && x.GameName == gameName) ??
+                    context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+                if (tempScene != null)
+                {
+                    tempScene.Script = tempScript;
+
+                    context.SaveChanges();
+                }
             }
-
-
-            context.SaveChanges();
         }
 
         class SceneObject
@@ -257,70 +269,69 @@ namespace WayfinderProjectAPI.Data
 
         public static void CreateAddendum(WayfinderContext context)
         {
-            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/scripts/_khrecom_addendum_lines.json"));
-            var allAddendum = JsonSerializer.Deserialize<Dictionary<string, List<InteractionObject>>>(streamReader.ReadToEnd());
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/scripts/_kh_episodes_lines.json"));
+            var allAddendum = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<LineScriptObject>>>>(streamReader.ReadToEnd());
 
-            if (!allAddendum!.ContainsKey("Addendum"))
+            if (!allAddendum!.ContainsKey("Episodes"))
                 throw new Exception("No Addendum List Found!");
 
-            var allowed = new List<string> { "Beware Your Memories", "Rabbit's Veggies", "Friends Forever (Alternate)", "Friends on the Islands" };
-            foreach (var addendum in allAddendum["Addendum"])
+            foreach (var (sceneName, line) in allAddendum["Episodes"])
             {
-                if (!allowed.Contains(addendum.Title)) continue;
+                //if (!allowed.Contains(addendum.Title)) continue;
 
                 //if (gameName != "Kingdom Hearts") break;
 
-                var gameName = "Kingdom Hearts Re:Chain of Memories";
+                //var gameName = "Kingdom Hearts III";
 
                 // Create Script
-                if (!context.Script.Any(x => x.GameName == gameName && x.SceneName == addendum.Title))
-                {
-                    context.Script.Add(new Script
-                    {
-                        GameName = gameName,
-                        SceneName = addendum.Title,
-                        Lines = addendum.Interactions.Select(x => new ScriptLine { Character = x.Character, Line = x.Line, Order = x.Order }).ToList()
-                    });
+                //if (!context.Script.Any(x => x.GameName == gameName && x.SceneName == addendum.Title))
+                //{
+                //    context.Script.Add(new Script
+                //    {
+                //        GameName = gameName,
+                //        SceneName = addendum.Title,
+                //        Lines = addendum.Interactions.Select(x => new ScriptLine { Character = x.Character, Line = x.Line, Order = x.Order }).ToList()
+                //    });
 
-                    context.SaveChanges();
-                }
+                //    context.SaveChanges();
+                //}
 
-                var scene = context.Scenes.FirstOrDefault(x => x.Game.Name == gameName && x.Name == addendum.Title);
+                //var scene = context.Scenes.FirstOrDefault(x => x.Game.Name == gameName && x.Name == addendum.Title);
 
-                var script = context.Script.FirstOrDefault(x => x.SceneName == addendum.Title && x.GameName == gameName) ??
-                    context.Script.FirstOrDefault(x => x.SceneName == "None");
+                //var script = context.Script.FirstOrDefault(x => x.SceneName == addendum.Title && x.GameName == gameName) ??
+                //    context.Script.FirstOrDefault(x => x.SceneName == "None");
 
-                if (scene != null)
-                {
-                    scene.Script = script;
-                }
-                else
-                {
-                    try
-                    {
-                        var game = context.Games.FirstOrDefault(x => x.Name == gameName);
-                        var worlds = context.Worlds.Where(x => addendum.Worlds.Contains(x.Name)).ToList();
-                        var characters = context.Characters.Where(x => addendum.Characters.Contains(x.Name)).ToList();
-                        var areas = context.Areas.Where(x => addendum.Areas.Contains(x.Name)).ToList();
-                        var music = context.Music.Where(x => addendum.Music.Contains(x.Name)).ToList();
+                //if (scene != null)
+                //{
+                //    scene.Script = script;
+                //}
+                //else
+                //{
+                //try
+                //{
+                //    var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+                //    var worlds = context.Worlds.Where(x => addendum.Worlds.Contains(x.Name)).ToList();
+                //    var characters = context.Characters.Where(x => addendum.Characters.Contains(x.Name)).ToList();
+                //    var areas = context.Areas.Where(x => addendum.Areas.Contains(x.Name)).ToList();
+                //    var music = context.Music.Where(x => addendum.Music.Contains(x.Name)).ToList();
 
-                        context.Scenes.Add(new Scene
-                        {
-                            Game = game,
-                            Name = addendum.Title,
-                            Link = addendum.Link,
-                            Worlds = worlds,
-                            Characters = characters,
-                            Areas = areas,
-                            Music = music,
-                            Script = script
-                        });
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine(addendum.Title);
-                    }
-                }
+                //    context.Scenes.Add(new Scene
+                //    {
+                //        Game = game,
+                //        Name = addendum.Title,
+                //        Link = addendum.Link,
+                //        Worlds = worlds,
+                //        Characters = characters,
+                //        Areas = areas,
+                //        Music = music,
+                //        Script = script
+                //    });
+                //}
+                //catch (Exception)
+                //{
+                //    Console.WriteLine(addendum.Title);
+                //}
+                //}
             }
 
             context.SaveChanges();
