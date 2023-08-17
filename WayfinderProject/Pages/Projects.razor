@@ -107,6 +107,25 @@ else if (this.CurrentType == "Memory Archive")
             </ExpandedRowTemplate>
         </InteractionTable>
     }
+    else if (this.CurrentCategory == "Trailers" && this.TrailerDtos.Count > 0)
+    {
+        <TrailerTable @ref="MainTrailerTable" Items="this.TrailerDtos" Context="Trailer">
+            <TableHeader>
+                <th style="text-align: left;"></th>
+                <th><img src="/images/icons/games_gray.png" class="header-margins"> <label class="header-label">Game</label></th>
+                <th><img src="/images/icons/scenes_gray.png" class="header-margins"> <label class="header-label">Trailer</label></th>
+                <th><label class="header-label">Notes</label></th>
+                <th style="text-align: right;"></th>
+            </TableHeader>
+            <RowTemplate>
+                <TrailerTableRow Trailer="@Trailer" MainTable="@MainTrailerTable" ProjectView="true" ProjectCallbackMethod="@(() => this.DeleteProjectRecord(Trailer.Id))"
+                                     Notes="@this.GetNotes(Trailer.Id)" NotesCallbackMethod="@(() => this.EditNotes(Trailer.Id, this.GetNotes(Trailer.Id)))" />
+            </RowTemplate>
+            <ExpandedRowTemplate>
+                <TrailerTableExpandedRow Trailer="@Trailer" API="@this.api" />
+            </ExpandedRowTemplate>
+        </TrailerTable>
+    }
     else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
     {
         <InterviewTable @ref="MainInterviewTable" Items="this.InterviewDtos" Context="Interview" OpenRowQuery="this.OpenRow">
@@ -387,12 +406,15 @@ else if (this.CurrentType == "Moogle Shop")
     #region Scene Variables
     private List<SceneDto> SceneDtos = new List<SceneDto>();
     private SceneTable<SceneDto>? MainSceneTable;
+    
+    private List<InteractionDto> InteractionDtos = new List<InteractionDto>();
+    private InteractionTable<InteractionDto>? MainInteractionTable;
+    
+    private List<TrailerDto> TrailerDtos = new List<TrailerDto>();
+    private TrailerTable<TrailerDto>? MainTrailerTable;
 
     private List<InterviewDto> InterviewDtos = new List<InterviewDto>();
     private InterviewTable<InterviewDto>? MainInterviewTable;
-
-    private List<InteractionDto> InteractionDtos = new List<InteractionDto>();
-    private InteractionTable<InteractionDto>? MainInteractionTable;
     #endregion Scene Variables
 
     #region Entry Variables
@@ -432,7 +454,7 @@ else if (this.CurrentType == "Moogle Shop")
     private List<string> types = new List<string> { "Memory Archive", "Jiminy's Journal", "Moogle Shop" };
     private NavBar? WayfinderNavBar;
 
-    private List<string> categories = new List<string> { "Scenes", "Interactions", "Interviews" }; // "Trailers",
+    private List<string> categories = new List<string> { "Scenes", "Interactions", "Trailers", "Interviews" };
     private SubNavBar? WayfinderSubNavBar;
 
     public List<ProjectDto> ProjectDtos { get; set; } = new List<ProjectDto>();
@@ -546,7 +568,7 @@ else if (this.CurrentType == "Moogle Shop")
 
         if (this.CurrentType == "Memory Archive")
         {
-            this.categories = new List<string> { "Scenes", "Interactions", "Interviews" }; // "Trailers",
+            this.categories = new List<string> { "Scenes", "Interactions", "Trailers", "Interviews" };
         }
         else if (this.CurrentType == "Jiminy's Journal")
         {
@@ -688,6 +710,10 @@ else if (this.CurrentType == "Moogle Shop")
             {
                 this.InteractionDtos = await this.context.Interactions.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
             }
+            else if (this.CurrentCategory == "Trailers")
+            {
+                this.TrailerDtos = await this.context.Trailers.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
+            }
             else if (this.CurrentCategory == "Interviews")
             {
                 this.InterviewDtos = await this.context.Interviews.Where(x => records.Contains(x.Id)).ToDto().ToListAsync();
@@ -747,6 +773,8 @@ else if (this.CurrentType == "Moogle Shop")
     public void HideProjects()
     {
         this.SceneDtos = new List<SceneDto>();
+        this.InteractionDtos = new List<InteractionDto>();
+        this.TrailerDtos = new List<TrailerDto>();
         this.InterviewDtos = new List<InterviewDto>();
     }
 

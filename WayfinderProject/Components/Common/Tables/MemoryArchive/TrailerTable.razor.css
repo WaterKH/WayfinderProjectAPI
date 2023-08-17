@@ -1,0 +1,9 @@
+.pagination {
+    place-content: center;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.button-text-color {
+    color: dodgerblue;
+}

@@ -32,6 +32,8 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<Provider>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Translator>().Property(p => p.Id).ValueGeneratedOnAdd();
 
+            modelBuilder.Entity<Trailer>().Property(p => p.Id).ValueGeneratedOnAdd();
+
             modelBuilder.Entity<JournalEntry>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Recipe>().Property(p => p.Id).ValueGeneratedOnAdd();
@@ -72,6 +74,8 @@ namespace WayfinderProjectAPI.Data
         public DbSet<Participant> Participants { get; set; } = null!;
         public DbSet<Provider> Providers { get; set; } = null!;
         public DbSet<Translator> Translators { get; set; } = null!;
+
+        public DbSet<Trailer> Trailers { get; set; } = null!;
 
         public DbSet<JournalEntry> JournalEntries { get; set; } = null!;
 

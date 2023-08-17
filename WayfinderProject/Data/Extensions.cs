@@ -123,6 +123,55 @@ namespace WayfinderProjectAPI.Data
             };
         }
 
+        public static IQueryable<TrailerDto> ToDto(this IQueryable<Trailer> trailers)
+        {
+            return trailers
+                .Select(x => new TrailerDto
+                {
+                    Id = x.Id,
+                    Game = new GameDto { Id = x.Game.Id, Name = x.Game.Name, Order = x.Game.Order },
+                    Name = x.Name,
+                    Link = x.Link,
+                    Worlds = x.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Characters = x.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Areas = x.Areas.Select(y => new AreaDto { Id = y.Id, Name = y.Name }).ToList(),
+                    Music = x.Music.Select(y => new MusicDto { Id = y.Id, Name = y.Name, Link = y.Link }).ToList(),
+                    //Script = new ScriptDto
+                    //{
+                    //    Id = x.Script.Id,
+                    //    SceneName = x.Script.SceneName,
+                    //    GameName = x.Script.GameName,
+                    //    Lines = x.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
+                    //},
+                    Notes = x.Notes,
+                    State = x.State
+                });
+        }
+
+        public static TrailerDto ToDto(this Trailer trailer)
+        {
+            return new TrailerDto
+            {
+                Id = trailer.Id,
+                Game = new GameDto { Id = trailer.Game.Id, Name = trailer.Game.Name, Order = trailer.Game.Order },
+                Name = trailer.Name,
+                Link = trailer.Link,
+                Worlds = trailer.Worlds.Select(y => new WorldDto { Id = y.Id, Name = y.Name }).ToList(),
+                Characters = trailer.Characters.Select(y => new CharacterDto { Id = y.Id, Name = y.Name }).ToList(),
+                Areas = trailer.Areas.Select(y => new AreaDto { Id = y.Id, Name = y.Name }).ToList(),
+                Music = trailer.Music.Select(y => new MusicDto { Id = y.Id, Name = y.Name, Link = y.Link }).ToList(),
+                //Script = new ScriptDto
+                //{
+                //    Id = trailer.Script.Id,
+                //    SceneName = trailer.Script.SceneName,
+                //    GameName = trailer.Script.GameName,
+                //    Lines = trailer.Script.Lines.Select(y => new ScriptLineDto { Id = y.Id, Order = y.Order, Character = y.Character, Line = y.Line }).OrderBy(y => y.Order).ToList()
+                //},
+                Notes = trailer.Notes,
+                State = trailer.State
+            };
+        }
+
         public static IQueryable<InterviewDto> ToDto(this IQueryable<Interview> interviews)
         {
             return interviews

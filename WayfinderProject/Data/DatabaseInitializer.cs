@@ -50,6 +50,9 @@ namespace WayfinderProjectAPI.Data
             // Load Interactions
             //CreateInteractions(context);
 
+            // Load Trailers
+            //CreateTrailers(context);
+
             // JJ
             // Character
             //CreateCharacterEntries(context);
@@ -482,6 +485,63 @@ namespace WayfinderProjectAPI.Data
                     Script = script
                 });
 
+            }
+
+            context.SaveChanges();
+        }
+
+        class TrailerObject
+        {
+            public string Title { get; set; } = string.Empty;
+            public string Link { get; set; } = string.Empty;
+
+            public List<TrailerLineObject> Trailers { get; set; } = new List<TrailerLineObject>();
+            public List<string> Worlds { get; set; } = new List<string>();
+            public List<string> Characters { get; set; } = new List<string>();
+            public List<string> Areas { get; set; } = new List<string>();
+            public List<string> Music { get; set; } = new List<string>();
+        }
+        class TrailerLineObject
+        {
+            public int Order { get; set; }
+            public string Character { get; set; } = string.Empty;
+            public string Line { get; set; } = string.Empty;
+        }
+        public static void CreateTrailers(WayfinderContext context)
+        {
+            using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/_trailers.json"));
+            var allTrailers = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<TrailerObject>>>>(streamReader.ReadToEnd());
+
+            if (!allTrailers!.ContainsKey("Trailers"))
+                throw new Exception("No Trailers List Found!");
+
+            foreach (var (gameName, trailers) in allTrailers["Trailers"])
+            {
+                foreach (var trailer in trailers)
+                {
+                    //if (gameName != "Kingdom Hearts") break;
+
+                    var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+                    var worlds = context.Worlds.Where(x => trailer.Worlds.Contains(x.Name)).ToList();
+                    var characters = context.Characters.Where(x => trailer.Characters.Contains(x.Name)).ToList();
+                    var areas = context.Areas.Where(x => trailer.Areas.Contains(x.Name)).ToList();
+                    var music = context.Music.Where(x => trailer.Music.Contains(x.Name)).ToList();
+                    var script = context.Script.FirstOrDefault(x => x.SceneName == trailer.Title && x.GameName == gameName) ??
+                        context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+                    context.Trailers.Add(new Trailer
+                    {
+                        Game = game,
+                        Name = trailer.Title,
+                        Link = trailer.Link,
+                        Worlds = worlds,
+                        Characters = characters,
+                        Areas = areas,
+                        Music = music,
+                        Script = script
+                    });
+
+                }
             }
 
             context.SaveChanges();

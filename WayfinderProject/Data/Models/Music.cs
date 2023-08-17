@@ -21,5 +21,7 @@ namespace WayfinderProjectAPI.Data.Models
         public virtual ICollection<Scene> Scenes { get; set; }
         [AllowNull]
         public virtual ICollection<Interaction> Interactions { get; set; }
+        [AllowNull]
+        public virtual ICollection<Trailer> Trailers { get; set; }
     }
 }
