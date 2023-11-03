@@ -1483,7 +1483,7 @@
       },
       {
         "Name": "Pinocchio's Conscience (Alternate)",
-        "Link": "",
+        "Link": "https://www.youtube.com/watch?v=F9dqdAJmeSs",
         "Worlds": [ "Monstro" ],
         "Characters": [ "Riku", "Pinocchio", "Sora", "Donald", "Goofy", "Jiminy", "Parasite Cage" ],
         "Areas": [ "Stomach" ],
@@ -7936,7 +7936,7 @@
       {
         "Name": "Gullwings Treasure",
         "Link": "https://www.youtube.com/watch?v=hqSyX2ujlxk&list=PLYnY5NdwIhRDKqXdJaqX_9kZPo5ak6fA7&index=3",
-        "Worlds": [ "Radiant Garden" ],
+        "Worlds": [ "Hollow Bastion" ],
         "Characters": [ "Yuna", "Rikku", "Paine", "Sora", "Donald", "Goofy" ],
         "Areas": [ "Postern" ],
         "Music": [ "Laughter and Merriment" ]
@@ -15011,7 +15011,7 @@
         "Name": "A Clash Foretold Pt. 1",
         "Link": "https://www.youtube.com/watch?v=m8BkOrwEmzY",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Player", "Aced", "Key Kid(s)", "Ira" ],
+        "Characters": [ "Player", "Aced", "Key Kid(s)", "Ira", "Invi" ],
         "Areas": [ "The Keyblade Graveyard" ],
         "Music": [ "Black Powder" ]
       },
@@ -15019,7 +15019,7 @@
         "Name": "A Clash Foretold Pt. 2",
         "Link": "https://www.youtube.com/watch?v=nB_45V21Vtk",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Player", "Invi", "Key Kid(s)" ],
+        "Characters": [ "Player", "Invi", "Key Kid(s)", "Gula" ],
         "Areas": [ "The Keyblade Graveyard" ],
         "Music": [ "Black Powder" ]
       },
@@ -15051,7 +15051,7 @@
         "Name": "Into the Corridor of Darkness",
         "Link": "https://www.youtube.com/watch?v=tGyHCTsg358",
         "Worlds": [ "Daybreak Town" ],
-        "Characters": [ "Player", "Bandana Kid" ],
+        "Characters": [ "Player", "Bandana Kid", "Chirithy", "Afro Kid" ],
         "Areas": [ "House" ],
         "Music": [ "Before the Daylight" ]
       },
@@ -15371,7 +15371,7 @@
         "Name": "Genie of the Lamp",
         "Link": "https://www.youtube.com/watch?v=ECjeBdiSESI",
         "Worlds": [ "Agrabah" ],
-        "Characters": [ "Player", "Aladdin", "Abu", "Carpet", "Genie" ],
+        "Characters": [ "Player", "Aladdin", "Abu", "Carpet", "Genie", "Chirithy" ],
         "Areas": [ "Cave of Wonders" ],
         "Music": [ "A Day in Agrabah", "Innocent Times" ]
       },
@@ -15403,7 +15403,7 @@
         "Name": "A Wonderful Night",
         "Link": "https://www.youtube.com/watch?v=0fE7lq4qBr0",
         "Worlds": [ "Agrabah" ],
-        "Characters": [ "Jasmine", "Aladdin", "Carpet" ],
+        "Characters": [ "Jasmine", "Aladdin", "Carpet", "Player", "Guard(s)", "Chirithy", "Genie" ],
         "Areas": [ "Jasmine's Chamber", "Skies above Agrabah" ],
         "Music": [ "Ever After" ]
       },
@@ -17661,7 +17661,7 @@
         "Name": "And Now for the Orchard",
         "Link": "https://www.youtube.com/watch?v=fy-XoKM7RsA&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=133",
         "Worlds": [ "100 Acre Wood" ],
-        "Characters": [ "Rabbit", "Piglet", "Gopher", "Sora", "Tigger", "Lumpy", "Roo", "Gopher" ],
+        "Characters": [ "Rabbit", "Piglet", "Gopher", "Sora", "Tigger", "Lumpy", "Roo", "Gopher", "Pooh" ],
         "Areas": [ "Rabbit's House" ],
         "Music": [ "Bounce-O-Rama" ]
       },
