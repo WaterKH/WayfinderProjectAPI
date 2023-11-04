@@ -1,0 +1,1404 @@
+{
+  "Script": {
+    "None": [
+      {
+        "Order": -1,
+        "Character": "None",
+        "Line": "None"
+      }
+    ],
+    "Skuld": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "What a perfect day to go out and gather Lux! Ready when you are, kiddo!  I know it’s: a tough job, but someone’s gotta do it. I know, I know. But if you give up now, the other Unions will get ahead."
+      },
+      {
+        "Order": 1,
+        "Character": "Skuld",
+        "Line": "But why does that matter? It’s not a competition. Or at least it shouldn’t be. Our goal of protecting the light is the same. There’s no need for us to fight."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Who’re you?"
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "The name’s Skuld! You’re Player, right? Nice to meet you! Ephemer told me all about you. Don’t look so surprised! He used to be in my party, you know. We met not long after I became a Keyblade wielder. There was never a dull moment with him around! But then one day, he just quit. I was really upset about it for a while… But then he showed up in my dream the other night and told me to find you!"
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "Why?"
+      },
+      {
+        "Order": 5,
+        "Character": "Skuld",
+        "Line": "Good question. I was actually hoping you could tell me. See, I don’t really understand why he was in my dream to begin with. But he asked me to go with you. So here I am. He was in your dream, too? What’d he say? Hmm… If he’s waiting for you, then- Why don’t we go to the place you’re supposed to meet him? "
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "No way! Master Ava told us to stay away from there!"
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "Well, there has to be a reason she said that. And I have a feeling it’s the same reason Ephemer asked me to go with you. So let’s get movin– What was that!?"
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "It came from nearby!"
+      },
+      {
+        "Order": 9,
+        "Character": "Skuld",
+        "Line": "Let’s go, Player !"
+      },
+      {
+        "Order": 10,
+        "Character": "Chirithy",
+        "Line": "H-hey! Where’re you going!?"
+      }
+    ],
+    "The Foretellers’ Clash": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "The foretellers!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Oh no…"
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "Why are they fighting? Ephemer was right… It’s what I was trying to tell you earlier. Just before I woke up he told me… the end of the world is near. "
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "The end!?"
+      },
+      {
+        "Order": 4,
+        "Character": "Skuld",
+        "Line": "Yeah. After what we just saw, I can’t help thinking it’s true. This world will disappear, just like Ephemer did. "
+      },
+      {
+        "Order": 5,
+        "Character": "Player",
+        "Line": "Let’s go."
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "What?"
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "Lead the way."
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "Wait, what? What just happened?"
+      }
+    ],
+    "Darklings": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "!"
+      },
+      {
+        "Order": 1,
+        "Character": "Skuld",
+        "Line": "!"
+      },
+      {
+        "Order": 2,
+        "Character": "Player",
+        "Line": "!"
+      },
+      {
+        "Order": 3,
+        "Character": "Darkling",
+        "Line": "…ux…"
+      },
+      {
+        "Order": 4,
+        "Character": "Darkling",
+        "Line": "…Lux…"
+      },
+      {
+        "Order": 5,
+        "Character": "Darkling",
+        "Line": "Give… Lux… "
+      },
+      {
+        "Order": 6,
+        "Character": "Skuld",
+        "Line": "Not a chance!"
+      },
+      {
+        "Order": 7,
+        "Character": "Darkling",
+        "Line": "Give me Lux!"
+      }
+    ],
+    "A Nightmare": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Aren’t you…?"
+      },
+      {
+        "Order": 1,
+        "Character": "Dark Chirithy",
+        "Line": "Long time no see."
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "So it is you."
+      },
+      {
+        "Order": 3,
+        "Character": "Dark Chirithy",
+        "Line": "You don’t look very happy to see me… Come on, I was just trying to help. I thought if I took away everyone’s Lux, there’d be no reason to fight over it anymore. Aren’t I the greatest?"
+      },
+      {
+        "Order": 4,
+        "Character": "Chirithy",
+        "Line": "That color…"
+      },
+      {
+        "Order": 5,
+        "Character": "Dark Chirithy",
+        "Line": "You like my new look?"
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "You’ve been tainted by darkness."
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "Darkness!?"
+      },
+      {
+        "Order": 8,
+        "Character": "Dark Chirithy",
+        "Line": "What’s wrong? Do you hate darkness? Well, let me tell you a little secret:: light and dark are two halves of the same coin. They’re like day and night. One can’t exist without the other. So you should embrace it like they did! "
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "You mean those three used to be human?"
+      },
+      {
+        "Order": 10,
+        "Character": "Dark Chirithy",
+        "Line": "You betcha."
+      },
+      {
+        "Order": 11,
+        "Character": "Skuld",
+        "Line": "!"
+      },
+      {
+        "Order": 12,
+        "Character": "Player",
+        "Line": "!"
+      },
+      {
+        "Order": 13,
+        "Character": "Skuld",
+        "Line": "Were they wielders, too?"
+      },
+      {
+        "Order": 14,
+        "Character": "Dark Chirithy",
+        "Line": "Right-o. But unlike you, those three can no longer use the power of Medals. The strength they fought you with was all their own! To be perfectly honest, they were pretty wimpy before. But darkness has a way of finding those with weak hearts and making them strong. Isn’t darkness so sweet?"
+      },
+      {
+        "Order": 15,
+        "Character": "Chirithy",
+        "Line": "Those aren’t the teachings!"
+      },
+      {
+        "Order": 16,
+        "Character": "Dark Chirithy",
+        "Line": "Teachings-smeechings! The truth of this world isn’t something you can teach, Chirithy. It’s something you have to learn for yourself. "
+      },
+      {
+        "Order": 17,
+        "Character": "Chirithy",
+        "Line": "Who is your wielder? Where are they?"
+      },
+      {
+        "Order": 18,
+        "Character": "Dark Chirithy",
+        "Line": "Hehehe… Closer than you think."
+      }
+    ],
+    "Inside the Tower": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "Is this where you last met with Ephemer? There HAS to be something up ahead."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Are you sure this is a good idea? Between those three weirdos and that dark Chirithy, I don’t have a good feeling about this. "
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "You know your way around the tower, don’t you?"
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "Y-yeah, why do you ask?"
+      },
+      {
+        "Order": 4,
+        "Character": "Skuld",
+        "Line": "Well, I was hoping you could show us the way."
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "I-I supposed I could… But this area is off-limits, so once you get a quick peek, we’re outta here. Okay?"
+      },
+      {
+        "Order": 6,
+        "Character": "Skuld",
+        "Line": "Got it. "
+      }
+    ],
+    "The Foretellers’ Chamber": [
+      {
+        "Order": 0,
+        "Character": "Skuld",
+        "Line": "What is this place?"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "This is the final room— the foretellers’ chamber."
+      },
+      {
+        "Order": 2,
+        "Character": "Skuld",
+        "Line": "Do you think Ephemer was here?"
+      },
+      {
+        "Order": 3,
+        "Character": "Chirithy",
+        "Line": "I don’t know. But there’s no one here now and nothing to see. Can we go now?"
+      },
+      {
+        "Order": 4,
+        "Character": "Skuld",
+        "Line": "I guess. I was just expecting…more. It’s kind of a letdown, really. I wonder what’s so important about this place."
+      },
+      {
+        "Order": 5,
+        "Character": "Ira",
+        "Line": "What are you doing here? "
+      },
+      {
+        "Order": 6,
+        "Character": "Chirithy",
+        "Line": "!"
+      },
+      {
+        "Order": 7,
+        "Character": "Skuld",
+        "Line": "!"
+      },
+      {
+        "Order": 8,
+        "Character": "Player",
+        "Line": "!"
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "Master Ira!"
+      },
+      {
+        "Order": 10,
+        "Character": "Skuld",
+        "Line": "W-we’re so sorry! We were just looking for someone."
+      },
+      {
+        "Order": 11,
+        "Character": "Ira",
+        "Line": "Chirithy, I expected more from you. You know this area is off-limits."
+      },
+      {
+        "Order": 12,
+        "Character": "Chirithy",
+        "Line": "I-I’m sorry…"
+      },
+      {
+        "Order": 13,
+        "Character": "Ira",
+        "Line": "I caught another wielder in here just the other day. A friend of yours?"
+      },
+      {
+        "Order": 14,
+        "Character": "Player",
+        "Line": "Yes, he is."
+      },
+      {
+        "Order": 15,
+        "Character": "Skuld",
+        "Line": "So he WAS here. Did you talk to him?"
+      },
+      {
+        "Order": 16,
+        "Character": "Ira",
+        "Line": "Yes. But you must know his Union gathers Lux for a reason that contradicts ours. He befriended you to get his hands on information, nothing more. But he is a threat no longer. "
+      },
+      {
+        "Order": 17,
+        "Character": "Skuld",
+        "Line": "Did you—? Is Ephemer—?"
+      },
+      {
+        "Order": 18,
+        "Character": "Ira",
+        "Line": "He’s gone."
+      },
+      {
+        "Order": 19,
+        "Character": "Chirithy",
+        "Line": "Player…"
+      },
+      {
+        "Order": 20,
+        "Character": "Skuld",
+        "Line": "How could you!?"
+      },
+      {
+        "Order": 21,
+        "Character": "Ira",
+        "Line": "What are you going to do?"
+      },
+      {
+        "Order": 22,
+        "Character": "Chirithy",
+        "Line": "Nothing! Master Ira, this is my fault! All of it! They didn’t do anything wrong. Player…"
+      },
+      {
+        "Order": 23,
+        "Character": "Player",
+        "Line": "This whole thing was my idea. I was the one who wanted to look for Ephemer, and for good reason. You see, I’ve gone to different worlds to gather Lux; a lot of effort has gone into the contributions to my Union. I’ve even had to fight those I consider my friends. I’ve done everything that was expected of me without a second thought. And then I met Ephemer. We didn’t know each other for very long, but he left a lasting impression. Not all of our memories are good ones; in fact, he even broke one of our promises. No matter what happened, I knew we were still friends. But you took him away from me. I feel sad, I feel angry, I feel hurt. Maybe that means I have darkness in my heart, I don’t care. But I can’t let you get away with what you did to my friend. Even if I have to fight you, even if I don’t stand a chance, even if I may disappear… I will because I know in my heart that Ephemer would do the same if he were here. Master Ira, I mean no disrespect, but this is something I must do. "
+      },
+      {
+        "Order": 24,
+        "Character": "Ira",
+        "Line": "So be it."
+      },
+      {
+        "Order": 25,
+        "Character": "Chirithy",
+        "Line": "Player!"
+      }
+    ],
+    "Recruited by Master Ava": [
+      {
+        "Order": 0,
+        "Character": "Ira",
+        "Line": "Congratulations. You fought admirably. "
+      },
+      {
+        "Order": 1,
+        "Character": "Skuld",
+        "Line": "Master Ava…?"
+      },
+      {
+        "Order": 2,
+        "Character": "Ava",
+        "Line": "Player, Skuld. Thank you for showing me the strength of your hearts. I hope you’ll forgive me for deceiving you, but the foreteller you fought, the room you were in, were both merely projections. "
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "But why? What was the point?"
+      },
+      {
+        "Order": 4,
+        "Character": "Ava",
+        "Line": "It’s as Ephemer stated in your dream. The world will soon end. But if all wielders disappear along with it, there will be no one left to drive away the ensuing darkness. So we must prevent this at all costs. My role in all of this is to gather wielders with great potential, regardless of their Unions. They must survive for the world after. "
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "The world after…?"
+      },
+      {
+        "Order": 6,
+        "Character": "Skuld",
+        "Line": "This is all so— I-I don’t understand. So what happened to Ephemer?"
+      },
+      {
+        "Order": 7,
+        "Character": "Ava",
+        "Line": "Ephemer must’ve caught wind of the fact that there was more to everything than what he’d been taught, so he started questioning things. He went looking for the truth because he knew there was one to be found. That’s how I knew he was the one, the one I could count on to lead the Dandelions in my stead. "
+      },
+      {
+        "Order": 8,
+        "Character": "Chirithy",
+        "Line": "Dandelions?"
+      },
+      {
+        "Order": 9,
+        "Character": "Ava",
+        "Line": "They’re a special group of Keyblade wielders that will remain after the rest of us are gone. It was my role to put the Dandelions together. But I have to be there when the inevitable events unfold, so I need someone to replace me when I’m gone. And I chose Ephemer. He accepted, and now he’s far away from here, waiting."
+      },
+      {
+        "Order": 10,
+        "Character": "Skuld",
+        "Line": "So then… he’s all right?"
+      },
+      {
+        "Order": 11,
+        "Character": "Ava",
+        "Line": "Yes, he’s fine. However, this world is not. There is a wielder who has been corrupted, and the Chirithy you saw earlier is proof of that. But I want the world to come to be filled with light. That’s why only wielders with a strong resistance to darkness are chosen as Dandelions. So I ask both of you: will you join us?"
+      },
+      {
+        "Order": 12,
+        "Character": "Skuld",
+        "Line": "Of course, Master Ava. Thank you. Player?"
+      },
+      {
+        "Order": 13,
+        "Character": "Player",
+        "Line": "What’ll happen to the others? The ones who aren’t chosen?"
+      },
+      {
+        "Order": 14,
+        "Character": "Ava",
+        "Line": "They will have no choice but to fight in the Keyblade War. "
+      },
+      {
+        "Order": 15,
+        "Character": "Skuld",
+        "Line": "The Keyblade War…?"
+      },
+      {
+        "Order": 16,
+        "Character": "Ava",
+        "Line": "I’m afraid it’s inevitable. "
+      },
+      {
+        "Order": 17,
+        "Character": "Player",
+        "Line": "May I take some time to think about my decision?"
+      },
+      {
+        "Order": 18,
+        "Character": "Skuld",
+        "Line": "Player!"
+      },
+      {
+        "Order": 19,
+        "Character": "Ava",
+        "Line": "Of course, take all the time you need. This decision is yours to make, and you should do what feels right. I just ask that you keep this to yourselves. I’m afraid the future is a very…sensitive subject."
+      }
+    ],
+    "Skuld’s Story": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Player, what’s holding you back from joining the Dandelions? You’d get to see Ephemer again!"
+      },
+      {
+        "Order": 1,
+        "Character": "Player",
+        "Line": "Ephemer’s my friend, and he’s important to me. But so is everyone else, and I can’t just abandon them. "
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "I understand."
+      },
+      {
+        "Order": 3,
+        "Character": "Skuld",
+        "Line": "Can I share a story? When I became a Keyblade wielder, I was so excited. I even made my own party, but no one wanted to join it. Finally, after what seemed like ages, Ephemer did. For a long time, it was just the two of us. But as time passed, others joined us, and we spent all our time gathering as much Lux as possible. With our busy schedule, Ephemer and I spoke less and less, until one day he turned to me and said, “Skuld, you’ll be all right on your own now.” And then he left. I continued to collect Lux with my party members, but I guess people started to lose interest. One by one they left, until one day, it was just me again. And you know what? Ephemer was right. I WAS fine on my own. I never forgot about him, though. And I know he never forgot about me either because he led me to you. You helped me see so much. Thanks, Player. Now I just have to thank Ephemer, and the only way to do that is to join the Dandelions. Thanks. For everything."
+      }
+    ],
+    "Seeds of Hope": [
+      {
+        "Order": 0,
+        "Character": "Ava",
+        "Line": "Today you’re here– to continue with your training for our mission. This session may seem like it’s familiar to you, but in a world that is different, one made of dreams…You are our hope. A war will soon wage. Those who strive to protect the light will turn their weapons on their allies for the sake of loyalty to their own Unions. To be honest, I don’t know how far I can guide all of you. What you must remember is that anyone can lose themselves to the darkness. However, there will be no winners; everything will be lost. Except all of you who are the seeds of hope. When the time comes, and there is war, you mustn’t fight but instead you must fly away from here to the world outside. This training is to help you fulfill this crucial task. The future is in all your hands– as is the world’s light. May your heart be your guiding key."
+      }
+    ],
+    "I’ll Find You": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Abu…I’ll find you, I promise."
+      }
+    ],
+    "Hope Renewed": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Hey. Well, I’ve searched everywhere for Abu and…nothing. I’ll never find him. I thought these would lead me to him, but…Huh? Abu needs me? You’re right. I gotta stop feeling sorry for myself and go out there and find him! Thanks. I guess I needed that. You know, I could use some help. What do you say? Great! Can you check the bulletin board? And I’ll search the town again."
+      },
+      {
+        "Order": 1,
+        "Character": "Guard",
+        "Line": "Nice timing, Kid. We just got a new post. Reports received of monkeys in the Old Oasis. Immediate investigation required. -Desert Sands Patrol Squad. The Old Oasis is just beyond Treacherous Terrain. But nobody’s been there in ages. Who knows what you’ll find? Good luck!"
+      },
+      {
+        "Order": 2,
+        "Character": "Aladdin",
+        "Line": "Monkeys? I bet Abu’s with them. Follow me!"
+      }
+    ],
+    "The Search Continues": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "I was so sure I’d found him this time…Hey, don’t worry. I’m not giving up. There’s one place I wanna check again. Problem is, it’s so far from town that by the time we get there, it’ll be dark, and we’ll end up walking in circles. But hey, they say two heads are better than one. Would you mind coming with me? Great! Let’s go."
+      }
+    ],
+    "The Stolen Rubies": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Got any ideas of how to find our way through those dunes? Monsters! Here!? The rubies! I can’t believe it. My only clue to finding Abu is gone…You’re right. We gotta get those rubies back!"
+      }
+    ],
+    "A Hunch": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "It’s great we got the rubies back, but…I still don’t know what to do with them. I wish I knew how to find you, Abu. What–!? Why’re they glowing!? Okay, this might be crazy, but I’ve got a hunch that if we head back to the Starless Sands, we’ll find the rubies AND Abu."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Strange, it’s like the rubies heard Aladdin’s wish. Now, there’s only one way to find out if his hunch was right. You know what to do!"
+      }
+    ],
+    "The Showdown": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Look! The rubies are lighting the way through the desert. A cave? I guess the legends were true. They say the rubies’ light will show the way to a bandits’ hideout. That must be why they tried to steal them earlier. Abu has to be in there. Come on! A doorway! Abu must be through there. You!? I remember you! You’re the creep who took Abu. Give me back my friend!"
+      }
+    ],
+    "The Reunion": [
+      {
+        "Order": 0,
+        "Character": "Aladdin",
+        "Line": "Abu! It’s okay, Abu. This is my new friend. He/she helped me find you. Calm down. No one’s ever gonna replace you. You’re my best friend. Player, I'd like you to meet Abu. Now, Abu– be nice. I’m so glad we found you, Abu. Now what do you say we head home? Let me guess– you have to leave, don’t you? Well, thanks for everything. If it weren’t for you, I never would’ve found Abu. I owe you one. Come back to Agrabah soon, okay? We’ll be waiting!"
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Their friendship is what really led the way in that dark desert. By following his heart, Aladdin reunited with Abu. If you follow your heart, maybe you’ll see your friend again too."
+      }
+    ],
+    "Hint of Darkness": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "Wow, what a grand palace! Too bad we’re here on business, not pleasure.  That’s right. Darkness is spreading. You don’t need much more help, do ya? That says a lot about me as your mentor, you know. But we can talk about that later. There’s darkness to banish!"
+      },
+      {
+        "Order": 1,
+        "Character": "Grand Duke",
+        "Line": "Oh, this is terrible! How will I carry out the King’s orders? What’s this? You’ll do away with these– these fiends? Well, then you have my deepest gratitude. IfI it wouldn’t be too much, might I also ask a favor? Would you be so kind as to make a delivery to the chateau that’s just ahead? It’s a very urgent and important message from his Imperial Majesty. I trust it’ll be handled with the utmost care. You have my thanks, and that of the King. Now, I must be off. I’m to visit all the eligible maidens in the kingdom before nightfall."
+      }
+    ],
+    "A Royal Message": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "You know. Sometimes a little knocking can do the trick. "
+      },
+      {
+        "Order": 1,
+        "Character": "Cinderella",
+        "Line": "Won’t you come in? Oh. Is that a letter for my stepmother? Why, it’s the royal seal! I wonder what it could be. Thank you. "
+      }
+    ],
+    "Poor Cinderella": [
+      {
+        "Order": 0,
+        "Character": "Jaq",
+        "Line": "You save Jaq! Thanks! Huh!? You know what Jaq say? Just like Cinderelly! I’m Jaq. Nice to meet ya. Cinderelly? She’s our friend. She’s nice, very nice. I show you. This way!"
+      },
+      {
+        "Order": 1,
+        "Character": "Cinderella",
+        "Line": "A ball at the palace! And by royal command, every eligible maiden is to attend. But of course, I’ll need something to wear. Perhaps I could make a few adjustments to my mother’s dress…Oh. Hello, Jaq. I see you’ve brought the royal messenger."
+      },
+      {
+        "Order": 2,
+        "Character": "Jaq",
+        "Line": "No, this is Jaq’s friend. Good friend."
+      },
+      {
+        "Order": 3,
+        "Character": "Cinderella",
+        "Line": "Why, that’s wonderful. I’m Cinderella. It’s a pleasure to meet you."
+      },
+      {
+        "Order": 4,
+        "Character": "Anastasia",
+        "Line": "Cinderella!"
+      },
+      {
+        "Order": 5,
+        "Character": "Drizella",
+        "Line": "Cinderella!"
+      },
+      {
+        "Order": 6,
+        "Character": "Lady Tremaine",
+        "Line": "Cinderella!"
+      },
+      {
+        "Order": 7,
+        "Character": "Cinderella",
+        "Line": "All right, all right, I’m coming! I guess my dream will just have to wait."
+      },
+      {
+        "Order": 8,
+        "Character": "Jaq",
+        "Line": "Poor Cinderelly…She not go to the ball. You’ll see. They’ll fix her. Work, work, work! She’ll never get her dress done."
+      }
+    ],
+    "The Dress": [
+      {
+        "Order": 0,
+        "Character": "Anastasia",
+        "Line": "Cinderella!"
+      },
+      {
+        "Order": 1,
+        "Character": "Drizella",
+        "Line": "Cinderella!"
+      },
+      {
+        "Order": 2,
+        "Character": "Cinderella",
+        "Line": "On my way."
+      },
+      {
+        "Order": 3,
+        "Character": "Lady Tremaine",
+        "Line": "Come in, child."
+      },
+      {
+        "Order": 4,
+        "Character": "Jaq",
+        "Line": "Poor Cinderelly…Her dress not done. You want us make a dress? Good idea! First, we need some trimmings. You help too, right? Good! Look out for Lucifer. Him a meany, sneaky cat. Follow me!"
+      },
+      {
+        "Order": 5,
+        "Character": "Chirithy",
+        "Line": "Hey! You’re thinking that I look like a cat and I can be mean, aren’t you? I’m neither of those things! Now go and help with the dress!"
+      }
+    ],
+    "The Stolen Necklace": [
+      {
+        "Order": 0,
+        "Character": "Jaq",
+        "Line": "We got a pretty, pretty necklace! Found it in trash. They don’t need it. We do! Oh no! Lucifer! Pretty necklace! Him a meany cat, but us need pretty necklace for Cinderelly’s dress! Got it! You stay here? Good! I’ll go make Cinderelly’s dress real pretty. "
+      }
+    ],
+    "The Royal Ball": [
+      {
+        "Order": 0,
+        "Character": "Cinderella",
+        "Line": "Oh, well. What’s a royal ball? After all, I suppose it would be frightfully dull, and boring…and completely…Completely wonderful. My dress! "
+      },
+      {
+        "Order": 1,
+        "Character": "Jaq",
+        "Line": "Surprise! "
+      },
+      {
+        "Order": 2,
+        "Character": "Cinderella",
+        "Line": "I never dreamed– it’s such a surprise!"
+      },
+      {
+        "Order": 3,
+        "Character": "Jaq",
+        "Line": "Hurry, Cinderelly! Hurry! The ball!"
+      },
+      {
+        "Order": 4,
+        "Character": "Cinderella",
+        "Line": "Oh, thank you so much!"
+      }
+    ],
+    "Bibbidi Bobbidi Boo": [
+      {
+        "Order": 0,
+        "Character": "Jaq",
+        "Line": "Everybody gonna be surprised at Cinderelly’s pretty dress. Follow me!"
+      },
+      {
+        "Order": 1,
+        "Character": "Lady Tremaine",
+        "Line": "Remember, when you’re presented to His Highness, be sure to act ladylike."
+      },
+      {
+        "Order": 2,
+        "Character": "Cinderella",
+        "Line": "Wait! Please, wait for me. Isn’t it lovely? Do you think it will do? "
+      },
+      {
+        "Order": 3,
+        "Character": "Drizella",
+        "Line": "Mother, no! You can’t let her go! "
+      },
+      {
+        "Order": 4,
+        "Character": "Lady Tremaine",
+        "Line": "Girls, please. After all, we did make a bargain. Didn't we, Cinderella? And…I never go back on my word. Those beads, they give it just the right touch. Don’t you think so? Drizella?"
+      },
+      {
+        "Order": 5,
+        "Character": "Drizella",
+        "Line": "No, I don’t. I think she’s– Oh! They’re my beads! Give them here. Why, you little thief!"
+      },
+      {
+        "Order": 6,
+        "Character": "Cinderella",
+        "Line": "Oh, no!"
+      },
+      {
+        "Order": 7,
+        "Character": "Anastasia",
+        "Line": "And look, that’s my sash. She’s wearing my sash!"
+      },
+      {
+        "Order": 8,
+        "Character": "Cinderella",
+        "Line": "Oh, please. Please, stop!"
+      },
+      {
+        "Order": 9,
+        "Character": "Lady Tremaine",
+        "Line": "Girls, girls. That’s quite enough. Hurry along now, both of you. I won’t have you upsetting yourselves. Goodnight. "
+      },
+      {
+        "Order": 10,
+        "Character": "Jaq",
+        "Line": "C’mon. We gotta cheer up Cinderelly."
+      },
+      {
+        "Order": 11,
+        "Character": "Cinderella",
+        "Line": "It’s just no use. I can’t believe. Not anymore. There’s nothing left to believe in. Nothing."
+      },
+      {
+        "Order": 12,
+        "Character": "Fairy Godmother",
+        "Line": "Nothing, my dear? Oh, now you don’t really mean that."
+      },
+      {
+        "Order": 13,
+        "Character": "Cinderella",
+        "Line": "Oh, but I do."
+      },
+      {
+        "Order": 14,
+        "Character": "Fairy Godmother",
+        "Line": "Nonsense, child! If you’d lost all your faith, I couldn’t be here. And here I am. Oh, come now. Dry those tears. You can’t go to the ball looking like that."
+      },
+      {
+        "Order": 15,
+        "Character": "Cinderella",
+        "Line": "The ball? Oh, but I’m not–"
+      },
+      {
+        "Order": 16,
+        "Character": "Fairy Godmother",
+        "Line": "Of course you are. But we have to hurry, because even miracles take a little time. Now for the magic words…Oh! Bibbidi Bobbidi Boo! Bibbidi Bobbidi Boo!"
+      },
+      {
+        "Order": 17,
+        "Character": "Cinderella",
+        "Line": "Oh, it’s a beautiful dress! Did you ever see such a beautiful dress? And look, glass slippers! Why, it’s like a dream…A wonderful dream come true!"
+      },
+      {
+        "Order": 18,
+        "Character": "Fairy Godmother",
+        "Line": "Yes, my child. But like all dreams, well, I’m afraid this can’t last forever. You’ll have only till midnight, and then–"
+      },
+      {
+        "Order": 19,
+        "Character": "Cinderella",
+        "Line": "Midnight? Oh, thank you."
+      },
+      {
+        "Order": 20,
+        "Character": "Fairy Godmother",
+        "Line": "Now, now, now, just a minute. You must understand, my dear. On the stroke of twelve, the spell will be broken, and everything will be as it was before. "
+      },
+      {
+        "Order": 21,
+        "Character": "Cinderella",
+        "Line": "Oh, I understand. But it’s more than I ever hoped for. "
+      },
+      {
+        "Order": 22,
+        "Character": "Fairy Godmother",
+        "Line": "Bless you, my child. I– Goodness me! It’s getting late. Hurry up, dear. The ball can’t wait. Have a good time. Dance, be gay. Now off you go. You’re on your way. "
+      },
+      {
+        "Order": 23,
+        "Character": "Chirithy",
+        "Line": "Why do you look relieved? She’s one of the precious lights! She’s in danger!"
+      },
+      {
+        "Order": 24,
+        "Character": "Player",
+        "Line": "!?"
+      },
+      {
+        "Order": 25,
+        "Character": "Chirithy",
+        "Line": "You know what to do! Go go go!"
+      }
+    ],
+    "Escorting Cinderella": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "We have to save her. Come on! It looked pretty wounded. I don't think it’ll give us any more trouble. But don’t celebrate just yet, not before we check on Cinderella."
+      },
+      {
+        "Order": 1,
+        "Character": "Cinderella",
+        "Line": "Oh dear, how will I get past? Why, it’s you! Thank you, but I can’t possibly go home. I won’t give up on my dream. We’ll be all right, because we’ll be together. Thank you. I wouldn’t have made it without you. Well, here I go. "
+      },
+      {
+        "Order": 2,
+        "Character": "Chirithy",
+        "Line": "Despite the odds, she chose to pursue her dream. The strength is what planted the seed of light inside her. I hope she has a magical night! Ready to call it a day?"
+      }
+    ],
+    "A Dream Come True": [
+      {
+        "Order": 0,
+        "Character": "Anastasia",
+        "Line": "Who is she, Mother?"
+      },
+      {
+        "Order": 1,
+        "Character": "Drizella",
+        "Line": "Do we know here?"
+      },
+      {
+        "Order": 2,
+        "Character": "Anastasia",
+        "Line": "Well, the Prince certainly seems to. I know I’ve never seen her before."
+      },
+      {
+        "Order": 3,
+        "Character": "Lady Tremaine",
+        "Line": "Nor I. But she certainly is…Wait. There is something familiar about her."
+      },
+      {
+        "Order": 4,
+        "Character": "Cinderella",
+        "Line": "Oh, my goodness!"
+      },
+      {
+        "Order": 5,
+        "Character": "Prince Charming",
+        "Line": "What’s the matter?"
+      },
+      {
+        "Order": 6,
+        "Character": "Cinderella",
+        "Line": "It’s midnight."
+      },
+      {
+        "Order": 7,
+        "Character": "Prince Charming",
+        "Line": "Yes, so it is. But why–"
+      },
+      {
+        "Order": 8,
+        "Character": "Cinderella",
+        "Line": "Goodbye."
+      },
+      {
+        "Order": 9,
+        "Character": "Prince Charming",
+        "Line": "No, no, wait! You can’t go now. It’s only–"
+      },
+      {
+        "Order": 10,
+        "Character": "Cinderella",
+        "Line": "Oh, I must. Please! Please, I must."
+      },
+      {
+        "Order": 11,
+        "Character": "Prince Charming",
+        "Line": "But why?"
+      },
+      {
+        "Order": 12,
+        "Character": "Cinderella",
+        "Line": "Well, I…Oh, the Prince. I haven’t met the Prince."
+      },
+      {
+        "Order": 13,
+        "Character": "Prince Charming",
+        "Line": "The Prince? But didn’t you know–"
+      },
+      {
+        "Order": 14,
+        "Character": "Cinderella",
+        "Line": "Goodbye!"
+      },
+      {
+        "Order": 15,
+        "Character": "Prince Charming",
+        "Line": "No! Wait! Come back! Oh, please come back! I don’t even know your name. How will I find you?"
+      },
+      {
+        "Order": 16,
+        "Character": "Cinderella",
+        "Line": "Goodbye!"
+      },
+      {
+        "Order": 17,
+        "Character": "Prince Charming",
+        "Line": "Wait!"
+      },
+      {
+        "Order": 18,
+        "Character": "Grand Duke",
+        "Line": "Young lady! Mademoiselle! Señorita! Wait just a moment!"
+      },
+      {
+        "Order": 19,
+        "Character": "Cinderella",
+        "Line": "I’m sorry. I guess I forgot about everything. Even the time. But it was so wonderful! And he was so handsome, and when we danced…Oh, I’m sure that even the PRince himself couldn’t have been more…Oh, well. It’s over and–"
+      },
+      {
+        "Order": 20,
+        "Character": "Jaq",
+        "Line": "Cinderelly! Look! A slipper!"
+      },
+      {
+        "Order": 21,
+        "Character": "Cinderella",
+        "Line": "Oh, thank you. Thank you so much, for everything."
+      }
+    ],
+    "The Moogle’s Plea": [
+      {
+        "Order": 0,
+        "Character": "Moogle",
+        "Line": "You finally showed up! Look at this mess, kupo! Water damage is serious business, kupo! My regulars won’t be happy if I have to close shop! Make it stop, kupo!"
+      },
+      {
+        "Order": 1,
+        "Character": "Pink Frog Kid",
+        "Line": "Is this our lucky day or what? A new breed!"
+      },
+      {
+        "Order": 2,
+        "Character": "Afro Kid",
+        "Line": "Focus. It looks formidable."
+      },
+      {
+        "Order": 3,
+        "Character": "Bandana Kid",
+        "Line": "That means plenty of Lux for all of us!"
+      },
+      {
+        "Order": 4,
+        "Character": "Mog Kid",
+        "Line": "Nap time’s over. Help us out, will ya, kupo?"
+      },
+      {
+        "Order": 5,
+        "Character": "Bandana Kid",
+        "Line": "Not so fast!"
+      },
+      {
+        "Order": 6,
+        "Character": "Pink Frog Kid",
+        "Line": "Right behind ya!"
+      },
+      {
+        "Order": 7,
+        "Character": "Afro Kid",
+        "Line": "I don’t think this is a good idea."
+      },
+      {
+        "Order": 8,
+        "Character": "Mog Kid",
+        "Line": "H-hey! Wait for me!"
+      },
+      {
+        "Order": 9,
+        "Character": "Moogle",
+        "Line": "Well? What are you waiting for, kupo? That monster is responsible for this– this mess. Are you going to let it get away with this, kupo!? Woe is me, kupo…"
+      },
+      {
+        "Order": 10,
+        "Character": "Bandana Kid",
+        "Line": "Thanks a million! That was close. These monsters are much stronger in the water. I’ll bet the one we’re after is too. It won’t be an easy battle."
+      },
+      {
+        "Order": 11,
+        "Character": "Pink Frog Kid",
+        "Line": "Whoa! Am I a genius or what? I discovered that if you twist this valve…It drains all the water in the area. Now we can access the other areas!"
+      },
+      {
+        "Order": 12,
+        "Character": "Mog Kid",
+        "Line": "What are you doing, kupo? You can’t beat that thing alone, not in the water! Friends to the rescue!"
+      },
+      {
+        "Order": 13,
+        "Character": "Bandana Kid",
+        "Line": "We’ll handle this. You search for the valves, okay?"
+      },
+      {
+        "Order": 14,
+        "Character": "Afro Kid",
+        "Line": "If I twist this like so…That’s that. Let’s hurry back to the others."
+      }
+    ],
+    "New Friends": [
+      {
+        "Order": 0,
+        "Character": "Moogle",
+        "Line": "Phew! Good as new, kupo. You’re back! The water’s gone! All because you got rid of the Heartless, kupo. Now I don't have to close up shop. Doesn’t it feel good helping others, kupo? Welcome to my shop, kupo! Do you like the new décor? Doesn’t it feel like a brand-new store? Tell all your friends, kupo! Wait! You forgot to buy something, kupo! This is strange, kupo. I heard that a little remodeling would equal big business…"
+      },
+      {
+        "Order": 1,
+        "Character": "Pink Frog Kid",
+        "Line": "Where’s the fire?"
+      },
+      {
+        "Order": 2,
+        "Character": "Bandana Kid",
+        "Line": "That’s the moogle we know and love!"
+      },
+      {
+        "Order": 3,
+        "Character": "Afro Kid",
+        "Line": "It’s his sworn duty to collect munny, like it’s our duty to collect Lux."
+      },
+      {
+        "Order": 4,
+        "Character": "Mog Kid",
+        "Line": "Munny makes the worlds go ‘round, kupo."
+      },
+      {
+        "Order": 5,
+        "Character": "Bandana Kid",
+        "Line": "Well, I should scoot. See ya!"
+      },
+      {
+        "Order": 6,
+        "Character": "Pink Frog Kid",
+        "Line": "Let me know if you hear about anythin’ excitin’!"
+      },
+      {
+        "Order": 7,
+        "Character": "Afro Kid",
+        "Line": "It’s all about teamwork in the end, isn’t it?"
+      },
+      {
+        "Order": 8,
+        "Character": "Mog Kid",
+        "Line": "Hurray for friends, kupo!"
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "They’re right, you know. It’s about teamwork and friends. Because those friends…One day, they will become your power."
+      }
+    ],
+    "The Royal Proclamation": [
+      {
+        "Order": 0,
+        "Character": "Message",
+        "Line": "By the King. A Proclamation. All loyal subjects of his Imperial Majesty are hereby notified by royal proclamation that in regard to a certain glass slipper, it is upon this day decreed that a quest be instituted throughout the length and breadth of our domain. The sole and express purpose of said quest is as follows to wit: That every single maiden in our beloved Kingdom shall try upon her food this aforementioned slipper of glass, and should be one be found whose foot shall properly fit said slipper, such maiden will be acclaimed the object of this search and the one and only true love of his Royal Highness, our noble Prince. And said Royal Highness will humbly request the hand of said maiden in marriage to rule with him over all the land as Royal Princess and Future Queen."
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "A glass slipper? We know who that belongs to. Let’s go see how she’s doing!"
+      }
+    ],
+    "The Grand Duke": [
+      {
+        "Order": 0,
+        "Character": "Grand Duke",
+        "Line": "Oh, this is terrible! How will I ever manage to carry out the King’s orders? Why, you’re the hero from before. Again, you have my deepest gratitude. If this slipper were to shatter, the Prince would never find his true love. Well, I must be on my way. Good day. Oh, dear me! What am I thinking!? The King was quite clear that every maiden was to try on the slipper. Excuse me, young lady. Yes, you. Would you try on this slipper? I’m afraid you’ll have to remove what you're wearing first. I have no time for such dillydallying! If you do not wish to be of aid, I shall be on my way. Good day. "
+      },
+      {
+        "Order": 1,
+        "Character": "Chirithy",
+        "Line": "Why do you look disappointed? We know who that slipper belongs to, remember? Now quit daydreaming and let’s skedaddle! "
+      }
+    ],
+    "A Glass Slipper": [
+      {
+        "Order": 0,
+        "Character": "Lady Tremaine",
+        "Line": "Drizella, Anastasia! Get up. Quick, this instant!"
+      },
+      {
+        "Order": 1,
+        "Character": "Drizella",
+        "Line": "What is it, Mother? "
+      },
+      {
+        "Order": 2,
+        "Character": "Anastasia",
+        "Line": "What for? Why?"
+      },
+      {
+        "Order": 3,
+        "Character": "Lady Tremaine",
+        "Line": "Hurry now. He’ll be here any minute!"
+      },
+      {
+        "Order": 4,
+        "Character": "Drizella",
+        "Line": "Who will?"
+      },
+      {
+        "Order": 5,
+        "Character": "Lady Tremaine",
+        "Line": "The Grand Duke. He’s been hunting all night."
+      },
+      {
+        "Order": 6,
+        "Character": "Anastasia",
+        "Line": "Hunting?"
+      },
+      {
+        "Order": 7,
+        "Character": "Lady Tremaine",
+        "Line": "For that girl. The one who lost her slipper at the ball last night. They say he’s madly in love with her. "
+      },
+      {
+        "Order": 8,
+        "Character": "Anastasia",
+        "Line": "The Duke is?"
+      },
+      {
+        "Order": 9,
+        "Character": "Lady Tremaine",
+        "Line": "No, no, no! The Prince!"
+      },
+      {
+        "Order": 10,
+        "Character": "Cinderella",
+        "Line": "The Prince!"
+      },
+      {
+        "Order": 11,
+        "Character": "Lady Tremaine",
+        "Line": "What are you standing there for? Help my daughters dress at once."
+      },
+      {
+        "Order": 12,
+        "Character": "Drizella",
+        "Line": "What for?"
+      },
+      {
+        "Order": 13,
+        "Character": "Anastasia",
+        "Line": "If he’s in love with that girl, why should we even bother?"
+      },
+      {
+        "Order": 14,
+        "Character": "Lady Tremaine",
+        "Line": "Now, you two, listen to me. There is still a chance that one of you can get him. "
+      },
+      {
+        "Order": 15,
+        "Character": "Drizella",
+        "Line": "One of us? Why, Mother, what do you mean?"
+      },
+      {
+        "Order": 16,
+        "Character": "Anastasia",
+        "Line": "One of us? Why, Mother, what do you mean?"
+      },
+      {
+        "Order": 17,
+        "Character": "Lady Tremaine",
+        "Line": "Just this…No one, not even the Prince, knows who that girl is. The glass slipper is their only clue. The Duke has been ordered to try it on every girl in the kingdom. And if one can be found whom the slipper fits, then, by the King’s command, that girl shall be the Prince’s bride."
+      },
+      {
+        "Order": 18,
+        "Character": "Cinderella",
+        "Line": "His bride!"
+      },
+      {
+        "Order": 19,
+        "Character": "Drizella",
+        "Line": "Cinderella, get my things together."
+      },
+      {
+        "Order": 20,
+        "Character": "Anastasia",
+        "Line": "What’s the matter with her?"
+      },
+      {
+        "Order": 21,
+        "Character": "Drizella",
+        "Line": "Wake up, stupid."
+      },
+      {
+        "Order": 22,
+        "Character": "Anastasia",
+        "Line": "We’ve gotta get dressed."
+      },
+      {
+        "Order": 23,
+        "Character": "Cinderella",
+        "Line": "Dressed. Oh, yes. Oh, we must get dressed. It would never do for the Duke to see me like this. "
+      }
+    ],
+    "Trapped": [
+      {
+        "Order": 0,
+        "Character": "Cinderella",
+        "Line": "What? Oh, no! No, please! Oh, you can’t, you just can’t! Let me out! You must let me out! You can’t keep me in here! Oh, please!"
+      },
+      {
+        "Order": 1,
+        "Character": "Jaq",
+        "Line": "Gotta get that key."
+      }
+    ],
+    "Desperate Attempts": [
+      {
+        "Order": 0,
+        "Character": "Jaq",
+        "Line": "It’s you! Come on! Come on! Hurry!"
+      },
+      {
+        "Order": 1,
+        "Character": "Anastasia",
+        "Line": "Oh, well. It may be a trifle snug today. You know how it is, dancing all night. I can’t understand why it’s so tight. It’s always fit perfectly before."
+      },
+      {
+        "Order": 2,
+        "Character": "Drizella",
+        "Line": "I’ll make it fit! There. "
+      },
+      {
+        "Order": 3,
+        "Character": "Lady Tremaine",
+        "Line": "It fits!"
+      },
+      {
+        "Order": 4,
+        "Character": "Grand Duke",
+        "Line": "It fits!"
+      },
+      {
+        "Order": 5,
+        "Character": "Jaq",
+        "Line": "Look! Monsters everywhere! What do we do? Cinderelly needs our help! Poor Cinderelly. She’s trapped in the attic. She gotta get out and try on the slipper! I got the key, but monsters in the way…You make ‘em go away, okay?"
+      }
+    ],
+    "Good Luck": [
+      {
+        "Order": 0,
+        "Character": "Cinderella",
+        "Line": "No! "
+      },
+      {
+        "Order": 1,
+        "Character": "Jaq",
+        "Line": "Cinderelly! Let’s go! Thank you, friend!"
+      }
+    ],
+    "If You Believe": [
+      {
+        "Order": 0,
+        "Character": "Grand Duke",
+        "Line": "You are the only ladies of the household, I hope…I presume."
+      },
+      {
+        "Order": 1,
+        "Character": "Lady Tremaine",
+        "Line": "There’s no one else, Your Grace."
+      },
+      {
+        "Order": 2,
+        "Character": "Grand Duke",
+        "Line": "Quite so. Good day."
+      },
+      {
+        "Order": 3,
+        "Character": "Cinderella",
+        "Line": "Your Grace? Your Grace! Please, wait. May I try it on?"
+      },
+      {
+        "Order": 4,
+        "Character": "Lady Tremaine",
+        "Line": "Pay no attention to her. She’s just an imaginative child."
+      },
+      {
+        "Order": 5,
+        "Character": "Grand Duke",
+        "Line": "Madam, my orders were “every maiden.” Come, my child. Oh, no! No, no, no! Oh, this is terrible! The King, what will he say!? What will he do!?"
+      },
+      {
+        "Order": 6,
+        "Character": "Cinderella",
+        "Line": "Perhaps, if it would help…"
+      },
+      {
+        "Order": 7,
+        "Character": "Grand Duke",
+        "Line": "No, no. Nothing can help now. Nothing."
+      },
+      {
+        "Order": 8,
+        "Character": "Cinderella",
+        "Line": "But you see, I have the other slipper."
+      },
+      {
+        "Order": 9,
+        "Character": "Chirithy",
+        "Line": "Dreams really can come true if you believe in them. I wish I could show you dreams that you would want to come true…Oh, um, nothing. Let’s believe so that our dreams come true, too!"
+      }
+    ]
+  }
+}

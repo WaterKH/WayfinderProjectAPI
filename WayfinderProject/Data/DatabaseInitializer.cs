@@ -41,8 +41,6 @@ namespace WayfinderProjectAPI.Data
 
             //// Load Script Data into Database
             //CreateScripts(context);
-
-            CreateScript(context, "_kh_episodes_lines.json", "Kingdom Hearts III");
             //CreateAddendum(context);
 
             // Load Interviews
@@ -186,10 +184,10 @@ namespace WayfinderProjectAPI.Data
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @$"wwwroot/data/seed/scripts/{fileName}"));
             var script = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<LineScriptObject>>>>(streamReader.ReadToEnd());
 
-            if (!script!.ContainsKey("Episodes"))
+            if (!script!.ContainsKey("Script"))
                 throw new Exception("No Script List Found!");
 
-            foreach (var (scene, lines) in script["Episodes"])
+            foreach (var (scene, lines) in script["Script"])
             {
                 var temp = new Script { SceneName = scene, GameName = gameName, Lines = new List<ScriptLine>() };
                 foreach (var line in lines)
