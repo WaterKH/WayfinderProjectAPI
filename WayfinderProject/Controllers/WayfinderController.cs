@@ -2188,7 +2188,7 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Creation method
         [HttpPost("PatPoint")]
-        public Task<bool> Create(string data)
+        public Task<bool> PatPoint([FromBody] string data)
         {
             try
             {
