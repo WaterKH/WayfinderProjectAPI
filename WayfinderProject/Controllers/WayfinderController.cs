@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using WayfinderProjectAPI.Data;
 using WayfinderProjectAPI.Data.DTOs;
 using WayfinderProjectAPI.Data.Models;
+using static WayfinderProjectAPI.Data.DatabaseInitializer;
 
 namespace WayfinderProjectAPI.Controllers
 {
@@ -2184,5 +2185,168 @@ namespace WayfinderProjectAPI.Controllers
             return await inventory.Take(1).ToDto().FirstAsync();
         }
         #endregion Discord Methods
+
+        #region Creation method
+        [HttpPost("PatPoint")]
+        public Task<bool> Create(string data)
+        {
+            try
+            {
+                var splitData = data.Split("\r\n");
+                var documentType = splitData[0].Split(": ");
+
+                switch (documentType[1])
+                {
+                    case "Scene":
+                        var sceneGameName = splitData[1].Split(": ")[1];
+                        DatabaseInitializer.CreateGame(_context, sceneGameName);
+
+                        var sceneData = splitData.Skip(2).ToArray();
+                        List<SceneObject> sceneObjects = Utilities.ProcessScenes(sceneData);
+
+                        foreach (var sceneObject in sceneObjects)
+                        {
+                            sceneObject.Areas.ForEach(x => DatabaseInitializer.CreateArea(_context, x));
+                            sceneObject.Characters.ForEach(x => DatabaseInitializer.CreateCharacter(_context, x));
+                            sceneObject.Music.ForEach(x => DatabaseInitializer.CreateMusic(_context, new MusicObject { Name = x }));
+                            sceneObject.Worlds.ForEach(x => DatabaseInitializer.CreateWorld(_context, x));
+
+                            DatabaseInitializer.CreateScenes(_context, sceneGameName, sceneObject);
+                        }
+                        break;
+                    case "Script":
+                        var scriptGameName = splitData[1].Split(": ")[1];
+                        var scriptData = splitData.Skip(2).ToArray();
+                        Dictionary<string, List<LineScriptObject>> lineScriptObjects = Utilities.ProcessScript(scriptData);
+
+                        foreach (var lineScriptObject in lineScriptObjects)
+                        {
+                            DatabaseInitializer.CreateScript(_context, scriptGameName, lineScriptObject.Key, lineScriptObject.Value);
+                        }
+                        break;
+                    case "Interview":
+                        var interviewData = splitData.Skip(1).ToArray();
+                        InterviewObject interviewObject = Utilities.ProcessInterview(interviewData);
+
+                        DatabaseInitializer.CreateInterviews(_context, interviewObject);
+                        break;
+                    case "Interaction":
+                        var interactionGameName = splitData[1].Split(": ")[1];
+                        DatabaseInitializer.CreateGame(_context, interactionGameName);
+
+                        var interactionData = splitData.Skip(2).ToArray();
+                        List<InteractionObject> interactionObjects = Utilities.ProcessInteractions(interactionData);
+
+                        foreach (var interactionObject in interactionObjects)
+                        {
+                            interactionObject.Areas.ForEach(x => DatabaseInitializer.CreateArea(_context, x));
+                            interactionObject.Characters.ForEach(x => DatabaseInitializer.CreateCharacter(_context, x));
+                            interactionObject.Music.ForEach(x => DatabaseInitializer.CreateMusic(_context, new MusicObject { Name = x }));
+                            interactionObject.Worlds.ForEach(x => DatabaseInitializer.CreateWorld(_context, x));
+
+                            DatabaseInitializer.CreateInteractions(_context, interactionGameName, interactionObject);
+                        }
+                        break;
+                    case "Trailer":
+                        var trailerGameName = splitData[1].Split(": ")[1];
+                        DatabaseInitializer.CreateGame(_context, trailerGameName);
+
+                        var trailerData = splitData.Skip(2).ToArray();
+                        List<TrailerObject> trailerObjects = Utilities.ProcessTrailers(trailerData);
+
+                        foreach (var trailerObject in trailerObjects)
+                        {
+                            trailerObject.Areas.ForEach(x => DatabaseInitializer.CreateArea(_context, x));
+                            trailerObject.Characters.ForEach(x => DatabaseInitializer.CreateCharacter(_context, x));
+                            trailerObject.Music.ForEach(x => DatabaseInitializer.CreateMusic(_context, new MusicObject { Name = x }));
+                            trailerObject.Worlds.ForEach(x => DatabaseInitializer.CreateWorld(_context, x));
+
+                            DatabaseInitializer.CreateTrailers(_context, trailerGameName, trailerObject);
+                        }
+                        break;
+
+                    case "Journal":
+                        var journalGameName = splitData[1].Split(": ")[1];
+                        var journalCategory = splitData[1].Split(": ")[2];
+                        DatabaseInitializer.CreateGame(_context, journalGameName);
+
+                        var journalData = splitData.Skip(3).ToArray();
+                        List<JJCharacterObject> journalObjects = new List<JJCharacterObject>();
+
+                        if (journalCategory == "Character")
+                            journalObjects = Utilities.ProcessCharacter(journalData);
+                        else if (journalCategory == "Story")
+                            journalObjects = Utilities.ProcessStory(journalData);
+                        else if (journalCategory == "Report")
+                            journalObjects = Utilities.ProcessReports(journalData);
+                        else if (journalCategory == "Enemy")
+                            journalObjects = Utilities.ProcessEnemy(journalData);
+
+                        foreach (var journalObject in journalObjects)
+                        {
+                            journalObject.Characters.ForEach(x => DatabaseInitializer.CreateCharacter(_context, x));
+                            journalObject.Worlds.ForEach(x => DatabaseInitializer.CreateWorld(_context, x));
+
+                            DatabaseInitializer.CreateEntries(_context, journalGameName, journalObject, journalCategory);
+                        }
+                        break;
+
+                    case "Item":
+                        var itemGameName = splitData[1].Split(": ")[1];
+                        DatabaseInitializer.CreateGame(_context, itemGameName);
+
+                        var itemData = splitData.Skip(2).ToArray();
+                        List<MSInventoryObject> itemObjects = Utilities.ProcessInventory(itemData);
+
+                        foreach (var itemObject in itemObjects)
+                        {
+                            DatabaseInitializer.CreateInventory(_context, itemGameName, itemObject);
+                        }
+                        break;
+                    case "Recipe":
+                        var recipeGameName = splitData[1].Split(": ")[1];
+                        DatabaseInitializer.CreateGame(_context, recipeGameName);
+
+                        var recipeData = splitData.Skip(2).ToArray();
+                        List<MSRecipeObject> recipeObjects = Utilities.ProcessRecipe(recipeData);
+
+                        foreach (var recipeObject in recipeObjects)
+                        {
+                            DatabaseInitializer.CreateRecipes(_context, recipeGameName, recipeObject);
+                        }
+                        break;
+                    case "Location":
+                        var locationGameName = splitData[1].Split(": ")[1];
+                        DatabaseInitializer.CreateGame(_context, locationGameName);
+
+                        var locationData = splitData.Skip(2).ToArray();
+                        List<MSMiscEnemyObject> locationObjects = Utilities.ProcessEnemyLocation(locationData);
+
+                        foreach (var locationObject in locationObjects)
+                        {
+                            DatabaseInitializer.CreateCharacter(_context, locationObject.CharacterName);
+                            foreach (var wa in locationObject.WorldWithAreas)
+                            {
+                                DatabaseInitializer.CreateWorld(_context, wa.Key);
+                                wa.Value.ForEach(x => DatabaseInitializer.CreateArea(_context, x));
+                            }
+
+                            DatabaseInitializer.CreateEnemyLocations(_context, locationGameName, locationObject);
+                        }
+                        break;
+
+                    default:
+                        throw new Exception();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return Task.FromResult(false);
+            }
+
+            return Task.FromResult(true);
+        }
+        #endregion
     }
 }

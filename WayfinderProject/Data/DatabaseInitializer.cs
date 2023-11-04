@@ -77,7 +77,7 @@ namespace WayfinderProjectAPI.Data
         }
 
         #region Memory Archive
-        public static void CreateAreas(WayfinderContext context)
+        private static void CreateAreas(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_areas.json"));
             var areas = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -90,8 +90,18 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+        public static void CreateArea(WayfinderContext context, string areaName)
+        {
+            var area = context.Areas.FirstOrDefault(x => x.Name == areaName);
+            if (area == null)
+            {
+                context.Areas.Add(new Area { Name = areaName });
 
-        public static void CreateCharacters(WayfinderContext context)
+                context.SaveChanges();
+            }
+        }
+
+        private static void CreateCharacters(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_characters.json"));
             var characters = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -104,8 +114,18 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+        public static void CreateCharacter(WayfinderContext context, string characterName)
+        {
+            var character = context.Characters.FirstOrDefault(x => x.Name == characterName);
+            if (character == null)
+            {
+                context.Characters.Add(new Character { Name = characterName });
 
-        public static void CreateGames(WayfinderContext context)
+                context.SaveChanges();
+            }
+        }
+
+        private static void CreateGames(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_games.json"));
             var games = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -118,14 +138,23 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+        public static void CreateGame(WayfinderContext context, string gameName)
+        {
+            var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+            if (game == null)
+            {
+                context.Games.Add(new Game { Name = gameName });
 
-        class MusicObject
+                context.SaveChanges();
+            }
+        }
+
+        public class MusicObject
         {
             public string Name { get; set; } = string.Empty;
             public string Link { get; set; } = string.Empty;
         }
-
-        public static void CreateMusic(WayfinderContext context)
+        private static void CreateMusic(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_music.json"));
             var music = JsonSerializer.Deserialize<Dictionary<string, List<MusicObject>>>(streamReader.ReadToEnd());
@@ -138,8 +167,18 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+        public static void CreateMusic(WayfinderContext context, MusicObject musicObject)
+        {
+            var music = context.Music.FirstOrDefault(x => x.Name == musicObject.Name);
+            if (music == null)
+            {
+                context.Music.Add(new Music { Name = musicObject.Name, Link = musicObject.Link });
 
-        public static void CreateWorlds(WayfinderContext context)
+                context.SaveChanges();
+            }
+        }
+
+        private static void CreateWorlds(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_worlds.json"));
             var worlds = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(streamReader.ReadToEnd());
@@ -152,8 +191,19 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+        public static void CreateWorld(WayfinderContext context, string worldName)
+        {
+            var world = context.Worlds.FirstOrDefault(x => x.Name == worldName);
+            if (world == null)
+            {
+                context.Worlds.Add(new World { Name = worldName });
 
-        public static void CreateScripts(WayfinderContext context)
+                context.SaveChanges();
+            }
+        }
+
+
+        private static void CreateScripts(WayfinderContext context)
         {
             CreateScript(context, "_khx_lines.json", "Kingdom Hearts χ");
             CreateScript(context, "_kh_unchainedx_lines.json", "Kingdom Hearts Unchained χ");
@@ -172,14 +222,14 @@ namespace WayfinderProjectAPI.Data
             CreateScript(context, "_khmom_lines.json", "Kingdom Hearts Melody of Memory");
         }
 
-        class LineScriptObject
+        public class LineScriptObject
         {
             public int Order { get; set; }
             public string Character { get; set; } = string.Empty;
             public string Line { get; set; } = string.Empty;
         }
 
-        public static void CreateScript(WayfinderContext context, string fileName, string gameName)
+        private static void CreateScript(WayfinderContext context, string fileName, string gameName)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @$"wwwroot/data/seed/scripts/{fileName}"));
             var script = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<LineScriptObject>>>>(streamReader.ReadToEnd());
@@ -213,17 +263,38 @@ namespace WayfinderProjectAPI.Data
             }
         }
 
-        class SceneObject
+        public static void CreateScript(WayfinderContext context, string gameName, string sceneName, List<LineScriptObject> lines)
+        {
+            var script = new Script { GameName = gameName, SceneName = sceneName, Lines = lines.Select(x => new ScriptLine { Order = x.Order, Character = x.Character, Line = x.Line }).ToList() };
+
+            context.Script.Add(script);
+
+            context.SaveChanges();
+
+            var tempScene = context.Scenes.FirstOrDefault(x => x.Game.Name == gameName && x.Name == sceneName);
+
+            var tempScript = context.Script.FirstOrDefault(x => x.SceneName == sceneName && x.GameName == gameName) ??
+                context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+            if (tempScene != null)
+            {
+                tempScene.Script = tempScript;
+
+                context.SaveChanges();
+            }
+        }
+
+        public class SceneObject
         {
             public string Name { get; set; } = string.Empty;
             public string Link { get; set; } = string.Empty;
+            public List<LineScriptObject> Dialogue { get; set; } = new List<LineScriptObject>();
             public List<string> Worlds { get; set; } = new List<string>();
             public List<string> Characters { get; set; } = new List<string>();
             public List<string> Areas { get; set; } = new List<string>();
             public List<string> Music { get; set; } = new List<string>();
         }
-
-        public static void CreateScenes(WayfinderContext context)
+        private static void CreateScenes(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_scenes.json"));
             var allScenes = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<SceneObject>>>>(streamReader.ReadToEnd());
@@ -261,6 +332,31 @@ namespace WayfinderProjectAPI.Data
                     });
                 }
             }
+
+            context.SaveChanges();
+        }
+
+        public static void CreateScenes(WayfinderContext context, string gameName, SceneObject sceneObject)
+        {
+            var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+            var worlds = context.Worlds.Where(x => sceneObject.Worlds.Contains(x.Name)).ToList();
+            var characters = context.Characters.Where(x => sceneObject.Characters.Contains(x.Name)).ToList();
+            var areas = context.Areas.Where(x => sceneObject.Areas.Contains(x.Name)).ToList();
+            var music = context.Music.Where(x => sceneObject.Music.Contains(x.Name)).ToList();
+            var script = context.Script.FirstOrDefault(x => x.SceneName == sceneObject.Name && x.GameName == gameName) ??
+                context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+            context.Scenes.Add(new Scene
+            {
+                Game = game,
+                Name = sceneObject.Name,
+                Link = sceneObject.Link,
+                Worlds = worlds,
+                Characters = characters,
+                Areas = areas,
+                Music = music,
+                Script = script
+            });
 
             context.SaveChanges();
         }
@@ -335,7 +431,7 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
-        class InterviewObject
+        public class InterviewObject
         {
             public string Name { get; set; } = string.Empty;
             public string Link { get; set; } = string.Empty;
@@ -348,13 +444,13 @@ namespace WayfinderProjectAPI.Data
             public string Provider { get; set; } = string.Empty;
             public string Translator { get; set; } = string.Empty;
         }
-        class InterviewLineObject
+        public class InterviewLineObject
         {
             public int Order { get; set; }
             public string Speaker { get; set; } = string.Empty;
             public string Line { get; set; } = string.Empty;
         }
-        public static void CreateInterviews(WayfinderContext context)
+        private static void CreateInterviews(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/_kh1_interviews.json"));
             var allInterviews = JsonSerializer.Deserialize<Dictionary<string, List<InterviewObject>>>(streamReader.ReadToEnd());
@@ -421,7 +517,64 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
-        class InteractionObject
+        public static void CreateInterviews(WayfinderContext context, InterviewObject interviewObject)
+        {
+            var games = context.Games.Where(x => interviewObject.GameNames.Contains(x.Name));
+            var conversation = interviewObject.Conversation.Select(x => new InterviewLine { Speaker = x.Speaker, Line = x.Line, Order = x.Order });
+
+            var participants = new List<Participant>();
+            interviewObject.Participants.ForEach(x =>
+            {
+                var participant = context.Participants.FirstOrDefault(y => y.Name == x);
+
+                if (participant == null)
+                {
+                    context.Participants.Add(new Participant { Name = x });
+                    context.SaveChanges();
+
+                    participant = context.Participants.First(y => y.Name == x);
+                }
+
+                participants.Add(participant);
+            });
+
+            var provider = context.Providers.FirstOrDefault(x => x.Name == interviewObject.Provider);
+            if (provider == null)
+            {
+                context.Providers.Add(new Provider { Name = interviewObject.Provider });
+                context.SaveChanges();
+
+                provider = context.Providers.First(x => x.Name == interviewObject.Provider);
+            }
+
+            var translator = context.Translators.FirstOrDefault(x => x.Name == interviewObject.Translator);
+            if (translator == null)
+            {
+                context.Translators.Add(new Translator { Name = interviewObject.Translator });
+                context.SaveChanges();
+
+                translator = context.Translators.First(x => x.Name == interviewObject.Translator);
+            }
+
+
+            context.Interviews.Add(new Interview
+            {
+                Name = interviewObject.Name,
+                Link = interviewObject.Link,
+                ReleaseDate = interviewObject.ReleaseDate,
+                AdditionalLink = interviewObject.AdditionalLink,
+
+                Conversation = conversation.ToList(),
+                Games = games.ToList(),
+                Participants = participants,
+                Provider = provider,
+                Translator = translator
+            });
+
+            context.SaveChanges();
+        }
+
+        public class InteractionObject
         {
             public string Title { get; set; } = string.Empty;
             public string Link { get; set; } = string.Empty;
@@ -432,13 +585,13 @@ namespace WayfinderProjectAPI.Data
             public List<string> Areas { get; set; } = new List<string>();
             public List<string> Music { get; set; } = new List<string>();
         }
-        class InteractionLineObject
+        public class InteractionLineObject
         {
             public int Order { get; set; }
             public string Character { get; set; } = string.Empty;
             public string Line { get; set; } = string.Empty;
         }
-        public static void CreateInteractions(WayfinderContext context)
+        private static void CreateInteractions(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/interactions/_khrecom_interactions.json"));
             var allInteractions = JsonSerializer.Deserialize<Dictionary<string, List<InteractionObject>>>(streamReader.ReadToEnd());
@@ -499,7 +652,42 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
-        class TrailerObject
+        public static void CreateInteractions(WayfinderContext context, string gameName, InteractionObject interactionObject)
+        {
+            // Create Script
+            context.Script.Add(new Script
+            {
+                GameName = gameName,
+                SceneName = interactionObject.Title,
+                Lines = interactionObject.Interactions.Select(x => new ScriptLine { Character = x.Character, Line = x.Line, Order = x.Order }).ToList()
+            });
+
+            context.SaveChanges();
+
+            var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+            var worlds = context.Worlds.Where(x => interactionObject.Worlds.Contains(x.Name)).ToList();
+            var characters = context.Characters.Where(x => interactionObject.Characters.Contains(x.Name)).ToList();
+            var areas = context.Areas.Where(x => interactionObject.Areas.Contains(x.Name)).ToList();
+            var music = context.Music.Where(x => interactionObject.Music.Contains(x.Name)).ToList();
+            var script = context.Script.FirstOrDefault(x => x.SceneName == interactionObject.Title && x.GameName == gameName) ??
+                context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+            context.Interactions.Add(new Interaction
+            {
+                Game = game,
+                Name = interactionObject.Title,
+                Link = interactionObject.Link,
+                Worlds = worlds,
+                Characters = characters,
+                Areas = areas,
+                Music = music,
+                Script = script
+            });
+
+            context.SaveChanges();
+        }
+
+        public class TrailerObject
         {
             public string Title { get; set; } = string.Empty;
             public string Link { get; set; } = string.Empty;
@@ -510,13 +698,13 @@ namespace WayfinderProjectAPI.Data
             public List<string> Areas { get; set; } = new List<string>();
             public List<string> Music { get; set; } = new List<string>();
         }
-        class TrailerLineObject
+        public class TrailerLineObject
         {
             public int Order { get; set; }
             public string Character { get; set; } = string.Empty;
             public string Line { get; set; } = string.Empty;
         }
-        public static void CreateTrailers(WayfinderContext context)
+        private static void CreateTrailers(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ma/_trailers.json"));
             var allTrailers = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<TrailerObject>>>>(streamReader.ReadToEnd());
@@ -555,6 +743,31 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+
+        public static void CreateTrailers(WayfinderContext context, string gameName, TrailerObject trailerObject)
+        {
+            var game = context.Games.FirstOrDefault(x => x.Name == gameName);
+            var worlds = context.Worlds.Where(x => trailerObject.Worlds.Contains(x.Name)).ToList();
+            var characters = context.Characters.Where(x => trailerObject.Characters.Contains(x.Name)).ToList();
+            var areas = context.Areas.Where(x => trailerObject.Areas.Contains(x.Name)).ToList();
+            var music = context.Music.Where(x => trailerObject.Music.Contains(x.Name)).ToList();
+            var script = context.Script.FirstOrDefault(x => x.SceneName == trailerObject.Title && x.GameName == gameName) ??
+                context.Script.FirstOrDefault(x => x.SceneName == "None");
+
+            context.Trailers.Add(new Trailer
+            {
+                Game = game,
+                Name = trailerObject.Title,
+                Link = trailerObject.Link,
+                Worlds = worlds,
+                Characters = characters,
+                Areas = areas,
+                Music = music,
+                Script = script
+            });
+
+            context.SaveChanges();
+        }
         #endregion Memory Archive
 
 
@@ -567,7 +780,7 @@ namespace WayfinderProjectAPI.Data
             public string Description { get; set; } = string.Empty;
             public string AdditionalInformation { get; set; } = string.Empty;
         }
-        public static void CreateCharacterEntries(WayfinderContext context)
+        private static void CreateCharacterEntries(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_characters.json"));
             var allJJCharacters = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
@@ -605,7 +818,7 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
-        public static void CreateStoryEntries(WayfinderContext context)
+        private static void CreateStoryEntries(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_story.json"));
             var allJJStoryEntries = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
@@ -643,7 +856,7 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
-        public static void CreateEnemiesEntries(WayfinderContext context)
+        private static void CreateEnemiesEntries(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_enemies.json"));
             var allJJEnemiesEntries = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
@@ -690,7 +903,7 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
-        public static void CreateReportEntries(WayfinderContext context)
+        private static void CreateReportEntries(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/jj/_jj_reports.json"));
             var allJJReportEntries = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<JJCharacterObject>>>>(streamReader.ReadToEnd());
@@ -727,10 +940,28 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+
+        public static void CreateEntries(WayfinderContext context, string gameName, JJCharacterObject characterObject, string category)
+        {
+            var tempCharacters = context.Characters.Where(x => characterObject.Characters.Contains(x.Name)).ToList();
+            var tempWorlds = context.Worlds.Where(x => characterObject.Worlds.Contains(x.Name)).ToList();
+
+            context.JournalEntries.Add(new JournalEntry
+            {
+                Title = characterObject.Title,
+                Characters = tempCharacters,
+                Worlds = tempWorlds,
+                Description = characterObject.Description,
+                AdditionalInformation = characterObject.AdditionalInformation,
+                Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                Category = category
+            });
+
+            context.SaveChanges();
+        }
         #endregion Jiminy's Journal
 
         #region Moogle Shop
-
         public class MSInventoryObject
         {
             public string Name { get; set; } = string.Empty;
@@ -741,14 +972,13 @@ namespace WayfinderProjectAPI.Data
             public string Currency { get; set; } = string.Empty;
             public List<MSEnemyDropObject> EnemyDrops { get; set; } = new();
         }
-
         public class MSEnemyDropObject
         {
             public string EnemyName { get; set; } = string.Empty;
             public float DropRate { get; set; } = 0.0f;
             public string AdditionalInformation { get; set; } = string.Empty;
         }
-        public static void CreateInventory(WayfinderContext context)
+        private static void CreateInventory(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ms/_ms_inventory.json"));
             var allMSInventory = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<MSInventoryObject>>>>(streamReader.ReadToEnd());
@@ -809,6 +1039,51 @@ namespace WayfinderProjectAPI.Data
             context.SaveChanges();
         }
 
+        public static void CreateInventory(WayfinderContext context, string gameName, MSInventoryObject itemObject)
+        {
+            var tempItem = context.Inventory.FirstOrDefault(x => x.Name == itemObject.Name && x.Game.Name == gameName);
+
+            var drops = new List<EnemyDrop>();
+            foreach (var drop in itemObject.EnemyDrops)
+            {
+                var tempCharacter = context.Characters.AsTracking().Include(x => x.CharacterLocations).Where(x => x.Name.Contains(drop.EnemyName)).FirstOrDefault();
+                if (tempCharacter == null)
+                {
+                    Console.WriteLine();
+                    continue;
+                }
+
+                foreach (var characterLocation in tempCharacter.CharacterLocations)
+                {
+                    var tempDrop = new EnemyDrop
+                    {
+                        DropRate = drop.DropRate,
+                        AdditionalInformation = drop.AdditionalInformation,
+                        //Inventory = tempItem,
+                        CharacterLocation = characterLocation
+                    };
+
+                    drops.Add(tempDrop);
+                }
+            }
+
+            //tempItem.EnemyDrops = drops;
+
+            context.Inventory.Add(new Inventory
+            {
+                Name = itemObject.Name,
+                Category = itemObject.Category,
+                Description = itemObject.Description,
+                AdditionalInformation = itemObject.AdditionalInformation,
+                Cost = itemObject.Cost,
+                Currency = itemObject.Currency,
+                Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                EnemyDrops = drops
+            });
+
+            context.SaveChanges();
+        }
+
         public class MSRecipeObject
         {
             public string Name { get; set; } = string.Empty;
@@ -816,7 +1091,7 @@ namespace WayfinderProjectAPI.Data
             public string UnlockConditionDescription { get; set; } = string.Empty;
             public Dictionary<string, int> MaterialsNeeded { get; set; } = new();
         }
-        public static void CreateRecipes(WayfinderContext context)
+        private static void CreateRecipes(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/ms/_ms_recipes.json"));
             var allMSRecipes = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<MSRecipeObject>>>>(streamReader.ReadToEnd());
@@ -864,16 +1139,54 @@ namespace WayfinderProjectAPI.Data
 
             context.SaveChanges();
         }
+
+        public static void CreateRecipes(WayfinderContext context, string gameName, MSRecipeObject recipeObject)
+        {
+            var tempRecipe = context.Recipes.FirstOrDefault(x => x.Name == recipeObject.Name && x.Game.Name == gameName);
+            if (tempRecipe != null)
+            {
+                return;
+            }
+
+            var recipeMaterials = new List<RecipeMaterial>();
+            foreach (var (name, amount) in recipeObject.MaterialsNeeded)
+            {
+                var tempItem = context.Inventory.FirstOrDefault(x => name == x.Name && gameName == x.Game.Name);
+                if (tempItem == null)
+                {
+                    context.Inventory.Add(new Inventory { Name = name, Game = context.Games.First(x => gameName == x.Name) });
+                    context.SaveChanges();
+
+                    tempItem = context.Inventory.First(x => name == x.Name && gameName == x.Game.Name);
+                }
+
+                recipeMaterials.Add(new RecipeMaterial
+                {
+                    Inventory = tempItem,
+                    Amount = amount
+                });
+            }
+
+            context.Recipes.Add(new Recipe
+            {
+                Name = recipeObject.Name,
+                Category = recipeObject.Category,
+                UnlockConditionDescription = recipeObject.UnlockConditionDescription,
+                Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                RecipeMaterials = recipeMaterials
+            });
+
+            context.SaveChanges();
+        }
         #endregion Moogle Shop
 
         #region Misc
-
         public class MSMiscEnemyObject
         {
             public string CharacterName { get; set; } = string.Empty;
             public Dictionary<string, List<string>> WorldWithAreas { get; set; } = new Dictionary<string, List<string>>();
         }
-        public static void CreateEnemyLocations(WayfinderContext context)
+        private static void CreateEnemyLocations(WayfinderContext context)
         {
             using var streamReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"wwwroot/data/seed/_misc/enemy_locations/_kh1_enemy_locations.json"));
             var allMSEnemyLocations = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, List<MSMiscEnemyObject>>>>(streamReader.ReadToEnd());
@@ -921,6 +1234,38 @@ namespace WayfinderProjectAPI.Data
                     character.CharacterLocations = characterLocations;
                 }
             }
+
+            context.SaveChanges();
+        }
+
+        public static void CreateEnemyLocations(WayfinderContext context, string gameName, MSMiscEnemyObject miscObject)
+        {
+            var character = context.Characters.First(x => x.Name == miscObject.CharacterName);
+
+            var tempLocation = context.CharacterLocations.FirstOrDefault(x => x.Character.Id == character.Id && x.Game.Name == gameName);
+            if (tempLocation != null)
+            {
+                return;
+            }
+
+            var characterLocations = new List<CharacterLocation>();
+            foreach (var (worldName, areaNames) in miscObject.WorldWithAreas)
+            {
+                var world = context.Worlds.First(x => worldName == x.Name);
+                var areas = context.Areas.Where(x => areaNames.Contains(x.Name));
+
+                var characterLocation = new CharacterLocation
+                {
+                    Character = character,
+                    Game = context.Games.FirstOrDefault(x => x.Name == gameName) ?? new Game(),
+                    World = world,
+                    Areas = areas.ToList()
+                };
+
+                characterLocations.Add(characterLocation);
+            }
+
+            character.CharacterLocations = characterLocations;
 
             context.SaveChanges();
         }
