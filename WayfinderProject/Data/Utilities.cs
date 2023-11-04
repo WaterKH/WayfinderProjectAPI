@@ -698,7 +698,7 @@ namespace WayfinderProjectAPI.Data
                     {
                         if (currentRecipe == null) continue;
 
-                        var splitLine = line.Split(" - ");
+                        var splitLine = line.Split(": ");
                         switch (splitLine[0])
                         {
                             case "Unlock Condition":

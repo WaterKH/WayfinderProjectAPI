@@ -2284,7 +2284,9 @@ namespace WayfinderProjectAPI.Controllers
 
                         foreach (var journalObject in journalObjects)
                         {
-                            journalObject.Characters.ForEach(x => DatabaseInitializer.CreateCharacter(_context, x));
+                            if (journalCategory != "Character")
+                                journalObject.Characters.ForEach(x => DatabaseInitializer.CreateCharacter(_context, x));
+
                             journalObject.Worlds.ForEach(x => DatabaseInitializer.CreateWorld(_context, x));
 
                             DatabaseInitializer.CreateEntries(_context, journalGameName, journalObject, journalCategory);
