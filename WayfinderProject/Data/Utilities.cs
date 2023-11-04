@@ -37,7 +37,7 @@ namespace WayfinderProjectAPI.Data
                         // Content
                         if (scene == null) continue;
 
-                        var splitLine = line.Split(": ");
+                        var splitLine = line.Split(": ", 2);
                         switch (splitLine[0])
                         {
                             case "Link":
@@ -220,7 +220,7 @@ namespace WayfinderProjectAPI.Data
                         // Content
                         if (interaction == null) continue;
 
-                        var splitLine = line.Split(": ");
+                        var splitLine = line.Split(": ", 2);
                         switch (splitLine[0])
                         {
                             case "Link":
@@ -294,7 +294,7 @@ namespace WayfinderProjectAPI.Data
                         // Content
                         if (trailer == null) continue;
 
-                        var splitLine = line.Split(": ");
+                        var splitLine = line.Split(": ", 2);
                         switch (splitLine[0])
                         {
                             case "Link":
