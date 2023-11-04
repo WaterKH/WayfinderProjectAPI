@@ -12,7 +12,6 @@
                         <div class="row" style="height: 281px;">
                             <div class="col-md-6">
                                 <h3 class="world-color"><img src="/images/icons/worlds.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Worlds</h3>
-                                <label>@(string.Join(", ", this.Interaction.Worlds.Select(x => x.Name)))</label><br />
                             </div>
 
                             <div class="col-md-6">
@@ -24,7 +23,10 @@
                                 </div>
                             </div>
 
-                            <br />
+                            <div class="col-md-12">
+                                <label>@(string.Join(", ", this.Interaction.Worlds.Select(x => x.Name)))</label><br />
+                            </div>
+
 
                             <div class="col-md-12" style="margin-top: 25px;">
                                 <h3 class="character-color"><img src="/images/icons/characters.png" style="width: 25px; margin-right: 10px; margin-top: -3px;" /> Characters</h3>
