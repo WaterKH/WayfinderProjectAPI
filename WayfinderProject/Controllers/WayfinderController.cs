@@ -35,7 +35,7 @@ namespace WayfinderProjectAPI.Controllers
                 _context.SaveChanges();
             }
 
-            var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
+            var results = _context.Scenes.Include(x => x.Worlds).Include(x => x.Areas).Include(x => x.Characters).Include(x => x.Music).AsNoTrackingWithIdentityResolution();
 
             // See if we search for favourites
 
@@ -275,7 +275,7 @@ namespace WayfinderProjectAPI.Controllers
                 return;
             }
 
-            var scene = _context.Scenes.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Name == sceneName && x.Game.Name == gameName);
+            var scene = _context.Scenes.Include(x => x.Worlds).Include(x => x.Characters).Include(x => x.Areas).Include(x => x.Music).FirstOrDefault(x => x.Name == sceneName && x.Game.Name == gameName);
 
             if (scene == null)
             {
@@ -283,18 +283,24 @@ namespace WayfinderProjectAPI.Controllers
             }
 
             scene.Name = sceneName ?? "ERRORED SCENE NAME";
-            scene.Game = _context.Games.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Name == gameName);
+            scene.Game = _context.Games.FirstOrDefault(x => x.Name == gameName);
             scene.Link = sceneLink;
 
             if (worlds != null)
             {
+                scene.Worlds?.Clear();
+                _context.SaveChanges();
+
                 var splitWorlds = worlds.Split("::");
 
-                scene.Worlds = _context.Worlds.AsNoTrackingWithIdentityResolution().Where(x => splitWorlds.Contains(x.Name)).ToList();
+                scene.Worlds = _context.Worlds.Where(x => splitWorlds.Contains(x.Name)).ToList();
             }
 
             if (characters != null)
             {
+                scene.Characters?.Clear();
+                _context.SaveChanges();
+
                 var splitCharacters = characters.Split("::");
 
                 scene.Characters = _context.Characters.Where(x => splitCharacters.Contains(x.Name)).ToList();
@@ -302,6 +308,9 @@ namespace WayfinderProjectAPI.Controllers
 
             if (areas != null)
             {
+                scene.Areas?.Clear();
+                _context.SaveChanges();
+
                 var splitAreas = areas.Split("::");
 
                 scene.Areas = _context.Areas.Where(x => splitAreas.Contains(x.Name)).ToList();
@@ -309,6 +318,9 @@ namespace WayfinderProjectAPI.Controllers
 
             if (music != null)
             {
+                scene.Music?.Clear();
+                _context.SaveChanges();
+
                 var splitMusic = music.Split("::");
 
                 scene.Music = _context.Music.Where(x => splitMusic.Contains(x.Name)).ToList();

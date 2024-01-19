@@ -28,8 +28,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <SearchComponent @ref="SceneGamesSearch" Id="Games" Placeholder="Start Typing for Games..." Color="#cdd1ff" Initial="this.SceneGames" Selected="this.SceneGamesSelected" Available="this.SceneGamesAvailable"
-                                                         CanSearch="true" CanShowClearAll="@(this.SceneGamesSelected.Count > 0)" AllowAllSearch="true"
-                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneGamesSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Games", true, "Games", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
                                     </div>
                                 </div>
                             </div>
@@ -38,8 +38,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <SearchComponent @ref="SceneWorldsSearch" Id="Worlds" Placeholder="Start Typing for Worlds..." Color="#ea4a4a" Initial="this.SceneWorlds" Selected="this.SceneWorldsSelected" Available="this.SceneWorldsAvailable"
-                                                         CanSearch="true" CanShowClearAll="@(this.SceneWorldsSelected.Count > 0)" AllowAllSearch="true"
-                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneWorldsSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Worlds", true, "Worlds", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
                                     </div>
                                 </div>
                             </div>
@@ -48,8 +48,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <SearchComponent @ref="SceneAreasSearch" Id="Areas" Placeholder="Start Typing for Areas..." Color="#5499fc" Initial="this.SceneAreas" Selected="this.SceneAreasSelected" Available="this.SceneAreasAvailable"
-                                                         CanSearch="true" CanShowClearAll="@(this.SceneAreasSelected.Count > 0)" AllowAllSearch="true"
-                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneAreasSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Areas", true, "Areas", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
                                     </div>
                                 </div>
                             </div>
@@ -58,8 +58,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <SearchComponent @ref="SceneCharactersSearch" Id="Characters" Placeholder="Start Typing for Characters..." Color="#f3b222" Initial="this.SceneCharacters" Selected="this.SceneCharactersSelected" Available="this.SceneCharactersAvailable"
-                                                         CanSearch="true" CanShowClearAll="@(this.SceneCharactersSelected.Count > 0)" AllowAllSearch="true"
-                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneCharactersSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Characters", true, "Characters", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
                                     </div>
                                 </div>
                             </div>
@@ -68,8 +68,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <SearchComponent @ref="SceneMusicSearch" Id="Music" Placeholder="Start Typing for Music..." Color="#a13bfb" Initial="this.SceneMusic" Selected="this.SceneMusicSelected" Available="this.SceneMusicAvailable"
-                                                         CanSearch="true" CanShowClearAll="@(this.SceneMusicSelected.Count > 0)" AllowAllSearch="true"
-                                                         UpdateSearch="@(async () => Search())" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                                         CanSearch="true" CanShowClearAll="@(this.SceneMusicSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Music", true, "Music", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,10 @@
     [Parameter] public WayfinderController? API { get; set; }
     [Parameter] public WayfinderProjectUser? User { get; set; }
 
+    public string CurrentOption { get; set; } = string.Empty;
     public string CurrentSubOption { get; set; } = "Details";
+
+    public bool Loading { get; set; }
 
     private List<ScriptLineDto> dialogue = new List<ScriptLineDto>();
 
@@ -229,7 +232,7 @@
                 this.dialogue = this.Scene.Script.Lines.ToList();
             }
 
-            this.Search();
+            await this.Search("", false, "", new List<string>());
         }
 
         await base.OnInitializedAsync();
@@ -245,25 +248,69 @@
         });
     }
 
-    public void Search()
+    public async Task Search(string currentOption, bool updatedInternally, string category, List<string> available)
     {
-        this.SceneAreasAvailable = this.SceneAreas.Except(this.SceneAreasSelected).Distinct().ToList();
-        this.SceneCharactersAvailable = this.SceneCharacters.Except(this.SceneCharactersSelected).Distinct().ToList();
-        this.SceneGamesAvailable = this.SceneGames.Except(this.SceneGamesSelected).Distinct().ToList();
-        this.SceneMusicAvailable = this.SceneMusic.Except(this.SceneMusicSelected).Distinct().ToList();
-        //this.ScenesAvailable = this.Scenes.Except(this.ScenesSelected).Distinct().ToList();
-        this.SceneWorldsAvailable = this.SceneWorlds.Except(this.SceneWorldsSelected).Distinct().ToList();
+        this.Loading = true;
+
+        this.CurrentOption = currentOption;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        if (!updatedInternally)
+        {
+            this.SceneAreasAvailable = this.SceneAreas.Except(this.SceneAreasSelected).Distinct().ToList();
+            this.SceneCharactersAvailable = this.SceneCharacters.Except(this.SceneCharactersSelected).Distinct().ToList();
+            this.SceneGamesAvailable = this.SceneGames.Except(this.SceneGamesSelected).Distinct().ToList();
+            this.SceneMusicAvailable = this.SceneMusic.Except(this.SceneMusicSelected).Distinct().ToList();
+            //this.ScenesAvailable = this.Scenes.Except(this.ScenesSelected).Distinct().ToList();
+            this.SceneWorldsAvailable = this.SceneWorlds.Except(this.SceneWorldsSelected).Distinct().ToList();
 
 
-        this.SceneAreasAvailable.Sort();
-        this.SceneCharactersAvailable.Sort();
-        this.SceneMusicAvailable.Sort();
-        //this.ScenesAvailable.Sort();
-        this.SceneWorldsAvailable.Sort();
+            this.SceneAreasAvailable.Sort();
+            this.SceneCharactersAvailable.Sort();
+            this.SceneMusicAvailable.Sort();
+            //this.ScenesAvailable.Sort();
+            this.SceneWorldsAvailable.Sort();
+        }
+        else
+        {
+            if (category == "Games")
+                this.SceneGamesAvailable = available;
+            else if (category == "Areas")
+                this.SceneAreasAvailable = available;
+            else if (category == "Characters")
+                this.SceneCharactersAvailable = available;
+            else if (category == "Music")
+                this.SceneMusicAvailable = available;
+            else if (category == "Worlds")
+                this.SceneWorldsAvailable = available;
+
+            this.SceneAreasAvailable.Sort();
+            this.SceneCharactersAvailable.Sort();
+            this.SceneMusicAvailable.Sort();
+            //this.ScenesAvailable.Sort();
+            this.SceneWorldsAvailable.Sort();
+        }
+
+        this.Loading = false;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
     }
 
     private async Task ResetOptions()
     {
+        this.Loading = true;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
         this.SceneAreas = await context.Areas.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
         this.SceneCharacters = await context.Characters.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
         this.SceneGames = (await context.Games.AsNoTracking().OrderBy(x => x.Order).ToListAsync()).Select(x => x.Name).Distinct().ToList();
@@ -308,6 +355,13 @@
 
         if (this.SceneMusicSearch != null)
             await this.SceneMusicSearch.SetCurrentView("Available");
+
+        this.Loading = false;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
     }
 
     private void Save()
