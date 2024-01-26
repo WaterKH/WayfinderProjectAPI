@@ -20701,6 +20701,33 @@
         "Line": "Really? It must take... incredible strength..."
       }
     ],
+    "The Power Within": [
+      {
+        "Order": 0,
+        "Character": "Xemnas",
+        "Line": "Bested... yet again..."
+      },
+      {
+        "Order": 1,
+        "Character": "Sora",
+        "Line": "I know that you have a heart. What do you feel? Was it worth it?"
+      },
+      {
+        "Order": 2,
+        "Character": "Xemnas",
+        "Line": "I feel... the emptiness where my companions once stood. I took them for granted. And now, I have... nothing. My first surge of emotion in years... for as long as I can remember... and it's... loneliness. Do you see? A heart is just pain."
+      },
+      {
+        "Order": 3,
+        "Character": "Sora",
+        "Line": "Pain is being human, Xemnas."
+      },
+      {
+        "Order": 4,
+        "Character": "Xemnas",
+        "Line": "Really? It must take... incredible strength..."
+      }
+    ],
     "Good-bye, Sora": [
       {
         "Order": 0,
