@@ -35,7 +35,7 @@ namespace WayfinderProjectAPI.Controllers
                 _context.SaveChanges();
             }
 
-            var results = _context.Scenes.Include(x => x.Worlds).Include(x => x.Areas).Include(x => x.Characters).Include(x => x.Music).AsNoTrackingWithIdentityResolution();
+            var results = _context.Scenes.AsNoTrackingWithIdentityResolution();
 
             // See if we search for favourites
 
