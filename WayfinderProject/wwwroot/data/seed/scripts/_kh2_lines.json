@@ -21942,99 +21942,101 @@
         "Order": 18,
         "Character": "Ansem the Wise",
         "Line": "Xehanort. Foolish apprentice of a foolish man. You have surpassed nothing- only proved how little we both know. We may profess to know the heart, but its essence is beyond our reach. We're both ignorant- as oblivious as when we began. I'm afraid that any world you try to create... Any world of yours... would be an empire of ignorance. That is why you and your creation are destined to fall! We've said enough! Riku, you know what to do! King Mickey, my friend, forgive me! Farewell!"
-      },
+      }
+    ],
+    "Back to His Old Self": [
       {
-        "Order": 19,
+        "Order": 0,
         "Character": "Sora",
         "Line": "Riku? Riku!"
       },
       {
-        "Order": 20,
+        "Order": 1,
         "Character": "Donald",
         "Line": "Wow!"
       },
       {
-        "Order": 21,
+        "Order": 2,
         "Character": "Goofy",
         "Line": "Wow!"
       },
       {
-        "Order": 22,
+        "Order": 3,
         "Character": "Kairi",
         "Line": "Riku!"
       },
       {
-        "Order": 23,
+        "Order": 4,
         "Character": "Mickey",
         "Line": "Ansem did say \"anything could happen\"..."
       },
       {
-        "Order": 24,
+        "Order": 5,
         "Character": "Sora",
         "Line": "Riku, you gonna take that off?"
       },
       {
-        "Order": 25,
+        "Order": 6,
         "Character": "Riku",
         "Line": "Oh..."
       },
       {
-        "Order": 26,
+        "Order": 7,
         "Character": "Sora",
         "Line": "What was that?"
       },
       {
-        "Order": 27,
+        "Order": 8,
         "Character": "Mickey",
         "Line": "His eyes couldn't lie."
       },
       {
-        "Order": 28,
+        "Order": 9,
         "Character": "Sora",
         "Line": "Lie? And just who were you trying to fool? Huh? Huhhh?"
       },
       {
-        "Order": 29,
+        "Order": 10,
         "Character": "Riku",
         "Line": "Myself."
       },
       {
-        "Order": 30,
+        "Order": 11,
         "Character": "Sora",
         "Line": "Riku... C'mon, man! Why did you try to do so much on your own? You got friends... like us!"
       },
       {
-        "Order": 31,
+        "Order": 12,
         "Character": "Riku",
         "Line": "Have you forgotten? I'll tell you why. 'Cause I'm not a total sap like you."
       },
       {
-        "Order": 32,
+        "Order": 13,
         "Character": "Sora",
         "Line": "Say that again!"
       },
       {
-        "Order": 33,
+        "Order": 14,
         "Character": "Donald",
         "Line": "Uhhhh-oh!"
       },
       {
-        "Order": 34,
+        "Order": 15,
         "Character": "Sora",
         "Line": "What should we do, Riku?"
       },
       {
-        "Order": 35,
+        "Order": 16,
         "Character": "Riku",
         "Line": "We must defeat Xemnas. He's the Organization's last survivor."
       },
       {
-        "Order": 36,
+        "Order": 17,
         "Character": "Sora",
         "Line": "Right!"
       },
       {
-        "Order": 37,
+        "Order": 18,
         "Character": "Riku",
         "Line": "C'mon!"
       }
