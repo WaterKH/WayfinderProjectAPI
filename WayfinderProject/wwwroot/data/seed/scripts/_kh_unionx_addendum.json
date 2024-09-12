@@ -98,6 +98,43 @@
         "Line": "That's my cue. Gotta go!"
       }
     ],
+    "Revisiting the Dwarfs": [
+      {
+        "Order": 0,
+        "Character": "Chirithy",
+        "Line": "I'll bet the dwarfs are hard at work. I wonder how Snow White's doing. Let's visit the cottage."
+      },
+      {
+        "Order": 1,
+        "Character": "Grumpy",
+        "Line": "Slow down, you fool! Why didn\\'t ya stop him!? Dopey! You forgot your tools!"
+      },
+      {
+        "Order": 2,
+        "Character": "Sleepy",
+        "Line": "*yawn* Time for work, I suppose."
+      },
+      {
+        "Order": 3,
+        "Character": "Bashful",
+        "Line": "Gosh, it's nice to see ya."
+      },
+      {
+        "Order": 4,
+        "Character": "Sneezy",
+        "Line": "Ah, ah, achoo! Sorry, my hay fever\\s awful bad today. But it's awful good to see ya. Achoo!"
+      },
+      {
+        "Order": 5,
+        "Character": "Happy",
+        "Line": "Well, hi there, friend! You're just in time to see us off to work. Have a happy day!"
+      },
+      {
+        "Order": 6,
+        "Character": "Doc",
+        "Line": "Well, what do you know, it's you! The princess is picking flowers by the cottage. Why don't you go say hello?"
+      }
+    ],
     "Reunion: For My Sweet Prince": [
       {
         "Order": 0,

@@ -15600,6 +15600,14 @@
         "Music": [ "Olympus Coliseum" ]
       },
       {
+        "Name": "Revisiting the Dwarfs",
+        "Link": "https://www.youtube.com/watch?v=Hoqlgw21W3M",
+        "Worlds": [ "Dwarf Woodlands" ],
+        "Characters": [ "Player", "Chirithy", "Dopey", "Grumpy", "Sleepy", "Bashful", "Sneezy", "Happy", "Doc" ],
+        "Areas": [ "Mine Entrance", "The Cottage" ],
+        "Music": [ "The Secret Whispers" ]
+      },
+      {
         "Name": "Reunion: For My Sweet Prince",
         "Link": "https://www.youtube.com/watch?v=Mbl-jTaOh24&list=PLYnY5NdwIhRCZ2ZcclhYfL-_IfSdBgjrT&index=19",
         "Worlds": [ "Dwarf Woodlands" ],
@@ -16500,7 +16508,7 @@
         "Link": "https://www.youtube.com/watch?v=GZfexVPLh5U&list=PLPCJnwphQDQfv1TNSbyf9GvwHKPj2d-l5&index=155",
         "Worlds": [ "Daybreak Town" ],
         "Characters": [ "Luxu", "Master of Masters", "Aced", "Ira", "Invi", "Gula", "Ava" ],
-        "Areas": ["Foretellers' Chamber", "Station of Awakening"],
+        "Areas": [ "Foretellers' Chamber", "Station of Awakening" ],
         "Music": [ "Master of Masters", "The Foretellers" ]
       },
       {
