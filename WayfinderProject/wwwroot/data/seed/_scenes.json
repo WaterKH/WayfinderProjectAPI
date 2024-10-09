@@ -11117,7 +11117,7 @@
         "Name": "Where the Heart Goes",
         "Link": "https://www.youtube.com/watch?v=14X6aIJWHfc&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=266",
         "Worlds": [ "Destiny Islands", "Castle Oblivion", "Radiant Garden", "Dark World", "Dive to the Heart" ],
-        "Characters": [ "Young Riku", "Young Sora", "Ventus", "Braig", "Ansem the Wise", "Dilan", "Terra-Xehanort", "Darkside(s)", "Terra", "Eraqus", "Mickey", "Cinderella", "Fairy Godmother", "Jaq", "Prince Charming", "Grand Duke", "Snow White", "The Prince", "Doc", "Happy", "Bashful", "Sleepy", "Sneezy", "Grumpy", "Dopey", "Aurora", "Prince Phillip", "Flora", "Fauna", "Merryweather", "Scrooge McDuck", "Merlin", "Minnie", "Daisy", "Horace", "Chip", "Dale", "Huey", "Dewey", "Louie", "Pluto", "Hercules", "Phil", "Zack", "Stitch", "Peter Pan", "Tinker Bell", "Slightly", "Cubby", "Yen Sid", "Donald", "Goofy", "Young Kairi" ],
+        "Characters": [ "Young Riku", "Young Sora", "Ventus", "Braig", "Ansem the Wise", "Dilan", "Terra-Xehanort", "Darkside(s)", "Aqua", "Terra", "Eraqus", "Mickey", "Cinderella", "Fairy Godmother", "Jaq", "Prince Charming", "Grand Duke", "Snow White", "The Prince", "Doc", "Happy", "Bashful", "Sleepy", "Sneezy", "Grumpy", "Dopey", "Aurora", "Prince Phillip", "Flora", "Fauna", "Merryweather", "Scrooge McDuck", "Merlin", "Minnie", "Daisy", "Horace", "Chip", "Dale", "Huey", "Dewey", "Louie", "Pluto", "Hercules", "Phil", "Zack", "Stitch", "Peter Pan", "Tinker Bell", "Slightly", "Cubby", "Yen Sid", "Donald", "Goofy", "Young Kairi" ],
         "Areas": [ "Main Island", "Chamber of Waking", "Central Square", "Dark World" ],
         "Music": [ "Ventus", "Organization XIII", "Destiny's Union", "Simple and Clean", "Birth by Sleep -A Link to the Future-" ]
       },
@@ -13151,7 +13151,7 @@
       },
       {
         "Name": "Sora Meets Julius",
-        "Link": "",
+        "Link": "https://youtu.be/4H3MSyGRFYU",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Julius" ],
         "Areas": [ "Fountain Plaza" ],
@@ -13159,7 +13159,7 @@
       },
       {
         "Name": "Sora Defeats Julius",
-        "Link": "",
+        "Link": "https://youtu.be/3mITQAPXfFA",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Sora", "Julius" ],
         "Areas": [ "Fountain Plaza" ],
@@ -13167,7 +13167,7 @@
       },
       {
         "Name": "Riku Meets Julius",
-        "Link": "",
+        "Link": "https://youtu.be/g1y7nMcHY8c",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Julius" ],
         "Areas": [ "Fountain Plaza" ],
@@ -13175,7 +13175,7 @@
       },
       {
         "Name": "Riku Defeats Julius",
-        "Link": "",
+        "Link": "https://youtu.be/nY7EMMPElhk",
         "Worlds": [ "Traverse Town" ],
         "Characters": [ "Riku", "Julius" ],
         "Areas": [ "Fountain Plaza" ],

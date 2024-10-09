@@ -263,7 +263,7 @@
         "Line": "Hm?"
       }
     ],
-    "The Mark of Mastery": [
+    "Mark of Mastery": [
       {
         "Order": 0,
         "Character": "Eraqus",
@@ -2212,12 +2212,12 @@
       {
         "Order": 4,
         "Character": "Aqua",
-        "Line": "I think he left to go find you. Do you have any idea why? No..."
+        "Line": "I think he left to go find you. Do you have any idea why?"
       },
       {
         "Order": 5,
         "Character": "Terra",
-        "Line": "Actually... Just before I left, he tried to tell me something. I should've listened to what he had to say."
+        "Line": "No... Actually... Just before I left, he tried to tell me something. I should've listened to what he had to say."
       },
       {
         "Order": 6,
@@ -10856,7 +10856,7 @@
       {
         "Order": 5,
         "Character": "Aqua",
-        "Line": "Ven! Oh, thank goodness. Ven! Ven?"
+        "Line": "Ven! Oh, thank goodness. Ven! You're safe! Ven?"
       },
       {
         "Order": 6,

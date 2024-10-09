@@ -23,7 +23,7 @@
       {
         "Order": 0,
         "Character": "Aqua",
-        "Line": "Could it be? Why is Cinderella's world... here in the darkness? There's no \"time\" in the realm of darkness.I walk... on and on without end. In the realm of light, do days or years pass with each step? I know something has started to go wrong."
+        "Line": "Could it be? Why is Cinderella's world... here in the darkness? There's no \"time\" in the realm of darkness.I walk... on and on without end. In the realm of light, do days or years pass with each step? I know something has started to go wrong. I must hurry."
       }
     ],
     "A Stirring": [
@@ -370,7 +370,7 @@
       {
         "Order": 12,
         "Character": "Aqua",
-        "Line": "First tell me"
+        "Line": "First tell me: how long it's been in the realm of light?"
       },
       {
         "Order": 13,
