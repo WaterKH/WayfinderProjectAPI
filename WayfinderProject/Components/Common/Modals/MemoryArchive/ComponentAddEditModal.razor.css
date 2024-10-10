@@ -1,0 +1,94 @@
+.wayfinder-search {
+    text-align: center;
+    width: 100%;
+}
+
+.wayfinder-search-icon {
+    left: 40px;
+    top: 7px;
+    position: relative;
+    color: #536fe9;
+}
+
+.wayfinder-search-button {
+    padding: 5px 30px;
+    right: 115px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    font-size: small;
+}
+
+    .wayfinder-search-button:focus {
+        outline: none;
+        border: none;
+    }
+
+.custom-input {
+    padding: 10px 100px 10px 40px;
+    margin: 15px 0px;
+    border-radius: 50px;
+    text-align: left;
+    height: auto;
+    border: 2px solid #2888ff;
+    overflow-wrap: break-word;
+}
+
+    .custom-input:focus {
+        outline: none;
+        border: 2px solid #2888ff;
+    }
+
+.character-option {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 10px;
+    width: fit-content;
+    border: 1px solid #cccccc;
+    padding: 5px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: background-color linear .3s;
+}
+
+    .character-option:hover {
+        background-color: #c5e1fc;
+    }
+
+.character-option-selected {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 10px;
+    width: fit-content;
+    border: 1px solid #2e88fb;
+    padding: 5px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #d0edff;
+    transition: background-color linear .3s;
+}
+
+    .character-option-selected:hover {
+        background-color: #c5e1fc;
+    }
+
+.a {
+    color: #1a00ff;
+}
+
+.share {
+    cursor: pointer;
+    color: #4d84ff;
+    font-size: larger;
+    float: right;
+}
+
+.share-text {
+    cursor: pointer;
+    text-decoration: underline;
+}

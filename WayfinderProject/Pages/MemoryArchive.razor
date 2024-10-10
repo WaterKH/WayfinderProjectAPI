@@ -219,9 +219,10 @@
 
         @if (this.IsAdmin())
         {
-            <div class="row">
+            <div class="row" style="margin: 10px;">
                 <button class="wayfinder-search-button" @onclick="@(() => OpenSceneAdminModal())" @onclick:stopPropagation @onclick:preventDefault style="font-size: larger; right: 0px;">Add Scene</button>
-        </div>
+                <button class="wayfinder-search-button" @onclick="@(() => OpenComponentAdminModal())" @onclick:stopPropagation @onclick:preventDefault style="font-size: larger; right: 0px; margin-top: 10px;">Add Game, World, Area, Character or Music</button>
+            </div>
         }
     }
     else if (this.CurrentCategory == "Interactions")
@@ -3173,6 +3174,22 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var options = new ModalOptions { Class = "modal-custom" };
 
             var temp = Modal.Show<SceneAddEditModal>($"Admin Scene - {scene?.Id}", parameters, options);
+            await temp.Result;
+        }
+    }
+
+    public async Task OpenComponentAdminModal()
+    {
+        if (this.api != null && !this.Loading)
+        {
+            var parameters = new ModalParameters();
+
+            parameters.Add("User", this.user ?? new());
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            var temp = Modal.Show<ComponentAddEditModal>($"Admin Components", parameters, options);
             await temp.Result;
         }
     }

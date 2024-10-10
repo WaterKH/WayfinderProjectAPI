@@ -57,6 +57,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Components\Common\Modals\MemoryArchive\ComponentAddEditModal.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="wwwroot\data\seed\ma\interactions\_khrecom_interactions.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

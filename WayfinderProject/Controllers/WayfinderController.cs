@@ -275,6 +275,12 @@ namespace WayfinderProjectAPI.Controllers
                 return;
             }
 
+            // We don'twant to add an existing scene name
+            if (_context.Scenes.AsNoTrackingWithIdentityResolution().Any(x => x.Name == sceneName))
+            {
+                return;
+            }
+
             bool isAddingNewScene = false;
 
             var scene = _context.Scenes.Include(x => x.Worlds).Include(x => x.Characters).Include(x => x.Areas).Include(x => x.Music).FirstOrDefault(x => x.Id == sceneId);
@@ -415,6 +421,132 @@ namespace WayfinderProjectAPI.Controllers
 
                 _context.SaveChanges();
             }
+        }
+
+        [HttpPost("AddGame")]
+        public void AddGame([FromQuery] string? accountId, [FromQuery] string? gameName = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            // We don'twant to add an existing scene name
+            if (string.IsNullOrEmpty(gameName) || _context.Games.AsNoTrackingWithIdentityResolution().Any(x => x.Name == gameName))
+            {
+                return;
+            }
+
+            Game game = new Game
+            {
+                Name = gameName
+            };
+
+            _context.Add(game);
+
+            _context.SaveChanges();
+        }
+
+        [HttpPost("AddWorld")]
+        public void AddWorld([FromQuery] string? accountId, [FromQuery] string? worldName = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            // We don'twant to add an existing scene name
+            if (string.IsNullOrEmpty(worldName) || _context.Worlds.AsNoTrackingWithIdentityResolution().Any(x => x.Name == worldName))
+            {
+                return;
+            }
+
+            World world = new World
+            {
+                Name = worldName
+            };
+
+            _context.Add(world);
+
+            _context.SaveChanges();
+        }
+
+        [HttpPost("AddArea")]
+        public void AddArea([FromQuery] string? accountId, [FromQuery] string? areaName = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            // We don'twant to add an existing scene name
+            if (string.IsNullOrEmpty(areaName) || _context.Areas.AsNoTrackingWithIdentityResolution().Any(x => x.Name == areaName))
+            {
+                return;
+            }
+
+            Area area = new Area
+            {
+                Name = areaName
+            };
+
+            _context.Add(area);
+
+            _context.SaveChanges();
+        }
+
+        [HttpPost("AddCharacter")]
+        public void AddCharacter([FromQuery] string? accountId, [FromQuery] string? characterName = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            // We don'twant to add an existing scene name
+            if (string.IsNullOrEmpty(characterName) || _context.Characters.AsNoTrackingWithIdentityResolution().Any(x => x.Name == characterName))
+            {
+                return;
+            }
+
+            Character character = new Character
+            {
+                Name = characterName
+            };
+
+            _context.Add(character);
+
+            _context.SaveChanges();
+        }
+
+        [HttpPost("AddMusic")]
+        public void AddMusic([FromQuery] string? accountId, [FromQuery] string? musicName = null, [FromQuery] string? musicLink = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            // We don'twant to add an existing scene name
+            if (string.IsNullOrEmpty(musicName) || _context.Music.AsNoTrackingWithIdentityResolution().Any(x => x.Name == musicName))
+            {
+                return;
+            }
+
+            Music music = new Music
+            {
+                Name = musicName,
+                Link = musicLink
+            };
+
+            _context.Add(music);
+
+            _context.SaveChanges();
         }
 
         [HttpGet("GetInteractions")]

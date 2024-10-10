@@ -1,0 +1,172 @@
+﻿@using Microsoft.EntityFrameworkCore
+@using WayfinderProjectAPI.Controllers
+@using WayfinderProjectAPI.Data
+@using WayfinderProjectAPI.Data.DTOs
+
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-12">
+            <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                <div class="row" style="height: 281px;">
+                    <div class="col-md-12">
+
+                        <div class="col-md-3">
+                            <div class="wayfinder-search" style="text-align: center;">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.GameName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.GameName" placeholder="Enter a Game Name..." style="width: 50%;">
+                                <button onclick="@(() => SaveGame())" class="active-wayfinder-button" style="margin-left: 15px;">Save Game</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="wayfinder-search" style="text-align: center;">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.WorldName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.WorldName" placeholder="Enter a World Name..." style="width: 50%;">
+                                <button onclick="@(() => SaveWorld())" class="active-wayfinder-button" style="margin-left: 15px;">Save World</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="wayfinder-search" style="text-align: center;">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.AreaName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.AreaName" placeholder="Enter a Area Name..." style="width: 50%;">
+                                <button onclick="@(() => SaveArea())" class="active-wayfinder-button" style="margin-left: 15px;">Save Area</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="wayfinder-search" style="text-align: center;">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.CharacterName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.CharacterName" placeholder="Enter a Character Name..." style="width: 50%;">
+                                <button onclick="@(() => SaveCharacter())" class="active-wayfinder-button" style="margin-left: 15px;">Save Character</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="wayfinder-search" style="text-align: center;">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.MusicName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.MusicName" placeholder="Enter a Music Name..." style="width: 50%;">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.MusicLink = e?.Value?.ToString() ?? string.Empty;  })" value="@this.MusicLink" placeholder="Enter a Music Link..." style="width: 50%;">
+                                <button onclick="@(() => SaveMusic())" class="active-wayfinder-button" style="margin-left: 15px;">Save Music</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+<style>
+.advanced-search-box {
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+
+.clickable {
+    float: right;
+    font-size: 1rem;
+    color: #3e79a7;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.active-wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+}
+
+    .active-wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
+</style>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public WayfinderController? API { get; set; }
+    [Parameter] public WayfinderProjectUser? User { get; set; }
+
+    public bool Loading { get; set; }
+
+    #region Component Variables
+    public string GameName { get; set; } = "";
+    public string WorldName { get; set; } = "";
+    public string AreaName { get; set; } = "";
+    public string CharacterName { get; set; } = "";
+    public string MusicName { get; set; } = "";
+    public string MusicLink { get; set; } = "";
+    #endregion Component Variables
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+
+    private void SaveGame()
+    {
+        // TODO Remove this after we add in the pagination limiter?
+        if (!string.IsNullOrEmpty(this.GameName) && this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
+        {
+            this.API.AddGame(accountId: this.User.Id, gameName: this.GameName);
+        }
+
+        this.GameName = string.Empty;
+    }
+
+    private void SaveWorld()
+    {
+        // TODO Remove this after we add in the pagination limiter?
+        if (!string.IsNullOrEmpty(this.WorldName) && this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
+        {
+            this.API.AddWorld(accountId: this.User.Id, worldName: this.WorldName);
+        }
+
+        this.WorldName = string.Empty;
+    }
+
+    private void SaveArea()
+    {
+        // TODO Remove this after we add in the pagination limiter?
+        if (!string.IsNullOrEmpty(this.AreaName) && this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
+        {
+            this.API.AddArea(accountId: this.User.Id, areaName: this.AreaName);
+        }
+
+        this.AreaName = string.Empty;
+    }
+
+    private void SaveCharacter()
+    {
+        // TODO Remove this after we add in the pagination limiter?
+        if (!string.IsNullOrEmpty(this.CharacterName) && this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
+        {
+            this.API.AddCharacter(accountId: this.User.Id, characterName: this.CharacterName);
+        }
+
+        this.CharacterName = string.Empty;
+    }
+
+    private void SaveMusic()
+    {
+        // TODO Remove this after we add in the pagination limiter?
+        if (!string.IsNullOrEmpty(this.MusicName) && !string.IsNullOrEmpty(this.MusicLink) && this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
+        {
+            this.API.AddMusic(accountId: this.User.Id, musicName: this.MusicName, musicLink: this.MusicLink);
+        }
+
+        this.MusicName = string.Empty;
+        this.MusicLink = string.Empty;
+    }
+}
