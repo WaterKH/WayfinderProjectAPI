@@ -412,6 +412,8 @@ namespace WayfinderProjectAPI.Controllers
             if (isAddingNewScene)
             {
                 _context.Add(scene);
+
+                _context.SaveChanges();
             }
         }
 
