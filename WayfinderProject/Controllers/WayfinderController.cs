@@ -267,7 +267,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("AddScene")]
-        public void AddScene([FromQuery] string? accountId, [FromQuery] string? sceneName = null, [FromQuery] string? sceneLink = null, [FromQuery] string? gameName = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? script = null)
+        public void AddScene([FromQuery] string? accountId, [FromQuery] int? sceneId = null, [FromQuery] string? sceneName = null, [FromQuery] string? sceneLink = null, [FromQuery] string? gameName = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? script = null)
         {
             var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
             if (user == null || !Extensions.IsAdmin(user))
@@ -275,11 +275,15 @@ namespace WayfinderProjectAPI.Controllers
                 return;
             }
 
-            var scene = _context.Scenes.Include(x => x.Worlds).Include(x => x.Characters).Include(x => x.Areas).Include(x => x.Music).FirstOrDefault(x => x.Name == sceneName && x.Game.Name == gameName);
+            bool isAddingNewScene = false;
+
+            var scene = _context.Scenes.Include(x => x.Worlds).Include(x => x.Characters).Include(x => x.Areas).Include(x => x.Music).FirstOrDefault(x => x.Id == sceneId);
 
             if (scene == null)
             {
                 scene = new Scene();
+
+                isAddingNewScene = true;
             }
 
             scene.Name = sceneName ?? "ERRORED SCENE NAME";
@@ -403,6 +407,11 @@ namespace WayfinderProjectAPI.Controllers
                 scene.Script = sceneScript;
 
                 _context.SaveChanges();
+            }
+
+            if (isAddingNewScene)
+            {
+                _context.Add(scene);
             }
         }
 

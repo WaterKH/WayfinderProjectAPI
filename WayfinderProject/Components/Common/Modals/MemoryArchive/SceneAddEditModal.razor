@@ -366,6 +366,7 @@
 
     private void Save()
     {
+        var sceneId = this.Scene?.Id;
         var games = string.Join("::", this.SceneGamesSelected) != "" ? string.Join("::", this.SceneGamesSelected.Distinct()) : null;
         //var scenes = string.Join("::", this.ScenesSelected) != "" ? string.Join("::", this.ScenesSelected.Distinct()) : null;
         var worlds = string.Join("::", this.SceneWorldsSelected) != "" ? string.Join("::", this.SceneWorldsSelected.Distinct()) : null;
@@ -378,7 +379,7 @@
         // TODO Remove this after we add in the pagination limiter?
         if (this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
         {
-            this.API.AddScene(accountId: this.User.Id, gameName: games, sceneName: this.SceneName, sceneLink: this.SceneLink, worlds: worlds, areas: areas, characters: characters, music: music, script: script);
+            this.API.AddScene(accountId: this.User.Id, gameName: games, sceneId: sceneId, sceneName: this.SceneName, sceneLink: this.SceneLink, worlds: worlds, areas: areas, characters: characters, music: music, script: script);
         }
 
         BlazoredModal.CloseAsync();
