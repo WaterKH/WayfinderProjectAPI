@@ -10,42 +10,41 @@
         <div class="col-md-12">
             <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
                 <div class="row" style="height: 281px;">
-                    <div class="col-md-12">
-
-                        <div class="col-md-3">
-                            <div class="wayfinder-search" style="text-align: center;">
-                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.GameName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.GameName" placeholder="Enter a Game Name..." style="width: 50%;">
-                                <button onclick="@(() => SaveGame())" class="active-wayfinder-button" style="margin-left: 15px;">Save Game</button>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="wayfinder-search" style="text-align: center;">
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.GameName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.GameName" placeholder="Enter a Game Name..." style="">
+                            <button onclick="@(() => SaveGame())" class="active-wayfinder-button" style="margin-left: 15px;">Save Game</button>
                         </div>
+                    </div>
 
-                        <div class="col-md-3">
-                            <div class="wayfinder-search" style="text-align: center;">
-                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.WorldName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.WorldName" placeholder="Enter a World Name..." style="width: 50%;">
-                                <button onclick="@(() => SaveWorld())" class="active-wayfinder-button" style="margin-left: 15px;">Save World</button>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="wayfinder-search" style="text-align: center;">
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.WorldName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.WorldName" placeholder="Enter a World Name..." style="">
+                            <button onclick="@(() => SaveWorld())" class="active-wayfinder-button" style="margin-left: 15px;">Save World</button>
                         </div>
+                    </div>
 
-                        <div class="col-md-3">
-                            <div class="wayfinder-search" style="text-align: center;">
-                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.AreaName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.AreaName" placeholder="Enter a Area Name..." style="width: 50%;">
-                                <button onclick="@(() => SaveArea())" class="active-wayfinder-button" style="margin-left: 15px;">Save Area</button>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="wayfinder-search" style="text-align: center;">
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.AreaName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.AreaName" placeholder="Enter a Area Name..." style="">
+                            <button onclick="@(() => SaveArea())" class="active-wayfinder-button" style="margin-left: 15px;">Save Area</button>
                         </div>
+                    </div>
 
-                        <div class="col-md-3">
-                            <div class="wayfinder-search" style="text-align: center;">
-                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.CharacterName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.CharacterName" placeholder="Enter a Character Name..." style="width: 50%;">
-                                <button onclick="@(() => SaveCharacter())" class="active-wayfinder-button" style="margin-left: 15px;">Save Character</button>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="wayfinder-search" style="text-align: center;">
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.CharacterName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.CharacterName" placeholder="Enter a Character Name..." style="">
+                            <button onclick="@(() => SaveCharacter())" class="active-wayfinder-button" style="margin-left: 15px;">Save Character</button>
                         </div>
+                    </div>
 
-                        <div class="col-md-3">
-                            <div class="wayfinder-search" style="text-align: center;">
-                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.MusicName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.MusicName" placeholder="Enter a Music Name..." style="width: 50%;">
-                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.MusicLink = e?.Value?.ToString() ?? string.Empty;  })" value="@this.MusicLink" placeholder="Enter a Music Link..." style="width: 50%;">
-                                <button onclick="@(() => SaveMusic())" class="active-wayfinder-button" style="margin-left: 15px;">Save Music</button>
-                            </div>
+                    <br />
+
+                    <div class="col-md-3">
+                        <div class="wayfinder-search" style="text-align: center;">
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.MusicName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.MusicName" placeholder="Enter a Music Name..." style="">
+                            <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.MusicLink = e?.Value?.ToString() ?? string.Empty;  })" value="@this.MusicLink" placeholder="Enter a Music Link..." style="">
+                            <button onclick="@(() => SaveMusic())" class="active-wayfinder-button" style="margin-left: 15px;">Save Music</button>
                         </div>
                     </div>
                 </div>
