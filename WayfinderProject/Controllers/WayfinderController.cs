@@ -2550,6 +2550,7 @@ namespace WayfinderProjectAPI.Controllers
                     Username = connectionDetails.Username,
                     HideState = "N\\A",
                     WorldName = "N\\A",
+                    LevelName = "N\\A",
                     Position = "N\\A",
                     Points = -1
                 });
