@@ -3203,7 +3203,7 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
 
             var options = new ModalOptions { Class = "modal-custom" };
 
-            var temp = Modal.Show<SceneAddEditModal>($"Admin Interaction - {interaction?.Id}", parameters, options);
+            var temp = Modal.Show<InteractionAddEditModal>($"Admin Interaction - {interaction?.Id}", parameters, options);
             await temp.Result;
         }
     }
