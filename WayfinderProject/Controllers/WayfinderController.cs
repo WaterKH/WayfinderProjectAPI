@@ -2510,7 +2510,7 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Hide And Seek Methods
         [HttpPost("HSConnect")]
-        public async Task<ConnectionResponse> HideSeekConnect(string connectionPayload)
+        public async Task<ConnectionResponse> HideSeekConnect([FromBody] string connectionPayload)
         {
             HideAndSeekData connectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(connectionPayload);
 
@@ -2594,7 +2594,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSDisconnect")]
-        public async Task<ConnectionResponse> HideSeekDisconnect(string disconnectionPayload)
+        public async Task<ConnectionResponse> HideSeekDisconnect([FromBody] string disconnectionPayload)
         {
             HideAndSeekData disconnectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(disconnectionPayload);
 
@@ -2640,7 +2640,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSFetchServerData")]
-        public async Task<ConnectionResponse> FetchServerData(string payload)
+        public async Task<ConnectionResponse> FetchServerData([FromBody] string payload)
         {
             HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(payload);
 
@@ -2685,7 +2685,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSUpdateSeeker")]
-        public async Task<ConnectionResponse> UpdateSeeker(string seekerPayload)
+        public async Task<ConnectionResponse> UpdateSeeker([FromBody] string seekerPayload)
         {
             HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(seekerPayload);
 
@@ -2733,7 +2733,7 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSUpdateHider")]
-        public async Task<ConnectionResponse> UpdateHider(string hiderPayload)
+        public async Task<ConnectionResponse> UpdateHider([FromBody] string hiderPayload)
         {
             HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(hiderPayload);
 
