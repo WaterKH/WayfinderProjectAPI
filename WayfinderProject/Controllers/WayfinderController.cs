@@ -794,6 +794,163 @@ namespace WayfinderProjectAPI.Controllers
             return results;
         }
 
+        [HttpPost("AddInteraction")]
+        public void AddInteraction([FromQuery] string? accountId, [FromQuery] int? interactionId = null, [FromQuery] string? interactionName = null, [FromQuery] string? interactionLink = null, [FromQuery] string? gameName = null, [FromQuery] string? worlds = null, [FromQuery] string? characters = null, [FromQuery] string? areas = null, [FromQuery] string? music = null, [FromQuery] string? script = null)
+        {
+            var user = _context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == accountId);
+            if (user == null || !Extensions.IsAdmin(user))
+            {
+                return;
+            }
+
+            // We don'twant to add an existing interaction name
+            if (_context.Interactions.AsNoTrackingWithIdentityResolution().Any(x => x.Name == interactionName))
+            {
+                return;
+            }
+
+            bool isAddingNewInteraction = false;
+
+            var interaction = _context.Interactions.Include(x => x.Worlds).Include(x => x.Characters).Include(x => x.Areas).Include(x => x.Music).FirstOrDefault(x => x.Id == interactionId);
+
+            if (interaction == null)
+            {
+                interaction = new Interaction();
+
+                isAddingNewInteraction = true;
+            }
+
+            interaction.Name = interactionName ?? "ERRORED INTERACTION NAME";
+            interaction.Game = _context.Games.FirstOrDefault(x => x.Name == gameName);
+            interaction.Link = interactionLink;
+
+            if (worlds != null)
+            {
+                interaction.Worlds?.Clear();
+                _context.SaveChanges();
+
+                var splitWorlds = worlds.Split("::");
+
+                interaction.Worlds = _context.Worlds.Where(x => splitWorlds.Contains(x.Name)).ToList();
+            }
+
+            if (characters != null)
+            {
+                interaction.Characters?.Clear();
+                _context.SaveChanges();
+
+                var splitCharacters = characters.Split("::");
+
+                interaction.Characters = _context.Characters.Where(x => splitCharacters.Contains(x.Name)).ToList();
+            }
+
+            if (areas != null)
+            {
+                interaction.Areas?.Clear();
+                _context.SaveChanges();
+
+                var splitAreas = areas.Split("::");
+
+                interaction.Areas = _context.Areas.Where(x => splitAreas.Contains(x.Name)).ToList();
+            }
+
+            if (music != null)
+            {
+                interaction.Music?.Clear();
+                _context.SaveChanges();
+
+                var splitMusic = music.Split("::");
+
+                interaction.Music = _context.Music.Where(x => splitMusic.Contains(x.Name)).ToList();
+            }
+
+            _context.SaveChanges();
+
+            // Update Script
+            if (script != null)
+            {
+                var splitScript = script.Split("::");
+                var interactionScript = _context.Script.FirstOrDefault(x => x.SceneName == interaction.Name && x.GameName == interaction.Game.Name);
+
+                if (interactionScript == null)
+                {
+                    if (splitScript.Length == 1 && splitScript[0] == "None: None")
+                    {
+                        interaction.Script = _context.Script.FirstOrDefault(x => x.Id == 1); // None
+
+                        _context.SaveChanges();
+
+                        return;
+                    }
+
+                    interactionScript = new Script
+                    {
+                        SceneName = interaction.Name,
+                        GameName = interaction.Game.Name,
+                        Lines = new List<ScriptLine>()
+                    };
+
+                    _context.Add(interactionScript);
+                    _context.SaveChanges();
+
+                    interactionScript = _context.Script.First(x => x.SceneName == interaction.Name && x.GameName == interaction.Game.Name);
+                }
+                else
+                {
+                    interactionScript.Lines = new List<ScriptLine>();
+                }
+
+                // Remove previous line in this position
+                var tempScriptLines = _context.ScriptLine.Where(x => x.Script.Id == interactionScript.Id);
+
+                if (tempScriptLines != null)
+                {
+                    _context.RemoveRange(tempScriptLines);
+                    _context.SaveChanges();
+                }
+
+                for (int i = 0; i < splitScript.Length; ++i)
+                {
+                    var subSplitScript = splitScript[i].Split(": ");
+
+                    if (subSplitScript.Length < 2) continue;
+
+                    //var scriptLine = _context.ScriptLine.FirstOrDefault(x => x.Script.Id == interactionScript.Id && x.Character == subSplitScript[0] && x.Line == subSplitScript[1]);
+
+                    //if (scriptLine == null)
+                    //{
+                    var scriptLine = new ScriptLine
+                    {
+                        Order = i,
+                        Character = subSplitScript[0],
+                        Line = subSplitScript[1]
+                    };
+
+                    interactionScript.Lines.Add(scriptLine);
+                    //}
+                    //else
+                    //{
+                    //scriptLine.Order = i;
+                    //scriptLine.Character = subSplitScript[0];
+                    //scriptLine.Line = subSplitScript[1];
+
+                    //interactionScript.Lines.Add(scriptLine);
+                    //}
+                }
+
+                interaction.Script = interactionScript;
+
+                _context.SaveChanges();
+            }
+
+            if (isAddingNewInteraction)
+            {
+                _context.Add(interaction);
+
+                _context.SaveChanges();
+            }
+        }
+
         [HttpGet("GetScript")]
         public async Task<ScriptDto> GetScript([FromQuery] string gameName, [FromQuery] string sceneName)
         {

@@ -1,0 +1,485 @@
+﻿@using Microsoft.EntityFrameworkCore
+@using WayfinderProjectAPI.Controllers
+@using WayfinderProjectAPI.Data
+@using WayfinderProjectAPI.Data.DTOs
+
+@inject WayfinderProjectAPI.Data.WayfinderContext context
+
+<div class="simple-form clear-modal">
+    <div class="row">
+        <div class="col-md-12">
+            <SubNavBar Options="@(new List<string> { "Details", "Dialogue" })" UpdateCurrentOption="@(async (string option) => await UpdateCurrentSubOption(option))" StartingOption="@this.CurrentSubOption" CustomStyle="margin-top: -15px;" InvertBackgroundColor="true" />
+
+            @if (this.CurrentSubOption == "Details")
+            {
+                <div style="height: 523px; margin-top: 10px; border-radius: 25px; background-color: #ffffff; padding: 25px; overflow-y: scroll;">
+                    <div class="row" style="height: 281px;">
+                        
+                        <div class="col-md-12">
+                            <div class="wayfinder-search">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.InteractionName = e?.Value?.ToString() ?? string.Empty;  })" value="@this.InteractionName" placeholder="Enter a Interaction Name..." style="width: 50%;">
+                            </div>
+
+                            <div class="wayfinder-search">
+                                <input id="main-search" name="main-search" class="custom-input" onchange="@(async (ChangeEventArgs e) => { this.InteractionLink = e?.Value?.ToString() ?? string.Empty;  })" value="@this.InteractionLink" placeholder="Enter a Interaction Link..." style="width: 55%;">
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="InteractionGamesSearch" Id="Games" Placeholder="Start Typing for Games..." Color="#cdd1ff" Initial="this.InteractionGames" Selected="this.InteractionGamesSelected" Available="this.InteractionGamesAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.InteractionGamesSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Games", true, "Games", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="InteractionWorldsSearch" Id="Worlds" Placeholder="Start Typing for Worlds..." Color="#ea4a4a" Initial="this.InteractionWorlds" Selected="this.InteractionWorldsSelected" Available="this.InteractionWorldsAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.InteractionWorldsSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Worlds", true, "Worlds", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="InteractionAreasSearch" Id="Areas" Placeholder="Start Typing for Areas..." Color="#5499fc" Initial="this.InteractionAreas" Selected="this.InteractionAreasSelected" Available="this.InteractionAreasAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.InteractionAreasSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Areas", true, "Areas", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="InteractionCharactersSearch" Id="Characters" Placeholder="Start Typing for Characters..." Color="#f3b222" Initial="this.InteractionCharacters" Selected="this.InteractionCharactersSelected" Available="this.InteractionCharactersAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.InteractionCharactersSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Characters", true, "Characters", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="advanced-search-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <SearchComponent @ref="InteractionMusicSearch" Id="Music" Placeholder="Start Typing for Music..." Color="#a13bfb" Initial="this.InteractionMusic" Selected="this.InteractionMusicSelected" Available="this.InteractionMusicAvailable"
+                                                         CanSearch="true" CanShowClearAll="@(this.InteractionMusicSelected.Count > 0)" AllowAllSearch="true" InternallyHandleSearch="true"
+                                                         UpdateSearchAlt="@(async (List<string> available) => await Search("Music", true, "Music", available))" ClearAllMethod="@(async (clearString) => await ClearAllOptions(clearString))" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (this.CurrentSubOption == "Dialogue")
+            {
+
+                <div style="border-radius: 25px; background-color: #ffffff; padding: 15px; height: 410px; overflow-y: auto; margin-top: 10px;">
+                    <div class="row">
+                        @foreach (var line in this.dialogue)
+                        {
+                            <div class="col-md-4">
+                                <input class="custom-input" onchange="@(async (ChangeEventArgs e) => { line.Character = e?.Value?.ToString() ?? string.Empty;  })" value="@line.Character" placeholder="Enter Character Name...">
+                            </div>
+
+                            <div class="col-md-7">
+                                <input class="custom-input" onchange="@(async (ChangeEventArgs e) => { line.Line = e?.Value?.ToString() ?? string.Empty;  })" value="@line.Line" placeholder="Enter Line..." style="width: 100%;">
+                            </div>
+
+                            <div class="col-md-1">
+                                <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => this.DeleteLine(line.Id))">
+                                    <span class="oi oi-minus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+                                </div>
+                            </div>
+                        }
+
+                        <div class="col-md-4">
+                        </div>
+
+                        <div class="col-md-7">
+                        </div>
+
+                        <div class="col-md-1">
+                            <div class="clickable" style="border-radius: 100px; background-color: #f4f5fd; border: solid 2px #5499fc; width: 30px; height: 30px; padding: 2px 6px 15px 15px;" @onclick="@(() => this.AddLine())">
+                                <span class="oi oi-plus mr-1 clickable" style="color: #5499fc; font-size: small;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <hr />
+
+    <button onclick="@(() => Save())" class="active-wayfinder-button" style="margin-left: 15px;">Save Interaction</button>
+    <button onclick="@(async () => await BlazoredModal.CancelAsync())" class="btn cancel-button" style="margin-left: 15px;">Close</button>
+</div>
+
+<style>
+.advanced-search-box {
+    margin-top: 10px;
+    padding: 0px 15px 15px 25px;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+
+.clickable {
+    float: right;
+    font-size: 1rem;
+    color: #3e79a7;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.active-wayfinder-button {
+    padding: 5px 30px;
+    position: relative;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #155ed9, #2787fd);
+    text-align: center;
+}
+
+    .active-wayfinder-button:focus {
+        outline: none;
+        border: none;
+    }
+</style>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public InteractionDto Interaction { get; set; } = default!;
+    [Parameter] public WayfinderController? API { get; set; }
+    [Parameter] public WayfinderProjectUser? User { get; set; }
+
+    public string CurrentOption { get; set; } = string.Empty;
+    public string CurrentSubOption { get; set; } = "Details";
+
+    public bool Loading { get; set; }
+
+    private List<ScriptLineDto> dialogue = new List<ScriptLineDto>();
+
+    #region Interaction Variables
+    public string InteractionName { get; set; } = "";
+    public string InteractionLink { get; set; } = "";
+    //private List<InteractionDto> InteractionDtos = new List<InteractionDto>();
+
+    public List<string> InteractionAreas { get; set; } = new List<string>();
+    public List<string> InteractionCharacters { get; set; } = new List<string>();
+    public List<string> InteractionGames { get; set; } = new List<string>();
+    public List<string> InteractionMusic { get; set; } = new List<string>();
+    //public List<string> Interactions { get; set; } = new List<string>();
+    public List<string> InteractionWorlds { get; set; } = new List<string>();
+
+
+    #region Scecne Search Variables
+    private SearchComponent? InteractionAreasSearch;
+    private List<string> InteractionAreasSelected = new List<string>();
+    private List<string> InteractionAreasAvailable = new List<string>();
+
+    private SearchComponent? InteractionCharactersSearch;
+    private List<string> InteractionCharactersSelected = new List<string>();
+    private List<string> InteractionCharactersAvailable = new List<string>();
+
+    private SearchComponent? InteractionGamesSearch;
+    private List<string> InteractionGamesSelected = new List<string>();
+    private List<string> InteractionGamesAvailable = new List<string>();
+
+    private SearchComponent? InteractionMusicSearch;
+    private List<string> InteractionMusicSelected = new List<string>();
+    private List<string> InteractionMusicAvailable = new List<string>();
+
+    //private SearchComponent? InteractionsSearch;
+    //private List<string> InteractionsSelected = new List<string>();
+    //private List<string> InteractionsAvailable = new List<string>();
+
+    private SearchComponent? InteractionWorldsSearch;
+    private List<string> InteractionWorldsSelected = new List<string>();
+    private List<string> InteractionWorldsAvailable = new List<string>();
+    #endregion Interaction Search Variables
+
+    #endregion Interaction Variables
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (this.API != null)
+        {
+            await this.ResetOptions();
+
+            if (this.Interaction != null)
+            {
+                this.InteractionName = this.Interaction.Name;
+                this.InteractionLink = this.Interaction.Link;
+                this.InteractionAreasSelected = this.Interaction.Areas.Select(x => x.Name).ToList();
+                this.InteractionCharactersSelected = this.Interaction.Characters.Select(x => x.Name).ToList();
+                this.InteractionGamesSelected = new List<string> { this.Interaction.Game.Name };
+                this.InteractionMusicSelected = this.Interaction.Music.Select(x => x.Name).ToList();
+                this.InteractionWorldsSelected = this.Interaction.Worlds.Select(x => x.Name).ToList();
+
+                this.Interaction.Script = await this.API.GetScript(Interaction.Game.Name, Interaction.Name);
+
+                this.dialogue = this.Interaction.Script.Lines.ToList();
+            }
+
+            await this.Search("", false, "", new List<string>());
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    public async Task UpdateCurrentSubOption(string option)
+    {
+        this.CurrentSubOption = option;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    public async Task Search(string currentOption, bool updatedInternally, string category, List<string> available)
+    {
+        this.Loading = true;
+
+        this.CurrentOption = currentOption;
+
+        await InvokeAsync(() => { 
+            this.StateHasChanged(); 
+        });
+
+        if (!updatedInternally)
+        {
+            this.InteractionAreasAvailable = this.InteractionAreas.Except(this.InteractionAreasSelected).Distinct().ToList();
+            this.InteractionCharactersAvailable = this.InteractionCharacters.Except(this.InteractionCharactersSelected).Distinct().ToList();
+            this.InteractionGamesAvailable = this.InteractionGames.Except(this.InteractionGamesSelected).Distinct().ToList();
+            this.InteractionMusicAvailable = this.InteractionMusic.Except(this.InteractionMusicSelected).Distinct().ToList();
+            //this.InteractionsAvailable = this.Interactions.Except(this.InteractionsSelected).Distinct().ToList();
+            this.InteractionWorldsAvailable = this.InteractionWorlds.Except(this.InteractionWorldsSelected).Distinct().ToList();
+
+
+            this.InteractionAreasAvailable.Sort();
+            this.InteractionCharactersAvailable.Sort();
+            this.InteractionMusicAvailable.Sort();
+            //this.InteractionsAvailable.Sort();
+            this.InteractionWorldsAvailable.Sort();
+        }
+        else
+        {
+            if (category == "Games")
+                this.InteractionGamesAvailable = available;
+            else if (category == "Areas")
+                this.InteractionAreasAvailable = available;
+            else if (category == "Characters")
+                this.InteractionCharactersAvailable = available;
+            else if (category == "Music")
+                this.InteractionMusicAvailable = available;
+            else if (category == "Worlds")
+                this.InteractionWorldsAvailable = available;
+
+            this.InteractionAreasAvailable.Sort();
+            this.InteractionCharactersAvailable.Sort();
+            this.InteractionMusicAvailable.Sort();
+            //this.InteractionsAvailable.Sort();
+            this.InteractionWorldsAvailable.Sort();
+        }
+
+        this.Loading = false;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    private async Task ResetOptions()
+    {
+        this.Loading = true;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+
+        this.InteractionAreas = await context.Areas.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        this.InteractionCharacters = await context.Characters.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        this.InteractionGames = (await context.Games.AsNoTracking().OrderBy(x => x.Order).ToListAsync()).Select(x => x.Name).Distinct().ToList();
+        this.InteractionMusic = await context.Music.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        //this.Interactions = await context.Interactions.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+        this.InteractionWorlds = await context.Worlds.AsNoTracking().Select(x => x.Name).Distinct().ToListAsync();
+
+        this.InteractionAreasAvailable = this.InteractionAreas;
+        this.InteractionCharactersAvailable = this.InteractionCharacters;
+        this.InteractionGamesAvailable = this.InteractionGames;
+        this.InteractionMusicAvailable = this.InteractionMusic;
+        //this.InteractionsAvailable = this.Interactions;
+        this.InteractionWorldsAvailable = this.InteractionWorlds;
+
+        this.InteractionAreasAvailable.Sort();
+        this.InteractionCharactersAvailable.Sort();
+        this.InteractionMusicAvailable.Sort();
+        //this.InteractionsAvailable.Sort();
+        this.InteractionWorldsAvailable.Sort();
+
+        this.InteractionGamesSelected = new List<string>();
+        //this.InteractionsSelected = new List<string>();
+        this.InteractionWorldsSelected = new List<string>();
+        this.InteractionAreasSelected = new List<string>();
+        this.InteractionCharactersSelected = new List<string>();
+        this.InteractionMusicSelected = new List<string>();
+
+        if (this.InteractionGamesSearch != null)
+            await this.InteractionGamesSearch.SetCurrentView("Available");
+
+        //if (this.InteractionsSearch != null)
+        //    await this.InteractionsSearch.SetCurrentView("Available");
+
+        if (this.InteractionWorldsSearch != null)
+            await this.InteractionWorldsSearch.SetCurrentView("Available");
+
+        if (this.InteractionAreasSearch != null)
+            await this.InteractionAreasSearch.SetCurrentView("Available");
+
+        if (this.InteractionCharactersSearch != null)
+            await this.InteractionCharactersSearch.SetCurrentView("Available");
+
+        if (this.InteractionMusicSearch != null)
+            await this.InteractionMusicSearch.SetCurrentView("Available");
+
+        this.Loading = false;
+
+        await InvokeAsync(() =>
+        {
+            this.StateHasChanged();
+        });
+    }
+
+    private void Save()
+    {
+        var interactionId = this.Interaction?.Id;
+        var games = string.Join("::", this.InteractionGamesSelected) != "" ? string.Join("::", this.InteractionGamesSelected.Distinct()) : null;
+        //var interactions = string.Join("::", this.InteractionsSelected) != "" ? string.Join("::", this.InteractionsSelected.Distinct()) : null;
+        var worlds = string.Join("::", this.InteractionWorldsSelected) != "" ? string.Join("::", this.InteractionWorldsSelected.Distinct()) : null;
+        var areas = string.Join("::", this.InteractionAreasSelected) != "" ? string.Join("::", this.InteractionAreasSelected.Distinct()) : null;
+        var characters = string.Join("::", this.InteractionCharactersSelected) != "" ? string.Join("::", this.InteractionCharactersSelected.Distinct()) : null;
+        var music = string.Join("::", this.InteractionMusicSelected) != "" ? string.Join("::", this.InteractionMusicSelected.Distinct()) : null;
+
+        var script = string.Join("::", this.dialogue.Select(x => $"{x.Character}: {x.Line}"));
+
+        // TODO Remove this after we add in the pagination limiter?
+        if (this.User != null && Extensions.IsAdmin(this.User) && this.API != null)
+        {
+            this.API.AddInteraction(accountId: this.User.Id, gameName: games, interactionId: interactionId, interactionName: this.InteractionName, interactionLink: this.InteractionLink, worlds: worlds, areas: areas, characters: characters, music: music, script: script);
+        }
+
+        BlazoredModal.CloseAsync();
+    }
+
+    private async Task ClearAllOptions(string clearString)
+    {
+        if (clearString == "Games")
+        {
+            this.InteractionGames = await context.Games.AsNoTracking().OrderBy(x => x.Order).Select(x => x.Name).ToListAsync();
+
+            this.InteractionGamesAvailable = this.InteractionGames;
+            this.InteractionGamesSelected = new List<string>();
+
+            if (this.InteractionGamesSearch != null)
+            {
+                await this.InteractionGamesSearch.SetCurrentView("Available");
+            }
+        }
+        //else if (clearString == "Interactions")
+        //{
+        //    this.Interactions = await context.Interactions.AsNoTracking().Select(x => x.Name).ToListAsync();
+        //    this.Interactions.Sort();
+
+        //    this.InteractionsAvailable = this.Interactions;
+        //    this.InteractionsSelected = new List<string>();
+
+        //    if (this.InteractionsSearch != null)
+        //    {
+        //        await this.InteractionsSearch.SetCurrentView("Available");
+        //    }
+        //}
+        else if (clearString == "Worlds")
+        {
+            this.InteractionWorlds = await context.Worlds.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.InteractionWorlds.Sort();
+
+            this.InteractionWorldsAvailable = this.InteractionWorlds;
+            this.InteractionWorldsSelected = new List<string>();
+
+            if (this.InteractionWorldsSearch != null)
+            {
+                await this.InteractionWorldsSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Areas")
+        {
+            this.InteractionAreas = await context.Areas.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.InteractionAreas.Sort();
+
+            this.InteractionAreasAvailable = this.InteractionAreas;
+            this.InteractionAreasSelected = new List<string>();
+
+            if (this.InteractionAreasSearch != null)
+            {
+                await this.InteractionAreasSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Characters")
+        {
+            this.InteractionCharacters = await context.Characters.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.InteractionCharacters.Sort();
+
+            this.InteractionCharactersAvailable = this.InteractionCharacters;
+            this.InteractionCharactersSelected = new List<string>();
+
+            if (this.InteractionCharactersSearch != null)
+            {
+                await this.InteractionCharactersSearch.SetCurrentView("Available");
+            }
+        }
+        else if (clearString == "Music")
+        {
+            this.InteractionMusic = await context.Music.AsNoTracking().Select(x => x.Name).ToListAsync();
+            this.InteractionMusic.Sort();
+
+            this.InteractionMusicAvailable = this.InteractionMusic;
+            this.InteractionMusicSelected = new List<string>();
+
+            if (this.InteractionMusicSearch != null)
+            {
+                await this.InteractionMusicSearch.SetCurrentView("Available");
+            }
+        }
+        else
+        {
+            await this.ResetOptions();
+        }
+    }
+
+    public void AddLine()
+    {
+        this.dialogue.Add(new ScriptLineDto());
+    }
+
+    public void DeleteLine(int id)
+    {
+        var line = this.dialogue.FirstOrDefault(x => x.Id == id);
+
+        if (line != null)
+            this.dialogue.Remove(line);
+    }
+}
