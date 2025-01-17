@@ -291,6 +291,14 @@
                 </div>
             </div>
         }
+
+        @if (this.IsAdmin())
+        {
+            <div class="row" style="margin: 10px;">
+                <button class="wayfinder-search-button" @onclick="@(() => OpenInteractionAdminModal())" @onclick:stopPropagation @onclick:preventDefault style="font-size: larger; right: 0px;">Add Interaction</button>
+                <button class="wayfinder-search-button" @onclick="@(() => OpenComponentAdminModal())" @onclick:stopPropagation @onclick:preventDefault style="font-size: larger; right: 0px; margin-top: 10px;">Add Game, World, Area, Character or Music</button>
+            </div>
+        }
     }
     else if (this.CurrentCategory == "Trailers")
     {
@@ -521,7 +529,8 @@ else if (this.CurrentCategory == "Interactions" && this.InteractionDtos.Count > 
             <RowTemplate>
                 <InteractionTableRow Interaction="@Interaction" MainTable="@MainInteractionTable" LoggedIn="@(this.loggedIn)"
                                FavoriteCallbackMethod="@(() => this.SetFavorite("Interactions", Interaction.Id))" IsFavorite="@(this.IsFavoriteForUser("Interactions", Interaction.Id))"
-                               ProjectCallbackMethod="@(() => this.OpenProjectModal("Interactions", Interaction.Id))" IsProject="@(this.IsProjectForUser("Interactions", Interaction.Id))" />
+                               ProjectCallbackMethod="@(() => this.OpenProjectModal("Interactions", Interaction.Id))" IsProject="@(this.IsProjectForUser("Interactions", Interaction.Id))"
+                               AdminCallbackMethod="@(() => this.OpenInteractionAdminModal(Interaction))" IsAdmin="@(this.IsAdmin())" />
             </RowTemplate>
             <ExpandedRowTemplate>
                 <InteractionTableExpandedRow Interaction="@Interaction" API="@this.api" GenerateShareLink="@(async () => await GenerateShareLink())" />
@@ -3174,6 +3183,27 @@ else if (this.CurrentCategory == "Interviews" && this.InterviewDtos.Count > 0)
             var options = new ModalOptions { Class = "modal-custom" };
 
             var temp = Modal.Show<SceneAddEditModal>($"Admin Scene - {scene?.Id}", parameters, options);
+            await temp.Result;
+        }
+    }
+
+    public async Task OpenInteractionAdminModal(InteractionDto? interaction = null)
+    {
+        if (this.api != null && !this.Loading)
+        {
+            var parameters = new ModalParameters();
+
+            if (interaction != null)
+            {
+                parameters.Add("Interaction", interaction);
+            }
+
+            parameters.Add("User", this.user ?? new());
+            parameters.Add("API", this.api);
+
+            var options = new ModalOptions { Class = "modal-custom" };
+
+            var temp = Modal.Show<SceneAddEditModal>($"Admin Interaction - {interaction?.Id}", parameters, options);
             await temp.Result;
         }
     }
