@@ -2551,6 +2551,7 @@ namespace WayfinderProjectAPI.Controllers
                     LevelName = "N\\A",
                     Position = "N\\A",
                     Character = "N\\A",
+                    IsReady = false,
                     Points = -1
                 });
 
