@@ -668,6 +668,13 @@
         "Line": "Monsters? The ones the Master mentioned- These are the Unversed!"
       }
     ],
+    "Chasing the Unversed": [
+      {
+        "Order": 0,
+        "Character": "Terra",
+        "Line": "No you don't."
+      }
+    ],
     "Maleficent": [
       {
         "Order": 0,
@@ -7729,7 +7736,7 @@
         "Line": "Impossible! Pshah! He has no actual feelings- only destructive instincts I have carefully chosen for him. Or perhaps you need another demonstration of my evil geniusness!"
       }
     ],
-    "\"When you feel it, it'll know it.\"": [
+    "\"When you feel it, you'll know it.\"": [
       {
         "Order": 0,
         "Character": "Dr. Jumba",

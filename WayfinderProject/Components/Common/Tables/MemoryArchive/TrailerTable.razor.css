@@ -2,6 +2,8 @@
     place-content: center;
     width: 100%;
     overflow-x: auto;
+    display: block;
+    text-align: center;
 }
 
 .button-text-color {

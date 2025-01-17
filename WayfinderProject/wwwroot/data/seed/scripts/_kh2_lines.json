@@ -125,7 +125,7 @@
       {
         "Order": 3,
         "Character": "Hayner",
-        "Line": "I mean, it's true that stuff's been stolen around town. And we've got ascore to settle with Seifer and everything. So if he wants to think we did it, I can't really blame him. See... that's not what really bugs me. What reallybugs me is that he's goin' around tellin' everybody we're the thieves! Now the whole town and their mothers are treating us like the Klepto Club! Have you ever been this ticked off before in your life? 'Cause I haven't. Nuh-uh, never. Now... what to do."
+        "Line": "I mean, it's true that stuff's been stolen around town. And we've got ascore to settle with Seifer and everything. So if he wants to think we did it, I can't really blame him. See... that's not what really bugs me. What really bugs me is that he's goin' around tellin' everybody we're the thieves! Now the whole town and their mothers are treating us like the Klepto Club! Have you ever been this ticked off before in your life? 'Cause I haven't. Nuh-uh, never. Now... what to do."
       },
       {
         "Order": 4,
@@ -7616,7 +7616,7 @@
         "Line": "Huh?"
       }
     ],
-    "Maleficent's Proclaimation": [
+    "Maleficent's Proclamation": [
       {
         "Order": 0,
         "Character": "Maleficent",
@@ -7640,7 +7640,7 @@
         "Line": "Majesty!"
       }
     ],
-    "A Strange Window, Pt. 2": [
+    "A Strange Window Pt. 2": [
       {
         "Order": 0,
         "Character": "Sora",
@@ -7684,7 +7684,7 @@
         "Line": "Hey! Look at the toy cannons! What's he saying? Hey! There're Heartless!"
       }
     ],
-    "A Strange Window, Pt. 3": [
+    "A Strange Window Pt. 3": [
       {
         "Order": 0,
         "Character": "Sora",
@@ -15759,7 +15759,7 @@
         "Line": "Good one, Belle!"
       }
     ],
-    "Xaldin's Demise": [
+    "Stay With Me": [
       {
         "Order": 0,
         "Character": "Belle",

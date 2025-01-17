@@ -813,7 +813,7 @@
         "Name": "Fly, Sora",
         "Link": "https://www.youtube.com/watch?v=y5cEa7K1NZA&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=134",
         "Worlds": [ "Neverland" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Captain Hook", "Mr. Smee", "Pirate(s)", "Tinker Bell", "Crocodile", "Peter Pan" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Captain Hook", "Mr. Smee", "Pirate(s)", "Tinker Bell", "The Crocodile", "Peter Pan" ],
         "Areas": [ "Deck" ],
         "Music": [ "No Time to Think", "Villains of a Sort" ]
       },
@@ -821,7 +821,7 @@
         "Name": "Battle VS Captain Hook",
         "Link": "https://www.youtube.com/watch?v=mgE224wAcgE&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=136",
         "Worlds": [ "Neverland" ],
-        "Characters": [ "Sora", "Peter Pan", "Captain Hook", "Crocodile" ],
+        "Characters": [ "Sora", "Peter Pan", "Captain Hook", "The Crocodile" ],
         "Areas": [ "Deck" ],
         "Music": [ "Squirming Evil" ]
       },
@@ -16653,7 +16653,7 @@
         "Name": "Return of the Titans",
         "Link": "https://www.youtube.com/watch?v=ODpWj-cdB14&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=6",
         "Worlds": [ "Olympus" ],
-        "Characters": [ "Sora, Donald, Goofy", "Hades", "Maleficent", "Pete" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hades", "Maleficent", "Pete" ],
         "Areas": [ "Cliff Ascent" ],
         "Music": [ "Return of the Titans", "Villains of a Sort" ]
       },
@@ -17933,7 +17933,7 @@
         "Name": "Finding an Edge",
         "Link": "https://www.youtube.com/watch?v=9x2YMtdhtu4&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=166",
         "Worlds": [ "San Fransokyo" ],
-        "Characters": [ "Sora", "Go Go", "Tirebade(s)", "Wasabi", "Honey Lemon", "Pole Cannon(s)", "Fred", "Hiro" ],
+        "Characters": [ "Sora", "Go Go", "Tirebade(s)", "Wasabi", "Honey Lemon", "Pole Cannon(s)", "Fred", "Hiro", "Tireblade(s)" ],
         "Areas": [ "San Fransokyo" ],
         "Music": [ "Time to Shugyo" ]
       },
