@@ -2715,11 +2715,12 @@ namespace WayfinderProjectAPI.Controllers
                 };
             }
 
+            existingUser.Character = hsDetails.Character;
             existingUser.WorldName = hsDetails.WorldName;
             existingUser.LevelName = hsDetails.LevelName;
             existingUser.Position = hsDetails.Position;
             existingUser.IsReady = hsDetails.IsReady;
-            existingUser.SeekerFoundTime = hsDetails.SeekerFoundTime ?? DateTime.UtcNow;
+            existingUser.SeekerFoundTime = hsDetails.SeekerFoundTime;
             existingUser.Points = hsDetails.Points;
 
             this._context.Update(existingUser);
@@ -2761,10 +2762,11 @@ namespace WayfinderProjectAPI.Controllers
                 };
             }
 
+            existingUser.Character = hsDetails.Character;
             existingUser.WorldName = hsDetails.WorldName;
             existingUser.LevelName = hsDetails.LevelName;
             existingUser.Position = hsDetails.Position;
-            existingUser.StartHideTime = hsDetails.StartHideTime ?? DateTime.UtcNow;
+            existingUser.StartHideTime = hsDetails.StartHideTime;
             existingUser.HideState = hsDetails.HideState;
 
             this._context.Update(existingUser);
