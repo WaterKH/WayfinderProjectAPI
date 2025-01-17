@@ -2548,7 +2548,9 @@ namespace WayfinderProjectAPI.Controllers
                 this._context.HideAndSeekData.Add(new WayfinderProject.Data.Models.HideAndSeek.HideAndSeekData
                 {
                     Username = connectionDetails.Username,
-                    HideState = "NULL",
+                    HideState = "N\\A",
+                    WorldName = "N\\A",
+                    Position = "N\\A",
                     Points = -1
                 });
 
