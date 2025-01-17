@@ -2512,8 +2512,6 @@ namespace WayfinderProjectAPI.Controllers
         [HttpPost("HSConnect")]
         public async Task<ConnectionResponse> HideSeekConnect([FromBody] HideAndSeekData connectionDetails)
         {
-            //HideAndSeekData connectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(connectionPayload);
-
             if (connectionDetails == null)
             {
                 return new ConnectionResponse
@@ -2552,6 +2550,7 @@ namespace WayfinderProjectAPI.Controllers
                     WorldName = "N\\A",
                     LevelName = "N\\A",
                     Position = "N\\A",
+                    Character = "N\\A",
                     Points = -1
                 });
 
@@ -2585,6 +2584,7 @@ namespace WayfinderProjectAPI.Controllers
             hsUser.RoomName = connectionDetails.RoomName;
             hsUser.Password = connectionDetails.Password;
             hsUser.PlayerType = connectionDetails.PlayerType;
+            hsUser.Character = connectionDetails.Character;
 
             this._context.Update(hsUser);
             await this._context.SaveChangesAsync();
@@ -2597,10 +2597,8 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSDisconnect")]
-        public async Task<ConnectionResponse> HideSeekDisconnect([FromBody] string disconnectionPayload)
+        public async Task<ConnectionResponse> HideSeekDisconnect([FromBody] HideAndSeekData disconnectionDetails)
         {
-            HideAndSeekData disconnectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(disconnectionPayload);
-
             if (disconnectionDetails == null)
             {
                 return new ConnectionResponse
@@ -2628,9 +2626,10 @@ namespace WayfinderProjectAPI.Controllers
                 };
             }
 
-            existingUser.RoomName = null;
-            existingUser.Password = null;
-            existingUser.PlayerType = null;
+            existingUser.RoomName = "N\\A";
+            existingUser.Password = "N\\A";
+            existingUser.PlayerType = "N\\A";
+            existingUser.Character = "N\\A";
 
             this._context.Update(existingUser);
             await this._context.SaveChangesAsync();
@@ -2643,10 +2642,8 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSFetchServerData")]
-        public async Task<ConnectionResponse> FetchServerData([FromBody] string payload)
+        public async Task<ConnectionResponse> FetchServerData([FromBody] HideAndSeekData hsDetails)
         {
-            HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(payload);
-
             if (hsDetails == null)
             {
                 return new ConnectionResponse
@@ -2667,6 +2664,7 @@ namespace WayfinderProjectAPI.Controllers
                     RoomName = x.RoomName,
                     Password = x.Password,
                     PlayerType = x.PlayerType,
+                    Character = x.Character,
                     WorldName = x.WorldName,
                     LevelName = x.LevelName,
                     Position = x.Position,
@@ -2674,9 +2672,9 @@ namespace WayfinderProjectAPI.Controllers
                     StartHideTime = x.StartHideTime,
                     HideState = x.HideState,
 
-                    IsReady = x.IsReady,
+                    IsReady = x.IsReady ?? false,
                     SeekerFoundTime = x.SeekerFoundTime,
-                    Points = x.Points
+                    Points = x.Points ?? -1
                 });
 
             return new ConnectionResponse
@@ -2688,10 +2686,8 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSUpdateSeeker")]
-        public async Task<ConnectionResponse> UpdateSeeker([FromBody] string seekerPayload)
+        public async Task<ConnectionResponse> UpdateSeeker([FromBody] HideAndSeekData hsDetails)
         {
-            HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(seekerPayload);
-
             if (hsDetails == null)
             {
                 return new ConnectionResponse
@@ -2736,10 +2732,8 @@ namespace WayfinderProjectAPI.Controllers
         }
 
         [HttpPost("HSUpdateHider")]
-        public async Task<ConnectionResponse> UpdateHider([FromBody] string hiderPayload)
+        public async Task<ConnectionResponse> UpdateHider([FromBody] HideAndSeekData hsDetails)
         {
-            HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(hiderPayload);
-
             if (hsDetails == null)
             {
                 return new ConnectionResponse

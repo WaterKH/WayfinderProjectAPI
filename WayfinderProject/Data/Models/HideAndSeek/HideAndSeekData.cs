@@ -12,30 +12,32 @@ namespace WayfinderProject.Data.Models.HideAndSeek
         [Required]
         public string Username { get; set; }
         [AllowNull]
-        public string PlayerType { get; set; } // Hider, Seeker
+        public string? PlayerType { get; set; } // Hider, Seeker
         [AllowNull]
-        public string Position { get; set; }
+        public string? Character { get; set; }
         [AllowNull]
-        public string WorldName { get; set; }
+        public string? Position { get; set; }
         [AllowNull]
-        public string LevelName { get; set; } // Which sub-stage of the world
+        public string? WorldName { get; set; }
         [AllowNull]
-        public string RoomName { get; set; }
+        public string? LevelName { get; set; } // Which sub-stage of the world
         [AllowNull]
-        public string Password { get; set; }
+        public string? RoomName { get; set; }
+        [AllowNull]
+        public string? Password { get; set; }
 
         // Hider Values
         [AllowNull]
-        public DateTime StartHideTime { get; set; }
+        public DateTime? StartHideTime { get; set; }
         [Required]
-        public string HideState { get; set; } // Not Hidden, Hiding, Hidden, Found, Stopped
+        public string? HideState { get; set; } // Not Hidden, Hiding, Hidden, Found, Stopped
 
         // Seeker Values
         [Required]
-        public bool IsReady { get; set; }
+        public bool? IsReady { get; set; }
         [AllowNull]
-        public DateTime SeekerFoundTime { get; set; }
+        public DateTime? SeekerFoundTime { get; set; }
         [Required]
-        public int Points { get; set; }
+        public int? Points { get; set; }
     }
 }
