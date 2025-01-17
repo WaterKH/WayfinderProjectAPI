@@ -2510,26 +2510,26 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Hide And Seek Methods
         [HttpPost("HSConnect")]
-        public async Task<ConnectionResponse> HideSeekConnect([FromBody] string connectionPayload)
+        public async Task<ConnectionResponse> HideSeekConnect([FromBody] string username, [FromBody] string roomName, [FromBody] string password, [FromBody] string playerType)
         {
-            HideAndSeekData connectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(connectionPayload);
+            //HideAndSeekData connectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(connectionPayload);
 
-            if (connectionDetails == null)
-            {
-                return new ConnectionResponse
-                {
-                    Success = false,
-                    Message = "Connection Failed. Connection Details were unable to be parsed."
-                };
-            }
+            //if (connectionDetails == null)
+            //{
+            //    return new ConnectionResponse
+            //    {
+            //        Success = false,
+            //        Message = "Connection Failed. Connection Details were unable to be parsed."
+            //    };
+            //}
 
             // Return if we already have a matching connection
             var existingUser = this._context.HideAndSeekData
                 .FirstOrDefault(x => 
-                    x.Username == connectionDetails.Username
-                    && x.RoomName == connectionDetails.RoomName
-                    && x.Password == connectionDetails.Password
-                    && x.PlayerType == connectionDetails.PlayerType
+                    x.Username == username
+                    && x.RoomName == roomName
+                    && x.Password == password
+                    && x.PlayerType == playerType
                 );
 
             if (existingUser != null)
@@ -2541,23 +2541,23 @@ namespace WayfinderProjectAPI.Controllers
                 };
             }
 
-            var hsUser = this._context.HideAndSeekData.FirstOrDefault(x => x.Username == connectionDetails.Username);
+            var hsUser = this._context.HideAndSeekData.FirstOrDefault(x => x.Username == username);
 
             if (hsUser == null)
             {
                 this._context.HideAndSeekData.Add(new WayfinderProject.Data.Models.HideAndSeek.HideAndSeekData
                 {
-                    Username = connectionDetails.Username,
+                    Username = username,
                     HideState = "NULL",
                     Points = -1
                 });
 
                 await this._context.SaveChangesAsync();
 
-                hsUser = this._context.HideAndSeekData.First(x => x.Username == connectionDetails.Username);
+                hsUser = this._context.HideAndSeekData.First(x => x.Username == username);
             }
 
-            var roomInfo = this._context.HideAndSeekData.FirstOrDefault(x => x.RoomName == connectionDetails.RoomName && x.Password == connectionDetails.Password);
+            var roomInfo = this._context.HideAndSeekData.FirstOrDefault(x => x.RoomName == roomName && x.Password == password);
 
             if (roomInfo != null)
             {
@@ -2579,9 +2579,9 @@ namespace WayfinderProjectAPI.Controllers
                 }
             }
 
-            hsUser.RoomName = connectionDetails.RoomName;
-            hsUser.Password = connectionDetails.Password;
-            hsUser.PlayerType = connectionDetails.PlayerType;
+            hsUser.RoomName = roomName;
+            hsUser.Password = password;
+            hsUser.PlayerType = playerType;
 
             this._context.Update(hsUser);
             await this._context.SaveChangesAsync();
