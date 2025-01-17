@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using System.Text.RegularExpressions;
+using WayfinderProject.Data.DTOs.HideAndSeek;
 using WayfinderProjectAPI.Data;
 using WayfinderProjectAPI.Data.DTOs;
 using WayfinderProjectAPI.Data.Models;
@@ -2505,5 +2507,277 @@ namespace WayfinderProjectAPI.Controllers
             return Task.FromResult(true);
         }
         #endregion
+
+        #region Hide And Seek Methods
+        [HttpPost("HSConnect")]
+        public async Task<ConnectionResponse> HideSeekConnect(string connectionPayload)
+        {
+            HideAndSeekData connectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(connectionPayload);
+
+            if (connectionDetails == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = false,
+                    Message = "Connection Failed. Connection Details were unable to be parsed."
+                };
+            }
+
+            // Return if we already have a matching connection
+            var existingUser = this._context.HideAndSeekData
+                .FirstOrDefault(x => 
+                    x.Username == connectionDetails.Username
+                    && x.RoomName == connectionDetails.RoomName
+                    && x.Password == connectionDetails.Password
+                    && x.PlayerType == connectionDetails.PlayerType
+                );
+
+            if (existingUser != null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = true,
+                    Message = "Successfully Connected."
+                };
+            }
+
+            var hsUser = this._context.HideAndSeekData.FirstOrDefault(x => x.Username == connectionDetails.Username);
+
+            if (hsUser == null)
+            {
+                this._context.HideAndSeekData.Add(new WayfinderProject.Data.Models.HideAndSeek.HideAndSeekData
+                {
+                    Username = connectionDetails.Username,
+                    HideState = "NULL",
+                    Points = -1
+                });
+
+                await this._context.SaveChangesAsync();
+
+                hsUser = this._context.HideAndSeekData.First(x => x.Username == connectionDetails.Username);
+            }
+
+            var roomInfo = this._context.HideAndSeekData.FirstOrDefault(x => x.RoomName == connectionDetails.RoomName && x.Password == connectionDetails.Password);
+
+            if (roomInfo != null)
+            {
+                if (roomInfo.Username == hsUser.Username && roomInfo.PlayerType != hsUser.PlayerType)
+                {
+                    return new ConnectionResponse
+                    {
+                        Success = false,
+                        Message = "Connection Failed. An Existing connection already exists for this user with different Player Types. Disconnect and try again."
+                    };
+                }
+                else if (roomInfo.Username != hsUser.Username && roomInfo.PlayerType == hsUser.PlayerType && roomInfo.PlayerType == "Hider")
+                {
+                    return new ConnectionResponse
+                    {
+                        Success = false,
+                        Message = "Connection Failed. Only 1 Person can be hiding at a time. (For Now.)"
+                    };
+                }
+            }
+
+            hsUser.RoomName = connectionDetails.RoomName;
+            hsUser.Password = connectionDetails.Password;
+            hsUser.PlayerType = connectionDetails.PlayerType;
+
+            this._context.Update(hsUser);
+            await this._context.SaveChangesAsync();
+
+            return new ConnectionResponse
+            {
+                Success = true,
+                Message = "Successfully Connected."
+            };
+        }
+
+        [HttpPost("HSDisconnect")]
+        public async Task<ConnectionResponse> HideSeekDisconnect(string disconnectionPayload)
+        {
+            HideAndSeekData disconnectionDetails = JsonSerializer.Deserialize<HideAndSeekData>(disconnectionPayload);
+
+            if (disconnectionDetails == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = false,
+                    Message = "Disconnection Failed. Disconnection Details were unable to be parsed."
+                };
+            }
+
+            // Return if we already have a matching connection
+            var existingUser = this._context.HideAndSeekData
+                .FirstOrDefault(x =>
+                    x.Username == disconnectionDetails.Username
+                    && x.RoomName == disconnectionDetails.RoomName
+                    && x.Password == disconnectionDetails.Password
+                    && x.PlayerType == disconnectionDetails.PlayerType
+                );
+
+            if (existingUser == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = true,
+                    Message = "Disconnection Failed. User with these details does not exist."
+                };
+            }
+
+            existingUser.RoomName = null;
+            existingUser.Password = null;
+            existingUser.PlayerType = null;
+
+            this._context.Update(existingUser);
+            await this._context.SaveChangesAsync();
+
+            return new ConnectionResponse
+            {
+                Success = true,
+                Message = "Successfully Disconnected."
+            };
+        }
+
+        [HttpPost("HSFetchServerData")]
+        public async Task<ConnectionResponse> FetchServerData(string payload)
+        {
+            HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(payload);
+
+            if (hsDetails == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = false,
+                    Message = "Room Information Fetch Failed. Payload Request was unable to be parsed."
+                };
+            }
+
+            var roomDetails = this._context.HideAndSeekData
+                .Where(x => x.RoomName == hsDetails.RoomName
+                    && x.Password == hsDetails.Password
+                    && x.PlayerType == hsDetails.PlayerType
+                )
+                .Select(x => new WayfinderProject.Data.DTOs.HideAndSeek.HideAndSeekData
+                {
+                    Username = x.Username,
+                    RoomName = x.RoomName,
+                    Password = x.Password,
+                    PlayerType = x.PlayerType,
+                    WorldName = x.WorldName,
+                    LevelName = x.LevelName,
+                    Position = x.Position,
+
+                    StartHideTime = x.StartHideTime,
+                    HideState = x.HideState,
+
+                    IsReady = x.IsReady,
+                    SeekerFoundTime = x.SeekerFoundTime,
+                    Points = x.Points
+                });
+
+            return new ConnectionResponse
+            {
+                Success = true,
+                Message = "Room Information Fetch Successful.",
+                HideAndSeekData = roomDetails.ToList()
+            };
+        }
+
+        [HttpPost("HSUpdateSeeker")]
+        public async Task<ConnectionResponse> UpdateSeeker(string seekerPayload)
+        {
+            HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(seekerPayload);
+
+            if (hsDetails == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = false,
+                    Message = "Updated Seeker Failed. Payload Request was unable to be parsed."
+                };
+            }
+
+            var existingUser = this._context.HideAndSeekData
+                .FirstOrDefault(x =>
+                    x.Username == hsDetails.Username
+                    && x.RoomName == hsDetails.RoomName
+                    && x.Password == hsDetails.Password
+                    && x.PlayerType == hsDetails.PlayerType
+                );
+
+            if (existingUser == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = true,
+                    Message = "Updated Seeker Failed. User with these details does not exist."
+                };
+            }
+
+            existingUser.WorldName = hsDetails.WorldName;
+            existingUser.LevelName = hsDetails.LevelName;
+            existingUser.Position = hsDetails.Position;
+            existingUser.IsReady = hsDetails.IsReady;
+            existingUser.SeekerFoundTime = hsDetails.SeekerFoundTime ?? DateTime.UtcNow;
+            existingUser.Points = hsDetails.Points;
+
+            this._context.Update(existingUser);
+            await this._context.SaveChangesAsync();
+
+            return new ConnectionResponse
+            {
+                Success = true,
+                Message = "Updated Seeker Successfully."
+            };
+        }
+
+        [HttpPost("HSUpdateHider")]
+        public async Task<ConnectionResponse> UpdateHider(string hiderPayload)
+        {
+            HideAndSeekData hsDetails = JsonSerializer.Deserialize<HideAndSeekData>(hiderPayload);
+
+            if (hsDetails == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = false,
+                    Message = "Updated Hider Failed. Payload Request was unable to be parsed."
+                };
+            }
+
+            var existingUser = this._context.HideAndSeekData
+                .FirstOrDefault(x =>
+                    x.Username == hsDetails.Username
+                    && x.RoomName == hsDetails.RoomName
+                    && x.Password == hsDetails.Password
+                    && x.PlayerType == hsDetails.PlayerType
+                );
+
+            if (existingUser == null)
+            {
+                return new ConnectionResponse
+                {
+                    Success = true,
+                    Message = "Updated Hider Failed. User with these details does not exist."
+                };
+            }
+
+            existingUser.WorldName = hsDetails.WorldName;
+            existingUser.LevelName = hsDetails.LevelName;
+            existingUser.Position = hsDetails.Position;
+            existingUser.StartHideTime = hsDetails.StartHideTime ?? DateTime.UtcNow;
+            existingUser.HideState = hsDetails.HideState;
+
+            this._context.Update(existingUser);
+            await this._context.SaveChangesAsync();
+
+            return new ConnectionResponse
+            {
+                Success = true,
+                Message = "Updated Hider Successfully."
+            };
+        }
+        #endregion Hide And Seek Methods
     }
 }

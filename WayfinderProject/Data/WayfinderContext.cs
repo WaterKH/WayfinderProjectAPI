@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WayfinderProject.Data.Models;
+using WayfinderProject.Data.Models.HideAndSeek;
 using WayfinderProjectAPI.Data.Models;
 
 namespace WayfinderProjectAPI.Data
@@ -53,6 +54,8 @@ namespace WayfinderProjectAPI.Data
             modelBuilder.Entity<Project>().Property(p => p.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<ProjectRecord>().Property(p => p.Id).ValueGeneratedOnAdd();
 
+            modelBuilder.Entity<HideAndSeekData>().Property(p => p.Id).ValueGeneratedOnAdd();
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -95,5 +98,6 @@ namespace WayfinderProjectAPI.Data
         public DbSet<Favorite> Favorites { get; set; } = null!;
         public DbSet<Project> Projects { get; set; } = null!;
         public DbSet<ProjectRecord> ProjectRecords { get; set; } = null!;
+        public DbSet<HideAndSeekData> HideAndSeekData { get; set; } = null!;
     }
 }
