@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using WayfinderProject.Data.DTOs.HideAndSeek;
@@ -2944,13 +2945,33 @@ namespace WayfinderProjectAPI.Controllers
         {
             string jsonResult = string.Empty;
 
+            if (data.Contains(";"))
+            {
+                return jsonResult;
+            }
+
             try
             {
                 StoredProcedureRequest spData = JsonSerializer.Deserialize<StoredProcedureRequest>(data) ?? new StoredProcedureRequest();
+                var name = new MySqlParameter("name", spData.Name);
 
-                object result = this._context.Database.SqlQueryRaw<object>("CALL {0} {1}", spData.Name, string.Join(", ", spData.Parameters));
+                if (spData.Parameters.Count > 0)
+                {
+                    var parameters = new MySqlParameter("parameters", string.Join(", ", spData.Parameters));
 
-                jsonResult = JsonSerializer.Serialize(result);
+                    string formattedString = "CALL " + name.Value + " " + parameters.Value;
+
+                    IQueryable<string> result = this._context.Database.SqlQueryRaw<string>(formattedString);
+                    jsonResult = JsonSerializer.Serialize(result);
+                }
+                else
+                {
+                    // TODO: Will this allow?
+                    string formattedString = "CALL " + name.Value;
+
+                    IQueryable<string> result = this._context.Database.SqlQueryRaw<string>(formattedString);
+                    jsonResult = JsonSerializer.Serialize(result);
+                }
             }
             catch (Exception ex)
             {
