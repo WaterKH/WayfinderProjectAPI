@@ -18,6 +18,8 @@ using WayfinderProject.Data.Jobs;
 using WayfinderProject.Data.Models;
 using WayfinderProjectAPI.Data;
 
+var wayfinderAllowSpecificOrigins = "wayfinderAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -29,6 +31,18 @@ var connection = new MySqlConnection(connectionString);
 connection.Open();
 
 builder.Services.AddDbContext<WayfinderContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.SchemaBehavior(MySqlSchemaBehavior.Translate, (schema, entity) => $"{schema ?? "WFP"}_{entity}")), ServiceLifetime.Transient);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: wayfinderAllowSpecificOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin();
+            policy.AllowAnyHeader();
+            policy.AllowAnyMethod();
+            policy.AllowCredentials();
+        });
+});
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -163,6 +177,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseCors(wayfinderAllowSpecificOrigins);
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
