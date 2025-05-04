@@ -2976,7 +2976,7 @@ namespace WayfinderProjectAPI.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return "{ \"error\": \"Issue\" }";
+                return "{ \"error\": \"Issue: " + ex.ToString() + "\" }";
             }
 
             return jsonResult;
