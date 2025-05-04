@@ -2939,8 +2939,8 @@ namespace WayfinderProjectAPI.Controllers
         #endregion Hide And Seek Methods
 
         #region Stored Procedure Method
-        [HttpPost("ExecuteStoredProcedure")]
-        public Task<string> ExecuteStoredProcedure([FromBody] string data)
+        [HttpGet("ExecuteStoredProcedure")]
+        public async Task<string> ExecuteStoredProcedure([FromBody] string data)
         {
             string jsonResult = string.Empty;
 
@@ -2955,10 +2955,10 @@ namespace WayfinderProjectAPI.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return Task.FromResult(jsonResult);
+                return "{ \"error\": \"Issue\" }";
             }
 
-            return Task.FromResult(jsonResult);
+            return jsonResult;
         }
         #endregion Stored Procedure Method
     }
