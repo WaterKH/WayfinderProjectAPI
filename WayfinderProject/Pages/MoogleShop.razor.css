@@ -6,7 +6,8 @@
 .wayfinder-parallax {
     border-radius: 35px;
     padding: 20px;
-    background-image: url(/images/updated-backgrounds/moogle_textless.png);
+    /*    background-image: url(/images/updated-backgrounds/moogle_textless.png);*/
+    background-image: none;
     background-attachment: fixed;
     background-position: left;
     background-repeat: no-repeat;
