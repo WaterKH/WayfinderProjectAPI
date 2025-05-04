@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using WayfinderProject.Data.DTOs.HideAndSeek;
+using WayfinderProject.Data.Models.StoredProcedure;
 using WayfinderProjectAPI.Data;
 using WayfinderProjectAPI.Data.DTOs;
 using WayfinderProjectAPI.Data.Models;
@@ -2936,5 +2937,29 @@ namespace WayfinderProjectAPI.Controllers
             };
         }
         #endregion Hide And Seek Methods
+
+        #region Stored Procedure Method
+        [HttpPost("ExecuteStoredProcedure")]
+        public Task<string> ExecuteStoredProcedure([FromBody] string data)
+        {
+            string jsonResult = string.Empty;
+
+            try
+            {
+                StoredProcedureRequest spData = JsonSerializer.Deserialize<StoredProcedureRequest>(data) ?? new StoredProcedureRequest();
+
+                object result = this._context.Database.SqlQueryRaw<object>("CALL {0} {1}", spData.Name, string.Join(", ", spData.Parameters));
+
+                jsonResult = JsonSerializer.Serialize(result);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return Task.FromResult(jsonResult);
+            }
+
+            return Task.FromResult(jsonResult);
+        }
+        #endregion Stored Procedure Method
     }
 }

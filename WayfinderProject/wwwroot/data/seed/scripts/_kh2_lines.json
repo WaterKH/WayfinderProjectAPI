@@ -7650,14 +7650,11 @@
         "Order": 1,
         "Character": "Goofy",
         "Line": "Hey!"
-      },
+      }
+    ],
+    "Window of Time: Those Good Ol' Days": [
       {
-        "Order": 2,
-        "Character": "Window of Time",
-        "Line": "Those Good Ol' Days"
-      },
-      {
-        "Order": 3,
+        "Order": 0,
         "Character": "Pete",
         "Line": "Aw, for cryin' out loud... she didn't have to go and say that. Okay, I mighta messed up every now and then. But I'm a lot more things than useless... Why, when I was startin' out... Oh... I miss those good ol' days... What I wouldn't give to go back in time... What I wouldn't give... Huh? Hey! I think that's my..."
       }
@@ -7694,44 +7691,41 @@
         "Order": 1,
         "Character": "Goofy",
         "Line": "Look, Sora! Over there!"
-      },
+      }
+    ],
+    "Window of Time: Door to the Past": [
       {
-        "Order": 2,
-        "Character": "Window of Time",
-        "Line": "Door to the Past"
-      },
-      {
-        "Order": 3,
+        "Order": 0,
         "Character": "Maleficent",
         "Line": "Fascinating... This appears to be a portal to the past!"
       },
       {
-        "Order": 4,
+        "Order": 1,
         "Character": "Pete",
         "Line": "Yeah, it was the strangest thing!"
       },
       {
-        "Order": 5,
+        "Order": 2,
         "Character": "Maleficent",
         "Line": "Stop gawking! And start thinking of a way we can use it to our advantage!"
       },
       {
-        "Order": 6,
+        "Order": 3,
         "Character": "Pete",
         "Line": "Okay."
       },
       {
-        "Order": 7,
+        "Order": 4,
         "Character": "Maleficent",
         "Line": "Now, perhaps I could give you one more chance to redeem yourself."
       },
       {
-        "Order": 8,
+        "Order": 5,
         "Character": "Pete",
         "Line": "Oh, thank you, thank you! You can count on me...! So, what do I do?"
       },
       {
-        "Order": 9,
+        "Order": 6,
         "Character": "Maleficent",
         "Line": "Patience, my dear... What have we here? Well, if it isn't the Cornerstone of Light... Mmm... Now we can take the castle from those fools- but we'll have to proceed with the utmost of care..."
       }
@@ -7763,49 +7757,46 @@
         "Order": 1,
         "Character": "Goofy",
         "Line": "Hey, look!"
-      },
+      }
+    ],
+    "Window of Time: The Culprit": [
       {
-        "Order": 2,
-        "Character": "Window of Time",
-        "Line": "The Culprit"
-      },
-      {
-        "Order": 3,
+        "Order": 0,
         "Character": "Maleficent",
         "Line": "Listen well. On the other side of this portal, they're about to begin construction on that wretched castle. But until then, their treasured Cornerstone of Light lies unguarded, with all of its power still contained!"
       },
       {
-        "Order": 4,
+        "Order": 1,
         "Character": "Pete",
         "Line": "The Cornerstone... of Light?"
       },
       {
-        "Order": 5,
+        "Order": 2,
         "Character": "Maleficent",
         "Line": "Yes! That cursed sphere is the very thing that prevents us from entering the castle."
       },
       {
-        "Order": 6,
+        "Order": 3,
         "Character": "Pete",
         "Line": "Oh."
       },
       {
-        "Order": 7,
+        "Order": 4,
         "Character": "Maleficent",
         "Line": "You know what must be done?"
       },
       {
-        "Order": 8,
+        "Order": 5,
         "Character": "Pete",
         "Line": "Uh..."
       },
       {
-        "Order": 9,
+        "Order": 6,
         "Character": "Maleficent",
         "Line": "Go then. Time to prove your worth! And don't dare to fail me again!"
       },
       {
-        "Order": 10,
+        "Order": 7,
         "Character": "Pete",
         "Line": "Don't fail her again... let's see... That's it! I just gotta smash that Cornerstone to smithereens! But first... I gotta go get my old boat back."
       }
