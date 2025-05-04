@@ -2941,23 +2941,22 @@ namespace WayfinderProjectAPI.Controllers
 
         #region Stored Procedure Method
         [HttpPost("ExecuteStoredProcedure")]
-        public async Task<string> ExecuteStoredProcedure([FromBody] string data)
+        public async Task<string> ExecuteStoredProcedure([FromBody] StoredProcedureRequest data)
         {
             string jsonResult = string.Empty;
 
-            if (data.Contains(";"))
+            if (data.Name.Contains(";") || data.Parameters.Any(x => x.Contains(";")))
             {
                 return jsonResult;
             }
 
             try
             {
-                StoredProcedureRequest spData = JsonSerializer.Deserialize<StoredProcedureRequest>(data) ?? new StoredProcedureRequest();
-                var name = new MySqlParameter("name", spData.Name);
+                var name = new MySqlParameter("name", data.Name);
 
-                if (spData.Parameters.Count > 0)
+                if (data.Parameters.Count > 0)
                 {
-                    var parameters = new MySqlParameter("parameters", string.Join(", ", spData.Parameters));
+                    var parameters = new MySqlParameter("parameters", string.Join(", ", data.Parameters));
 
                     string formattedString = "CALL " + name.Value + " " + parameters.Value;
 
