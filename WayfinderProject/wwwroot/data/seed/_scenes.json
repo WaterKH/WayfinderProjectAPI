@@ -1469,7 +1469,7 @@
         "Name": "Playing Games (Alternate)",
         "Link": "https://www.youtube.com/watch?v=vMjepd0C4v8",
         "Worlds": [ "Monstro" ],
-        "Characters": [ "Pinocchio", "Sora", "Donald", "Goofy" ],
+        "Characters": [ "Pinocchio", "Sora", "Donald", "Goofy", "Riku" ],
         "Areas": [ "Chamber 1" ],
         "Music": [ "A Very Small Wish" ]
       },
@@ -4041,7 +4041,7 @@
         "Name": "My Name Is Pete",
         "Link": "https://www.youtube.com/watch?v=NIjDQ_74cj4&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=115",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [ "Peter", "Sora", "Donald", "Goofy", "Shadow(s)" ],
+        "Characters": [ "Pete", "Sora", "Donald", "Goofy", "Shadow(s)" ],
         "Areas": [ "The Tower" ],
         "Music": [ "Laughter and Merriment", "Working Together" ]
       },
@@ -4049,7 +4049,7 @@
         "Name": "Who Lives in the Tower?",
         "Link": "https://www.youtube.com/watch?v=DcCSVaHfuJw&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=116",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [ "Peter", "Sora", "Donald", "Goofy" ],
+        "Characters": [ "Pete", "Sora", "Donald", "Goofy" ],
         "Areas": [ "The Tower" ],
         "Music": [ ":None:" ]
       },
@@ -13121,7 +13121,7 @@
         "Name": "Overnight Musketeers",
         "Link": "https://www.youtube.com/watch?v=AU-7Y6oxmIw&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=172",
         "Worlds": [ "Country of the Musketeers" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Pete", "Minnie" ],
+        "Characters": [ "Mickey", "Donald", "Goofy", "Pete", "Minnie" ],
         "Areas": [ "The Training Yard" ],
         "Music": [ "Cheers for the Brave" ]
       },

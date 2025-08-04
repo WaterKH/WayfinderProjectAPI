@@ -622,6 +622,213 @@
         "Line": "...Right."
       }
     ],
+    "A Spot in the Tournament": [
+      {
+        "Order": 0,
+        "Character": "Phil",
+        "Line": "About time! The entries are gonna close any minute now."
+      },
+      {
+        "Order": 1,
+        "Character": "Phil",
+        "Line": "Wait. Who are you? This ain't no place for kids. Scram!"
+      },
+      {
+        "Order": 2,
+        "Character": "Phil",
+        "Line": "You're late, Herc! Where you been!?"
+      },
+      {
+        "Order": 3,
+        "Character": "Hercules",
+        "Line": "Sorry, Phil. Pegasus wouldn't let me leave. You know how he can be."
+      },
+      {
+        "Order": 4,
+        "Character": "Hercules",
+        "Line": "Who's this?"
+      },
+      {
+        "Order": 5,
+        "Character": "Phil",
+        "Line": "Who knows? Probably just another wannabe contender."
+      },
+      {
+        "Order": 6,
+        "Character": "Phil",
+        "Line": "Everybody thinks they got what it takes to be a hero."
+      },
+      {
+        "Order": 7,
+        "Character": "Hercules",
+        "Line": "Huh? There's something about this kid- a real strength."
+      },
+      {
+        "Order": 8,
+        "Character": "Hercules",
+        "Line": "Why don't we let our friend here give it a shot?"
+      },
+      {
+        "Order": 9,
+        "Character": "Phil",
+        "Line": "You gotta be jokin'! This pipsqueak? No way. Besides, all the spots are full."
+      },
+      {
+        "Order": 10,
+        "Character": "Hercules",
+        "Line": "Oh. Well then... hmm..."
+      },
+      {
+        "Order": 11,
+        "Character": "Hercules",
+        "Line": "I know! I'll give up my spot."
+      },
+      {
+        "Order": 12,
+        "Character": "Phil",
+        "Line": "You can't be serious!"
+      },
+      {
+        "Order": 13,
+        "Character": "Phil",
+        "Line": "I thought you wanted to be a true hero!"
+      },
+      {
+        "Order": 14,
+        "Character": "Phil",
+        "Line": "And-"
+      },
+      {
+        "Order": 15,
+        "Character": "Hercules",
+        "Line": "Trust me on this, okay?"
+      },
+      {
+        "Order": 16,
+        "Character": "Hercules",
+        "Line": "I have to go now, so I'll need you to take care of things while I'm gone."
+      },
+      {
+        "Order": 17,
+        "Character": "Phil",
+        "Line": "Fine, fine! Go do your thing."
+      },
+      {
+        "Order": 18,
+        "Character": "Phil",
+        "Line": "I'll look after the kid."
+      },
+      {
+        "Order": 19,
+        "Character": "Hercules",
+        "Line": "Thanks, Phil! I owe you one!"
+      },
+      {
+        "Order": 20,
+        "Character": "Phil",
+        "Line": "You owe me more than one and you know it!"
+      },
+      {
+        "Order": 21,
+        "Character": "Hercules",
+        "Line": "Don't worry. You're in good hands with Phil."
+      },
+      {
+        "Order": 22,
+        "Character": "Hercules",
+        "Line": "Good luck!"
+      },
+      {
+        "Order": 23,
+        "Character": "Hercules",
+        "Line": "You never know, with hard work, maybe someday you can be a hero too."
+      },
+      {
+        "Order": 24,
+        "Character": "Phil",
+        "Line": "You heard him. I'll go ahead and sign you up."
+      },
+      {
+        "Order": 25,
+        "Character": "Phil",
+        "Line": "Find me when you're ready."
+      },
+      {
+        "Order": 26,
+        "Character": "Phil",
+        "Line": "Ready, kid?"
+      },
+      {
+        "Order": 27,
+        "Character": "Phil",
+        "Line": "The preliminary round's about to start. Let's see what ya got."
+      },
+      {
+        "Order": 28,
+        "Character": "Phil",
+        "Line": "Not bad! But it ain't over yet."
+      },
+      {
+        "Order": 29,
+        "Character": "Phil",
+        "Line": "Nice work!"
+      },
+      {
+        "Order": 30,
+        "Character": "Phil",
+        "Line": "The next one moves quick, so don't even think about blinkin'"
+      },
+      {
+        "Order": 31,
+        "Character": "Phil",
+        "Line": "You're almost there, kid!"
+      },
+      {
+        "Order": 32,
+        "Character": "Phil",
+        "Line": "The next guy packs a real punch."
+      },
+      {
+        "Order": 33,
+        "Character": "Phil",
+        "Line": "He'll knock you flat in two seconds if you're not careful."
+      },
+      {
+        "Order": 34,
+        "Character": "Phil",
+        "Line": "You win this, and you're in."
+      },
+      {
+        "Order": 35,
+        "Character": "Phil",
+        "Line": "Focus!"
+      },
+      {
+        "Order": 36,
+        "Character": "Phil",
+        "Line": "Good job, kid! I knew you had it in ya from the moment I laid eyes on ya."
+      },
+      {
+        "Order": 37,
+        "Character": "Phil",
+        "Line": "What? That's not how you remember it?"
+      },
+      {
+        "Order": 38,
+        "Character": "Phil",
+        "Line": "Maybe you took one too many blows to the head."
+      },
+      {
+        "Order": 39,
+        "Character": "Phil",
+        "Line": "Anyways, rest up."
+      },
+      {
+        "Order": 40,
+        "Character": "Phil",
+        "Line": "The tournament's not for a while. I'll let ya know when it's time."
+      }
+    ],
     "A Determined Competitor": [
       {
         "Order": 0,

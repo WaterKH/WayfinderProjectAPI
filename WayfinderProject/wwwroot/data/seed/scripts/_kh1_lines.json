@@ -1273,31 +1273,26 @@
       },
       {
         "Order": 6,
-        "Character": "Phil",
-        "Line": "Wanna become a real hero? Start by mastering this spell."
-      },
-      {
-        "Order": 7,
         "Character": "Hades",
         "Line": "Rather a stubborn old goat, wouldn't you say?"
       },
       {
-        "Order": 8,
+        "Order": 7,
         "Character": "Donald",
         "Line": "Who are you?"
       },
       {
-        "Order": 9,
+        "Order": 8,
         "Character": "Hades",
         "Line": "Whoa, hold on there, fuzz boy. Wait, let me guess. You want to enter the games, right? Well, then, hey, get a load of this."
       },
       {
-        "Order": 10,
+        "Order": 9,
         "Character": "Sora",
         "Line": "A pass?"
       },
       {
-        "Order": 11,
+        "Order": 10,
         "Character": "Hades",
         "Line": "It's all yours. Good luck, kid. I'm pulling for you, little shorty."
       }
@@ -2642,10 +2637,9 @@
       {
         "Order": 6,
         "Character": "Geppetto",
-        "Line": "My name is Geppetto. I'm Pinocchio's father. When we got separated, "
+        "Line": "My name is Geppetto. I'm Pinocchio's father. When we got separated, I traveled all over, looking for him. Thank goodness we're together again. So, you seem to know Pinocchio quite well. I hope he was a good boy in my absence. Well, we've all had quite a journey. Right, Pinocchio? Pinocchio?"
       }
     ],
-    "I traveled all over, looking for him. Thank goodness we're together again.So, you seem to know Pinocchio quite well. I hope he was a good boy in my absence. Well, we've all had quite a journey. Right, Pinocchio? Pinocchio?": [],
     "Playing Games": [
       {
         "Order": 0,
@@ -5625,6 +5619,26 @@
     "Playing Games (Alternate)": [
       {
         "Order": 0,
+        "Character": "Sora",
+        "Line": "What are you doing? Come on, let's go back."
+      },
+      {
+        "Order": 1,
+        "Character": "Goofy",
+        "Line": "You know, Geppetto's awfully worried about you."
+      },
+      {
+        "Order": 2,
+        "Character": "Sora",
+        "Line": "Pinocchio, stop fooling around! This is no time for games!"
+      },
+      {
+        "Order": 3,
+        "Character": "Riku",
+        "Line": "But, Sora, I thought you liked games. Or are you too cool to play them now that you have the Keyblade?"
+      },
+      {
+        "Order": 4,
         "Character": "Sora",
         "Line": "Riku!? Is it really you!?"
       }

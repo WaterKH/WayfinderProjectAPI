@@ -5116,129 +5116,113 @@
         "Order": 0,
         "Character": "Chirithy",
         "Line": "The princess was in a deep slumber, only to be awoken by true love. It's a strong and wonderful power... ...like the heart's light."
-      },
+      }
+    ],
+    "Reunion: Belle of the Ball": [
       {
-        "Order": 1,
-        "Character": "Reunion",
-        "Line": "Belle of the Ball"
-      },
-      {
-        "Order": 2,
+        "Order": 0,
         "Character": "Prince Adam",
         "Line": "Why, hello."
       },
       {
-        "Order": 3,
+        "Order": 1,
         "Character": "Belle",
         "Line": "You came back! Oh, I'm so glad. Now I can tell you about the castle library. It's filled with more books than you can even imagine! There are wonderful stories of faraway places that I've only dreamed of visiting."
       },
       {
-        "Order": 4,
+        "Order": 2,
         "Character": "Prince Adam",
         "Line": "We'll make those dreams come true, Belle."
       },
       {
-        "Order": 5,
+        "Order": 3,
         "Character": "Belle",
         "Line": "Really? Since I've come to the castle, I've learned that the world is filled with magic and wondrous adventures. I hope you get to experience them some day, too."
-      },
+    ],
+    "Reunion: Dreams Come True": [
       {
-        "Order": 6,
-        "Character": "Reunion",
-        "Line": "Dreams Come True"
-      },
-      {
-        "Order": 7,
+        "Order": 0,
         "Character": "Jaq",
         "Line": "It's you! Wanna see Cinderelly? No more mean Stepmuddy. Cinderelly happy. Jaq happy too. Go. Say hi!"
       },
       {
-        "Order": 8,
+        "Order": 1,
         "Character": "Cinderella",
         "Line": "Why, it's you!"
       },
       {
-        "Order": 9,
+        "Order": 2,
         "Character": "Prince Charming",
         "Line": "You must be the one I've heard so much about. Thank you for all you've done."
       },
       {
-        "Order": 10,
+        "Order": 3,
         "Character": "Cinderella",
         "Line": "Yes, I'm so grateful. I don't think I would be here if you hadn't helped me. Hm? I made this happen on my own? Because I believed that dreams could come true?"
       },
       {
-        "Order": 11,
+        "Order": 4,
         "Character": "Prince Charming",
         "Line": "Well, I believed that I'd see you again, my dear, and here we are."
       },
       {
-        "Order": 12,
+        "Order": 5,
         "Character": "Cinderella",
         "Line": "Yes. Here we are."
-      },
+      }
+    ],
+    "Reunion: Hero of Olympus": [
       {
-        "Order": 13,
-        "Character": "Reunion",
-        "Line": "Hero of Olympus"
-      },
-      {
-        "Order": 14,
+        "Order": 0,
         "Character": "Hercules",
         "Line": "Looks like somebody's been working hard! I'd better watch out... ...or pretty soon YOU'LL be everyone's hero!"
       },
       {
-        "Order": 15,
+        "Order": 1,
         "Character": "Phil",
         "Line": "Herc! Don't say things like that! Are you TRYING to give me a stomachache?"
       },
       {
-        "Order": 16,
+        "Order": 2,
         "Character": "Hercules",
         "Line": "It's true, Phil. I might have some competition."
       },
       {
-        "Order": 17,
+        "Order": 3,
         "Character": "Phil",
         "Line": "Then I have two words for ya: Training starts now!"
       },
       {
-        "Order": 18,
+        "Order": 4,
         "Character": "Hercules",
         "Line": "Player, I'd love to catch up, but– "
       },
       {
-        "Order": 19,
+        "Order": 5,
         "Character": "Phil",
         "Line": "Clock's tickin'!"
       },
       {
-        "Order": 20,
+        "Order": 6,
         "Character": "Hercules",
         "Line": "That's my cue. Gotta go!"
-      },
+      }
+    ],
+    "Reunion: For My Sweet Prince": [
       {
-        "Order": 21,
-        "Character": "Reunion",
-        "Line": "For My Sweet Prince"
-      },
-      {
-        "Order": 22,
+        "Order": 0,
         "Character": "Snow White",
         "Line": "Hello there! Why, I'm making these flowers into crowns for my seven little friends. Oh, this one is for someone special. And don't worry. You'll get one too."
-      },
+      }
+    ],
+    "Reunion: Curious Alice": [
       {
-        "Order": 23,
-        "Character": "Reunion",
-        "Line": "Curious Alice"
-      },
-      {
-        "Order": 24,
+        "Order": 0,
         "Character": "Alice",
         "Line": "Oh dear! You found me. Well, I've had enough hide-and-seek for one day. Hmm, what shall we do next? Oh, I know! We shall play a trick on that mean old queen and hide something of hers. Yes, her scepter!"
       },
       {
-        "Order": 25,
+        "Order": 1,
         "Character": "Cheshire Cat",
         "Line": "No need to worry. Alice has another engagement. All to do with tea and hats and unbirthdays. You mustn't worry. I'll keep an eye on her. Both eyes, in fact. Boredom is such a tricky foe. Perhaps you can defeat it like you defeat the others."
       }
