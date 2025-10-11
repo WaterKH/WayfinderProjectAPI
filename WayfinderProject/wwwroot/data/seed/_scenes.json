@@ -309,7 +309,7 @@
         "Name": "Terrified Terk",
         "Link": "https://www.youtube.com/watch?v=_BmxpupeSt0&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=52",
         "Worlds": [ "Deep Jungle" ],
-        "Characters": [ "Terk", "Power Wild(s)", "Jane" ],
+        "Characters": [ "Terk", "Powerwild(s)", "Jane" ],
         "Areas": [ "Camp", "Tent" ],
         "Music": [ ":None:" ]
       },
@@ -317,7 +317,7 @@
         "Name": "Clayton's Darkness",
         "Link": "https://www.youtube.com/watch?v=XhU5GqHDHC4&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=54",
         "Worlds": [ "Deep Jungle" ],
-        "Characters": [ "Gorilla(s)", "Power Wild(s)", "Clayton", "Kala", "Kerchak", "Sora", "Tarzan", "Stealth Sneak", "Donald", "Goofy" ],
+        "Characters": [ "Gorilla(s)", "Powerwild(s)", "Clayton", "Kala", "Kerchak", "Sora", "Tarzan", "Stealth Sneak", "Donald", "Goofy" ],
         "Areas": [ "Cliff" ],
         "Music": [ "Having a Wild Time" ]
       },
@@ -349,7 +349,7 @@
         "Name": "Reunited with Riku",
         "Link": "https://www.youtube.com/watch?v=iDDP-kLkKww&list=PLKdiHBlJA-4zfsqvc-9HkfnETL2UYUwPu&index=60",
         "Worlds": [ "Traverse Town" ],
-        "Characters": [ "Sora", "Soldiers", "Donald", "Goofy", "Riku", "Shadow(s)" ],
+        "Characters": [ "Sora", "Soldier(s)", "Donald", "Goofy", "Riku", "Shadow(s)" ],
         "Areas": [ "3rd District" ],
         "Music": [ ":None:" ]
       },
@@ -1202,15 +1202,15 @@
         "Music": [ "Dive Into the Heart -Destati-" ]
       },
       {
-        "Name": "Aurora Platform",
+        "Name": "Dead of Night Adventure",
         "Link": "https://www.youtube.com/watch?v=dMj6wYtYDsw&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=10",
         "Worlds": [ "Dive to the Heart" ],
         "Characters": [ "Sora", "Selphie", "Tidus", "Wakka" ],
-        "Areas": [ "Awakening" ],
+        "Areas": [ "Seashore" ],
         "Music": [ "Dive Into the Heart -Destati-" ]
       },
       {
-        "Name": "Dead of Night Adventure",
+        "Name": "Aurora Platform",
         "Link": "https://www.youtube.com/watch?v=4b2N11Hb1C4&list=PLYnY5NdwIhRCjgpKgavRIzau4Qf2tSlaU&index=11",
         "Worlds": [ "Dive to the Heart" ],
         "Characters": [ "Sora", "Selphie", "Tidus", "Wakka" ],
@@ -1839,7 +1839,7 @@
         "Name": "Alice on Trial",
         "Link": "https://www.youtube.com/watch?v=uUebAPFW1S0&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=33",
         "Worlds": [ "Wonderland" ],
-        "Characters": [ "Card Soldiers", "Queen of Hearts", "Alice", "White Rabbit", "Sora", "Donald", "Goofy" ],
+        "Characters": [ "Card Soldier(s)", "Queen of Hearts", "Alice", "White Rabbit", "Sora", "Donald", "Goofy" ],
         "Areas": [ "Queen's Castle" ],
         "Music": [ "Just Wondering", "Face It!" ]
       },
@@ -1847,7 +1847,7 @@
         "Name": "Cards in Pursuit",
         "Link": "https://www.youtube.com/watch?v=Q-nCF5md6Jg&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=35",
         "Worlds": [ "Wonderland" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Queen of Hearts", "Card Soldiers" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Queen of Hearts", "Card Soldier(s)" ],
         "Areas": [ "Queen's Castle" ],
         "Music": [ "Just Wondering" ]
       },
@@ -1863,7 +1863,7 @@
         "Name": "The Queen's Ambush",
         "Link": "https://www.youtube.com/watch?v=5GR5XJYx7ZM&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=36",
         "Worlds": [ "Wonderland" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Alice", "Doorknob", "Queen of Hearts", "Card Soldiers", "Trickmaster" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Alice", "Doorknob", "Queen of Hearts", "Card Soldier(s)", "Trickmaster" ],
         "Areas": [ "Bizarre Room" ],
         "Music": [ "Just Wondering", "Face It!" ]
       },
@@ -1871,7 +1871,7 @@
         "Name": "What's Really Real",
         "Link": "https://www.youtube.com/watch?v=MhDKHbjdxOc&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=38",
         "Worlds": [ "Wonderland" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Alice", "Queen of Hearts", "Card Soldiers", "Doorknob" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Alice", "Queen of Hearts", "Card Soldier(s)", "Doorknob" ],
         "Areas": [ "Bizarre Room" ],
         "Music": [ "Piccolo Resto" ]
       },
@@ -1882,6 +1882,14 @@
         "Characters": [ "Sora", "Donald", "Goofy", "Jiminy" ],
         "Areas": [ "Floor 2 Exit" ],
         "Music": [ "Disquieting" ]
+      },
+      {
+        "Name": "Girl in a White Room",
+        "Link": "https://youtu.be/J9KGiNo9DsI?list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&t=128",
+        "Worlds": [ "Castle Oblivion" ],
+        "Characters": [ "Naminé" ],
+        "Areas": [ "Floor 13" ],
+        "Music": [ "Naminé" ]
       },
       {
         "Name": "Are We Losing Our Memories?",
@@ -2167,7 +2175,7 @@
         "Name": "True Memories",
         "Link": "https://www.youtube.com/watch?v=U2xahkPjPEQ&list=PLKdiHBlJA-4y3pZ6Np4X8-b-58w-Gp8AK&index=56",
         "Worlds": [ "Halloween Town" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Sally", "Dr. Finnkelstein" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Jack Skellington", "Sally", "Dr. Finkelstein" ],
         "Areas": [ "Research Lab" ],
         "Music": [ "Piccolo Resto" ]
       },
@@ -3329,7 +3337,7 @@
         "Name": "Encounter Within a Dream",
         "Link": "https://www.youtube.com/watch?v=Q70Q5jlGJtw&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=24",
         "Worlds": [ "Atlantica", "Olympus Coliseum", "Agrabah", "Halloween Town", "Monstro", "Neverland" ],
-        "Characters": [ "King Triton", "Sora", "Donald", "Goofy", "Ariel", "Phil", "Hercules", "Aladdin", "Genie", "Jack", "Sally", "Mushu", "Riku", "Pinocchio", "Kairi", "Peter Pan", "Wendy", "Tinker Bell", "Cloud", "Piglet", "Pooh", "Tigger", "Rabbit", "Eeyore", "Owl", "Roo" ],
+        "Characters": [ "King Triton", "Sora", "Donald", "Goofy", "Ariel", "Phil", "Hercules", "Aladdin", "Genie", "Jack Skellington", "Sally", "Mushu", "Riku", "Pinocchio", "Kairi", "Peter Pan", "Wendy", "Tinker Bell", "Cloud", "Piglet", "Pooh", "Tigger", "Rabbit", "Eeyore", "Owl", "Roo" ],
         "Areas": [ "Ariel's Grotto", "Lobby", "Aladdin's House", "Research Lab", "Chamber 1", "Deck", "Arena", "Wood: Hill", "Clock Tower" ],
         "Music": [ "Treasured Memories" ]
       },
@@ -4241,7 +4249,7 @@
         "Name": "The Castle's Residents",
         "Link": "https://www.youtube.com/watch?v=3_5DZ6Ag5nc&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=141",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Cogsworth", "Lumiere", "Mrs. Potts", "Chip", "Sora", "Donald", "Goofy" ],
+        "Characters": [ "Cogsworth", "Lumiere", "Mrs. Potts", "Chip Potts", "Sora", "Donald", "Goofy" ],
         "Areas": [ "Dungeon" ],
         "Music": [ ":None:" ]
       },
@@ -4297,7 +4305,7 @@
         "Name": "Things Are Just Beginning",
         "Link": "https://www.youtube.com/watch?v=r1HnAZx2B0Y&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=149",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Xaldin", "Beast", "Belle", "Lumiere", "Cogsworth", "Mrs. Potts", "Chip" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Xaldin", "Beast", "Belle", "Lumiere", "Cogsworth", "Mrs. Potts", "Chip Potts" ],
         "Areas": [ "Ballroom" ],
         "Music": [ ":None:" ]
       },
@@ -4321,7 +4329,7 @@
         "Name": "Enlistment",
         "Link": "https://www.youtube.com/watch?v=x3kEc8a79G8&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=152",
         "Worlds": [ "The Land of Dragons" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Mulan", "Mushu", "Yao", "Ling", "Chien Po", "Shang", "Shadow(s)", "Imperial Solider(s)" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Mulan", "Mushu", "Yao", "Ling", "Chien Po", "Shang", "Shadow(s)", "Imperial Soldier(s)" ],
         "Areas": [ "Encampment" ],
         "Music": [ "The Home of Dragons", "Fields of Honor" ]
       },
@@ -4345,7 +4353,7 @@
         "Name": "Avalanche",
         "Link": "https://www.youtube.com/watch?v=BFhqCmciKeY&list=PLKdiHBlJA-4y-kAw_ao4WeQjPPn8aqv-j&index=156",
         "Worlds": [ "The Land of Dragons" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Mulan", "Shan-Yu", "Rapid Thruster(s)", "Yao", "Ling", "Chien Po", "Mushu", "Shang", "Hayabusa", "Imperial Solider(s)" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Mulan", "Shan-Yu", "Rapid Thruster(s)", "Yao", "Ling", "Chien Po", "Mushu", "Shang", "Hayabusa", "Imperial Soldier(s)" ],
         "Areas": [ "Summit" ],
         "Music": [ "Apprehension" ]
       },
@@ -6529,7 +6537,7 @@
         "Name": "Dressing Up",
         "Link": "https://www.youtube.com/watch?v=1Py2AbWG3YI&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=471",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Belle", "The Wardrobe" ],
+        "Characters": [ "Belle", "Wardrobe" ],
         "Areas": [ "Belle's Room" ],
         "Music": [ ":None:" ]
       },
@@ -6545,7 +6553,7 @@
         "Name": "Uninvited Guests",
         "Link": "https://www.youtube.com/watch?v=AVe0xqlRKZU&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=473",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Beast", "Belle", "Lumiere", "Cogsworth", "Mrs. Potts", "Chip", "Sora", "Donald", "Goofy", "Xaldin", "Dragoon(s)", "Dusk(s)" ],
+        "Characters": [ "Beast", "Belle", "Lumiere", "Cogsworth", "Mrs. Potts", "Chip Potts", "Sora", "Donald", "Goofy", "Xaldin", "Dragoon(s)", "Dusk(s)" ],
         "Areas": [ "Ballroom" ],
         "Music": [ "Tension Rising" ]
       },
@@ -6609,7 +6617,7 @@
         "Name": "Stay With Me",
         "Link": "https://www.youtube.com/watch?v=W1ZnbfwHnuI&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=483",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Belle", "Beast", "Lumiere", "Cogsworth", "Mrs. Potts", "Sora", "Donald", "Goofy", "Chip" ],
+        "Characters": [ "Belle", "Beast", "Lumiere", "Cogsworth", "Mrs. Potts", "Sora", "Donald", "Goofy", "Chip Potts" ],
         "Areas": [ "Courtyard" ],
         "Music": [ "Beauty and the Beast" ]
       },
@@ -7897,7 +7905,7 @@
         "Name": "Gathering",
         "Link": "https://www.youtube.com/watch?v=fhG919KY5-8&list=PLYnY5NdwIhRBMtCZgLtGX1N-hDq6ioA2N&index=661",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Terra", "Aqua", "Ven", "Master Xehanort" ],
+        "Characters": [ "Terra", "Aqua", "Ventus", "Master Xehanort" ],
         "Areas": [ "The Keyblade Graveyard" ],
         "Music": [ "Sunset Horizons" ]
       },
@@ -8355,7 +8363,7 @@
         "Name": "Day 74: Trio",
         "Link": "https://www.youtube.com/watch?v=tCZD-3aStSw&list=PLYnY5NdwIhRBiNdiC7u67LgTBrSzgQdsj&index=30",
         "Worlds": [ "Twilight Town" ],
-        "Characters": [ "Roxas", "Veil Lizzard", "Xion", "Axel" ],
+        "Characters": [ "Roxas", "Veil Lizard", "Xion", "Axel" ],
         "Areas": [ "The Old Mansion", "Clock Tower" ],
         "Music": [ "Apprehension", "Missing You" ]
       },
@@ -10149,7 +10157,7 @@
         "Name": "An Important Match",
         "Link": "https://www.youtube.com/watch?v=CR3qEbWGkEA&list=PLYnY5NdwIhRD8uDVj3uf5bDC1JKfKK_Ly&index=146",
         "Worlds": [ "Olympus Coliseum" ],
-        "Characters": [ "Hercules", "Bruise", "Zack", "Flood(s)", "Buckle Bruiser(s)", "Thornbite(s)", "Ventus", "Phil", "Terra", "Aqua" ],
+        "Characters": [ "Hercules", "Bruiser(s)", "Zack", "Flood(s)", "Buckle Bruiser(s)", "Thornbite(s)", "Ventus", "Phil", "Terra", "Aqua" ],
         "Areas": [ "Arena" ],
         "Music": [ "Cheers for the Brave", "Go for It!", "Unforgettable (BBS)" ]
       },
@@ -11367,7 +11375,7 @@
         "Name": "The Queen of Hearts",
         "Link": "https://www.youtube.com/watch?v=27SFzcCiUTg&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=17",
         "Worlds": [ "Wonderland" ],
-        "Characters": [ "Data-Sora", "Alice", "Queen of Hearts", "Card Soldiers" ],
+        "Characters": [ "Data-Sora", "Alice", "Queen of Hearts", "Card Soldier(s)" ],
         "Areas": [ "The Queen's Castle" ],
         "Music": [ "To Our Surprise" ]
       },
@@ -11687,7 +11695,7 @@
         "Name": "The Hurt is the Key",
         "Link": "https://www.youtube.com/watch?v=Z6-zGNCCJVA&list=PLYnY5NdwIhRDByv_czJPmEchmesnvw3WN&index=56",
         "Worlds": [ "Castle Oblivion", "Wonderland" ],
-        "Characters": [ "Data-Sora", "Cheshire Cat", "Alice", "Queen of Hearts", "Card Soldiers", "Data-Roxas" ],
+        "Characters": [ "Data-Sora", "Cheshire Cat", "Alice", "Queen of Hearts", "Card Soldier(s)", "Data-Roxas" ],
         "Areas": [ "Entrance" ],
         "Music": [ "Castle Oblivion" ]
       },
@@ -12969,7 +12977,7 @@
         "Name": "The Return",
         "Link": "https://www.youtube.com/watch?v=zefVXgr8f2U&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=153",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [],
+        "Characters": [ ":None:" ],
         "Areas": [ "The Tower" ],
         "Music": [ "Magical Mystery" ]
       },
@@ -13017,7 +13025,7 @@
         "Name": "Unfinished Business/End Credits",
         "Link": "https://www.youtube.com/watch?v=Uhr_9_AJDm0&list=PLYnY5NdwIhRDr9a3hERHbJX6xRzQqyTjy&index=159",
         "Worlds": [ "Mysterious Tower" ],
-        "Characters": [ "Riku", "Mickey", "Donald", "Goofy", "Sora", "Yen Sid", "Ursula", "Rhyme", "Beat", "Shiki", "Neku", "Joshua", "Meow Wow(s)", "Kooma Panda(s)", "Victor", "Hugo", "Laverne", "Quasimodo", "Esmeralda", "Phoebus", "Frollo", "Pinocchio", "Geppetto", "Jiminy Cricket", "Blue Fairy", "CLU", "Black Guard(s)", "Rinzler", "Sam Flynn", "Kevin Flynn", "Quorra", "Ienzo", "Aeleus", "Lea", "Pete", "Maleficent", "Diablo", "Moogle(s)", "Minnie", "Pluto", "Beagle Boys", "Enchanted Broom(s)", "Chernabog", "Fiend(s)", "Xigbar", "Xemnas", "Ansem Seeker of Darkness", "Guardian", "Saix", "Young Xehanort", "Master Xehanort", "Roxas", "Xion", "Ansem the Wise", "Terra", "Aqua", "Ventus" ],
+        "Characters": [ "Riku", "Mickey", "Donald", "Goofy", "Sora", "Yen Sid", "Ursula", "Rhyme", "Beat", "Shiki", "Neku", "Joshua", "Meow Wow(s)", "Kooma Panda(s)", "Victor", "Hugo", "Laverne", "Quasimodo", "Esmeralda", "Phoebus", "Frollo", "Pinocchio", "Geppetto", "Jiminy", "Blue Fairy", "CLU", "Black Guard(s)", "Rinzler", "Sam Flynn", "Kevin Flynn", "Quorra", "Ienzo", "Aeleus", "Lea", "Pete", "Maleficent", "Diablo", "Moogle(s)", "Minnie", "Pluto", "Beagle Boys", "Enchanted Broom(s)", "Chernabog", "Fiend(s)", "Xigbar", "Xemnas", "Ansem Seeker of Darkness", "Guardian", "Saix", "Young Xehanort", "Master Xehanort", "Roxas", "Xion", "Ansem the Wise", "Terra", "Aqua", "Ventus" ],
         "Areas": [ "The Tower" ],
         "Music": ["Sanctuary ~After the battle~", "Dream Drop Distance -The Next Awakening-"]
       },
@@ -14465,7 +14473,7 @@
         "Name": "A Heart's Sadness",
         "Link": "https://www.youtube.com/watch?v=yVlZBYwh_Ic",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Player", "Search Ghost(s)", "Cogsworth", "Lumiere", "Beast", "Chirithy", "Belle", "Chip", "Mrs. Potts" ],
+        "Characters": [ "Player", "Search Ghost(s)", "Cogsworth", "Lumiere", "Beast", "Chirithy", "Belle", "Chip Potts", "Mrs. Potts" ],
         "Areas": [ "Entrance Hall", "Dungeon" ],
         "Music": [ "Dance of the Daring", "Waltz of the Damned" ]
       },
@@ -14473,7 +14481,7 @@
         "Name": "Protecting the Castle",
         "Link": "https://www.youtube.com/watch?v=TQGQtmKmlJI",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Player", "Belle", "Beast", "Cogsworth", "Lumiere", "Mrs. Potts", "Chip", "Wardrobe" ],
+        "Characters": [ "Player", "Belle", "Beast", "Cogsworth", "Lumiere", "Mrs. Potts", "Chip Potts", "Wardrobe" ],
         "Areas": [ "Beast's Room" ],
         "Music": [ "Waltz of the Damned" ]
       },
@@ -14481,7 +14489,7 @@
         "Name": "A Special Surprise",
         "Link": "https://www.youtube.com/watch?v=t9Dvw55vE-c",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Beast", "Player", "Belle", "Cogsworth", "Lumiere", "Mrs. Potts", "Chip", "Chirithy" ],
+        "Characters": [ "Beast", "Player", "Belle", "Cogsworth", "Lumiere", "Mrs. Potts", "Chip Potts", "Chirithy" ],
         "Areas": [ "Beast's Room", "Library", "West Wing", "Ballroom", "Bridge" ],
         "Music": [ "Waltz of the Damned", "Ever After" ]
       },
@@ -15155,7 +15163,7 @@
         "Name": "Hindering Heartless",
         "Link": "https://www.youtube.com/watch?v=WApTuEIxE4Y&list=PLPCJnwphQDQfhqwTbrfnid9OpjN7ugobU&index=112",
         "Worlds": [ "Enchanted Dominion" ],
-        "Characters": [ "Aurora", "Player", "Maleficent", "Thornsnake" ],
+        "Characters": [ "Aurora", "Player", "Maleficent", "Thorned Snake(s)" ],
         "Areas": [ "Castle Corridors" ],
         "Music": [ "Strange Whispers", "The Deep End" ]
       },
@@ -16621,7 +16629,7 @@
         "Name": "Opening",
         "Link": "https://www.youtube.com/watch?v=t9bsdJ3jtnE&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=2",
         "Worlds": [ "The Final World", "Scala ad Caelum", "The Land of Departure", "Dive to the Heart", "Destiny Islands", "Castle Oblivion", "Twilight Town", "Keyblade Graveyard" ],
-        "Characters": [ "Sora", "Young Xehanort", "Terra", "Aqua", "Ventus", "Riku", "Kairi", "Ansem", "Naminé", "Roxas", "Axel", "Xion", "Xemnas", "Marluxia", "Master Xehanort", "Donald", "Goofy", "Mickey" ],
+        "Characters": [ "Sora", "Young Xehanort", "Terra", "Aqua", "Ventus", "Riku", "Kairi", "Ansem Seeker of Darkness", "Naminé", "Roxas", "Axel", "Xion", "Xemnas", "Marluxia", "Master Xehanort", "Donald", "Goofy", "Mickey" ],
         "Areas": [ "The Final World", "Scala ad Caelum", "The Land of Departure", "Dive to the Heart", "Destiny Islands", "Castle Oblivion", "Twilight Town", "Keyblade Graveyard" ],
         "Music": [ "Face My Fears" ]
       },
@@ -16661,7 +16669,7 @@
         "Name": "Dropping In",
         "Link": "https://www.youtube.com/watch?v=XNNcp2mDh70&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=7",
         "Worlds": [ "Olympus" ],
-        "Characters": [ "Hercules", "Sora, Donald, Goofy" ],
+        "Characters": [ "Hercules", "Sora", "Donald", "Goofy" ],
         "Areas": [ "Agora" ],
         "Music": [ "Mount Olympus" ]
       },
@@ -16669,7 +16677,7 @@
         "Name": "The Way to Find Strength",
         "Link": "https://www.youtube.com/watch?v=gtvKLfXFaDs&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=8",
         "Worlds": [ "Olympus" ],
-        "Characters": [ "Hercules", "Sora, Donald, Goofy", "Flame Core(s)" ],
+        "Characters": [ "Hercules", "Sora", "Donald", "Goofy", "Flame Core(s)" ],
         "Areas": [ "Agora" ],
         "Music": [ "Hero's Fanfare" ]
       },
@@ -16677,7 +16685,7 @@
         "Name": "Maleficent's Desire",
         "Link": "https://www.youtube.com/watch?v=TUUUm0zQLq4&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=9",
         "Worlds": [ "Olympus" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Hercules", "Meg", "Phil", "Pegasus", "Girl", "Maleficent", "Pete" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hercules", "Meg", "Phil", "Pegasus", "Thebes Girl", "Maleficent", "Pete" ],
         "Areas": [ "Agora", "Overlook" ],
         "Music": [ "Mount Olympus", "No Time to Think I", "Villains of a Sort" ]
       },
@@ -16709,7 +16717,7 @@
         "Name": "The Collapsing Building",
         "Link": "https://www.youtube.com/watch?v=s-jTA2fshok&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=13",
         "Worlds": [ "Olympus" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Hercules", "Family", "Flame Core(s)" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Hercules", "Thebes Family", "Flame Core(s)" ],
         "Areas": [ "Alleyway" ],
         "Music": [ "The Collapsing Building" ]
       },
@@ -16717,7 +16725,7 @@
         "Name": "Xigbar's Admonition",
         "Link": "https://www.youtube.com/watch?v=FxJl9O7gbgs&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=14",
         "Worlds": [ "Olympus" ],
-        "Characters": [ "Hercules", "Sora", "Donald", "Goofy", "Family", "Xigbar" ],
+        "Characters": [ "Hercules", "Sora", "Donald", "Goofy", "Thebes Family", "Xigbar" ],
         "Areas": [ "Alleyway" ],
         "Music": [ "No Time to Think II", "Organization XIII" ]
       },
@@ -17717,7 +17725,7 @@
         "Name": "Running Out of Sea",
         "Link": "https://www.youtube.com/watch?v=XLBGkzXr7zI&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=139",
         "Worlds": [ "The Caribbean" ],
-        "Characters": [ "Pirates", "Sora", "Donald", "Goofy" ],
+        "Characters": [ "Pirate(s)", "Sora", "Donald", "Goofy" ],
         "Areas": [ "The High Seas" ],
         "Music": [ "No Time to Think" ]
       },
@@ -17933,7 +17941,7 @@
         "Name": "Finding an Edge",
         "Link": "https://www.youtube.com/watch?v=9x2YMtdhtu4&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=166",
         "Worlds": [ "San Fransokyo" ],
-        "Characters": [ "Sora", "Go Go", "Tirebade(s)", "Wasabi", "Honey Lemon", "Pole Cannon(s)", "Fred", "Hiro", "Tireblade(s)" ],
+        "Characters": [ "Sora", "Go Go", "Tireblade(s)", "Wasabi", "Honey Lemon", "Pole Cannon(s)", "Fred", "Hiro", "Tireblade(s)" ],
         "Areas": [ "San Fransokyo" ],
         "Music": [ "Time to Shugyo" ]
       },
@@ -17989,7 +17997,7 @@
         "Name": "A Riku From the Past?",
         "Link": "https://www.youtube.com/watch?v=ZcM7Ksd-oto&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=173",
         "Worlds": [ "San Fransokyo", "Destiny Islands", "Hollow Bastion", "The World That Never Was" ],
-        "Characters": [ "Sora", "Darkubes", "Donald", "Gooofy", "Baymax", "Hiro", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Dark Riku" ],
+        "Characters": [ "Sora", "Darkubes", "Donald", "Goofy", "Baymax", "Hiro", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Dark Riku" ],
         "Areas": [ "South District", "Seashore", "Castle Chapel", "Where Nothing Gathers" ],
         "Music": [ "Sinister Shadows", "Xehanort -The Early Years-" ]
       },
@@ -18533,7 +18541,7 @@
         "Name": "Ending",
         "Link": "https://www.youtube.com/watch?v=gI8nIyeJfw8&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=241",
         "Worlds": [ "The Keyblade Graveyard", "Disney Castle", "The Land of Departure", "Twilight Town", "Radiant Garden", "Destiny Islands", "Olympus", "Toy Box", "The Caribbean", "San Fransokyo", "Monstropolis", "Arendelle", "Kingdom of Corona", "100 Acre Wood" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Riku", "Mickey", "Terra", "Aqua", "Ventus", "Roxas", "Xion", "Lea", "Minnie", "Daisy", "Pluto", "Jiminy", "Yen Sid", "Chip", "Dale", "Chirithy", "Isa", "Olette", "Hayner", "Pence", "Ansem the Wise", "Even", "Ienzo", "Naminé", "Dilan", "Aeleus", "Kairi", "Hercules", "Meg", "Phil", "Pegasus", "Scrooge McDuck", "Little Chef", "Woody", "Buzz", "Yozora", "Rex", "Hamm", "Little Green Alien(s)", "Green Army Men", "Will Turner", "Elizabeth Swann", "Jack Sparrow", "Gibbs", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Baymax", "Hiro", "Sulley", "Mike Wazowski", "Boo", "Kristoff", "Anna", "Olaf", "Elsa", "Sven", "Marshmallow", "Maximus", "Rapunzel", "Flynn Rider", "Pooh", "Piglet", "Tigger", "Rabbit", "Lumpy", "Gopher", "Roo" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Riku", "Mickey", "Terra", "Aqua", "Ventus", "Roxas", "Xion", "Lea", "Minnie", "Daisy", "Pluto", "Jiminy", "Yen Sid", "Chip", "Dale", "Chirithy", "Isa", "Olette", "Hayner", "Pence", "Ansem the Wise", "Even", "Ienzo", "Naminé", "Dilan", "Aeleus", "Kairi", "Hercules", "Meg", "Phil", "Pegasus", "Scrooge McDuck", "Little Chef", "Woody", "Buzz", "Yozora", "Rex", "Hamm", "Little Green Alien(s)", "Green Army Men", "Will Turner", "Elizabeth Swann", "Jack Sparrow", "Gibbs", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Baymax", "Hiro", "Sulley", "Mike", "Boo", "Kristoff", "Anna", "Olaf", "Elsa", "Sven", "Marshmallow", "Maximus", "Rapunzel", "Flynn Rider", "Pooh", "Piglet", "Tigger", "Rabbit", "Lumpy", "Gopher", "Roo" ],
         "Areas": [ "The Keyblade Graveyard", "Courtyard", "Summit", "Clock Tower", "Ansem's Lab", "Central Square", "Seashore" ],
         "Music": [ "HIKARI (KINGDOM Tres Orchestra Instrumental Version)", "Don't Think Twice", "Rhapsody in Tres for Piano and Orchestra" ]
       },
@@ -18605,7 +18613,7 @@
         "Name": "Aqua's Heart",
         "Link": "https://www.youtube.com/watch?v=PjOGsTty0Vk&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=251",
         "Worlds": [ "The Keyblade Graveyard", "Dive to the Heart", "Dark World" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Lea", "Terra-Xehanort", "Ventus", "Aqua", "Shadow(s)", "Demon Tide", "Anti-Aquas", "Dark Hide", "Demon Tower", "Darkside(s)" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Kairi", "Lea", "Terra-Xehanort", "Ventus", "Aqua", "Shadow(s)", "Demon Tide", "Anti-Aqua", "Dark Hide", "Demon Tower", "Darkside(s)" ],
         "Areas": [ "The Badlands", "Dark Margin", "Aqua's Heart" ],
         "Music": [ "Aqua (Dark Dive)" ]
       },
@@ -18613,7 +18621,7 @@
         "Name": "The Tear",
         "Link": "https://www.youtube.com/watch?v=zBGngzd8KI8&list=PLYnY5NdwIhRDmUAkPSzP9zm1lZcaut2iO&index=252",
         "Worlds": [ "The Keyblade Graveyard" ],
-        "Characters": [ "Riku", "Shadow(s)", "Demon Tide", "Ventus", "Kairi", "Lea", "Mickey", "Domald", "Goofy", "Sora" ],
+        "Characters": [ "Riku", "Shadow(s)", "Demon Tide", "Ventus", "Kairi", "Lea", "Mickey", "Donald", "Goofy", "Sora" ],
         "Areas": [ "The Badlands" ],
         "Music": [ ":None:" ]
       },
@@ -19303,7 +19311,7 @@
         "Name": "The Eerie Castle",
         "Link": "https://www.youtube.com/watch?v=I14NkLB49ps&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=44",
         "Worlds": [ "Beast's Castle", "Dwarf Woodlands" ],
-        "Characters": [ "Young Xehanort", "Hermod", "Urd", "Magic Mirror", "The Queen", "Young Eraqus", "Bragi", "Chip", "Search Ghost(s)" ],
+        "Characters": [ "Young Xehanort", "Hermod", "Urd", "Magic Mirror", "The Queen", "Young Eraqus", "Bragi", "Chip Potts", "Search Ghost(s)" ],
         "Areas": [ "Courtyard", "Magic Mirror Chamber", "Entrance Hall" ],
         "Music": [ "Waltz of the Damned", "Strange Whispers" ]
       },
@@ -19311,7 +19319,7 @@
         "Name": "Stolen Rose",
         "Link": "https://www.youtube.com/watch?v=UC7NoaFCww0&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=45",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Chip", "Urd", "Hermod", "Young Xehanort", "Cogsworth", "Lumiere", "Mrs. Potts", "Wardrobe" ],
+        "Characters": [ "Chip Potts", "Urd", "Hermod", "Young Xehanort", "Cogsworth", "Lumiere", "Mrs. Potts", "Wardrobe" ],
         "Areas": [ "Entrance Hall", "Parlor" ],
         "Music": [ "Waltz of the Damned" ]
       },
@@ -19359,7 +19367,7 @@
         "Name": "Returning the Rose",
         "Link": "https://www.youtube.com/watch?v=fnwT5PEpF9c&list=PLPCJnwphQDQeeHwWywi0r1w-GMn6Z9-Mz&index=51",
         "Worlds": [ "Beast's Castle" ],
-        "Characters": [ "Young Xehanort", "Urd", "Hermod", "Beast", "Lumiere", "Cogsworth", "Mrs. Potts", "Chip", "Wardrobe" ],
+        "Characters": [ "Young Xehanort", "Urd", "Hermod", "Beast", "Lumiere", "Cogsworth", "Mrs. Potts", "Chip Potts", "Wardrobe" ],
         "Areas": [ "Beast's Room" ],
         "Music": [ "Waltz of the Damned" ]
       },
@@ -19737,7 +19745,7 @@
         "Name": "KINGDOM HEARTS: Chapter 1",
         "Link": "https://www.youtube.com/watch?v=JtYtS0CJBCo&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=1",
         "Worlds": [ "Dive to the Heart", "Destiny Islands", "Disney Castle" ],
-        "Characters": [ "Kairi", "Sora", "Riku", "Ansem, Seeked of Darkness", "Pluto", "Donald", "Goofy", "Minnie", "Daisy" ],
+        "Characters": [ "Kairi", "Sora", "Riku", "Ansem Seeker of Darkness", "Pluto", "Donald", "Goofy", "Minnie", "Daisy" ],
         "Areas": [ "Awakening", "Seashore", "Secret Place", "Audience Chamber", "Library" ],
         "Music": [ "Dive into the Heart -Destati-" ]
       },
@@ -19753,7 +19761,7 @@
         "Name": "KINGDOM HEARTS: Chapter 3",
         "Link": "https://www.youtube.com/watch?v=TlTkjQXjql0&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=3",
         "Worlds": [ "Traverse Town", "Wonderland", "Atlantica", "Agrabah", "Olympus Coliseum", "Halloween Town", "Hollow Bastion" ],
-        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Leon", "Yuffie", "Card Soldiers", "Alice", "Queen of Hearts", "Ariel", "Aladdin", "Genie", "Hercules", "Cloud", "Cerberus", "Riku", "Maleficent" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Leon", "Yuffie", "Card Soldier(s)", "Alice", "Queen of Hearts", "Ariel", "Aladdin", "Genie", "Hercules", "Cloud", "Cerberus", "Riku", "Maleficent" ],
         "Areas": [ "3rd District", "Queen's Castle", "Tranquil Grotto", "Desert", "Arena", "Manor Ruins", "Rising Falls" ],
         "Music": [ "A Walk in Andante" ]
       },
@@ -19841,7 +19849,7 @@
         "Name": "KINGDOM HEARTS II: Chapter 3",
         "Link": "https://www.youtube.com/watch?v=IqIHCmNFrcc&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=14",
         "Worlds": [ "Hollow Bastion", "End of the World" ],
-        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Ansem the Wise", "Mickey", "Terra-Xehanort", "Ansem Seeker of Darkness", "Xemnas", "Saïx", "Armored Knights", "Riku" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Ansem the Wise", "Mickey", "Terra-Xehanort", "Ansem Seeker of Darkness", "Xemnas", "Saïx", "Armored Knight(s)", "Riku" ],
         "Areas": [ "Ansem's Study", "Homecoming", "The Great Maw", "The Dark Depths" ],
         "Music": [ "Organization XIII" ]
       },
@@ -19873,7 +19881,7 @@
         "Name": "KINGDOM HEARTS Birth by Sleep: Chapter 1",
         "Link": "https://www.youtube.com/watch?v=XOL_2DNJ43o&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=18",
         "Worlds": [ "The Land of Departure", "Enchanted Dominion", "Castle of Dreams", "The Keyblade Graveyard" ],
-        "Characters": [ "Kairi", "Terra", "Aqua", "Ventus", "Young Eraqus", "Master Xehanort", "Vanitas", "Maleficent", "Aurora", "Cinderella", "Prince Phillip", "Dragon" ],
+        "Characters": [ "Kairi", "Terra", "Aqua", "Ventus", "Young Eraqus", "Master Xehanort", "Vanitas", "Maleficent", "Aurora", "Cinderella", "Prince Phillip", "Dragon Maleficent" ],
         "Areas": [ "Summit", "Castle Throne Room", "Ventus's Room", "Aurora's Chamber", "Ballroom", "Forecourt", "Foyer", "Bridge", "The Badlands" ],
         "Music": [ "The Promised Beginning" ]
       },
@@ -19945,7 +19953,7 @@
         "Name": "KINGDOM HEARTS III: Chapter 1",
         "Link": "https://www.youtube.com/watch?v=GXLLS_hZMUw&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=26",
         "Worlds": [ "Mysterious Tower", "Olympus", "Gummi Ship", "Twilight Town", "Radiant Garden", "Kingdom of Corona", "Toy Box", "Secret Forest" ],
-        "Characters": [ "Sora", "Donald", "Goofy", "Yen Sid", "Hercules", "Xigbar", "Zeus", "Jiminy", "Hanyer", "Pence", "Olette", "Roxas", "Ienzo", "Ansem Seeker of Darkness", "Xemnas", "Rapunzel", "Woody", "Buzz", "Rex", "Hamm", "Young Xehanort", "Kairi", "Lea" ],
+        "Characters": [ "Sora", "Donald", "Goofy", "Yen Sid", "Hercules", "Xigbar", "Zeus", "Jiminy", "Hayner", "Pence", "Olette", "Roxas", "Ienzo", "Ansem Seeker of Darkness", "Xemnas", "Rapunzel", "Woody", "Buzz", "Rex", "Hamm", "Young Xehanort", "Kairi", "Lea" ],
         "Areas": [ "Sorcerer's Loft", "Agora", "Alleyway", "Apex", "Summit", "Cockpit", "Tram Common", "Computer Room", "Ansem's Study", "The Old Mansion", "Hills", "Thoroughfare", "Wharf", "Andy's House", "Video Games", "Corridor of Darkness", "Secret Forest", "Central Square" ],
         "Music": [ "Treasured Memories" ]
       },
@@ -19953,7 +19961,7 @@
         "Name": "KINGDOM HEARTS III: Chapter 2",
         "Link": "https://www.youtube.com/watch?v=RMoXxcjfO2c&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=27",
         "Worlds": [ "Arendelle", "Monstropolis", "San Fransokyo", "Dark World", "Destiny Islands", "Castle Oblivion", "The Land of Departure", "Dive to the Heart" ],
-        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Larxene", "Anna", "Kristoff", "Olaf", "Sven", "Marshmallow", "Elsa", "Sulley", "Mike Wazowski", "Boo", "Vanitas", "Hiro", "Baymax", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Dark Riku", "Riku", "Mickey", "Anti-Aqua", "Aqua", "Ventus" ],
+        "Characters": [ "Kairi", "Sora", "Donald", "Goofy", "Larxene", "Anna", "Kristoff", "Olaf", "Sven", "Marshmallow", "Elsa", "Sulley", "Mike", "Boo", "Vanitas", "Hiro", "Baymax", "Go Go", "Wasabi", "Honey Lemon", "Fred", "Dark Riku", "Riku", "Mickey", "Anti-Aqua", "Aqua", "Ventus" ],
         "Areas": [ "Treescape", "Mountain Ridge", "Valley of Ice", "Foothills", "The Laugh Floor", "Second Floor", "South District", "Central District", "Hiro's Garage", "Dark Margin", "Seashore", "Castle Throne Room", "Ventus's Heart" ],
         "Music": [ "Chains to Bonds" ]
       },
@@ -19961,7 +19969,7 @@
         "Name": "KINGDOM HEARTS III: Chapter 3",
         "Link": "https://www.youtube.com/watch?v=JpJfOf6zPsI&list=PLYnY5NdwIhRAbFMY9IRlM7uaPPY-qpxoO&index=28",
         "Worlds": [ "The Keyblade Graveyard", "The Final World", "Olympus", "San Fransokyo", "Scala ad Caelum" ],
-        "Characters": [ "Sora", "Riku", "Kairi", "Mickey", "Donald", "Goofy", "Aqua", "Ventus", "Lea", "Shadow(s)", "Demon Tide", "Dusk(s)", "Air Soldier(s)", "Reapers", "Flutterings", "Chirithy", "Lich", "Young Xehanort", "Ephemer", "Yen Sid", "Master Xehanort", "Replica Xehanort(s)", "Terra", "Guardian", "Roxas", "Xion", "Eraqus" ],
+        "Characters": [ "Sora", "Riku", "Kairi", "Mickey", "Donald", "Goofy", "Aqua", "Ventus", "Lea", "Shadow(s)", "Demon Tide", "Dusk(s)", "Air Soldier(s)", "Reaper(s)", "Flutterings", "Chirithy", "Lich", "Young Xehanort", "Ephemer", "Yen Sid", "Master Xehanort", "Replica Xehanort(s)", "Terra", "Guardian", "Roxas", "Xion", "Eraqus" ],
         "Areas": [ "The Badlands", "The Final World", "Realm of the Gods", "Central District", "The Keyblade Graveyard", "Twist of Isolation", "Tower of Endings", "The Stairway to the Sky" ],
         "Music": [ "Organization XIII (Mark of Fate)", "Guardians of Light" ]
       },
